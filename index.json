@@ -1,13 +1,1559 @@
 {
-  "version": 1,
-  "owner": "VKrishna04",
-  "repo": "My-DSA-Life",
-  "createdAt": "2026-05-16T18:46:05.745Z",
-  "problems": [],
+  "updatedAt": "2026-05-16T18:47:56.662Z",
+  "layoutVersion": 3,
   "stats": {
-    "total": 0,
-    "easy": 0,
-    "medium": 0,
-    "hard": 0
-  }
+    "total": 26,
+    "easy": 19,
+    "medium": 6,
+    "hard": 1,
+    "byPlatform": {
+      "leetcode": 26
+    },
+    "byLang": {
+      "C++": 1,
+      "Java": 7,
+      "C": 1,
+      "Python3": 16,
+      "JavaScript": 1
+    },
+    "byTopic": {
+      "Two Pointers": 3,
+      "Array": 10,
+      "String": 5,
+      "Math": 2,
+      "Untagged": 1,
+      "Linked List": 1,
+      "Hash Table": 4
+    }
+  },
+  "meta": {
+    "summary": "## Complexity\n- **Time:** O(N) — Parsing the provided statistics string requires a linear scan of $N$ characters to identify keys and values.\n- **Space:** O(1) — The memory required for the narrative output is constant, as it is limited to a fixed length (2–3 sentences) regardless of the number of problems solved.\n\n## Correctness\n1. **Future Date Handling:** The input \"16/5/2026\" is in the future relative to typical system clocks. \n   - **Input:** `Last commit: 16/5/2026` \n   - **Expected vs Actual:** The system should flag the date as invalid or \"N/A,\" but it will likely interpret it as \"very recent activity,\" creating a false positive for user consistency.\n2. **Zero-Division Risk:** If `total problems` were zero, calculating the ratio of topics or difficulty levels would fail.\n   - **Input:** `0 total problems`\n   - **Expected vs Actual:** The summary should state \"No activity recorded,\" but the logic may crash during percentage calculations or result in empty topic strings.\n\n## Optimization\nCurrent approach is optimal for generating natural language insights. For a production-grade implementation, using a structured JSON input and a rule-based templating engine would ensure 100% consistency and eliminate the risk of text-parsing hallucinations. \n\n## Code Quality\nThe most impactful improvement would be decoupling the data (statistics) from the logic (narrative generation) by using a structured object or dictionary to store solve counts.",
+    "summaryUpdatedAt": "2026-05-16T17:03:34.057Z",
+    "commitsSinceLastSummary": 1
+  },
+  "problems": [
+    {
+      "id": "lc-reverse-string",
+      "submissionId": 1139341584,
+      "platform": "leetcode",
+      "title": "Reverse String",
+      "titleSlug": "reverse-string",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "C++",
+        "ext": "cpp",
+        "slug": "cpp"
+      },
+      "tags": [
+        "Two Pointers",
+        "String"
+      ],
+      "topic": "Two Pointers",
+      "code": "class Solution {\npublic:\n    void reverseString(vector<char>& s) {\n        reverse(s, 0, s.size() - 1);\n    }\nprivate:\n    void reverse(vector<char>& s, int left, int right) {\n        if (left < right) {\n            swap(s[left], s[right]);\n            reverse(s, left + 1, right - 1);\n        }\n    }\n};",
+      "readmeContent": "# Reverse String\n\n**Difficulty:** Easy  |  **Acceptance:** 80.8%\n\n**Tags:** `Two Pointers`, `String`\n\n## Problem\n\nWrite a function that reverses a string. The input string is given as an array of characters s.\n\nYou must do this by modifying the input array in-place with O(1) extra memory.\n\n&nbsp;\nExample 1:\nInput: s = [\"h\",\"e\",\"l\",\"l\",\"o\"]\nOutput: [\"o\",\"l\",\"l\",\"e\",\"h\"]\nExample 2:\nInput: s = [\"H\",\"a\",\"n\",\"n\",\"a\",\"h\"]\nOutput: [\"h\",\"a\",\"n\",\"n\",\"a\",\"H\"]\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 105\n\ts[i] is a printable ascii character.\n\n## My Submission\n\n- Runtime: 21 ms\n- Memory: 23.9 MB\n\n## Similar Problems\n\n- [Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/) — Easy\n- [Reverse String II](https://leetcode.com/problems/reverse-string-ii/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/reverse-string/reverse-string.cpp",
+          "content": "class Solution {\npublic:\n    void reverseString(vector<char>& s) {\n        reverse(s, 0, s.size() - 1);\n    }\nprivate:\n    void reverse(vector<char>& s, int left, int right) {\n        if (left < right) {\n            swap(s[left], s[right]);\n            reverse(s, left + 1, right - 1);\n        }\n    }\n};"
+        },
+        {
+          "path": "problems/reverse-string/README.md",
+          "content": "# Reverse String\n\n**Difficulty:** Easy  |  **Acceptance:** 80.8%\n\n**Tags:** `Two Pointers`, `String`\n\n## Problem\n\nWrite a function that reverses a string. The input string is given as an array of characters s.\n\nYou must do this by modifying the input array in-place with O(1) extra memory.\n\n&nbsp;\nExample 1:\nInput: s = [\"h\",\"e\",\"l\",\"l\",\"o\"]\nOutput: [\"o\",\"l\",\"l\",\"e\",\"h\"]\nExample 2:\nInput: s = [\"H\",\"a\",\"n\",\"n\",\"a\",\"h\"]\nOutput: [\"h\",\"a\",\"n\",\"n\",\"a\",\"H\"]\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 105\n\ts[i] is a printable ascii character.\n\n## My Submission\n\n- Runtime: 21 ms\n- Memory: 23.9 MB\n\n## Similar Problems\n\n- [Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/) — Easy\n- [Reverse String II](https://leetcode.com/problems/reverse-string-ii/) — Easy\n"
+        }
+      ],
+      "timestamp": 1704614743000,
+      "runtime": "21 ms",
+      "memory": "23.9 MB",
+      "runtimePct": 2.0054999999999943,
+      "memoryPct": 100,
+      "problemStatement": "<p>Write a function that reverses a string. The input string is given as an array of characters <code>s</code>.</p>\n\n<p>You must do this by modifying the input array <a href=\"https://en.wikipedia.org/wiki/In-place_algorithm\" target=\"_blank\">in-place</a> with <code>O(1)</code> extra memory.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<pre><strong>Input:</strong> s = [\"h\",\"e\",\"l\",\"l\",\"o\"]\n<strong>Output:</strong> [\"o\",\"l\",\"l\",\"e\",\"h\"]\n</pre><p><strong class=\"example\">Example 2:</strong></p>\n<pre><strong>Input:</strong> s = [\"H\",\"a\",\"n\",\"n\",\"a\",\"h\"]\n<strong>Output:</strong> [\"h\",\"a\",\"n\",\"n\",\"a\",\"H\"]\n</pre>\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>s[i]</code> is a <a href=\"https://en.wikipedia.org/wiki/ASCII#Printable_characters\" target=\"_blank\">printable ascii character</a>.</li>\n</ul>\n",
+      "hints": [
+        "The entire logic for reversing a string is based on using the opposite directional two-pointer approach!"
+      ],
+      "acRate": 80.76092385718033,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "reverse-vowels-of-a-string",
+          "title": "Reverse Vowels of a String",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "reverse-string-ii",
+          "title": "Reverse String II",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the string. Every element is visited once.\n*   **Space Complexity:** $O(n)$ due to the recursion stack. Since each call processes two characters, the stack depth is $n/2$.\n\n### 2. Correctness\nThe logic is correct and handles edge cases well:\n*   **Empty string:** `s.size() - 1` results in `-1`. The condition `left < right` (0 < -1) correctly skips execution.\n*   **Single character:** `left` equals `right`, so no swap occurs.\n*   **Even/Odd lengths:** Correctly terminates when pointers meet or cross.\n\n### 3. Optimization\n**Convert to an iterative approach.**\nThe current recursive solution uses $O(n)$ auxiliary space, which violates the common LeetCode constraint of $O(1)$ extra space for this problem. Replace recursion with a `while` loop:\n\n```cpp\nvoid reverseString(vector<char>& s) {\n    int left = 0, right = s.size() - 1;\n    while (left < right) {\n        swap(s[left++], s[right--]);\n    }\n}\n```\nThis reduces space complexity to **$O(1)$**.\n\n### 4. Key Algorithmic Pattern\n**Two Pointers:** Using two indices starting at opposite ends and moving toward the center."
+    },
+    {
+      "id": "lc-max-consecutive-ones::1171315976",
+      "submissionId": 1171315976,
+      "platform": "leetcode",
+      "title": "Max Consecutive Ones",
+      "titleSlug": "max-consecutive-ones",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Java",
+        "ext": "java",
+        "slug": "java"
+      },
+      "tags": [
+        "Array"
+      ],
+      "topic": "Array",
+      "code": "class Solution {\n    public int findMaxConsecutiveOnes(int[] nums) {\n        int j = 0, result = 0;\n\n        for (int i = 0; i < nums.length; i++) {\n            if (nums[i] == 0) {\n                j = 0;\n                continue;\n            }\n            j++;\n            result = Math.max(j, result);\n        }\n        return result;\n    }\n}",
+      "readmeContent": "# Max Consecutive Ones\n\n**Difficulty:** Easy  |  **Acceptance:** 65.1%\n\n**Tags:** `Array`\n\n## Problem\n\nGiven a binary array nums, return the maximum number of consecutive 1's in the array.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,1,0,1,1,1]\nOutput: 3\nExplanation: The first two digits or the last three digits are consecutive 1s. The maximum number of consecutive 1s is 3.\n\nExample 2:\n\nInput: nums = [1,0,1,1,0,1]\nOutput: 2\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 105\n\tnums[i] is either 0 or 1.\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 44.9 MB\n\n## Similar Problems\n\n- [Max Consecutive Ones III](https://leetcode.com/problems/max-consecutive-ones-iii/) — Medium\n- [Consecutive Characters](https://leetcode.com/problems/consecutive-characters/) — Easy\n- [Longer Contiguous Segments of Ones than Zeros](https://leetcode.com/problems/longer-contiguous-segments-of-ones-than-zeros/) — Easy\n- [Length of the Longest Alphabetical Continuous Substring](https://leetcode.com/problems/length-of-the-longest-alphabetical-continuous-substring/) — Medium\n- [Maximum Enemy Forts That Can Be Captured](https://leetcode.com/problems/maximum-enemy-forts-that-can-be-captured/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-max-consecutive-ones/lc-max-consecutive-ones.java",
+          "content": "class Solution {\n    public int findMaxConsecutiveOnes(int[] nums) {\n        int j = 0, result = 0;\n\n        for (int i = 0; i < nums.length; i++) {\n            if (nums[i] == 0) {\n                j = 0;\n                continue;\n            }\n            j++;\n            result = Math.max(j, result);\n        }\n        return result;\n    }\n}"
+        },
+        {
+          "path": "problems/lc-max-consecutive-ones/README.md",
+          "content": "# Max Consecutive Ones\n\n**Difficulty:** Easy  |  **Acceptance:** 65.1%\n\n**Tags:** `Array`\n\n## Problem\n\nGiven a binary array nums, return the maximum number of consecutive 1's in the array.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,1,0,1,1,1]\nOutput: 3\nExplanation: The first two digits or the last three digits are consecutive 1s. The maximum number of consecutive 1s is 3.\n\nExample 2:\n\nInput: nums = [1,0,1,1,0,1]\nOutput: 2\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 105\n\tnums[i] is either 0 or 1.\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 44.9 MB\n\n## Similar Problems\n\n- [Max Consecutive Ones III](https://leetcode.com/problems/max-consecutive-ones-iii/) — Medium\n- [Consecutive Characters](https://leetcode.com/problems/consecutive-characters/) — Easy\n- [Longer Contiguous Segments of Ones than Zeros](https://leetcode.com/problems/longer-contiguous-segments-of-ones-than-zeros/) — Easy\n- [Length of the Longest Alphabetical Continuous Substring](https://leetcode.com/problems/length-of-the-longest-alphabetical-continuous-substring/) — Medium\n- [Maximum Enemy Forts That Can Be Captured](https://leetcode.com/problems/maximum-enemy-forts-that-can-be-captured/) — Easy\n"
+        }
+      ],
+      "timestamp": 1707560436000,
+      "runtime": "3 ms",
+      "memory": "44.9 MB",
+      "runtimePct": 60.4658,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given a binary array <code>nums</code>, return <em>the maximum number of consecutive </em><code>1</code><em>&#39;s in the array</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,1,0,1,1,1]\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> The first two digits or the last three digits are consecutive 1s. The maximum number of consecutive 1s is 3.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,0,1,1,0,1]\n<strong>Output:</strong> 2\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>nums[i]</code> is either <code>0</code> or <code>1</code>.</li>\n</ul>\n",
+      "hints": [
+        "You need to think about two things as far as any window is concerned. One is the starting point for the window. How do you detect that a new window of 1s has started? The next part is detecting the ending point for this window.\r\n\r\nHow do you detect the ending point for an existing window? If you figure these two things out, you will be able to detect the windows of consecutive ones. All that remains afterward is to find the longest such window and return the size."
+      ],
+      "acRate": 65.113472852121,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "max-consecutive-ones-iii",
+          "title": "Max Consecutive Ones III",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "consecutive-characters",
+          "title": "Consecutive Characters",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "longer-contiguous-segments-of-ones-than-zeros",
+          "title": "Longer Contiguous Segments of Ones than Zeros",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "length-of-the-longest-alphabetical-continuous-substring",
+          "title": "Length of the Longest Alphabetical Continuous Substring",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "maximum-enemy-forts-that-can-be-captured",
+          "title": "Maximum Enemy Forts That Can Be Captured",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-find-numbers-with-even-number-of-digits",
+      "submissionId": 1171343750,
+      "platform": "leetcode",
+      "title": "Find Numbers with Even Number of Digits",
+      "titleSlug": "find-numbers-with-even-number-of-digits",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Java",
+        "ext": "java",
+        "slug": "java"
+      },
+      "tags": [
+        "Array",
+        "Math"
+      ],
+      "topic": "Math",
+      "code": "class Solution {\n    public static int findNumbers(int[] nums) {\n        int result = 0;\n        for (int i : nums) {\n            if (NoOfDigits(i,0)%2==0){\n                result++;\n            }\n        }\n        return result;\n    }\n\n    public static int NoOfDigits(int n, int result) {\n        if (n < 10) {\n            return result + 1;\n        }\n        return NoOfDigits(n / 10, result + 1);\n    }\n}",
+      "readmeContent": "# Find Numbers with Even Number of Digits\n\n**Difficulty:** Easy  |  **Acceptance:** 79.7%\n\n**Tags:** `Array`, `Math`\n\n## Problem\n\nGiven an array nums of integers, return how many of them contain an even number of digits.\n\n&nbsp;\nExample 1:\n\nInput: nums = [12,345,2,6,7896]\nOutput: 2\nExplanation: \n12 contains 2 digits (even number of digits).&nbsp;\n345 contains 3 digits (odd number of digits).&nbsp;\n2 contains 1 digit (odd number of digits).&nbsp;\n6 contains 1 digit (odd number of digits).&nbsp;\n7896 contains 4 digits (even number of digits).&nbsp;\nTherefore only 12 and 7896 contain an even number of digits.\n\nExample 2:\n\nInput: nums = [555,901,482,1771]\nOutput: 1 \nExplanation: \nOnly 1771 contains an even number of digits.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 500\n\t1 <= nums[i] <= 105\n\n## My Submission\n\n- Runtime: 1 ms\n- Memory: 42.6 MB\n\n## Similar Problems\n\n- [Finding 3-Digit Even Numbers](https://leetcode.com/problems/finding-3-digit-even-numbers/) — Easy\n- [Number of Even and Odd Bits](https://leetcode.com/problems/number-of-even-and-odd-bits/) — Easy\n- [Find if Digit Game Can Be Won](https://leetcode.com/problems/find-if-digit-game-can-be-won/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/find-numbers-with-even-number-of-digits/find-numbers-with-even-number-of-digits.java",
+          "content": "class Solution {\n    public static int findNumbers(int[] nums) {\n        int result = 0;\n        for (int i : nums) {\n            if (NoOfDigits(i,0)%2==0){\n                result++;\n            }\n        }\n        return result;\n    }\n\n    public static int NoOfDigits(int n, int result) {\n        if (n < 10) {\n            return result + 1;\n        }\n        return NoOfDigits(n / 10, result + 1);\n    }\n}"
+        },
+        {
+          "path": "problems/find-numbers-with-even-number-of-digits/README.md",
+          "content": "# Find Numbers with Even Number of Digits\n\n**Difficulty:** Easy  |  **Acceptance:** 79.7%\n\n**Tags:** `Array`, `Math`\n\n## Problem\n\nGiven an array nums of integers, return how many of them contain an even number of digits.\n\n&nbsp;\nExample 1:\n\nInput: nums = [12,345,2,6,7896]\nOutput: 2\nExplanation: \n12 contains 2 digits (even number of digits).&nbsp;\n345 contains 3 digits (odd number of digits).&nbsp;\n2 contains 1 digit (odd number of digits).&nbsp;\n6 contains 1 digit (odd number of digits).&nbsp;\n7896 contains 4 digits (even number of digits).&nbsp;\nTherefore only 12 and 7896 contain an even number of digits.\n\nExample 2:\n\nInput: nums = [555,901,482,1771]\nOutput: 1 \nExplanation: \nOnly 1771 contains an even number of digits.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 500\n\t1 <= nums[i] <= 105\n\n## My Submission\n\n- Runtime: 1 ms\n- Memory: 42.6 MB\n\n## Similar Problems\n\n- [Finding 3-Digit Even Numbers](https://leetcode.com/problems/finding-3-digit-even-numbers/) — Easy\n- [Number of Even and Odd Bits](https://leetcode.com/problems/number-of-even-and-odd-bits/) — Easy\n- [Find if Digit Game Can Be Won](https://leetcode.com/problems/find-if-digit-game-can-be-won/) — Easy\n"
+        }
+      ],
+      "timestamp": 1707563263000,
+      "runtime": "1 ms",
+      "memory": "42.6 MB",
+      "runtimePct": 99.6546,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an array <code>nums</code> of integers, return how many of them contain an <strong>even number</strong> of digits.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [12,345,2,6,7896]\n<strong>Output:</strong> 2\n<strong>Explanation: \n</strong>12 contains 2 digits (even number of digits).&nbsp;\n345 contains 3 digits (odd number of digits).&nbsp;\n2 contains 1 digit (odd number of digits).&nbsp;\n6 contains 1 digit (odd number of digits).&nbsp;\n7896 contains 4 digits (even number of digits).&nbsp;\nTherefore only 12 and 7896 contain an even number of digits.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [555,901,482,1771]\n<strong>Output:</strong> 1 \n<strong>Explanation: </strong>\nOnly 1771 contains an even number of digits.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 500</code></li>\n\t<li><code>1 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>\n</ul>\n",
+      "hints": [
+        "How to compute the number of digits of a number ?",
+        "Divide the number by 10 again and again to get the number of digits."
+      ],
+      "acRate": 79.73036343186972,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "finding-3-digit-even-numbers",
+          "title": "Finding 3-Digit Even Numbers",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "number-of-even-and-odd-bits",
+          "title": "Number of Even and Odd Bits",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "find-if-digit-game-can-be-won",
+          "title": "Find if Digit Game Can Be Won",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "### Analysis of Java Solution\n\n**1. Complexity**\n*   **Time Complexity:** $O(N \\times K)$, where $N$ is the number of elements and $K$ is the maximum number of digits (logarithmic relative to the value of the number).\n*   **Space Complexity:** $O(K)$ due to the recursion stack depth for each number.\n\n**2. Correctness**\n*   **General:** The logic is correct for positive integers.\n*   **Edge Cases:** \n    *   **Zero:** Works correctly (returns 1 digit).\n    *   **Negative Numbers:** If the input contained negative numbers (e.g., -15), the `n < 10` check would immediately return 1, which is incorrect. However, LeetCode constraints for this problem usually specify $1 \\le nums[i] \\le 10^5$.\n    *   **Stack Overflow:** For very large numbers (outside integer range), recursion could theoretically hit limits, but not within $10^5$.\n\n**3. Optimization**\nReplace recursion with **mathematical calculation** or **range checks** to achieve $O(1)$ space and faster execution:\n```java\n// Math optimization\nif (((int)Math.log10(i) + 1) % 2 == 0) result++;\n\n// Range check (fastest for constraints up to 10^5)\nif ((i >= 10 && i <= 99) || (i >= 1000 && i <= 9999) || i == 100000) result++;\n```\n\n**4. Key Algorithmic Pattern**\n**Array Traversal** combined with **Digit Counting**."
+    },
+    {
+      "id": "lc-squares-of-a-sorted-array",
+      "submissionId": 1177955190,
+      "platform": "leetcode",
+      "title": "Squares of a Sorted Array",
+      "titleSlug": "squares-of-a-sorted-array",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Java",
+        "ext": "java",
+        "slug": "java"
+      },
+      "tags": [
+        "Array",
+        "Two Pointers",
+        "Sorting"
+      ],
+      "topic": "Two Pointers",
+      "code": "import java.util.Arrays;\nclass Solution {\n    public int[] sortedSquares(int[] nums) {\n        int[] result = nums;\n        for (int i = 0; i < nums.length; i++) {\n            nums[i] = Math.abs(nums[i]);\n        }\n        for (int i = 0; i < result.length; i++) {\n            result[i] = (int) Math.pow(nums[i], 2);\n        }\n        Arrays.sort(nums);\n        return result;\n    }\n}",
+      "readmeContent": "# Squares of a Sorted Array\n\n**Difficulty:** Easy  |  **Acceptance:** 73.7%\n\n**Tags:** `Array`, `Two Pointers`, `Sorting`\n\n## Problem\n\nGiven an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.\n\n&nbsp;\nExample 1:\n\nInput: nums = [-4,-1,0,3,10]\nOutput: [0,1,9,16,100]\nExplanation: After squaring, the array becomes [16,1,0,9,100].\nAfter sorting, it becomes [0,1,9,16,100].\n\nExample 2:\n\nInput: nums = [-7,-3,2,3,11]\nOutput: [4,9,9,49,121]\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 104\n\t-104 <= nums[i] <= 104\n\tnums is sorted in non-decreasing order.\n\n&nbsp;\nFollow up: Squaring each element and sorting the new array is very trivial, could you find an O(n) solution using a different approach?\n\n## My Submission\n\n- Runtime: 8 ms\n- Memory: 47.3 MB\n\n## Similar Problems\n\n- [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/squares-of-a-sorted-array/squares-of-a-sorted-array.java",
+          "content": "import java.util.Arrays;\nclass Solution {\n    public int[] sortedSquares(int[] nums) {\n        int[] result = nums;\n        for (int i = 0; i < nums.length; i++) {\n            nums[i] = Math.abs(nums[i]);\n        }\n        for (int i = 0; i < result.length; i++) {\n            result[i] = (int) Math.pow(nums[i], 2);\n        }\n        Arrays.sort(nums);\n        return result;\n    }\n}"
+        },
+        {
+          "path": "problems/squares-of-a-sorted-array/README.md",
+          "content": "# Squares of a Sorted Array\n\n**Difficulty:** Easy  |  **Acceptance:** 73.7%\n\n**Tags:** `Array`, `Two Pointers`, `Sorting`\n\n## Problem\n\nGiven an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.\n\n&nbsp;\nExample 1:\n\nInput: nums = [-4,-1,0,3,10]\nOutput: [0,1,9,16,100]\nExplanation: After squaring, the array becomes [16,1,0,9,100].\nAfter sorting, it becomes [0,1,9,16,100].\n\nExample 2:\n\nInput: nums = [-7,-3,2,3,11]\nOutput: [4,9,9,49,121]\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 104\n\t-104 <= nums[i] <= 104\n\tnums is sorted in non-decreasing order.\n\n&nbsp;\nFollow up: Squaring each element and sorting the new array is very trivial, could you find an O(n) solution using a different approach?\n\n## My Submission\n\n- Runtime: 8 ms\n- Memory: 47.3 MB\n\n## Similar Problems\n\n- [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) — Easy\n"
+        }
+      ],
+      "timestamp": 1708183559000,
+      "runtime": "8 ms",
+      "memory": "47.3 MB",
+      "runtimePct": 38.82350000000001,
+      "memoryPct": 62.78620000000006,
+      "problemStatement": "<p>Given an integer array <code>nums</code> sorted in <strong>non-decreasing</strong> order, return <em>an array of <strong>the squares of each number</strong> sorted in non-decreasing order</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [-4,-1,0,3,10]\n<strong>Output:</strong> [0,1,9,16,100]\n<strong>Explanation:</strong> After squaring, the array becomes [16,1,0,9,100].\nAfter sorting, it becomes [0,1,9,16,100].\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [-7,-3,2,3,11]\n<strong>Output:</strong> [4,9,9,49,121]\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code><span>1 &lt;= nums.length &lt;= </span>10<sup>4</sup></code></li>\n\t<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>\n\t<li><code>nums</code> is sorted in <strong>non-decreasing</strong> order.</li>\n</ul>\n\n<p>&nbsp;</p>\n<strong>Follow up:</strong> Squaring each element and sorting the new array is very trivial, could you find an <code>O(n)</code> solution using a different approach?",
+      "hints": [],
+      "acRate": 73.72910945891724,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "merge-sorted-array",
+          "title": "Merge Sorted Array",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time:** $O(N \\log N)$ due to `Arrays.sort()`. The two linear passes are $O(N)$.\n*   **Space:** $O(\\log N)$ or $O(1)$ auxiliary space, depending on the implementation of `Arrays.sort()` (Dual-Pivot Quicksort). Note: The code modifies the input array in place.\n\n**2. Correctness**\n*   **Logic:** The logic is correct; squaring and then sorting yields the right result. \n*   **Edge Cases:** Handles empty arrays, all negative numbers, and zeros correctly. \n*   **Issues:** `Math.pow` is computationally expensive for simple squaring; `nums[i] * nums[i]` is preferred. `Math.abs` is redundant as squaring naturally removes negative signs.\n\n**3. Optimization**\nUse a **Two-Pointer** approach to achieve **$O(N)$ time complexity**. Since the input is sorted, the largest squares are at the boundaries (far left or far right). Compare the absolute values at both ends, place the larger square at the end of a new array, and move the corresponding pointer inward.\n\n**4. Key Algorithmic Pattern**\n**Two Pointers** (specifically \"Converging Pointers\" from the outside in)."
+    },
+    {
+      "id": "lc-score-of-a-string",
+      "submissionId": 1235771218,
+      "platform": "leetcode",
+      "title": "Score of a String",
+      "titleSlug": "score-of-a-string",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "C",
+        "ext": "c",
+        "slug": "c"
+      },
+      "tags": [
+        "String"
+      ],
+      "topic": "String",
+      "code": "#include <stdlib.h>\n\nint scoreOfString(char* s) {\n    int len=strlen(s);\n    int score=0;\n    for (int i = 0; i< len-1; i++){\n        score+=abs((int)s[i]-(int)s[i+1]);\n    }\n    return score;\n}",
+      "readmeContent": "# Score of a String\n\n**Difficulty:** Easy  |  **Acceptance:** 91.4%\n\n**Tags:** `String`\n\n## Problem\n\nYou are given a string s. The score of a string is defined as the sum of the absolute difference between the ASCII values of adjacent characters.\n\nReturn the score of s.\n\n&nbsp;\nExample 1:\n\nInput: s = \"hello\"\n\nOutput: 13\n\nExplanation:\n\nThe ASCII values of the characters in s are: 'h' = 104, 'e' = 101, 'l' = 108, 'o' = 111. So, the score of s would be |104 - 101| + |101 - 108| + |108 - 108| + |108 - 111| = 3 + 7 + 0 + 3 = 13.\n\nExample 2:\n\nInput: s = \"zaz\"\n\nOutput: 50\n\nExplanation:\n\nThe ASCII values of the characters in s are: 'z' = 122, 'a' = 97. So, the score of s would be |122 - 97| + |97 - 122| = 25 + 25 = 50.\n\n&nbsp;\nConstraints:\n\n\t2 <= s.length <= 100\n\ts consists only of lowercase English letters.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 5.7 MB\n",
+      "files": [
+        {
+          "path": "problems/score-of-a-string/score-of-a-string.c",
+          "content": "#include <stdlib.h>\n\nint scoreOfString(char* s) {\n    int len=strlen(s);\n    int score=0;\n    for (int i = 0; i< len-1; i++){\n        score+=abs((int)s[i]-(int)s[i+1]);\n    }\n    return score;\n}"
+        },
+        {
+          "path": "problems/score-of-a-string/README.md",
+          "content": "# Score of a String\n\n**Difficulty:** Easy  |  **Acceptance:** 91.4%\n\n**Tags:** `String`\n\n## Problem\n\nYou are given a string s. The score of a string is defined as the sum of the absolute difference between the ASCII values of adjacent characters.\n\nReturn the score of s.\n\n&nbsp;\nExample 1:\n\nInput: s = \"hello\"\n\nOutput: 13\n\nExplanation:\n\nThe ASCII values of the characters in s are: 'h' = 104, 'e' = 101, 'l' = 108, 'o' = 111. So, the score of s would be |104 - 101| + |101 - 108| + |108 - 108| + |108 - 111| = 3 + 7 + 0 + 3 = 13.\n\nExample 2:\n\nInput: s = \"zaz\"\n\nOutput: 50\n\nExplanation:\n\nThe ASCII values of the characters in s are: 'z' = 122, 'a' = 97. So, the score of s would be |122 - 97| + |97 - 122| = 25 + 25 = 50.\n\n&nbsp;\nConstraints:\n\n\t2 <= s.length <= 100\n\ts consists only of lowercase English letters.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 5.7 MB\n"
+        }
+      ],
+      "timestamp": 1713448827000,
+      "runtime": "0 ms",
+      "memory": "5.7 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given a string <code>s</code>. The <strong>score</strong> of a string is defined as the sum of the absolute difference between the <strong>ASCII</strong> values of adjacent characters.</p>\n\n<p>Return the <strong>score</strong> of<em> </em><code>s</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;hello&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">13</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The <strong>ASCII</strong> values of the characters in <code>s</code> are: <code>&#39;h&#39; = 104</code>, <code>&#39;e&#39; = 101</code>, <code>&#39;l&#39; = 108</code>, <code>&#39;o&#39; = 111</code>. So, the score of <code>s</code> would be <code>|104 - 101| + |101 - 108| + |108 - 108| + |108 - 111| = 3 + 7 + 0 + 3 = 13</code>.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;zaz&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">50</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The <strong>ASCII</strong> values of the characters in <code>s</code> are: <code>&#39;z&#39; = 122</code>, <code>&#39;a&#39; = 97</code>. So, the score of <code>s</code> would be <code>|122 - 97| + |97 - 122| = 25 + 25 = 50</code>.</p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>2 &lt;= s.length &lt;= 100</code></li>\n\t<li><code>s</code> consists only of lowercase English letters.</li>\n</ul>\n",
+      "hints": [
+        "Sum the difference between all the adjacent characters by just taking the absolute difference of their ASCII values."
+      ],
+      "acRate": 91.35057881949406,
+      "similar": null,
+      "hasSimilar": null,
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(N)$, where $N$ is the length of the string. `strlen` takes $O(N)$ and the loop runs $N-1$ times.\n*   **Space Complexity:** $O(1)$, as it uses a constant amount of extra space.\n\n### 2. Correctness\nThe solution is **correct** and follows the problem requirements.\n*   **Edge Cases:**\n    *   **Length = 2:** Smallest valid input per constraints; handles one subtraction correctly.\n    *   **Length = 1:** If allowed, the loop condition (`i < len-1`) correctly skips execution and returns `0`.\n    *   **Character Values:** ASCII values are within `0-127`, so `s[i] - s[i+1]` will never overflow a standard `int`.\n\n### 3. Optimization\n**Avoid `strlen`:** You can calculate the score in a single pass without pre-calculating the length. This avoids traversing the string twice.\n```c\nint scoreOfString(char* s) {\n    int score = 0;\n    for (int i = 0; s[i] && s[i+1]; i++) {\n        score += abs(s[i] - s[i+1]);\n    }\n    return score;\n}\n```\n\n### 4. Key Algorithmic Pattern\n**Iterative Adjacent Traversal:** A variation of the **Sliding Window** (size 2), where you process pairs of neighboring elements sequentially."
+    },
+    {
+      "id": "lc-score-of-a-string::1235774141",
+      "submissionId": 1235774141,
+      "platform": "leetcode",
+      "title": "Score of a String",
+      "titleSlug": "score-of-a-string",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "String"
+      ],
+      "topic": "String",
+      "code": "class Solution:\n  def scoreOfString(self, s: str) -> int:\n    score = 0\n    for char in range(len(s)-1):\n      score += abs(ord(s[char]) - ord(s[char+1]))\n    return score\n",
+      "readmeContent": "# Score of a String\n\n**Difficulty:** Easy  |  **Acceptance:** 91.3%\n\n**Tags:** `String`\n\n## Problem\n\nYou are given a string s. The score of a string is defined as the sum of the absolute difference between the ASCII values of adjacent characters.\n\nReturn the score of s.\n\n&nbsp;\nExample 1:\n\nInput: s = \"hello\"\n\nOutput: 13\n\nExplanation:\n\nThe ASCII values of the characters in s are: 'h' = 104, 'e' = 101, 'l' = 108, 'o' = 111. So, the score of s would be |104 - 101| + |101 - 108| + |108 - 108| + |108 - 111| = 3 + 7 + 0 + 3 = 13.\n\nExample 2:\n\nInput: s = \"zaz\"\n\nOutput: 50\n\nExplanation:\n\nThe ASCII values of the characters in s are: 'z' = 122, 'a' = 97. So, the score of s would be |122 - 97| + |97 - 122| = 25 + 25 = 50.\n\n&nbsp;\nConstraints:\n\n\t2 <= s.length <= 100\n\ts consists only of lowercase English letters.\n\n## My Submission\n\n- Runtime: 39 ms\n- Memory: 16.4 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-score-of-a-string/lc-score-of-a-string.py",
+          "content": "class Solution:\n  def scoreOfString(self, s: str) -> int:\n    score = 0\n    for char in range(len(s)-1):\n      score += abs(ord(s[char]) - ord(s[char+1]))\n    return score\n"
+        },
+        {
+          "path": "problems/lc-score-of-a-string/README.md",
+          "content": "# Score of a String\n\n**Difficulty:** Easy  |  **Acceptance:** 91.3%\n\n**Tags:** `String`\n\n## Problem\n\nYou are given a string s. The score of a string is defined as the sum of the absolute difference between the ASCII values of adjacent characters.\n\nReturn the score of s.\n\n&nbsp;\nExample 1:\n\nInput: s = \"hello\"\n\nOutput: 13\n\nExplanation:\n\nThe ASCII values of the characters in s are: 'h' = 104, 'e' = 101, 'l' = 108, 'o' = 111. So, the score of s would be |104 - 101| + |101 - 108| + |108 - 108| + |108 - 111| = 3 + 7 + 0 + 3 = 13.\n\nExample 2:\n\nInput: s = \"zaz\"\n\nOutput: 50\n\nExplanation:\n\nThe ASCII values of the characters in s are: 'z' = 122, 'a' = 97. So, the score of s would be |122 - 97| + |97 - 122| = 25 + 25 = 50.\n\n&nbsp;\nConstraints:\n\n\t2 <= s.length <= 100\n\ts consists only of lowercase English letters.\n\n## My Submission\n\n- Runtime: 39 ms\n- Memory: 16.4 MB\n"
+        }
+      ],
+      "timestamp": 1713449089000,
+      "runtime": "39 ms",
+      "memory": "16.4 MB",
+      "runtimePct": 1.3580000000000023,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given a string <code>s</code>. The <strong>score</strong> of a string is defined as the sum of the absolute difference between the <strong>ASCII</strong> values of adjacent characters.</p>\n\n<p>Return the <strong>score</strong> of<em> </em><code>s</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;hello&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">13</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The <strong>ASCII</strong> values of the characters in <code>s</code> are: <code>&#39;h&#39; = 104</code>, <code>&#39;e&#39; = 101</code>, <code>&#39;l&#39; = 108</code>, <code>&#39;o&#39; = 111</code>. So, the score of <code>s</code> would be <code>|104 - 101| + |101 - 108| + |108 - 108| + |108 - 111| = 3 + 7 + 0 + 3 = 13</code>.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;zaz&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">50</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The <strong>ASCII</strong> values of the characters in <code>s</code> are: <code>&#39;z&#39; = 122</code>, <code>&#39;a&#39; = 97</code>. So, the score of <code>s</code> would be <code>|122 - 97| + |97 - 122| = 25 + 25 = 50</code>.</p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>2 &lt;= s.length &lt;= 100</code></li>\n\t<li><code>s</code> consists only of lowercase English letters.</li>\n</ul>\n",
+      "hints": [
+        "Sum the difference between all the adjacent characters by just taking the absolute difference of their ASCII values."
+      ],
+      "acRate": 91.34938506842197,
+      "similar": null,
+      "hasSimilar": null,
+      "conflictPending": true,
+      "conflictCandidates": [
+        {
+          "id": "lc-score-of-a-string::1235776226",
+          "code": "class Solution:\n    def scoreOfString(self, s: str) -> int:\n        score = 0\n        for i in range(len(s)-1):\n            score += abs(ord(s[i]) - ord(s[i+1]))\n        return score",
+          "lang": {
+            "name": "Python3",
+            "ext": "py",
+            "slug": "python3"
+          },
+          "runtime": "32 ms",
+          "memory": "16.5 MB",
+          "runtimePct": 1.3580000000000023,
+          "memoryPct": 100,
+          "timestamp": 1713449268000,
+          "submissionId": 1235776226
+        }
+      ]
+    },
+    {
+      "id": "lc-score-of-a-string::1235776226",
+      "submissionId": 1235776226,
+      "platform": "leetcode",
+      "title": "Score of a String",
+      "titleSlug": "score-of-a-string",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "String"
+      ],
+      "topic": "String",
+      "code": "class Solution:\n    def scoreOfString(self, s: str) -> int:\n        score = 0\n        for i in range(len(s)-1):\n            score += abs(ord(s[i]) - ord(s[i+1]))\n        return score",
+      "readmeContent": "# Score of a String\n\n**Difficulty:** Easy  |  **Acceptance:** 91.3%\n\n**Tags:** `String`\n\n## Problem\n\nYou are given a string s. The score of a string is defined as the sum of the absolute difference between the ASCII values of adjacent characters.\n\nReturn the score of s.\n\n&nbsp;\nExample 1:\n\nInput: s = \"hello\"\n\nOutput: 13\n\nExplanation:\n\nThe ASCII values of the characters in s are: 'h' = 104, 'e' = 101, 'l' = 108, 'o' = 111. So, the score of s would be |104 - 101| + |101 - 108| + |108 - 108| + |108 - 111| = 3 + 7 + 0 + 3 = 13.\n\nExample 2:\n\nInput: s = \"zaz\"\n\nOutput: 50\n\nExplanation:\n\nThe ASCII values of the characters in s are: 'z' = 122, 'a' = 97. So, the score of s would be |122 - 97| + |97 - 122| = 25 + 25 = 50.\n\n&nbsp;\nConstraints:\n\n\t2 <= s.length <= 100\n\ts consists only of lowercase English letters.\n\n## My Submission\n\n- Runtime: 32 ms\n- Memory: 16.5 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-score-of-a-string/lc-score-of-a-string.py",
+          "content": "class Solution:\n    def scoreOfString(self, s: str) -> int:\n        score = 0\n        for i in range(len(s)-1):\n            score += abs(ord(s[i]) - ord(s[i+1]))\n        return score"
+        },
+        {
+          "path": "problems/lc-score-of-a-string/README.md",
+          "content": "# Score of a String\n\n**Difficulty:** Easy  |  **Acceptance:** 91.3%\n\n**Tags:** `String`\n\n## Problem\n\nYou are given a string s. The score of a string is defined as the sum of the absolute difference between the ASCII values of adjacent characters.\n\nReturn the score of s.\n\n&nbsp;\nExample 1:\n\nInput: s = \"hello\"\n\nOutput: 13\n\nExplanation:\n\nThe ASCII values of the characters in s are: 'h' = 104, 'e' = 101, 'l' = 108, 'o' = 111. So, the score of s would be |104 - 101| + |101 - 108| + |108 - 108| + |108 - 111| = 3 + 7 + 0 + 3 = 13.\n\nExample 2:\n\nInput: s = \"zaz\"\n\nOutput: 50\n\nExplanation:\n\nThe ASCII values of the characters in s are: 'z' = 122, 'a' = 97. So, the score of s would be |122 - 97| + |97 - 122| = 25 + 25 = 50.\n\n&nbsp;\nConstraints:\n\n\t2 <= s.length <= 100\n\ts consists only of lowercase English letters.\n\n## My Submission\n\n- Runtime: 32 ms\n- Memory: 16.5 MB\n"
+        }
+      ],
+      "timestamp": 1713449268000,
+      "runtime": "32 ms",
+      "memory": "16.5 MB",
+      "runtimePct": 1.3580000000000023,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given a string <code>s</code>. The <strong>score</strong> of a string is defined as the sum of the absolute difference between the <strong>ASCII</strong> values of adjacent characters.</p>\n\n<p>Return the <strong>score</strong> of<em> </em><code>s</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;hello&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">13</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The <strong>ASCII</strong> values of the characters in <code>s</code> are: <code>&#39;h&#39; = 104</code>, <code>&#39;e&#39; = 101</code>, <code>&#39;l&#39; = 108</code>, <code>&#39;o&#39; = 111</code>. So, the score of <code>s</code> would be <code>|104 - 101| + |101 - 108| + |108 - 108| + |108 - 111| = 3 + 7 + 0 + 3 = 13</code>.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;zaz&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">50</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The <strong>ASCII</strong> values of the characters in <code>s</code> are: <code>&#39;z&#39; = 122</code>, <code>&#39;a&#39; = 97</code>. So, the score of <code>s</code> would be <code>|122 - 97| + |97 - 122| = 25 + 25 = 50</code>.</p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>2 &lt;= s.length &lt;= 100</code></li>\n\t<li><code>s</code> consists only of lowercase English letters.</li>\n</ul>\n",
+      "hints": [
+        "Sum the difference between all the adjacent characters by just taking the absolute difference of their ASCII values."
+      ],
+      "acRate": 91.34938506842197,
+      "similar": null,
+      "hasSimilar": null,
+      "isDuplicate": true,
+      "duplicateOf": "lc-score-of-a-string::1235774141"
+    },
+    {
+      "id": "lc-score-of-a-string::1235831135",
+      "submissionId": 1235831135,
+      "platform": "leetcode",
+      "title": "Score of a String",
+      "titleSlug": "score-of-a-string",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Java",
+        "ext": "java",
+        "slug": "java"
+      },
+      "tags": [
+        "String"
+      ],
+      "topic": "String",
+      "code": "class Solution {\n    public int scoreOfString(String s) {\n        int score = 0;\n        for (int i = 0; i < s.length()-1; i++){\n            score += Math.abs((int)s.charAt(i)-(int)s.charAt(i+1));\n        }\n        return score;\n    }\n}",
+      "readmeContent": "# Score of a String\n\n**Difficulty:** Easy  |  **Acceptance:** 91.3%\n\n**Tags:** `String`\n\n## Problem\n\nYou are given a string s. The score of a string is defined as the sum of the absolute difference between the ASCII values of adjacent characters.\n\nReturn the score of s.\n\n&nbsp;\nExample 1:\n\nInput: s = \"hello\"\n\nOutput: 13\n\nExplanation:\n\nThe ASCII values of the characters in s are: 'h' = 104, 'e' = 101, 'l' = 108, 'o' = 111. So, the score of s would be |104 - 101| + |101 - 108| + |108 - 108| + |108 - 111| = 3 + 7 + 0 + 3 = 13.\n\nExample 2:\n\nInput: s = \"zaz\"\n\nOutput: 50\n\nExplanation:\n\nThe ASCII values of the characters in s are: 'z' = 122, 'a' = 97. So, the score of s would be |122 - 97| + |97 - 122| = 25 + 25 = 50.\n\n&nbsp;\nConstraints:\n\n\t2 <= s.length <= 100\n\ts consists only of lowercase English letters.\n\n## My Submission\n\n- Runtime: 1 ms\n- Memory: 42.5 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-score-of-a-string/lc-score-of-a-string.java",
+          "content": "class Solution {\n    public int scoreOfString(String s) {\n        int score = 0;\n        for (int i = 0; i < s.length()-1; i++){\n            score += Math.abs((int)s.charAt(i)-(int)s.charAt(i+1));\n        }\n        return score;\n    }\n}"
+        },
+        {
+          "path": "problems/lc-score-of-a-string/README.md",
+          "content": "# Score of a String\n\n**Difficulty:** Easy  |  **Acceptance:** 91.3%\n\n**Tags:** `String`\n\n## Problem\n\nYou are given a string s. The score of a string is defined as the sum of the absolute difference between the ASCII values of adjacent characters.\n\nReturn the score of s.\n\n&nbsp;\nExample 1:\n\nInput: s = \"hello\"\n\nOutput: 13\n\nExplanation:\n\nThe ASCII values of the characters in s are: 'h' = 104, 'e' = 101, 'l' = 108, 'o' = 111. So, the score of s would be |104 - 101| + |101 - 108| + |108 - 108| + |108 - 111| = 3 + 7 + 0 + 3 = 13.\n\nExample 2:\n\nInput: s = \"zaz\"\n\nOutput: 50\n\nExplanation:\n\nThe ASCII values of the characters in s are: 'z' = 122, 'a' = 97. So, the score of s would be |122 - 97| + |97 - 122| = 25 + 25 = 50.\n\n&nbsp;\nConstraints:\n\n\t2 <= s.length <= 100\n\ts consists only of lowercase English letters.\n\n## My Submission\n\n- Runtime: 1 ms\n- Memory: 42.5 MB\n"
+        }
+      ],
+      "timestamp": 1713453923000,
+      "runtime": "1 ms",
+      "memory": "42.5 MB",
+      "runtimePct": 99.8053,
+      "memoryPct": 99.80510000000001,
+      "problemStatement": "<p>You are given a string <code>s</code>. The <strong>score</strong> of a string is defined as the sum of the absolute difference between the <strong>ASCII</strong> values of adjacent characters.</p>\n\n<p>Return the <strong>score</strong> of<em> </em><code>s</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;hello&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">13</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The <strong>ASCII</strong> values of the characters in <code>s</code> are: <code>&#39;h&#39; = 104</code>, <code>&#39;e&#39; = 101</code>, <code>&#39;l&#39; = 108</code>, <code>&#39;o&#39; = 111</code>. So, the score of <code>s</code> would be <code>|104 - 101| + |101 - 108| + |108 - 108| + |108 - 111| = 3 + 7 + 0 + 3 = 13</code>.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;zaz&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">50</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The <strong>ASCII</strong> values of the characters in <code>s</code> are: <code>&#39;z&#39; = 122</code>, <code>&#39;a&#39; = 97</code>. So, the score of <code>s</code> would be <code>|122 - 97| + |97 - 122| = 25 + 25 = 50</code>.</p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>2 &lt;= s.length &lt;= 100</code></li>\n\t<li><code>s</code> consists only of lowercase English letters.</li>\n</ul>\n",
+      "hints": [
+        "Sum the difference between all the adjacent characters by just taking the absolute difference of their ASCII values."
+      ],
+      "acRate": 91.34938506842197,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-magic-squares-in-grid::1350291377",
+      "submissionId": 1350291377,
+      "platform": "leetcode",
+      "title": "Magic Squares In Grid",
+      "titleSlug": "magic-squares-in-grid",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Math",
+        "Hash Table",
+        "Matrix"
+      ],
+      "topic": "Math",
+      "code": "class Solution:\n    def numMagicSquaresInside(self, grid: List[List[int]]) -> int:\n        if len(grid) < 3 or len(grid[0]) < 3:\n            print(\"0\")\n        def is_magic(mag):\n            flatmag = [item for row in mag for item in row]\n            flatmag = [item for item in flatmag if 1 <= item <= 9]\n            if len(flatmag) != 9 or set(flatmag) != {1, 2, 3, 4, 5, 6, 7, 8, 9}:\n                return False\n            return (sum(mag[0]) == sum(mag[1]) == sum(mag[2]) == \n                    sum(mag[i][0] for i in range(3)) == \n                    sum(mag[i][1] for i in range(3)) == \n                    sum(mag[i][2] for i in range(3)) == \n                    mag[0][0] + mag[1][1] + mag[2][2] == \n                    mag[0][2] + mag[1][1] + mag[2][0])\n        \n        rowlen = len(grid)\n        collen = len(grid[0])\n        magic_count = 0\n        \n        for row in range(rowlen - 2):\n            for col in range(collen - 2):\n                mag = [grid[row+i][col:col+3] for i in range(3)]\n                if is_magic(mag):\n                    magic_count += 1\n        \n        return magic_count",
+      "readmeContent": "# Magic Squares In Grid\n\n**Difficulty:** Medium  |  **Acceptance:** 55.2%\n\n**Tags:** `Array`, `Hash Table`, `Math`, `Matrix`\n\n## Problem\n\nA 3 x 3 magic square is a 3 x 3 grid filled with distinct numbers from 1 to 9 such that each row, column, and both diagonals all have the same sum.\n\nGiven a row x col grid of integers, how many 3 x 3 magic square subgrids are there?\n\nNote: while a magic square can only contain numbers from 1 to 9, grid may contain numbers up to 15.\n\n&nbsp;\nExample 1:\n\nInput: grid = [[4,3,8,4],[9,5,1,9],[2,7,6,2]]\nOutput: 1\nExplanation: \nThe following subgrid is a 3 x 3 magic square:\n\nwhile this one is not:\n\nIn total, there is only one magic square inside the given grid.\n\nExample 2:\n\nInput: grid = [[8]]\nOutput: 0\n\n&nbsp;\nConstraints:\n\n\trow == grid.length\n\tcol == grid[i].length\n\t1 <= row, col <= 10\n\t0 <= grid[i][j] <= 15\n\n## My Submission\n\n- Runtime: 45 ms\n- Memory: 16.5 MB\n\n## Similar Problems\n\n- [Largest Magic Square](https://leetcode.com/problems/largest-magic-square/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-magic-squares-in-grid/lc-magic-squares-in-grid.py",
+          "content": "class Solution:\n    def numMagicSquaresInside(self, grid: List[List[int]]) -> int:\n        if len(grid) < 3 or len(grid[0]) < 3:\n            print(\"0\")\n        def is_magic(mag):\n            flatmag = [item for row in mag for item in row]\n            flatmag = [item for item in flatmag if 1 <= item <= 9]\n            if len(flatmag) != 9 or set(flatmag) != {1, 2, 3, 4, 5, 6, 7, 8, 9}:\n                return False\n            return (sum(mag[0]) == sum(mag[1]) == sum(mag[2]) == \n                    sum(mag[i][0] for i in range(3)) == \n                    sum(mag[i][1] for i in range(3)) == \n                    sum(mag[i][2] for i in range(3)) == \n                    mag[0][0] + mag[1][1] + mag[2][2] == \n                    mag[0][2] + mag[1][1] + mag[2][0])\n        \n        rowlen = len(grid)\n        collen = len(grid[0])\n        magic_count = 0\n        \n        for row in range(rowlen - 2):\n            for col in range(collen - 2):\n                mag = [grid[row+i][col:col+3] for i in range(3)]\n                if is_magic(mag):\n                    magic_count += 1\n        \n        return magic_count"
+        },
+        {
+          "path": "problems/lc-magic-squares-in-grid/README.md",
+          "content": "# Magic Squares In Grid\n\n**Difficulty:** Medium  |  **Acceptance:** 55.2%\n\n**Tags:** `Array`, `Hash Table`, `Math`, `Matrix`\n\n## Problem\n\nA 3 x 3 magic square is a 3 x 3 grid filled with distinct numbers from 1 to 9 such that each row, column, and both diagonals all have the same sum.\n\nGiven a row x col grid of integers, how many 3 x 3 magic square subgrids are there?\n\nNote: while a magic square can only contain numbers from 1 to 9, grid may contain numbers up to 15.\n\n&nbsp;\nExample 1:\n\nInput: grid = [[4,3,8,4],[9,5,1,9],[2,7,6,2]]\nOutput: 1\nExplanation: \nThe following subgrid is a 3 x 3 magic square:\n\nwhile this one is not:\n\nIn total, there is only one magic square inside the given grid.\n\nExample 2:\n\nInput: grid = [[8]]\nOutput: 0\n\n&nbsp;\nConstraints:\n\n\trow == grid.length\n\tcol == grid[i].length\n\t1 <= row, col <= 10\n\t0 <= grid[i][j] <= 15\n\n## My Submission\n\n- Runtime: 45 ms\n- Memory: 16.5 MB\n\n## Similar Problems\n\n- [Largest Magic Square](https://leetcode.com/problems/largest-magic-square/) — Medium\n"
+        }
+      ],
+      "timestamp": 1723228427000,
+      "runtime": "45 ms",
+      "memory": "16.5 MB",
+      "runtimePct": 6.493499999999996,
+      "memoryPct": 100,
+      "problemStatement": "<p>A <code>3 x 3</code> <strong>magic square</strong> is a <code>3 x 3</code> grid filled with distinct numbers <strong>from </strong>1<strong> to </strong>9 such that each row, column, and both diagonals all have the same sum.</p>\n\n<p>Given a <code>row x col</code> <code>grid</code> of integers, how many <code>3 x 3</code> magic square subgrids are there?</p>\n\n<p>Note: while a magic square can only contain numbers from 1 to 9, <code>grid</code> may contain numbers up to 15.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/09/11/magic_main.jpg\" style=\"width: 322px; height: 242px;\" />\n<pre>\n<strong>Input:</strong> grid = [[4,3,8,4],[9,5,1,9],[2,7,6,2]]\n<strong>Output:</strong> 1\n<strong>Explanation: </strong>\nThe following subgrid is a 3 x 3 magic square:\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/09/11/magic_valid.jpg\" style=\"width: 242px; height: 242px;\" />\nwhile this one is not:\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/09/11/magic_invalid.jpg\" style=\"width: 242px; height: 242px;\" />\nIn total, there is only one magic square inside the given grid.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> grid = [[8]]\n<strong>Output:</strong> 0\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>row == grid.length</code></li>\n\t<li><code>col == grid[i].length</code></li>\n\t<li><code>1 &lt;= row, col &lt;= 10</code></li>\n\t<li><code>0 &lt;= grid[i][j] &lt;= 15</code></li>\n</ul>\n",
+      "hints": null,
+      "acRate": 55.16373828890111,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "largest-magic-square",
+          "title": "Largest Magic Square",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "**1. Complexity**\n*   **Time:** $O(R \\times C)$, where $R$ and $C$ are grid dimensions. We iterate through each possible $3 \\times 3$ subgrid exactly once, performing constant-time operations inside.\n*   **Space:** $O(1)$. Although subgrids are copied, they are of fixed size ($3 \\times 3$), requiring constant auxiliary space.\n\n**2. Correctness**\nThe logic is correct. It properly validates the range $[1, 9]$, uniqueness, and all 8 sum properties.\n*   **Edge Case:** If the grid is smaller than $3 \\times 3$, the code returns `magic_count` (0), which is correct. However, the `print(\"0\")` statement is unnecessary and doesn't stop execution (though the loops naturally won't run).\n\n**3. Concrete Optimization**\n**Center Property:** In any $3 \\times 3$ magic square of numbers 1–9, the center element **must** be 5. You can skip the entire validation if `grid[row+1][col+1] != 5`. Additionally, since the magic sum must be 15, you can replace the chained equality with `== 15` for slight efficiency.\n\n**4. Key Algorithmic Pattern**\n**Sliding Window / Brute Force:** It uses a fixed-size ($3 \\times 3$) sliding window to check every possible subgrid."
+    },
+    {
+      "id": "lc-palindrome-number",
+      "submissionId": 1350698493,
+      "platform": "leetcode",
+      "title": "Palindrome Number",
+      "titleSlug": "palindrome-number",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Math"
+      ],
+      "topic": "Math",
+      "code": "class Solution:\n    def isPalindrome(self, x: int) -> bool:\n        if x < 0:\n            return False\n        x = str(x)\n        if x == x[::-1]:\n            return True\n        else:\n            return False",
+      "readmeContent": "# Palindrome Number\n\n**Difficulty:** Easy  |  **Acceptance:** 60.5%\n\n**Tags:** `Math`\n\n## Problem\n\nGiven an integer x, return true if x is a palindrome, and false otherwise.\n\n&nbsp;\nExample 1:\n\nInput: x = 121\nOutput: true\nExplanation: 121 reads as 121 from left to right and from right to left.\n\nExample 2:\n\nInput: x = -121\nOutput: false\nExplanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.\n\nExample 3:\n\nInput: x = 10\nOutput: false\nExplanation: Reads 01 from right to left. Therefore it is not a palindrome.\n\n&nbsp;\nConstraints:\n\n\t-231&nbsp;<= x <= 231&nbsp;- 1\n\n&nbsp;\nFollow up: Could you solve it without converting the integer to a string?\n\n## My Submission\n\n- Runtime: 57 ms\n- Memory: 16.5 MB\n\n## Similar Problems\n\n- [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/) — Easy\n- [Find Palindrome With Fixed Length](https://leetcode.com/problems/find-palindrome-with-fixed-length/) — Medium\n- [Strictly Palindromic Number](https://leetcode.com/problems/strictly-palindromic-number/) — Medium\n- [  Count Symmetric Integers](https://leetcode.com/problems/count-symmetric-integers/) — Easy\n- [Find the Count of Good Integers](https://leetcode.com/problems/find-the-count-of-good-integers/) — Hard\n",
+      "files": [
+        {
+          "path": "problems/palindrome-number/palindrome-number.py",
+          "content": "class Solution:\n    def isPalindrome(self, x: int) -> bool:\n        if x < 0:\n            return False\n        x = str(x)\n        if x == x[::-1]:\n            return True\n        else:\n            return False"
+        },
+        {
+          "path": "problems/palindrome-number/README.md",
+          "content": "# Palindrome Number\n\n**Difficulty:** Easy  |  **Acceptance:** 60.5%\n\n**Tags:** `Math`\n\n## Problem\n\nGiven an integer x, return true if x is a palindrome, and false otherwise.\n\n&nbsp;\nExample 1:\n\nInput: x = 121\nOutput: true\nExplanation: 121 reads as 121 from left to right and from right to left.\n\nExample 2:\n\nInput: x = -121\nOutput: false\nExplanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.\n\nExample 3:\n\nInput: x = 10\nOutput: false\nExplanation: Reads 01 from right to left. Therefore it is not a palindrome.\n\n&nbsp;\nConstraints:\n\n\t-231&nbsp;<= x <= 231&nbsp;- 1\n\n&nbsp;\nFollow up: Could you solve it without converting the integer to a string?\n\n## My Submission\n\n- Runtime: 57 ms\n- Memory: 16.5 MB\n\n## Similar Problems\n\n- [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/) — Easy\n- [Find Palindrome With Fixed Length](https://leetcode.com/problems/find-palindrome-with-fixed-length/) — Medium\n- [Strictly Palindromic Number](https://leetcode.com/problems/strictly-palindromic-number/) — Medium\n- [  Count Symmetric Integers](https://leetcode.com/problems/count-symmetric-integers/) — Easy\n- [Find the Count of Good Integers](https://leetcode.com/problems/find-the-count-of-good-integers/) — Hard\n"
+        }
+      ],
+      "timestamp": 1723273055000,
+      "runtime": "57 ms",
+      "memory": "16.5 MB",
+      "runtimePct": 5.443899999999994,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an integer <code>x</code>, return <code>true</code><em> if </em><code>x</code><em> is a </em><span data-keyword=\"palindrome-integer\"><em><strong>palindrome</strong></em></span><em>, and </em><code>false</code><em> otherwise</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> x = 121\n<strong>Output:</strong> true\n<strong>Explanation:</strong> 121 reads as 121 from left to right and from right to left.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> x = -121\n<strong>Output:</strong> false\n<strong>Explanation:</strong> From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> x = 10\n<strong>Output:</strong> false\n<strong>Explanation:</strong> Reads 01 from right to left. Therefore it is not a palindrome.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>-2<sup>31</sup>&nbsp;&lt;= x &lt;= 2<sup>31</sup>&nbsp;- 1</code></li>\n</ul>\n\n<p>&nbsp;</p>\n<strong>Follow up:</strong> Could you solve it without converting the integer to a string?",
+      "hints": [
+        "Beware of overflow when you reverse the integer."
+      ],
+      "acRate": 60.52956267189097,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "palindrome-linked-list",
+          "title": "Palindrome Linked List",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "find-palindrome-with-fixed-length",
+          "title": "Find Palindrome With Fixed Length",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "strictly-palindromic-number",
+          "title": "Strictly Palindromic Number",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "count-symmetric-integers",
+          "title": "  Count Symmetric Integers",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "find-the-count-of-good-integers",
+          "title": "Find the Count of Good Integers",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "find-the-largest-palindrome-divisible-by-k",
+          "title": "Find the Largest Palindrome Divisible by K",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** **$O(d)$**, where $d$ is the number of digits in the integer ($\\approx \\log_{10}n$). String conversion and slicing both traverse the digits once.\n*   **Space Complexity:** **$O(d)$**. Converting the integer to a string and creating its reverse requires memory proportional to the number of digits.\n\n### 2. Correctness\nThe code is **correct**. \n*   **Edge Cases:** Negative numbers are handled (returns `False`). Single digits and zero are handled (returns `True`). Numbers ending in zero (e.g., 10) correctly return `False`.\n\n### 3. Optimization\nTo achieve **$O(1)$ space**, avoid string conversion. Revert only the **half** of the integer mathematically.\n*   **Logic:** Repeatedly use `x % 10` and `x // 10` to build a reversed number until the reversed part is greater than or equal to the remaining part. This also avoids potential integer overflow in languages other than Python.\n\n### 4. Key Algorithmic Pattern\n**String Manipulation / Reversal.** The solution relies on Python's slicing syntax (`[::-1]`) to perform a sequence reversal."
+    },
+    {
+      "id": "lc-string-to-integer-atoi",
+      "submissionId": 1351792212,
+      "platform": "leetcode",
+      "title": "String to Integer (atoi)",
+      "titleSlug": "string-to-integer-atoi",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "String"
+      ],
+      "topic": "String",
+      "code": "class Solution:\n    def myAtoi(self, s: str) -> int:\n        neg = False\n        num = 0\n        if not s:\n            return 0\n        s = s.lstrip()\n        if not s:\n            return 0\n        if s[0] is '-':\n            neg = True\n            s = s[1:]\n        elif s[0] == '+':\n            s = s[1:]\n        if not s:\n            return 0\n        for i in range(len(s)):\n            if s[i] != '0':\n                s = s[i:]\n                if not s:\n                    return 0\n                break\n            \n        for i, c in enumerate(s):\n            if '0' <= c <= '9':\n                num = num * 10 + (ord(c) - ord('0'))\n            \n            else:\n                break\n        \n\n        if neg:\n            num = -num\n        \n        if num > (2**31 -1):\n            num = 2**31 -1\n        elif num < -2**31:\n            num = -2**31\n        \n        return num\n            \n            ",
+      "readmeContent": "# String to Integer (atoi)\n\n**Difficulty:** Medium  |  **Acceptance:** 21.0%\n\n**Tags:** `String`\n\n## Problem\n\nImplement the myAtoi(string s) function, which converts a string to a 32-bit signed integer.\n\nThe algorithm for myAtoi(string s) is as follows:\n\n\tWhitespace: Ignore any leading whitespace (\" \").\n\tSignedness: Determine the sign by checking if the next character is '-' or '+', assuming positivity if neither present.\n\tConversion: Read the integer by skipping leading zeros&nbsp;until a non-digit character is encountered or the end of the string is reached. If no digits were read, then the result is 0.\n\tRounding: If the integer is out of the 32-bit signed integer range [-231, 231 - 1], then round the integer to remain in the range. Specifically, integers less than -231 should be rounded to -231, and integers greater than 231 - 1 should be rounded to 231 - 1.\n\nReturn the integer as the final result.\n\n&nbsp;\nExample 1:\n\nInput: s = \"42\"\n\nOutput: 42\n\nExplanation:\n\nThe underlined characters are what is read in and the caret is the current reader position.\nStep 1: \"42\" (no characters read because there is no leading whitespace)\n         ^\nStep 2: \"42\" (no characters read because there is neither a '-' nor '+')\n         ^\nStep 3: \"42\" (\"42\" is read in)\n           ^\n\nExample 2:\n\nInput: s = \" -042\"\n\nOutput: -42\n\nExplanation:\n\nStep 1: \"   -042\" (leading whitespace is read and ignored)\n            ^\nStep 2: \"   -042\" ('-' is read, so the result should be negative)\n             ^\nStep 3: \"   -042\" (\"042\" is read in, leading zeros ignored in the result)\n               ^\n\nExample 3:\n\nInput: s = \"1337c0d3\"\n\nOutput: 1337\n\nExplanation:\n\nStep 1: \"1337c0d3\" (no characters read because there is no leading whitespace)\n         ^\nStep 2: \"1337c0d3\" (no characters read because there is neither a '-' nor '+')\n         ^\nStep 3: \"1337c0d3\" (\"1337\" is read in; reading stops because the next character is a non-digit)\n             ^\n\nExample 4:\n\nInput: s = \"0-1\"\n\nOutput: 0\n\nExplanation:\n\nStep 1: \"0-1\" (no characters read because there is no leading whitespace)\n         ^\nStep 2: \"0-1\" (no characters read because there is neither a '-' nor '+')\n         ^\nStep 3: \"0-1\" (\"0\" is read in; reading stops because the next character is a non-digit)\n          ^\n\nExample 5:\n\nInput: s = \"words and 987\"\n\nOutput: 0\n\nExplanation:\n\nReading stops at the first non-digit character 'w'.\n\n&nbsp;\nConstraints:\n\n\t0 <= s.length <= 200\n\ts consists of English letters (lower-case and upper-case), digits (0-9), ' ', '+', '-', and '.'.\n\n## My Submission\n\n- Runtime: 39 ms\n- Memory: 16.7 MB\n\n## Similar Problems\n\n- [Reverse Integer](https://leetcode.com/problems/reverse-integer/) — Medium\n- [Valid Number](https://leetcode.com/problems/valid-number/) — Hard\n- [Check if Numbers Are Ascending in a Sentence](https://leetcode.com/problems/check-if-numbers-are-ascending-in-a-sentence/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/string-to-integer-atoi/string-to-integer-atoi.py",
+          "content": "class Solution:\n    def myAtoi(self, s: str) -> int:\n        neg = False\n        num = 0\n        if not s:\n            return 0\n        s = s.lstrip()\n        if not s:\n            return 0\n        if s[0] is '-':\n            neg = True\n            s = s[1:]\n        elif s[0] == '+':\n            s = s[1:]\n        if not s:\n            return 0\n        for i in range(len(s)):\n            if s[i] != '0':\n                s = s[i:]\n                if not s:\n                    return 0\n                break\n            \n        for i, c in enumerate(s):\n            if '0' <= c <= '9':\n                num = num * 10 + (ord(c) - ord('0'))\n            \n            else:\n                break\n        \n\n        if neg:\n            num = -num\n        \n        if num > (2**31 -1):\n            num = 2**31 -1\n        elif num < -2**31:\n            num = -2**31\n        \n        return num\n            \n            "
+        },
+        {
+          "path": "problems/string-to-integer-atoi/README.md",
+          "content": "# String to Integer (atoi)\n\n**Difficulty:** Medium  |  **Acceptance:** 21.0%\n\n**Tags:** `String`\n\n## Problem\n\nImplement the myAtoi(string s) function, which converts a string to a 32-bit signed integer.\n\nThe algorithm for myAtoi(string s) is as follows:\n\n\tWhitespace: Ignore any leading whitespace (\" \").\n\tSignedness: Determine the sign by checking if the next character is '-' or '+', assuming positivity if neither present.\n\tConversion: Read the integer by skipping leading zeros&nbsp;until a non-digit character is encountered or the end of the string is reached. If no digits were read, then the result is 0.\n\tRounding: If the integer is out of the 32-bit signed integer range [-231, 231 - 1], then round the integer to remain in the range. Specifically, integers less than -231 should be rounded to -231, and integers greater than 231 - 1 should be rounded to 231 - 1.\n\nReturn the integer as the final result.\n\n&nbsp;\nExample 1:\n\nInput: s = \"42\"\n\nOutput: 42\n\nExplanation:\n\nThe underlined characters are what is read in and the caret is the current reader position.\nStep 1: \"42\" (no characters read because there is no leading whitespace)\n         ^\nStep 2: \"42\" (no characters read because there is neither a '-' nor '+')\n         ^\nStep 3: \"42\" (\"42\" is read in)\n           ^\n\nExample 2:\n\nInput: s = \" -042\"\n\nOutput: -42\n\nExplanation:\n\nStep 1: \"   -042\" (leading whitespace is read and ignored)\n            ^\nStep 2: \"   -042\" ('-' is read, so the result should be negative)\n             ^\nStep 3: \"   -042\" (\"042\" is read in, leading zeros ignored in the result)\n               ^\n\nExample 3:\n\nInput: s = \"1337c0d3\"\n\nOutput: 1337\n\nExplanation:\n\nStep 1: \"1337c0d3\" (no characters read because there is no leading whitespace)\n         ^\nStep 2: \"1337c0d3\" (no characters read because there is neither a '-' nor '+')\n         ^\nStep 3: \"1337c0d3\" (\"1337\" is read in; reading stops because the next character is a non-digit)\n             ^\n\nExample 4:\n\nInput: s = \"0-1\"\n\nOutput: 0\n\nExplanation:\n\nStep 1: \"0-1\" (no characters read because there is no leading whitespace)\n         ^\nStep 2: \"0-1\" (no characters read because there is neither a '-' nor '+')\n         ^\nStep 3: \"0-1\" (\"0\" is read in; reading stops because the next character is a non-digit)\n          ^\n\nExample 5:\n\nInput: s = \"words and 987\"\n\nOutput: 0\n\nExplanation:\n\nReading stops at the first non-digit character 'w'.\n\n&nbsp;\nConstraints:\n\n\t0 <= s.length <= 200\n\ts consists of English letters (lower-case and upper-case), digits (0-9), ' ', '+', '-', and '.'.\n\n## My Submission\n\n- Runtime: 39 ms\n- Memory: 16.7 MB\n\n## Similar Problems\n\n- [Reverse Integer](https://leetcode.com/problems/reverse-integer/) — Medium\n- [Valid Number](https://leetcode.com/problems/valid-number/) — Hard\n- [Check if Numbers Are Ascending in a Sentence](https://leetcode.com/problems/check-if-numbers-are-ascending-in-a-sentence/) — Easy\n"
+        }
+      ],
+      "timestamp": 1723360999000,
+      "runtime": "39 ms",
+      "memory": "16.7 MB",
+      "runtimePct": 5.010099999999995,
+      "memoryPct": 100,
+      "problemStatement": "<p>Implement the <code>myAtoi(string s)</code> function, which converts a string to a 32-bit signed integer.</p>\n\n<p>The algorithm for <code>myAtoi(string s)</code> is as follows:</p>\n\n<ol>\n\t<li><strong>Whitespace</strong>: Ignore any leading whitespace (<code>&quot; &quot;</code>).</li>\n\t<li><strong>Signedness</strong>: Determine the sign by checking if the next character is <code>&#39;-&#39;</code> or <code>&#39;+&#39;</code>, assuming positivity if neither present.</li>\n\t<li><strong>Conversion</strong>: Read the integer by skipping leading zeros&nbsp;until a non-digit character is encountered or the end of the string is reached. If no digits were read, then the result is 0.</li>\n\t<li><strong>Rounding</strong>: If the integer is out of the 32-bit signed integer range <code>[-2<sup>31</sup>, 2<sup>31</sup> - 1]</code>, then round the integer to remain in the range. Specifically, integers less than <code>-2<sup>31</sup></code> should be rounded to <code>-2<sup>31</sup></code>, and integers greater than <code>2<sup>31</sup> - 1</code> should be rounded to <code>2<sup>31</sup> - 1</code>.</li>\n</ol>\n\n<p>Return the integer as the final result.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;42&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">42</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<pre>\nThe underlined characters are what is read in and the caret is the current reader position.\nStep 1: &quot;42&quot; (no characters read because there is no leading whitespace)\n         ^\nStep 2: &quot;42&quot; (no characters read because there is neither a &#39;-&#39; nor &#39;+&#39;)\n         ^\nStep 3: &quot;<u>42</u>&quot; (&quot;42&quot; is read in)\n           ^\n</pre>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot; -042&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">-42</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<pre>\nStep 1: &quot;<u>   </u>-042&quot; (leading whitespace is read and ignored)\n            ^\nStep 2: &quot;   <u>-</u>042&quot; (&#39;-&#39; is read, so the result should be negative)\n             ^\nStep 3: &quot;   -<u>042</u>&quot; (&quot;042&quot; is read in, leading zeros ignored in the result)\n               ^\n</pre>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;1337c0d3&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">1337</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<pre>\nStep 1: &quot;1337c0d3&quot; (no characters read because there is no leading whitespace)\n         ^\nStep 2: &quot;1337c0d3&quot; (no characters read because there is neither a &#39;-&#39; nor &#39;+&#39;)\n         ^\nStep 3: &quot;<u>1337</u>c0d3&quot; (&quot;1337&quot; is read in; reading stops because the next character is a non-digit)\n             ^\n</pre>\n</div>\n\n<p><strong class=\"example\">Example 4:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;0-1&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">0</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<pre>\nStep 1: &quot;0-1&quot; (no characters read because there is no leading whitespace)\n         ^\nStep 2: &quot;0-1&quot; (no characters read because there is neither a &#39;-&#39; nor &#39;+&#39;)\n         ^\nStep 3: &quot;<u>0</u>-1&quot; (&quot;0&quot; is read in; reading stops because the next character is a non-digit)\n          ^\n</pre>\n</div>\n\n<p><strong class=\"example\">Example 5:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;words and 987&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">0</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>Reading stops at the first non-digit character &#39;w&#39;.</p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>0 &lt;= s.length &lt;= 200</code></li>\n\t<li><code>s</code> consists of English letters (lower-case and upper-case), digits (<code>0-9</code>), <code>&#39; &#39;</code>, <code>&#39;+&#39;</code>, <code>&#39;-&#39;</code>, and <code>&#39;.&#39;</code>.</li>\n</ul>\n",
+      "hints": [],
+      "acRate": 20.956894461170243,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "reverse-integer",
+          "title": "Reverse Integer",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "valid-number",
+          "title": "Valid Number",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "check-if-numbers-are-ascending-in-a-sentence",
+          "title": "Check if Numbers Are Ascending in a Sentence",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "### 1. Complexity\n*   **Time:** $O(n)$, where $n$ is the length of the string. The string is traversed a few times (strip, sign check, zero check, and digit conversion).\n*   **Space:** $O(n)$. In Python, `s.lstrip()` and slicing (`s[1:]`) create new string objects, consuming linear space relative to the input length.\n\n### 2. Correctness\n*   **`is` vs `==`**: The code uses `s[0] is '-'`. In Python, `is` checks for identity, not equality. While it may work for interned characters, it is a bug-prone practice; `==` should be used.\n*   **Redundancy**: The manual loop to strip leading zeros is unnecessary. The conversion logic `num = num * 10 + digit` inherently handles leading zeros.\n*   **Empty Checks**: Repeated `if not s` checks are correct but make the code verbose.\n\n### 3. Optimization\n**Avoid String Slicing**: Instead of creating new string copies with `lstrip()` and `s[1:]`, use a single **pointer/index** to traverse the string. This reduces auxiliary space complexity from **$O(n)$ to $O(1)$**.\n\n### 4. Key Algorithmic Pattern\n**Linear Scanning / Simulation**: The problem is solved by sequentially simulating the rules provided (trimming, sign detection, digit processing, and clamping)."
+    },
+    {
+      "id": "lc-return-length-of-arguments-passed",
+      "submissionId": 1351798778,
+      "platform": "leetcode",
+      "title": "Return Length of Arguments Passed",
+      "titleSlug": "return-length-of-arguments-passed",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "JavaScript",
+        "ext": "js",
+        "slug": "javascript"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "/**\n * @param {...(null|boolean|number|string|Array|Object)} args\n * @return {number}\n */\nvar argumentsLength = function(...args) {\n    return args.length;\n};\n\n/**\n * argumentsLength(1, 2, 3); // 3\n */",
+      "readmeContent": "# Return Length of Arguments Passed\n\n**Difficulty:** Easy  |  **Acceptance:** 94.5%\n\n**Tags:** —\n\n## Problem\n\nWrite a function&nbsp;argumentsLength that returns the count of arguments passed to it.\n&nbsp;\nExample 1:\n\nInput: args = [5]\nOutput: 1\nExplanation:\nargumentsLength(5); // 1\n\nOne value was passed to the function so it should return 1.\n\nExample 2:\n\nInput: args = [{}, null, \"3\"]\nOutput: 3\nExplanation: \nargumentsLength({}, null, \"3\"); // 3\n\nThree values were passed to the function so it should return 3.\n\n&nbsp;\nConstraints:\n\n\targs&nbsp;is a valid JSON array\n\t0 <= args.length <= 100\n\n## My Submission\n\n- Runtime: 52 ms\n- Memory: 48.7 MB\n",
+      "files": [
+        {
+          "path": "problems/return-length-of-arguments-passed/return-length-of-arguments-passed.js",
+          "content": "/**\n * @param {...(null|boolean|number|string|Array|Object)} args\n * @return {number}\n */\nvar argumentsLength = function(...args) {\n    return args.length;\n};\n\n/**\n * argumentsLength(1, 2, 3); // 3\n */"
+        },
+        {
+          "path": "problems/return-length-of-arguments-passed/README.md",
+          "content": "# Return Length of Arguments Passed\n\n**Difficulty:** Easy  |  **Acceptance:** 94.5%\n\n**Tags:** —\n\n## Problem\n\nWrite a function&nbsp;argumentsLength that returns the count of arguments passed to it.\n&nbsp;\nExample 1:\n\nInput: args = [5]\nOutput: 1\nExplanation:\nargumentsLength(5); // 1\n\nOne value was passed to the function so it should return 1.\n\nExample 2:\n\nInput: args = [{}, null, \"3\"]\nOutput: 3\nExplanation: \nargumentsLength({}, null, \"3\"); // 3\n\nThree values were passed to the function so it should return 3.\n\n&nbsp;\nConstraints:\n\n\targs&nbsp;is a valid JSON array\n\t0 <= args.length <= 100\n\n## My Submission\n\n- Runtime: 52 ms\n- Memory: 48.7 MB\n"
+        }
+      ],
+      "timestamp": 1723361457000,
+      "runtime": "52 ms",
+      "memory": "48.7 MB",
+      "runtimePct": 10.593999999999944,
+      "memoryPct": 100,
+      "problemStatement": "Write a function&nbsp;<code>argumentsLength</code> that returns the count of arguments passed to it.\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> args = [5]\n<strong>Output:</strong> 1\n<strong>Explanation:</strong>\nargumentsLength(5); // 1\n\nOne value was passed to the function so it should return 1.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> args = [{}, null, &quot;3&quot;]\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> \nargumentsLength({}, null, &quot;3&quot;); // 3\n\nThree values were passed to the function so it should return 3.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>args</code>&nbsp;is a valid JSON array</li>\n\t<li><code>0 &lt;= args.length &lt;= 100</code></li>\n</ul>\n",
+      "hints": [],
+      "acRate": 94.4793560600154,
+      "similar": null,
+      "hasSimilar": null,
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(1)$. Accessing the `length` property of an array is a constant time operation.\n*   **Space Complexity:** $O(n)$. The rest parameter syntax (`...args`) spreads the arguments into a new array, requiring space proportional to the number of arguments passed.\n\n### 2. Correctness\nThe code is **fully correct**. It adheres to ES6 standards and correctly handles:\n*   **Zero arguments:** Returns `0`.\n*   **Mixed types:** Correctly counts `null`, `undefined`, objects, and primitives.\n*   **Large argument counts:** Limited only by the JavaScript engine's stack/memory limits.\n\n### 3. Optimization\nTo optimize **space complexity** from $O(n)$ to $O(1)$, use the legacy `arguments` object. This avoids the allocation of a new array:\n```javascript\nvar argumentsLength = function() {\n    return arguments.length;\n};\n```\n*Note: In modern engines, the performance difference is negligible for small inputs, but the `arguments` object exists by default without extra allocation.*\n\n### 4. Key Algorithmic Pattern\n**Rest Parameters (Variadic Function):** The pattern of using `...args` to capture an indefinite number of arguments into a single array structure."
+    },
+    {
+      "id": "lc-add-two-numbers::1351959711",
+      "submissionId": 1351959711,
+      "platform": "leetcode",
+      "title": "Add Two Numbers",
+      "titleSlug": "add-two-numbers",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Linked List",
+        "Math",
+        "Recursion"
+      ],
+      "topic": "Recursion",
+      "code": "from typing import Optional\n\n# Definition for singly-linked list.\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\nclass Solution:\n    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:\n\n        dummy_head = ListNode(0)\n        current = dummy_head\n        carry = 0\n        \n\n        p1 = l1\n        p2 = l2\n        \n\n        while p1 is not None or p2 is not None or carry:\n\n            val1 = p1.val if p1 else 0\n            val2 = p2.val if p2 else 0\n            \n\n            total = val1 + val2 + carry\n            carry = total // 10\n            new_digit = total % 10\n            \n\n            current.next = ListNode(new_digit)\n            current = current.next\n            \n\n            if p1:\n                p1 = p1.next\n            if p2:\n                p2 = p2.next\n        \n\n        return dummy_head.next\n",
+      "readmeContent": "# Add Two Numbers\n\n**Difficulty:** Medium  |  **Acceptance:** 48.4%\n\n**Tags:** `Linked List`, `Math`, `Recursion`\n\n## Problem\n\nYou are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum&nbsp;as a linked list.\n\nYou may assume the two numbers do not contain any leading zero, except the number 0 itself.\n\n&nbsp;\nExample 1:\n\nInput: l1 = [2,4,3], l2 = [5,6,4]\nOutput: [7,0,8]\nExplanation: 342 + 465 = 807.\n\nExample 2:\n\nInput: l1 = [0], l2 = [0]\nOutput: [0]\n\nExample 3:\n\nInput: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]\nOutput: [8,9,9,9,0,0,0,1]\n\n&nbsp;\nConstraints:\n\n\tThe number of nodes in each linked list is in the range [1, 100].\n\t0 <= Node.val <= 9\n\tIt is guaranteed that the list represents a number that does not have leading zeros.\n\n## My Submission\n\n- Runtime: 50 ms\n- Memory: 16.5 MB\n\n## Similar Problems\n\n- [Multiply Strings](https://leetcode.com/problems/multiply-strings/) — Medium\n- [Add Binary](https://leetcode.com/problems/add-binary/) — Easy\n- [Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers/) — Medium\n- [Add Strings](https://leetcode.com/problems/add-strings/) — Easy\n- [Add Two Numbers II](https://leetcode.com/problems/add-two-numbers-ii/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-add-two-numbers/lc-add-two-numbers.py",
+          "content": "from typing import Optional\n\n# Definition for singly-linked list.\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\nclass Solution:\n    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:\n\n        dummy_head = ListNode(0)\n        current = dummy_head\n        carry = 0\n        \n\n        p1 = l1\n        p2 = l2\n        \n\n        while p1 is not None or p2 is not None or carry:\n\n            val1 = p1.val if p1 else 0\n            val2 = p2.val if p2 else 0\n            \n\n            total = val1 + val2 + carry\n            carry = total // 10\n            new_digit = total % 10\n            \n\n            current.next = ListNode(new_digit)\n            current = current.next\n            \n\n            if p1:\n                p1 = p1.next\n            if p2:\n                p2 = p2.next\n        \n\n        return dummy_head.next\n"
+        },
+        {
+          "path": "problems/lc-add-two-numbers/README.md",
+          "content": "# Add Two Numbers\n\n**Difficulty:** Medium  |  **Acceptance:** 48.4%\n\n**Tags:** `Linked List`, `Math`, `Recursion`\n\n## Problem\n\nYou are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum&nbsp;as a linked list.\n\nYou may assume the two numbers do not contain any leading zero, except the number 0 itself.\n\n&nbsp;\nExample 1:\n\nInput: l1 = [2,4,3], l2 = [5,6,4]\nOutput: [7,0,8]\nExplanation: 342 + 465 = 807.\n\nExample 2:\n\nInput: l1 = [0], l2 = [0]\nOutput: [0]\n\nExample 3:\n\nInput: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]\nOutput: [8,9,9,9,0,0,0,1]\n\n&nbsp;\nConstraints:\n\n\tThe number of nodes in each linked list is in the range [1, 100].\n\t0 <= Node.val <= 9\n\tIt is guaranteed that the list represents a number that does not have leading zeros.\n\n## My Submission\n\n- Runtime: 50 ms\n- Memory: 16.5 MB\n\n## Similar Problems\n\n- [Multiply Strings](https://leetcode.com/problems/multiply-strings/) — Medium\n- [Add Binary](https://leetcode.com/problems/add-binary/) — Easy\n- [Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers/) — Medium\n- [Add Strings](https://leetcode.com/problems/add-strings/) — Easy\n- [Add Two Numbers II](https://leetcode.com/problems/add-two-numbers-ii/) — Medium\n"
+        }
+      ],
+      "timestamp": 1723373759000,
+      "runtime": "50 ms",
+      "memory": "16.5 MB",
+      "runtimePct": 6.975000000000002,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given two <strong>non-empty</strong> linked lists representing two non-negative integers. The digits are stored in <strong>reverse order</strong>, and each of their nodes contains a single digit. Add the two numbers and return the sum&nbsp;as a linked list.</p>\n\n<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/10/02/addtwonumber1.jpg\" style=\"width: 483px; height: 342px;\" />\n<pre>\n<strong>Input:</strong> l1 = [2,4,3], l2 = [5,6,4]\n<strong>Output:</strong> [7,0,8]\n<strong>Explanation:</strong> 342 + 465 = 807.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> l1 = [0], l2 = [0]\n<strong>Output:</strong> [0]\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]\n<strong>Output:</strong> [8,9,9,9,0,0,0,1]\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li>The number of nodes in each linked list is in the range <code>[1, 100]</code>.</li>\n\t<li><code>0 &lt;= Node.val &lt;= 9</code></li>\n\t<li>It is guaranteed that the list represents a number that does not have leading zeros.</li>\n</ul>\n",
+      "hints": null,
+      "acRate": 48.44294759779903,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "multiply-strings",
+          "title": "Multiply Strings",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "add-binary",
+          "title": "Add Binary",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "sum-of-two-integers",
+          "title": "Sum of Two Integers",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "add-strings",
+          "title": "Add Strings",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "add-two-numbers-ii",
+          "title": "Add Two Numbers II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "add-to-array-form-of-integer",
+          "title": "Add to Array-Form of Integer",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "double-a-number-represented-as-a-linked-list",
+          "title": "Double a Number Represented as a Linked List",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-longest-substring-without-repeating-characters::1351982506",
+      "submissionId": 1351982506,
+      "platform": "leetcode",
+      "title": "Longest Substring Without Repeating Characters",
+      "titleSlug": "longest-substring-without-repeating-characters",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Hash Table",
+        "String",
+        "Sliding Window"
+      ],
+      "topic": "Hash Table",
+      "code": "class Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        max_length = 1\n        if s is \"\":\n            return 0\n        for i in range(len(s)):\n            st = \"\"\n            for ch in s[i:]:\n                if ch not in st:\n                    st += ch\n                    max_length=max(max_length,len(st))\n                else:\n                    break\n        print(max_length)\n        return max_length",
+      "readmeContent": "# Longest Substring Without Repeating Characters\n\n**Difficulty:** Medium  |  **Acceptance:** 39.0%\n\n**Tags:** `Hash Table`, `String`, `Sliding Window`\n\n## Problem\n\nGiven a string s, find the length of the longest substring without duplicate characters.\n\n&nbsp;\nExample 1:\n\nInput: s = \"abcabcbb\"\nOutput: 3\nExplanation: The answer is \"abc\", with the length of 3. Note that \"bca\" and \"cab\" are also correct answers.\n\nExample 2:\n\nInput: s = \"bbbbb\"\nOutput: 1\nExplanation: The answer is \"b\", with the length of 1.\n\nExample 3:\n\nInput: s = \"pwwkew\"\nOutput: 3\nExplanation: The answer is \"wke\", with the length of 3.\nNotice that the answer must be a substring, \"pwke\" is a subsequence and not a substring.\n\n&nbsp;\nConstraints:\n\n\t0 <= s.length <= 5 * 104\n\ts consists of English letters, digits, symbols and spaces.\n\n## My Submission\n\n- Runtime: 453 ms\n- Memory: 17 MB\n\n## Similar Problems\n\n- [Subarrays with K Different Integers](https://leetcode.com/problems/subarrays-with-k-different-integers/) — Hard\n- [Maximum Erasure Value](https://leetcode.com/problems/maximum-erasure-value/) — Medium\n- [Minimum Consecutive Cards to Pick Up](https://leetcode.com/problems/minimum-consecutive-cards-to-pick-up/) — Medium\n- [Longest Nice Subarray](https://leetcode.com/problems/longest-nice-subarray/) — Medium\n- [Optimal Partition of String](https://leetcode.com/problems/optimal-partition-of-string/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-longest-substring-without-repeating-characters/lc-longest-substring-without-repeating-characters.py",
+          "content": "class Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        max_length = 1\n        if s is \"\":\n            return 0\n        for i in range(len(s)):\n            st = \"\"\n            for ch in s[i:]:\n                if ch not in st:\n                    st += ch\n                    max_length=max(max_length,len(st))\n                else:\n                    break\n        print(max_length)\n        return max_length"
+        },
+        {
+          "path": "problems/lc-longest-substring-without-repeating-characters/README.md",
+          "content": "# Longest Substring Without Repeating Characters\n\n**Difficulty:** Medium  |  **Acceptance:** 39.0%\n\n**Tags:** `Hash Table`, `String`, `Sliding Window`\n\n## Problem\n\nGiven a string s, find the length of the longest substring without duplicate characters.\n\n&nbsp;\nExample 1:\n\nInput: s = \"abcabcbb\"\nOutput: 3\nExplanation: The answer is \"abc\", with the length of 3. Note that \"bca\" and \"cab\" are also correct answers.\n\nExample 2:\n\nInput: s = \"bbbbb\"\nOutput: 1\nExplanation: The answer is \"b\", with the length of 1.\n\nExample 3:\n\nInput: s = \"pwwkew\"\nOutput: 3\nExplanation: The answer is \"wke\", with the length of 3.\nNotice that the answer must be a substring, \"pwke\" is a subsequence and not a substring.\n\n&nbsp;\nConstraints:\n\n\t0 <= s.length <= 5 * 104\n\ts consists of English letters, digits, symbols and spaces.\n\n## My Submission\n\n- Runtime: 453 ms\n- Memory: 17 MB\n\n## Similar Problems\n\n- [Subarrays with K Different Integers](https://leetcode.com/problems/subarrays-with-k-different-integers/) — Hard\n- [Maximum Erasure Value](https://leetcode.com/problems/maximum-erasure-value/) — Medium\n- [Minimum Consecutive Cards to Pick Up](https://leetcode.com/problems/minimum-consecutive-cards-to-pick-up/) — Medium\n- [Longest Nice Subarray](https://leetcode.com/problems/longest-nice-subarray/) — Medium\n- [Optimal Partition of String](https://leetcode.com/problems/optimal-partition-of-string/) — Medium\n"
+        }
+      ],
+      "timestamp": 1723375390000,
+      "runtime": "453 ms",
+      "memory": "17 MB",
+      "runtimePct": 5.017000000000014,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given a string <code>s</code>, find the length of the <strong>longest</strong> <span data-keyword=\"substring-nonempty\"><strong>substring</strong></span> without duplicate characters.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;abcabcbb&quot;\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> The answer is &quot;abc&quot;, with the length of 3. Note that <code>&quot;bca&quot;</code> and <code>&quot;cab&quot;</code> are also correct answers.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;bbbbb&quot;\n<strong>Output:</strong> 1\n<strong>Explanation:</strong> The answer is &quot;b&quot;, with the length of 1.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;pwwkew&quot;\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> The answer is &quot;wke&quot;, with the length of 3.\nNotice that the answer must be a substring, &quot;pwke&quot; is a subsequence and not a substring.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>0 &lt;= s.length &lt;= 5 * 10<sup>4</sup></code></li>\n\t<li><code>s</code> consists of English letters, digits, symbols and spaces.</li>\n</ul>\n",
+      "hints": [
+        "Since maximum string size is at most 26, generate and check all possible substrings with length at most 26."
+      ],
+      "acRate": 39.02406532558753,
+      "similar": [
+        {
+          "difficulty": "Hard",
+          "titleSlug": "subarrays-with-k-different-integers",
+          "title": "Subarrays with K Different Integers",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "maximum-erasure-value",
+          "title": "Maximum Erasure Value",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "minimum-consecutive-cards-to-pick-up",
+          "title": "Minimum Consecutive Cards to Pick Up",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "longest-nice-subarray",
+          "title": "Longest Nice Subarray",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "optimal-partition-of-string",
+          "title": "Optimal Partition of String",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "count-complete-subarrays-in-an-array",
+          "title": "Count Complete Subarrays in an Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "find-longest-special-substring-that-occurs-thrice-ii",
+          "title": "Find Longest Special Substring That Occurs Thrice II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "find-longest-special-substring-that-occurs-thrice-i",
+          "title": "Find Longest Special Substring That Occurs Thrice I",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "conflictPending": true,
+      "conflictCandidates": [
+        {
+          "id": "lc-longest-substring-without-repeating-characters::1351984398",
+          "code": "class Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        # max_length = 1\n        # if s is \"\":\n        #     return 0\n        # for i in range(len(s)):\n        #     st = \"\"\n        #     for ch in s[i:]:\n        #         if ch not in st:\n        #             st += ch\n        #             max_length=max(max_length,len(st))\n        #         else:\n        #             break\n        # print(max_length)\n        # return max_length\n\n        start = 0  \n        max_length = 0  \n        seen_chars = set()  \n\n        for end in range(len(s)):\n            while s[end] in seen_chars:\n                seen_chars.remove(s[start])\n                start += 1\n            \n            seen_chars.add(s[end])\n            \n            max_length = max(max_length, end - start + 1)\n\n        return max_length",
+          "lang": {
+            "name": "Python3",
+            "ext": "py",
+            "slug": "python3"
+          },
+          "runtime": "51 ms",
+          "memory": "16.5 MB",
+          "runtimePct": 11.762000000000004,
+          "memoryPct": 100,
+          "timestamp": 1723375530000,
+          "submissionId": 1351984398
+        }
+      ]
+    },
+    {
+      "id": "lc-longest-substring-without-repeating-characters::1351984398",
+      "submissionId": 1351984398,
+      "platform": "leetcode",
+      "title": "Longest Substring Without Repeating Characters",
+      "titleSlug": "longest-substring-without-repeating-characters",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Hash Table",
+        "String",
+        "Sliding Window"
+      ],
+      "topic": "Hash Table",
+      "code": "class Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        # max_length = 1\n        # if s is \"\":\n        #     return 0\n        # for i in range(len(s)):\n        #     st = \"\"\n        #     for ch in s[i:]:\n        #         if ch not in st:\n        #             st += ch\n        #             max_length=max(max_length,len(st))\n        #         else:\n        #             break\n        # print(max_length)\n        # return max_length\n\n        start = 0  \n        max_length = 0  \n        seen_chars = set()  \n\n        for end in range(len(s)):\n            while s[end] in seen_chars:\n                seen_chars.remove(s[start])\n                start += 1\n            \n            seen_chars.add(s[end])\n            \n            max_length = max(max_length, end - start + 1)\n\n        return max_length",
+      "readmeContent": "# Longest Substring Without Repeating Characters\n\n**Difficulty:** Medium  |  **Acceptance:** 39.0%\n\n**Tags:** `Hash Table`, `String`, `Sliding Window`\n\n## Problem\n\nGiven a string s, find the length of the longest substring without duplicate characters.\n\n&nbsp;\nExample 1:\n\nInput: s = \"abcabcbb\"\nOutput: 3\nExplanation: The answer is \"abc\", with the length of 3. Note that \"bca\" and \"cab\" are also correct answers.\n\nExample 2:\n\nInput: s = \"bbbbb\"\nOutput: 1\nExplanation: The answer is \"b\", with the length of 1.\n\nExample 3:\n\nInput: s = \"pwwkew\"\nOutput: 3\nExplanation: The answer is \"wke\", with the length of 3.\nNotice that the answer must be a substring, \"pwke\" is a subsequence and not a substring.\n\n&nbsp;\nConstraints:\n\n\t0 <= s.length <= 5 * 104\n\ts consists of English letters, digits, symbols and spaces.\n\n## My Submission\n\n- Runtime: 51 ms\n- Memory: 16.5 MB\n\n## Similar Problems\n\n- [Subarrays with K Different Integers](https://leetcode.com/problems/subarrays-with-k-different-integers/) — Hard\n- [Maximum Erasure Value](https://leetcode.com/problems/maximum-erasure-value/) — Medium\n- [Minimum Consecutive Cards to Pick Up](https://leetcode.com/problems/minimum-consecutive-cards-to-pick-up/) — Medium\n- [Longest Nice Subarray](https://leetcode.com/problems/longest-nice-subarray/) — Medium\n- [Optimal Partition of String](https://leetcode.com/problems/optimal-partition-of-string/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-longest-substring-without-repeating-characters/lc-longest-substring-without-repeating-characters.py",
+          "content": "class Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        # max_length = 1\n        # if s is \"\":\n        #     return 0\n        # for i in range(len(s)):\n        #     st = \"\"\n        #     for ch in s[i:]:\n        #         if ch not in st:\n        #             st += ch\n        #             max_length=max(max_length,len(st))\n        #         else:\n        #             break\n        # print(max_length)\n        # return max_length\n\n        start = 0  \n        max_length = 0  \n        seen_chars = set()  \n\n        for end in range(len(s)):\n            while s[end] in seen_chars:\n                seen_chars.remove(s[start])\n                start += 1\n            \n            seen_chars.add(s[end])\n            \n            max_length = max(max_length, end - start + 1)\n\n        return max_length"
+        },
+        {
+          "path": "problems/lc-longest-substring-without-repeating-characters/README.md",
+          "content": "# Longest Substring Without Repeating Characters\n\n**Difficulty:** Medium  |  **Acceptance:** 39.0%\n\n**Tags:** `Hash Table`, `String`, `Sliding Window`\n\n## Problem\n\nGiven a string s, find the length of the longest substring without duplicate characters.\n\n&nbsp;\nExample 1:\n\nInput: s = \"abcabcbb\"\nOutput: 3\nExplanation: The answer is \"abc\", with the length of 3. Note that \"bca\" and \"cab\" are also correct answers.\n\nExample 2:\n\nInput: s = \"bbbbb\"\nOutput: 1\nExplanation: The answer is \"b\", with the length of 1.\n\nExample 3:\n\nInput: s = \"pwwkew\"\nOutput: 3\nExplanation: The answer is \"wke\", with the length of 3.\nNotice that the answer must be a substring, \"pwke\" is a subsequence and not a substring.\n\n&nbsp;\nConstraints:\n\n\t0 <= s.length <= 5 * 104\n\ts consists of English letters, digits, symbols and spaces.\n\n## My Submission\n\n- Runtime: 51 ms\n- Memory: 16.5 MB\n\n## Similar Problems\n\n- [Subarrays with K Different Integers](https://leetcode.com/problems/subarrays-with-k-different-integers/) — Hard\n- [Maximum Erasure Value](https://leetcode.com/problems/maximum-erasure-value/) — Medium\n- [Minimum Consecutive Cards to Pick Up](https://leetcode.com/problems/minimum-consecutive-cards-to-pick-up/) — Medium\n- [Longest Nice Subarray](https://leetcode.com/problems/longest-nice-subarray/) — Medium\n- [Optimal Partition of String](https://leetcode.com/problems/optimal-partition-of-string/) — Medium\n"
+        }
+      ],
+      "timestamp": 1723375530000,
+      "runtime": "51 ms",
+      "memory": "16.5 MB",
+      "runtimePct": 11.762000000000004,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given a string <code>s</code>, find the length of the <strong>longest</strong> <span data-keyword=\"substring-nonempty\"><strong>substring</strong></span> without duplicate characters.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;abcabcbb&quot;\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> The answer is &quot;abc&quot;, with the length of 3. Note that <code>&quot;bca&quot;</code> and <code>&quot;cab&quot;</code> are also correct answers.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;bbbbb&quot;\n<strong>Output:</strong> 1\n<strong>Explanation:</strong> The answer is &quot;b&quot;, with the length of 1.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;pwwkew&quot;\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> The answer is &quot;wke&quot;, with the length of 3.\nNotice that the answer must be a substring, &quot;pwke&quot; is a subsequence and not a substring.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>0 &lt;= s.length &lt;= 5 * 10<sup>4</sup></code></li>\n\t<li><code>s</code> consists of English letters, digits, symbols and spaces.</li>\n</ul>\n",
+      "hints": [
+        "Since maximum string size is at most 26, generate and check all possible substrings with length at most 26."
+      ],
+      "acRate": 39.02406532558753,
+      "similar": [
+        {
+          "difficulty": "Hard",
+          "titleSlug": "subarrays-with-k-different-integers",
+          "title": "Subarrays with K Different Integers",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "maximum-erasure-value",
+          "title": "Maximum Erasure Value",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "minimum-consecutive-cards-to-pick-up",
+          "title": "Minimum Consecutive Cards to Pick Up",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "longest-nice-subarray",
+          "title": "Longest Nice Subarray",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "optimal-partition-of-string",
+          "title": "Optimal Partition of String",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "count-complete-subarrays-in-an-array",
+          "title": "Count Complete Subarrays in an Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "find-longest-special-substring-that-occurs-thrice-ii",
+          "title": "Find Longest Special Substring That Occurs Thrice II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "find-longest-special-substring-that-occurs-thrice-i",
+          "title": "Find Longest Special Substring That Occurs Thrice I",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "isDuplicate": true,
+      "duplicateOf": "lc-longest-substring-without-repeating-characters::1351982506"
+    },
+    {
+      "platform": "leetcode",
+      "id": "lc-median-of-two-sorted-arrays",
+      "forceCommit": true,
+      "submissionId": null,
+      "title": "Median of Two Sorted Arrays",
+      "titleSlug": "median-of-two-sorted-arrays",
+      "difficulty": "Hard",
+      "topic": "Divide and Conquer",
+      "tags": [
+        "Array",
+        "Binary Search",
+        "Divide and Conquer"
+      ],
+      "canonical": null,
+      "readmeContent": "# [4] Median of Two Sorted Arrays\n**Difficulty:** Hard  |  **Acceptance:** 46.5%  |  **Likes:** 32214 / **Dislikes:** 3584\n**Tags:** `Array`, `Binary Search`, `Divide and Conquer`\n## Problem\nGiven two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.\n\nThe overall run time complexity should be O(log (m+n)).\n\n&nbsp;\nExample 1:\n\nInput: nums1 = [1,3], nums2 = [2]\nOutput: 2.00000\nExplanation: merged array = [1,2,3] and median is 2.\n\nExample 2:\n\nInput: nums1 = [1,2], nums2 = [3,4]\nOutput: 2.50000\nExplanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.\n\n&nbsp;\nConstraints:\n\n\tnums1.length == m\n\tnums2.length == n\n\t0 <= m <= 1000\n\t0 <= n <= 1000\n\t1 <= m + n <= 2000\n\t-106 <= nums1[i], nums2[i] <= 106\n## My Submission\n\n- Runtime: 65 ms (beats 5.1%)\n- Memory: 16.8 MB (beats 100.0%)\n",
+      "code": "class Solution:\n    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:\n        return median(sorted(nums1 + nums2))\n        # p1 = nums1\n        # if num1 is not None or nums2 us not None:\n",
+      "files": [
+        {
+          "path": "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays.py",
+          "content": "class Solution:\n    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:\n        return median(sorted(nums1 + nums2))\n        # p1 = nums1\n        # if num1 is not None or nums2 us not None:\n"
+        },
+        {
+          "path": "problems/lc-median-of-two-sorted-arrays/README.md",
+          "content": "# [4] Median of Two Sorted Arrays\n**Difficulty:** Hard  |  **Acceptance:** 46.5%  |  **Likes:** 32214 / **Dislikes:** 3584\n**Tags:** `Array`, `Binary Search`, `Divide and Conquer`\n## Problem\nGiven two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.\n\nThe overall run time complexity should be O(log (m+n)).\n\n&nbsp;\nExample 1:\n\nInput: nums1 = [1,3], nums2 = [2]\nOutput: 2.00000\nExplanation: merged array = [1,2,3] and median is 2.\n\nExample 2:\n\nInput: nums1 = [1,2], nums2 = [3,4]\nOutput: 2.50000\nExplanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.\n\n&nbsp;\nConstraints:\n\n\tnums1.length == m\n\tnums2.length == n\n\t0 <= m <= 1000\n\t0 <= n <= 1000\n\t1 <= m + n <= 2000\n\t-106 <= nums1[i], nums2[i] <= 106\n## My Submission\n\n- Runtime: 65 ms (beats 5.1%)\n- Memory: 16.8 MB (beats 100.0%)\n"
+        }
+      ],
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "runtime": "65 ms",
+      "memory": "16.8 MB",
+      "runtimePct": 5.1033,
+      "memoryPct": 100,
+      "timestamp": 1723381264000,
+      "acRate": 46.516555660057946,
+      "likes": 32214,
+      "dislikes": 3584,
+      "similar": [],
+      "problemStatement": "<p>Given two sorted arrays <code>nums1</code> and <code>nums2</code> of size <code>m</code> and <code>n</code> respectively, return <strong>the median</strong> of the two sorted arrays.</p>\n\n<p>The overall run time complexity should be <code>O(log (m+n))</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums1 = [1,3], nums2 = [2]\n<strong>Output:</strong> 2.00000\n<strong>Explanation:</strong> merged array = [1,2,3] and median is 2.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums1 = [1,2], nums2 = [3,4]\n<strong>Output:</strong> 2.50000\n<strong>Explanation:</strong> merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>nums1.length == m</code></li>\n\t<li><code>nums2.length == n</code></li>\n\t<li><code>0 &lt;= m &lt;= 1000</code></li>\n\t<li><code>0 &lt;= n &lt;= 1000</code></li>\n\t<li><code>1 &lt;= m + n &lt;= 2000</code></li>\n\t<li><code>-10<sup>6</sup> &lt;= nums1[i], nums2[i] &lt;= 10<sup>6</sup></code></li>\n</ul>\n",
+      "elapsedSeconds": 0,
+      "hasSimilar": true,
+      "submissionsUrl": "https://leetcode.com/problems/median-of-two-sorted-arrays/submissions/",
+      "notes": "",
+      "methodTitle": "",
+      "isDuplicate": false,
+      "duplicateOf": null,
+      "aiReview": "### 1. Complexity\n*   **Time:** $O((m+n) \\log(m+n))$ due to the `sorted()` function.\n*   **Space:** $O(m+n)$ to create the concatenated list.\n\n### 2. Correctness & Edge Cases\n*   **Failed Requirements:** The problem explicitly requires $O(\\log(m+n))$ time; this solution fails that constraint.\n*   **NameError:** `median()` is not a built-in Python function. It requires `from statistics import median`.\n*   **Edge Cases:** If both lists are empty, `statistics.median` raises a `StatisticsError`.\n\n### 3. Concrete Optimization\nUse **Binary Search** on the partition indices of the smaller array. Instead of merging/sorting, find a partition point $i$ in `nums1` and $j$ in `nums2` such that all elements on the left are less than or equal to all elements on the right. This achieves the required **$O(\\log(\\min(m, n)))$** time complexity.\n\n### 4. Key Algorithmic Pattern\nThe provided code uses a **Brute Force (Sort and Find)** approach. The optimal solution uses **Binary Search** on the search space of the array indices."
+    },
+    {
+      "id": "lc-roman-to-integer::1353182041",
+      "submissionId": 1353182041,
+      "platform": "leetcode",
+      "title": "Roman to Integer",
+      "titleSlug": "roman-to-integer",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Hash Table",
+        "Math",
+        "String"
+      ],
+      "topic": "Math",
+      "code": "class Solution:\n  def romanToInt(self, s: str) -> int:\n    ans = 0\n    roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50,\n             'C': 100, 'D': 500, 'M': 1000}\n\n    for a, b in zip(s, s[1:]):\n      if roman[a] < roman[b]:\n        ans -= roman[a]\n      else:\n        ans += roman[a]\n\n    return ans + roman[s[-1]]",
+      "readmeContent": "# Roman to Integer\n\n**Difficulty:** Easy  |  **Acceptance:** 66.6%\n\n**Tags:** `Hash Table`, `Math`, `String`\n\n## Problem\n\nRoman numerals are represented by seven different symbols:&nbsp;I, V, X, L, C, D and M.\n\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\n\nFor example,&nbsp;2 is written as II&nbsp;in Roman numeral, just two ones added together. 12 is written as&nbsp;XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.\n\nRoman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:\n\n\tI can be placed before V (5) and X (10) to make 4 and 9.&nbsp;\n\tX can be placed before L (50) and C (100) to make 40 and 90.&nbsp;\n\tC can be placed before D (500) and M (1000) to make 400 and 900.\n\nGiven a roman numeral, convert it to an integer.\n\n&nbsp;\nExample 1:\n\nInput: s = \"III\"\nOutput: 3\nExplanation: III = 3.\n\nExample 2:\n\nInput: s = \"LVIII\"\nOutput: 58\nExplanation: L = 50, V= 5, III = 3.\n\nExample 3:\n\nInput: s = \"MCMXCIV\"\nOutput: 1994\nExplanation: M = 1000, CM = 900, XC = 90 and IV = 4.\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 15\n\ts contains only&nbsp;the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').\n\tIt is guaranteed&nbsp;that s is a valid roman numeral in the range [1, 3999].\n\n## My Submission\n\n- Runtime: 52 ms\n- Memory: 16.6 MB\n\n## Similar Problems\n\n- [Integer to Roman](https://leetcode.com/problems/integer-to-roman/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-roman-to-integer/lc-roman-to-integer.py",
+          "content": "class Solution:\n  def romanToInt(self, s: str) -> int:\n    ans = 0\n    roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50,\n             'C': 100, 'D': 500, 'M': 1000}\n\n    for a, b in zip(s, s[1:]):\n      if roman[a] < roman[b]:\n        ans -= roman[a]\n      else:\n        ans += roman[a]\n\n    return ans + roman[s[-1]]"
+        },
+        {
+          "path": "problems/lc-roman-to-integer/README.md",
+          "content": "# Roman to Integer\n\n**Difficulty:** Easy  |  **Acceptance:** 66.6%\n\n**Tags:** `Hash Table`, `Math`, `String`\n\n## Problem\n\nRoman numerals are represented by seven different symbols:&nbsp;I, V, X, L, C, D and M.\n\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\n\nFor example,&nbsp;2 is written as II&nbsp;in Roman numeral, just two ones added together. 12 is written as&nbsp;XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.\n\nRoman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:\n\n\tI can be placed before V (5) and X (10) to make 4 and 9.&nbsp;\n\tX can be placed before L (50) and C (100) to make 40 and 90.&nbsp;\n\tC can be placed before D (500) and M (1000) to make 400 and 900.\n\nGiven a roman numeral, convert it to an integer.\n\n&nbsp;\nExample 1:\n\nInput: s = \"III\"\nOutput: 3\nExplanation: III = 3.\n\nExample 2:\n\nInput: s = \"LVIII\"\nOutput: 58\nExplanation: L = 50, V= 5, III = 3.\n\nExample 3:\n\nInput: s = \"MCMXCIV\"\nOutput: 1994\nExplanation: M = 1000, CM = 900, XC = 90 and IV = 4.\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 15\n\ts contains only&nbsp;the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').\n\tIt is guaranteed&nbsp;that s is a valid roman numeral in the range [1, 3999].\n\n## My Submission\n\n- Runtime: 52 ms\n- Memory: 16.6 MB\n\n## Similar Problems\n\n- [Integer to Roman](https://leetcode.com/problems/integer-to-roman/) — Medium\n"
+        }
+      ],
+      "timestamp": 1723471110000,
+      "runtime": "52 ms",
+      "memory": "16.6 MB",
+      "runtimePct": 5.097099999999985,
+      "memoryPct": 100,
+      "problemStatement": "<p>Roman numerals are represented by seven different symbols:&nbsp;<code>I</code>, <code>V</code>, <code>X</code>, <code>L</code>, <code>C</code>, <code>D</code> and <code>M</code>.</p>\n\n<pre>\n<strong>Symbol</strong>       <strong>Value</strong>\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000</pre>\n\n<p>For example,&nbsp;<code>2</code> is written as <code>II</code>&nbsp;in Roman numeral, just two ones added together. <code>12</code> is written as&nbsp;<code>XII</code>, which is simply <code>X + II</code>. The number <code>27</code> is written as <code>XXVII</code>, which is <code>XX + V + II</code>.</p>\n\n<p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not <code>IIII</code>. Instead, the number four is written as <code>IV</code>. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as <code>IX</code>. There are six instances where subtraction is used:</p>\n\n<ul>\n\t<li><code>I</code> can be placed before <code>V</code> (5) and <code>X</code> (10) to make 4 and 9.&nbsp;</li>\n\t<li><code>X</code> can be placed before <code>L</code> (50) and <code>C</code> (100) to make 40 and 90.&nbsp;</li>\n\t<li><code>C</code> can be placed before <code>D</code> (500) and <code>M</code> (1000) to make 400 and 900.</li>\n</ul>\n\n<p>Given a roman numeral, convert it to an integer.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;III&quot;\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> III = 3.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;LVIII&quot;\n<strong>Output:</strong> 58\n<strong>Explanation:</strong> L = 50, V= 5, III = 3.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;MCMXCIV&quot;\n<strong>Output:</strong> 1994\n<strong>Explanation:</strong> M = 1000, CM = 900, XC = 90 and IV = 4.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 15</code></li>\n\t<li><code>s</code> contains only&nbsp;the characters <code>(&#39;I&#39;, &#39;V&#39;, &#39;X&#39;, &#39;L&#39;, &#39;C&#39;, &#39;D&#39;, &#39;M&#39;)</code>.</li>\n\t<li>It is <strong>guaranteed</strong>&nbsp;that <code>s</code> is a valid roman numeral in the range <code>[1, 3999]</code>.</li>\n</ul>\n",
+      "hints": [
+        "Problem is simpler to solve by working the string from back to front and using a map."
+      ],
+      "acRate": 66.61472538239568,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "integer-to-roman",
+          "title": "Integer to Roman",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "conflictPending": true,
+      "conflictCandidates": [
+        {
+          "id": "lc-roman-to-integer::1353183942",
+          "code": "class Solution:\n    def romanToInt(self, s: str) -> int:\n        roman = {\n            'I': 1,\n            'V': 5,\n            'X': 10,\n            'L': 50,\n            'C': 100,\n            'D': 500,\n            'M': 1000\n        }\n\n        resp = 0\n        i = 0\n        for element in s:\n\n            current = roman[element]\n\n            if i + 1 == len(s):\n                resp = resp + current\n\n            elif element == 'C' and (s[i+1] == 'M' or  s[i+1] == 'D'):\n                resp = resp - 100\n\n            elif element == 'X' and (s[i+1] == 'L' or  s[i+1] == 'C'):\n                resp = resp - 10\n\n            elif element == 'I' and (s[i+1] == 'V' or  s[i+1] == 'X'):\n                resp = resp - 1\n\n            else:\n                resp = resp + current\n\n            i += 1\n\n        return resp",
+          "lang": {
+            "name": "Python3",
+            "ext": "py",
+            "slug": "python3"
+          },
+          "runtime": "56 ms",
+          "memory": "16.6 MB",
+          "runtimePct": 5.097099999999985,
+          "memoryPct": 100,
+          "timestamp": 1723471216000,
+          "submissionId": 1353183942
+        }
+      ]
+    },
+    {
+      "id": "lc-roman-to-integer::1353183942",
+      "submissionId": 1353183942,
+      "platform": "leetcode",
+      "title": "Roman to Integer",
+      "titleSlug": "roman-to-integer",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Hash Table",
+        "Math",
+        "String"
+      ],
+      "topic": "Math",
+      "code": "class Solution:\n    def romanToInt(self, s: str) -> int:\n        roman = {\n            'I': 1,\n            'V': 5,\n            'X': 10,\n            'L': 50,\n            'C': 100,\n            'D': 500,\n            'M': 1000\n        }\n\n        resp = 0\n        i = 0\n        for element in s:\n\n            current = roman[element]\n\n            if i + 1 == len(s):\n                resp = resp + current\n\n            elif element == 'C' and (s[i+1] == 'M' or  s[i+1] == 'D'):\n                resp = resp - 100\n\n            elif element == 'X' and (s[i+1] == 'L' or  s[i+1] == 'C'):\n                resp = resp - 10\n\n            elif element == 'I' and (s[i+1] == 'V' or  s[i+1] == 'X'):\n                resp = resp - 1\n\n            else:\n                resp = resp + current\n\n            i += 1\n\n        return resp",
+      "readmeContent": "# Roman to Integer\n\n**Difficulty:** Easy  |  **Acceptance:** 66.6%\n\n**Tags:** `Hash Table`, `Math`, `String`\n\n## Problem\n\nRoman numerals are represented by seven different symbols:&nbsp;I, V, X, L, C, D and M.\n\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\n\nFor example,&nbsp;2 is written as II&nbsp;in Roman numeral, just two ones added together. 12 is written as&nbsp;XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.\n\nRoman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:\n\n\tI can be placed before V (5) and X (10) to make 4 and 9.&nbsp;\n\tX can be placed before L (50) and C (100) to make 40 and 90.&nbsp;\n\tC can be placed before D (500) and M (1000) to make 400 and 900.\n\nGiven a roman numeral, convert it to an integer.\n\n&nbsp;\nExample 1:\n\nInput: s = \"III\"\nOutput: 3\nExplanation: III = 3.\n\nExample 2:\n\nInput: s = \"LVIII\"\nOutput: 58\nExplanation: L = 50, V= 5, III = 3.\n\nExample 3:\n\nInput: s = \"MCMXCIV\"\nOutput: 1994\nExplanation: M = 1000, CM = 900, XC = 90 and IV = 4.\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 15\n\ts contains only&nbsp;the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').\n\tIt is guaranteed&nbsp;that s is a valid roman numeral in the range [1, 3999].\n\n## My Submission\n\n- Runtime: 56 ms\n- Memory: 16.6 MB\n\n## Similar Problems\n\n- [Integer to Roman](https://leetcode.com/problems/integer-to-roman/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-roman-to-integer/lc-roman-to-integer.py",
+          "content": "class Solution:\n    def romanToInt(self, s: str) -> int:\n        roman = {\n            'I': 1,\n            'V': 5,\n            'X': 10,\n            'L': 50,\n            'C': 100,\n            'D': 500,\n            'M': 1000\n        }\n\n        resp = 0\n        i = 0\n        for element in s:\n\n            current = roman[element]\n\n            if i + 1 == len(s):\n                resp = resp + current\n\n            elif element == 'C' and (s[i+1] == 'M' or  s[i+1] == 'D'):\n                resp = resp - 100\n\n            elif element == 'X' and (s[i+1] == 'L' or  s[i+1] == 'C'):\n                resp = resp - 10\n\n            elif element == 'I' and (s[i+1] == 'V' or  s[i+1] == 'X'):\n                resp = resp - 1\n\n            else:\n                resp = resp + current\n\n            i += 1\n\n        return resp"
+        },
+        {
+          "path": "problems/lc-roman-to-integer/README.md",
+          "content": "# Roman to Integer\n\n**Difficulty:** Easy  |  **Acceptance:** 66.6%\n\n**Tags:** `Hash Table`, `Math`, `String`\n\n## Problem\n\nRoman numerals are represented by seven different symbols:&nbsp;I, V, X, L, C, D and M.\n\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\n\nFor example,&nbsp;2 is written as II&nbsp;in Roman numeral, just two ones added together. 12 is written as&nbsp;XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.\n\nRoman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:\n\n\tI can be placed before V (5) and X (10) to make 4 and 9.&nbsp;\n\tX can be placed before L (50) and C (100) to make 40 and 90.&nbsp;\n\tC can be placed before D (500) and M (1000) to make 400 and 900.\n\nGiven a roman numeral, convert it to an integer.\n\n&nbsp;\nExample 1:\n\nInput: s = \"III\"\nOutput: 3\nExplanation: III = 3.\n\nExample 2:\n\nInput: s = \"LVIII\"\nOutput: 58\nExplanation: L = 50, V= 5, III = 3.\n\nExample 3:\n\nInput: s = \"MCMXCIV\"\nOutput: 1994\nExplanation: M = 1000, CM = 900, XC = 90 and IV = 4.\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 15\n\ts contains only&nbsp;the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').\n\tIt is guaranteed&nbsp;that s is a valid roman numeral in the range [1, 3999].\n\n## My Submission\n\n- Runtime: 56 ms\n- Memory: 16.6 MB\n\n## Similar Problems\n\n- [Integer to Roman](https://leetcode.com/problems/integer-to-roman/) — Medium\n"
+        }
+      ],
+      "timestamp": 1723471216000,
+      "runtime": "56 ms",
+      "memory": "16.6 MB",
+      "runtimePct": 5.097099999999985,
+      "memoryPct": 100,
+      "problemStatement": "<p>Roman numerals are represented by seven different symbols:&nbsp;<code>I</code>, <code>V</code>, <code>X</code>, <code>L</code>, <code>C</code>, <code>D</code> and <code>M</code>.</p>\n\n<pre>\n<strong>Symbol</strong>       <strong>Value</strong>\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000</pre>\n\n<p>For example,&nbsp;<code>2</code> is written as <code>II</code>&nbsp;in Roman numeral, just two ones added together. <code>12</code> is written as&nbsp;<code>XII</code>, which is simply <code>X + II</code>. The number <code>27</code> is written as <code>XXVII</code>, which is <code>XX + V + II</code>.</p>\n\n<p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not <code>IIII</code>. Instead, the number four is written as <code>IV</code>. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as <code>IX</code>. There are six instances where subtraction is used:</p>\n\n<ul>\n\t<li><code>I</code> can be placed before <code>V</code> (5) and <code>X</code> (10) to make 4 and 9.&nbsp;</li>\n\t<li><code>X</code> can be placed before <code>L</code> (50) and <code>C</code> (100) to make 40 and 90.&nbsp;</li>\n\t<li><code>C</code> can be placed before <code>D</code> (500) and <code>M</code> (1000) to make 400 and 900.</li>\n</ul>\n\n<p>Given a roman numeral, convert it to an integer.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;III&quot;\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> III = 3.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;LVIII&quot;\n<strong>Output:</strong> 58\n<strong>Explanation:</strong> L = 50, V= 5, III = 3.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;MCMXCIV&quot;\n<strong>Output:</strong> 1994\n<strong>Explanation:</strong> M = 1000, CM = 900, XC = 90 and IV = 4.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 15</code></li>\n\t<li><code>s</code> contains only&nbsp;the characters <code>(&#39;I&#39;, &#39;V&#39;, &#39;X&#39;, &#39;L&#39;, &#39;C&#39;, &#39;D&#39;, &#39;M&#39;)</code>.</li>\n\t<li>It is <strong>guaranteed</strong>&nbsp;that <code>s</code> is a valid roman numeral in the range <code>[1, 3999]</code>.</li>\n</ul>\n",
+      "hints": [
+        "Problem is simpler to solve by working the string from back to front and using a map."
+      ],
+      "acRate": 66.61472538239568,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "integer-to-roman",
+          "title": "Integer to Roman",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "isDuplicate": true,
+      "duplicateOf": "lc-roman-to-integer::1353182041"
+    },
+    {
+      "id": "lc-find-closest-number-to-zero",
+      "submissionId": 1355319028,
+      "platform": "leetcode",
+      "title": "Find Closest Number to Zero",
+      "titleSlug": "find-closest-number-to-zero",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array"
+      ],
+      "topic": "Array",
+      "code": "class Solution:\n    def findClosestNumber(self, nums: List[int]) -> int:\n        negative_list = []\n        positive_list = []\n\n        for num in nums:\n            if num < 0:\n                negative_list.append(num)\n            else:\n                positive_list.append(num)\n\n        negative_list.sort(reverse = True)\n        positive_list.sort()\n        if not negative_list:\n            return positive_list[0]\n        if not positive_list:\n            return negative_list[0]\n\n        if positive_list[0] == -negative_list[0]:\n            return positive_list[0]\n        return positive_list[0] if positive_list[0] < -negative_list[0] else negative_list[0]",
+      "readmeContent": "# Find Closest Number to Zero\n\n**Difficulty:** Easy  |  **Acceptance:** 47.9%\n\n**Tags:** `Array`\n\n## Problem\n\nGiven an integer array nums of size n, return the number with the value closest to 0 in nums. If there are multiple answers, return the number with the largest value.\n&nbsp;\nExample 1:\n\nInput: nums = [-4,-2,1,4,8]\nOutput: 1\nExplanation:\nThe distance from -4 to 0 is |-4| = 4.\nThe distance from -2 to 0 is |-2| = 2.\nThe distance from 1 to 0 is |1| = 1.\nThe distance from 4 to 0 is |4| = 4.\nThe distance from 8 to 0 is |8| = 8.\nThus, the closest number to 0 in the array is 1.\n\nExample 2:\n\nInput: nums = [2,-1,1]\nOutput: 1\nExplanation: 1 and -1 are both the closest numbers to 0, so 1 being larger is returned.\n\n&nbsp;\nConstraints:\n\n\t1 <= n <= 1000\n\t-105 <= nums[i] <= 105\n\n## My Submission\n\n- Runtime: 123 ms\n- Memory: 16.8 MB\n\n## Similar Problems\n\n- [Find K Closest Elements](https://leetcode.com/problems/find-k-closest-elements/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/find-closest-number-to-zero/find-closest-number-to-zero.py",
+          "content": "class Solution:\n    def findClosestNumber(self, nums: List[int]) -> int:\n        negative_list = []\n        positive_list = []\n\n        for num in nums:\n            if num < 0:\n                negative_list.append(num)\n            else:\n                positive_list.append(num)\n\n        negative_list.sort(reverse = True)\n        positive_list.sort()\n        if not negative_list:\n            return positive_list[0]\n        if not positive_list:\n            return negative_list[0]\n\n        if positive_list[0] == -negative_list[0]:\n            return positive_list[0]\n        return positive_list[0] if positive_list[0] < -negative_list[0] else negative_list[0]"
+        },
+        {
+          "path": "problems/find-closest-number-to-zero/README.md",
+          "content": "# Find Closest Number to Zero\n\n**Difficulty:** Easy  |  **Acceptance:** 47.9%\n\n**Tags:** `Array`\n\n## Problem\n\nGiven an integer array nums of size n, return the number with the value closest to 0 in nums. If there are multiple answers, return the number with the largest value.\n&nbsp;\nExample 1:\n\nInput: nums = [-4,-2,1,4,8]\nOutput: 1\nExplanation:\nThe distance from -4 to 0 is |-4| = 4.\nThe distance from -2 to 0 is |-2| = 2.\nThe distance from 1 to 0 is |1| = 1.\nThe distance from 4 to 0 is |4| = 4.\nThe distance from 8 to 0 is |8| = 8.\nThus, the closest number to 0 in the array is 1.\n\nExample 2:\n\nInput: nums = [2,-1,1]\nOutput: 1\nExplanation: 1 and -1 are both the closest numbers to 0, so 1 being larger is returned.\n\n&nbsp;\nConstraints:\n\n\t1 <= n <= 1000\n\t-105 <= nums[i] <= 105\n\n## My Submission\n\n- Runtime: 123 ms\n- Memory: 16.8 MB\n\n## Similar Problems\n\n- [Find K Closest Elements](https://leetcode.com/problems/find-k-closest-elements/) — Medium\n"
+        }
+      ],
+      "timestamp": 1723634014000,
+      "runtime": "123 ms",
+      "memory": "16.8 MB",
+      "runtimePct": 5.2111000000000125,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an integer array <code>nums</code> of size <code>n</code>, return <em>the number with the value <strong>closest</strong> to </em><code>0</code><em> in </em><code>nums</code>. If there are multiple answers, return <em>the number with the <strong>largest</strong> value</em>.</p>\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [-4,-2,1,4,8]\n<strong>Output:</strong> 1\n<strong>Explanation:</strong>\nThe distance from -4 to 0 is |-4| = 4.\nThe distance from -2 to 0 is |-2| = 2.\nThe distance from 1 to 0 is |1| = 1.\nThe distance from 4 to 0 is |4| = 4.\nThe distance from 8 to 0 is |8| = 8.\nThus, the closest number to 0 in the array is 1.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [2,-1,1]\n<strong>Output:</strong> 1\n<strong>Explanation:</strong> 1 and -1 are both the closest numbers to 0, so 1 being larger is returned.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 1000</code></li>\n\t<li><code>-10<sup>5</sup> &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>\n</ul>\n",
+      "hints": [
+        "Keep track of the number closest to 0 as you iterate through the array.",
+        "Ensure that if multiple numbers are closest to 0, you store the one with the largest value."
+      ],
+      "acRate": 47.93873043788839,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "find-k-closest-elements",
+          "title": "Find K Closest Elements",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "### Analysis\n\n1.  **Complexity**\n    *   **Time:** $O(n \\log n)$ due to the sorting of two lists.\n    *   **Space:** $O(n)$ to store the partitioned `negative_list` and `positive_list`.\n\n2.  **Correctness**\n    *   The logic is **correct**. It correctly handles ties (e.g., -1 and 1) by returning the positive value and manages cases where one list is empty. No major edge cases fail, though it is inefficient for the problem's constraints.\n\n3.  **Optimization**\n    *   **Single-Pass Search:** Avoid sorting and extra lists. Iterate through `nums` once while maintaining a `closest` variable. This reduces time to **$O(n)$** and space to **$O(1)$**.\n    ```python\n    closest = nums[0]\n    for n in nums:\n        if abs(n) < abs(closest) or (abs(n) == abs(closest) and n > closest):\n            closest = n\n    return closest\n    ```\n\n4.  **Key Algorithmic Pattern**\n    *   **Iterative Comparison:** The problem fundamentally requires finding a minimum value based on a custom comparison rule (absolute distance from zero, then value magnitude for ties)."
+    },
+    {
+      "id": "lc-merge-strings-alternately::1356177455",
+      "submissionId": 1356177455,
+      "platform": "leetcode",
+      "title": "Merge Strings Alternately",
+      "titleSlug": "merge-strings-alternately",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Two Pointers",
+        "String"
+      ],
+      "topic": "Two Pointers",
+      "code": "class Solution:\n    def mergeAlternately(self, word1: str, word2: str) -> str:\n        new_word = \"\"\n        for char1, char2 in zip(word1, word2):\n            new_word += char1 + char2\n        if len(word1) < len(word2):\n            new_word += word2[len(word1):]\n        else:\n            new_word += word1[len(word2):]\n        return new_word",
+      "readmeContent": "# Merge Strings Alternately\n\n**Difficulty:** Easy  |  **Acceptance:** 82.1%\n\n**Tags:** `Two Pointers`, `String`\n\n## Problem\n\nYou are given two strings word1 and word2. Merge the strings by adding letters in alternating order, starting with word1. If a string is longer than the other, append the additional letters onto the end of the merged string.\r\n\r\nReturn the merged string.\r\n\r\n&nbsp;\r\nExample 1:\r\n\r\n\r\nInput: word1 = \"abc\", word2 = \"pqr\"\r\nOutput: \"apbqcr\"\r\nExplanation:&nbsp;The merged string will be merged as so:\r\nword1:  a   b   c\r\nword2:    p   q   r\r\nmerged: a p b q c r\r\n\r\n\r\nExample 2:\r\n\r\n\r\nInput: word1 = \"ab\", word2 = \"pqrs\"\r\nOutput: \"apbqrs\"\r\nExplanation:&nbsp;Notice that as word2 is longer, \"rs\" is appended to the end.\r\nword1:  a   b \r\nword2:    p   q   r   s\r\nmerged: a p b q   r   s\r\n\r\n\r\nExample 3:\r\n\r\n\r\nInput: word1 = \"abcd\", word2 = \"pq\"\r\nOutput: \"apbqcd\"\r\nExplanation:&nbsp;Notice that as word1 is longer, \"cd\" is appended to the end.\r\nword1:  a   b   c   d\r\nword2:    p   q \r\nmerged: a p b q c   d\r\n\r\n\r\n&nbsp;\r\nConstraints:\r\n\r\n\r\n\t1 <= word1.length, word2.length <= 100\r\n\tword1 and word2 consist of lowercase English letters.\n\n## My Submission\n\n- Runtime: 35 ms\n- Memory: 16.4 MB\n\n## Similar Problems\n\n- [Minimum Additions to Make Valid String](https://leetcode.com/problems/minimum-additions-to-make-valid-string/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-merge-strings-alternately/lc-merge-strings-alternately.py",
+          "content": "class Solution:\n    def mergeAlternately(self, word1: str, word2: str) -> str:\n        new_word = \"\"\n        for char1, char2 in zip(word1, word2):\n            new_word += char1 + char2\n        if len(word1) < len(word2):\n            new_word += word2[len(word1):]\n        else:\n            new_word += word1[len(word2):]\n        return new_word"
+        },
+        {
+          "path": "problems/lc-merge-strings-alternately/README.md",
+          "content": "# Merge Strings Alternately\n\n**Difficulty:** Easy  |  **Acceptance:** 82.1%\n\n**Tags:** `Two Pointers`, `String`\n\n## Problem\n\nYou are given two strings word1 and word2. Merge the strings by adding letters in alternating order, starting with word1. If a string is longer than the other, append the additional letters onto the end of the merged string.\r\n\r\nReturn the merged string.\r\n\r\n&nbsp;\r\nExample 1:\r\n\r\n\r\nInput: word1 = \"abc\", word2 = \"pqr\"\r\nOutput: \"apbqcr\"\r\nExplanation:&nbsp;The merged string will be merged as so:\r\nword1:  a   b   c\r\nword2:    p   q   r\r\nmerged: a p b q c r\r\n\r\n\r\nExample 2:\r\n\r\n\r\nInput: word1 = \"ab\", word2 = \"pqrs\"\r\nOutput: \"apbqrs\"\r\nExplanation:&nbsp;Notice that as word2 is longer, \"rs\" is appended to the end.\r\nword1:  a   b \r\nword2:    p   q   r   s\r\nmerged: a p b q   r   s\r\n\r\n\r\nExample 3:\r\n\r\n\r\nInput: word1 = \"abcd\", word2 = \"pq\"\r\nOutput: \"apbqcd\"\r\nExplanation:&nbsp;Notice that as word1 is longer, \"cd\" is appended to the end.\r\nword1:  a   b   c   d\r\nword2:    p   q \r\nmerged: a p b q c   d\r\n\r\n\r\n&nbsp;\r\nConstraints:\r\n\r\n\r\n\t1 <= word1.length, word2.length <= 100\r\n\tword1 and word2 consist of lowercase English letters.\n\n## My Submission\n\n- Runtime: 35 ms\n- Memory: 16.4 MB\n\n## Similar Problems\n\n- [Minimum Additions to Make Valid String](https://leetcode.com/problems/minimum-additions-to-make-valid-string/) — Medium\n"
+        }
+      ],
+      "timestamp": 1723700871000,
+      "runtime": "35 ms",
+      "memory": "16.4 MB",
+      "runtimePct": 96.7805,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given two strings <code>word1</code> and <code>word2</code>. Merge the strings by adding letters in alternating order, starting with <code>word1</code>. If a string is longer than the other, append the additional letters onto the end of the merged string.</p>\r\n\r\n<p>Return <em>the merged string.</em></p>\r\n\r\n<p>&nbsp;</p>\r\n<p><strong class=\"example\">Example 1:</strong></p>\r\n\r\n<pre>\r\n<strong>Input:</strong> word1 = &quot;abc&quot;, word2 = &quot;pqr&quot;\r\n<strong>Output:</strong> &quot;apbqcr&quot;\r\n<strong>Explanation:</strong>&nbsp;The merged string will be merged as so:\r\nword1:  a   b   c\r\nword2:    p   q   r\r\nmerged: a p b q c r\r\n</pre>\r\n\r\n<p><strong class=\"example\">Example 2:</strong></p>\r\n\r\n<pre>\r\n<strong>Input:</strong> word1 = &quot;ab&quot;, word2 = &quot;pqrs&quot;\r\n<strong>Output:</strong> &quot;apbqrs&quot;\r\n<strong>Explanation:</strong>&nbsp;Notice that as word2 is longer, &quot;rs&quot; is appended to the end.\r\nword1:  a   b \r\nword2:    p   q   r   s\r\nmerged: a p b q   r   s\r\n</pre>\r\n\r\n<p><strong class=\"example\">Example 3:</strong></p>\r\n\r\n<pre>\r\n<strong>Input:</strong> word1 = &quot;abcd&quot;, word2 = &quot;pq&quot;\r\n<strong>Output:</strong> &quot;apbqcd&quot;\r\n<strong>Explanation:</strong>&nbsp;Notice that as word1 is longer, &quot;cd&quot; is appended to the end.\r\nword1:  a   b   c   d\r\nword2:    p   q \r\nmerged: a p b q c   d\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n<p><strong>Constraints:</strong></p>\r\n\r\n<ul>\r\n\t<li><code>1 &lt;= word1.length, word2.length &lt;= 100</code></li>\r\n\t<li><code>word1</code> and <code>word2</code> consist of lowercase English letters.</li>\r\n</ul>",
+      "hints": [
+        "Use two pointers, one pointer for each string. Alternately choose the character from each pointer, and move the pointer upwards."
+      ],
+      "acRate": 82.09315529720995,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "minimum-additions-to-make-valid-string",
+          "title": "Minimum Additions to Make Valid String",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "conflictPending": true,
+      "conflictCandidates": [
+        {
+          "id": "lc-merge-strings-alternately::1957612804",
+          "code": "class Solution:\n    def mergeAlternately(self, word1: str, word2: str) -> str:\n        result = \"\"\n        i = 0\n        while i < len(word1) or i < len(word2):\n            if i < len(word1):\n                result += word1[i]\n            if i < len(word2):\n                result += word2[i]\n            i += 1\n        return result",
+          "lang": {
+            "name": "Python3",
+            "ext": "py",
+            "slug": "python3"
+          },
+          "runtime": "56 ms",
+          "memory": "19.4 MB",
+          "runtimePct": 5.666599999999969,
+          "memoryPct": 17.745299999999993,
+          "timestamp": 1774344800000,
+          "submissionId": 1957612804
+        }
+      ]
+    },
+    {
+      "id": "lc-lemonade-change::1356197827",
+      "submissionId": 1356197827,
+      "platform": "leetcode",
+      "title": "Lemonade Change",
+      "titleSlug": "lemonade-change",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Greedy"
+      ],
+      "topic": "Greedy",
+      "code": "class Solution:\n    def lemonadeChange(self, bills: List[int]) -> bool:\n        # 5 -> 0\n        # 10 -> 5\n        # 20 -> 10, 5\n        # [5,5,10,20,5,5,5,5,5,5,5,5,5,10,5,5,20,5,20,5]\n        five = 0\n        ten = 0\n        for i in range(len(bills)):\n            bill = bills[i]\n            if bill == 5:\n                five+=1\n                continue\n            elif bill == 10:\n                if five != 0:\n                    five-=1\n                    ten+=1\n                    continue\n                return False\n            elif bill == 20:\n                if five>0 and ten>0:\n                    five-=1\n                    ten-=1\n                    continue\n                elif five>=3:\n                    five-=3\n                    continue\n                return False\n        \n        return True\n",
+      "readmeContent": "# Lemonade Change\n\n**Difficulty:** Easy  |  **Acceptance:** 59.1%\n\n**Tags:** `Array`, `Greedy`\n\n## Problem\n\nAt a lemonade stand, each lemonade costs $5. Customers are standing in a queue to buy from you and order one at a time (in the order specified by bills). Each customer will only buy one lemonade and pay with either a $5, $10, or $20 bill. You must provide the correct change to each customer so that the net transaction is that the customer pays $5.\n\nNote that you do not have any change in hand at first.\n\nGiven an integer array bills where bills[i] is the bill the ith customer pays, return true if you can provide every customer with the correct change, or false otherwise.\n\n&nbsp;\nExample 1:\n\nInput: bills = [5,5,5,10,20]\nOutput: true\nExplanation: \nFrom the first 3 customers, we collect three $5 bills in order.\nFrom the fourth customer, we collect a $10 bill and give back a $5.\nFrom the fifth customer, we give a $10 bill and a $5 bill.\nSince all customers got correct change, we output true.\n\nExample 2:\n\nInput: bills = [5,5,10,10,20]\nOutput: false\nExplanation: \nFrom the first two customers in order, we collect two $5 bills.\nFor the next two customers in order, we collect a $10 bill and give back a $5 bill.\nFor the last customer, we can not give the change of $15 back because we only have two $10 bills.\nSince not every customer received the correct change, the answer is false.\n\n&nbsp;\nConstraints:\n\n\t1 <= bills.length <= 105\n\tbills[i] is either 5, 10, or 20.\n\n## My Submission\n\n- Runtime: 617 ms\n- Memory: 21.3 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-lemonade-change/lc-lemonade-change.py",
+          "content": "class Solution:\n    def lemonadeChange(self, bills: List[int]) -> bool:\n        # 5 -> 0\n        # 10 -> 5\n        # 20 -> 10, 5\n        # [5,5,10,20,5,5,5,5,5,5,5,5,5,10,5,5,20,5,20,5]\n        five = 0\n        ten = 0\n        for i in range(len(bills)):\n            bill = bills[i]\n            if bill == 5:\n                five+=1\n                continue\n            elif bill == 10:\n                if five != 0:\n                    five-=1\n                    ten+=1\n                    continue\n                return False\n            elif bill == 20:\n                if five>0 and ten>0:\n                    five-=1\n                    ten-=1\n                    continue\n                elif five>=3:\n                    five-=3\n                    continue\n                return False\n        \n        return True\n"
+        },
+        {
+          "path": "problems/lc-lemonade-change/README.md",
+          "content": "# Lemonade Change\n\n**Difficulty:** Easy  |  **Acceptance:** 59.1%\n\n**Tags:** `Array`, `Greedy`\n\n## Problem\n\nAt a lemonade stand, each lemonade costs $5. Customers are standing in a queue to buy from you and order one at a time (in the order specified by bills). Each customer will only buy one lemonade and pay with either a $5, $10, or $20 bill. You must provide the correct change to each customer so that the net transaction is that the customer pays $5.\n\nNote that you do not have any change in hand at first.\n\nGiven an integer array bills where bills[i] is the bill the ith customer pays, return true if you can provide every customer with the correct change, or false otherwise.\n\n&nbsp;\nExample 1:\n\nInput: bills = [5,5,5,10,20]\nOutput: true\nExplanation: \nFrom the first 3 customers, we collect three $5 bills in order.\nFrom the fourth customer, we collect a $10 bill and give back a $5.\nFrom the fifth customer, we give a $10 bill and a $5 bill.\nSince all customers got correct change, we output true.\n\nExample 2:\n\nInput: bills = [5,5,10,10,20]\nOutput: false\nExplanation: \nFrom the first two customers in order, we collect two $5 bills.\nFor the next two customers in order, we collect a $10 bill and give back a $5 bill.\nFor the last customer, we can not give the change of $15 back because we only have two $10 bills.\nSince not every customer received the correct change, the answer is false.\n\n&nbsp;\nConstraints:\n\n\t1 <= bills.length <= 105\n\tbills[i] is either 5, 10, or 20.\n\n## My Submission\n\n- Runtime: 617 ms\n- Memory: 21.3 MB\n"
+        }
+      ],
+      "timestamp": 1723702054000,
+      "runtime": "617 ms",
+      "memory": "21.3 MB",
+      "runtimePct": 5.079200000000003,
+      "memoryPct": 100,
+      "problemStatement": "<p>At a lemonade stand, each lemonade costs <code>$5</code>. Customers are standing in a queue to buy from you and order one at a time (in the order specified by bills). Each customer will only buy one lemonade and pay with either a <code>$5</code>, <code>$10</code>, or <code>$20</code> bill. You must provide the correct change to each customer so that the net transaction is that the customer pays <code>$5</code>.</p>\n\n<p>Note that you do not have any change in hand at first.</p>\n\n<p>Given an integer array <code>bills</code> where <code>bills[i]</code> is the bill the <code>i<sup>th</sup></code> customer pays, return <code>true</code> <em>if you can provide every customer with the correct change, or</em> <code>false</code> <em>otherwise</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> bills = [5,5,5,10,20]\n<strong>Output:</strong> true\n<strong>Explanation:</strong> \nFrom the first 3 customers, we collect three $5 bills in order.\nFrom the fourth customer, we collect a $10 bill and give back a $5.\nFrom the fifth customer, we give a $10 bill and a $5 bill.\nSince all customers got correct change, we output true.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> bills = [5,5,10,10,20]\n<strong>Output:</strong> false\n<strong>Explanation:</strong> \nFrom the first two customers in order, we collect two $5 bills.\nFor the next two customers in order, we collect a $10 bill and give back a $5 bill.\nFor the last customer, we can not give the change of $15 back because we only have two $10 bills.\nSince not every customer received the correct change, the answer is false.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= bills.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>bills[i]</code> is either <code>5</code>, <code>10</code>, or <code>20</code>.</li>\n</ul>\n",
+      "hints": null,
+      "acRate": 59.09576258573864,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-lemonade-change::1356200718",
+      "submissionId": 1356200718,
+      "platform": "leetcode",
+      "title": "Lemonade Change",
+      "titleSlug": "lemonade-change",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Java",
+        "ext": "java",
+        "slug": "java"
+      },
+      "tags": [
+        "Array",
+        "Greedy"
+      ],
+      "topic": "Greedy",
+      "code": "class Solution {\n    public boolean lemonadeChange(int[] bills) {\n        int five = 0;\n        int ten = 0;\n\n        for (int bill : bills) {\n            if (bill == 5) {\n                five++;\n            } else if (bill == 10) {\n                if (five > 0) {\n                    five--;\n                    ten++;\n                } else {\n                    return false;\n                }\n            } else if (bill == 20) {\n                if (five > 0 && ten > 0) {\n                    five--;\n                    ten--;\n                } else if (five >= 3) {\n                    five -= 3;\n                } else {\n                    return false;\n                }\n            }\n        }\n\n        return true;\n    }\n}",
+      "readmeContent": "# Lemonade Change\n\n**Difficulty:** Easy  |  **Acceptance:** 59.1%\n\n**Tags:** `Array`, `Greedy`\n\n## Problem\n\nAt a lemonade stand, each lemonade costs $5. Customers are standing in a queue to buy from you and order one at a time (in the order specified by bills). Each customer will only buy one lemonade and pay with either a $5, $10, or $20 bill. You must provide the correct change to each customer so that the net transaction is that the customer pays $5.\n\nNote that you do not have any change in hand at first.\n\nGiven an integer array bills where bills[i] is the bill the ith customer pays, return true if you can provide every customer with the correct change, or false otherwise.\n\n&nbsp;\nExample 1:\n\nInput: bills = [5,5,5,10,20]\nOutput: true\nExplanation: \nFrom the first 3 customers, we collect three $5 bills in order.\nFrom the fourth customer, we collect a $10 bill and give back a $5.\nFrom the fifth customer, we give a $10 bill and a $5 bill.\nSince all customers got correct change, we output true.\n\nExample 2:\n\nInput: bills = [5,5,10,10,20]\nOutput: false\nExplanation: \nFrom the first two customers in order, we collect two $5 bills.\nFor the next two customers in order, we collect a $10 bill and give back a $5 bill.\nFor the last customer, we can not give the change of $15 back because we only have two $10 bills.\nSince not every customer received the correct change, the answer is false.\n\n&nbsp;\nConstraints:\n\n\t1 <= bills.length <= 105\n\tbills[i] is either 5, 10, or 20.\n\n## My Submission\n\n- Runtime: 1 ms\n- Memory: 55.8 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-lemonade-change/lc-lemonade-change.java",
+          "content": "class Solution {\n    public boolean lemonadeChange(int[] bills) {\n        int five = 0;\n        int ten = 0;\n\n        for (int bill : bills) {\n            if (bill == 5) {\n                five++;\n            } else if (bill == 10) {\n                if (five > 0) {\n                    five--;\n                    ten++;\n                } else {\n                    return false;\n                }\n            } else if (bill == 20) {\n                if (five > 0 && ten > 0) {\n                    five--;\n                    ten--;\n                } else if (five >= 3) {\n                    five -= 3;\n                } else {\n                    return false;\n                }\n            }\n        }\n\n        return true;\n    }\n}"
+        },
+        {
+          "path": "problems/lc-lemonade-change/README.md",
+          "content": "# Lemonade Change\n\n**Difficulty:** Easy  |  **Acceptance:** 59.1%\n\n**Tags:** `Array`, `Greedy`\n\n## Problem\n\nAt a lemonade stand, each lemonade costs $5. Customers are standing in a queue to buy from you and order one at a time (in the order specified by bills). Each customer will only buy one lemonade and pay with either a $5, $10, or $20 bill. You must provide the correct change to each customer so that the net transaction is that the customer pays $5.\n\nNote that you do not have any change in hand at first.\n\nGiven an integer array bills where bills[i] is the bill the ith customer pays, return true if you can provide every customer with the correct change, or false otherwise.\n\n&nbsp;\nExample 1:\n\nInput: bills = [5,5,5,10,20]\nOutput: true\nExplanation: \nFrom the first 3 customers, we collect three $5 bills in order.\nFrom the fourth customer, we collect a $10 bill and give back a $5.\nFrom the fifth customer, we give a $10 bill and a $5 bill.\nSince all customers got correct change, we output true.\n\nExample 2:\n\nInput: bills = [5,5,10,10,20]\nOutput: false\nExplanation: \nFrom the first two customers in order, we collect two $5 bills.\nFor the next two customers in order, we collect a $10 bill and give back a $5 bill.\nFor the last customer, we can not give the change of $15 back because we only have two $10 bills.\nSince not every customer received the correct change, the answer is false.\n\n&nbsp;\nConstraints:\n\n\t1 <= bills.length <= 105\n\tbills[i] is either 5, 10, or 20.\n\n## My Submission\n\n- Runtime: 1 ms\n- Memory: 55.8 MB\n"
+        }
+      ],
+      "timestamp": 1723702227000,
+      "runtime": "1 ms",
+      "memory": "55.8 MB",
+      "runtimePct": 99.8858,
+      "memoryPct": 100,
+      "problemStatement": "<p>At a lemonade stand, each lemonade costs <code>$5</code>. Customers are standing in a queue to buy from you and order one at a time (in the order specified by bills). Each customer will only buy one lemonade and pay with either a <code>$5</code>, <code>$10</code>, or <code>$20</code> bill. You must provide the correct change to each customer so that the net transaction is that the customer pays <code>$5</code>.</p>\n\n<p>Note that you do not have any change in hand at first.</p>\n\n<p>Given an integer array <code>bills</code> where <code>bills[i]</code> is the bill the <code>i<sup>th</sup></code> customer pays, return <code>true</code> <em>if you can provide every customer with the correct change, or</em> <code>false</code> <em>otherwise</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> bills = [5,5,5,10,20]\n<strong>Output:</strong> true\n<strong>Explanation:</strong> \nFrom the first 3 customers, we collect three $5 bills in order.\nFrom the fourth customer, we collect a $10 bill and give back a $5.\nFrom the fifth customer, we give a $10 bill and a $5 bill.\nSince all customers got correct change, we output true.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> bills = [5,5,10,10,20]\n<strong>Output:</strong> false\n<strong>Explanation:</strong> \nFrom the first two customers in order, we collect two $5 bills.\nFor the next two customers in order, we collect a $10 bill and give back a $5 bill.\nFor the last customer, we can not give the change of $15 back because we only have two $10 bills.\nSince not every customer received the correct change, the answer is false.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= bills.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>bills[i]</code> is either <code>5</code>, <code>10</code>, or <code>20</code>.</li>\n</ul>\n",
+      "hints": null,
+      "acRate": 59.09576258573864,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-merge-strings-alternately::1363827829",
+      "submissionId": 1363827829,
+      "platform": "leetcode",
+      "title": "Merge Strings Alternately",
+      "titleSlug": "merge-strings-alternately",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Java",
+        "ext": "java",
+        "slug": "java"
+      },
+      "tags": [
+        "Two Pointers",
+        "String"
+      ],
+      "topic": "Two Pointers",
+      "code": "class Solution {\n    public String mergeAlternately(String word1, String word2) {\n        StringBuilder new_word = new StringBuilder();\n        int i = 0, j = 0;\n        while (i < word1.length() && j < word2.length()) {\n            new_word.append(word1.charAt(i++));\n            new_word.append(word2.charAt(j++));\n        }\n\n        while (i < word1.length()) {\n            new_word.append(word1.charAt(i++));\n        }\n\n        while (j < word2.length()) {\n            new_word.append(word2.charAt(j++));\n        }\n\n        return new_word.toString();\n    }\n}",
+      "readmeContent": "# Merge Strings Alternately\n\n**Difficulty:** Easy  |  **Acceptance:** 82.1%\n\n**Tags:** `Two Pointers`, `String`\n\n## Problem\n\nYou are given two strings word1 and word2. Merge the strings by adding letters in alternating order, starting with word1. If a string is longer than the other, append the additional letters onto the end of the merged string.\r\n\r\nReturn the merged string.\r\n\r\n&nbsp;\r\nExample 1:\r\n\r\n\r\nInput: word1 = \"abc\", word2 = \"pqr\"\r\nOutput: \"apbqcr\"\r\nExplanation:&nbsp;The merged string will be merged as so:\r\nword1:  a   b   c\r\nword2:    p   q   r\r\nmerged: a p b q c r\r\n\r\n\r\nExample 2:\r\n\r\n\r\nInput: word1 = \"ab\", word2 = \"pqrs\"\r\nOutput: \"apbqrs\"\r\nExplanation:&nbsp;Notice that as word2 is longer, \"rs\" is appended to the end.\r\nword1:  a   b \r\nword2:    p   q   r   s\r\nmerged: a p b q   r   s\r\n\r\n\r\nExample 3:\r\n\r\n\r\nInput: word1 = \"abcd\", word2 = \"pq\"\r\nOutput: \"apbqcd\"\r\nExplanation:&nbsp;Notice that as word1 is longer, \"cd\" is appended to the end.\r\nword1:  a   b   c   d\r\nword2:    p   q \r\nmerged: a p b q c   d\r\n\r\n\r\n&nbsp;\r\nConstraints:\r\n\r\n\r\n\t1 <= word1.length, word2.length <= 100\r\n\tword1 and word2 consist of lowercase English letters.\n\n## My Submission\n\n- Runtime: 1 ms\n- Memory: 41.9 MB\n\n## Similar Problems\n\n- [Minimum Additions to Make Valid String](https://leetcode.com/problems/minimum-additions-to-make-valid-string/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-merge-strings-alternately/lc-merge-strings-alternately.java",
+          "content": "class Solution {\n    public String mergeAlternately(String word1, String word2) {\n        StringBuilder new_word = new StringBuilder();\n        int i = 0, j = 0;\n        while (i < word1.length() && j < word2.length()) {\n            new_word.append(word1.charAt(i++));\n            new_word.append(word2.charAt(j++));\n        }\n\n        while (i < word1.length()) {\n            new_word.append(word1.charAt(i++));\n        }\n\n        while (j < word2.length()) {\n            new_word.append(word2.charAt(j++));\n        }\n\n        return new_word.toString();\n    }\n}"
+        },
+        {
+          "path": "problems/lc-merge-strings-alternately/README.md",
+          "content": "# Merge Strings Alternately\n\n**Difficulty:** Easy  |  **Acceptance:** 82.1%\n\n**Tags:** `Two Pointers`, `String`\n\n## Problem\n\nYou are given two strings word1 and word2. Merge the strings by adding letters in alternating order, starting with word1. If a string is longer than the other, append the additional letters onto the end of the merged string.\r\n\r\nReturn the merged string.\r\n\r\n&nbsp;\r\nExample 1:\r\n\r\n\r\nInput: word1 = \"abc\", word2 = \"pqr\"\r\nOutput: \"apbqcr\"\r\nExplanation:&nbsp;The merged string will be merged as so:\r\nword1:  a   b   c\r\nword2:    p   q   r\r\nmerged: a p b q c r\r\n\r\n\r\nExample 2:\r\n\r\n\r\nInput: word1 = \"ab\", word2 = \"pqrs\"\r\nOutput: \"apbqrs\"\r\nExplanation:&nbsp;Notice that as word2 is longer, \"rs\" is appended to the end.\r\nword1:  a   b \r\nword2:    p   q   r   s\r\nmerged: a p b q   r   s\r\n\r\n\r\nExample 3:\r\n\r\n\r\nInput: word1 = \"abcd\", word2 = \"pq\"\r\nOutput: \"apbqcd\"\r\nExplanation:&nbsp;Notice that as word1 is longer, \"cd\" is appended to the end.\r\nword1:  a   b   c   d\r\nword2:    p   q \r\nmerged: a p b q c   d\r\n\r\n\r\n&nbsp;\r\nConstraints:\r\n\r\n\r\n\t1 <= word1.length, word2.length <= 100\r\n\tword1 and word2 consist of lowercase English letters.\n\n## My Submission\n\n- Runtime: 1 ms\n- Memory: 41.9 MB\n\n## Similar Problems\n\n- [Minimum Additions to Make Valid String](https://leetcode.com/problems/minimum-additions-to-make-valid-string/) — Medium\n"
+        }
+      ],
+      "timestamp": 1724264849000,
+      "runtime": "1 ms",
+      "memory": "41.9 MB",
+      "runtimePct": 95.2833,
+      "memoryPct": 99.96260000000002,
+      "problemStatement": "<p>You are given two strings <code>word1</code> and <code>word2</code>. Merge the strings by adding letters in alternating order, starting with <code>word1</code>. If a string is longer than the other, append the additional letters onto the end of the merged string.</p>\r\n\r\n<p>Return <em>the merged string.</em></p>\r\n\r\n<p>&nbsp;</p>\r\n<p><strong class=\"example\">Example 1:</strong></p>\r\n\r\n<pre>\r\n<strong>Input:</strong> word1 = &quot;abc&quot;, word2 = &quot;pqr&quot;\r\n<strong>Output:</strong> &quot;apbqcr&quot;\r\n<strong>Explanation:</strong>&nbsp;The merged string will be merged as so:\r\nword1:  a   b   c\r\nword2:    p   q   r\r\nmerged: a p b q c r\r\n</pre>\r\n\r\n<p><strong class=\"example\">Example 2:</strong></p>\r\n\r\n<pre>\r\n<strong>Input:</strong> word1 = &quot;ab&quot;, word2 = &quot;pqrs&quot;\r\n<strong>Output:</strong> &quot;apbqrs&quot;\r\n<strong>Explanation:</strong>&nbsp;Notice that as word2 is longer, &quot;rs&quot; is appended to the end.\r\nword1:  a   b \r\nword2:    p   q   r   s\r\nmerged: a p b q   r   s\r\n</pre>\r\n\r\n<p><strong class=\"example\">Example 3:</strong></p>\r\n\r\n<pre>\r\n<strong>Input:</strong> word1 = &quot;abcd&quot;, word2 = &quot;pq&quot;\r\n<strong>Output:</strong> &quot;apbqcd&quot;\r\n<strong>Explanation:</strong>&nbsp;Notice that as word1 is longer, &quot;cd&quot; is appended to the end.\r\nword1:  a   b   c   d\r\nword2:    p   q \r\nmerged: a p b q c   d\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n<p><strong>Constraints:</strong></p>\r\n\r\n<ul>\r\n\t<li><code>1 &lt;= word1.length, word2.length &lt;= 100</code></li>\r\n\t<li><code>word1</code> and <code>word2</code> consist of lowercase English letters.</li>\r\n</ul>",
+      "hints": [
+        "Use two pointers, one pointer for each string. Alternately choose the character from each pointer, and move the pointer upwards."
+      ],
+      "acRate": 82.09315529720995,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "minimum-additions-to-make-valid-string",
+          "title": "Minimum Additions to Make Valid String",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-find-closest-number-to-zero::1365719223",
+      "submissionId": 1365719223,
+      "platform": "leetcode",
+      "title": "Find Closest Number to Zero",
+      "titleSlug": "find-closest-number-to-zero",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Java",
+        "ext": "java",
+        "slug": "java"
+      },
+      "tags": [
+        "Array"
+      ],
+      "topic": "Array",
+      "code": "import java.util.ArrayList;\nimport java.util.Collections;\n\nclass Solution {\n    public int findClosestNumber(int[] nums) {\n        ArrayList<Integer> negative_list = new ArrayList<Integer>();\n        ArrayList<Integer> positive_list = new ArrayList<Integer>();\n\n        for (Integer integer : nums) {\n            if (integer < 0) {\n                negative_list.add(integer);\n            } else {\n                positive_list.add(integer);\n            }\n        }\n\n        Collections.sort(negative_list, Collections.reverseOrder());\n        Collections.sort(positive_list);\n\n        if (negative_list.isEmpty() && positive_list.isEmpty()) {\n            return 0;\n        }\n\n        if (negative_list.isEmpty()) {\n            return positive_list.get(0);\n        }\n        if (positive_list.isEmpty()) {\n            return negative_list.get(0);\n        }\n\n        int closestNegative = negative_list.get(0);\n        int closestPositive = positive_list.get(0);\n\n        if (Math.abs(closestNegative) < closestPositive) {\n            return closestNegative;\n        } else {\n            return closestPositive;\n        }\n    }\n}",
+      "readmeContent": "# Find Closest Number to Zero\n\n**Difficulty:** Easy  |  **Acceptance:** 47.9%\n\n**Tags:** `Array`\n\n## Problem\n\nGiven an integer array nums of size n, return the number with the value closest to 0 in nums. If there are multiple answers, return the number with the largest value.\n&nbsp;\nExample 1:\n\nInput: nums = [-4,-2,1,4,8]\nOutput: 1\nExplanation:\nThe distance from -4 to 0 is |-4| = 4.\nThe distance from -2 to 0 is |-2| = 2.\nThe distance from 1 to 0 is |1| = 1.\nThe distance from 4 to 0 is |4| = 4.\nThe distance from 8 to 0 is |8| = 8.\nThus, the closest number to 0 in the array is 1.\n\nExample 2:\n\nInput: nums = [2,-1,1]\nOutput: 1\nExplanation: 1 and -1 are both the closest numbers to 0, so 1 being larger is returned.\n\n&nbsp;\nConstraints:\n\n\t1 <= n <= 1000\n\t-105 <= nums[i] <= 105\n\n## My Submission\n\n- Runtime: 21 ms\n- Memory: 44.7 MB\n\n## Similar Problems\n\n- [Find K Closest Elements](https://leetcode.com/problems/find-k-closest-elements/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-find-closest-number-to-zero/lc-find-closest-number-to-zero.java",
+          "content": "import java.util.ArrayList;\nimport java.util.Collections;\n\nclass Solution {\n    public int findClosestNumber(int[] nums) {\n        ArrayList<Integer> negative_list = new ArrayList<Integer>();\n        ArrayList<Integer> positive_list = new ArrayList<Integer>();\n\n        for (Integer integer : nums) {\n            if (integer < 0) {\n                negative_list.add(integer);\n            } else {\n                positive_list.add(integer);\n            }\n        }\n\n        Collections.sort(negative_list, Collections.reverseOrder());\n        Collections.sort(positive_list);\n\n        if (negative_list.isEmpty() && positive_list.isEmpty()) {\n            return 0;\n        }\n\n        if (negative_list.isEmpty()) {\n            return positive_list.get(0);\n        }\n        if (positive_list.isEmpty()) {\n            return negative_list.get(0);\n        }\n\n        int closestNegative = negative_list.get(0);\n        int closestPositive = positive_list.get(0);\n\n        if (Math.abs(closestNegative) < closestPositive) {\n            return closestNegative;\n        } else {\n            return closestPositive;\n        }\n    }\n}"
+        },
+        {
+          "path": "problems/lc-find-closest-number-to-zero/README.md",
+          "content": "# Find Closest Number to Zero\n\n**Difficulty:** Easy  |  **Acceptance:** 47.9%\n\n**Tags:** `Array`\n\n## Problem\n\nGiven an integer array nums of size n, return the number with the value closest to 0 in nums. If there are multiple answers, return the number with the largest value.\n&nbsp;\nExample 1:\n\nInput: nums = [-4,-2,1,4,8]\nOutput: 1\nExplanation:\nThe distance from -4 to 0 is |-4| = 4.\nThe distance from -2 to 0 is |-2| = 2.\nThe distance from 1 to 0 is |1| = 1.\nThe distance from 4 to 0 is |4| = 4.\nThe distance from 8 to 0 is |8| = 8.\nThus, the closest number to 0 in the array is 1.\n\nExample 2:\n\nInput: nums = [2,-1,1]\nOutput: 1\nExplanation: 1 and -1 are both the closest numbers to 0, so 1 being larger is returned.\n\n&nbsp;\nConstraints:\n\n\t1 <= n <= 1000\n\t-105 <= nums[i] <= 105\n\n## My Submission\n\n- Runtime: 21 ms\n- Memory: 44.7 MB\n\n## Similar Problems\n\n- [Find K Closest Elements](https://leetcode.com/problems/find-k-closest-elements/) — Medium\n"
+        }
+      ],
+      "timestamp": 1724419713000,
+      "runtime": "21 ms",
+      "memory": "44.7 MB",
+      "runtimePct": 5.960199999999995,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an integer array <code>nums</code> of size <code>n</code>, return <em>the number with the value <strong>closest</strong> to </em><code>0</code><em> in </em><code>nums</code>. If there are multiple answers, return <em>the number with the <strong>largest</strong> value</em>.</p>\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [-4,-2,1,4,8]\n<strong>Output:</strong> 1\n<strong>Explanation:</strong>\nThe distance from -4 to 0 is |-4| = 4.\nThe distance from -2 to 0 is |-2| = 2.\nThe distance from 1 to 0 is |1| = 1.\nThe distance from 4 to 0 is |4| = 4.\nThe distance from 8 to 0 is |8| = 8.\nThus, the closest number to 0 in the array is 1.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [2,-1,1]\n<strong>Output:</strong> 1\n<strong>Explanation:</strong> 1 and -1 are both the closest numbers to 0, so 1 being larger is returned.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 1000</code></li>\n\t<li><code>-10<sup>5</sup> &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>\n</ul>\n",
+      "hints": [
+        "Keep track of the number closest to 0 as you iterate through the array.",
+        "Ensure that if multiple numbers are closest to 0, you store the one with the largest value."
+      ],
+      "acRate": 47.94835414942018,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "find-k-closest-elements",
+          "title": "Find K Closest Elements",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-reverse-integer",
+      "submissionId": 1373772875,
+      "platform": "leetcode",
+      "title": "Reverse Integer",
+      "titleSlug": "reverse-integer",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Math"
+      ],
+      "topic": "Math",
+      "code": "class Solution:\n    def reverse(self, x: int) -> int:\n        neg = False\n        if x < 0:\n            x=-x\n            neg = True\n\n        I = int(str(x)[::-1])\n        if I <= -2**31 or I >= 2**31 - 1:\n            return 0\n        return I if neg == False else -I\n        ",
+      "readmeContent": "# Reverse Integer\n\n**Difficulty:** Medium  |  **Acceptance:** 31.9%\n\n**Tags:** `Math`\n\n## Problem\n\nGiven a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.\n\nAssume the environment does not allow you to store 64-bit integers (signed or unsigned).\n\n&nbsp;\nExample 1:\n\nInput: x = 123\nOutput: 321\n\nExample 2:\n\nInput: x = -123\nOutput: -321\n\nExample 3:\n\nInput: x = 120\nOutput: 21\n\n&nbsp;\nConstraints:\n\n\t-231 <= x <= 231 - 1\n\n## My Submission\n\n- Runtime: 36 ms\n- Memory: 16.5 MB\n\n## Similar Problems\n\n- [String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/) — Medium\n- [Reverse Bits](https://leetcode.com/problems/reverse-bits/) — Easy\n- [A Number After a Double Reversal](https://leetcode.com/problems/a-number-after-a-double-reversal/) — Easy\n- [Count Number of Distinct Integers After Reverse Operations](https://leetcode.com/problems/count-number-of-distinct-integers-after-reverse-operations/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/reverse-integer/reverse-integer.py",
+          "content": "class Solution:\n    def reverse(self, x: int) -> int:\n        neg = False\n        if x < 0:\n            x=-x\n            neg = True\n\n        I = int(str(x)[::-1])\n        if I <= -2**31 or I >= 2**31 - 1:\n            return 0\n        return I if neg == False else -I\n        "
+        },
+        {
+          "path": "problems/reverse-integer/README.md",
+          "content": "# Reverse Integer\n\n**Difficulty:** Medium  |  **Acceptance:** 31.9%\n\n**Tags:** `Math`\n\n## Problem\n\nGiven a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.\n\nAssume the environment does not allow you to store 64-bit integers (signed or unsigned).\n\n&nbsp;\nExample 1:\n\nInput: x = 123\nOutput: 321\n\nExample 2:\n\nInput: x = -123\nOutput: -321\n\nExample 3:\n\nInput: x = 120\nOutput: 21\n\n&nbsp;\nConstraints:\n\n\t-231 <= x <= 231 - 1\n\n## My Submission\n\n- Runtime: 36 ms\n- Memory: 16.5 MB\n\n## Similar Problems\n\n- [String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/) — Medium\n- [Reverse Bits](https://leetcode.com/problems/reverse-bits/) — Easy\n- [A Number After a Double Reversal](https://leetcode.com/problems/a-number-after-a-double-reversal/) — Easy\n- [Count Number of Distinct Integers After Reverse Operations](https://leetcode.com/problems/count-number-of-distinct-integers-after-reverse-operations/) — Medium\n"
+        }
+      ],
+      "timestamp": 1725076382000,
+      "runtime": "36 ms",
+      "memory": "16.5 MB",
+      "runtimePct": 95.86259999999999,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given a signed 32-bit integer <code>x</code>, return <code>x</code><em> with its digits reversed</em>. If reversing <code>x</code> causes the value to go outside the signed 32-bit integer range <code>[-2<sup>31</sup>, 2<sup>31</sup> - 1]</code>, then return <code>0</code>.</p>\n\n<p><strong>Assume the environment does not allow you to store 64-bit integers (signed or unsigned).</strong></p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> x = 123\n<strong>Output:</strong> 321\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> x = -123\n<strong>Output:</strong> -321\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> x = 120\n<strong>Output:</strong> 21\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>-2<sup>31</sup> &lt;= x &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>\n",
+      "hints": [],
+      "acRate": 31.855100351571288,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "string-to-integer-atoi",
+          "title": "String to Integer (atoi)",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "reverse-bits",
+          "title": "Reverse Bits",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "a-number-after-a-double-reversal",
+          "title": "A Number After a Double Reversal",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "count-number-of-distinct-integers-after-reverse-operations",
+          "title": "Count Number of Distinct Integers After Reverse Operations",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(\\log_{10} N)$, where $N$ is the value of `x`. Converting an integer to a string and reversing it both take time proportional to the number of digits.\n*   **Space Complexity:** $O(\\log_{10} N)$ to store the string representation of the integer.\n\n### 2. Correctness\nThe code is **correct** and handles the 32-bit signed integer range constraint ($[-2^{31}, 2^{31} - 1]$).\n*   **Edge Case:** If `x = -2147483648`, `x = -x` works in Python (due to arbitrary precision), and the resulting reversed value is checked against the limit, correctly returning `0`.\n*   **Minor Note:** The check `I <= -2**31` is redundant because `I` is always positive at that point.\n\n### 3. Optimization\n**Eliminate string conversion.** Use mathematical operations (modulo and integer division) to reverse the number. This reduces space complexity to **$O(1)$** and avoids the overhead of object allocation involved in string/list slicing.\n\n### 4. Key Algorithmic Pattern\n**String Manipulation** (Type casting and Slicing). Note that in many interview settings, the \"Mathematical Digit Extraction\" pattern is preferred."
+    },
+    {
+      "id": "lc-convert-1d-array-into-2d-array",
+      "submissionId": 1394518464,
+      "platform": "leetcode",
+      "title": "Convert 1D Array Into 2D Array",
+      "titleSlug": "convert-1d-array-into-2d-array",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Matrix",
+        "Simulation"
+      ],
+      "topic": "Array",
+      "code": "class Solution:\n    def construct2DArray(self, original: List[int], m: int, n: int) -> List[List[int]]:\n        arr = []\n        if len(original) != m*n:\n            return arr\n        for i in range(m):\n            arr.append(original[n * i:n * (i + 1)])\n        return arr",
+      "readmeContent": "# Convert 1D Array Into 2D Array\n\n**Difficulty:** Easy  |  **Acceptance:** 72.2%\n\n**Tags:** `Array`, `Matrix`, `Simulation`\n\n## Problem\n\nYou are given a 0-indexed 1-dimensional (1D) integer array original, and two integers, m and n. You are tasked with creating a 2-dimensional (2D) array with  m rows and n columns using all the elements from original.\n\nThe elements from indices 0 to n - 1 (inclusive) of original should form the first row of the constructed 2D array, the elements from indices n to 2 * n - 1 (inclusive) should form the second row of the constructed 2D array, and so on.\n\nReturn an m x n 2D array constructed according to the above procedure, or an empty 2D array if it is impossible.\n\n&nbsp;\nExample 1:\n\nInput: original = [1,2,3,4], m = 2, n = 2\nOutput: [[1,2],[3,4]]\nExplanation: The constructed 2D array should contain 2 rows and 2 columns.\nThe first group of n=2 elements in original, [1,2], becomes the first row in the constructed 2D array.\nThe second group of n=2 elements in original, [3,4], becomes the second row in the constructed 2D array.\n\nExample 2:\n\nInput: original = [1,2,3], m = 1, n = 3\nOutput: [[1,2,3]]\nExplanation: The constructed 2D array should contain 1 row and 3 columns.\nPut all three elements in original into the first row of the constructed 2D array.\n\nExample 3:\n\nInput: original = [1,2], m = 1, n = 1\nOutput: []\nExplanation: There are 2 elements in original.\nIt is impossible to fit 2 elements in a 1x1 2D array, so return an empty 2D array.\n\n&nbsp;\nConstraints:\n\n\t1 <= original.length <= 5 * 104\n\t1 <= original[i] <= 105\n\t1 <= m, n <= 4 * 104\n\n## My Submission\n\n- Runtime: 688 ms\n- Memory: 23.4 MB\n\n## Similar Problems\n\n- [Reshape the Matrix](https://leetcode.com/problems/reshape-the-matrix/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/convert-1d-array-into-2d-array/convert-1d-array-into-2d-array.py",
+          "content": "class Solution:\n    def construct2DArray(self, original: List[int], m: int, n: int) -> List[List[int]]:\n        arr = []\n        if len(original) != m*n:\n            return arr\n        for i in range(m):\n            arr.append(original[n * i:n * (i + 1)])\n        return arr"
+        },
+        {
+          "path": "problems/convert-1d-array-into-2d-array/README.md",
+          "content": "# Convert 1D Array Into 2D Array\n\n**Difficulty:** Easy  |  **Acceptance:** 72.2%\n\n**Tags:** `Array`, `Matrix`, `Simulation`\n\n## Problem\n\nYou are given a 0-indexed 1-dimensional (1D) integer array original, and two integers, m and n. You are tasked with creating a 2-dimensional (2D) array with  m rows and n columns using all the elements from original.\n\nThe elements from indices 0 to n - 1 (inclusive) of original should form the first row of the constructed 2D array, the elements from indices n to 2 * n - 1 (inclusive) should form the second row of the constructed 2D array, and so on.\n\nReturn an m x n 2D array constructed according to the above procedure, or an empty 2D array if it is impossible.\n\n&nbsp;\nExample 1:\n\nInput: original = [1,2,3,4], m = 2, n = 2\nOutput: [[1,2],[3,4]]\nExplanation: The constructed 2D array should contain 2 rows and 2 columns.\nThe first group of n=2 elements in original, [1,2], becomes the first row in the constructed 2D array.\nThe second group of n=2 elements in original, [3,4], becomes the second row in the constructed 2D array.\n\nExample 2:\n\nInput: original = [1,2,3], m = 1, n = 3\nOutput: [[1,2,3]]\nExplanation: The constructed 2D array should contain 1 row and 3 columns.\nPut all three elements in original into the first row of the constructed 2D array.\n\nExample 3:\n\nInput: original = [1,2], m = 1, n = 1\nOutput: []\nExplanation: There are 2 elements in original.\nIt is impossible to fit 2 elements in a 1x1 2D array, so return an empty 2D array.\n\n&nbsp;\nConstraints:\n\n\t1 <= original.length <= 5 * 104\n\t1 <= original[i] <= 105\n\t1 <= m, n <= 4 * 104\n\n## My Submission\n\n- Runtime: 688 ms\n- Memory: 23.4 MB\n\n## Similar Problems\n\n- [Reshape the Matrix](https://leetcode.com/problems/reshape-the-matrix/) — Easy\n"
+        }
+      ],
+      "timestamp": 1726674627000,
+      "runtime": "688 ms",
+      "memory": "23.4 MB",
+      "runtimePct": 5.015699999999995,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given a <strong>0-indexed</strong> 1-dimensional (1D) integer array <code>original</code>, and two integers, <code>m</code> and <code>n</code>. You are tasked with creating a 2-dimensional (2D) array with <code> m</code> rows and <code>n</code> columns using <strong>all</strong> the elements from <code>original</code>.</p>\n\n<p>The elements from indices <code>0</code> to <code>n - 1</code> (<strong>inclusive</strong>) of <code>original</code> should form the first row of the constructed 2D array, the elements from indices <code>n</code> to <code>2 * n - 1</code> (<strong>inclusive</strong>) should form the second row of the constructed 2D array, and so on.</p>\n\n<p>Return <em>an </em><code>m x n</code><em> 2D array constructed according to the above procedure, or an empty 2D array if it is impossible</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<img src=\"https://assets.leetcode.com/uploads/2021/08/26/image-20210826114243-1.png\" style=\"width: 500px; height: 174px;\" />\n<pre>\n<strong>Input:</strong> original = [1,2,3,4], m = 2, n = 2\n<strong>Output:</strong> [[1,2],[3,4]]\n<strong>Explanation:</strong> The constructed 2D array should contain 2 rows and 2 columns.\nThe first group of n=2 elements in original, [1,2], becomes the first row in the constructed 2D array.\nThe second group of n=2 elements in original, [3,4], becomes the second row in the constructed 2D array.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> original = [1,2,3], m = 1, n = 3\n<strong>Output:</strong> [[1,2,3]]\n<strong>Explanation:</strong> The constructed 2D array should contain 1 row and 3 columns.\nPut all three elements in original into the first row of the constructed 2D array.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> original = [1,2], m = 1, n = 1\n<strong>Output:</strong> []\n<strong>Explanation:</strong> There are 2 elements in original.\nIt is impossible to fit 2 elements in a 1x1 2D array, so return an empty 2D array.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= original.length &lt;= 5 * 10<sup>4</sup></code></li>\n\t<li><code>1 &lt;= original[i] &lt;= 10<sup>5</sup></code></li>\n\t<li><code>1 &lt;= m, n &lt;= 4 * 10<sup>4</sup></code></li>\n</ul>\n",
+      "hints": [
+        "When is it possible to convert original into a 2D array and when is it impossible?",
+        "It is possible if and only if m * n == original.length",
+        "If it is possible to convert original to a 2D array, keep an index i such that original[i] is the next element to add to the 2D array."
+      ],
+      "acRate": 72.24041406992711,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "reshape-the-matrix",
+          "title": "Reshape the Matrix",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "### 1. Complexity\n*   **Time:** $O(m \\times n)$ or $O(L)$, where $L$ is the length of `original`. Each element is visited once during slicing.\n*   **Space:** $O(m \\times n)$ to store the result. Excluding the output, the auxiliary space is $O(1)$ (ignoring temporary slice objects).\n\n### 2. Correctness\nThe solution is **correct**. It handles the core constraint (`len(original) != m * n`) first and correctly uses Python's slicing bounds to partition the 1D array into rows.\n*   **Edge cases:** Correctly handles cases where $m=1$ or $n=1$, and cases where dimensions are incompatible with the input size.\n\n### 3. Concrete Optimisation\nUse **List Comprehension**. It is more idiomatic and generally faster in Python than repeated `.append()` calls because it is optimized at the C level:\n```python\nreturn [original[i * n : (i + 1) * n] for i in range(m)] if len(original) == m * n else []\n```\n\n### 4. Key Algorithmic Pattern\n**Array Reshaping/Slicing**: Mapping a 1D index $i$ to 2D coordinates $(r, c)$ using the relationship `index = r * n + c`. In this specific Python implementation, it leverages **interval slicing**."
+    }
+  ]
 }
