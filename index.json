@@ -1,29 +1,30 @@
 {
-  "updatedAt": "2026-05-16T18:47:56.662Z",
+  "updatedAt": "2026-05-16T18:49:13.438Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 26,
-    "easy": 19,
-    "medium": 6,
+    "total": 51,
+    "easy": 40,
+    "medium": 10,
     "hard": 1,
     "byPlatform": {
-      "leetcode": 26
+      "leetcode": 51
     },
     "byLang": {
       "C++": 1,
-      "Java": 7,
+      "Java": 11,
       "C": 1,
-      "Python3": 16,
+      "Python3": 37,
       "JavaScript": 1
     },
     "byTopic": {
       "Two Pointers": 3,
-      "Array": 10,
-      "String": 5,
-      "Math": 2,
+      "Array": 27,
+      "String": 6,
+      "Math": 8,
       "Untagged": 1,
       "Linked List": 1,
-      "Hash Table": 4
+      "Hash Table": 4,
+      "Binary Search": 1
     }
   },
   "meta": {
@@ -1554,6 +1555,1610 @@
       ],
       "hasSimilar": true,
       "aiReview": "### 1. Complexity\n*   **Time:** $O(m \\times n)$ or $O(L)$, where $L$ is the length of `original`. Each element is visited once during slicing.\n*   **Space:** $O(m \\times n)$ to store the result. Excluding the output, the auxiliary space is $O(1)$ (ignoring temporary slice objects).\n\n### 2. Correctness\nThe solution is **correct**. It handles the core constraint (`len(original) != m * n`) first and correctly uses Python's slicing bounds to partition the 1D array into rows.\n*   **Edge cases:** Correctly handles cases where $m=1$ or $n=1$, and cases where dimensions are incompatible with the input size.\n\n### 3. Concrete Optimisation\nUse **List Comprehension**. It is more idiomatic and generally faster in Python than repeated `.append()` calls because it is optimized at the C level:\n```python\nreturn [original[i * n : (i + 1) * n] for i in range(m)] if len(original) == m * n else []\n```\n\n### 4. Key Algorithmic Pattern\n**Array Reshaping/Slicing**: Mapping a 1D index $i$ to 2D coordinates $(r, c)$ using the relationship `index = r * n + c`. In this specific Python implementation, it leverages **interval slicing**."
+    },
+    {
+      "id": "lc-convert-1d-array-into-2d-array::1394530944",
+      "submissionId": 1394530944,
+      "platform": "leetcode",
+      "title": "Convert 1D Array Into 2D Array",
+      "titleSlug": "convert-1d-array-into-2d-array",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Java",
+        "ext": "java",
+        "slug": "java"
+      },
+      "tags": [
+        "Array",
+        "Matrix",
+        "Simulation"
+      ],
+      "topic": "Array",
+      "code": "class Solution {\n    public int[][] construct2DArray(int[] original, int m, int n) {\n        int[][] arr = new int[m][n];\n        if (original.length != m*n){\n            return new int[0][0];\n        }\n        for(int i = 0; i < m; i++){\n            int[] row = new int[n];\n\n            for(int j = 0; j < n; j++){\n                row[j] = original[i*n+j];\n            }\n            arr[i] = row;\n        }\n        return arr;\n    }\n}",
+      "readmeContent": "# Convert 1D Array Into 2D Array\n\n**Difficulty:** Easy  |  **Acceptance:** 72.2%\n\n**Tags:** `Array`, `Matrix`, `Simulation`\n\n## Problem\n\nYou are given a 0-indexed 1-dimensional (1D) integer array original, and two integers, m and n. You are tasked with creating a 2-dimensional (2D) array with  m rows and n columns using all the elements from original.\n\nThe elements from indices 0 to n - 1 (inclusive) of original should form the first row of the constructed 2D array, the elements from indices n to 2 * n - 1 (inclusive) should form the second row of the constructed 2D array, and so on.\n\nReturn an m x n 2D array constructed according to the above procedure, or an empty 2D array if it is impossible.\n\n&nbsp;\nExample 1:\n\nInput: original = [1,2,3,4], m = 2, n = 2\nOutput: [[1,2],[3,4]]\nExplanation: The constructed 2D array should contain 2 rows and 2 columns.\nThe first group of n=2 elements in original, [1,2], becomes the first row in the constructed 2D array.\nThe second group of n=2 elements in original, [3,4], becomes the second row in the constructed 2D array.\n\nExample 2:\n\nInput: original = [1,2,3], m = 1, n = 3\nOutput: [[1,2,3]]\nExplanation: The constructed 2D array should contain 1 row and 3 columns.\nPut all three elements in original into the first row of the constructed 2D array.\n\nExample 3:\n\nInput: original = [1,2], m = 1, n = 1\nOutput: []\nExplanation: There are 2 elements in original.\nIt is impossible to fit 2 elements in a 1x1 2D array, so return an empty 2D array.\n\n&nbsp;\nConstraints:\n\n\t1 <= original.length <= 5 * 104\n\t1 <= original[i] <= 105\n\t1 <= m, n <= 4 * 104\n\n## My Submission\n\n- Runtime: 5 ms\n- Memory: 56.4 MB\n\n## Similar Problems\n\n- [Reshape the Matrix](https://leetcode.com/problems/reshape-the-matrix/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-convert-1d-array-into-2d-array/lc-convert-1d-array-into-2d-array.java",
+          "content": "class Solution {\n    public int[][] construct2DArray(int[] original, int m, int n) {\n        int[][] arr = new int[m][n];\n        if (original.length != m*n){\n            return new int[0][0];\n        }\n        for(int i = 0; i < m; i++){\n            int[] row = new int[n];\n\n            for(int j = 0; j < n; j++){\n                row[j] = original[i*n+j];\n            }\n            arr[i] = row;\n        }\n        return arr;\n    }\n}"
+        },
+        {
+          "path": "problems/lc-convert-1d-array-into-2d-array/README.md",
+          "content": "# Convert 1D Array Into 2D Array\n\n**Difficulty:** Easy  |  **Acceptance:** 72.2%\n\n**Tags:** `Array`, `Matrix`, `Simulation`\n\n## Problem\n\nYou are given a 0-indexed 1-dimensional (1D) integer array original, and two integers, m and n. You are tasked with creating a 2-dimensional (2D) array with  m rows and n columns using all the elements from original.\n\nThe elements from indices 0 to n - 1 (inclusive) of original should form the first row of the constructed 2D array, the elements from indices n to 2 * n - 1 (inclusive) should form the second row of the constructed 2D array, and so on.\n\nReturn an m x n 2D array constructed according to the above procedure, or an empty 2D array if it is impossible.\n\n&nbsp;\nExample 1:\n\nInput: original = [1,2,3,4], m = 2, n = 2\nOutput: [[1,2],[3,4]]\nExplanation: The constructed 2D array should contain 2 rows and 2 columns.\nThe first group of n=2 elements in original, [1,2], becomes the first row in the constructed 2D array.\nThe second group of n=2 elements in original, [3,4], becomes the second row in the constructed 2D array.\n\nExample 2:\n\nInput: original = [1,2,3], m = 1, n = 3\nOutput: [[1,2,3]]\nExplanation: The constructed 2D array should contain 1 row and 3 columns.\nPut all three elements in original into the first row of the constructed 2D array.\n\nExample 3:\n\nInput: original = [1,2], m = 1, n = 1\nOutput: []\nExplanation: There are 2 elements in original.\nIt is impossible to fit 2 elements in a 1x1 2D array, so return an empty 2D array.\n\n&nbsp;\nConstraints:\n\n\t1 <= original.length <= 5 * 104\n\t1 <= original[i] <= 105\n\t1 <= m, n <= 4 * 104\n\n## My Submission\n\n- Runtime: 5 ms\n- Memory: 56.4 MB\n\n## Similar Problems\n\n- [Reshape the Matrix](https://leetcode.com/problems/reshape-the-matrix/) — Easy\n"
+        }
+      ],
+      "timestamp": 1726675330000,
+      "runtime": "5 ms",
+      "memory": "56.4 MB",
+      "runtimePct": 20.341400000000007,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given a <strong>0-indexed</strong> 1-dimensional (1D) integer array <code>original</code>, and two integers, <code>m</code> and <code>n</code>. You are tasked with creating a 2-dimensional (2D) array with <code> m</code> rows and <code>n</code> columns using <strong>all</strong> the elements from <code>original</code>.</p>\n\n<p>The elements from indices <code>0</code> to <code>n - 1</code> (<strong>inclusive</strong>) of <code>original</code> should form the first row of the constructed 2D array, the elements from indices <code>n</code> to <code>2 * n - 1</code> (<strong>inclusive</strong>) should form the second row of the constructed 2D array, and so on.</p>\n\n<p>Return <em>an </em><code>m x n</code><em> 2D array constructed according to the above procedure, or an empty 2D array if it is impossible</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<img src=\"https://assets.leetcode.com/uploads/2021/08/26/image-20210826114243-1.png\" style=\"width: 500px; height: 174px;\" />\n<pre>\n<strong>Input:</strong> original = [1,2,3,4], m = 2, n = 2\n<strong>Output:</strong> [[1,2],[3,4]]\n<strong>Explanation:</strong> The constructed 2D array should contain 2 rows and 2 columns.\nThe first group of n=2 elements in original, [1,2], becomes the first row in the constructed 2D array.\nThe second group of n=2 elements in original, [3,4], becomes the second row in the constructed 2D array.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> original = [1,2,3], m = 1, n = 3\n<strong>Output:</strong> [[1,2,3]]\n<strong>Explanation:</strong> The constructed 2D array should contain 1 row and 3 columns.\nPut all three elements in original into the first row of the constructed 2D array.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> original = [1,2], m = 1, n = 1\n<strong>Output:</strong> []\n<strong>Explanation:</strong> There are 2 elements in original.\nIt is impossible to fit 2 elements in a 1x1 2D array, so return an empty 2D array.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= original.length &lt;= 5 * 10<sup>4</sup></code></li>\n\t<li><code>1 &lt;= original[i] &lt;= 10<sup>5</sup></code></li>\n\t<li><code>1 &lt;= m, n &lt;= 4 * 10<sup>4</sup></code></li>\n</ul>\n",
+      "hints": [
+        "When is it possible to convert original into a 2D array and when is it impossible?",
+        "It is possible if and only if m * n == original.length",
+        "If it is possible to convert original to a 2D array, keep an index i such that original[i] is the next element to add to the 2D array."
+      ],
+      "acRate": 72.24300441826215,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "reshape-the-matrix",
+          "title": "Reshape the Matrix",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-height-checker",
+      "submissionId": 1395791713,
+      "platform": "leetcode",
+      "title": "Height Checker",
+      "titleSlug": "height-checker",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Java",
+        "ext": "java",
+        "slug": "java"
+      },
+      "tags": [
+        "Array",
+        "Sorting",
+        "Counting Sort"
+      ],
+      "topic": "Sorting",
+      "code": "import java.util.Arrays;\n\nclass Solution {\n    public int heightChecker(int[] heights) {\n        int j = 0;\n        int length = heights.length;\n        int[] results = new int[length];\n        int[] expected = Arrays.copyOf(heights, length);\n\n        Arrays.sort(expected);\n\n        for (int i = 0; i < length; i++) {\n            if (expected[i] != heights[i]) {\n                results[j++] = i;\n            }\n        }\n\n        // if(j==0){\n        // System.out.println(\"All indices do not match.\");\n        // }else if (j==length){\n        // System.out.println(\"All indices match.\");\n        // return 0;\n        // }else{\n        // System.out.print(\"Indices \");\n        // for(int i=0;i<j-1;i++){\n        // System.out.print(results[i]+\", \");\n        // }\n        // System.out.print(\"and \"+results[j-1]+ \" do not match.\");\n\n        return j;\n    }\n}",
+      "readmeContent": "# Height Checker\n\n**Difficulty:** Easy  |  **Acceptance:** 81.7%\n\n**Tags:** `Array`, `Sorting`, `Counting Sort`\n\n## Problem\n\nA school is trying to take an annual photo of all the students. The students are asked to stand in a single file line in non-decreasing order by height. Let this ordering be represented by the integer array expected where expected[i] is the expected height of the ith student in line.\n\nYou are given an integer array heights representing the current order that the students are standing in. Each heights[i] is the height of the ith student in line (0-indexed).\n\nReturn the number of indices where heights[i] != expected[i].\n\n&nbsp;\nExample 1:\n\nInput: heights = [1,1,4,2,1,3]\nOutput: 3\nExplanation: \nheights:  [1,1,4,2,1,3]\nexpected: [1,1,1,2,3,4]\nIndices 2, 4, and 5 do not match.\n\nExample 2:\n\nInput: heights = [5,1,2,3,4]\nOutput: 5\nExplanation:\nheights:  [5,1,2,3,4]\nexpected: [1,2,3,4,5]\nAll indices do not match.\n\nExample 3:\n\nInput: heights = [1,2,3,4,5]\nOutput: 0\nExplanation:\nheights:  [1,2,3,4,5]\nexpected: [1,2,3,4,5]\nAll indices match.\n\n&nbsp;\nConstraints:\n\n\t1 <= heights.length <= 100\n\t1 <= heights[i] <= 100\n\n## My Submission\n\n- Runtime: 2 ms\n- Memory: 41.5 MB\n",
+      "files": [
+        {
+          "path": "problems/height-checker/height-checker.java",
+          "content": "import java.util.Arrays;\n\nclass Solution {\n    public int heightChecker(int[] heights) {\n        int j = 0;\n        int length = heights.length;\n        int[] results = new int[length];\n        int[] expected = Arrays.copyOf(heights, length);\n\n        Arrays.sort(expected);\n\n        for (int i = 0; i < length; i++) {\n            if (expected[i] != heights[i]) {\n                results[j++] = i;\n            }\n        }\n\n        // if(j==0){\n        // System.out.println(\"All indices do not match.\");\n        // }else if (j==length){\n        // System.out.println(\"All indices match.\");\n        // return 0;\n        // }else{\n        // System.out.print(\"Indices \");\n        // for(int i=0;i<j-1;i++){\n        // System.out.print(results[i]+\", \");\n        // }\n        // System.out.print(\"and \"+results[j-1]+ \" do not match.\");\n\n        return j;\n    }\n}"
+        },
+        {
+          "path": "problems/height-checker/README.md",
+          "content": "# Height Checker\n\n**Difficulty:** Easy  |  **Acceptance:** 81.7%\n\n**Tags:** `Array`, `Sorting`, `Counting Sort`\n\n## Problem\n\nA school is trying to take an annual photo of all the students. The students are asked to stand in a single file line in non-decreasing order by height. Let this ordering be represented by the integer array expected where expected[i] is the expected height of the ith student in line.\n\nYou are given an integer array heights representing the current order that the students are standing in. Each heights[i] is the height of the ith student in line (0-indexed).\n\nReturn the number of indices where heights[i] != expected[i].\n\n&nbsp;\nExample 1:\n\nInput: heights = [1,1,4,2,1,3]\nOutput: 3\nExplanation: \nheights:  [1,1,4,2,1,3]\nexpected: [1,1,1,2,3,4]\nIndices 2, 4, and 5 do not match.\n\nExample 2:\n\nInput: heights = [5,1,2,3,4]\nOutput: 5\nExplanation:\nheights:  [5,1,2,3,4]\nexpected: [1,2,3,4,5]\nAll indices do not match.\n\nExample 3:\n\nInput: heights = [1,2,3,4,5]\nOutput: 0\nExplanation:\nheights:  [1,2,3,4,5]\nexpected: [1,2,3,4,5]\nAll indices match.\n\n&nbsp;\nConstraints:\n\n\t1 <= heights.length <= 100\n\t1 <= heights[i] <= 100\n\n## My Submission\n\n- Runtime: 2 ms\n- Memory: 41.5 MB\n"
+        }
+      ],
+      "timestamp": 1726773202000,
+      "runtime": "2 ms",
+      "memory": "41.5 MB",
+      "runtimePct": 87.05189999999999,
+      "memoryPct": 100,
+      "problemStatement": "<p>A school is trying to take an annual photo of all the students. The students are asked to stand in a single file line in <strong>non-decreasing order</strong> by height. Let this ordering be represented by the integer array <code>expected</code> where <code>expected[i]</code> is the expected height of the <code>i<sup>th</sup></code> student in line.</p>\n\n<p>You are given an integer array <code>heights</code> representing the <strong>current order</strong> that the students are standing in. Each <code>heights[i]</code> is the height of the <code>i<sup>th</sup></code> student in line (<strong>0-indexed</strong>).</p>\n\n<p>Return <em>the <strong>number of indices</strong> where </em><code>heights[i] != expected[i]</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> heights = [1,1,4,2,1,3]\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> \nheights:  [1,1,<u>4</u>,2,<u>1</u>,<u>3</u>]\nexpected: [1,1,<u>1</u>,2,<u>3</u>,<u>4</u>]\nIndices 2, 4, and 5 do not match.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> heights = [5,1,2,3,4]\n<strong>Output:</strong> 5\n<strong>Explanation:</strong>\nheights:  [<u>5</u>,<u>1</u>,<u>2</u>,<u>3</u>,<u>4</u>]\nexpected: [<u>1</u>,<u>2</u>,<u>3</u>,<u>4</u>,<u>5</u>]\nAll indices do not match.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> heights = [1,2,3,4,5]\n<strong>Output:</strong> 0\n<strong>Explanation:</strong>\nheights:  [1,2,3,4,5]\nexpected: [1,2,3,4,5]\nAll indices match.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= heights.length &lt;= 100</code></li>\n\t<li><code>1 &lt;= heights[i] &lt;= 100</code></li>\n</ul>\n",
+      "hints": [
+        "Build the correct order of heights by sorting another array, then compare the two arrays."
+      ],
+      "acRate": 81.67716719763051,
+      "similar": null,
+      "hasSimilar": null,
+      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time:** $O(N \\log N)$ due to `Arrays.sort()`, where $N$ is the length of the array. The final loop is $O(N)$.\n*   **Space:** $O(N)$ to store the `expected` and `results` arrays.\n\n**2. Correctness**\nThe logic is correct. It creates a sorted version of the input and counts the discrepancies.\n*   **Edge Cases:** Handles empty arrays (returns 0), already sorted arrays (returns 0), and all-identical elements correctly. \n*   **Note:** The `results` array is allocated but only its counter `j` is used for the return value; this is redundant memory usage.\n\n**3. Optimization**\nSince the problem constraints usually specify heights are between 1 and 100, you can use **Counting Sort** (Bucket Sort) to achieve **$O(N)$ time** and **$O(1)$ extra space** (excluding the frequency array of size 101). Simply count occurrences of each height and iterate through the counts to compare with the original array.\n\n**4. Key Algorithmic Pattern**\n**Comparison via Sorting:** Creating a reference (sorted) state to identify elements out of their natural order."
+    },
+    {
+      "id": "lc-height-checker::1395797265",
+      "submissionId": 1395797265,
+      "platform": "leetcode",
+      "title": "Height Checker",
+      "titleSlug": "height-checker",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Sorting",
+        "Counting Sort"
+      ],
+      "topic": "Sorting",
+      "code": "class Solution:\n    def heightChecker(self, heights: List[int]) -> int:\n        expected = sorted(heights.copy())        \n        return len([i for i in range(len(heights)) if heights[i] != expected[i]])\n",
+      "readmeContent": "# Height Checker\n\n**Difficulty:** Easy  |  **Acceptance:** 81.7%\n\n**Tags:** `Array`, `Sorting`, `Counting Sort`\n\n## Problem\n\nA school is trying to take an annual photo of all the students. The students are asked to stand in a single file line in non-decreasing order by height. Let this ordering be represented by the integer array expected where expected[i] is the expected height of the ith student in line.\n\nYou are given an integer array heights representing the current order that the students are standing in. Each heights[i] is the height of the ith student in line (0-indexed).\n\nReturn the number of indices where heights[i] != expected[i].\n\n&nbsp;\nExample 1:\n\nInput: heights = [1,1,4,2,1,3]\nOutput: 3\nExplanation: \nheights:  [1,1,4,2,1,3]\nexpected: [1,1,1,2,3,4]\nIndices 2, 4, and 5 do not match.\n\nExample 2:\n\nInput: heights = [5,1,2,3,4]\nOutput: 5\nExplanation:\nheights:  [5,1,2,3,4]\nexpected: [1,2,3,4,5]\nAll indices do not match.\n\nExample 3:\n\nInput: heights = [1,2,3,4,5]\nOutput: 0\nExplanation:\nheights:  [1,2,3,4,5]\nexpected: [1,2,3,4,5]\nAll indices match.\n\n&nbsp;\nConstraints:\n\n\t1 <= heights.length <= 100\n\t1 <= heights[i] <= 100\n\n## My Submission\n\n- Runtime: 28 ms\n- Memory: 16.4 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-height-checker/lc-height-checker.py",
+          "content": "class Solution:\n    def heightChecker(self, heights: List[int]) -> int:\n        expected = sorted(heights.copy())        \n        return len([i for i in range(len(heights)) if heights[i] != expected[i]])\n"
+        },
+        {
+          "path": "problems/lc-height-checker/README.md",
+          "content": "# Height Checker\n\n**Difficulty:** Easy  |  **Acceptance:** 81.7%\n\n**Tags:** `Array`, `Sorting`, `Counting Sort`\n\n## Problem\n\nA school is trying to take an annual photo of all the students. The students are asked to stand in a single file line in non-decreasing order by height. Let this ordering be represented by the integer array expected where expected[i] is the expected height of the ith student in line.\n\nYou are given an integer array heights representing the current order that the students are standing in. Each heights[i] is the height of the ith student in line (0-indexed).\n\nReturn the number of indices where heights[i] != expected[i].\n\n&nbsp;\nExample 1:\n\nInput: heights = [1,1,4,2,1,3]\nOutput: 3\nExplanation: \nheights:  [1,1,4,2,1,3]\nexpected: [1,1,1,2,3,4]\nIndices 2, 4, and 5 do not match.\n\nExample 2:\n\nInput: heights = [5,1,2,3,4]\nOutput: 5\nExplanation:\nheights:  [5,1,2,3,4]\nexpected: [1,2,3,4,5]\nAll indices do not match.\n\nExample 3:\n\nInput: heights = [1,2,3,4,5]\nOutput: 0\nExplanation:\nheights:  [1,2,3,4,5]\nexpected: [1,2,3,4,5]\nAll indices match.\n\n&nbsp;\nConstraints:\n\n\t1 <= heights.length <= 100\n\t1 <= heights[i] <= 100\n\n## My Submission\n\n- Runtime: 28 ms\n- Memory: 16.4 MB\n"
+        }
+      ],
+      "timestamp": 1726773598000,
+      "runtime": "28 ms",
+      "memory": "16.4 MB",
+      "runtimePct": 5.203599999999995,
+      "memoryPct": 100,
+      "problemStatement": "<p>A school is trying to take an annual photo of all the students. The students are asked to stand in a single file line in <strong>non-decreasing order</strong> by height. Let this ordering be represented by the integer array <code>expected</code> where <code>expected[i]</code> is the expected height of the <code>i<sup>th</sup></code> student in line.</p>\n\n<p>You are given an integer array <code>heights</code> representing the <strong>current order</strong> that the students are standing in. Each <code>heights[i]</code> is the height of the <code>i<sup>th</sup></code> student in line (<strong>0-indexed</strong>).</p>\n\n<p>Return <em>the <strong>number of indices</strong> where </em><code>heights[i] != expected[i]</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> heights = [1,1,4,2,1,3]\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> \nheights:  [1,1,<u>4</u>,2,<u>1</u>,<u>3</u>]\nexpected: [1,1,<u>1</u>,2,<u>3</u>,<u>4</u>]\nIndices 2, 4, and 5 do not match.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> heights = [5,1,2,3,4]\n<strong>Output:</strong> 5\n<strong>Explanation:</strong>\nheights:  [<u>5</u>,<u>1</u>,<u>2</u>,<u>3</u>,<u>4</u>]\nexpected: [<u>1</u>,<u>2</u>,<u>3</u>,<u>4</u>,<u>5</u>]\nAll indices do not match.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> heights = [1,2,3,4,5]\n<strong>Output:</strong> 0\n<strong>Explanation:</strong>\nheights:  [1,2,3,4,5]\nexpected: [1,2,3,4,5]\nAll indices match.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= heights.length &lt;= 100</code></li>\n\t<li><code>1 &lt;= heights[i] &lt;= 100</code></li>\n</ul>\n",
+      "hints": [
+        "Build the correct order of heights by sorting another array, then compare the two arrays."
+      ],
+      "acRate": 81.68937135829198,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-find-the-student-that-will-replace-the-chalk",
+      "submissionId": 1395831251,
+      "platform": "leetcode",
+      "title": "Find the Student that Will Replace the Chalk",
+      "titleSlug": "find-the-student-that-will-replace-the-chalk",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Java",
+        "ext": "java",
+        "slug": "java"
+      },
+      "tags": [
+        "Array",
+        "Binary Search",
+        "Simulation",
+        "Prefix Sum"
+      ],
+      "topic": "Binary Search",
+      "code": "class Solution {\n    public int chalkReplacer(int[] chalk, int k) {\n        long totalChalk = 0;\n        for (int c : chalk) {\n            totalChalk += c;\n        }\n\n        k = (int) (k % totalChalk);\n\n        for (int i = 0; i < chalk.length; i++) {\n            if (k < chalk[i]) {\n                return i;\n            }\n            k -= chalk[i];\n        }\n\n        return -1;  // This line should never be reached\n    }\n}\n",
+      "readmeContent": "# Find the Student that Will Replace the Chalk\n\n**Difficulty:** Medium  |  **Acceptance:** 53.2%\n\n**Tags:** `Array`, `Binary Search`, `Simulation`, `Prefix Sum`\n\n## Problem\n\nThere are n students in a class numbered from 0 to n - 1. The teacher will give each student a problem starting with the student number 0, then the student number 1, and so on until the teacher reaches the student number n - 1. After that, the teacher will restart the process, starting with the student number 0 again.\n\nYou are given a 0-indexed integer array chalk and an integer k. There are initially k pieces of chalk. When the student number i is given a problem to solve, they will use chalk[i] pieces of chalk to solve that problem. However, if the current number of chalk pieces is strictly less than chalk[i], then the student number i will be asked to replace the chalk.\n\nReturn the index of the student that will replace the chalk pieces.\n\n&nbsp;\nExample 1:\n\nInput: chalk = [5,1,5], k = 22\nOutput: 0\nExplanation: The students go in turns as follows:\n- Student number 0 uses 5 chalk, so k = 17.\n- Student number 1 uses 1 chalk, so k = 16.\n- Student number 2 uses 5 chalk, so k = 11.\n- Student number 0 uses 5 chalk, so k = 6.\n- Student number 1 uses 1 chalk, so k = 5.\n- Student number 2 uses 5 chalk, so k = 0.\nStudent number 0 does not have enough chalk, so they will have to replace it.\n\nExample 2:\n\nInput: chalk = [3,4,1,2], k = 25\nOutput: 1\nExplanation: The students go in turns as follows:\n- Student number 0 uses 3 chalk so k = 22.\n- Student number 1 uses 4 chalk so k = 18.\n- Student number 2 uses 1 chalk so k = 17.\n- Student number 3 uses 2 chalk so k = 15.\n- Student number 0 uses 3 chalk so k = 12.\n- Student number 1 uses 4 chalk so k = 8.\n- Student number 2 uses 1 chalk so k = 7.\n- Student number 3 uses 2 chalk so k = 5.\n- Student number 0 uses 3 chalk so k = 2.\nStudent number 1 does not have enough chalk, so they will have to replace it.\n\n&nbsp;\nConstraints:\n\n\tchalk.length == n\n\t1 <= n <= 105\n\t1 <= chalk[i] <= 105\n\t1 <= k <= 109\n\n## My Submission\n\n- Runtime: 2 ms\n- Memory: 56 MB\n\n## Similar Problems\n\n- [Pass the Pillow](https://leetcode.com/problems/pass-the-pillow/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/find-the-student-that-will-replace-the-chalk/find-the-student-that-will-replace-the-chalk.java",
+          "content": "class Solution {\n    public int chalkReplacer(int[] chalk, int k) {\n        long totalChalk = 0;\n        for (int c : chalk) {\n            totalChalk += c;\n        }\n\n        k = (int) (k % totalChalk);\n\n        for (int i = 0; i < chalk.length; i++) {\n            if (k < chalk[i]) {\n                return i;\n            }\n            k -= chalk[i];\n        }\n\n        return -1;  // This line should never be reached\n    }\n}\n"
+        },
+        {
+          "path": "problems/find-the-student-that-will-replace-the-chalk/README.md",
+          "content": "# Find the Student that Will Replace the Chalk\n\n**Difficulty:** Medium  |  **Acceptance:** 53.2%\n\n**Tags:** `Array`, `Binary Search`, `Simulation`, `Prefix Sum`\n\n## Problem\n\nThere are n students in a class numbered from 0 to n - 1. The teacher will give each student a problem starting with the student number 0, then the student number 1, and so on until the teacher reaches the student number n - 1. After that, the teacher will restart the process, starting with the student number 0 again.\n\nYou are given a 0-indexed integer array chalk and an integer k. There are initially k pieces of chalk. When the student number i is given a problem to solve, they will use chalk[i] pieces of chalk to solve that problem. However, if the current number of chalk pieces is strictly less than chalk[i], then the student number i will be asked to replace the chalk.\n\nReturn the index of the student that will replace the chalk pieces.\n\n&nbsp;\nExample 1:\n\nInput: chalk = [5,1,5], k = 22\nOutput: 0\nExplanation: The students go in turns as follows:\n- Student number 0 uses 5 chalk, so k = 17.\n- Student number 1 uses 1 chalk, so k = 16.\n- Student number 2 uses 5 chalk, so k = 11.\n- Student number 0 uses 5 chalk, so k = 6.\n- Student number 1 uses 1 chalk, so k = 5.\n- Student number 2 uses 5 chalk, so k = 0.\nStudent number 0 does not have enough chalk, so they will have to replace it.\n\nExample 2:\n\nInput: chalk = [3,4,1,2], k = 25\nOutput: 1\nExplanation: The students go in turns as follows:\n- Student number 0 uses 3 chalk so k = 22.\n- Student number 1 uses 4 chalk so k = 18.\n- Student number 2 uses 1 chalk so k = 17.\n- Student number 3 uses 2 chalk so k = 15.\n- Student number 0 uses 3 chalk so k = 12.\n- Student number 1 uses 4 chalk so k = 8.\n- Student number 2 uses 1 chalk so k = 7.\n- Student number 3 uses 2 chalk so k = 5.\n- Student number 0 uses 3 chalk so k = 2.\nStudent number 1 does not have enough chalk, so they will have to replace it.\n\n&nbsp;\nConstraints:\n\n\tchalk.length == n\n\t1 <= n <= 105\n\t1 <= chalk[i] <= 105\n\t1 <= k <= 109\n\n## My Submission\n\n- Runtime: 2 ms\n- Memory: 56 MB\n\n## Similar Problems\n\n- [Pass the Pillow](https://leetcode.com/problems/pass-the-pillow/) — Easy\n"
+        }
+      ],
+      "timestamp": 1726776317000,
+      "runtime": "2 ms",
+      "memory": "56 MB",
+      "runtimePct": 91.6031,
+      "memoryPct": 100,
+      "problemStatement": "<p>There are <code>n</code> students in a class numbered from <code>0</code> to <code>n - 1</code>. The teacher will give each student a problem starting with the student number <code>0</code>, then the student number <code>1</code>, and so on until the teacher reaches the student number <code>n - 1</code>. After that, the teacher will restart the process, starting with the student number <code>0</code> again.</p>\n\n<p>You are given a <strong>0-indexed</strong> integer array <code>chalk</code> and an integer <code>k</code>. There are initially <code>k</code> pieces of chalk. When the student number <code>i</code> is given a problem to solve, they will use <code>chalk[i]</code> pieces of chalk to solve that problem. However, if the current number of chalk pieces is <strong>strictly less</strong> than <code>chalk[i]</code>, then the student number <code>i</code> will be asked to <strong>replace</strong> the chalk.</p>\n\n<p>Return <em>the <strong>index</strong> of the student that will <strong>replace</strong> the chalk pieces</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> chalk = [5,1,5], k = 22\n<strong>Output:</strong> 0\n<strong>Explanation: </strong>The students go in turns as follows:\n- Student number 0 uses 5 chalk, so k = 17.\n- Student number 1 uses 1 chalk, so k = 16.\n- Student number 2 uses 5 chalk, so k = 11.\n- Student number 0 uses 5 chalk, so k = 6.\n- Student number 1 uses 1 chalk, so k = 5.\n- Student number 2 uses 5 chalk, so k = 0.\nStudent number 0 does not have enough chalk, so they will have to replace it.</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> chalk = [3,4,1,2], k = 25\n<strong>Output:</strong> 1\n<strong>Explanation: </strong>The students go in turns as follows:\n- Student number 0 uses 3 chalk so k = 22.\n- Student number 1 uses 4 chalk so k = 18.\n- Student number 2 uses 1 chalk so k = 17.\n- Student number 3 uses 2 chalk so k = 15.\n- Student number 0 uses 3 chalk so k = 12.\n- Student number 1 uses 4 chalk so k = 8.\n- Student number 2 uses 1 chalk so k = 7.\n- Student number 3 uses 2 chalk so k = 5.\n- Student number 0 uses 3 chalk so k = 2.\nStudent number 1 does not have enough chalk, so they will have to replace it.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>chalk.length == n</code></li>\n\t<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>\n\t<li><code>1 &lt;= chalk[i] &lt;= 10<sup>5</sup></code></li>\n\t<li><code>1 &lt;= k &lt;= 10<sup>9</sup></code></li>\n</ul>\n",
+      "hints": [
+        "Subtract the sum of chalk from k until k is less than the sum of chalk.",
+        "Now iterate over the array. If chalk[i] is less than k, this is the answer. Otherwise, subtract chalk[i] from k and continue."
+      ],
+      "acRate": 53.18006582776721,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "pass-the-pillow",
+          "title": "Pass the Pillow",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "### Review\n\n1. **Complexity**\n   * **Time Complexity:** $O(n)$, where $n$ is the length of the `chalk` array. You traverse the array twice: once to sum and once to find the index.\n   * **Space Complexity:** $O(1)$, as you only use a few extra variables regardless of input size.\n\n2. **Correctness**\n   * **Robust:** The code correctly uses `long` for `totalChalk` to prevent overflow, as the sum can exceed $2^{31}-1$ (up to $10^{10}$).\n   * **Logic:** The modulo operation effectively skips redundant full cycles. The final loop correctly identifies the first student whose requirement exceeds the remaining chalk.\n\n3. **Optimization**\n   * **Binary Search:** After calculating the prefix sums of the `chalk` array ($O(n)$), you can replace the second loop with a binary search ($O(\\log n)$) to find the index. While the overall complexity remains $O(n)$ due to the sum, this is faster if the function were modified for multiple queries on the same chalk distribution.\n\n4. **Key Algorithmic Pattern**\n   * **Prefix Sums & Modulo Arithmetic:** Reducing a large cyclic problem into a single pass by removing full cycles."
+    },
+    {
+      "id": "lc-find-the-student-that-will-replace-the-chalk::1395835773",
+      "submissionId": 1395835773,
+      "platform": "leetcode",
+      "title": "Find the Student that Will Replace the Chalk",
+      "titleSlug": "find-the-student-that-will-replace-the-chalk",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Binary Search",
+        "Simulation",
+        "Prefix Sum"
+      ],
+      "topic": "Binary Search",
+      "code": "class Solution:\n    def chalkReplacer(self, chalk: List[int], k: int) -> int:\n        total_chalk = sum(chalk)\n\n        k %= total_chalk\n\n        for i in range(len(chalk)):\n            if k < chalk[i]:\n                return i\n            \n            k -= chalk[i]\n        ",
+      "readmeContent": "# Find the Student that Will Replace the Chalk\n\n**Difficulty:** Medium  |  **Acceptance:** 53.2%\n\n**Tags:** `Array`, `Binary Search`, `Simulation`, `Prefix Sum`\n\n## Problem\n\nThere are n students in a class numbered from 0 to n - 1. The teacher will give each student a problem starting with the student number 0, then the student number 1, and so on until the teacher reaches the student number n - 1. After that, the teacher will restart the process, starting with the student number 0 again.\n\nYou are given a 0-indexed integer array chalk and an integer k. There are initially k pieces of chalk. When the student number i is given a problem to solve, they will use chalk[i] pieces of chalk to solve that problem. However, if the current number of chalk pieces is strictly less than chalk[i], then the student number i will be asked to replace the chalk.\n\nReturn the index of the student that will replace the chalk pieces.\n\n&nbsp;\nExample 1:\n\nInput: chalk = [5,1,5], k = 22\nOutput: 0\nExplanation: The students go in turns as follows:\n- Student number 0 uses 5 chalk, so k = 17.\n- Student number 1 uses 1 chalk, so k = 16.\n- Student number 2 uses 5 chalk, so k = 11.\n- Student number 0 uses 5 chalk, so k = 6.\n- Student number 1 uses 1 chalk, so k = 5.\n- Student number 2 uses 5 chalk, so k = 0.\nStudent number 0 does not have enough chalk, so they will have to replace it.\n\nExample 2:\n\nInput: chalk = [3,4,1,2], k = 25\nOutput: 1\nExplanation: The students go in turns as follows:\n- Student number 0 uses 3 chalk so k = 22.\n- Student number 1 uses 4 chalk so k = 18.\n- Student number 2 uses 1 chalk so k = 17.\n- Student number 3 uses 2 chalk so k = 15.\n- Student number 0 uses 3 chalk so k = 12.\n- Student number 1 uses 4 chalk so k = 8.\n- Student number 2 uses 1 chalk so k = 7.\n- Student number 3 uses 2 chalk so k = 5.\n- Student number 0 uses 3 chalk so k = 2.\nStudent number 1 does not have enough chalk, so they will have to replace it.\n\n&nbsp;\nConstraints:\n\n\tchalk.length == n\n\t1 <= n <= 105\n\t1 <= chalk[i] <= 105\n\t1 <= k <= 109\n\n## My Submission\n\n- Runtime: 567 ms\n- Memory: 30.2 MB\n\n## Similar Problems\n\n- [Pass the Pillow](https://leetcode.com/problems/pass-the-pillow/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-find-the-student-that-will-replace-the-chalk/lc-find-the-student-that-will-replace-the-chalk.py",
+          "content": "class Solution:\n    def chalkReplacer(self, chalk: List[int], k: int) -> int:\n        total_chalk = sum(chalk)\n\n        k %= total_chalk\n\n        for i in range(len(chalk)):\n            if k < chalk[i]:\n                return i\n            \n            k -= chalk[i]\n        "
+        },
+        {
+          "path": "problems/lc-find-the-student-that-will-replace-the-chalk/README.md",
+          "content": "# Find the Student that Will Replace the Chalk\n\n**Difficulty:** Medium  |  **Acceptance:** 53.2%\n\n**Tags:** `Array`, `Binary Search`, `Simulation`, `Prefix Sum`\n\n## Problem\n\nThere are n students in a class numbered from 0 to n - 1. The teacher will give each student a problem starting with the student number 0, then the student number 1, and so on until the teacher reaches the student number n - 1. After that, the teacher will restart the process, starting with the student number 0 again.\n\nYou are given a 0-indexed integer array chalk and an integer k. There are initially k pieces of chalk. When the student number i is given a problem to solve, they will use chalk[i] pieces of chalk to solve that problem. However, if the current number of chalk pieces is strictly less than chalk[i], then the student number i will be asked to replace the chalk.\n\nReturn the index of the student that will replace the chalk pieces.\n\n&nbsp;\nExample 1:\n\nInput: chalk = [5,1,5], k = 22\nOutput: 0\nExplanation: The students go in turns as follows:\n- Student number 0 uses 5 chalk, so k = 17.\n- Student number 1 uses 1 chalk, so k = 16.\n- Student number 2 uses 5 chalk, so k = 11.\n- Student number 0 uses 5 chalk, so k = 6.\n- Student number 1 uses 1 chalk, so k = 5.\n- Student number 2 uses 5 chalk, so k = 0.\nStudent number 0 does not have enough chalk, so they will have to replace it.\n\nExample 2:\n\nInput: chalk = [3,4,1,2], k = 25\nOutput: 1\nExplanation: The students go in turns as follows:\n- Student number 0 uses 3 chalk so k = 22.\n- Student number 1 uses 4 chalk so k = 18.\n- Student number 2 uses 1 chalk so k = 17.\n- Student number 3 uses 2 chalk so k = 15.\n- Student number 0 uses 3 chalk so k = 12.\n- Student number 1 uses 4 chalk so k = 8.\n- Student number 2 uses 1 chalk so k = 7.\n- Student number 3 uses 2 chalk so k = 5.\n- Student number 0 uses 3 chalk so k = 2.\nStudent number 1 does not have enough chalk, so they will have to replace it.\n\n&nbsp;\nConstraints:\n\n\tchalk.length == n\n\t1 <= n <= 105\n\t1 <= chalk[i] <= 105\n\t1 <= k <= 109\n\n## My Submission\n\n- Runtime: 567 ms\n- Memory: 30.2 MB\n\n## Similar Problems\n\n- [Pass the Pillow](https://leetcode.com/problems/pass-the-pillow/) — Easy\n"
+        }
+      ],
+      "timestamp": 1726776706000,
+      "runtime": "567 ms",
+      "memory": "30.2 MB",
+      "runtimePct": 5.181699999999978,
+      "memoryPct": 100,
+      "problemStatement": "<p>There are <code>n</code> students in a class numbered from <code>0</code> to <code>n - 1</code>. The teacher will give each student a problem starting with the student number <code>0</code>, then the student number <code>1</code>, and so on until the teacher reaches the student number <code>n - 1</code>. After that, the teacher will restart the process, starting with the student number <code>0</code> again.</p>\n\n<p>You are given a <strong>0-indexed</strong> integer array <code>chalk</code> and an integer <code>k</code>. There are initially <code>k</code> pieces of chalk. When the student number <code>i</code> is given a problem to solve, they will use <code>chalk[i]</code> pieces of chalk to solve that problem. However, if the current number of chalk pieces is <strong>strictly less</strong> than <code>chalk[i]</code>, then the student number <code>i</code> will be asked to <strong>replace</strong> the chalk.</p>\n\n<p>Return <em>the <strong>index</strong> of the student that will <strong>replace</strong> the chalk pieces</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> chalk = [5,1,5], k = 22\n<strong>Output:</strong> 0\n<strong>Explanation: </strong>The students go in turns as follows:\n- Student number 0 uses 5 chalk, so k = 17.\n- Student number 1 uses 1 chalk, so k = 16.\n- Student number 2 uses 5 chalk, so k = 11.\n- Student number 0 uses 5 chalk, so k = 6.\n- Student number 1 uses 1 chalk, so k = 5.\n- Student number 2 uses 5 chalk, so k = 0.\nStudent number 0 does not have enough chalk, so they will have to replace it.</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> chalk = [3,4,1,2], k = 25\n<strong>Output:</strong> 1\n<strong>Explanation: </strong>The students go in turns as follows:\n- Student number 0 uses 3 chalk so k = 22.\n- Student number 1 uses 4 chalk so k = 18.\n- Student number 2 uses 1 chalk so k = 17.\n- Student number 3 uses 2 chalk so k = 15.\n- Student number 0 uses 3 chalk so k = 12.\n- Student number 1 uses 4 chalk so k = 8.\n- Student number 2 uses 1 chalk so k = 7.\n- Student number 3 uses 2 chalk so k = 5.\n- Student number 0 uses 3 chalk so k = 2.\nStudent number 1 does not have enough chalk, so they will have to replace it.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>chalk.length == n</code></li>\n\t<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>\n\t<li><code>1 &lt;= chalk[i] &lt;= 10<sup>5</sup></code></li>\n\t<li><code>1 &lt;= k &lt;= 10<sup>9</sup></code></li>\n</ul>\n",
+      "hints": [
+        "Subtract the sum of chalk from k until k is less than the sum of chalk.",
+        "Now iterate over the array. If chalk[i] is less than k, this is the answer. Otherwise, subtract chalk[i] from k and continue."
+      ],
+      "acRate": 53.18211824626681,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "pass-the-pillow",
+          "title": "Pass the Pillow",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-climbing-stairs",
+      "submissionId": 1425416756,
+      "platform": "leetcode",
+      "title": "Climbing Stairs",
+      "titleSlug": "climbing-stairs",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Math",
+        "Dynamic Programming",
+        "Memoization"
+      ],
+      "topic": "Dynamic Programming",
+      "code": "class Solution:\n    def climbStairs(self, n, memo={}):\n        if n <= 1:\n            return 1\n\n        if n in memo:\n            return memo[n]\n\n        memo[n] = self.climbStairs(n - 1, memo) + self.climbStairs(n - 2, memo)\n\n        return memo[n]",
+      "readmeContent": "# Climbing Stairs\n\n**Difficulty:** Easy  |  **Acceptance:** 54.1%\n\n**Tags:** `Math`, `Dynamic Programming`, `Memoization`\n\n## Problem\n\nYou are climbing a staircase. It takes n steps to reach the top.\n\nEach time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?\n\n&nbsp;\nExample 1:\n\nInput: n = 2\nOutput: 2\nExplanation: There are two ways to climb to the top.\n1. 1 step + 1 step\n2. 2 steps\n\nExample 2:\n\nInput: n = 3\nOutput: 3\nExplanation: There are three ways to climb to the top.\n1. 1 step + 1 step + 1 step\n2. 1 step + 2 steps\n3. 2 steps + 1 step\n\n&nbsp;\nConstraints:\n\n\t1 <= n <= 45\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.8 MB\n\n## Similar Problems\n\n- [Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/) — Easy\n- [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/) — Easy\n- [N-th Tribonacci Number](https://leetcode.com/problems/n-th-tribonacci-number/) — Easy\n- [Minimum Rounds to Complete All Tasks](https://leetcode.com/problems/minimum-rounds-to-complete-all-tasks/) — Medium\n- [Count Number of Ways to Place Houses](https://leetcode.com/problems/count-number-of-ways-to-place-houses/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/climbing-stairs/climbing-stairs.py",
+          "content": "class Solution:\n    def climbStairs(self, n, memo={}):\n        if n <= 1:\n            return 1\n\n        if n in memo:\n            return memo[n]\n\n        memo[n] = self.climbStairs(n - 1, memo) + self.climbStairs(n - 2, memo)\n\n        return memo[n]"
+        },
+        {
+          "path": "problems/climbing-stairs/README.md",
+          "content": "# Climbing Stairs\n\n**Difficulty:** Easy  |  **Acceptance:** 54.1%\n\n**Tags:** `Math`, `Dynamic Programming`, `Memoization`\n\n## Problem\n\nYou are climbing a staircase. It takes n steps to reach the top.\n\nEach time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?\n\n&nbsp;\nExample 1:\n\nInput: n = 2\nOutput: 2\nExplanation: There are two ways to climb to the top.\n1. 1 step + 1 step\n2. 2 steps\n\nExample 2:\n\nInput: n = 3\nOutput: 3\nExplanation: There are three ways to climb to the top.\n1. 1 step + 1 step + 1 step\n2. 1 step + 2 steps\n3. 2 steps + 1 step\n\n&nbsp;\nConstraints:\n\n\t1 <= n <= 45\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.8 MB\n\n## Similar Problems\n\n- [Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/) — Easy\n- [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/) — Easy\n- [N-th Tribonacci Number](https://leetcode.com/problems/n-th-tribonacci-number/) — Easy\n- [Minimum Rounds to Complete All Tasks](https://leetcode.com/problems/minimum-rounds-to-complete-all-tasks/) — Medium\n- [Count Number of Ways to Place Houses](https://leetcode.com/problems/count-number-of-ways-to-place-houses/) — Medium\n"
+        }
+      ],
+      "timestamp": 1729173921000,
+      "runtime": "0 ms",
+      "memory": "16.8 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are climbing a staircase. It takes <code>n</code> steps to reach the top.</p>\n\n<p>Each time you can either climb <code>1</code> or <code>2</code> steps. In how many distinct ways can you climb to the top?</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 2\n<strong>Output:</strong> 2\n<strong>Explanation:</strong> There are two ways to climb to the top.\n1. 1 step + 1 step\n2. 2 steps\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 3\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> There are three ways to climb to the top.\n1. 1 step + 1 step + 1 step\n2. 1 step + 2 steps\n3. 2 steps + 1 step\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 45</code></li>\n</ul>\n",
+      "hints": [
+        "To reach nth step, what could have been your previous steps? (Think about the step sizes)"
+      ],
+      "acRate": 54.06813549000912,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "min-cost-climbing-stairs",
+          "title": "Min Cost Climbing Stairs",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "fibonacci-number",
+          "title": "Fibonacci Number",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "n-th-tribonacci-number",
+          "title": "N-th Tribonacci Number",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "minimum-rounds-to-complete-all-tasks",
+          "title": "Minimum Rounds to Complete All Tasks",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "count-number-of-ways-to-place-houses",
+          "title": "Count Number of Ways to Place Houses",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "number-of-ways-to-reach-a-position-after-exactly-k-steps",
+          "title": "Number of Ways to Reach a Position After Exactly k Steps",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "count-ways-to-build-good-strings",
+          "title": "Count Ways To Build Good Strings",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "frog-jump-ii",
+          "title": "Frog Jump II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "find-number-of-ways-to-reach-the-k-th-stair",
+          "title": "Find Number of Ways to Reach the K-th Stair",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$. Each value from $1$ to $n$ is computed and stored exactly once.\n*   **Space Complexity:** $O(n)$. This accounts for both the recursion stack depth and the `memo` dictionary.\n\n### 2. Correctness & Edge Cases\n*   **Critical Bug:** The use of a **mutable default argument** (`memo={}`) is a major Python anti-pattern. The dictionary persists across different test cases/calls to `climbStairs`. While this might pass on LeetCode, it causes data leakage and potential side effects in production environments.\n*   **Edge Cases:** Handles $n=1$ correctly. For $n=0$, it returns $1$, which is standard for combinatorial problems (one way to stay at the start).\n\n### 3. Optimization\n**Iterative Bottom-Up (Space Optimization):**\nInstead of recursion, use two variables to track the previous two steps. This reduces space complexity from **$O(n)$ to $O(1)$**.\n```python\na, b = 1, 1\nfor _ in range(n):\n    a, b = b, a + b\nreturn a\n```\n\n### 4. Key Algorithmic Pattern\n**Dynamic Programming (Top-down with Memoization).** The problem is mathematically equivalent to generating the **Fibonacci sequence**."
+    },
+    {
+      "id": "lc-fibonacci-number",
+      "submissionId": 1425710427,
+      "platform": "leetcode",
+      "title": "Fibonacci Number",
+      "titleSlug": "fibonacci-number",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Math",
+        "Dynamic Programming",
+        "Recursion",
+        "Memoization"
+      ],
+      "topic": "Dynamic Programming",
+      "code": "class Solution:\n    def fib(self, n: int, memo={}) -> int:\n        if n == 0:\n            return 0\n        if n == 1:\n            return 1\n\n        if n in memo:\n            return memo[n]\n\n        memo[n] = self.fib(n - 1, memo) + self.fib(n - 2, memo)\n\n        return memo[n]",
+      "readmeContent": "# Fibonacci Number\n\n**Difficulty:** Easy  |  **Acceptance:** 74.1%\n\n**Tags:** `Math`, `Dynamic Programming`, `Recursion`, `Memoization`\n\n## Problem\n\nThe Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is,\n\nF(0) = 0, F(1) = 1\nF(n) = F(n - 1) + F(n - 2), for n > 1.\n\nGiven n, calculate F(n).\n\n&nbsp;\nExample 1:\n\nInput: n = 2\nOutput: 1\nExplanation: F(2) = F(1) + F(0) = 1 + 0 = 1.\n\nExample 2:\n\nInput: n = 3\nOutput: 2\nExplanation: F(3) = F(2) + F(1) = 1 + 1 = 2.\n\nExample 3:\n\nInput: n = 4\nOutput: 3\nExplanation: F(4) = F(3) + F(2) = 2 + 1 = 3.\n\n&nbsp;\nConstraints:\n\n\t0 <= n <= 30\n\n## My Submission\n\n- Runtime: 35 ms\n- Memory: 16.5 MB\n\n## Similar Problems\n\n- [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) — Easy\n- [Split Array into Fibonacci Sequence](https://leetcode.com/problems/split-array-into-fibonacci-sequence/) — Medium\n- [Length of Longest Fibonacci Subsequence](https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/) — Medium\n- [N-th Tribonacci Number](https://leetcode.com/problems/n-th-tribonacci-number/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/fibonacci-number/fibonacci-number.py",
+          "content": "class Solution:\n    def fib(self, n: int, memo={}) -> int:\n        if n == 0:\n            return 0\n        if n == 1:\n            return 1\n\n        if n in memo:\n            return memo[n]\n\n        memo[n] = self.fib(n - 1, memo) + self.fib(n - 2, memo)\n\n        return memo[n]"
+        },
+        {
+          "path": "problems/fibonacci-number/README.md",
+          "content": "# Fibonacci Number\n\n**Difficulty:** Easy  |  **Acceptance:** 74.1%\n\n**Tags:** `Math`, `Dynamic Programming`, `Recursion`, `Memoization`\n\n## Problem\n\nThe Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is,\n\nF(0) = 0, F(1) = 1\nF(n) = F(n - 1) + F(n - 2), for n > 1.\n\nGiven n, calculate F(n).\n\n&nbsp;\nExample 1:\n\nInput: n = 2\nOutput: 1\nExplanation: F(2) = F(1) + F(0) = 1 + 0 = 1.\n\nExample 2:\n\nInput: n = 3\nOutput: 2\nExplanation: F(3) = F(2) + F(1) = 1 + 1 = 2.\n\nExample 3:\n\nInput: n = 4\nOutput: 3\nExplanation: F(4) = F(3) + F(2) = 2 + 1 = 3.\n\n&nbsp;\nConstraints:\n\n\t0 <= n <= 30\n\n## My Submission\n\n- Runtime: 35 ms\n- Memory: 16.5 MB\n\n## Similar Problems\n\n- [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) — Easy\n- [Split Array into Fibonacci Sequence](https://leetcode.com/problems/split-array-into-fibonacci-sequence/) — Medium\n- [Length of Longest Fibonacci Subsequence](https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/) — Medium\n- [N-th Tribonacci Number](https://leetcode.com/problems/n-th-tribonacci-number/) — Easy\n"
+        }
+      ],
+      "timestamp": 1729191109000,
+      "runtime": "35 ms",
+      "memory": "16.5 MB",
+      "runtimePct": 97.4643,
+      "memoryPct": 100,
+      "problemStatement": "<p>The <b>Fibonacci numbers</b>, commonly denoted <code>F(n)</code> form a sequence, called the <b>Fibonacci sequence</b>, such that each number is the sum of the two preceding ones, starting from <code>0</code> and <code>1</code>. That is,</p>\n\n<pre>\nF(0) = 0, F(1) = 1\nF(n) = F(n - 1) + F(n - 2), for n &gt; 1.\n</pre>\n\n<p>Given <code>n</code>, calculate <code>F(n)</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 2\n<strong>Output:</strong> 1\n<strong>Explanation:</strong> F(2) = F(1) + F(0) = 1 + 0 = 1.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 3\n<strong>Output:</strong> 2\n<strong>Explanation:</strong> F(3) = F(2) + F(1) = 1 + 1 = 2.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 4\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> F(4) = F(3) + F(2) = 2 + 1 = 3.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>0 &lt;= n &lt;= 30</code></li>\n</ul>\n",
+      "hints": [],
+      "acRate": 74.09714861700122,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "climbing-stairs",
+          "title": "Climbing Stairs",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "split-array-into-fibonacci-sequence",
+          "title": "Split Array into Fibonacci Sequence",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "length-of-longest-fibonacci-subsequence",
+          "title": "Length of Longest Fibonacci Subsequence",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "n-th-tribonacci-number",
+          "title": "N-th Tribonacci Number",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "### 1. Complexity\n*   **Time:** $O(n)$ — Each number from $0$ to $n$ is computed and stored once.\n*   **Space:** $O(n)$ — Required for both the recursion stack and the `memo` dictionary.\n\n### 2. Correctness\nThe logic is correct for $n \\ge 0$. However, there is a **Python-specific flaw**:\n*   **Mutable Default Argument:** Using `memo={}` is an anti-pattern. In Python, default arguments are evaluated once at definition time. The `memo` dictionary will persist across different calls to `fib()`, which can lead to memory bloat or unexpected side effects in shared environments.\n\n### 3. Concrete Optimisation\nUse an **iterative (bottom-up) approach** to reduce space complexity to **$O(1)$**. Instead of a dictionary or recursion, use two variables to track the previous two values:\n```python\ndef fib(self, n: int) -> int:\n    a, b = 0, 1\n    for _ in range(n):\n        a, b = b, a + b\n    return a\n```\n\n### 4. Key Algorithmic Pattern\n**Dynamic Programming (Top-down with Memoization).**"
+    },
+    {
+      "id": "lc-n-th-tribonacci-number",
+      "submissionId": 1425715045,
+      "platform": "leetcode",
+      "title": "N-th Tribonacci Number",
+      "titleSlug": "n-th-tribonacci-number",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Math",
+        "Dynamic Programming",
+        "Memoization"
+      ],
+      "topic": "Dynamic Programming",
+      "code": "class Solution:\n    def tribonacci(self, n: int, memo={}) -> int:\n        if n == 0:\n            return 0\n        if n == 1:\n            return 1\n        if n == 2:\n            return 1\n\n        if n in memo:\n            return memo[n]\n\n        memo[n] = self.tribonacci(n - 1, memo) + self.tribonacci(n - 2, memo) + self.tribonacci(n-3, memo)\n\n        return memo[n]",
+      "readmeContent": "# N-th Tribonacci Number\n\n**Difficulty:** Easy  |  **Acceptance:** 63.2%\n\n**Tags:** `Math`, `Dynamic Programming`, `Memoization`\n\n## Problem\n\nThe Tribonacci sequence Tn is defined as follows:&nbsp;\n\nT0 = 0, T1 = 1, T2 = 1, and Tn+3 = Tn + Tn+1 + Tn+2 for n >= 0.\n\nGiven n, return the value of Tn.\n\n&nbsp;\nExample 1:\n\nInput: n = 4\nOutput: 4\nExplanation:\nT_3 = 0 + 1 + 1 = 2\nT_4 = 1 + 1 + 2 = 4\n\nExample 2:\n\nInput: n = 25\nOutput: 1389537\n\n&nbsp;\nConstraints:\n\n\t0 <= n <= 37\n\tThe answer is guaranteed to fit within a 32-bit integer, ie. answer <= 2^31 - 1.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.7 MB\n\n## Similar Problems\n\n- [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) — Easy\n- [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/n-th-tribonacci-number/n-th-tribonacci-number.py",
+          "content": "class Solution:\n    def tribonacci(self, n: int, memo={}) -> int:\n        if n == 0:\n            return 0\n        if n == 1:\n            return 1\n        if n == 2:\n            return 1\n\n        if n in memo:\n            return memo[n]\n\n        memo[n] = self.tribonacci(n - 1, memo) + self.tribonacci(n - 2, memo) + self.tribonacci(n-3, memo)\n\n        return memo[n]"
+        },
+        {
+          "path": "problems/n-th-tribonacci-number/README.md",
+          "content": "# N-th Tribonacci Number\n\n**Difficulty:** Easy  |  **Acceptance:** 63.2%\n\n**Tags:** `Math`, `Dynamic Programming`, `Memoization`\n\n## Problem\n\nThe Tribonacci sequence Tn is defined as follows:&nbsp;\n\nT0 = 0, T1 = 1, T2 = 1, and Tn+3 = Tn + Tn+1 + Tn+2 for n >= 0.\n\nGiven n, return the value of Tn.\n\n&nbsp;\nExample 1:\n\nInput: n = 4\nOutput: 4\nExplanation:\nT_3 = 0 + 1 + 1 = 2\nT_4 = 1 + 1 + 2 = 4\n\nExample 2:\n\nInput: n = 25\nOutput: 1389537\n\n&nbsp;\nConstraints:\n\n\t0 <= n <= 37\n\tThe answer is guaranteed to fit within a 32-bit integer, ie. answer <= 2^31 - 1.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.7 MB\n\n## Similar Problems\n\n- [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) — Easy\n- [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/) — Easy\n"
+        }
+      ],
+      "timestamp": 1729191409000,
+      "runtime": "0 ms",
+      "memory": "16.7 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>The Tribonacci sequence T<sub>n</sub> is defined as follows:&nbsp;</p>\n\n<p>T<sub>0</sub> = 0, T<sub>1</sub> = 1, T<sub>2</sub> = 1, and T<sub>n+3</sub> = T<sub>n</sub> + T<sub>n+1</sub> + T<sub>n+2</sub> for n &gt;= 0.</p>\n\n<p>Given <code>n</code>, return the value of T<sub>n</sub>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 4\n<strong>Output:</strong> 4\n<strong>Explanation:</strong>\nT_3 = 0 + 1 + 1 = 2\nT_4 = 1 + 1 + 2 = 4\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 25\n<strong>Output:</strong> 1389537\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>0 &lt;= n &lt;= 37</code></li>\n\t<li>The answer is guaranteed to fit within a 32-bit integer, ie. <code>answer &lt;= 2^31 - 1</code>.</li>\n</ul>\n",
+      "hints": [
+        "Make an array F of length 38, and set F[0] = 0, F[1] = F[2] = 1.",
+        "Now write a loop where you set F[n+3] = F[n] + F[n+1] + F[n+2], and return F[n]."
+      ],
+      "acRate": 63.208154269203064,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "climbing-stairs",
+          "title": "Climbing Stairs",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "fibonacci-number",
+          "title": "Fibonacci Number",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time:** $O(n)$ — Each value from $0$ to $n$ is calculated once.\n*   **Space:** $O(n)$ — Required for the recursion stack and the `memo` dictionary.\n\n**2. Correctness & Edge Cases**\n*   **Persistent Mutable Default:** Using `memo={}` as a default argument is a \"Python gotcha.\" The dictionary persists across different calls to `tribonacci`, which can lead to unexpected behavior in a long-running process (though it often speeds up LeetCode tests).\n*   **Recursion Limit:** For very large $n$, this would hit Python's recursion limit, but since the problem limits $n \\le 37$, it functions correctly.\n*   **Base Cases:** Correctly handles $n=0, 1, 2$.\n\n**3. Optimization**\n**Iterative Bottom-Up (Space Optimization):**\nYou can reduce space from $O(n)$ to $O(1)$ by using three variables to track only the last three values, eliminating the dictionary and recursion stack.\n```python\na, b, c = 0, 1, 1\nfor _ in range(n):\n    a, b, c = b, c, a + b + c\nreturn a\n```\n\n**4. Key Algorithmic Pattern**\n**Dynamic Programming** (Top-down approach with Memoization)."
+    },
+    {
+      "id": "lc-remove-duplicates-from-sorted-array",
+      "submissionId": 1425725681,
+      "platform": "leetcode",
+      "title": "Remove Duplicates from Sorted Array",
+      "titleSlug": "remove-duplicates-from-sorted-array",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Two Pointers"
+      ],
+      "topic": "Two Pointers",
+      "code": "class Solution:\n    def removeDuplicates(self, nums: List[int]) -> int:\n        i = 1\n        while i < len(nums):\n            if nums[i] == nums[i-1]:\n                nums.pop(i)\n            else:\n                i += 1\n        return len(nums)",
+      "readmeContent": "# Remove Duplicates from Sorted Array\n\n**Difficulty:** Easy  |  **Acceptance:** 62.7%\n\n**Tags:** `Array`, `Two Pointers`\n\n## Problem\n\nGiven an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.\n\nConsider the number of unique elements in&nbsp;nums to be k​​​​​​​​​​​​​​. After removing duplicates, return the number of unique elements&nbsp;k.\n\nThe first&nbsp;k&nbsp;elements of&nbsp;nums&nbsp;should contain the unique numbers in sorted order. The remaining elements beyond index&nbsp;k - 1&nbsp;can be ignored.\n\nCustom Judge:\n\nThe judge will test your solution with the following code:\n\nint[] nums = [...]; // Input array\nint[] expectedNums = [...]; // The expected answer with correct length\n\nint k = removeDuplicates(nums); // Calls your implementation\n\nassert k == expectedNums.length;\nfor (int i = 0; i < k; i++) {\n    assert nums[i] == expectedNums[i];\n}\n\nIf all assertions pass, then your solution will be accepted.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,1,2]\nOutput: 2, nums = [1,2,_]\nExplanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n\nExample 2:\n\nInput: nums = [0,0,1,1,1,2,2,3,3,4]\nOutput: 5, nums = [0,1,2,3,4,_,_,_,_,_]\nExplanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 3 * 104\n\t-100 <= nums[i] <= 100\n\tnums is sorted in non-decreasing order.\n\n## My Submission\n\n- Runtime: 58 ms\n- Memory: 18 MB\n\n## Similar Problems\n\n- [Remove Element](https://leetcode.com/problems/remove-element/) — Easy\n- [Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/) — Medium\n- [Apply Operations to an Array](https://leetcode.com/problems/apply-operations-to-an-array/) — Easy\n- [Sum of Distances](https://leetcode.com/problems/sum-of-distances/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/remove-duplicates-from-sorted-array/remove-duplicates-from-sorted-array.py",
+          "content": "class Solution:\n    def removeDuplicates(self, nums: List[int]) -> int:\n        i = 1\n        while i < len(nums):\n            if nums[i] == nums[i-1]:\n                nums.pop(i)\n            else:\n                i += 1\n        return len(nums)"
+        },
+        {
+          "path": "problems/remove-duplicates-from-sorted-array/README.md",
+          "content": "# Remove Duplicates from Sorted Array\n\n**Difficulty:** Easy  |  **Acceptance:** 62.7%\n\n**Tags:** `Array`, `Two Pointers`\n\n## Problem\n\nGiven an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.\n\nConsider the number of unique elements in&nbsp;nums to be k​​​​​​​​​​​​​​. After removing duplicates, return the number of unique elements&nbsp;k.\n\nThe first&nbsp;k&nbsp;elements of&nbsp;nums&nbsp;should contain the unique numbers in sorted order. The remaining elements beyond index&nbsp;k - 1&nbsp;can be ignored.\n\nCustom Judge:\n\nThe judge will test your solution with the following code:\n\nint[] nums = [...]; // Input array\nint[] expectedNums = [...]; // The expected answer with correct length\n\nint k = removeDuplicates(nums); // Calls your implementation\n\nassert k == expectedNums.length;\nfor (int i = 0; i < k; i++) {\n    assert nums[i] == expectedNums[i];\n}\n\nIf all assertions pass, then your solution will be accepted.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,1,2]\nOutput: 2, nums = [1,2,_]\nExplanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n\nExample 2:\n\nInput: nums = [0,0,1,1,1,2,2,3,3,4]\nOutput: 5, nums = [0,1,2,3,4,_,_,_,_,_]\nExplanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 3 * 104\n\t-100 <= nums[i] <= 100\n\tnums is sorted in non-decreasing order.\n\n## My Submission\n\n- Runtime: 58 ms\n- Memory: 18 MB\n\n## Similar Problems\n\n- [Remove Element](https://leetcode.com/problems/remove-element/) — Easy\n- [Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/) — Medium\n- [Apply Operations to an Array](https://leetcode.com/problems/apply-operations-to-an-array/) — Easy\n- [Sum of Distances](https://leetcode.com/problems/sum-of-distances/) — Medium\n"
+        }
+      ],
+      "timestamp": 1729192119000,
+      "runtime": "58 ms",
+      "memory": "18 MB",
+      "runtimePct": 5.525299999999998,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an integer array <code>nums</code> sorted in <strong>non-decreasing order</strong>, remove the duplicates <a href=\"https://en.wikipedia.org/wiki/In-place_algorithm\" target=\"_blank\"><strong>in-place</strong></a> such that each unique element appears only <strong>once</strong>. The <strong>relative order</strong> of the elements should be kept the <strong>same</strong>.</p>\n\n<p>Consider the number of <em>unique elements</em> in&nbsp;<code>nums</code> to be <code>k<strong>​​​​​​​</strong></code>​​​​​​​. <meta charset=\"UTF-8\" />After removing duplicates, return the number of unique elements&nbsp;<code>k</code>.</p>\n\n<p><meta charset=\"UTF-8\" />The first&nbsp;<code>k</code>&nbsp;elements of&nbsp;<code>nums</code>&nbsp;should contain the unique numbers in <strong>sorted order</strong>. The remaining elements beyond index&nbsp;<code>k - 1</code>&nbsp;can be ignored.</p>\n\n<p><strong>Custom Judge:</strong></p>\n\n<p>The judge will test your solution with the following code:</p>\n\n<pre>\nint[] nums = [...]; // Input array\nint[] expectedNums = [...]; // The expected answer with correct length\n\nint k = removeDuplicates(nums); // Calls your implementation\n\nassert k == expectedNums.length;\nfor (int i = 0; i &lt; k; i++) {\n    assert nums[i] == expectedNums[i];\n}\n</pre>\n\n<p>If all assertions pass, then your solution will be <strong>accepted</strong>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,1,2]\n<strong>Output:</strong> 2, nums = [1,2,_]\n<strong>Explanation:</strong> Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [0,0,1,1,1,2,2,3,3,4]\n<strong>Output:</strong> 5, nums = [0,1,2,3,4,_,_,_,_,_]\n<strong>Explanation:</strong> Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></code></li>\n\t<li><code>-100 &lt;= nums[i] &lt;= 100</code></li>\n\t<li><code>nums</code> is sorted in <strong>non-decreasing</strong> order.</li>\n</ul>\n",
+      "hints": [
+        "In this problem, the key point to focus on is the input array being sorted. As far as duplicate elements are concerned, what is their positioning in the array when the given array is sorted? Look at the image below for the answer. If we know the position of one of the elements, do we also know the positioning of all the duplicate elements?\r\n\r\n<br>\r\n<img src=\"https://assets.leetcode.com/uploads/2019/10/20/hint_rem_dup.png\" width=\"500\"/>",
+        "We need to modify the array in-place and the size of the final array would potentially be smaller than the size of the input array. So, we ought to use a two-pointer approach here. One, that would keep track of the current element in the original array and another one for just the unique elements.",
+        "Essentially, once an element is encountered, you simply need to <b>bypass</b> its duplicates and move on to the next unique element."
+      ],
+      "acRate": 62.74577339188107,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "remove-element",
+          "title": "Remove Element",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "remove-duplicates-from-sorted-array-ii",
+          "title": "Remove Duplicates from Sorted Array II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "apply-operations-to-an-array",
+          "title": "Apply Operations to an Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "sum-of-distances",
+          "title": "Sum of Distances",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "### Review\n\n1. **Complexity**\n   * **Time:** $O(n^2)$. While the loop runs $n$ times, `nums.pop(i)` is an $O(n)$ operation because it requires shifting all subsequent elements.\n   * **Space:** $O(1)$. It modifies the input list in-place.\n\n2. **Correctness**\n   * **Correct.** The logic handles multiple consecutive duplicates and edge cases (like empty lists or lists with no duplicates) correctly by only incrementing `i` when no deletion occurs.\n\n3. **Optimization**\n   Use a **Two-Pointer Overwrite** strategy to achieve **$O(n)$ time**. Instead of popping (which shifts elements), use one pointer to track the unique \"write\" position and another to scan the array.\n   ```python\n   k = 1\n   for i in range(1, len(nums)):\n       if nums[i] != nums[i-1]:\n           nums[k] = nums[i]\n           k += 1\n   return k\n   ```\n\n4. **Key Algorithmic Pattern**\n   **Two Pointers.** The current solution uses one pointer with an $O(n)$ deletion; the optimal version uses two pointers (slow and fast) to filter data in a single pass."
+    },
+    {
+      "id": "lc-remove-element",
+      "submissionId": 1425727436,
+      "platform": "leetcode",
+      "title": "Remove Element",
+      "titleSlug": "remove-element",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Two Pointers"
+      ],
+      "topic": "Two Pointers",
+      "code": "class Solution:\n    def removeElement(self, nums: List[int], val: int) -> int:\n        i = 0\n        while i < len(nums):\n            if nums[i] == val:\n                nums.pop(i)\n            else:\n                i += 1\n        return len(nums)        ",
+      "readmeContent": "# Remove Element\n\n**Difficulty:** Easy  |  **Acceptance:** 61.7%\n\n**Tags:** `Array`, `Two Pointers`\n\n## Problem\n\nGiven an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.\n\nConsider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:\n\n\tChange the array nums such that the first k elements of nums contain the elements which are not equal to val. The remaining elements of nums are not important as well as the size of nums.\n\tReturn k.\n\nCustom Judge:\n\nThe judge will test your solution with the following code:\n\nint[] nums = [...]; // Input array\nint val = ...; // Value to remove\nint[] expectedNums = [...]; // The expected answer with correct length.\n                            // It is sorted with no values equaling val.\n\nint k = removeElement(nums, val); // Calls your implementation\n\nassert k == expectedNums.length;\nsort(nums, 0, k); // Sort the first k elements of nums\nfor (int i = 0; i < actualLength; i++) {\n    assert nums[i] == expectedNums[i];\n}\n\nIf all assertions pass, then your solution will be accepted.\n\n&nbsp;\nExample 1:\n\nInput: nums = [3,2,2,3], val = 3\nOutput: 2, nums = [2,2,_,_]\nExplanation: Your function should return k = 2, with the first two elements of nums being 2.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n\nExample 2:\n\nInput: nums = [0,1,2,2,3,0,4,2], val = 2\nOutput: 5, nums = [0,1,4,0,3,_,_,_]\nExplanation: Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.\nNote that the five elements can be returned in any order.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n\n&nbsp;\nConstraints:\n\n\t0 <= nums.length <= 100\n\t0 <= nums[i] <= 50\n\t0 <= val <= 100\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.7 MB\n\n## Similar Problems\n\n- [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) — Easy\n- [Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/) — Easy\n- [Move Zeroes](https://leetcode.com/problems/move-zeroes/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/remove-element/remove-element.py",
+          "content": "class Solution:\n    def removeElement(self, nums: List[int], val: int) -> int:\n        i = 0\n        while i < len(nums):\n            if nums[i] == val:\n                nums.pop(i)\n            else:\n                i += 1\n        return len(nums)        "
+        },
+        {
+          "path": "problems/remove-element/README.md",
+          "content": "# Remove Element\n\n**Difficulty:** Easy  |  **Acceptance:** 61.7%\n\n**Tags:** `Array`, `Two Pointers`\n\n## Problem\n\nGiven an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.\n\nConsider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:\n\n\tChange the array nums such that the first k elements of nums contain the elements which are not equal to val. The remaining elements of nums are not important as well as the size of nums.\n\tReturn k.\n\nCustom Judge:\n\nThe judge will test your solution with the following code:\n\nint[] nums = [...]; // Input array\nint val = ...; // Value to remove\nint[] expectedNums = [...]; // The expected answer with correct length.\n                            // It is sorted with no values equaling val.\n\nint k = removeElement(nums, val); // Calls your implementation\n\nassert k == expectedNums.length;\nsort(nums, 0, k); // Sort the first k elements of nums\nfor (int i = 0; i < actualLength; i++) {\n    assert nums[i] == expectedNums[i];\n}\n\nIf all assertions pass, then your solution will be accepted.\n\n&nbsp;\nExample 1:\n\nInput: nums = [3,2,2,3], val = 3\nOutput: 2, nums = [2,2,_,_]\nExplanation: Your function should return k = 2, with the first two elements of nums being 2.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n\nExample 2:\n\nInput: nums = [0,1,2,2,3,0,4,2], val = 2\nOutput: 5, nums = [0,1,4,0,3,_,_,_]\nExplanation: Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.\nNote that the five elements can be returned in any order.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n\n&nbsp;\nConstraints:\n\n\t0 <= nums.length <= 100\n\t0 <= nums[i] <= 50\n\t0 <= val <= 100\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.7 MB\n\n## Similar Problems\n\n- [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) — Easy\n- [Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/) — Easy\n- [Move Zeroes](https://leetcode.com/problems/move-zeroes/) — Easy\n"
+        }
+      ],
+      "timestamp": 1729192238000,
+      "runtime": "0 ms",
+      "memory": "16.7 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an integer array <code>nums</code> and an integer <code>val</code>, remove all occurrences of <code>val</code> in <code>nums</code> <a href=\"https://en.wikipedia.org/wiki/In-place_algorithm\" target=\"_blank\"><strong>in-place</strong></a>. The order of the elements may be changed. Then return <em>the number of elements in </em><code>nums</code><em> which are not equal to </em><code>val</code>.</p>\n\n<p>Consider the number of elements in <code>nums</code> which are not equal to <code>val</code> be <code>k</code>, to get accepted, you need to do the following things:</p>\n\n<ul>\n\t<li>Change the array <code>nums</code> such that the first <code>k</code> elements of <code>nums</code> contain the elements which are not equal to <code>val</code>. The remaining elements of <code>nums</code> are not important as well as the size of <code>nums</code>.</li>\n\t<li>Return <code>k</code>.</li>\n</ul>\n\n<p><strong>Custom Judge:</strong></p>\n\n<p>The judge will test your solution with the following code:</p>\n\n<pre>\nint[] nums = [...]; // Input array\nint val = ...; // Value to remove\nint[] expectedNums = [...]; // The expected answer with correct length.\n                            // It is sorted with no values equaling val.\n\nint k = removeElement(nums, val); // Calls your implementation\n\nassert k == expectedNums.length;\nsort(nums, 0, k); // Sort the first k elements of nums\nfor (int i = 0; i &lt; actualLength; i++) {\n    assert nums[i] == expectedNums[i];\n}\n</pre>\n\n<p>If all assertions pass, then your solution will be <strong>accepted</strong>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [3,2,2,3], val = 3\n<strong>Output:</strong> 2, nums = [2,2,_,_]\n<strong>Explanation:</strong> Your function should return k = 2, with the first two elements of nums being 2.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [0,1,2,2,3,0,4,2], val = 2\n<strong>Output:</strong> 5, nums = [0,1,4,0,3,_,_,_]\n<strong>Explanation:</strong> Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.\nNote that the five elements can be returned in any order.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>0 &lt;= nums.length &lt;= 100</code></li>\n\t<li><code>0 &lt;= nums[i] &lt;= 50</code></li>\n\t<li><code>0 &lt;= val &lt;= 100</code></li>\n</ul>\n",
+      "hints": [
+        "The problem statement clearly asks us to modify the array in-place and it also says that the element beyond the new length of the array can be anything. Given an element, we need to remove all the occurrences of it from the array. We don't technically need to <b>remove</b> that element per se, right?",
+        "We can move all the occurrences of this element to the end of the array. Use two pointers!\r\n<br><img src=\"https://assets.leetcode.com/uploads/2019/10/20/hint_remove_element.png\" width=\"500\"/>",
+        "Yet another direction of thought is to consider the elements to be removed as non-existent. In a single pass, if we keep copying the visible elements in-place, that should also solve this problem for us."
+      ],
+      "acRate": 61.747704396650036,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "remove-duplicates-from-sorted-array",
+          "title": "Remove Duplicates from Sorted Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "remove-linked-list-elements",
+          "title": "Remove Linked List Elements",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "move-zeroes",
+          "title": "Move Zeroes",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n^2)$. While the `while` loop runs $n$ times, `nums.pop(i)` is an $O(n)$ operation because it requires shifting all subsequent elements to the left.\n*   **Space Complexity:** $O(1)$. Modifications are made in-place.\n\n### 2. Correctness\nThe code is **correct**. It avoids the common mistake of skipping elements after a deletion by only incrementing `i` when no element is popped. It handles edge cases like empty lists, lists where all elements match `val`, or no elements match `val`.\n\n### 3. Optimization\nReplace the $O(n^2)$ `pop()` method with an $O(n)$ **Two-Pointer** overwrite strategy. Instead of deleting, overwrite elements that should be kept:\n\n```python\ndef removeElement(self, nums: List[int], val: int) -> int:\n    k = 0  # Write pointer\n    for i in range(len(nums)):\n        if nums[i] != val:\n            nums[k] = nums[i]\n            k += 1\n    return k\n```\nThis reduces time complexity to $O(n)$ by eliminating expensive array shifts.\n\n### 4. Key Algorithmic Pattern\n**Two Pointers** (specifically the \"Read/Write\" pointer technique). One pointer iterates through the array, while the other tracks the position for the next valid element."
+    },
+    {
+      "id": "lc-plus-one",
+      "submissionId": 1426684755,
+      "platform": "leetcode",
+      "title": "Plus One",
+      "titleSlug": "plus-one",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Math"
+      ],
+      "topic": "Math",
+      "code": "class Solution:\n    def plusOne(self, digits: List[int]) -> List[int]:\n        digits[-1] += 1\n        if len(digits) > 1:\n            for i in range(len(digits)-1,0,-1):\n                if digits[i] == 10:\n                    digits[i] = 0\n                    digits[i-1] += 1\n\n        if digits[0] == 10:\n            digits[0] = 0\n            digits = [1] + digits\n        return digits",
+      "readmeContent": "# Plus One\n\n**Difficulty:** Easy  |  **Acceptance:** 49.9%\n\n**Tags:** `Array`, `Math`\n\n## Problem\n\nYou are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.\n\nIncrement the large integer by one and return the resulting array of digits.\n\n&nbsp;\nExample 1:\n\nInput: digits = [1,2,3]\nOutput: [1,2,4]\nExplanation: The array represents the integer 123.\nIncrementing by one gives 123 + 1 = 124.\nThus, the result should be [1,2,4].\n\nExample 2:\n\nInput: digits = [4,3,2,1]\nOutput: [4,3,2,2]\nExplanation: The array represents the integer 4321.\nIncrementing by one gives 4321 + 1 = 4322.\nThus, the result should be [4,3,2,2].\n\nExample 3:\n\nInput: digits = [9]\nOutput: [1,0]\nExplanation: The array represents the integer 9.\nIncrementing by one gives 9 + 1 = 10.\nThus, the result should be [1,0].\n\n&nbsp;\nConstraints:\n\n\t1 <= digits.length <= 100\n\t0 <= digits[i] <= 9\n\tdigits does not contain any leading 0's.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.7 MB\n\n## Similar Problems\n\n- [Multiply Strings](https://leetcode.com/problems/multiply-strings/) — Medium\n- [Add Binary](https://leetcode.com/problems/add-binary/) — Easy\n- [Add to Array-Form of Integer](https://leetcode.com/problems/add-to-array-form-of-integer/) — Easy\n- [Minimum Operations to Reduce an Integer to 0](https://leetcode.com/problems/minimum-operations-to-reduce-an-integer-to-0/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/plus-one/plus-one.py",
+          "content": "class Solution:\n    def plusOne(self, digits: List[int]) -> List[int]:\n        digits[-1] += 1\n        if len(digits) > 1:\n            for i in range(len(digits)-1,0,-1):\n                if digits[i] == 10:\n                    digits[i] = 0\n                    digits[i-1] += 1\n\n        if digits[0] == 10:\n            digits[0] = 0\n            digits = [1] + digits\n        return digits"
+        },
+        {
+          "path": "problems/plus-one/README.md",
+          "content": "# Plus One\n\n**Difficulty:** Easy  |  **Acceptance:** 49.9%\n\n**Tags:** `Array`, `Math`\n\n## Problem\n\nYou are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.\n\nIncrement the large integer by one and return the resulting array of digits.\n\n&nbsp;\nExample 1:\n\nInput: digits = [1,2,3]\nOutput: [1,2,4]\nExplanation: The array represents the integer 123.\nIncrementing by one gives 123 + 1 = 124.\nThus, the result should be [1,2,4].\n\nExample 2:\n\nInput: digits = [4,3,2,1]\nOutput: [4,3,2,2]\nExplanation: The array represents the integer 4321.\nIncrementing by one gives 4321 + 1 = 4322.\nThus, the result should be [4,3,2,2].\n\nExample 3:\n\nInput: digits = [9]\nOutput: [1,0]\nExplanation: The array represents the integer 9.\nIncrementing by one gives 9 + 1 = 10.\nThus, the result should be [1,0].\n\n&nbsp;\nConstraints:\n\n\t1 <= digits.length <= 100\n\t0 <= digits[i] <= 9\n\tdigits does not contain any leading 0's.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.7 MB\n\n## Similar Problems\n\n- [Multiply Strings](https://leetcode.com/problems/multiply-strings/) — Medium\n- [Add Binary](https://leetcode.com/problems/add-binary/) — Easy\n- [Add to Array-Form of Integer](https://leetcode.com/problems/add-to-array-form-of-integer/) — Easy\n- [Minimum Operations to Reduce an Integer to 0](https://leetcode.com/problems/minimum-operations-to-reduce-an-integer-to-0/) — Medium\n"
+        }
+      ],
+      "timestamp": 1729278249000,
+      "runtime": "0 ms",
+      "memory": "16.7 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given a <strong>large integer</strong> represented as an integer array <code>digits</code>, where each <code>digits[i]</code> is the <code>i<sup>th</sup></code> digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading <code>0</code>&#39;s.</p>\n\n<p>Increment the large integer by one and return <em>the resulting array of digits</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> digits = [1,2,3]\n<strong>Output:</strong> [1,2,4]\n<strong>Explanation:</strong> The array represents the integer 123.\nIncrementing by one gives 123 + 1 = 124.\nThus, the result should be [1,2,4].\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> digits = [4,3,2,1]\n<strong>Output:</strong> [4,3,2,2]\n<strong>Explanation:</strong> The array represents the integer 4321.\nIncrementing by one gives 4321 + 1 = 4322.\nThus, the result should be [4,3,2,2].\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> digits = [9]\n<strong>Output:</strong> [1,0]\n<strong>Explanation:</strong> The array represents the integer 9.\nIncrementing by one gives 9 + 1 = 10.\nThus, the result should be [1,0].\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= digits.length &lt;= 100</code></li>\n\t<li><code>0 &lt;= digits[i] &lt;= 9</code></li>\n\t<li><code>digits</code> does not contain any leading <code>0</code>&#39;s.</li>\n</ul>\n",
+      "hints": [],
+      "acRate": 49.91584646662783,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "multiply-strings",
+          "title": "Multiply Strings",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "add-binary",
+          "title": "Add Binary",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "add-to-array-form-of-integer",
+          "title": "Add to Array-Form of Integer",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "minimum-operations-to-reduce-an-integer-to-0",
+          "title": "Minimum Operations to Reduce an Integer to 0",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the number of digits. In the worst case (e.g., `[9,9,9]`), the code traverses the entire array once.\n*   **Space Complexity:** $O(n)$. While mostly in-place, the operation `[1] + digits` creates a new list of size $n+1$ in the worst case.\n\n### 2. Correctness\nThe code is **correct**. It handles standard cases, single-digit inputs (like `[9]`), and carry propagation through the entire array. One minor redundancy is the `if len(digits) > 1` check, as the logic could be unified, but it does not break functionality.\n\n### 3. Optimization\n**Early Return:** You can exit the loop as soon as no carry is generated. This avoids unnecessary iterations.\n\n```python\nfor i in range(len(digits) - 1, -1, -1):\n    digits[i] += 1\n    if digits[i] < 10:\n        return digits # Optimization: stop early\n    digits[i] = 0\nreturn [1] + digits\n```\n\n### 4. Key Algorithmic Pattern\n**Schoolbook Addition (Carry Propagation):** Iterating from the least significant digit to the most significant, mimicking manual long-addition."
+    },
+    {
+      "id": "lc-add-binary",
+      "submissionId": 1426702044,
+      "platform": "leetcode",
+      "title": "Add Binary",
+      "titleSlug": "add-binary",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Math",
+        "String",
+        "Bit Manipulation",
+        "Simulation"
+      ],
+      "topic": "Bit Manipulation",
+      "code": "class Solution:\n    def addBinary(self, a: str, b: str) -> str:\n        if len(b) > len(a):\n            a, b = b, a\n        \n        carry = 0\n        result = []\n        a = list(a)[::-1]\n        b = list(b)[::-1]\n\n        for i in range(len(a)):\n            bit_a = int(a[i])\n            bit_b = int(b[i]) if i < len(b) else 0\n            total = bit_a + bit_b + int(carry)\n            result.append(str(total % 2))\n            carry = total // 2\n\n        if carry:\n            result.append(str(carry))\n\n        return \"\".join(result[::-1])",
+      "readmeContent": "# Add Binary\n\n**Difficulty:** Easy  |  **Acceptance:** 58.0%\n\n**Tags:** `Math`, `String`, `Bit Manipulation`, `Simulation`\n\n## Problem\n\nGiven two binary strings a and b, return their sum as a binary string.\n\n&nbsp;\nExample 1:\nInput: a = \"11\", b = \"1\"\nOutput: \"100\"\nExample 2:\nInput: a = \"1010\", b = \"1011\"\nOutput: \"10101\"\n\n&nbsp;\nConstraints:\n\n\t1 <= a.length, b.length <= 104\n\ta and b consist&nbsp;only of '0' or '1' characters.\n\tEach string does not contain leading zeros except for the zero itself.\n\n## My Submission\n\n- Runtime: 4 ms\n- Memory: 16.8 MB\n\n## Similar Problems\n\n- [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) — Medium\n- [Multiply Strings](https://leetcode.com/problems/multiply-strings/) — Medium\n- [Plus One](https://leetcode.com/problems/plus-one/) — Easy\n- [Add to Array-Form of Integer](https://leetcode.com/problems/add-to-array-form-of-integer/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/add-binary/add-binary.py",
+          "content": "class Solution:\n    def addBinary(self, a: str, b: str) -> str:\n        if len(b) > len(a):\n            a, b = b, a\n        \n        carry = 0\n        result = []\n        a = list(a)[::-1]\n        b = list(b)[::-1]\n\n        for i in range(len(a)):\n            bit_a = int(a[i])\n            bit_b = int(b[i]) if i < len(b) else 0\n            total = bit_a + bit_b + int(carry)\n            result.append(str(total % 2))\n            carry = total // 2\n\n        if carry:\n            result.append(str(carry))\n\n        return \"\".join(result[::-1])"
+        },
+        {
+          "path": "problems/add-binary/README.md",
+          "content": "# Add Binary\n\n**Difficulty:** Easy  |  **Acceptance:** 58.0%\n\n**Tags:** `Math`, `String`, `Bit Manipulation`, `Simulation`\n\n## Problem\n\nGiven two binary strings a and b, return their sum as a binary string.\n\n&nbsp;\nExample 1:\nInput: a = \"11\", b = \"1\"\nOutput: \"100\"\nExample 2:\nInput: a = \"1010\", b = \"1011\"\nOutput: \"10101\"\n\n&nbsp;\nConstraints:\n\n\t1 <= a.length, b.length <= 104\n\ta and b consist&nbsp;only of '0' or '1' characters.\n\tEach string does not contain leading zeros except for the zero itself.\n\n## My Submission\n\n- Runtime: 4 ms\n- Memory: 16.8 MB\n\n## Similar Problems\n\n- [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) — Medium\n- [Multiply Strings](https://leetcode.com/problems/multiply-strings/) — Medium\n- [Plus One](https://leetcode.com/problems/plus-one/) — Easy\n- [Add to Array-Form of Integer](https://leetcode.com/problems/add-to-array-form-of-integer/) — Easy\n"
+        }
+      ],
+      "timestamp": 1729279641000,
+      "runtime": "4 ms",
+      "memory": "16.8 MB",
+      "runtimePct": 14.163000000000004,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given two binary strings <code>a</code> and <code>b</code>, return <em>their sum as a binary string</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<pre><strong>Input:</strong> a = \"11\", b = \"1\"\n<strong>Output:</strong> \"100\"\n</pre><p><strong class=\"example\">Example 2:</strong></p>\n<pre><strong>Input:</strong> a = \"1010\", b = \"1011\"\n<strong>Output:</strong> \"10101\"\n</pre>\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= a.length, b.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>a</code> and <code>b</code> consist&nbsp;only of <code>&#39;0&#39;</code> or <code>&#39;1&#39;</code> characters.</li>\n\t<li>Each string does not contain leading zeros except for the zero itself.</li>\n</ul>\n",
+      "hints": [],
+      "acRate": 58.01198111526813,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "add-two-numbers",
+          "title": "Add Two Numbers",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "multiply-strings",
+          "title": "Multiply Strings",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "plus-one",
+          "title": "Plus One",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "add-to-array-form-of-integer",
+          "title": "Add to Array-Form of Integer",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time:** $O(\\max(N, M))$, where $N$ and $M$ are lengths of `a` and `b`. The code performs linear passes for reversing, iterating, and joining.\n*   **Space:** $O(\\max(N, M))$ to store reversed lists and the result array.\n\n**2. Correctness**\nThe logic is correct. It handles varying string lengths via the swap/padding check and correctly processes the final carry.\n*   **Edge Cases:** Handles \"0\" + \"0\", different lengths (e.g., \"1\" + \"111\"), and carry-out at the most significant bit (e.g., \"11\" + \"1\") successfully.\n\n**3. Concrete Optimization**\nAvoid the memory overhead of creating reversed lists (`list(a)[::-1]`). Instead, use **two pointers** to iterate backwards through the strings. This processes the bits in-place relative to their original strings.\n\n**4. Key Algorithmic Pattern**\n**Simulation (Elementary School Addition):** It mimics the column-by-column manual addition process, maintaining a carry bit while moving from the least significant to the most significant digit."
+    },
+    {
+      "id": "lc-add-to-array-form-of-integer",
+      "submissionId": 1426720853,
+      "platform": "leetcode",
+      "title": "Add to Array-Form of Integer",
+      "titleSlug": "add-to-array-form-of-integer",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Math"
+      ],
+      "topic": "Math",
+      "code": "class Solution:\n    def addToArrayForm(self, num: List[int], k: int) -> List[int]:\n        num[-1] += k\n        if len(num) > 1:\n            for i in range(len(num)-1,0,-1):\n                if num[i] >= 10:\n                    num[i-1] += num[i] // 10\n                    num[i] = num[i] % 10\n\n        while num[0] >= 10:\n            num = [num[0] // 10] + num\n            num[1] = num[1] % 10\n        return num",
+      "readmeContent": "# Add to Array-Form of Integer\n\n**Difficulty:** Easy  |  **Acceptance:** 45.5%\n\n**Tags:** `Array`, `Math`\n\n## Problem\n\nThe array-form of an integer num is an array representing its digits in left to right order.\n\n\tFor example, for num = 1321, the array form is [1,3,2,1].\n\nGiven num, the array-form of an integer, and an integer k, return the array-form of the integer num + k.\n\n&nbsp;\nExample 1:\n\nInput: num = [1,2,0,0], k = 34\nOutput: [1,2,3,4]\nExplanation: 1200 + 34 = 1234\n\nExample 2:\n\nInput: num = [2,7,4], k = 181\nOutput: [4,5,5]\nExplanation: 274 + 181 = 455\n\nExample 3:\n\nInput: num = [2,1,5], k = 806\nOutput: [1,0,2,1]\nExplanation: 215 + 806 = 1021\n\n&nbsp;\nConstraints:\n\n\t1 <= num.length <= 104\n\t0 <= num[i] <= 9\n\tnum does not contain any leading zeros except for the zero itself.\n\t1 <= k <= 104\n\n## My Submission\n\n- Runtime: 5 ms\n- Memory: 17.1 MB\n\n## Similar Problems\n\n- [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) — Medium\n- [Plus One](https://leetcode.com/problems/plus-one/) — Easy\n- [Add Binary](https://leetcode.com/problems/add-binary/) — Easy\n- [Add Strings](https://leetcode.com/problems/add-strings/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/add-to-array-form-of-integer/add-to-array-form-of-integer.py",
+          "content": "class Solution:\n    def addToArrayForm(self, num: List[int], k: int) -> List[int]:\n        num[-1] += k\n        if len(num) > 1:\n            for i in range(len(num)-1,0,-1):\n                if num[i] >= 10:\n                    num[i-1] += num[i] // 10\n                    num[i] = num[i] % 10\n\n        while num[0] >= 10:\n            num = [num[0] // 10] + num\n            num[1] = num[1] % 10\n        return num"
+        },
+        {
+          "path": "problems/add-to-array-form-of-integer/README.md",
+          "content": "# Add to Array-Form of Integer\n\n**Difficulty:** Easy  |  **Acceptance:** 45.5%\n\n**Tags:** `Array`, `Math`\n\n## Problem\n\nThe array-form of an integer num is an array representing its digits in left to right order.\n\n\tFor example, for num = 1321, the array form is [1,3,2,1].\n\nGiven num, the array-form of an integer, and an integer k, return the array-form of the integer num + k.\n\n&nbsp;\nExample 1:\n\nInput: num = [1,2,0,0], k = 34\nOutput: [1,2,3,4]\nExplanation: 1200 + 34 = 1234\n\nExample 2:\n\nInput: num = [2,7,4], k = 181\nOutput: [4,5,5]\nExplanation: 274 + 181 = 455\n\nExample 3:\n\nInput: num = [2,1,5], k = 806\nOutput: [1,0,2,1]\nExplanation: 215 + 806 = 1021\n\n&nbsp;\nConstraints:\n\n\t1 <= num.length <= 104\n\t0 <= num[i] <= 9\n\tnum does not contain any leading zeros except for the zero itself.\n\t1 <= k <= 104\n\n## My Submission\n\n- Runtime: 5 ms\n- Memory: 17.1 MB\n\n## Similar Problems\n\n- [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) — Medium\n- [Plus One](https://leetcode.com/problems/plus-one/) — Easy\n- [Add Binary](https://leetcode.com/problems/add-binary/) — Easy\n- [Add Strings](https://leetcode.com/problems/add-strings/) — Easy\n"
+        }
+      ],
+      "timestamp": 1729281259000,
+      "runtime": "5 ms",
+      "memory": "17.1 MB",
+      "runtimePct": 81.90090000000001,
+      "memoryPct": 100,
+      "problemStatement": "<p>The <strong>array-form</strong> of an integer <code>num</code> is an array representing its digits in left to right order.</p>\n\n<ul>\n\t<li>For example, for <code>num = 1321</code>, the array form is <code>[1,3,2,1]</code>.</li>\n</ul>\n\n<p>Given <code>num</code>, the <strong>array-form</strong> of an integer, and an integer <code>k</code>, return <em>the <strong>array-form</strong> of the integer</em> <code>num + k</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> num = [1,2,0,0], k = 34\n<strong>Output:</strong> [1,2,3,4]\n<strong>Explanation:</strong> 1200 + 34 = 1234\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> num = [2,7,4], k = 181\n<strong>Output:</strong> [4,5,5]\n<strong>Explanation:</strong> 274 + 181 = 455\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> num = [2,1,5], k = 806\n<strong>Output:</strong> [1,0,2,1]\n<strong>Explanation:</strong> 215 + 806 = 1021\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= num.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>0 &lt;= num[i] &lt;= 9</code></li>\n\t<li><code>num</code> does not contain any leading zeros except for the zero itself.</li>\n\t<li><code>1 &lt;= k &lt;= 10<sup>4</sup></code></li>\n</ul>\n",
+      "hints": [],
+      "acRate": 45.497458629471375,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "add-two-numbers",
+          "title": "Add Two Numbers",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "plus-one",
+          "title": "Plus One",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "add-binary",
+          "title": "Add Binary",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "add-strings",
+          "title": "Add Strings",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time:** $O(N \\cdot \\log_{10}K)$, where $N$ is the length of `num`. The `while` loop prepends to the list (`[val] + num`), which is an $O(N)$ operation inside a loop running $O(\\log_{10}K)$ times.\n*   **Space:** $O(N + \\log_{10}K)$ to store the resulting digits.\n\n**2. Correctness**\nThe logic is **correct**. It successfully handles:\n*   Standard carries.\n*   Large $K$ values that extend the array length (handled by the `while` loop).\n*   Single-element arrays.\n\n**3. Concrete Optimization**\nReplace the inefficient prepending (`num = [new_digit] + num`) with `num.append()` and a final `reverse()`. Prepending creates a new list every iteration, leading to $O(N^2)$ behavior in some languages. In the current logic, you can also simplify by processing $K$ directly:\n```python\nfor i in range(len(num) - 1, -1, -1):\n    k, num[i] = divmod(num[i] + k, 10)\nwhile k:\n    num.insert(0, k % 10)\n    k //= 10\n```\n*(Note: `insert(0, ...)` is still $O(N)$; for true $O(N)$ efficiency, use a new list and reverse it.)*\n\n**4. Key Algorithmic Pattern**\n**Manual Carry Simulation** (Elementary School Addition)."
+    },
+    {
+      "id": "lc-add-strings",
+      "submissionId": 1426723197,
+      "platform": "leetcode",
+      "title": "Add Strings",
+      "titleSlug": "add-strings",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Math",
+        "String",
+        "Simulation"
+      ],
+      "topic": "Math",
+      "code": "class Solution:\n    def addStrings(self, a: str, b: str) -> str:\n        if len(b) > len(a):\n            a, b = b, a\n        \n        carry = 0\n        result = []\n        a = list(a)[::-1]\n        b = list(b)[::-1]\n\n        for i in range(len(a)):\n            bit_a = int(a[i])\n            bit_b = int(b[i]) if i < len(b) else 0\n            total = bit_a + bit_b + int(carry)\n            result.append(str(total % 10))\n            carry = total // 10\n\n        if carry:\n            result.append(str(carry))\n\n        return \"\".join(result[::-1])",
+      "readmeContent": "# Add Strings\n\n**Difficulty:** Easy  |  **Acceptance:** 52.2%\n\n**Tags:** `Math`, `String`, `Simulation`\n\n## Problem\n\nGiven two non-negative integers, num1 and num2 represented as string, return the sum of num1 and num2 as a string.\n\nYou must solve the problem without using any built-in library for handling large integers (such as BigInteger). You must also not convert the inputs to integers directly.\n\n&nbsp;\nExample 1:\n\nInput: num1 = \"11\", num2 = \"123\"\nOutput: \"134\"\n\nExample 2:\n\nInput: num1 = \"456\", num2 = \"77\"\nOutput: \"533\"\n\nExample 3:\n\nInput: num1 = \"0\", num2 = \"0\"\nOutput: \"0\"\n\n&nbsp;\nConstraints:\n\n\t1 <= num1.length, num2.length <= 104\n\tnum1 and num2 consist of only digits.\n\tnum1 and num2 don't have any leading zeros except for the zero itself.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.3 MB\n\n## Similar Problems\n\n- [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) — Medium\n- [Multiply Strings](https://leetcode.com/problems/multiply-strings/) — Medium\n- [Add to Array-Form of Integer](https://leetcode.com/problems/add-to-array-form-of-integer/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/add-strings/add-strings.py",
+          "content": "class Solution:\n    def addStrings(self, a: str, b: str) -> str:\n        if len(b) > len(a):\n            a, b = b, a\n        \n        carry = 0\n        result = []\n        a = list(a)[::-1]\n        b = list(b)[::-1]\n\n        for i in range(len(a)):\n            bit_a = int(a[i])\n            bit_b = int(b[i]) if i < len(b) else 0\n            total = bit_a + bit_b + int(carry)\n            result.append(str(total % 10))\n            carry = total // 10\n\n        if carry:\n            result.append(str(carry))\n\n        return \"\".join(result[::-1])"
+        },
+        {
+          "path": "problems/add-strings/README.md",
+          "content": "# Add Strings\n\n**Difficulty:** Easy  |  **Acceptance:** 52.2%\n\n**Tags:** `Math`, `String`, `Simulation`\n\n## Problem\n\nGiven two non-negative integers, num1 and num2 represented as string, return the sum of num1 and num2 as a string.\n\nYou must solve the problem without using any built-in library for handling large integers (such as BigInteger). You must also not convert the inputs to integers directly.\n\n&nbsp;\nExample 1:\n\nInput: num1 = \"11\", num2 = \"123\"\nOutput: \"134\"\n\nExample 2:\n\nInput: num1 = \"456\", num2 = \"77\"\nOutput: \"533\"\n\nExample 3:\n\nInput: num1 = \"0\", num2 = \"0\"\nOutput: \"0\"\n\n&nbsp;\nConstraints:\n\n\t1 <= num1.length, num2.length <= 104\n\tnum1 and num2 consist of only digits.\n\tnum1 and num2 don't have any leading zeros except for the zero itself.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.3 MB\n\n## Similar Problems\n\n- [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) — Medium\n- [Multiply Strings](https://leetcode.com/problems/multiply-strings/) — Medium\n- [Add to Array-Form of Integer](https://leetcode.com/problems/add-to-array-form-of-integer/) — Easy\n"
+        }
+      ],
+      "timestamp": 1729281468000,
+      "runtime": "0 ms",
+      "memory": "17.3 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given two non-negative integers, <code>num1</code> and <code>num2</code> represented as string, return <em>the sum of</em> <code>num1</code> <em>and</em> <code>num2</code> <em>as a string</em>.</p>\n\n<p>You must solve the problem without using any built-in library for handling large integers (such as <code>BigInteger</code>). You must also not convert the inputs to integers directly.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> num1 = &quot;11&quot;, num2 = &quot;123&quot;\n<strong>Output:</strong> &quot;134&quot;\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> num1 = &quot;456&quot;, num2 = &quot;77&quot;\n<strong>Output:</strong> &quot;533&quot;\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> num1 = &quot;0&quot;, num2 = &quot;0&quot;\n<strong>Output:</strong> &quot;0&quot;\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= num1.length, num2.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>num1</code> and <code>num2</code> consist of only digits.</li>\n\t<li><code>num1</code> and <code>num2</code> don&#39;t have any leading zeros except for the zero itself.</li>\n</ul>\n",
+      "hints": [],
+      "acRate": 52.15390714459882,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "add-two-numbers",
+          "title": "Add Two Numbers",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "multiply-strings",
+          "title": "Multiply Strings",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "add-to-array-form-of-integer",
+          "title": "Add to Array-Form of Integer",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "### 1. Complexity\n*   **Time:** $O(\\max(N, M))$, where $N$ and $M$ are the lengths of strings `a` and `b`. Each digit is processed exactly once.\n*   **Space:** $O(\\max(N, M))$ to store the intermediate reversed lists and the final result list.\n\n### 2. Correctness\n**Correct.** The logic successfully handles:\n*   Numbers of different lengths (via the `i < len(b)` check).\n*   Carries within the addition.\n*   A final carry that increases the total digit count (e.g., \"9\" + \"1\").\n*   Leading zeros (though the problem usually guarantees valid inputs).\n\n### 3. Optimization\nInstead of creating reversed list copies (`list(a)[::-1]`), use **two pointers** starting at the end of each string (`len(a) - 1` and `len(b) - 1`) and iterate backwards. This reduces the number of intermediate object allocations and overhead.\n\n### 4. Key Algorithmic Pattern\n**Simulation (Schoolbook Addition):** The algorithm mimics the manual process of adding numbers column-by-column from right to left, maintaining a carry."
+    },
+    {
+      "id": "lc-search-insert-position",
+      "submissionId": 1426726603,
+      "platform": "leetcode",
+      "title": "Search Insert Position",
+      "titleSlug": "search-insert-position",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Binary Search"
+      ],
+      "topic": "Binary Search",
+      "code": "class Solution:\n    def searchInsert(self, nums: List[int], target: int) -> int:\n        left, right = 0, len(nums) - 1\n\n        while left <= right:\n            mid = (left + right) // 2\n            if nums[mid] == target:\n                return mid\n            elif nums[mid] < target:\n                left = mid + 1\n            else:\n                right = mid - 1\n\n        return left\n",
+      "readmeContent": "# Search Insert Position\n\n**Difficulty:** Easy  |  **Acceptance:** 51.2%\n\n**Tags:** `Array`, `Binary Search`\n\n## Problem\n\nGiven a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.\n\nYou must&nbsp;write an algorithm with&nbsp;O(log n) runtime complexity.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,3,5,6], target = 5\nOutput: 2\n\nExample 2:\n\nInput: nums = [1,3,5,6], target = 2\nOutput: 1\n\nExample 3:\n\nInput: nums = [1,3,5,6], target = 7\nOutput: 4\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 104\n\t-104 <= nums[i] <= 104\n\tnums contains distinct values sorted in ascending order.\n\t-104 <= target <= 104\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.3 MB\n\n## Similar Problems\n\n- [First Bad Version](https://leetcode.com/problems/first-bad-version/) — Easy\n- [Minimum Operations to Exceed Threshold Value I](https://leetcode.com/problems/minimum-operations-to-exceed-threshold-value-i/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/search-insert-position/search-insert-position.py",
+          "content": "class Solution:\n    def searchInsert(self, nums: List[int], target: int) -> int:\n        left, right = 0, len(nums) - 1\n\n        while left <= right:\n            mid = (left + right) // 2\n            if nums[mid] == target:\n                return mid\n            elif nums[mid] < target:\n                left = mid + 1\n            else:\n                right = mid - 1\n\n        return left\n"
+        },
+        {
+          "path": "problems/search-insert-position/README.md",
+          "content": "# Search Insert Position\n\n**Difficulty:** Easy  |  **Acceptance:** 51.2%\n\n**Tags:** `Array`, `Binary Search`\n\n## Problem\n\nGiven a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.\n\nYou must&nbsp;write an algorithm with&nbsp;O(log n) runtime complexity.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,3,5,6], target = 5\nOutput: 2\n\nExample 2:\n\nInput: nums = [1,3,5,6], target = 2\nOutput: 1\n\nExample 3:\n\nInput: nums = [1,3,5,6], target = 7\nOutput: 4\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 104\n\t-104 <= nums[i] <= 104\n\tnums contains distinct values sorted in ascending order.\n\t-104 <= target <= 104\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.3 MB\n\n## Similar Problems\n\n- [First Bad Version](https://leetcode.com/problems/first-bad-version/) — Easy\n- [Minimum Operations to Exceed Threshold Value I](https://leetcode.com/problems/minimum-operations-to-exceed-threshold-value-i/) — Easy\n"
+        }
+      ],
+      "timestamp": 1729281793000,
+      "runtime": "0 ms",
+      "memory": "17.3 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</p>\n\n<p>You must&nbsp;write an algorithm with&nbsp;<code>O(log n)</code> runtime complexity.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,3,5,6], target = 5\n<strong>Output:</strong> 2\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,3,5,6], target = 2\n<strong>Output:</strong> 1\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,3,5,6], target = 7\n<strong>Output:</strong> 4\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>\n\t<li><code>nums</code> contains <strong>distinct</strong> values sorted in <strong>ascending</strong> order.</li>\n\t<li><code>-10<sup>4</sup> &lt;= target &lt;= 10<sup>4</sup></code></li>\n</ul>\n",
+      "hints": [],
+      "acRate": 51.19681273145494,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "first-bad-version",
+          "title": "First Bad Version",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "minimum-operations-to-exceed-threshold-value-i",
+          "title": "Minimum Operations to Exceed Threshold Value I",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "1. **Complexity**:\n* **Time**: $O(\\log n)$ — Binary search reduces the search space by half each iteration.\n* **Space**: $O(1)$ — Only constant extra space is used for pointers.\n\n2. **Correctness**:\nThe logic is correct and robust. It handles all edge cases:\n* **Target exists**: Returns the correct index via the `nums[mid] == target` check.\n* **Target missing**: The loop terminates with `left` pointing to the first element greater than the target, which is the correct insertion index.\n* **Target outside bounds**: Returns `0` if smaller than all elements and `len(nums)` if larger.\n* **Duplicates**: While the problem typically specifies distinct values, this logic returns the leftmost insertion point (the index of the first occurrence).\n\n3. **Optimization**:\nWhile the logic is optimal, you can use Python’s built-in `bisect` module for a cleaner, C-optimized implementation:\n```python\nimport bisect\nreturn bisect.bisect_left(nums, target)\n```\nIn other languages, use `mid = left + (right - left) // 2` to prevent potential integer overflow, though Python handles arbitrarily large integers automatically.\n\n4. **Key Pattern**:\n**Binary Search** (specifically, finding the lower bound/insertion point in a sorted sequence)."
+    },
+    {
+      "id": "lc-first-bad-version",
+      "submissionId": 1426736580,
+      "platform": "leetcode",
+      "title": "First Bad Version",
+      "titleSlug": "first-bad-version",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Binary Search",
+        "Interactive"
+      ],
+      "topic": "Binary Search",
+      "code": "# The isBadVersion API is already defined for you.\n# def isBadVersion(version: int) -> bool:\n\nclass Solution:\n    def firstBadVersion(self, n: int) -> int:\n        left, right = 1, n\n\n        while left < right:\n            mid = (left + right) // 2\n\n            if isBadVersion(mid):\n                right = mid\n            else:\n                left = mid + 1\n\n        return left",
+      "readmeContent": "# First Bad Version\n\n**Difficulty:** Easy  |  **Acceptance:** 47.1%\n\n**Tags:** `Binary Search`, `Interactive`\n\n## Problem\n\nYou are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.\n\nSuppose you have n versions [1, 2, ..., n] and you want to find out the first bad one, which causes all the following ones to be bad.\n\nYou are given an API bool isBadVersion(version) which returns whether version is bad. Implement a function to find the first bad version. You should minimize the number of calls to the API.\n\n&nbsp;\nExample 1:\n\nInput: n = 5, bad = 4\nOutput: 4\nExplanation:\ncall isBadVersion(3) -> false\ncall isBadVersion(5)&nbsp;-> true\ncall isBadVersion(4)&nbsp;-> true\nThen 4 is the first bad version.\n\nExample 2:\n\nInput: n = 1, bad = 1\nOutput: 1\n\n&nbsp;\nConstraints:\n\n\t1 <= bad <= n <= 231 - 1\n\n## My Submission\n\n- Runtime: 32 ms\n- Memory: 16.6 MB\n\n## Similar Problems\n\n- [Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) — Medium\n- [Search Insert Position](https://leetcode.com/problems/search-insert-position/) — Easy\n- [Guess Number Higher or Lower](https://leetcode.com/problems/guess-number-higher-or-lower/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/first-bad-version/first-bad-version.py",
+          "content": "# The isBadVersion API is already defined for you.\n# def isBadVersion(version: int) -> bool:\n\nclass Solution:\n    def firstBadVersion(self, n: int) -> int:\n        left, right = 1, n\n\n        while left < right:\n            mid = (left + right) // 2\n\n            if isBadVersion(mid):\n                right = mid\n            else:\n                left = mid + 1\n\n        return left"
+        },
+        {
+          "path": "problems/first-bad-version/README.md",
+          "content": "# First Bad Version\n\n**Difficulty:** Easy  |  **Acceptance:** 47.1%\n\n**Tags:** `Binary Search`, `Interactive`\n\n## Problem\n\nYou are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.\n\nSuppose you have n versions [1, 2, ..., n] and you want to find out the first bad one, which causes all the following ones to be bad.\n\nYou are given an API bool isBadVersion(version) which returns whether version is bad. Implement a function to find the first bad version. You should minimize the number of calls to the API.\n\n&nbsp;\nExample 1:\n\nInput: n = 5, bad = 4\nOutput: 4\nExplanation:\ncall isBadVersion(3) -> false\ncall isBadVersion(5)&nbsp;-> true\ncall isBadVersion(4)&nbsp;-> true\nThen 4 is the first bad version.\n\nExample 2:\n\nInput: n = 1, bad = 1\nOutput: 1\n\n&nbsp;\nConstraints:\n\n\t1 <= bad <= n <= 231 - 1\n\n## My Submission\n\n- Runtime: 32 ms\n- Memory: 16.6 MB\n\n## Similar Problems\n\n- [Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) — Medium\n- [Search Insert Position](https://leetcode.com/problems/search-insert-position/) — Easy\n- [Guess Number Higher or Lower](https://leetcode.com/problems/guess-number-higher-or-lower/) — Easy\n"
+        }
+      ],
+      "timestamp": 1729282745000,
+      "runtime": "32 ms",
+      "memory": "16.6 MB",
+      "runtimePct": 98.389,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.</p>\n\n<p>Suppose you have <code>n</code> versions <code>[1, 2, ..., n]</code> and you want to find out the first bad one, which causes all the following ones to be bad.</p>\n\n<p>You are given an API <code>bool isBadVersion(version)</code> which returns whether <code>version</code> is bad. Implement a function to find the first bad version. You should minimize the number of calls to the API.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 5, bad = 4\n<strong>Output:</strong> 4\n<strong>Explanation:</strong>\ncall isBadVersion(3) -&gt; false\ncall isBadVersion(5)&nbsp;-&gt; true\ncall isBadVersion(4)&nbsp;-&gt; true\nThen 4 is the first bad version.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 1, bad = 1\n<strong>Output:</strong> 1\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= bad &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>\n",
+      "hints": [],
+      "acRate": 47.098685226231716,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "find-first-and-last-position-of-element-in-sorted-array",
+          "title": "Find First and Last Position of Element in Sorted Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "search-insert-position",
+          "title": "Search Insert Position",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "guess-number-higher-or-lower",
+          "title": "Guess Number Higher or Lower",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(\\log n)$ — The search space is halved in each iteration of the binary search.\n*   **Space Complexity:** $O(1)$ — Only a constant amount of extra space is used for pointers.\n\n### 2. Correctness\nThe logic is **correct**. \n*   By setting `right = mid` when a bad version is found, the algorithm ensures it doesn't skip the first occurrence.\n*   The `left < right` condition combined with `left = mid + 1` prevents infinite loops and correctly converges on the first `True` value.\n*   **Edge cases:** Correctly handles $n=1$, cases where the first version is bad, and cases where only the last version is bad.\n\n### 3. Concrete Optimization\nWhile Python handles arbitrarily large integers, in most other languages, `(left + right) // 2` can cause **integer overflow**. A safer way to calculate the midpoint is:\n```python\nmid = left + (right - left) // 2\n```\nThis ensures the sum never exceeds the maximum value of the integer type.\n\n### 4. Key Algorithmic Pattern\n**Binary Search on a Discrete Range.** \nSpecifically, this is the \"find the first element satisfying a condition\" variant (lower bound search)."
+    },
+    {
+      "id": "lc-best-time-to-buy-and-sell-stock",
+      "submissionId": 1427676617,
+      "platform": "leetcode",
+      "title": "Best Time to Buy and Sell Stock",
+      "titleSlug": "best-time-to-buy-and-sell-stock",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Dynamic Programming"
+      ],
+      "topic": "Dynamic Programming",
+      "code": "class Solution:\n    def maxProfit(self, prices: List[int]) -> int:\n        min_price = float('inf')\n        max_profit = 0\n\n        for price in prices:\n            if price < min_price:\n                min_price = price\n            elif price - min_price > max_profit:\n                max_profit = price - min_price\n        return max_profit",
+      "readmeContent": "# Best Time to Buy and Sell Stock\n\n**Difficulty:** Easy  |  **Acceptance:** 56.7%\n\n**Tags:** `Array`, `Dynamic Programming`\n\n## Problem\n\nYou are given an array prices where prices[i] is the price of a given stock on the ith day.\n\nYou want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.\n\nReturn the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.\n\n&nbsp;\nExample 1:\n\nInput: prices = [7,1,5,3,6,4]\nOutput: 5\nExplanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.\nNote that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.\n\nExample 2:\n\nInput: prices = [7,6,4,3,1]\nOutput: 0\nExplanation: In this case, no transactions are done and the max profit = 0.\n\n&nbsp;\nConstraints:\n\n\t1 <= prices.length <= 105\n\t0 <= prices[i] <= 104\n\n## My Submission\n\n- Runtime: 21 ms\n- Memory: 26.1 MB\n\n## Similar Problems\n\n- [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) — Medium\n- [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) — Medium\n- [Best Time to Buy and Sell Stock III](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/) — Hard\n- [Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/) — Hard\n- [Best Time to Buy and Sell Stock with Cooldown](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/best-time-to-buy-and-sell-stock/best-time-to-buy-and-sell-stock.py",
+          "content": "class Solution:\n    def maxProfit(self, prices: List[int]) -> int:\n        min_price = float('inf')\n        max_profit = 0\n\n        for price in prices:\n            if price < min_price:\n                min_price = price\n            elif price - min_price > max_profit:\n                max_profit = price - min_price\n        return max_profit"
+        },
+        {
+          "path": "problems/best-time-to-buy-and-sell-stock/README.md",
+          "content": "# Best Time to Buy and Sell Stock\n\n**Difficulty:** Easy  |  **Acceptance:** 56.7%\n\n**Tags:** `Array`, `Dynamic Programming`\n\n## Problem\n\nYou are given an array prices where prices[i] is the price of a given stock on the ith day.\n\nYou want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.\n\nReturn the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.\n\n&nbsp;\nExample 1:\n\nInput: prices = [7,1,5,3,6,4]\nOutput: 5\nExplanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.\nNote that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.\n\nExample 2:\n\nInput: prices = [7,6,4,3,1]\nOutput: 0\nExplanation: In this case, no transactions are done and the max profit = 0.\n\n&nbsp;\nConstraints:\n\n\t1 <= prices.length <= 105\n\t0 <= prices[i] <= 104\n\n## My Submission\n\n- Runtime: 21 ms\n- Memory: 26.1 MB\n\n## Similar Problems\n\n- [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) — Medium\n- [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) — Medium\n- [Best Time to Buy and Sell Stock III](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/) — Hard\n- [Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/) — Hard\n- [Best Time to Buy and Sell Stock with Cooldown](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) — Medium\n"
+        }
+      ],
+      "timestamp": 1729371844000,
+      "runtime": "21 ms",
+      "memory": "26.1 MB",
+      "runtimePct": 94.6538,
+      "memoryPct": 99.9985,
+      "problemStatement": "<p>You are given an array <code>prices</code> where <code>prices[i]</code> is the price of a given stock on the <code>i<sup>th</sup></code> day.</p>\n\n<p>You want to maximize your profit by choosing a <strong>single day</strong> to buy one stock and choosing a <strong>different day in the future</strong> to sell that stock.</p>\n\n<p>Return <em>the maximum profit you can achieve from this transaction</em>. If you cannot achieve any profit, return <code>0</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> prices = [7,1,5,3,6,4]\n<strong>Output:</strong> 5\n<strong>Explanation:</strong> Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.\nNote that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> prices = [7,6,4,3,1]\n<strong>Output:</strong> 0\n<strong>Explanation:</strong> In this case, no transactions are done and the max profit = 0.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= prices.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>0 &lt;= prices[i] &lt;= 10<sup>4</sup></code></li>\n</ul>\n",
+      "hints": [],
+      "acRate": 56.7367671745318,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "maximum-subarray",
+          "title": "Maximum Subarray",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "best-time-to-buy-and-sell-stock-ii",
+          "title": "Best Time to Buy and Sell Stock II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "best-time-to-buy-and-sell-stock-iii",
+          "title": "Best Time to Buy and Sell Stock III",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "best-time-to-buy-and-sell-stock-iv",
+          "title": "Best Time to Buy and Sell Stock IV",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "best-time-to-buy-and-sell-stock-with-cooldown",
+          "title": "Best Time to Buy and Sell Stock with Cooldown",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "sum-of-beauty-in-the-array",
+          "title": "Sum of Beauty in the Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "maximum-difference-between-increasing-elements",
+          "title": "Maximum Difference Between Increasing Elements",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "best-time-to-buy-and-sell-stock-v",
+          "title": "Best Time to Buy and Sell Stock V",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of prices. We iterate through the list exactly once.\n*   **Space Complexity:** $O(1)$, as we only store two scalar variables (`min_price` and `max_profit`) regardless of input size.\n\n**2. Correctness**\nThe solution is **correct** and handles all standard edge cases:\n*   **Empty or single-element list:** Returns 0 (correct, as no profit can be made).\n*   **Descending prices:** `max_profit` remains 0 (correct, as you shouldn't buy/sell).\n*   **Large price gaps:** Correct buyers' logic by tracking the global minimum encountered so far.\n\n**3. Optimization**\nWhile the logic is already $O(N)$, you can improve **readability** by using Python’s built-in `min` and `max` functions. This often translates to faster execution in CPython for larger datasets:\n```python\nfor price in prices:\n    min_price = min(min_price, price)\n    max_profit = max(max_profit, price - min_price)\n```\n\n**4. Key Algorithmic Pattern**\n*   **Greedy Algorithm:** At each step, we make the locally optimal choice (tracking the lowest price seen so far) to find the global maximum profit.\n*   It is also a simplified variation of **Kadane’s Algorithm**."
+    },
+    {
+      "id": "lc-best-time-to-buy-and-sell-stock::1427680302",
+      "submissionId": 1427680302,
+      "platform": "leetcode",
+      "title": "Best Time to Buy and Sell Stock",
+      "titleSlug": "best-time-to-buy-and-sell-stock",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Java",
+        "ext": "java",
+        "slug": "java"
+      },
+      "tags": [
+        "Array",
+        "Dynamic Programming"
+      ],
+      "topic": "Dynamic Programming",
+      "code": "class Solution {\n    public int maxProfit(int[] prices) {\n        int minPrice = Integer.MAX_VALUE;\n        int maxProfit = 0;\n\n        for (int price : prices) {\n            if (price < minPrice) {\n                minPrice = price;\n            } else if (price - minPrice > maxProfit) {\n                maxProfit = price - minPrice;\n            }\n        }\n\n        return maxProfit;\n    }\n}\n",
+      "readmeContent": "# Best Time to Buy and Sell Stock\n\n**Difficulty:** Easy  |  **Acceptance:** 56.8%\n\n**Tags:** `Array`, `Dynamic Programming`\n\n## Problem\n\nYou are given an array prices where prices[i] is the price of a given stock on the ith day.\n\nYou want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.\n\nReturn the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.\n\n&nbsp;\nExample 1:\n\nInput: prices = [7,1,5,3,6,4]\nOutput: 5\nExplanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.\nNote that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.\n\nExample 2:\n\nInput: prices = [7,6,4,3,1]\nOutput: 0\nExplanation: In this case, no transactions are done and the max profit = 0.\n\n&nbsp;\nConstraints:\n\n\t1 <= prices.length <= 105\n\t0 <= prices[i] <= 104\n\n## My Submission\n\n- Runtime: 1 ms\n- Memory: 61.6 MB\n\n## Similar Problems\n\n- [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) — Medium\n- [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) — Medium\n- [Best Time to Buy and Sell Stock III](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/) — Hard\n- [Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/) — Hard\n- [Best Time to Buy and Sell Stock with Cooldown](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-best-time-to-buy-and-sell-stock/lc-best-time-to-buy-and-sell-stock.java",
+          "content": "class Solution {\n    public int maxProfit(int[] prices) {\n        int minPrice = Integer.MAX_VALUE;\n        int maxProfit = 0;\n\n        for (int price : prices) {\n            if (price < minPrice) {\n                minPrice = price;\n            } else if (price - minPrice > maxProfit) {\n                maxProfit = price - minPrice;\n            }\n        }\n\n        return maxProfit;\n    }\n}\n"
+        },
+        {
+          "path": "problems/lc-best-time-to-buy-and-sell-stock/README.md",
+          "content": "# Best Time to Buy and Sell Stock\n\n**Difficulty:** Easy  |  **Acceptance:** 56.8%\n\n**Tags:** `Array`, `Dynamic Programming`\n\n## Problem\n\nYou are given an array prices where prices[i] is the price of a given stock on the ith day.\n\nYou want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.\n\nReturn the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.\n\n&nbsp;\nExample 1:\n\nInput: prices = [7,1,5,3,6,4]\nOutput: 5\nExplanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.\nNote that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.\n\nExample 2:\n\nInput: prices = [7,6,4,3,1]\nOutput: 0\nExplanation: In this case, no transactions are done and the max profit = 0.\n\n&nbsp;\nConstraints:\n\n\t1 <= prices.length <= 105\n\t0 <= prices[i] <= 104\n\n## My Submission\n\n- Runtime: 1 ms\n- Memory: 61.6 MB\n\n## Similar Problems\n\n- [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) — Medium\n- [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) — Medium\n- [Best Time to Buy and Sell Stock III](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/) — Hard\n- [Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/) — Hard\n- [Best Time to Buy and Sell Stock with Cooldown](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) — Medium\n"
+        }
+      ],
+      "timestamp": 1729372227000,
+      "runtime": "1 ms",
+      "memory": "61.6 MB",
+      "runtimePct": 99.9206,
+      "memoryPct": 99.90949999999998,
+      "problemStatement": "<p>You are given an array <code>prices</code> where <code>prices[i]</code> is the price of a given stock on the <code>i<sup>th</sup></code> day.</p>\n\n<p>You want to maximize your profit by choosing a <strong>single day</strong> to buy one stock and choosing a <strong>different day in the future</strong> to sell that stock.</p>\n\n<p>Return <em>the maximum profit you can achieve from this transaction</em>. If you cannot achieve any profit, return <code>0</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> prices = [7,1,5,3,6,4]\n<strong>Output:</strong> 5\n<strong>Explanation:</strong> Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.\nNote that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> prices = [7,6,4,3,1]\n<strong>Output:</strong> 0\n<strong>Explanation:</strong> In this case, no transactions are done and the max profit = 0.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= prices.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>0 &lt;= prices[i] &lt;= 10<sup>4</sup></code></li>\n</ul>\n",
+      "hints": null,
+      "acRate": 56.75887967316338,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "maximum-subarray",
+          "title": "Maximum Subarray",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "best-time-to-buy-and-sell-stock-ii",
+          "title": "Best Time to Buy and Sell Stock II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "best-time-to-buy-and-sell-stock-iii",
+          "title": "Best Time to Buy and Sell Stock III",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "best-time-to-buy-and-sell-stock-iv",
+          "title": "Best Time to Buy and Sell Stock IV",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "best-time-to-buy-and-sell-stock-with-cooldown",
+          "title": "Best Time to Buy and Sell Stock with Cooldown",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "sum-of-beauty-in-the-array",
+          "title": "Sum of Beauty in the Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "maximum-difference-between-increasing-elements",
+          "title": "Maximum Difference Between Increasing Elements",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "best-time-to-buy-and-sell-stock-v",
+          "title": "Best Time to Buy and Sell Stock V",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "platform": "leetcode",
+      "id": "lc-single-number",
+      "forceCommit": true,
+      "submissionId": null,
+      "title": "Single Number",
+      "titleSlug": "single-number",
+      "difficulty": "Easy",
+      "topic": "Bit Manipulation",
+      "tags": [
+        "Array",
+        "Bit Manipulation"
+      ],
+      "canonical": null,
+      "readmeContent": "# [136] Single Number\n**Difficulty:** Easy  |  **Acceptance:** 77.7%  |  **Likes:** 18888 / **Dislikes:** 907\n**Tags:** `Array`, `Bit Manipulation`\n## Problem\nGiven a non-empty&nbsp;array of integers nums, every element appears twice except for one. Find that single one.\n\nYou must&nbsp;implement a solution with a linear runtime complexity and use&nbsp;only constant&nbsp;extra space.\n\n&nbsp;\nExample 1:\n\nInput: nums = [2,2,1]\n\nOutput: 1\n\nExample 2:\n\nInput: nums = [4,1,2,1,2]\n\nOutput: 4\n\nExample 3:\n\nInput: nums = [1]\n\nOutput: 1\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 3 * 104\n\t-3 * 104 <= nums[i] <= 3 * 104\n\tEach element in the array appears twice except for one element which appears only once.\n## My Submission\n\n- Runtime: 13 ms (beats 11.5%)\n- Memory: 18.9 MB (beats 100.0%)\n- Solve time: 16m 50s\n\n## Similar Problems\n\n- [Single Number II](https://leetcode.com/problems/single-number-ii/) — Medium\n- [Single Number III](https://leetcode.com/problems/single-number-iii/) — Medium\n- [Missing Number](https://leetcode.com/problems/missing-number/) — Easy\n- [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) — Medium\n- [Find the Difference](https://leetcode.com/problems/find-the-difference/) — Easy\n",
+      "code": "class Solution:\n    def singleNumber(self, nums: List[int]) -> int:\n        frequency = {}\n        for num in nums:\n            if num in frequency:\n                frequency[num] += 1\n            else:\n                frequency[num] = 0\n        print(frequency)\n        for key, value in frequency.items():\n            if value == 0:\n                return key",
+      "files": [
+        {
+          "path": "problems/lc-single-number/lc-single-number.py",
+          "content": "class Solution:\n    def singleNumber(self, nums: List[int]) -> int:\n        frequency = {}\n        for num in nums:\n            if num in frequency:\n                frequency[num] += 1\n            else:\n                frequency[num] = 0\n        print(frequency)\n        for key, value in frequency.items():\n            if value == 0:\n                return key"
+        },
+        {
+          "path": "problems/lc-single-number/README.md",
+          "content": "# [136] Single Number\n**Difficulty:** Easy  |  **Acceptance:** 77.7%  |  **Likes:** 18888 / **Dislikes:** 907\n**Tags:** `Array`, `Bit Manipulation`\n## Problem\nGiven a non-empty&nbsp;array of integers nums, every element appears twice except for one. Find that single one.\n\nYou must&nbsp;implement a solution with a linear runtime complexity and use&nbsp;only constant&nbsp;extra space.\n\n&nbsp;\nExample 1:\n\nInput: nums = [2,2,1]\n\nOutput: 1\n\nExample 2:\n\nInput: nums = [4,1,2,1,2]\n\nOutput: 4\n\nExample 3:\n\nInput: nums = [1]\n\nOutput: 1\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 3 * 104\n\t-3 * 104 <= nums[i] <= 3 * 104\n\tEach element in the array appears twice except for one element which appears only once.\n## My Submission\n\n- Runtime: 13 ms (beats 11.5%)\n- Memory: 18.9 MB (beats 100.0%)\n- Solve time: 16m 50s\n\n## Similar Problems\n\n- [Single Number II](https://leetcode.com/problems/single-number-ii/) — Medium\n- [Single Number III](https://leetcode.com/problems/single-number-iii/) — Medium\n- [Missing Number](https://leetcode.com/problems/missing-number/) — Easy\n- [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) — Medium\n- [Find the Difference](https://leetcode.com/problems/find-the-difference/) — Easy\n"
+        }
+      ],
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "runtime": "13 ms",
+      "memory": "18.9 MB",
+      "runtimePct": 11.494600000000016,
+      "memoryPct": 100,
+      "timestamp": 1729372978000,
+      "acRate": 77.658493572148,
+      "likes": 18888,
+      "dislikes": 907,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "single-number-ii",
+          "title": "Single Number II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "single-number-iii",
+          "title": "Single Number III",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "missing-number",
+          "title": "Missing Number",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "find-the-duplicate-number",
+          "title": "Find the Duplicate Number",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "find-the-difference",
+          "title": "Find the Difference",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "find-the-xor-of-numbers-which-appear-twice",
+          "title": "Find the XOR of Numbers Which Appear Twice",
+          "isPaidOnly": false
+        }
+      ],
+      "problemStatement": "<p>Given a <strong>non-empty</strong>&nbsp;array of integers <code>nums</code>, every element appears <em>twice</em> except for one. Find that single one.</p>\n\n<p>You must&nbsp;implement a solution with a linear runtime complexity and use&nbsp;only constant&nbsp;extra space.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [2,2,1]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">1</span></p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [4,1,2,1,2]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">4</span></p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">1</span></p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></code></li>\n\t<li><code>-3 * 10<sup>4</sup> &lt;= nums[i] &lt;= 3 * 10<sup>4</sup></code></li>\n\t<li>Each element in the array appears twice except for one element which appears only once.</li>\n</ul>\n",
+      "elapsedSeconds": 1010,
+      "hasSimilar": true,
+      "submissionsUrl": "https://leetcode.com/problems/single-number/submissions/",
+      "notes": "",
+      "methodTitle": "",
+      "isDuplicate": false,
+      "duplicateOf": null,
+      "aiReview": "### Review of Python3 Solution\n\n**1. Complexity**\n*   **Time Complexity:** $O(n)$, where $n$ is the number of elements in `nums`. The list is traversed twice (once to build the map, once to find the key).\n*   **Space Complexity:** $O(n)$ to store the dictionary containing unique elements.\n\n**2. Correctness**\n*   **Logic:** The code is technically correct for the specific constraint where elements appear exactly twice. By initializing at `0` and incrementing to `1` on the second occurrence, the single number is correctly identified as having a value of `0`.\n*   **Edge Cases:** If the input `nums` is empty, the function will implicitly return `None`. However, if any \"other\" number appears three or more times, the `value == 0` check would fail to identify it correctly.\n\n**3. Optimization**\nUse **Bit Manipulation (XOR)**. Since $x \\oplus x = 0$ and $x \\oplus 0 = x$, XORing all elements together cancels out the pairs, leaving only the single number. This reduces space complexity to **$O(1)$**.\n```python\nres = 0\nfor n in nums:\n    res ^= n\nreturn res\n```\n\n**4. Key Algorithmic Pattern**\n**Hash Map (Frequency Counting)**. This approach tracks occurrences to identify elements based on their count."
+    },
+    {
+      "id": "lc-single-number-ii",
+      "submissionId": 1427688410,
+      "platform": "leetcode",
+      "title": "Single Number II",
+      "titleSlug": "single-number-ii",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Bit Manipulation"
+      ],
+      "topic": "Bit Manipulation",
+      "code": "",
+      "readmeContent": "# Single Number II\n\n**Difficulty:** Medium  |  **Acceptance:** 67.0%\n\n**Tags:** `Array`, `Bit Manipulation`\n\n## Problem\n\nGiven an integer array nums where&nbsp;every element appears three times except for one, which appears exactly once. Find the single element and return it.\n\nYou must&nbsp;implement a solution with a linear runtime complexity and use&nbsp;only constant&nbsp;extra space.\n\n&nbsp;\nExample 1:\nInput: nums = [2,2,3,2]\nOutput: 3\nExample 2:\nInput: nums = [0,1,0,1,0,1,99]\nOutput: 99\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 3 * 104\n\t-231 <= nums[i] <= 231 - 1\n\tEach element in nums appears exactly three times except for one element which appears once.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 18.7 MB\n\n## Similar Problems\n\n- [Single Number](https://leetcode.com/problems/single-number/) — Easy\n- [Single Number III](https://leetcode.com/problems/single-number-iii/) — Medium\n- [Find the XOR of Numbers Which Appear Twice](https://leetcode.com/problems/find-the-xor-of-numbers-which-appear-twice/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/single-number-ii/README.md",
+          "content": "# Single Number II\n\n**Difficulty:** Medium  |  **Acceptance:** 67.0%\n\n**Tags:** `Array`, `Bit Manipulation`\n\n## Problem\n\nGiven an integer array nums where&nbsp;every element appears three times except for one, which appears exactly once. Find the single element and return it.\n\nYou must&nbsp;implement a solution with a linear runtime complexity and use&nbsp;only constant&nbsp;extra space.\n\n&nbsp;\nExample 1:\nInput: nums = [2,2,3,2]\nOutput: 3\nExample 2:\nInput: nums = [0,1,0,1,0,1,99]\nOutput: 99\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 3 * 104\n\t-231 <= nums[i] <= 231 - 1\n\tEach element in nums appears exactly three times except for one element which appears once.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 18.7 MB\n\n## Similar Problems\n\n- [Single Number](https://leetcode.com/problems/single-number/) — Easy\n- [Single Number III](https://leetcode.com/problems/single-number-iii/) — Medium\n- [Find the XOR of Numbers Which Appear Twice](https://leetcode.com/problems/find-the-xor-of-numbers-which-appear-twice/) — Easy\n"
+        }
+      ],
+      "timestamp": 1729373096000,
+      "runtime": "0 ms",
+      "memory": "18.7 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<p>Given an integer array <code>nums</code> where&nbsp;every element appears <strong>three times</strong> except for one, which appears <strong>exactly once</strong>. <em>Find the single element and return it</em>.</p>\n\n<p>You must&nbsp;implement a solution with a linear runtime complexity and use&nbsp;only constant&nbsp;extra space.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<pre><strong>Input:</strong> nums = [2,2,3,2]\n<strong>Output:</strong> 3\n</pre><p><strong class=\"example\">Example 2:</strong></p>\n<pre><strong>Input:</strong> nums = [0,1,0,1,0,1,99]\n<strong>Output:</strong> 99\n</pre>\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></code></li>\n\t<li><code>-2<sup>31</sup> &lt;= nums[i] &lt;= 2<sup>31</sup> - 1</code></li>\n\t<li>Each element in <code>nums</code> appears exactly <strong>three times</strong> except for one element which appears <strong>once</strong>.</li>\n</ul>\n",
+      "hints": [],
+      "acRate": 67.0462487648519,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "single-number",
+          "title": "Single Number",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "single-number-iii",
+          "title": "Single Number III",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "find-the-xor-of-numbers-which-appear-twice",
+          "title": "Find the XOR of Numbers Which Appear Twice",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-single-number-iii",
+      "submissionId": 1427689171,
+      "platform": "leetcode",
+      "title": "Single Number III",
+      "titleSlug": "single-number-iii",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Bit Manipulation"
+      ],
+      "topic": "Bit Manipulation",
+      "code": "",
+      "readmeContent": "# Single Number III\n\n**Difficulty:** Medium  |  **Acceptance:** 70.3%\n\n**Tags:** `Array`, `Bit Manipulation`\n\n## Problem\n\nGiven an integer array nums, in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once. You can return the answer in any order.\n\nYou must write an&nbsp;algorithm that runs in linear runtime complexity and uses&nbsp;only constant extra space.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,2,1,3,2,5]\nOutput: [3,5]\nExplanation:  [5, 3] is also a valid answer.\n\nExample 2:\n\nInput: nums = [-1,0]\nOutput: [-1,0]\n\nExample 3:\n\nInput: nums = [0,1]\nOutput: [1,0]\n\n&nbsp;\nConstraints:\n\n\t2 <= nums.length <= 3 * 104\n\t-231 <= nums[i] <= 231 - 1\n\tEach integer in nums will appear twice, only two integers will appear once.\n\n## My Submission\n\n- Runtime: 2 ms\n- Memory: 18.8 MB\n\n## Similar Problems\n\n- [Single Number](https://leetcode.com/problems/single-number/) — Easy\n- [Single Number II](https://leetcode.com/problems/single-number-ii/) — Medium\n- [Find The Original Array of Prefix Xor](https://leetcode.com/problems/find-the-original-array-of-prefix-xor/) — Medium\n- [Find the XOR of Numbers Which Appear Twice](https://leetcode.com/problems/find-the-xor-of-numbers-which-appear-twice/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/single-number-iii/README.md",
+          "content": "# Single Number III\n\n**Difficulty:** Medium  |  **Acceptance:** 70.3%\n\n**Tags:** `Array`, `Bit Manipulation`\n\n## Problem\n\nGiven an integer array nums, in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once. You can return the answer in any order.\n\nYou must write an&nbsp;algorithm that runs in linear runtime complexity and uses&nbsp;only constant extra space.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,2,1,3,2,5]\nOutput: [3,5]\nExplanation:  [5, 3] is also a valid answer.\n\nExample 2:\n\nInput: nums = [-1,0]\nOutput: [-1,0]\n\nExample 3:\n\nInput: nums = [0,1]\nOutput: [1,0]\n\n&nbsp;\nConstraints:\n\n\t2 <= nums.length <= 3 * 104\n\t-231 <= nums[i] <= 231 - 1\n\tEach integer in nums will appear twice, only two integers will appear once.\n\n## My Submission\n\n- Runtime: 2 ms\n- Memory: 18.8 MB\n\n## Similar Problems\n\n- [Single Number](https://leetcode.com/problems/single-number/) — Easy\n- [Single Number II](https://leetcode.com/problems/single-number-ii/) — Medium\n- [Find The Original Array of Prefix Xor](https://leetcode.com/problems/find-the-original-array-of-prefix-xor/) — Medium\n- [Find the XOR of Numbers Which Appear Twice](https://leetcode.com/problems/find-the-xor-of-numbers-which-appear-twice/) — Easy\n"
+        }
+      ],
+      "timestamp": 1729373179000,
+      "runtime": "2 ms",
+      "memory": "18.8 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<p>Given an integer array <code>nums</code>, in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once. You can return the answer in <strong>any order</strong>.</p>\n\n<p>You must write an&nbsp;algorithm that runs in linear runtime complexity and uses&nbsp;only constant extra space.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,2,1,3,2,5]\n<strong>Output:</strong> [3,5]\n<strong>Explanation: </strong> [5, 3] is also a valid answer.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [-1,0]\n<strong>Output:</strong> [-1,0]\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [0,1]\n<strong>Output:</strong> [1,0]\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>2 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></code></li>\n\t<li><code>-2<sup>31</sup> &lt;= nums[i] &lt;= 2<sup>31</sup> - 1</code></li>\n\t<li>Each integer in <code>nums</code> will appear twice, only two integers will appear once.</li>\n</ul>\n",
+      "hints": [],
+      "acRate": 70.31204344157103,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "single-number",
+          "title": "Single Number",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "single-number-ii",
+          "title": "Single Number II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "find-the-original-array-of-prefix-xor",
+          "title": "Find The Original Array of Prefix Xor",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "find-the-xor-of-numbers-which-appear-twice",
+          "title": "Find the XOR of Numbers Which Appear Twice",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-find-the-xor-of-numbers-which-appear-twice",
+      "submissionId": 1427693597,
+      "platform": "leetcode",
+      "title": "Find the XOR of Numbers Which Appear Twice",
+      "titleSlug": "find-the-xor-of-numbers-which-appear-twice",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Bit Manipulation"
+      ],
+      "topic": "Bit Manipulation",
+      "code": "",
+      "readmeContent": "# Find the XOR of Numbers Which Appear Twice\n\n**Difficulty:** Easy  |  **Acceptance:** 78.9%\n\n**Tags:** `Array`, `Hash Table`, `Bit Manipulation`\n\n## Problem\n\nYou are given an array nums, where each number in the array appears either once or twice.\n\nReturn the bitwise XOR of all the numbers that appear twice in the array, or 0 if no number appears twice.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,2,1,3]\n\nOutput: 1\n\nExplanation:\n\nThe only number that appears twice in&nbsp;nums&nbsp;is 1.\n\nExample 2:\n\nInput: nums = [1,2,3]\n\nOutput: 0\n\nExplanation:\n\nNo number appears twice in&nbsp;nums.\n\nExample 3:\n\nInput: nums = [1,2,2,1]\n\nOutput: 3\n\nExplanation:\n\nNumbers 1 and 2 appeared twice. 1 XOR 2 == 3.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 50\n\t1 <= nums[i] <= 50\n\tEach number in nums appears either once or twice.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.5 MB\n\n## Similar Problems\n\n- [Single Number](https://leetcode.com/problems/single-number/) — Easy\n- [Single Number II](https://leetcode.com/problems/single-number-ii/) — Medium\n- [Single Number III](https://leetcode.com/problems/single-number-iii/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/find-the-xor-of-numbers-which-appear-twice/README.md",
+          "content": "# Find the XOR of Numbers Which Appear Twice\n\n**Difficulty:** Easy  |  **Acceptance:** 78.9%\n\n**Tags:** `Array`, `Hash Table`, `Bit Manipulation`\n\n## Problem\n\nYou are given an array nums, where each number in the array appears either once or twice.\n\nReturn the bitwise XOR of all the numbers that appear twice in the array, or 0 if no number appears twice.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,2,1,3]\n\nOutput: 1\n\nExplanation:\n\nThe only number that appears twice in&nbsp;nums&nbsp;is 1.\n\nExample 2:\n\nInput: nums = [1,2,3]\n\nOutput: 0\n\nExplanation:\n\nNo number appears twice in&nbsp;nums.\n\nExample 3:\n\nInput: nums = [1,2,2,1]\n\nOutput: 3\n\nExplanation:\n\nNumbers 1 and 2 appeared twice. 1 XOR 2 == 3.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 50\n\t1 <= nums[i] <= 50\n\tEach number in nums appears either once or twice.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.5 MB\n\n## Similar Problems\n\n- [Single Number](https://leetcode.com/problems/single-number/) — Easy\n- [Single Number II](https://leetcode.com/problems/single-number-ii/) — Medium\n- [Single Number III](https://leetcode.com/problems/single-number-iii/) — Medium\n"
+        }
+      ],
+      "timestamp": 1729373687000,
+      "runtime": "0 ms",
+      "memory": "16.5 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<p>You are given an array <code>nums</code>, where each number in the array appears <strong>either</strong><em> </em>once<em> </em>or<em> </em>twice.</p>\n\n<p>Return the bitwise<em> </em><code>XOR</code> of all the numbers that appear twice in the array, or 0 if no number appears twice.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1,2,1,3]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">1</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The only number that appears twice in&nbsp;<code>nums</code>&nbsp;is 1.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1,2,3]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">0</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>No number appears twice in&nbsp;<code>nums</code>.</p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1,2,2,1]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">3</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>Numbers 1 and 2 appeared twice. <code>1 XOR 2 == 3</code>.</p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 50</code></li>\n\t<li><code>1 &lt;= nums[i] &lt;= 50</code></li>\n\t<li>Each number in <code>nums</code> appears either once or twice.</li>\n</ul>\n",
+      "hints": [
+        "The constraints are small. Brute force checking each value in the array."
+      ],
+      "acRate": 78.89968092151472,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "single-number",
+          "title": "Single Number",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "single-number-ii",
+          "title": "Single Number II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "single-number-iii",
+          "title": "Single Number III",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-find-if-digit-game-can-be-won::1428167266",
+      "submissionId": 1428167266,
+      "platform": "leetcode",
+      "title": "Find if Digit Game Can Be Won",
+      "titleSlug": "find-if-digit-game-can-be-won",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "slug": "python3",
+        "ext": "py"
+      },
+      "tags": [
+        "Array",
+        "Math"
+      ],
+      "topic": "Math",
+      "code": "class Solution:\n    def canAliceWin(self, nums: List[int]) -> bool:\n        single = 0\n        double = 0\n        for num in nums:\n            if len(str(num)) == 2:\n                double += num\n            else:\n                single += num\n\n        if single == double:\n            return False\n        return True",
+      "readmeContent": "# Find if Digit Game Can Be Won\n\n**Difficulty:** Easy  |  **Acceptance:** 81.6%\n\n**Tags:** `Array`, `Math`\n\n## Problem\n\nYou are given an array of positive integers nums.\n\nAlice and Bob are playing a game. In the game, Alice can choose either all single-digit numbers or all double-digit numbers from nums, and the rest of the numbers are given to Bob. Alice wins if the sum of her numbers is strictly greater than the sum of Bob's numbers.\n\nReturn true if Alice can win this game, otherwise, return false.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,2,3,4,10]\n\nOutput: false\n\nExplanation:\n\nAlice cannot win by choosing either single-digit or double-digit numbers.\n\nExample 2:\n\nInput: nums = [1,2,3,4,5,14]\n\nOutput: true\n\nExplanation:\n\nAlice can win by choosing single-digit numbers which have a sum equal to 15.\n\nExample 3:\n\nInput: nums = [5,5,5,25]\n\nOutput: true\n\nExplanation:\n\nAlice can win by choosing double-digit numbers which have a sum equal to 25.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 100\n\t1 <= nums[i] <= 99\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.5 MB\n\n## Similar Problems\n\n- [Find Numbers with Even Number of Digits](https://leetcode.com/problems/find-numbers-with-even-number-of-digits/) — Easy\n- [Count Integers With Even Digit Sum](https://leetcode.com/problems/count-integers-with-even-digit-sum/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-find-if-digit-game-can-be-won/README.md",
+          "content": "# Find if Digit Game Can Be Won\n\n**Difficulty:** Easy  |  **Acceptance:** 81.6%\n\n**Tags:** `Array`, `Math`\n\n## Problem\n\nYou are given an array of positive integers nums.\n\nAlice and Bob are playing a game. In the game, Alice can choose either all single-digit numbers or all double-digit numbers from nums, and the rest of the numbers are given to Bob. Alice wins if the sum of her numbers is strictly greater than the sum of Bob's numbers.\n\nReturn true if Alice can win this game, otherwise, return false.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,2,3,4,10]\n\nOutput: false\n\nExplanation:\n\nAlice cannot win by choosing either single-digit or double-digit numbers.\n\nExample 2:\n\nInput: nums = [1,2,3,4,5,14]\n\nOutput: true\n\nExplanation:\n\nAlice can win by choosing single-digit numbers which have a sum equal to 15.\n\nExample 3:\n\nInput: nums = [5,5,5,25]\n\nOutput: true\n\nExplanation:\n\nAlice can win by choosing double-digit numbers which have a sum equal to 25.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 100\n\t1 <= nums[i] <= 99\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.5 MB\n\n## Similar Problems\n\n- [Find Numbers with Even Number of Digits](https://leetcode.com/problems/find-numbers-with-even-number-of-digits/) — Easy\n- [Count Integers With Even Digit Sum](https://leetcode.com/problems/count-integers-with-even-digit-sum/) — Easy\n"
+        }
+      ],
+      "timestamp": 1729413139000,
+      "runtime": "0 ms",
+      "memory": "16.5 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given an array of <strong>positive</strong> integers <code>nums</code>.</p>\n\n<p>Alice and Bob are playing a game. In the game, Alice can choose <strong>either</strong> all single-digit numbers or all double-digit numbers from <code>nums</code>, and the rest of the numbers are given to Bob. Alice wins if the sum of her numbers is <strong>strictly greater</strong> than the sum of Bob&#39;s numbers.</p>\n\n<p>Return <code>true</code> if Alice can win this game, otherwise, return <code>false</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1,2,3,4,10]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">false</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>Alice cannot win by choosing either single-digit or double-digit numbers.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1,2,3,4,5,14]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">true</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>Alice can win by choosing single-digit numbers which have a sum equal to 15.</p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [5,5,5,25]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">true</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>Alice can win by choosing double-digit numbers which have a sum equal to 25.</p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 100</code></li>\n\t<li><code>1 &lt;= nums[i] &lt;= 99</code></li>\n</ul>\n",
+      "hints": [
+        "Alice wins if the sum of all single-digit numbers and the sum of all double-digit numbers are different."
+      ],
+      "acRate": 81.58540663218481,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "find-numbers-with-even-number-of-digits",
+          "title": "Find Numbers with Even Number of Digits",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "count-integers-with-even-digit-sum",
+          "title": "Count Integers With Even Digit Sum",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "### Evaluation\n1.  **Complexity**: \n    *   **Time**: $O(N)$, where $N$ is the number of elements in `nums`. Converting integers $\\le 99$ to strings takes constant time.\n    *   **Space**: $O(1)$, as only two integer variables are used regardless of input size.\n\n2.  **Correctness**: The logic is correct. Alice wins if $Sum_{single} > Sum_{double}$ or $Sum_{double} > Sum_{single}$. This is mathematically equivalent to $Sum_{single} \\neq Sum_{double}$. It handles the constraints ($1 \\le nums[i] \\le 99$) properly.\n\n3.  **Optimization**: Avoid string conversion (`len(str(num))`), which is computationally expensive due to object allocation. Instead, use a direct numeric comparison:\n    ```python\n    if num < 10:\n        single += num\n    else:\n        double += num\n    ```\n    Alternatively, use a single accumulator to track the difference: `diff += (num if num < 10 else -num)`. If `diff != 0`, Alice wins.\n\n4.  **Key Algorithmic Pattern**: **Linear Scan / Accumulation**. The solution iterates through the data once to aggregate values into categories for comparison."
+    },
+    {
+      "id": "lc-count-integers-with-even-digit-sum",
+      "submissionId": 1428171176,
+      "platform": "leetcode",
+      "title": "Count Integers With Even Digit Sum",
+      "titleSlug": "count-integers-with-even-digit-sum",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Math",
+        "Simulation"
+      ],
+      "topic": "Math",
+      "code": "",
+      "readmeContent": "# Count Integers With Even Digit Sum\n\n**Difficulty:** Easy  |  **Acceptance:** 70.1%\n\n**Tags:** `Math`, `Simulation`\n\n## Problem\n\nGiven a positive integer num, return the number of positive integers less than or equal to num whose digit sums are even.\n\nThe digit sum of a positive integer is the sum of all its digits.\n\n&nbsp;\nExample 1:\n\nInput: num = 4\nOutput: 2\nExplanation:\nThe only integers less than or equal to 4 whose digit sums are even are 2 and 4.    \n\nExample 2:\n\nInput: num = 30\nOutput: 14\nExplanation:\nThe 14 integers less than or equal to 30 whose digit sums are even are\n2, 4, 6, 8, 11, 13, 15, 17, 19, 20, 22, 24, 26, and 28.\n\n&nbsp;\nConstraints:\n\n\t1 <= num <= 1000\n\n## My Submission\n\n- Runtime: 11 ms\n- Memory: 16.7 MB\n\n## Similar Problems\n\n- [Sum of Numbers With Units Digit K](https://leetcode.com/problems/sum-of-numbers-with-units-digit-k/) — Medium\n- [Sum of Digits of String After Convert](https://leetcode.com/problems/sum-of-digits-of-string-after-convert/) — Easy\n- [Number of Ways to Buy Pens and Pencils](https://leetcode.com/problems/number-of-ways-to-buy-pens-and-pencils/) — Medium\n- [Separate the Digits in an Array](https://leetcode.com/problems/separate-the-digits-in-an-array/) — Easy\n- [Find if Digit Game Can Be Won](https://leetcode.com/problems/find-if-digit-game-can-be-won/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/count-integers-with-even-digit-sum/README.md",
+          "content": "# Count Integers With Even Digit Sum\n\n**Difficulty:** Easy  |  **Acceptance:** 70.1%\n\n**Tags:** `Math`, `Simulation`\n\n## Problem\n\nGiven a positive integer num, return the number of positive integers less than or equal to num whose digit sums are even.\n\nThe digit sum of a positive integer is the sum of all its digits.\n\n&nbsp;\nExample 1:\n\nInput: num = 4\nOutput: 2\nExplanation:\nThe only integers less than or equal to 4 whose digit sums are even are 2 and 4.    \n\nExample 2:\n\nInput: num = 30\nOutput: 14\nExplanation:\nThe 14 integers less than or equal to 30 whose digit sums are even are\n2, 4, 6, 8, 11, 13, 15, 17, 19, 20, 22, 24, 26, and 28.\n\n&nbsp;\nConstraints:\n\n\t1 <= num <= 1000\n\n## My Submission\n\n- Runtime: 11 ms\n- Memory: 16.7 MB\n\n## Similar Problems\n\n- [Sum of Numbers With Units Digit K](https://leetcode.com/problems/sum-of-numbers-with-units-digit-k/) — Medium\n- [Sum of Digits of String After Convert](https://leetcode.com/problems/sum-of-digits-of-string-after-convert/) — Easy\n- [Number of Ways to Buy Pens and Pencils](https://leetcode.com/problems/number-of-ways-to-buy-pens-and-pencils/) — Medium\n- [Separate the Digits in an Array](https://leetcode.com/problems/separate-the-digits-in-an-array/) — Easy\n- [Find if Digit Game Can Be Won](https://leetcode.com/problems/find-if-digit-game-can-be-won/) — Easy\n"
+        }
+      ],
+      "timestamp": 1729413509000,
+      "runtime": "11 ms",
+      "memory": "16.7 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<p>Given a positive integer <code>num</code>, return <em>the number of positive integers <strong>less than or equal to</strong></em> <code>num</code> <em>whose digit sums are <strong>even</strong></em>.</p>\n\n<p>The <strong>digit sum</strong> of a positive integer is the sum of all its digits.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> num = 4\n<strong>Output:</strong> 2\n<strong>Explanation:</strong>\nThe only integers less than or equal to 4 whose digit sums are even are 2 and 4.    \n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> num = 30\n<strong>Output:</strong> 14\n<strong>Explanation:</strong>\nThe 14 integers less than or equal to 30 whose digit sums are even are\n2, 4, 6, 8, 11, 13, 15, 17, 19, 20, 22, 24, 26, and 28.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= num &lt;= 1000</code></li>\n</ul>\n",
+      "hints": [
+        "Iterate through all integers from 1 to num.",
+        "For any integer, extract the individual digits to compute their sum and check if it is even."
+      ],
+      "acRate": 70.08165502708783,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "sum-of-numbers-with-units-digit-k",
+          "title": "Sum of Numbers With Units Digit K",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "sum-of-digits-of-string-after-convert",
+          "title": "Sum of Digits of String After Convert",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "number-of-ways-to-buy-pens-and-pencils",
+          "title": "Number of Ways to Buy Pens and Pencils",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "separate-the-digits-in-an-array",
+          "title": "Separate the Digits in an Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "find-if-digit-game-can-be-won",
+          "title": "Find if Digit Game Can Be Won",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-sum-of-digits-of-string-after-convert",
+      "submissionId": 1428193921,
+      "platform": "leetcode",
+      "title": "Sum of Digits of String After Convert",
+      "titleSlug": "sum-of-digits-of-string-after-convert",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "String",
+        "Simulation"
+      ],
+      "topic": "String",
+      "code": "",
+      "readmeContent": "# Sum of Digits of String After Convert\n\n**Difficulty:** Easy  |  **Acceptance:** 74.8%\n\n**Tags:** `String`, `Simulation`\n\n## Problem\n\nYou are given a string s consisting of lowercase English letters, and an integer k. Your task is to convert the string into an integer by a special process, and then transform it by summing its digits repeatedly k times. More specifically, perform the following steps:\n\n\tConvert s into an integer by replacing each letter with its position in the alphabet (i.e.&nbsp;replace 'a' with 1, 'b' with 2, ..., 'z' with 26).\n\tTransform the integer by replacing it with the sum of its digits.\n\tRepeat the transform operation (step 2) k times in total.\n\nFor example, if s = \"zbax\" and k = 2, then the resulting integer would be 8 by the following operations:\n\n\tConvert: \"zbax\" ➝ \"(26)(2)(1)(24)\" ➝ \"262124\" ➝ 262124\n\tTransform #1: 262124 ➝ 2 + 6 + 2 + 1 + 2 + 4 ➝ 17\n\tTransform #2: 17 ➝ 1 + 7 ➝ 8\n\nReturn the resulting integer after performing the operations described above.\n\n&nbsp;\nExample 1:\n\nInput: s = \"iiii\", k = 1\n\nOutput: 36\n\nExplanation:\n\nThe operations are as follows:\n- Convert: \"iiii\" ➝ \"(9)(9)(9)(9)\" ➝ \"9999\" ➝ 9999\n- Transform #1: 9999 ➝ 9 + 9 + 9 + 9 ➝ 36\nThus the resulting integer is 36.\n\nExample 2:\n\nInput: s = \"leetcode\", k = 2\n\nOutput: 6\n\nExplanation:\n\nThe operations are as follows:\n- Convert: \"leetcode\" ➝ \"(12)(5)(5)(20)(3)(15)(4)(5)\" ➝ \"12552031545\" ➝ 12552031545\n- Transform #1: 12552031545 ➝ 1 + 2 + 5 + 5 + 2 + 0 + 3 + 1 + 5 + 4 + 5 ➝ 33\n- Transform #2: 33 ➝ 3 + 3 ➝ 6\nThus the resulting integer is 6.\n\nExample 3:\n\nInput: s = \"zbax\", k = 2\n\nOutput: 8\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 100\n\t1 <= k <= 10\n\ts consists of lowercase English letters.\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 16.6 MB\n\n## Similar Problems\n\n- [Happy Number](https://leetcode.com/problems/happy-number/) — Easy\n- [Add Digits](https://leetcode.com/problems/add-digits/) — Easy\n- [Count Integers With Even Digit Sum](https://leetcode.com/problems/count-integers-with-even-digit-sum/) — Easy\n- [Minimum Element After Replacement With Digit Sum](https://leetcode.com/problems/minimum-element-after-replacement-with-digit-sum/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/sum-of-digits-of-string-after-convert/README.md",
+          "content": "# Sum of Digits of String After Convert\n\n**Difficulty:** Easy  |  **Acceptance:** 74.8%\n\n**Tags:** `String`, `Simulation`\n\n## Problem\n\nYou are given a string s consisting of lowercase English letters, and an integer k. Your task is to convert the string into an integer by a special process, and then transform it by summing its digits repeatedly k times. More specifically, perform the following steps:\n\n\tConvert s into an integer by replacing each letter with its position in the alphabet (i.e.&nbsp;replace 'a' with 1, 'b' with 2, ..., 'z' with 26).\n\tTransform the integer by replacing it with the sum of its digits.\n\tRepeat the transform operation (step 2) k times in total.\n\nFor example, if s = \"zbax\" and k = 2, then the resulting integer would be 8 by the following operations:\n\n\tConvert: \"zbax\" ➝ \"(26)(2)(1)(24)\" ➝ \"262124\" ➝ 262124\n\tTransform #1: 262124 ➝ 2 + 6 + 2 + 1 + 2 + 4 ➝ 17\n\tTransform #2: 17 ➝ 1 + 7 ➝ 8\n\nReturn the resulting integer after performing the operations described above.\n\n&nbsp;\nExample 1:\n\nInput: s = \"iiii\", k = 1\n\nOutput: 36\n\nExplanation:\n\nThe operations are as follows:\n- Convert: \"iiii\" ➝ \"(9)(9)(9)(9)\" ➝ \"9999\" ➝ 9999\n- Transform #1: 9999 ➝ 9 + 9 + 9 + 9 ➝ 36\nThus the resulting integer is 36.\n\nExample 2:\n\nInput: s = \"leetcode\", k = 2\n\nOutput: 6\n\nExplanation:\n\nThe operations are as follows:\n- Convert: \"leetcode\" ➝ \"(12)(5)(5)(20)(3)(15)(4)(5)\" ➝ \"12552031545\" ➝ 12552031545\n- Transform #1: 12552031545 ➝ 1 + 2 + 5 + 5 + 2 + 0 + 3 + 1 + 5 + 4 + 5 ➝ 33\n- Transform #2: 33 ➝ 3 + 3 ➝ 6\nThus the resulting integer is 6.\n\nExample 3:\n\nInput: s = \"zbax\", k = 2\n\nOutput: 8\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 100\n\t1 <= k <= 10\n\ts consists of lowercase English letters.\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 16.6 MB\n\n## Similar Problems\n\n- [Happy Number](https://leetcode.com/problems/happy-number/) — Easy\n- [Add Digits](https://leetcode.com/problems/add-digits/) — Easy\n- [Count Integers With Even Digit Sum](https://leetcode.com/problems/count-integers-with-even-digit-sum/) — Easy\n- [Minimum Element After Replacement With Digit Sum](https://leetcode.com/problems/minimum-element-after-replacement-with-digit-sum/) — Easy\n"
+        }
+      ],
+      "timestamp": 1729415590000,
+      "runtime": "3 ms",
+      "memory": "16.6 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<p>You are given a string <code>s</code> consisting of lowercase English letters, and an integer <code>k</code>. Your task is to <em>convert</em> the string into an integer by a special process, and then <em>transform</em> it by summing its digits repeatedly <code>k</code> times. More specifically, perform the following steps:</p>\n\n<ol>\n\t<li><strong>Convert</strong> <code>s</code> into an integer by replacing each letter with its position in the alphabet (i.e.&nbsp;replace <code>&#39;a&#39;</code> with <code>1</code>, <code>&#39;b&#39;</code> with <code>2</code>, ..., <code>&#39;z&#39;</code> with <code>26</code>).</li>\n\t<li><strong>T</strong><strong>ransform</strong> the integer by replacing it with the <strong>sum of its digits</strong>.</li>\n\t<li>Repeat the <strong>transform</strong> operation (step 2) <code>k</code><strong> times</strong> in total.</li>\n</ol>\n\n<p>For example, if <code>s = &quot;zbax&quot;</code> and <code>k = 2</code>, then the resulting integer would be <code>8</code> by the following operations:</p>\n\n<ol>\n\t<li><strong>Convert</strong>: <code>&quot;zbax&quot; ➝ &quot;(26)(2)(1)(24)&quot; ➝ &quot;262124&quot; ➝ 262124</code></li>\n\t<li><strong>Transform #1</strong>: <code>262124 ➝ 2 + 6 + 2 + 1 + 2 + 4 ➝ 17</code></li>\n\t<li><strong>Transform #2</strong>: <code>17 ➝ 1 + 7 ➝ 8</code></li>\n</ol>\n\n<p>Return the <strong>resulting</strong> <strong>integer</strong> after performing the <strong>operations</strong> described above.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;iiii&quot;, k = 1</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">36</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The operations are as follows:<br />\n- Convert: &quot;iiii&quot; ➝ &quot;(9)(9)(9)(9)&quot; ➝ &quot;9999&quot; ➝ 9999<br />\n- Transform #1: 9999 ➝ 9 + 9 + 9 + 9 ➝ 36<br />\nThus the resulting integer is 36.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;leetcode&quot;, k = 2</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">6</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The operations are as follows:<br />\n- Convert: &quot;leetcode&quot; ➝ &quot;(12)(5)(5)(20)(3)(15)(4)(5)&quot; ➝ &quot;12552031545&quot; ➝ 12552031545<br />\n- Transform #1: 12552031545 ➝ 1 + 2 + 5 + 5 + 2 + 0 + 3 + 1 + 5 + 4 + 5 ➝ 33<br />\n- Transform #2: 33 ➝ 3 + 3 ➝ 6<br />\nThus the resulting integer is 6.</p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;zbax&quot;, k = 2</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">8</span></p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 100</code></li>\n\t<li><code>1 &lt;= k &lt;= 10</code></li>\n\t<li><code>s</code> consists of lowercase English letters.</li>\n</ul>\n",
+      "hints": [
+        "First, let's note that after the first transform the value will be at most 100 * 10 which is not much",
+        "After The first transform, we can just do the rest of the transforms by brute force"
+      ],
+      "acRate": 74.77717353806396,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "happy-number",
+          "title": "Happy Number",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "add-digits",
+          "title": "Add Digits",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "count-integers-with-even-digit-sum",
+          "title": "Count Integers With Even Digit Sum",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "minimum-element-after-replacement-with-digit-sum",
+          "title": "Minimum Element After Replacement With Digit Sum",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
     }
   ]
 }
