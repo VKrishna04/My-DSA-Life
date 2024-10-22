@@ -1,14 +1,14 @@
 {
   "schema": 1,
-  "asOf": "2026-10-29",
+  "asOf": "2026-10-30",
   "currentStreak": 0,
-  "longestStreak": 8,
+  "longestStreak": 53,
   "freezes": 0,
-  "totalPoints": 5640,
-  "totalSolves": 322,
+  "totalPoints": 5650,
+  "totalSolves": 323,
   "totalRecalls": 0,
   "byDifficulty": {
-    "Easy": 177,
+    "Easy": 178,
     "Medium": 132,
     "Hard": 11,
     "Unknown": 2
@@ -22,9 +22,12 @@
     "ten-down",
     "century",
     "week-streak",
+    "month-streak",
     "polyglot",
     "well-rounded",
     "double-day",
+    "comeback",
+    "weekend-warrior",
     "level-five",
     "second-opinion",
     "peer-reviewed"

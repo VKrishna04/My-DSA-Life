@@ -627,8 +627,10 @@ function badgeSpecs(snapshot) {
       value: formatCount(s.totalSolves || 0),
       color: COLORS.slate
     },
+    // Not "solved" — that is `solved`'s label, and a README carrying both
+    // showed two adjacent badges whose left half read the same word.
     difficulty: {
-      label: "solved",
+      label: "by difficulty",
       value: `${d.Easy || 0} easy \xB7 ${d.Medium || 0} medium \xB7 ${d.Hard || 0} hard`,
       color: COLORS.medium
     },
@@ -819,7 +821,7 @@ var BADGE_ALT = Object.freeze({
   difficulty: "Solved by difficulty",
   freezes: "Freezes"
 });
-var DEFAULT_PICKS = Object.freeze(["streak", "points", "level", "difficulty", "freezes"]);
+var DEFAULT_PICKS = Object.freeze(["streak", "points", "level", "freezes"]);
 function badgeMarkdown(snapshot, opts = {}) {
   const svgUrl = (n) => badgeUrl(opts.pagesUrl || ".", n, snapshot);
   const url = typeof opts.urlFor === "function" ? opts.urlFor : svgUrl;
