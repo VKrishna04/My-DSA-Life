@@ -1,29 +1,32 @@
 {
-  "updatedAt": "2026-05-16T19:16:43.866Z",
+  "updatedAt": "2026-05-16T19:17:44.002Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 51,
-    "easy": 40,
-    "medium": 10,
+    "total": 76,
+    "easy": 62,
+    "medium": 13,
     "hard": 1,
     "byPlatform": {
-      "leetcode": 51
+      "leetcode": 76
     },
     "byLang": {
       "C++": 1,
       "Java": 11,
       "C": 1,
-      "Python3": 37,
-      "JavaScript": 1
+      "Python3": 51,
+      "JavaScript": 2,
+      "pythondata": 4,
+      "Pandas": 2,
+      "Python": 4
     },
     "byTopic": {
-      "Two Pointers": 3,
-      "Array": 27,
-      "String": 6,
-      "Math": 8,
-      "Untagged": 1,
+      "Two Pointers": 4,
+      "Array": 31,
+      "String": 8,
+      "Math": 11,
+      "Untagged": 12,
       "Linked List": 1,
-      "Hash Table": 4,
+      "Hash Table": 8,
       "Binary Search": 1
     }
   },
@@ -3155,6 +3158,1339 @@
           "difficulty": "Easy",
           "titleSlug": "minimum-element-after-replacement-with-digit-sum",
           "title": "Minimum Element After Replacement With Digit Sum",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-add-digits",
+      "submissionId": 1428203387,
+      "platform": "leetcode",
+      "title": "Add Digits",
+      "titleSlug": "add-digits",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Math",
+        "Simulation",
+        "Number Theory"
+      ],
+      "topic": "Math",
+      "code": "",
+      "readmeContent": "# Add Digits\n\n**Difficulty:** Easy  |  **Acceptance:** 68.9%\n\n**Tags:** `Math`, `Simulation`, `Number Theory`\n\n## Problem\n\nGiven an integer num, repeatedly add all its digits until the result has only one digit, and return it.\n\n&nbsp;\nExample 1:\n\nInput: num = 38\nOutput: 2\nExplanation: The process is\n38 --> 3 + 8 --> 11\n11 --> 1 + 1 --> 2 \nSince 2 has only one digit, return it.\n\nExample 2:\n\nInput: num = 0\nOutput: 0\n\n&nbsp;\nConstraints:\n\n\t0 <= num <= 231 - 1\n\n&nbsp;\nFollow up: Could you do it without any loop/recursion in O(1) runtime?\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.6 MB\n\n## Similar Problems\n\n- [Happy Number](https://leetcode.com/problems/happy-number/) — Easy\n- [Sum of Digits of String After Convert](https://leetcode.com/problems/sum-of-digits-of-string-after-convert/) — Easy\n- [Minimum Sum of Four Digit Number After Splitting Digits](https://leetcode.com/problems/minimum-sum-of-four-digit-number-after-splitting-digits/) — Easy\n- [Calculate Digit Sum of a String](https://leetcode.com/problems/calculate-digit-sum-of-a-string/) — Easy\n- [Difference Between Element Sum and Digit Sum of an Array](https://leetcode.com/problems/difference-between-element-sum-and-digit-sum-of-an-array/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/add-digits/README.md",
+          "content": "# Add Digits\n\n**Difficulty:** Easy  |  **Acceptance:** 68.9%\n\n**Tags:** `Math`, `Simulation`, `Number Theory`\n\n## Problem\n\nGiven an integer num, repeatedly add all its digits until the result has only one digit, and return it.\n\n&nbsp;\nExample 1:\n\nInput: num = 38\nOutput: 2\nExplanation: The process is\n38 --> 3 + 8 --> 11\n11 --> 1 + 1 --> 2 \nSince 2 has only one digit, return it.\n\nExample 2:\n\nInput: num = 0\nOutput: 0\n\n&nbsp;\nConstraints:\n\n\t0 <= num <= 231 - 1\n\n&nbsp;\nFollow up: Could you do it without any loop/recursion in O(1) runtime?\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.6 MB\n\n## Similar Problems\n\n- [Happy Number](https://leetcode.com/problems/happy-number/) — Easy\n- [Sum of Digits of String After Convert](https://leetcode.com/problems/sum-of-digits-of-string-after-convert/) — Easy\n- [Minimum Sum of Four Digit Number After Splitting Digits](https://leetcode.com/problems/minimum-sum-of-four-digit-number-after-splitting-digits/) — Easy\n- [Calculate Digit Sum of a String](https://leetcode.com/problems/calculate-digit-sum-of-a-string/) — Easy\n- [Difference Between Element Sum and Digit Sum of an Array](https://leetcode.com/problems/difference-between-element-sum-and-digit-sum-of-an-array/) — Easy\n"
+        }
+      ],
+      "timestamp": 1729416459000,
+      "runtime": "0 ms",
+      "memory": "16.6 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<p>Given an integer <code>num</code>, repeatedly add all its digits until the result has only one digit, and return it.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> num = 38\n<strong>Output:</strong> 2\n<strong>Explanation:</strong> The process is\n38 --&gt; 3 + 8 --&gt; 11\n11 --&gt; 1 + 1 --&gt; 2 \nSince 2 has only one digit, return it.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> num = 0\n<strong>Output:</strong> 0\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>0 &lt;= num &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Follow up:</strong> Could you do it without any loop/recursion in <code>O(1)</code> runtime?</p>\n",
+      "hints": [
+        "A naive implementation of the above process is trivial. Could you come up with other methods?",
+        "What are all the possible results?",
+        "How do they occur, periodically or randomly?",
+        "You may find this <a href=\"https://en.wikipedia.org/wiki/Digital_root\" target=\"_blank\">Wikipedia article</a> useful."
+      ],
+      "acRate": 68.8966677742893,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "happy-number",
+          "title": "Happy Number",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "sum-of-digits-of-string-after-convert",
+          "title": "Sum of Digits of String After Convert",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "minimum-sum-of-four-digit-number-after-splitting-digits",
+          "title": "Minimum Sum of Four Digit Number After Splitting Digits",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "calculate-digit-sum-of-a-string",
+          "title": "Calculate Digit Sum of a String",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "difference-between-element-sum-and-digit-sum-of-an-array",
+          "title": "Difference Between Element Sum and Digit Sum of an Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "alternating-digit-sum",
+          "title": "Alternating Digit Sum",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-happy-number::1428234006",
+      "submissionId": 1428234006,
+      "platform": "leetcode",
+      "title": "Happy Number",
+      "titleSlug": "happy-number",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "slug": "python3",
+        "ext": "py"
+      },
+      "tags": [
+        "Hash Table",
+        "Math",
+        "Two Pointers"
+      ],
+      "topic": "Math",
+      "code": "class Solution:\n    def isHappy(self, n: int) -> bool:\n        seen = set()\n        while n != 1 and n not in seen:\n            seen.add(n)\n            n = sum(int(_) ** 2 for _ in str(n))\n\n        # while n > 9: n = sum(int(d) ** 2 for d in str(n))\n        if n == 1:\n            return True\n        return False",
+      "readmeContent": "# Happy Number\n\n**Difficulty:** Easy  |  **Acceptance:** 59.6%\n\n**Tags:** `Hash Table`, `Math`, `Two Pointers`\n\n## Problem\n\nWrite an algorithm to determine if a number n is happy.\n\nA happy number is a number defined by the following process:\n\n\tStarting with any positive integer, replace the number by the sum of the squares of its digits.\n\tRepeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.\n\tThose numbers for which this process ends in 1 are happy.\n\nReturn true if n is a happy number, and false if not.\n\n&nbsp;\nExample 1:\n\nInput: n = 19\nOutput: true\nExplanation:\n12 + 92 = 82\n82 + 22 = 68\n62 + 82 = 100\n12 + 02 + 02 = 1\n\nExample 2:\n\nInput: n = 2\nOutput: false\n\n&nbsp;\nConstraints:\n\n\t1 <= n <= 231 - 1\n\n## My Submission\n\n- Runtime: 1 ms\n- Memory: 16.4 MB\n\n## Similar Problems\n\n- [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) — Easy\n- [Add Digits](https://leetcode.com/problems/add-digits/) — Easy\n- [Ugly Number](https://leetcode.com/problems/ugly-number/) — Easy\n- [Sum of Digits of String After Convert](https://leetcode.com/problems/sum-of-digits-of-string-after-convert/) — Easy\n- [Minimum Addition to Make Integer Beautiful](https://leetcode.com/problems/minimum-addition-to-make-integer-beautiful/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-happy-number/README.md",
+          "content": "# Happy Number\n\n**Difficulty:** Easy  |  **Acceptance:** 59.6%\n\n**Tags:** `Hash Table`, `Math`, `Two Pointers`\n\n## Problem\n\nWrite an algorithm to determine if a number n is happy.\n\nA happy number is a number defined by the following process:\n\n\tStarting with any positive integer, replace the number by the sum of the squares of its digits.\n\tRepeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.\n\tThose numbers for which this process ends in 1 are happy.\n\nReturn true if n is a happy number, and false if not.\n\n&nbsp;\nExample 1:\n\nInput: n = 19\nOutput: true\nExplanation:\n12 + 92 = 82\n82 + 22 = 68\n62 + 82 = 100\n12 + 02 + 02 = 1\n\nExample 2:\n\nInput: n = 2\nOutput: false\n\n&nbsp;\nConstraints:\n\n\t1 <= n <= 231 - 1\n\n## My Submission\n\n- Runtime: 1 ms\n- Memory: 16.4 MB\n\n## Similar Problems\n\n- [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) — Easy\n- [Add Digits](https://leetcode.com/problems/add-digits/) — Easy\n- [Ugly Number](https://leetcode.com/problems/ugly-number/) — Easy\n- [Sum of Digits of String After Convert](https://leetcode.com/problems/sum-of-digits-of-string-after-convert/) — Easy\n- [Minimum Addition to Make Integer Beautiful](https://leetcode.com/problems/minimum-addition-to-make-integer-beautiful/) — Medium\n"
+        }
+      ],
+      "timestamp": 1729419260000,
+      "runtime": "1 ms",
+      "memory": "16.4 MB",
+      "runtimePct": 52,
+      "memoryPct": 100,
+      "problemStatement": "<p>Write an algorithm to determine if a number <code>n</code> is happy.</p>\n\n<p>A <strong>happy number</strong> is a number defined by the following process:</p>\n\n<ul>\n\t<li>Starting with any positive integer, replace the number by the sum of the squares of its digits.</li>\n\t<li>Repeat the process until the number equals 1 (where it will stay), or it <strong>loops endlessly in a cycle</strong> which does not include 1.</li>\n\t<li>Those numbers for which this process <strong>ends in 1</strong> are happy.</li>\n</ul>\n\n<p>Return <code>true</code> <em>if</em> <code>n</code> <em>is a happy number, and</em> <code>false</code> <em>if not</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 19\n<strong>Output:</strong> true\n<strong>Explanation:</strong>\n1<sup>2</sup> + 9<sup>2</sup> = 82\n8<sup>2</sup> + 2<sup>2</sup> = 68\n6<sup>2</sup> + 8<sup>2</sup> = 100\n1<sup>2</sup> + 0<sup>2</sup> + 0<sup>2</sup> = 1\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 2\n<strong>Output:</strong> false\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>\n",
+      "hints": null,
+      "acRate": 59.6360536421325,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "linked-list-cycle",
+          "title": "Linked List Cycle",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "add-digits",
+          "title": "Add Digits",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "ugly-number",
+          "title": "Ugly Number",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "sum-of-digits-of-string-after-convert",
+          "title": "Sum of Digits of String After Convert",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "minimum-addition-to-make-integer-beautiful",
+          "title": "Minimum Addition to Make Integer Beautiful",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "smallest-value-after-replacing-with-sum-of-prime-factors",
+          "title": "Smallest Value After Replacing With Sum of Prime Factors",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "count-the-digits-that-divide-a-number",
+          "title": "Count the Digits That Divide a Number",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-linked-list-cycle::1428277941",
+      "submissionId": 1428277941,
+      "platform": "leetcode",
+      "title": "Linked List Cycle",
+      "titleSlug": "linked-list-cycle",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "slug": "python3",
+        "ext": "py"
+      },
+      "tags": [
+        "Hash Table",
+        "Linked List",
+        "Two Pointers"
+      ],
+      "topic": "Hash Table",
+      "code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, x):\n#         self.val = x\n#         self.next = None\n\nclass Solution:\n    def hasCycle(self, head: Optional[ListNode]) -> bool:\n        if head is None:\n            return False\n\n        s = f = head\n        while f and f.next:\n            s = s.next\n            f = f.next.next\n            if s == f:\n                return True\n        return False",
+      "readmeContent": "# Linked List Cycle\n\n**Difficulty:** Easy  |  **Acceptance:** 54.3%\n\n**Tags:** `Hash Table`, `Linked List`, `Two Pointers`\n\n## Problem\n\nGiven head, the head of a linked list, determine if the linked list has a cycle in it.\n\nThere is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the&nbsp;next&nbsp;pointer. Internally, pos&nbsp;is used to denote the index of the node that&nbsp;tail's&nbsp;next&nbsp;pointer is connected to.&nbsp;Note that&nbsp;pos&nbsp;is not passed as a parameter.\n\nReturn&nbsp;true if there is a cycle in the linked list. Otherwise, return false.\n\n&nbsp;\nExample 1:\n\nInput: head = [3,2,0,-4], pos = 1\nOutput: true\nExplanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).\n\nExample 2:\n\nInput: head = [1,2], pos = 0\nOutput: true\nExplanation: There is a cycle in the linked list, where the tail connects to the 0th node.\n\nExample 3:\n\nInput: head = [1], pos = -1\nOutput: false\nExplanation: There is no cycle in the linked list.\n\n&nbsp;\nConstraints:\n\n\tThe number of the nodes in the list is in the range [0, 104].\n\t-105 <= Node.val <= 105\n\tpos is -1 or a valid index in the linked-list.\n\n&nbsp;\nFollow up: Can you solve it using O(1) (i.e. constant) memory?\n\n## My Submission\n\n- Runtime: 50 ms\n- Memory: 19.1 MB\n\n## Similar Problems\n\n- [Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/) — Medium\n- [Happy Number](https://leetcode.com/problems/happy-number/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-linked-list-cycle/README.md",
+          "content": "# Linked List Cycle\n\n**Difficulty:** Easy  |  **Acceptance:** 54.3%\n\n**Tags:** `Hash Table`, `Linked List`, `Two Pointers`\n\n## Problem\n\nGiven head, the head of a linked list, determine if the linked list has a cycle in it.\n\nThere is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the&nbsp;next&nbsp;pointer. Internally, pos&nbsp;is used to denote the index of the node that&nbsp;tail's&nbsp;next&nbsp;pointer is connected to.&nbsp;Note that&nbsp;pos&nbsp;is not passed as a parameter.\n\nReturn&nbsp;true if there is a cycle in the linked list. Otherwise, return false.\n\n&nbsp;\nExample 1:\n\nInput: head = [3,2,0,-4], pos = 1\nOutput: true\nExplanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).\n\nExample 2:\n\nInput: head = [1,2], pos = 0\nOutput: true\nExplanation: There is a cycle in the linked list, where the tail connects to the 0th node.\n\nExample 3:\n\nInput: head = [1], pos = -1\nOutput: false\nExplanation: There is no cycle in the linked list.\n\n&nbsp;\nConstraints:\n\n\tThe number of the nodes in the list is in the range [0, 104].\n\t-105 <= Node.val <= 105\n\tpos is -1 or a valid index in the linked-list.\n\n&nbsp;\nFollow up: Can you solve it using O(1) (i.e. constant) memory?\n\n## My Submission\n\n- Runtime: 50 ms\n- Memory: 19.1 MB\n\n## Similar Problems\n\n- [Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/) — Medium\n- [Happy Number](https://leetcode.com/problems/happy-number/) — Easy\n"
+        }
+      ],
+      "timestamp": 1729423179000,
+      "runtime": "50 ms",
+      "memory": "19.1 MB",
+      "runtimePct": 78,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given <code>head</code>, the head of a linked list, determine if the linked list has a cycle in it.</p>\n\n<p>There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the&nbsp;<code>next</code>&nbsp;pointer. Internally, <code>pos</code>&nbsp;is used to denote the index of the node that&nbsp;tail&#39;s&nbsp;<code>next</code>&nbsp;pointer is connected to.&nbsp;<strong>Note that&nbsp;<code>pos</code>&nbsp;is not passed as a parameter</strong>.</p>\n\n<p>Return&nbsp;<code>true</code><em> if there is a cycle in the linked list</em>. Otherwise, return <code>false</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist.png\" style=\"width: 300px; height: 97px; margin-top: 8px; margin-bottom: 8px;\" />\n<pre>\n<strong>Input:</strong> head = [3,2,0,-4], pos = 1\n<strong>Output:</strong> true\n<strong>Explanation:</strong> There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist_test2.png\" style=\"width: 141px; height: 74px;\" />\n<pre>\n<strong>Input:</strong> head = [1,2], pos = 0\n<strong>Output:</strong> true\n<strong>Explanation:</strong> There is a cycle in the linked list, where the tail connects to the 0th node.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist_test3.png\" style=\"width: 45px; height: 45px;\" />\n<pre>\n<strong>Input:</strong> head = [1], pos = -1\n<strong>Output:</strong> false\n<strong>Explanation:</strong> There is no cycle in the linked list.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li>The number of the nodes in the list is in the range <code>[0, 10<sup>4</sup>]</code>.</li>\n\t<li><code>-10<sup>5</sup> &lt;= Node.val &lt;= 10<sup>5</sup></code></li>\n\t<li><code>pos</code> is <code>-1</code> or a <strong>valid index</strong> in the linked-list.</li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Follow up:</strong> Can you solve it using <code>O(1)</code> (i.e. constant) memory?</p>\n",
+      "hints": null,
+      "acRate": 54.29647327620223,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "linked-list-cycle-ii",
+          "title": "Linked List Cycle II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "happy-number",
+          "title": "Happy Number",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-rings-and-rods",
+      "submissionId": 1428288969,
+      "platform": "leetcode",
+      "title": "Rings and Rods",
+      "titleSlug": "rings-and-rods",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Hash Table",
+        "String"
+      ],
+      "topic": "Hash Table",
+      "code": "",
+      "readmeContent": "# Rings and Rods\n\n**Difficulty:** Easy  |  **Acceptance:** 81.5%\n\n**Tags:** `Hash Table`, `String`\n\n## Problem\n\nThere are n rings and each ring is either red, green, or blue. The rings are distributed across ten rods labeled from 0 to 9.\n\nYou are given a string rings of length 2n that describes the n rings that are placed onto the rods. Every two characters in rings forms a color-position pair that is used to describe each ring where:\n\n\tThe first character of the ith pair denotes the ith ring's color ('R', 'G', 'B').\n\tThe second character of the ith pair denotes the rod that the ith ring is placed on ('0' to '9').\n\nFor example, \"R3G2B1\" describes n == 3 rings: a red ring placed onto the rod labeled 3, a green ring placed onto the rod labeled 2, and a blue ring placed onto the rod labeled 1.\n\nReturn the number of rods that have all three colors of rings on them.\n\n&nbsp;\nExample 1:\n\nInput: rings = \"B0B6G0R6R0R6G9\"\nOutput: 1\nExplanation: \n- The rod labeled 0 holds 3 rings with all colors: red, green, and blue.\n- The rod labeled 6 holds 3 rings, but it only has red and blue.\n- The rod labeled 9 holds only a green ring.\nThus, the number of rods with all three colors is 1.\n\nExample 2:\n\nInput: rings = \"B0R0G0R9R0B0G0\"\nOutput: 1\nExplanation: \n- The rod labeled 0 holds 6 rings with all colors: red, green, and blue.\n- The rod labeled 9 holds only a red ring.\nThus, the number of rods with all three colors is 1.\n\nExample 3:\n\nInput: rings = \"G4\"\nOutput: 0\nExplanation: \nOnly one ring is given. Thus, no rods have all three colors.\n\n&nbsp;\nConstraints:\n\n\trings.length == 2 * n\n\t1 <= n <= 100\n\trings[i] where i is even is either 'R', 'G', or 'B' (0-indexed).\n\trings[i] where i is odd is a digit from '0' to '9' (0-indexed).\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.6 MB\n\n## Similar Problems\n\n- [Check if All Characters Have Equal Number of Occurrences](https://leetcode.com/problems/check-if-all-characters-have-equal-number-of-occurrences/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/rings-and-rods/README.md",
+          "content": "# Rings and Rods\n\n**Difficulty:** Easy  |  **Acceptance:** 81.5%\n\n**Tags:** `Hash Table`, `String`\n\n## Problem\n\nThere are n rings and each ring is either red, green, or blue. The rings are distributed across ten rods labeled from 0 to 9.\n\nYou are given a string rings of length 2n that describes the n rings that are placed onto the rods. Every two characters in rings forms a color-position pair that is used to describe each ring where:\n\n\tThe first character of the ith pair denotes the ith ring's color ('R', 'G', 'B').\n\tThe second character of the ith pair denotes the rod that the ith ring is placed on ('0' to '9').\n\nFor example, \"R3G2B1\" describes n == 3 rings: a red ring placed onto the rod labeled 3, a green ring placed onto the rod labeled 2, and a blue ring placed onto the rod labeled 1.\n\nReturn the number of rods that have all three colors of rings on them.\n\n&nbsp;\nExample 1:\n\nInput: rings = \"B0B6G0R6R0R6G9\"\nOutput: 1\nExplanation: \n- The rod labeled 0 holds 3 rings with all colors: red, green, and blue.\n- The rod labeled 6 holds 3 rings, but it only has red and blue.\n- The rod labeled 9 holds only a green ring.\nThus, the number of rods with all three colors is 1.\n\nExample 2:\n\nInput: rings = \"B0R0G0R9R0B0G0\"\nOutput: 1\nExplanation: \n- The rod labeled 0 holds 6 rings with all colors: red, green, and blue.\n- The rod labeled 9 holds only a red ring.\nThus, the number of rods with all three colors is 1.\n\nExample 3:\n\nInput: rings = \"G4\"\nOutput: 0\nExplanation: \nOnly one ring is given. Thus, no rods have all three colors.\n\n&nbsp;\nConstraints:\n\n\trings.length == 2 * n\n\t1 <= n <= 100\n\trings[i] where i is even is either 'R', 'G', or 'B' (0-indexed).\n\trings[i] where i is odd is a digit from '0' to '9' (0-indexed).\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.6 MB\n\n## Similar Problems\n\n- [Check if All Characters Have Equal Number of Occurrences](https://leetcode.com/problems/check-if-all-characters-have-equal-number-of-occurrences/) — Easy\n"
+        }
+      ],
+      "timestamp": 1729424179000,
+      "runtime": "0 ms",
+      "memory": "16.6 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<p>There are <code>n</code> rings and each ring is either red, green, or blue. The rings are distributed <strong>across ten rods</strong> labeled from <code>0</code> to <code>9</code>.</p>\n\n<p>You are given a string <code>rings</code> of length <code>2n</code> that describes the <code>n</code> rings that are placed onto the rods. Every two characters in <code>rings</code> forms a <strong>color-position pair</strong> that is used to describe each ring where:</p>\n\n<ul>\n\t<li>The <strong>first</strong> character of the <code>i<sup>th</sup></code> pair denotes the <code>i<sup>th</sup></code> ring&#39;s <strong>color</strong> (<code>&#39;R&#39;</code>, <code>&#39;G&#39;</code>, <code>&#39;B&#39;</code>).</li>\n\t<li>The <strong>second</strong> character of the <code>i<sup>th</sup></code> pair denotes the <strong>rod</strong> that the <code>i<sup>th</sup></code> ring is placed on (<code>&#39;0&#39;</code> to <code>&#39;9&#39;</code>).</li>\n</ul>\n\n<p>For example, <code>&quot;R3G2B1&quot;</code> describes <code>n == 3</code> rings: a red ring placed onto the rod labeled 3, a green ring placed onto the rod labeled 2, and a blue ring placed onto the rod labeled 1.</p>\n\n<p>Return <em>the number of rods that have <strong>all three colors</strong> of rings on them.</em></p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2021/11/23/ex1final.png\" style=\"width: 258px; height: 130px;\" />\n<pre>\n<strong>Input:</strong> rings = &quot;B0B6G0R6R0R6G9&quot;\n<strong>Output:</strong> 1\n<strong>Explanation:</strong> \n- The rod labeled 0 holds 3 rings with all colors: red, green, and blue.\n- The rod labeled 6 holds 3 rings, but it only has red and blue.\n- The rod labeled 9 holds only a green ring.\nThus, the number of rods with all three colors is 1.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2021/11/23/ex2final.png\" style=\"width: 266px; height: 130px;\" />\n<pre>\n<strong>Input:</strong> rings = &quot;B0R0G0R9R0B0G0&quot;\n<strong>Output:</strong> 1\n<strong>Explanation:</strong> \n- The rod labeled 0 holds 6 rings with all colors: red, green, and blue.\n- The rod labeled 9 holds only a red ring.\nThus, the number of rods with all three colors is 1.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> rings = &quot;G4&quot;\n<strong>Output:</strong> 0\n<strong>Explanation:</strong> \nOnly one ring is given. Thus, no rods have all three colors.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>rings.length == 2 * n</code></li>\n\t<li><code>1 &lt;= n &lt;= 100</code></li>\n\t<li><code>rings[i]</code> where <code>i</code> is <strong>even</strong> is either <code>&#39;R&#39;</code>, <code>&#39;G&#39;</code>, or <code>&#39;B&#39;</code> (<strong>0-indexed</strong>).</li>\n\t<li><code>rings[i]</code> where <code>i</code> is <strong>odd</strong> is a digit from <code>&#39;0&#39;</code> to <code>&#39;9&#39;</code> (<strong>0-indexed</strong>).</li>\n</ul>\n",
+      "hints": [
+        "For every rod, look through ‘rings’ to see if the rod contains all colors.",
+        "Create 3 booleans, 1 for each color, to store if that color is present for the current rod. If all 3 are true after looking through the string, then the rod contains all the colors."
+      ],
+      "acRate": 81.46108069912566,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "check-if-all-characters-have-equal-number-of-occurrences",
+          "title": "Check if All Characters Have Equal Number of Occurrences",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-check-if-all-characters-have-equal-number-of-occurrences",
+      "submissionId": 1428359619,
+      "platform": "leetcode",
+      "title": "Check if All Characters Have Equal Number of Occurrences",
+      "titleSlug": "check-if-all-characters-have-equal-number-of-occurrences",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Hash Table",
+        "String",
+        "Counting"
+      ],
+      "topic": "Hash Table",
+      "code": "",
+      "readmeContent": "# Check if All Characters Have Equal Number of Occurrences\n\n**Difficulty:** Easy  |  **Acceptance:** 79.5%\n\n**Tags:** `Hash Table`, `String`, `Counting`\n\n## Problem\n\nGiven a string s, return true if s is a good string, or false otherwise.\n\nA string s is good if all the characters that appear in s have the same number of occurrences (i.e., the same frequency).\n\n&nbsp;\nExample 1:\n\nInput: s = \"abacbc\"\nOutput: true\nExplanation: The characters that appear in s are 'a', 'b', and 'c'. All characters occur 2 times in s.\n\nExample 2:\n\nInput: s = \"aaabb\"\nOutput: false\nExplanation: The characters that appear in s are 'a' and 'b'.\n'a' occurs 3 times while 'b' occurs 2 times, which is not the same number of times.\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 1000\n\ts consists of lowercase English letters.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.5 MB\n\n## Similar Problems\n\n- [Rings and Rods](https://leetcode.com/problems/rings-and-rods/) — Easy\n- [Make Number of Distinct Characters Equal](https://leetcode.com/problems/make-number-of-distinct-characters-equal/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/check-if-all-characters-have-equal-number-of-occurrences/README.md",
+          "content": "# Check if All Characters Have Equal Number of Occurrences\n\n**Difficulty:** Easy  |  **Acceptance:** 79.5%\n\n**Tags:** `Hash Table`, `String`, `Counting`\n\n## Problem\n\nGiven a string s, return true if s is a good string, or false otherwise.\n\nA string s is good if all the characters that appear in s have the same number of occurrences (i.e., the same frequency).\n\n&nbsp;\nExample 1:\n\nInput: s = \"abacbc\"\nOutput: true\nExplanation: The characters that appear in s are 'a', 'b', and 'c'. All characters occur 2 times in s.\n\nExample 2:\n\nInput: s = \"aaabb\"\nOutput: false\nExplanation: The characters that appear in s are 'a' and 'b'.\n'a' occurs 3 times while 'b' occurs 2 times, which is not the same number of times.\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 1000\n\ts consists of lowercase English letters.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.5 MB\n\n## Similar Problems\n\n- [Rings and Rods](https://leetcode.com/problems/rings-and-rods/) — Easy\n- [Make Number of Distinct Characters Equal](https://leetcode.com/problems/make-number-of-distinct-characters-equal/) — Medium\n"
+        }
+      ],
+      "timestamp": 1729430331000,
+      "runtime": "0 ms",
+      "memory": "16.5 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<p>Given a string <code>s</code>, return <code>true</code><em> if </em><code>s</code><em> is a <strong>good</strong> string, or </em><code>false</code><em> otherwise</em>.</p>\n\n<p>A string <code>s</code> is <strong>good</strong> if <strong>all</strong> the characters that appear in <code>s</code> have the <strong>same</strong> number of occurrences (i.e., the same frequency).</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;abacbc&quot;\n<strong>Output:</strong> true\n<strong>Explanation:</strong> The characters that appear in s are &#39;a&#39;, &#39;b&#39;, and &#39;c&#39;. All characters occur 2 times in s.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;aaabb&quot;\n<strong>Output:</strong> false\n<strong>Explanation:</strong> The characters that appear in s are &#39;a&#39; and &#39;b&#39;.\n&#39;a&#39; occurs 3 times while &#39;b&#39; occurs 2 times, which is not the same number of times.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 1000</code></li>\n\t<li><code>s</code> consists of lowercase English letters.</li>\n</ul>\n",
+      "hints": [
+        "Build a dictionary containing the frequency of each character appearing in s",
+        "Check if all values in the dictionary are the same."
+      ],
+      "acRate": 79.48743065264433,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "rings-and-rods",
+          "title": "Rings and Rods",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "make-number-of-distinct-characters-equal",
+          "title": "Make Number of Distinct Characters Equal",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-valid-parentheses",
+      "submissionId": 1428596930,
+      "platform": "leetcode",
+      "title": "Valid Parentheses",
+      "titleSlug": "valid-parentheses",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "String",
+        "Stack"
+      ],
+      "topic": "Stack",
+      "code": "",
+      "readmeContent": "# Valid Parentheses\n\n**Difficulty:** Easy  |  **Acceptance:** 44.1%\n\n**Tags:** `String`, `Stack`\n\n## Problem\n\nGiven a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.\n\nAn input string is valid if:\n\n\tOpen brackets must be closed by the same type of brackets.\n\tOpen brackets must be closed in the correct order.\n\tEvery close bracket has a corresponding open bracket of the same type.\n\n&nbsp;\nExample 1:\n\nInput: s = \"()\"\n\nOutput: true\n\nExample 2:\n\nInput: s = \"()[]{}\"\n\nOutput: true\n\nExample 3:\n\nInput: s = \"(]\"\n\nOutput: false\n\nExample 4:\n\nInput: s = \"([])\"\n\nOutput: true\n\nExample 5:\n\nInput: s = \"([)]\"\n\nOutput: false\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 104\n\ts consists of parentheses only '()[]{}'.\n\n## My Submission\n\n- Runtime: 4 ms\n- Memory: 16.6 MB\n\n## Similar Problems\n\n- [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/) — Medium\n- [Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/) — Hard\n- [Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/) — Hard\n- [Check If Word Is Valid After Substitutions](https://leetcode.com/problems/check-if-word-is-valid-after-substitutions/) — Medium\n- [Check if a Parentheses String Can Be Valid](https://leetcode.com/problems/check-if-a-parentheses-string-can-be-valid/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/valid-parentheses/README.md",
+          "content": "# Valid Parentheses\n\n**Difficulty:** Easy  |  **Acceptance:** 44.1%\n\n**Tags:** `String`, `Stack`\n\n## Problem\n\nGiven a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.\n\nAn input string is valid if:\n\n\tOpen brackets must be closed by the same type of brackets.\n\tOpen brackets must be closed in the correct order.\n\tEvery close bracket has a corresponding open bracket of the same type.\n\n&nbsp;\nExample 1:\n\nInput: s = \"()\"\n\nOutput: true\n\nExample 2:\n\nInput: s = \"()[]{}\"\n\nOutput: true\n\nExample 3:\n\nInput: s = \"(]\"\n\nOutput: false\n\nExample 4:\n\nInput: s = \"([])\"\n\nOutput: true\n\nExample 5:\n\nInput: s = \"([)]\"\n\nOutput: false\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 104\n\ts consists of parentheses only '()[]{}'.\n\n## My Submission\n\n- Runtime: 4 ms\n- Memory: 16.6 MB\n\n## Similar Problems\n\n- [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/) — Medium\n- [Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/) — Hard\n- [Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/) — Hard\n- [Check If Word Is Valid After Substitutions](https://leetcode.com/problems/check-if-word-is-valid-after-substitutions/) — Medium\n- [Check if a Parentheses String Can Be Valid](https://leetcode.com/problems/check-if-a-parentheses-string-can-be-valid/) — Medium\n"
+        }
+      ],
+      "timestamp": 1729447151000,
+      "runtime": "4 ms",
+      "memory": "16.6 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<p>Given a string <code>s</code> containing just the characters <code>&#39;(&#39;</code>, <code>&#39;)&#39;</code>, <code>&#39;{&#39;</code>, <code>&#39;}&#39;</code>, <code>&#39;[&#39;</code> and <code>&#39;]&#39;</code>, determine if the input string is valid.</p>\n\n<p>An input string is valid if:</p>\n\n<ol>\n\t<li>Open brackets must be closed by the same type of brackets.</li>\n\t<li>Open brackets must be closed in the correct order.</li>\n\t<li>Every close bracket has a corresponding open bracket of the same type.</li>\n</ol>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;()&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">true</span></p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;()[]{}&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">true</span></p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;(]&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">false</span></p>\n</div>\n\n<p><strong class=\"example\">Example 4:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;([])&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">true</span></p>\n</div>\n\n<p><strong class=\"example\">Example 5:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;([)]&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">false</span></p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>s</code> consists of parentheses only <code>&#39;()[]{}&#39;</code>.</li>\n</ul>\n",
+      "hints": [
+        "Use a stack of characters.",
+        "When you encounter an opening bracket, push it to the top of the stack.",
+        "When you encounter a closing bracket, check if the top of the stack was the opening for it. If yes, pop it from the stack. Otherwise, return false."
+      ],
+      "acRate": 44.130071870181354,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "generate-parentheses",
+          "title": "Generate Parentheses",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "longest-valid-parentheses",
+          "title": "Longest Valid Parentheses",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "remove-invalid-parentheses",
+          "title": "Remove Invalid Parentheses",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "check-if-word-is-valid-after-substitutions",
+          "title": "Check If Word Is Valid After Substitutions",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "check-if-a-parentheses-string-can-be-valid",
+          "title": "Check if a Parentheses String Can Be Valid",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "move-pieces-to-obtain-a-string",
+          "title": "Move Pieces to Obtain a String",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-largest-number::1429608798",
+      "submissionId": 1429608798,
+      "platform": "leetcode",
+      "title": "Largest Number",
+      "titleSlug": "largest-number",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "slug": "python3",
+        "ext": "py"
+      },
+      "tags": [
+        "Array",
+        "String",
+        "Greedy",
+        "Sorting"
+      ],
+      "topic": "Greedy",
+      "code": "from functools import cmp_to_key\n\nclass Solution:\n    def largestNumber(self, nums: List[int]) -> str:\n        nums = list(map(str, nums))\n        \n        def compare(x, y):\n            if x + y > y + x:\n                return -1\n            elif x + y < y + x:\n                return 1\n            else:\n                return 0\n        \n        nums.sort(key=cmp_to_key(compare))\n        \n        result = ''.join(nums)\n        \n        return '0' if result[0] == '0' else result\n",
+      "readmeContent": "# Largest Number\n\n**Difficulty:** Medium  |  **Acceptance:** 43.0%\n\n**Tags:** `Array`, `String`, `Greedy`, `Sorting`\n\n## Problem\n\nGiven a list of non-negative integers nums, arrange them such that they form the largest number and return it.\n\nSince the result may be very large, so you need to return a string instead of an integer.\n\n&nbsp;\nExample 1:\n\nInput: nums = [10,2]\nOutput: \"210\"\n\nExample 2:\n\nInput: nums = [3,30,34,5,9]\nOutput: \"9534330\"\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 100\n\t0 <= nums[i] <= 109\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 16.4 MB\n\n## Similar Problems\n\n- [Smallest Value of the Rearranged Number](https://leetcode.com/problems/smallest-value-of-the-rearranged-number/) — Medium\n- [Find the Key of the Numbers](https://leetcode.com/problems/find-the-key-of-the-numbers/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-largest-number/README.md",
+          "content": "# Largest Number\n\n**Difficulty:** Medium  |  **Acceptance:** 43.0%\n\n**Tags:** `Array`, `String`, `Greedy`, `Sorting`\n\n## Problem\n\nGiven a list of non-negative integers nums, arrange them such that they form the largest number and return it.\n\nSince the result may be very large, so you need to return a string instead of an integer.\n\n&nbsp;\nExample 1:\n\nInput: nums = [10,2]\nOutput: \"210\"\n\nExample 2:\n\nInput: nums = [3,30,34,5,9]\nOutput: \"9534330\"\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 100\n\t0 <= nums[i] <= 109\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 16.4 MB\n\n## Similar Problems\n\n- [Smallest Value of the Rearranged Number](https://leetcode.com/problems/smallest-value-of-the-rearranged-number/) — Medium\n- [Find the Key of the Numbers](https://leetcode.com/problems/find-the-key-of-the-numbers/) — Easy\n"
+        }
+      ],
+      "timestamp": 1729533908000,
+      "runtime": "3 ms",
+      "memory": "16.4 MB",
+      "runtimePct": 63,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given a list of non-negative integers <code>nums</code>, arrange them such that they form the largest number and return it.</p>\n\n<p>Since the result may be very large, so you need to return a string instead of an integer.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [10,2]\n<strong>Output:</strong> &quot;210&quot;\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [3,30,34,5,9]\n<strong>Output:</strong> &quot;9534330&quot;\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 100</code></li>\n\t<li><code>0 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>\n</ul>\n",
+      "hints": null,
+      "acRate": 43.02474285566235,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "smallest-value-of-the-rearranged-number",
+          "title": "Smallest Value of the Rearranged Number",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "find-the-key-of-the-numbers",
+          "title": "Find the Key of the Numbers",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-find-the-key-of-the-numbers::1429656572",
+      "submissionId": 1429656572,
+      "platform": "leetcode",
+      "title": "Find the Key of the Numbers",
+      "titleSlug": "find-the-key-of-the-numbers",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "slug": "python3",
+        "ext": "py"
+      },
+      "tags": [
+        "Math"
+      ],
+      "topic": "Math",
+      "code": "class Solution:\n    def generateKey(self, num1: int, num2: int, num3: int) -> str:\n        nums = [str(num).zfill(4) for num in [num1, num2, num3]]\n        key = ''.join(min(num[i] for num in nums) for i in range(4))\n        return int(key)\n",
+      "readmeContent": "# Find the Key of the Numbers\n\n**Difficulty:** Easy  |  **Acceptance:** 76.5%\n\n**Tags:** `Math`\n\n## Problem\n\nYou are given three positive integers num1, num2, and num3.\n\nThe key of num1, num2, and num3 is defined as a four-digit number such that:\n\n\tInitially, if any number has less than four digits, it is padded with leading zeros.\n\tThe ith digit (1 <= i <= 4) of the key is generated by taking the smallest digit among the ith digits of num1, num2, and num3.\n\nReturn the key of the three numbers without leading zeros (if any).\n\n&nbsp;\nExample 1:\n\nInput: num1 = 1, num2 = 10, num3 = 1000\n\nOutput: 0\n\nExplanation:\n\nOn padding, num1 becomes \"0001\", num2 becomes \"0010\", and num3 remains \"1000\".\n\n\tThe 1st digit of the key is min(0, 0, 1).\n\tThe 2nd digit of the key is min(0, 0, 0).\n\tThe 3rd digit of the key is min(0, 1, 0).\n\tThe 4th digit of the key is min(1, 0, 0).\n\nHence, the key is \"0000\", i.e. 0.\n\nExample 2:\n\nInput: num1 = 987, num2 = 879, num3 = 798\n\nOutput: 777\n\nExample 3:\n\nInput: num1 = 1, num2 = 2, num3 = 3\n\nOutput: 1\n\n&nbsp;\nConstraints:\n\n\t1 <= num1, num2, num3 <= 9999\n\n## My Submission\n\n- Runtime: 5 ms\n- Memory: 16.7 MB\n\n## Similar Problems\n\n- [Largest Number](https://leetcode.com/problems/largest-number/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-find-the-key-of-the-numbers/README.md",
+          "content": "# Find the Key of the Numbers\n\n**Difficulty:** Easy  |  **Acceptance:** 76.5%\n\n**Tags:** `Math`\n\n## Problem\n\nYou are given three positive integers num1, num2, and num3.\n\nThe key of num1, num2, and num3 is defined as a four-digit number such that:\n\n\tInitially, if any number has less than four digits, it is padded with leading zeros.\n\tThe ith digit (1 <= i <= 4) of the key is generated by taking the smallest digit among the ith digits of num1, num2, and num3.\n\nReturn the key of the three numbers without leading zeros (if any).\n\n&nbsp;\nExample 1:\n\nInput: num1 = 1, num2 = 10, num3 = 1000\n\nOutput: 0\n\nExplanation:\n\nOn padding, num1 becomes \"0001\", num2 becomes \"0010\", and num3 remains \"1000\".\n\n\tThe 1st digit of the key is min(0, 0, 1).\n\tThe 2nd digit of the key is min(0, 0, 0).\n\tThe 3rd digit of the key is min(0, 1, 0).\n\tThe 4th digit of the key is min(1, 0, 0).\n\nHence, the key is \"0000\", i.e. 0.\n\nExample 2:\n\nInput: num1 = 987, num2 = 879, num3 = 798\n\nOutput: 777\n\nExample 3:\n\nInput: num1 = 1, num2 = 2, num3 = 3\n\nOutput: 1\n\n&nbsp;\nConstraints:\n\n\t1 <= num1, num2, num3 <= 9999\n\n## My Submission\n\n- Runtime: 5 ms\n- Memory: 16.7 MB\n\n## Similar Problems\n\n- [Largest Number](https://leetcode.com/problems/largest-number/) — Medium\n"
+        }
+      ],
+      "timestamp": 1729536708000,
+      "runtime": "5 ms",
+      "memory": "16.7 MB",
+      "runtimePct": 1,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given three <strong>positive</strong> integers <code>num1</code>, <code>num2</code>, and <code>num3</code>.</p>\n\n<p>The <code>key</code> of <code>num1</code>, <code>num2</code>, and <code>num3</code> is defined as a four-digit number such that:</p>\n\n<ul>\n\t<li>Initially, if any number has <strong>less than</strong> four digits, it is padded with <strong>leading zeros</strong>.</li>\n\t<li>The <code>i<sup>th</sup></code> digit (<code>1 &lt;= i &lt;= 4</code>) of the <code>key</code> is generated by taking the <strong>smallest</strong> digit among the <code>i<sup>th</sup></code> digits of <code>num1</code>, <code>num2</code>, and <code>num3</code>.</li>\n</ul>\n\n<p>Return the <code>key</code> of the three numbers <strong>without</strong> leading zeros (<em>if any</em>).</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">num1 = 1, num2 = 10, num3 = 1000</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">0</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>On padding, <code>num1</code> becomes <code>&quot;0001&quot;</code>, <code>num2</code> becomes <code>&quot;0010&quot;</code>, and <code>num3</code> remains <code>&quot;1000&quot;</code>.</p>\n\n<ul>\n\t<li>The <code>1<sup>st</sup></code> digit of the <code>key</code> is <code>min(0, 0, 1)</code>.</li>\n\t<li>The <code>2<sup>nd</sup></code> digit of the <code>key</code> is <code>min(0, 0, 0)</code>.</li>\n\t<li>The <code>3<sup>rd</sup></code> digit of the <code>key</code> is <code>min(0, 1, 0)</code>.</li>\n\t<li>The <code>4<sup>th</sup></code> digit of the <code>key</code> is <code>min(1, 0, 0)</code>.</li>\n</ul>\n\n<p>Hence, the <code>key</code> is <code>&quot;0000&quot;</code>, i.e. 0.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">num1 = 987, num2 = 879, num3 = 798</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">777</span></p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">num1 = 1, num2 = 2, num3 = 3</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">1</span></p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= num1, num2, num3 &lt;= 9999</code></li>\n</ul>\n",
+      "hints": null,
+      "acRate": 76.53818700927908,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "largest-number",
+          "title": "Largest Number",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "aiReview": "### Review of \"Find the Key of the Numbers\" Solution\n\n1. **Complexity**\n   * **Time Complexity:** $O(1)$. The inputs are constrained to 4 digits, and there are exactly 3 numbers. The operations (padding, iterating 4 times, and comparison) take constant time.\n   * **Space Complexity:** $O(1)$. The storage for strings and the result is fixed and does not scale with input size.\n\n2. **Correctness**\n   The solution is **correct**. It accurately implements the requirement to pad numbers to four digits using `zfill(4)` and selects the minimum digit at each position. The conversion to `int` at the end correctly handles the removal of any leading zeros.\n\n3. **Optimization**\n   Avoid **string conversion overhead** by using modular arithmetic. String operations in Python involve object creation which is slower than integer math.\n   ```python\n   res, multiplier = 0, 1\n   for _ in range(4):\n       res += min(num1 % 10, num2 % 10, num3 % 10) * multiplier\n       num1 //= 10; num2 //= 10; num3 //= 10\n       multiplier *= 10\n   return res\n   ```\n\n4. **Key Algorithmic Pattern**\n   **Digit-by-digit processing** (Simulation). The problem follows a \"Parallel Iteration\" approach where you compare corresponding elements across multiple sequences."
+    },
+    {
+      "id": "lc-find-the-key-of-the-numbers::1429658026",
+      "submissionId": 1429658026,
+      "platform": "leetcode",
+      "title": "Find the Key of the Numbers",
+      "titleSlug": "find-the-key-of-the-numbers",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Math"
+      ],
+      "topic": "Math",
+      "code": "class Solution:\n    def generateKey(self, num1: int, num2: int, num3: int) -> str:\n        # nums = [str(num).zfill(4) for num in [num1, num2, num3]]\n        # key = ''.join(min(num[i] for num in nums) for i in range(4))\n        # return int(key)\n        return int(''.join(min(num[i] for num in [str(num).zfill(4) for num in [num1, num2, num3]]) for i in range(4)))\n",
+      "readmeContent": "# Find the Key of the Numbers\n\n**Difficulty:** Easy  |  **Acceptance:** 76.5%\n\n**Tags:** `Math`\n\n## Problem\n\nYou are given three positive integers num1, num2, and num3.\n\nThe key of num1, num2, and num3 is defined as a four-digit number such that:\n\n\tInitially, if any number has less than four digits, it is padded with leading zeros.\n\tThe ith digit (1 <= i <= 4) of the key is generated by taking the smallest digit among the ith digits of num1, num2, and num3.\n\nReturn the key of the three numbers without leading zeros (if any).\n\n&nbsp;\nExample 1:\n\nInput: num1 = 1, num2 = 10, num3 = 1000\n\nOutput: 0\n\nExplanation:\n\nOn padding, num1 becomes \"0001\", num2 becomes \"0010\", and num3 remains \"1000\".\n\n\tThe 1st digit of the key is min(0, 0, 1).\n\tThe 2nd digit of the key is min(0, 0, 0).\n\tThe 3rd digit of the key is min(0, 1, 0).\n\tThe 4th digit of the key is min(1, 0, 0).\n\nHence, the key is \"0000\", i.e. 0.\n\nExample 2:\n\nInput: num1 = 987, num2 = 879, num3 = 798\n\nOutput: 777\n\nExample 3:\n\nInput: num1 = 1, num2 = 2, num3 = 3\n\nOutput: 1\n\n&nbsp;\nConstraints:\n\n\t1 <= num1, num2, num3 <= 9999\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.6 MB\n\n## Similar Problems\n\n- [Largest Number](https://leetcode.com/problems/largest-number/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-find-the-key-of-the-numbers/lc-find-the-key-of-the-numbers.py",
+          "content": "class Solution:\n    def generateKey(self, num1: int, num2: int, num3: int) -> str:\n        # nums = [str(num).zfill(4) for num in [num1, num2, num3]]\n        # key = ''.join(min(num[i] for num in nums) for i in range(4))\n        # return int(key)\n        return int(''.join(min(num[i] for num in [str(num).zfill(4) for num in [num1, num2, num3]]) for i in range(4)))\n"
+        },
+        {
+          "path": "problems/lc-find-the-key-of-the-numbers/README.md",
+          "content": "# Find the Key of the Numbers\n\n**Difficulty:** Easy  |  **Acceptance:** 76.5%\n\n**Tags:** `Math`\n\n## Problem\n\nYou are given three positive integers num1, num2, and num3.\n\nThe key of num1, num2, and num3 is defined as a four-digit number such that:\n\n\tInitially, if any number has less than four digits, it is padded with leading zeros.\n\tThe ith digit (1 <= i <= 4) of the key is generated by taking the smallest digit among the ith digits of num1, num2, and num3.\n\nReturn the key of the three numbers without leading zeros (if any).\n\n&nbsp;\nExample 1:\n\nInput: num1 = 1, num2 = 10, num3 = 1000\n\nOutput: 0\n\nExplanation:\n\nOn padding, num1 becomes \"0001\", num2 becomes \"0010\", and num3 remains \"1000\".\n\n\tThe 1st digit of the key is min(0, 0, 1).\n\tThe 2nd digit of the key is min(0, 0, 0).\n\tThe 3rd digit of the key is min(0, 1, 0).\n\tThe 4th digit of the key is min(1, 0, 0).\n\nHence, the key is \"0000\", i.e. 0.\n\nExample 2:\n\nInput: num1 = 987, num2 = 879, num3 = 798\n\nOutput: 777\n\nExample 3:\n\nInput: num1 = 1, num2 = 2, num3 = 3\n\nOutput: 1\n\n&nbsp;\nConstraints:\n\n\t1 <= num1, num2, num3 <= 9999\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.6 MB\n\n## Similar Problems\n\n- [Largest Number](https://leetcode.com/problems/largest-number/) — Medium\n"
+        }
+      ],
+      "timestamp": 1729536807000,
+      "runtime": "0 ms",
+      "memory": "16.6 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given three <strong>positive</strong> integers <code>num1</code>, <code>num2</code>, and <code>num3</code>.</p>\n\n<p>The <code>key</code> of <code>num1</code>, <code>num2</code>, and <code>num3</code> is defined as a four-digit number such that:</p>\n\n<ul>\n\t<li>Initially, if any number has <strong>less than</strong> four digits, it is padded with <strong>leading zeros</strong>.</li>\n\t<li>The <code>i<sup>th</sup></code> digit (<code>1 &lt;= i &lt;= 4</code>) of the <code>key</code> is generated by taking the <strong>smallest</strong> digit among the <code>i<sup>th</sup></code> digits of <code>num1</code>, <code>num2</code>, and <code>num3</code>.</li>\n</ul>\n\n<p>Return the <code>key</code> of the three numbers <strong>without</strong> leading zeros (<em>if any</em>).</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">num1 = 1, num2 = 10, num3 = 1000</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">0</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>On padding, <code>num1</code> becomes <code>&quot;0001&quot;</code>, <code>num2</code> becomes <code>&quot;0010&quot;</code>, and <code>num3</code> remains <code>&quot;1000&quot;</code>.</p>\n\n<ul>\n\t<li>The <code>1<sup>st</sup></code> digit of the <code>key</code> is <code>min(0, 0, 1)</code>.</li>\n\t<li>The <code>2<sup>nd</sup></code> digit of the <code>key</code> is <code>min(0, 0, 0)</code>.</li>\n\t<li>The <code>3<sup>rd</sup></code> digit of the <code>key</code> is <code>min(0, 1, 0)</code>.</li>\n\t<li>The <code>4<sup>th</sup></code> digit of the <code>key</code> is <code>min(1, 0, 0)</code>.</li>\n</ul>\n\n<p>Hence, the <code>key</code> is <code>&quot;0000&quot;</code>, i.e. 0.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">num1 = 987, num2 = 879, num3 = 798</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">777</span></p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">num1 = 1, num2 = 2, num3 = 3</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">1</span></p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= num1, num2, num3 &lt;= 9999</code></li>\n</ul>\n",
+      "hints": null,
+      "acRate": 76.52529177320973,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "largest-number",
+          "title": "Largest Number",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "isDuplicate": true,
+      "duplicateOf": "lc-find-the-key-of-the-numbers::1429656572"
+    },
+    {
+      "id": "lc-di-string-match",
+      "submissionId": 1429704924,
+      "platform": "leetcode",
+      "title": "DI String Match",
+      "titleSlug": "di-string-match",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Two Pointers",
+        "String",
+        "Greedy"
+      ],
+      "topic": "Greedy",
+      "code": "",
+      "readmeContent": "# DI String Match\n\n**Difficulty:** Easy  |  **Acceptance:** 81.0%\n\n**Tags:** `Array`, `Two Pointers`, `String`, `Greedy`\n\n## Problem\n\nA permutation perm of n + 1 integers of all the integers in the range [0, n] can be represented as a string s of length n where:\n\n\ts[i] == 'I' if perm[i] < perm[i + 1], and\n\ts[i] == 'D' if perm[i] > perm[i + 1].\n\nGiven a string s, reconstruct the permutation perm and return it. If there are multiple valid permutations perm, return any of them.\n\n&nbsp;\nExample 1:\nInput: s = \"IDID\"\nOutput: [0,4,1,3,2]\nExample 2:\nInput: s = \"III\"\nOutput: [0,1,2,3]\nExample 3:\nInput: s = \"DDI\"\nOutput: [3,2,0,1]\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 105\n\ts[i] is either 'I' or 'D'.\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 17.6 MB\n\n## Similar Problems\n\n- [Construct Smallest Number From DI String](https://leetcode.com/problems/construct-smallest-number-from-di-string/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/di-string-match/README.md",
+          "content": "# DI String Match\n\n**Difficulty:** Easy  |  **Acceptance:** 81.0%\n\n**Tags:** `Array`, `Two Pointers`, `String`, `Greedy`\n\n## Problem\n\nA permutation perm of n + 1 integers of all the integers in the range [0, n] can be represented as a string s of length n where:\n\n\ts[i] == 'I' if perm[i] < perm[i + 1], and\n\ts[i] == 'D' if perm[i] > perm[i + 1].\n\nGiven a string s, reconstruct the permutation perm and return it. If there are multiple valid permutations perm, return any of them.\n\n&nbsp;\nExample 1:\nInput: s = \"IDID\"\nOutput: [0,4,1,3,2]\nExample 2:\nInput: s = \"III\"\nOutput: [0,1,2,3]\nExample 3:\nInput: s = \"DDI\"\nOutput: [3,2,0,1]\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 105\n\ts[i] is either 'I' or 'D'.\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 17.6 MB\n\n## Similar Problems\n\n- [Construct Smallest Number From DI String](https://leetcode.com/problems/construct-smallest-number-from-di-string/) — Medium\n"
+        }
+      ],
+      "timestamp": 1729540191000,
+      "runtime": "3 ms",
+      "memory": "17.6 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<p>A permutation <code>perm</code> of <code>n + 1</code> integers of all the integers in the range <code>[0, n]</code> can be represented as a string <code>s</code> of length <code>n</code> where:</p>\n\n<ul>\n\t<li><code>s[i] == &#39;I&#39;</code> if <code>perm[i] &lt; perm[i + 1]</code>, and</li>\n\t<li><code>s[i] == &#39;D&#39;</code> if <code>perm[i] &gt; perm[i + 1]</code>.</li>\n</ul>\n\n<p>Given a string <code>s</code>, reconstruct the permutation <code>perm</code> and return it. If there are multiple valid permutations perm, return <strong>any of them</strong>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<pre><strong>Input:</strong> s = \"IDID\"\n<strong>Output:</strong> [0,4,1,3,2]\n</pre><p><strong class=\"example\">Example 2:</strong></p>\n<pre><strong>Input:</strong> s = \"III\"\n<strong>Output:</strong> [0,1,2,3]\n</pre><p><strong class=\"example\">Example 3:</strong></p>\n<pre><strong>Input:</strong> s = \"DDI\"\n<strong>Output:</strong> [3,2,0,1]\n</pre>\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>s[i]</code> is either <code>&#39;I&#39;</code> or <code>&#39;D&#39;</code>.</li>\n</ul>\n",
+      "hints": [],
+      "acRate": 81.04698577452389,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "construct-smallest-number-from-di-string",
+          "title": "Construct Smallest Number From DI String",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-maximum-count-of-positive-integer-and-negative-integer::1429718786",
+      "submissionId": 1429718786,
+      "platform": "leetcode",
+      "title": "Maximum Count of Positive Integer and Negative Integer",
+      "titleSlug": "maximum-count-of-positive-integer-and-negative-integer",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "slug": "python3",
+        "ext": "py"
+      },
+      "tags": [
+        "Array",
+        "Binary Search",
+        "Counting"
+      ],
+      "topic": "Binary Search",
+      "code": "class Solution:\n    def maximumCount(self, nums: List[int]) -> int:\n        # l = len(nums)\n        # if nums[0] > 0 or nums[-1] < 0:\n        #     return l\n\n        # pos = 0\n        # neg = 0\n        # for i in range(l):\n        #     if nums[i] < 0:\n        #         continue\n        #     neg = i\n        #     if neg > l/2:\n        #         return neg\n\n        #     break\n        \n        # for i in range(neg+1, l):\n        #     if nums[i] == 0:\n        #         continue\n        # pos = l - i\n        # return max(neg, pos)\n\n        neg_count = sum(1 for num in nums if num < 0)\n        pos_count = sum(1 for num in nums if num > 0)\n\n        return max(neg_count, pos_count)",
+      "readmeContent": "# Maximum Count of Positive Integer and Negative Integer\n\n**Difficulty:** Easy  |  **Acceptance:** 74.3%\n\n**Tags:** `Array`, `Binary Search`, `Counting`\n\n## Problem\n\nGiven an array nums sorted in non-decreasing order, return the maximum between the number of positive integers and the number of negative integers.\n\n\tIn other words, if the number of positive integers in nums is pos and the number of negative integers is neg, then return the maximum of pos and neg.\n\nNote that 0 is neither positive nor negative.\n\n&nbsp;\nExample 1:\n\nInput: nums = [-2,-1,-1,1,2,3]\nOutput: 3\nExplanation: There are 3 positive integers and 3 negative integers. The maximum count among them is 3.\n\nExample 2:\n\nInput: nums = [-3,-2,-1,0,0,1,2]\nOutput: 3\nExplanation: There are 2 positive integers and 3 negative integers. The maximum count among them is 3.\n\nExample 3:\n\nInput: nums = [5,20,66,1314]\nOutput: 4\nExplanation: There are 4 positive integers and 0 negative integers. The maximum count among them is 4.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 2000\n\t-2000 <= nums[i] <= 2000\n\tnums is sorted in a non-decreasing order.\n\n&nbsp;\nFollow up: Can you solve the problem in O(log(n)) time complexity?\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 16.8 MB\n\n## Similar Problems\n\n- [Binary Search](https://leetcode.com/problems/binary-search/) — Easy\n- [Count Negative Numbers in a Sorted Matrix](https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-maximum-count-of-positive-integer-and-negative-integer/README.md",
+          "content": "# Maximum Count of Positive Integer and Negative Integer\n\n**Difficulty:** Easy  |  **Acceptance:** 74.3%\n\n**Tags:** `Array`, `Binary Search`, `Counting`\n\n## Problem\n\nGiven an array nums sorted in non-decreasing order, return the maximum between the number of positive integers and the number of negative integers.\n\n\tIn other words, if the number of positive integers in nums is pos and the number of negative integers is neg, then return the maximum of pos and neg.\n\nNote that 0 is neither positive nor negative.\n\n&nbsp;\nExample 1:\n\nInput: nums = [-2,-1,-1,1,2,3]\nOutput: 3\nExplanation: There are 3 positive integers and 3 negative integers. The maximum count among them is 3.\n\nExample 2:\n\nInput: nums = [-3,-2,-1,0,0,1,2]\nOutput: 3\nExplanation: There are 2 positive integers and 3 negative integers. The maximum count among them is 3.\n\nExample 3:\n\nInput: nums = [5,20,66,1314]\nOutput: 4\nExplanation: There are 4 positive integers and 0 negative integers. The maximum count among them is 4.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 2000\n\t-2000 <= nums[i] <= 2000\n\tnums is sorted in a non-decreasing order.\n\n&nbsp;\nFollow up: Can you solve the problem in O(log(n)) time complexity?\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 16.8 MB\n\n## Similar Problems\n\n- [Binary Search](https://leetcode.com/problems/binary-search/) — Easy\n- [Count Negative Numbers in a Sorted Matrix](https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/) — Easy\n"
+        }
+      ],
+      "timestamp": 1729541320000,
+      "runtime": "3 ms",
+      "memory": "16.8 MB",
+      "runtimePct": 32,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an array <code>nums</code> sorted in <strong>non-decreasing</strong> order, return <em>the maximum between the number of positive integers and the number of negative integers.</em></p>\n\n<ul>\n\t<li>In other words, if the number of positive integers in <code>nums</code> is <code>pos</code> and the number of negative integers is <code>neg</code>, then return the maximum of <code>pos</code> and <code>neg</code>.</li>\n</ul>\n\n<p><strong>Note</strong> that <code>0</code> is neither positive nor negative.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [-2,-1,-1,1,2,3]\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> There are 3 positive integers and 3 negative integers. The maximum count among them is 3.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [-3,-2,-1,0,0,1,2]\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> There are 2 positive integers and 3 negative integers. The maximum count among them is 3.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [5,20,66,1314]\n<strong>Output:</strong> 4\n<strong>Explanation:</strong> There are 4 positive integers and 0 negative integers. The maximum count among them is 4.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 2000</code></li>\n\t<li><code>-2000 &lt;= nums[i] &lt;= 2000</code></li>\n\t<li><code>nums</code> is sorted in a <strong>non-decreasing order</strong>.</li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Follow up:</strong> Can you solve the problem in <code>O(log(n))</code> time complexity?</p>\n",
+      "hints": [
+        "Count how many positive integers and negative integers are in the array.",
+        "Since the array is sorted, can we use the binary search?"
+      ],
+      "acRate": 74.28352300740774,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "binary-search",
+          "title": "Binary Search",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "count-negative-numbers-in-a-sorted-matrix",
+          "title": "Count Negative Numbers in a Sorted Matrix",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-two-sum::1430566383",
+      "submissionId": 1430566383,
+      "platform": "leetcode",
+      "title": "Two Sum",
+      "titleSlug": "two-sum",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Hash Table"
+      ],
+      "topic": "Hash Table",
+      "code": "class Solution:\n    def twoSum(self, nums: List[int], target: int) -> List[int]:\n        num_to_index = {}\n        for i, num in enumerate(nums):\n            complement = target - num\n            if complement in num_to_index:\n                return [num_to_index[complement], i]\n            num_to_index[num] = i\n        return []",
+      "readmeContent": "# Two Sum\n\n**Difficulty:** Easy  |  **Acceptance:** 57.5%\n\n**Tags:** `Array`, `Hash Table`\n\n## Problem\n\nGiven an array of integers nums&nbsp;and an integer target, return indices of the two numbers such that they add up to target.\n\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\nYou can return the answer in any order.\n\n&nbsp;\nExample 1:\n\nInput: nums = [2,7,11,15], target = 9\nOutput: [0,1]\nExplanation: Because nums[0] + nums[1] == 9, we return [0, 1].\n\nExample 2:\n\nInput: nums = [3,2,4], target = 6\nOutput: [1,2]\n\nExample 3:\n\nInput: nums = [3,3], target = 6\nOutput: [0,1]\n\n&nbsp;\nConstraints:\n\n\t2 <= nums.length <= 104\n\t-109 <= nums[i] <= 109\n\t-109 <= target <= 109\n\tOnly one valid answer exists.\n\n&nbsp;\nFollow-up:&nbsp;Can you come up with an algorithm that is less than O(n2)&nbsp;time complexity?\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.9 MB\n\n## Similar Problems\n\n- [3Sum](https://leetcode.com/problems/3sum/) — Medium\n- [4Sum](https://leetcode.com/problems/4sum/) — Medium\n- [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/) — Medium\n- [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) — Medium\n- [Two Sum IV - Input is a BST](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-two-sum/lc-two-sum.py",
+          "content": "class Solution:\n    def twoSum(self, nums: List[int], target: int) -> List[int]:\n        num_to_index = {}\n        for i, num in enumerate(nums):\n            complement = target - num\n            if complement in num_to_index:\n                return [num_to_index[complement], i]\n            num_to_index[num] = i\n        return []"
+        },
+        {
+          "path": "problems/lc-two-sum/README.md",
+          "content": "# Two Sum\n\n**Difficulty:** Easy  |  **Acceptance:** 57.5%\n\n**Tags:** `Array`, `Hash Table`\n\n## Problem\n\nGiven an array of integers nums&nbsp;and an integer target, return indices of the two numbers such that they add up to target.\n\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\nYou can return the answer in any order.\n\n&nbsp;\nExample 1:\n\nInput: nums = [2,7,11,15], target = 9\nOutput: [0,1]\nExplanation: Because nums[0] + nums[1] == 9, we return [0, 1].\n\nExample 2:\n\nInput: nums = [3,2,4], target = 6\nOutput: [1,2]\n\nExample 3:\n\nInput: nums = [3,3], target = 6\nOutput: [0,1]\n\n&nbsp;\nConstraints:\n\n\t2 <= nums.length <= 104\n\t-109 <= nums[i] <= 109\n\t-109 <= target <= 109\n\tOnly one valid answer exists.\n\n&nbsp;\nFollow-up:&nbsp;Can you come up with an algorithm that is less than O(n2)&nbsp;time complexity?\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.9 MB\n\n## Similar Problems\n\n- [3Sum](https://leetcode.com/problems/3sum/) — Medium\n- [4Sum](https://leetcode.com/problems/4sum/) — Medium\n- [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/) — Medium\n- [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) — Medium\n- [Two Sum IV - Input is a BST](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/) — Easy\n"
+        }
+      ],
+      "timestamp": 1729613082000,
+      "runtime": "0 ms",
+      "memory": "17.9 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an array of integers <code>nums</code>&nbsp;and an integer <code>target</code>, return <em>indices of the two numbers such that they add up to <code>target</code></em>.</p>\n\n<p>You may assume that each input would have <strong><em>exactly</em> one solution</strong>, and you may not use the <em>same</em> element twice.</p>\n\n<p>You can return the answer in any order.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [2,7,11,15], target = 9\n<strong>Output:</strong> [0,1]\n<strong>Explanation:</strong> Because nums[0] + nums[1] == 9, we return [0, 1].\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [3,2,4], target = 6\n<strong>Output:</strong> [1,2]\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [3,3], target = 6\n<strong>Output:</strong> [0,1]\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>2 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>\n\t<li><code>-10<sup>9</sup> &lt;= target &lt;= 10<sup>9</sup></code></li>\n\t<li><strong>Only one valid answer exists.</strong></li>\n</ul>\n\n<p>&nbsp;</p>\n<strong>Follow-up:&nbsp;</strong>Can you come up with an algorithm that is less than <code>O(n<sup>2</sup>)</code><font face=\"monospace\">&nbsp;</font>time complexity?",
+      "hints": [
+        "A really brute force way would be to search for all possible pairs of numbers but that would be too slow. Again, it's best to try out brute force solutions just for completeness. It is from these brute force solutions that you can come up with optimizations.",
+        "So, if we fix one of the numbers, say <code>x</code>, we have to scan the entire array to find the next number <code>y</code> which is <code>value - x</code> where value is the input parameter. Can we change our array somehow so that this search becomes faster?",
+        "The second train of thought is, without changing the array, can we use additional space somehow? Like maybe a hash map to speed up the search?"
+      ],
+      "acRate": 57.46184661559871,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "3sum",
+          "title": "3Sum",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "4sum",
+          "title": "4Sum",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "two-sum-ii-input-array-is-sorted",
+          "title": "Two Sum II - Input Array Is Sorted",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "subarray-sum-equals-k",
+          "title": "Subarray Sum Equals K",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "two-sum-iv-input-is-a-bst",
+          "title": "Two Sum IV - Input is a BST",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "max-number-of-k-sum-pairs",
+          "title": "Max Number of K-Sum Pairs",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "count-good-meals",
+          "title": "Count Good Meals",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "count-number-of-pairs-with-absolute-difference-k",
+          "title": "Count Number of Pairs With Absolute Difference K",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "number-of-pairs-of-strings-with-concatenation-equal-to-target",
+          "title": "Number of Pairs of Strings With Concatenation Equal to Target",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "find-all-k-distant-indices-in-an-array",
+          "title": "Find All K-Distant Indices in an Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "first-letter-to-appear-twice",
+          "title": "First Letter to Appear Twice",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "number-of-excellent-pairs",
+          "title": "Number of Excellent Pairs",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "number-of-arithmetic-triplets",
+          "title": "Number of Arithmetic Triplets",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "node-with-highest-edge-score",
+          "title": "Node With Highest Edge Score",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "check-distances-between-same-letters",
+          "title": "Check Distances Between Same Letters",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "find-subarrays-with-equal-sum",
+          "title": "Find Subarrays With Equal Sum",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "largest-positive-integer-that-exists-with-its-negative",
+          "title": "Largest Positive Integer That Exists With Its Negative",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "number-of-distinct-averages",
+          "title": "Number of Distinct Averages",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "count-pairs-whose-sum-is-less-than-target",
+          "title": "Count Pairs Whose Sum is Less than Target",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-longest-palindromic-substring::1431797796",
+      "submissionId": 1431797796,
+      "platform": "leetcode",
+      "title": "Longest Palindromic Substring",
+      "titleSlug": "longest-palindromic-substring",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Two Pointers",
+        "String",
+        "Dynamic Programming"
+      ],
+      "topic": "Dynamic Programming",
+      "code": "class Solution:\n    def longestPalindrome(self, s: str) -> str:\n        if len(s) <= 1:\n            return s\n        \n        Max_Len=1\n        Max_Str=s[0]\n        dp = [[False for _ in range(len(s))] for _ in range(len(s))]\n        for i in range(len(s)):\n            dp[i][i] = True\n            for j in range(i):\n                if s[j] == s[i] and (i-j <= 2 or dp[j+1][i-1]):\n                    dp[j][i] = True\n                    if i-j+1 > Max_Len:\n                        Max_Len = i-j+1\n                        Max_Str = s[j:i+1]\n        return Max_Str",
+      "readmeContent": "# Longest Palindromic Substring\n\n**Difficulty:** Medium  |  **Acceptance:** 37.8%\n\n**Tags:** `Two Pointers`, `String`, `Dynamic Programming`\n\n## Problem\n\nGiven a string s, return the longest palindromic substring in s.\n\n&nbsp;\nExample 1:\n\nInput: s = \"babad\"\nOutput: \"bab\"\nExplanation: \"aba\" is also a valid answer.\n\nExample 2:\n\nInput: s = \"cbbd\"\nOutput: \"bb\"\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 1000\n\ts consist of only digits and English letters.\n\n## My Submission\n\n- Runtime: 2275 ms\n- Memory: 25.1 MB\n\n## Similar Problems\n\n- [Shortest Palindrome](https://leetcode.com/problems/shortest-palindrome/) — Hard\n- [Palindrome Pairs](https://leetcode.com/problems/palindrome-pairs/) — Hard\n- [Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence/) — Medium\n- [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/) — Medium\n- [Maximum Number of Non-overlapping Palindrome Substrings](https://leetcode.com/problems/maximum-number-of-non-overlapping-palindrome-substrings/) — Hard\n",
+      "files": [
+        {
+          "path": "problems/lc-longest-palindromic-substring/lc-longest-palindromic-substring.py",
+          "content": "class Solution:\n    def longestPalindrome(self, s: str) -> str:\n        if len(s) <= 1:\n            return s\n        \n        Max_Len=1\n        Max_Str=s[0]\n        dp = [[False for _ in range(len(s))] for _ in range(len(s))]\n        for i in range(len(s)):\n            dp[i][i] = True\n            for j in range(i):\n                if s[j] == s[i] and (i-j <= 2 or dp[j+1][i-1]):\n                    dp[j][i] = True\n                    if i-j+1 > Max_Len:\n                        Max_Len = i-j+1\n                        Max_Str = s[j:i+1]\n        return Max_Str"
+        },
+        {
+          "path": "problems/lc-longest-palindromic-substring/README.md",
+          "content": "# Longest Palindromic Substring\n\n**Difficulty:** Medium  |  **Acceptance:** 37.8%\n\n**Tags:** `Two Pointers`, `String`, `Dynamic Programming`\n\n## Problem\n\nGiven a string s, return the longest palindromic substring in s.\n\n&nbsp;\nExample 1:\n\nInput: s = \"babad\"\nOutput: \"bab\"\nExplanation: \"aba\" is also a valid answer.\n\nExample 2:\n\nInput: s = \"cbbd\"\nOutput: \"bb\"\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 1000\n\ts consist of only digits and English letters.\n\n## My Submission\n\n- Runtime: 2275 ms\n- Memory: 25.1 MB\n\n## Similar Problems\n\n- [Shortest Palindrome](https://leetcode.com/problems/shortest-palindrome/) — Hard\n- [Palindrome Pairs](https://leetcode.com/problems/palindrome-pairs/) — Hard\n- [Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence/) — Medium\n- [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/) — Medium\n- [Maximum Number of Non-overlapping Palindrome Substrings](https://leetcode.com/problems/maximum-number-of-non-overlapping-palindrome-substrings/) — Hard\n"
+        }
+      ],
+      "timestamp": 1729713153000,
+      "runtime": "2275 ms",
+      "memory": "25.1 MB",
+      "runtimePct": 19.36370000000023,
+      "memoryPct": 13.843799999999993,
+      "problemStatement": "<p>Given a string <code>s</code>, return <em>the longest</em> <span data-keyword=\"palindromic-string\"><em>palindromic</em></span> <span data-keyword=\"substring-nonempty\"><em>substring</em></span> in <code>s</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;babad&quot;\n<strong>Output:</strong> &quot;bab&quot;\n<strong>Explanation:</strong> &quot;aba&quot; is also a valid answer.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;cbbd&quot;\n<strong>Output:</strong> &quot;bb&quot;\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 1000</code></li>\n\t<li><code>s</code> consist of only digits and English letters.</li>\n</ul>\n",
+      "hints": [
+        "How can we reuse a previously computed palindrome to compute a larger palindrome?",
+        "If “aba” is a palindrome, is “xabax” a palindrome? Similarly is “xabay” a palindrome?",
+        "Complexity based hint:</br>\r\nIf we use brute-force and check whether for every start and end position a substring is a palindrome we have O(n^2) start - end pairs and O(n) palindromic checks. Can we reduce the time for palindromic checks to O(1) by reusing some previous computation."
+      ],
+      "acRate": 37.79887719195224,
+      "similar": [
+        {
+          "difficulty": "Hard",
+          "titleSlug": "shortest-palindrome",
+          "title": "Shortest Palindrome",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "palindrome-pairs",
+          "title": "Palindrome Pairs",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "longest-palindromic-subsequence",
+          "title": "Longest Palindromic Subsequence",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "palindromic-substrings",
+          "title": "Palindromic Substrings",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "maximum-number-of-non-overlapping-palindrome-substrings",
+          "title": "Maximum Number of Non-overlapping Palindrome Substrings",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "conflictPending": false,
+      "methods": [
+        {
+          "title": "Alt approach (Python3)",
+          "language": "Python3",
+          "code": "class Solution:\n    def longestPalindrome(self, s: str) -> str:\n        n = len(s)\n        if n <= 1:\n            return s\n\n        start, max_len = 0, 1\n        dp = [[False] * n for _ in range(n)]\n\n        for i in range(n):\n            dp[i][i] = True\n\n        for i in range(n - 1, -1, -1):\n            for j in range(i + 1, n):\n                if s[i] == s[j] and (j - i <= 2 or dp[i + 1][j - 1]):\n                    dp[i][j] = True\n                    if j - i + 1 > max_len:\n                        start = i\n                        max_len = j - i + 1\n\n        return s[start:start + max_len]\n",
+          "description": "Duplicate resolved — 24 Oct 2024",
+          "timestamp": 1729714837000
+        }
+      ]
+    },
+    {
+      "id": "lc-create-hello-world-function",
+      "submissionId": 1431819419,
+      "platform": "leetcode",
+      "title": "Create Hello World Function",
+      "titleSlug": "create-hello-world-function",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "JavaScript",
+        "ext": "js",
+        "slug": "javascript"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "readmeContent": "# Create Hello World Function\n\n**Difficulty:** Easy  |  **Acceptance:** 81.9%\n\n**Tags:** —\n\n## Problem\n\nWrite a function&nbsp;createHelloWorld.&nbsp;It should return a new function that always returns&nbsp;\"Hello World\".\n&nbsp;\nExample 1:\n\nInput: args = []\nOutput: \"Hello World\"\nExplanation:\nconst f = createHelloWorld();\nf(); // \"Hello World\"\n\nThe function returned by createHelloWorld should always return \"Hello World\".\n\nExample 2:\n\nInput: args = [{},null,42]\nOutput: \"Hello World\"\nExplanation:\nconst f = createHelloWorld();\nf({}, null, 42); // \"Hello World\"\n\nAny arguments could be passed to the function but it should still always return \"Hello World\".\n\n&nbsp;\nConstraints:\n\n\t0 <= args.length <= 10\n\n## My Submission\n\n- Runtime: 55 ms\n- Memory: 49 MB\n",
+      "files": [
+        {
+          "path": "problems/create-hello-world-function/README.md",
+          "content": "# Create Hello World Function\n\n**Difficulty:** Easy  |  **Acceptance:** 81.9%\n\n**Tags:** —\n\n## Problem\n\nWrite a function&nbsp;createHelloWorld.&nbsp;It should return a new function that always returns&nbsp;\"Hello World\".\n&nbsp;\nExample 1:\n\nInput: args = []\nOutput: \"Hello World\"\nExplanation:\nconst f = createHelloWorld();\nf(); // \"Hello World\"\n\nThe function returned by createHelloWorld should always return \"Hello World\".\n\nExample 2:\n\nInput: args = [{},null,42]\nOutput: \"Hello World\"\nExplanation:\nconst f = createHelloWorld();\nf({}, null, 42); // \"Hello World\"\n\nAny arguments could be passed to the function but it should still always return \"Hello World\".\n\n&nbsp;\nConstraints:\n\n\t0 <= args.length <= 10\n\n## My Submission\n\n- Runtime: 55 ms\n- Memory: 49 MB\n"
+        }
+      ],
+      "timestamp": 1729715118000,
+      "runtime": "55 ms",
+      "memory": "49 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "Write a function&nbsp;<code>createHelloWorld</code>.&nbsp;It should return a new function that always returns&nbsp;<code>&quot;Hello World&quot;</code>.\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> args = []\n<strong>Output:</strong> &quot;Hello World&quot;\n<strong>Explanation:</strong>\nconst f = createHelloWorld();\nf(); // &quot;Hello World&quot;\n\nThe function returned by createHelloWorld should always return &quot;Hello World&quot;.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> args = [{},null,42]\n<strong>Output:</strong> &quot;Hello World&quot;\n<strong>Explanation:</strong>\nconst f = createHelloWorld();\nf({}, null, 42); // &quot;Hello World&quot;\n\nAny arguments could be passed to the function but it should still always return &quot;Hello World&quot;.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>0 &lt;= args.length &lt;= 10</code></li>\n</ul>\n",
+      "hints": [],
+      "acRate": 81.90821597015821,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-create-a-dataframe-from-list",
+      "submissionId": 1431821352,
+      "platform": "leetcode",
+      "title": "Create a DataFrame from List",
+      "titleSlug": "create-a-dataframe-from-list",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "pythondata",
+        "ext": "txt",
+        "slug": "pythondata"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "readmeContent": "# Create a DataFrame from List\n\n**Difficulty:** Easy  |  **Acceptance:** 81.0%\n\n**Tags:** —\n\n## Problem\n\nWrite a solution to create a DataFrame from a 2D list called student_data. This 2D list contains the IDs and ages of some students.\n\nThe DataFrame should have two columns, student_id and age, and be in the same order as the original 2D list.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\nstudent_data:\n[\n  [1, 15],\n  [2, 11],\n  [3, 11],\n  [4, 20]\n]\nOutput:\n+------------+-----+\n| student_id | age |\n+------------+-----+\n| 1          | 15  |\n| 2          | 11  |\n| 3          | 11  |\n| 4          | 20  |\n+------------+-----+\nExplanation:\nA DataFrame was created on top of student_data, with two columns named student_id and age.\n\n## My Submission\n\n- Runtime: 390 ms\n- Memory: 68.5 MB\n",
+      "files": [
+        {
+          "path": "problems/create-a-dataframe-from-list/README.md",
+          "content": "# Create a DataFrame from List\n\n**Difficulty:** Easy  |  **Acceptance:** 81.0%\n\n**Tags:** —\n\n## Problem\n\nWrite a solution to create a DataFrame from a 2D list called student_data. This 2D list contains the IDs and ages of some students.\n\nThe DataFrame should have two columns, student_id and age, and be in the same order as the original 2D list.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\nstudent_data:\n[\n  [1, 15],\n  [2, 11],\n  [3, 11],\n  [4, 20]\n]\nOutput:\n+------------+-----+\n| student_id | age |\n+------------+-----+\n| 1          | 15  |\n| 2          | 11  |\n| 3          | 11  |\n| 4          | 20  |\n+------------+-----+\nExplanation:\nA DataFrame was created on top of student_data, with two columns named student_id and age.\n\n## My Submission\n\n- Runtime: 390 ms\n- Memory: 68.5 MB\n"
+        }
+      ],
+      "timestamp": 1729715291000,
+      "runtime": "390 ms",
+      "memory": "68.5 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<p>Write a solution to <strong>create</strong> a DataFrame from a 2D list called <code>student_data</code>. This 2D list contains the IDs and ages of some students.</p>\n\n<p>The DataFrame should have two columns, <code>student_id</code> and <code>age</code>, and be in the same order as the original 2D list.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:\n</strong>student_data:<strong>\n</strong><code>[\n  [1, 15],\n  [2, 11],\n  [3, 11],\n  [4, 20]\n]</code>\n<strong>Output:</strong>\n+------------+-----+\n| student_id | age |\n+------------+-----+\n| 1          | 15  |\n| 2          | 11  |\n| 3          | 11  |\n| 4          | 20  |\n+------------+-----+\n<strong>Explanation:</strong>\nA DataFrame was created on top of student_data, with two columns named <code>student_id</code> and <code>age</code>.\n</pre>\n",
+      "hints": [
+        "Consider using a built-in function in pandas library and specifying the column names within it."
+      ],
+      "acRate": 80.97881604821615,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-create-a-dataframe-from-list::1431821352",
+      "submissionId": 1431821352,
+      "platform": "leetcode",
+      "title": "Create a DataFrame from List",
+      "titleSlug": "create-a-dataframe-from-list",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Pandas",
+        "slug": "python",
+        "ext": "py"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "import pandas as pd\n\ndef createDataframe(student_data: List[List[int]]) -> pd.DataFrame:\n    return pd.DataFrame(student_data, columns = [\"student_id\", \"age\"])",
+      "readmeContent": "# Create a DataFrame from List\n\n**Difficulty:** Easy  |  **Acceptance:** 81.0%\n\n**Tags:** —\n\n## Problem\n\nWrite a solution to create a DataFrame from a 2D list called student_data. This 2D list contains the IDs and ages of some students.\n\nThe DataFrame should have two columns, student_id and age, and be in the same order as the original 2D list.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\nstudent_data:\n[\n  [1, 15],\n  [2, 11],\n  [3, 11],\n  [4, 20]\n]\nOutput:\n+------------+-----+\n| student_id | age |\n+------------+-----+\n| 1          | 15  |\n| 2          | 11  |\n| 3          | 11  |\n| 4          | 20  |\n+------------+-----+\nExplanation:\nA DataFrame was created on top of student_data, with two columns named student_id and age.\n\n## My Submission\n\n- Runtime: 390 ms\n- Memory: 68.5 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-create-a-dataframe-from-list/README.md",
+          "content": "# Create a DataFrame from List\n\n**Difficulty:** Easy  |  **Acceptance:** 81.0%\n\n**Tags:** —\n\n## Problem\n\nWrite a solution to create a DataFrame from a 2D list called student_data. This 2D list contains the IDs and ages of some students.\n\nThe DataFrame should have two columns, student_id and age, and be in the same order as the original 2D list.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\nstudent_data:\n[\n  [1, 15],\n  [2, 11],\n  [3, 11],\n  [4, 20]\n]\nOutput:\n+------------+-----+\n| student_id | age |\n+------------+-----+\n| 1          | 15  |\n| 2          | 11  |\n| 3          | 11  |\n| 4          | 20  |\n+------------+-----+\nExplanation:\nA DataFrame was created on top of student_data, with two columns named student_id and age.\n\n## My Submission\n\n- Runtime: 390 ms\n- Memory: 68.5 MB\n"
+        }
+      ],
+      "timestamp": 1729715291000,
+      "runtime": "390 ms",
+      "memory": "68.5 MB",
+      "runtimePct": 5,
+      "memoryPct": 5,
+      "problemStatement": "<p>Write a solution to <strong>create</strong> a DataFrame from a 2D list called <code>student_data</code>. This 2D list contains the IDs and ages of some students.</p>\n\n<p>The DataFrame should have two columns, <code>student_id</code> and <code>age</code>, and be in the same order as the original 2D list.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:\n</strong>student_data:<strong>\n</strong><code>[\n  [1, 15],\n  [2, 11],\n  [3, 11],\n  [4, 20]\n]</code>\n<strong>Output:</strong>\n+------------+-----+\n| student_id | age |\n+------------+-----+\n| 1          | 15  |\n| 2          | 11  |\n| 3          | 11  |\n| 4          | 20  |\n+------------+-----+\n<strong>Explanation:</strong>\nA DataFrame was created on top of student_data, with two columns named <code>student_id</code> and <code>age</code>.\n</pre>\n",
+      "hints": [
+        "Consider using a built-in function in pandas library and specifying the column names within it."
+      ],
+      "acRate": 80.96855954708427,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-get-the-size-of-a-dataframe",
+      "submissionId": 1431822442,
+      "platform": "leetcode",
+      "title": "Get the Size of a DataFrame",
+      "titleSlug": "get-the-size-of-a-dataframe",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "pythondata",
+        "ext": "txt",
+        "slug": "pythondata"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "readmeContent": "# Get the Size of a DataFrame\n\n**Difficulty:** Easy  |  **Acceptance:** 84.8%\n\n**Tags:** —\n\n## Problem\n\nDataFrame players:\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| player_id   | int    |\n| name        | object |\n| age         | int    |\n| position    | object |\n| ...         | ...    |\n+-------------+--------+\n\nWrite a solution to calculate and display the number of rows and columns of players.\n\nReturn the result as an array:\n\n[number of rows, number of columns]\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\n+-----------+----------+-----+-------------+--------------------+\n| player_id | name     | age | position    | team               |\n+-----------+----------+-----+-------------+--------------------+\n| 846       | Mason    | 21  | Forward     | RealMadrid         |\n| 749       | Riley    | 30  | Winger      | Barcelona          |\n| 155       | Bob      | 28  | Striker     | ManchesterUnited   |\n| 583       | Isabella | 32  | Goalkeeper  | Liverpool          |\n| 388       | Zachary  | 24  | Midfielder  | BayernMunich       |\n| 883       | Ava      | 23  | Defender    | Chelsea            |\n| 355       | Violet   | 18  | Striker     | Juventus           |\n| 247       | Thomas   | 27  | Striker     | ParisSaint-Germain |\n| 761       | Jack     | 33  | Midfielder  | ManchesterCity     |\n| 642       | Charlie  | 36  | Center-back | Arsenal            |\n+-----------+----------+-----+-------------+--------------------+\nOutput:\n[10, 5]\nExplanation:\nThis DataFrame contains 10 rows and 5 columns.\n\n## My Submission\n\n- Runtime: 356 ms\n- Memory: 68.8 MB\n",
+      "files": [
+        {
+          "path": "problems/get-the-size-of-a-dataframe/README.md",
+          "content": "# Get the Size of a DataFrame\n\n**Difficulty:** Easy  |  **Acceptance:** 84.8%\n\n**Tags:** —\n\n## Problem\n\nDataFrame players:\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| player_id   | int    |\n| name        | object |\n| age         | int    |\n| position    | object |\n| ...         | ...    |\n+-------------+--------+\n\nWrite a solution to calculate and display the number of rows and columns of players.\n\nReturn the result as an array:\n\n[number of rows, number of columns]\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\n+-----------+----------+-----+-------------+--------------------+\n| player_id | name     | age | position    | team               |\n+-----------+----------+-----+-------------+--------------------+\n| 846       | Mason    | 21  | Forward     | RealMadrid         |\n| 749       | Riley    | 30  | Winger      | Barcelona          |\n| 155       | Bob      | 28  | Striker     | ManchesterUnited   |\n| 583       | Isabella | 32  | Goalkeeper  | Liverpool          |\n| 388       | Zachary  | 24  | Midfielder  | BayernMunich       |\n| 883       | Ava      | 23  | Defender    | Chelsea            |\n| 355       | Violet   | 18  | Striker     | Juventus           |\n| 247       | Thomas   | 27  | Striker     | ParisSaint-Germain |\n| 761       | Jack     | 33  | Midfielder  | ManchesterCity     |\n| 642       | Charlie  | 36  | Center-back | Arsenal            |\n+-----------+----------+-----+-------------+--------------------+\nOutput:\n[10, 5]\nExplanation:\nThis DataFrame contains 10 rows and 5 columns.\n\n## My Submission\n\n- Runtime: 356 ms\n- Memory: 68.8 MB\n"
+        }
+      ],
+      "timestamp": 1729715393000,
+      "runtime": "356 ms",
+      "memory": "68.8 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<pre>\nDataFrame <code>players:</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| player_id   | int    |\n| name        | object |\n| age         | int    |\n| position    | object |\n| ...         | ...    |\n+-------------+--------+\n</pre>\n\n<p>Write a solution to calculate and display the <strong>number of rows and columns</strong> of <code>players</code>.</p>\n\n<p>Return the result as an array:</p>\n\n<p><code>[number of rows, number of columns]</code></p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:\n</strong>+-----------+----------+-----+-------------+--------------------+\n| player_id | name     | age | position    | team               |\n+-----------+----------+-----+-------------+--------------------+\n| 846       | Mason    | 21  | Forward     | RealMadrid         |\n| 749       | Riley    | 30  | Winger      | Barcelona          |\n| 155       | Bob      | 28  | Striker     | ManchesterUnited   |\n| 583       | Isabella | 32  | Goalkeeper  | Liverpool          |\n| 388       | Zachary  | 24  | Midfielder  | BayernMunich       |\n| 883       | Ava      | 23  | Defender    | Chelsea            |\n| 355       | Violet   | 18  | Striker     | Juventus           |\n| 247       | Thomas   | 27  | Striker     | ParisSaint-Germain |\n| 761       | Jack     | 33  | Midfielder  | ManchesterCity     |\n| 642       | Charlie  | 36  | Center-back | Arsenal            |\n+-----------+----------+-----+-------------+--------------------+<strong>\nOutput:\n</strong>[10, 5]\n<strong>Explanation:</strong>\nThis DataFrame contains 10 rows and 5 columns.\n</pre>\n",
+      "hints": [
+        "Consider using a built-in function in pandas library to get the size of a DataFrame."
+      ],
+      "acRate": 84.81466105720877,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-get-the-size-of-a-dataframe::1431822442",
+      "submissionId": 1431822442,
+      "platform": "leetcode",
+      "title": "Get the Size of a DataFrame",
+      "titleSlug": "get-the-size-of-a-dataframe",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python",
+        "ext": "py",
+        "slug": "python"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "import pandas as pd\n\ndef getDataframeSize(players: pd.DataFrame) -> List[int]:\n    return list(players.shape)",
+      "readmeContent": "# Get the Size of a DataFrame\n\n**Difficulty:** Easy  |  **Acceptance:** 84.8%\n\n**Tags:** —\n\n## Problem\n\nDataFrame players:\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| player_id   | int    |\n| name        | object |\n| age         | int    |\n| position    | object |\n| ...         | ...    |\n+-------------+--------+\n\nWrite a solution to calculate and display the number of rows and columns of players.\n\nReturn the result as an array:\n\n[number of rows, number of columns]\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\n+-----------+----------+-----+-------------+--------------------+\n| player_id | name     | age | position    | team               |\n+-----------+----------+-----+-------------+--------------------+\n| 846       | Mason    | 21  | Forward     | RealMadrid         |\n| 749       | Riley    | 30  | Winger      | Barcelona          |\n| 155       | Bob      | 28  | Striker     | ManchesterUnited   |\n| 583       | Isabella | 32  | Goalkeeper  | Liverpool          |\n| 388       | Zachary  | 24  | Midfielder  | BayernMunich       |\n| 883       | Ava      | 23  | Defender    | Chelsea            |\n| 355       | Violet   | 18  | Striker     | Juventus           |\n| 247       | Thomas   | 27  | Striker     | ParisSaint-Germain |\n| 761       | Jack     | 33  | Midfielder  | ManchesterCity     |\n| 642       | Charlie  | 36  | Center-back | Arsenal            |\n+-----------+----------+-----+-------------+--------------------+\nOutput:\n[10, 5]\nExplanation:\nThis DataFrame contains 10 rows and 5 columns.\n\n## My Submission\n\n- Runtime: 356 ms\n- Memory: 68.8 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-get-the-size-of-a-dataframe/lc-get-the-size-of-a-dataframe.py",
+          "content": "import pandas as pd\n\ndef getDataframeSize(players: pd.DataFrame) -> List[int]:\n    return list(players.shape)"
+        },
+        {
+          "path": "problems/lc-get-the-size-of-a-dataframe/README.md",
+          "content": "# Get the Size of a DataFrame\n\n**Difficulty:** Easy  |  **Acceptance:** 84.8%\n\n**Tags:** —\n\n## Problem\n\nDataFrame players:\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| player_id   | int    |\n| name        | object |\n| age         | int    |\n| position    | object |\n| ...         | ...    |\n+-------------+--------+\n\nWrite a solution to calculate and display the number of rows and columns of players.\n\nReturn the result as an array:\n\n[number of rows, number of columns]\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\n+-----------+----------+-----+-------------+--------------------+\n| player_id | name     | age | position    | team               |\n+-----------+----------+-----+-------------+--------------------+\n| 846       | Mason    | 21  | Forward     | RealMadrid         |\n| 749       | Riley    | 30  | Winger      | Barcelona          |\n| 155       | Bob      | 28  | Striker     | ManchesterUnited   |\n| 583       | Isabella | 32  | Goalkeeper  | Liverpool          |\n| 388       | Zachary  | 24  | Midfielder  | BayernMunich       |\n| 883       | Ava      | 23  | Defender    | Chelsea            |\n| 355       | Violet   | 18  | Striker     | Juventus           |\n| 247       | Thomas   | 27  | Striker     | ParisSaint-Germain |\n| 761       | Jack     | 33  | Midfielder  | ManchesterCity     |\n| 642       | Charlie  | 36  | Center-back | Arsenal            |\n+-----------+----------+-----+-------------+--------------------+\nOutput:\n[10, 5]\nExplanation:\nThis DataFrame contains 10 rows and 5 columns.\n\n## My Submission\n\n- Runtime: 356 ms\n- Memory: 68.8 MB\n"
+        }
+      ],
+      "timestamp": 1729715393000,
+      "runtime": "356 ms",
+      "memory": "68.8 MB",
+      "runtimePct": 5.158100000000085,
+      "memoryPct": 12.715000000000003,
+      "problemStatement": "<pre>\nDataFrame <code>players:</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| player_id   | int    |\n| name        | object |\n| age         | int    |\n| position    | object |\n| ...         | ...    |\n+-------------+--------+\n</pre>\n\n<p>Write a solution to calculate and display the <strong>number of rows and columns</strong> of <code>players</code>.</p>\n\n<p>Return the result as an array:</p>\n\n<p><code>[number of rows, number of columns]</code></p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:\n</strong>+-----------+----------+-----+-------------+--------------------+\n| player_id | name     | age | position    | team               |\n+-----------+----------+-----+-------------+--------------------+\n| 846       | Mason    | 21  | Forward     | RealMadrid         |\n| 749       | Riley    | 30  | Winger      | Barcelona          |\n| 155       | Bob      | 28  | Striker     | ManchesterUnited   |\n| 583       | Isabella | 32  | Goalkeeper  | Liverpool          |\n| 388       | Zachary  | 24  | Midfielder  | BayernMunich       |\n| 883       | Ava      | 23  | Defender    | Chelsea            |\n| 355       | Violet   | 18  | Striker     | Juventus           |\n| 247       | Thomas   | 27  | Striker     | ParisSaint-Germain |\n| 761       | Jack     | 33  | Midfielder  | ManchesterCity     |\n| 642       | Charlie  | 36  | Center-back | Arsenal            |\n+-----------+----------+-----+-------------+--------------------+<strong>\nOutput:\n</strong>[10, 5]\n<strong>Explanation:</strong>\nThis DataFrame contains 10 rows and 5 columns.\n</pre>\n",
+      "hints": [
+        "Consider using a built-in function in pandas library to get the size of a DataFrame."
+      ],
+      "acRate": 84.81869886761515,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "platform": "leetcode",
+      "id": "lc-display-the-first-three-rows",
+      "forceCommit": true,
+      "submissionId": null,
+      "title": "Display the First Three Rows",
+      "titleSlug": "display-the-first-three-rows",
+      "difficulty": "Easy",
+      "topic": "Untagged",
+      "tags": [],
+      "canonical": null,
+      "readmeContent": "# [2879] Display the First Three Rows\n**Difficulty:** Easy  |  **Acceptance:** 93.0%  |  **Likes:** 123 / **Dislikes:** 26\n**Tags:** —\n## Problem\nDataFrame: employees\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| employee_id | int    |\n| name        | object |\n| department  | object |\n| salary      | int    |\n+-------------+--------+\n\nWrite a solution to display the first 3 rows of this DataFrame.\n\n&nbsp;\nExample 1:\n\nInput:\nDataFrame employees\n+-------------+-----------+-----------------------+--------+\n| employee_id | name      | department            | salary |\n+-------------+-----------+-----------------------+--------+\n| 3           | Bob       | Operations            | 48675  |\n| 90          | Alice     | Sales                 | 11096  |\n| 9           | Tatiana   | Engineering           | 33805  |\n| 60          | Annabelle | InformationTechnology | 37678  |\n| 49          | Jonathan  | HumanResources        | 23793  |\n| 43          | Khaled    | Administration        | 40454  |\n+-------------+-----------+-----------------------+--------+\nOutput:\n+-------------+---------+-------------+--------+\n| employee_id | name    | department  | salary |\n+-------------+---------+-------------+--------+\n| 3           | Bob     | Operations  | 48675  |\n| 90          | Alice   | Sales       | 11096  |\n| 9           | Tatiana | Engineering | 33805  |\n+-------------+---------+-------------+--------+\nExplanation: \nOnly the first 3 rows are displayed.\n## My Submission\n\n- Runtime: 436 ms (beats 5.0%)\n- Memory: 68.9 MB (beats 11.6%)\n- Solve time: 19s\n",
+      "code": "import pandas as pd\n\ndef selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:\n    return employees.head(3)",
+      "files": [
+        {
+          "path": "problems/lc-display-the-first-three-rows/lc-display-the-first-three-rows.txt",
+          "content": "import pandas as pd\n\ndef selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:\n    return employees.head(3)"
+        },
+        {
+          "path": "problems/lc-display-the-first-three-rows/README.md",
+          "content": "# [2879] Display the First Three Rows\n**Difficulty:** Easy  |  **Acceptance:** 93.0%  |  **Likes:** 123 / **Dislikes:** 26\n**Tags:** —\n## Problem\nDataFrame: employees\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| employee_id | int    |\n| name        | object |\n| department  | object |\n| salary      | int    |\n+-------------+--------+\n\nWrite a solution to display the first 3 rows of this DataFrame.\n\n&nbsp;\nExample 1:\n\nInput:\nDataFrame employees\n+-------------+-----------+-----------------------+--------+\n| employee_id | name      | department            | salary |\n+-------------+-----------+-----------------------+--------+\n| 3           | Bob       | Operations            | 48675  |\n| 90          | Alice     | Sales                 | 11096  |\n| 9           | Tatiana   | Engineering           | 33805  |\n| 60          | Annabelle | InformationTechnology | 37678  |\n| 49          | Jonathan  | HumanResources        | 23793  |\n| 43          | Khaled    | Administration        | 40454  |\n+-------------+-----------+-----------------------+--------+\nOutput:\n+-------------+---------+-------------+--------+\n| employee_id | name    | department  | salary |\n+-------------+---------+-------------+--------+\n| 3           | Bob     | Operations  | 48675  |\n| 90          | Alice   | Sales       | 11096  |\n| 9           | Tatiana | Engineering | 33805  |\n+-------------+---------+-------------+--------+\nExplanation: \nOnly the first 3 rows are displayed.\n## My Submission\n\n- Runtime: 436 ms (beats 5.0%)\n- Memory: 68.9 MB (beats 11.6%)\n- Solve time: 19s\n"
+        }
+      ],
+      "lang": {
+        "name": "Pandas",
+        "ext": "txt",
+        "slug": "pythondata"
+      },
+      "runtime": "436 ms",
+      "memory": "68.9 MB",
+      "runtimePct": 5.026599999999921,
+      "memoryPct": 11.630999999999998,
+      "timestamp": 1729715470000,
+      "acRate": 92.97918621887362,
+      "likes": 123,
+      "dislikes": 26,
+      "similar": [],
+      "problemStatement": "<pre>\nDataFrame: <code>employees</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| employee_id | int    |\n| name        | object |\n| department  | object |\n| salary      | int    |\n+-------------+--------+\n</pre>\n\n<p>Write a solution to display the <strong>first <code>3</code> </strong>rows<strong> </strong>of this DataFrame.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:\n</strong>DataFrame employees\n+-------------+-----------+-----------------------+--------+\n| employee_id | name      | department            | salary |\n+-------------+-----------+-----------------------+--------+\n| 3           | Bob       | Operations            | 48675  |\n| 90          | Alice     | Sales                 | 11096  |\n| 9           | Tatiana   | Engineering           | 33805  |\n| 60          | Annabelle | InformationTechnology | 37678  |\n| 49          | Jonathan  | HumanResources        | 23793  |\n| 43          | Khaled    | Administration        | 40454  |\n+-------------+-----------+-----------------------+--------+\n<strong>Output:</strong>\n+-------------+---------+-------------+--------+\n| employee_id | name    | department  | salary |\n+-------------+---------+-------------+--------+\n| 3           | Bob     | Operations  | 48675  |\n| 90          | Alice   | Sales       | 11096  |\n| 9           | Tatiana | Engineering | 33805  |\n+-------------+---------+-------------+--------+\n<strong>Explanation:</strong> \nOnly the first 3 rows are displayed.</pre>\n",
+      "elapsedSeconds": 19,
+      "hasSimilar": false,
+      "submissionsUrl": "https://leetcode.com/problems/display-the-first-three-rows/submissions/",
+      "notes": "",
+      "methodTitle": "",
+      "isDuplicate": false,
+      "duplicateOf": null,
+      "aiReview": "### Review of 'Display the First Three Rows'\n\n**1. Complexity**\n*   **Time Complexity:** $O(1)$. Since we are fetching a constant number of rows (3), the operation does not scale with the size of the input DataFrame $N$.\n*   **Space Complexity:** $O(1)$. The result is a shallow copy/view of a fixed size, regardless of the original DataFrame's size.\n\n**2. Correctness**\nThe solution is **correct** and handles edge cases gracefully:\n*   **Empty DataFrame:** `head(3)` returns an empty DataFrame without error.\n*   **Fewer than 3 rows:** If the DataFrame contains 1 or 2 rows, it returns all available rows, which is the expected behavior in Pandas.\n\n**3. Optimization**\nThe current solution is already optimal. However, for internal performance in low-level selection, you could use:\n```python\nreturn employees.iloc[:3]\n```\nWhile `head(3)` is essentially a wrapper for `iloc[:3]`, `iloc` is the direct positional indexing method. In practice, the performance difference is negligible.\n\n**4. Key Algorithmic Pattern**\n**DataFrame Slicing:** This pattern involves selecting a specific subset of data based on row index positions (top-K selection)."
+    },
+    {
+      "id": "lc-display-the-first-three-rows::1431823293",
+      "submissionId": 1431823293,
+      "platform": "leetcode",
+      "title": "Display the First Three Rows",
+      "titleSlug": "display-the-first-three-rows",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python",
+        "ext": "py",
+        "slug": "python"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "import pandas as pd\n\ndef selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:\n    return employees.head(3)",
+      "readmeContent": "# Display the First Three Rows\n\n**Difficulty:** Easy  |  **Acceptance:** 93.0%\n\n**Tags:** —\n\n## Problem\n\nDataFrame: employees\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| employee_id | int    |\n| name        | object |\n| department  | object |\n| salary      | int    |\n+-------------+--------+\n\nWrite a solution to display the first 3 rows of this DataFrame.\n\n&nbsp;\nExample 1:\n\nInput:\nDataFrame employees\n+-------------+-----------+-----------------------+--------+\n| employee_id | name      | department            | salary |\n+-------------+-----------+-----------------------+--------+\n| 3           | Bob       | Operations            | 48675  |\n| 90          | Alice     | Sales                 | 11096  |\n| 9           | Tatiana   | Engineering           | 33805  |\n| 60          | Annabelle | InformationTechnology | 37678  |\n| 49          | Jonathan  | HumanResources        | 23793  |\n| 43          | Khaled    | Administration        | 40454  |\n+-------------+-----------+-----------------------+--------+\nOutput:\n+-------------+---------+-------------+--------+\n| employee_id | name    | department  | salary |\n+-------------+---------+-------------+--------+\n| 3           | Bob     | Operations  | 48675  |\n| 90          | Alice   | Sales       | 11096  |\n| 9           | Tatiana | Engineering | 33805  |\n+-------------+---------+-------------+--------+\nExplanation: \nOnly the first 3 rows are displayed.\n\n## My Submission\n\n- Runtime: 436 ms\n- Memory: 68.9 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-display-the-first-three-rows/lc-display-the-first-three-rows.py",
+          "content": "import pandas as pd\n\ndef selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:\n    return employees.head(3)"
+        },
+        {
+          "path": "problems/lc-display-the-first-three-rows/README.md",
+          "content": "# Display the First Three Rows\n\n**Difficulty:** Easy  |  **Acceptance:** 93.0%\n\n**Tags:** —\n\n## Problem\n\nDataFrame: employees\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| employee_id | int    |\n| name        | object |\n| department  | object |\n| salary      | int    |\n+-------------+--------+\n\nWrite a solution to display the first 3 rows of this DataFrame.\n\n&nbsp;\nExample 1:\n\nInput:\nDataFrame employees\n+-------------+-----------+-----------------------+--------+\n| employee_id | name      | department            | salary |\n+-------------+-----------+-----------------------+--------+\n| 3           | Bob       | Operations            | 48675  |\n| 90          | Alice     | Sales                 | 11096  |\n| 9           | Tatiana   | Engineering           | 33805  |\n| 60          | Annabelle | InformationTechnology | 37678  |\n| 49          | Jonathan  | HumanResources        | 23793  |\n| 43          | Khaled    | Administration        | 40454  |\n+-------------+-----------+-----------------------+--------+\nOutput:\n+-------------+---------+-------------+--------+\n| employee_id | name    | department  | salary |\n+-------------+---------+-------------+--------+\n| 3           | Bob     | Operations  | 48675  |\n| 90          | Alice   | Sales       | 11096  |\n| 9           | Tatiana | Engineering | 33805  |\n+-------------+---------+-------------+--------+\nExplanation: \nOnly the first 3 rows are displayed.\n\n## My Submission\n\n- Runtime: 436 ms\n- Memory: 68.9 MB\n"
+        }
+      ],
+      "timestamp": 1729715470000,
+      "runtime": "436 ms",
+      "memory": "68.9 MB",
+      "runtimePct": 5.1431999999999904,
+      "memoryPct": 11.325499999999986,
+      "problemStatement": "<pre>\nDataFrame: <code>employees</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| employee_id | int    |\n| name        | object |\n| department  | object |\n| salary      | int    |\n+-------------+--------+\n</pre>\n\n<p>Write a solution to display the <strong>first <code>3</code> </strong>rows<strong> </strong>of this DataFrame.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:\n</strong>DataFrame employees\n+-------------+-----------+-----------------------+--------+\n| employee_id | name      | department            | salary |\n+-------------+-----------+-----------------------+--------+\n| 3           | Bob       | Operations            | 48675  |\n| 90          | Alice     | Sales                 | 11096  |\n| 9           | Tatiana   | Engineering           | 33805  |\n| 60          | Annabelle | InformationTechnology | 37678  |\n| 49          | Jonathan  | HumanResources        | 23793  |\n| 43          | Khaled    | Administration        | 40454  |\n+-------------+-----------+-----------------------+--------+\n<strong>Output:</strong>\n+-------------+---------+-------------+--------+\n| employee_id | name    | department  | salary |\n+-------------+---------+-------------+--------+\n| 3           | Bob     | Operations  | 48675  |\n| 90          | Alice   | Sales       | 11096  |\n| 9           | Tatiana | Engineering | 33805  |\n+-------------+---------+-------------+--------+\n<strong>Explanation:</strong> \nOnly the first 3 rows are displayed.</pre>\n",
+      "hints": [
+        "Consider using a built-in function in pandas library to retrieve the initial rows."
+      ],
+      "acRate": 92.97205980182767,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-select-data",
+      "submissionId": 1431824819,
+      "platform": "leetcode",
+      "title": "Select Data",
+      "titleSlug": "select-data",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "pythondata",
+        "ext": "txt",
+        "slug": "pythondata"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "readmeContent": "# Select Data\n\n**Difficulty:** Easy  |  **Acceptance:** 78.5%\n\n**Tags:** —\n\n## Problem\n\nDataFrame students\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nWrite a solution to select the name and age of the student with student_id = 101.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 101        | Ulysses | 13  |\n| 53         | William | 10  |\n| 128        | Henry   | 6   |\n| 3          | Henry   | 11  |\n+------------+---------+-----+\nOutput:\n+---------+-----+\n| name    | age | \n+---------+-----+\n| Ulysses | 13  |\n+---------+-----+\nExplanation:\nStudent Ulysses has student_id = 101, we select the name and age.\n\n## My Submission\n\n- Runtime: 322 ms\n- Memory: 70.2 MB\n",
+      "files": [
+        {
+          "path": "problems/select-data/README.md",
+          "content": "# Select Data\n\n**Difficulty:** Easy  |  **Acceptance:** 78.5%\n\n**Tags:** —\n\n## Problem\n\nDataFrame students\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nWrite a solution to select the name and age of the student with student_id = 101.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 101        | Ulysses | 13  |\n| 53         | William | 10  |\n| 128        | Henry   | 6   |\n| 3          | Henry   | 11  |\n+------------+---------+-----+\nOutput:\n+---------+-----+\n| name    | age | \n+---------+-----+\n| Ulysses | 13  |\n+---------+-----+\nExplanation:\nStudent Ulysses has student_id = 101, we select the name and age.\n\n## My Submission\n\n- Runtime: 322 ms\n- Memory: 70.2 MB\n"
+        }
+      ],
+      "timestamp": 1729715616000,
+      "runtime": "322 ms",
+      "memory": "70.2 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<pre>\nDataFrame students\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\n</pre>\n\n<p>Write a solution to select the name and age of the student with <code>student_id = 101</code>.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<pre>\n<strong>Example 1:\nInput:</strong>\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 101        | Ulysses | 13  |\n| 53         | William | 10  |\n| 128        | Henry   | 6   |\n| 3          | Henry   | 11  |\n+------------+---------+-----+\n<strong>Output:</strong>\n+---------+-----+\n| name    | age | \n+---------+-----+\n| Ulysses | 13  |\n+---------+-----+\n<strong>Explanation:\n</strong>Student Ulysses has student_id = 101, we select the name and age.</pre>\n",
+      "hints": [
+        "Consider applying both row and column filtering to select the desired data."
+      ],
+      "acRate": 78.46494010523566,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-select-data::1431824819",
+      "submissionId": 1431824819,
+      "platform": "leetcode",
+      "title": "Select Data",
+      "titleSlug": "select-data",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python",
+        "ext": "py",
+        "slug": "python"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "import pandas as pd\n\ndef selectData(students: pd.DataFrame) -> pd.DataFrame:\n    return students.loc[students[\"student_id\"]==101,[\"name\",\"age\"]]",
+      "readmeContent": "# Select Data\n\n**Difficulty:** Easy  |  **Acceptance:** 78.4%\n\n**Tags:** —\n\n## Problem\n\nDataFrame students\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nWrite a solution to select the name and age of the student with student_id = 101.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 101        | Ulysses | 13  |\n| 53         | William | 10  |\n| 128        | Henry   | 6   |\n| 3          | Henry   | 11  |\n+------------+---------+-----+\nOutput:\n+---------+-----+\n| name    | age | \n+---------+-----+\n| Ulysses | 13  |\n+---------+-----+\nExplanation:\nStudent Ulysses has student_id = 101, we select the name and age.\n\n## My Submission\n\n- Runtime: 322 ms\n- Memory: 70.2 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-select-data/lc-select-data.py",
+          "content": "import pandas as pd\n\ndef selectData(students: pd.DataFrame) -> pd.DataFrame:\n    return students.loc[students[\"student_id\"]==101,[\"name\",\"age\"]]"
+        },
+        {
+          "path": "problems/lc-select-data/README.md",
+          "content": "# Select Data\n\n**Difficulty:** Easy  |  **Acceptance:** 78.4%\n\n**Tags:** —\n\n## Problem\n\nDataFrame students\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nWrite a solution to select the name and age of the student with student_id = 101.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 101        | Ulysses | 13  |\n| 53         | William | 10  |\n| 128        | Henry   | 6   |\n| 3          | Henry   | 11  |\n+------------+---------+-----+\nOutput:\n+---------+-----+\n| name    | age | \n+---------+-----+\n| Ulysses | 13  |\n+---------+-----+\nExplanation:\nStudent Ulysses has student_id = 101, we select the name and age.\n\n## My Submission\n\n- Runtime: 322 ms\n- Memory: 70.2 MB\n"
+        }
+      ],
+      "timestamp": 1729715616000,
+      "runtime": "322 ms",
+      "memory": "70.2 MB",
+      "runtimePct": 7.911199999999974,
+      "memoryPct": 8.32069999999998,
+      "problemStatement": "<pre>\nDataFrame students\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\n</pre>\n\n<p>Write a solution to select the name and age of the student with <code>student_id = 101</code>.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<pre>\n<strong>Example 1:\nInput:</strong>\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 101        | Ulysses | 13  |\n| 53         | William | 10  |\n| 128        | Henry   | 6   |\n| 3          | Henry   | 11  |\n+------------+---------+-----+\n<strong>Output:</strong>\n+---------+-----+\n| name    | age | \n+---------+-----+\n| Ulysses | 13  |\n+---------+-----+\n<strong>Explanation:\n</strong>Student Ulysses has student_id = 101, we select the name and age.</pre>\n",
+      "hints": [
+        "Consider applying both row and column filtering to select the desired data."
+      ],
+      "acRate": 78.4487168754825,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-create-a-new-column",
+      "submissionId": 1431827775,
+      "platform": "leetcode",
+      "title": "Create a New Column",
+      "titleSlug": "create-a-new-column",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "pythondata",
+        "ext": "txt",
+        "slug": "pythondata"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "readmeContent": "# Create a New Column\n\n**Difficulty:** Easy  |  **Acceptance:** 90.1%\n\n**Tags:** —\n\n## Problem\n\nDataFrame employees\n+-------------+--------+\n| Column Name | Type.  |\n+-------------+--------+\n| name        | object |\n| salary      | int.   |\n+-------------+--------+\n\nA&nbsp;company plans to provide its employees with a bonus.\n\nWrite a solution to create a new column name bonus that contains the doubled values of the salary column.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\nDataFrame employees\n+---------+--------+\n| name    | salary |\n+---------+--------+\n| Piper   | 4548   |\n| Grace   | 28150  |\n| Georgia | 1103   |\n| Willow  | 6593   |\n| Finn    | 74576  |\n| Thomas  | 24433  |\n+---------+--------+\nOutput:\n+---------+--------+--------+\n| name    | salary | bonus  |\n+---------+--------+--------+\n| Piper   | 4548   | 9096   |\n| Grace   | 28150  | 56300  |\n| Georgia | 1103   | 2206   |\n| Willow  | 6593   | 13186  |\n| Finn    | 74576  | 149152 |\n| Thomas  | 24433  | 48866  |\n+---------+--------+--------+\nExplanation: \nA new column bonus is created by doubling the value in the column salary.\n\n## My Submission\n\n- Runtime: 342 ms\n- Memory: 68.6 MB\n",
+      "files": [
+        {
+          "path": "problems/create-a-new-column/README.md",
+          "content": "# Create a New Column\n\n**Difficulty:** Easy  |  **Acceptance:** 90.1%\n\n**Tags:** —\n\n## Problem\n\nDataFrame employees\n+-------------+--------+\n| Column Name | Type.  |\n+-------------+--------+\n| name        | object |\n| salary      | int.   |\n+-------------+--------+\n\nA&nbsp;company plans to provide its employees with a bonus.\n\nWrite a solution to create a new column name bonus that contains the doubled values of the salary column.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\nDataFrame employees\n+---------+--------+\n| name    | salary |\n+---------+--------+\n| Piper   | 4548   |\n| Grace   | 28150  |\n| Georgia | 1103   |\n| Willow  | 6593   |\n| Finn    | 74576  |\n| Thomas  | 24433  |\n+---------+--------+\nOutput:\n+---------+--------+--------+\n| name    | salary | bonus  |\n+---------+--------+--------+\n| Piper   | 4548   | 9096   |\n| Grace   | 28150  | 56300  |\n| Georgia | 1103   | 2206   |\n| Willow  | 6593   | 13186  |\n| Finn    | 74576  | 149152 |\n| Thomas  | 24433  | 48866  |\n+---------+--------+--------+\nExplanation: \nA new column bonus is created by doubling the value in the column salary.\n\n## My Submission\n\n- Runtime: 342 ms\n- Memory: 68.6 MB\n"
+        }
+      ],
+      "timestamp": 1729715905000,
+      "runtime": "342 ms",
+      "memory": "68.6 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<pre>\nDataFrame <code>employees</code>\n+-------------+--------+\n| Column Name | Type.  |\n+-------------+--------+\n| name        | object |\n| salary      | int.   |\n+-------------+--------+\n</pre>\n\n<p>A&nbsp;company plans to provide its employees with a bonus.</p>\n\n<p>Write a solution to create a new column name <code>bonus</code> that contains the <strong>doubled values</strong> of the <code>salary</code> column.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong>\nDataFrame employees\n+---------+--------+\n| name    | salary |\n+---------+--------+\n| Piper   | 4548   |\n| Grace   | 28150  |\n| Georgia | 1103   |\n| Willow  | 6593   |\n| Finn    | 74576  |\n| Thomas  | 24433  |\n+---------+--------+\n<strong>Output:</strong>\n+---------+--------+--------+\n| name    | salary | bonus  |\n+---------+--------+--------+\n| Piper   | 4548   | 9096   |\n| Grace   | 28150  | 56300  |\n| Georgia | 1103   | 2206   |\n| Willow  | 6593   | 13186  |\n| Finn    | 74576  | 149152 |\n| Thomas  | 24433  | 48866  |\n+---------+--------+--------+\n<strong>Explanation:</strong> \nA new column bonus is created by doubling the value in the column salary.</pre>\n",
+      "hints": [
+        "Consider using the `[]` brackets with the new column name at the left side of the assignment. The calculation of the value is done element-wise."
+      ],
+      "acRate": 90.14117566236919,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-create-a-new-column::1431827775",
+      "submissionId": 1431827775,
+      "platform": "leetcode",
+      "title": "Create a New Column",
+      "titleSlug": "create-a-new-column",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python",
+        "ext": "py",
+        "slug": "python"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "import pandas as pd\n\ndef createBonusColumn(employees: pd.DataFrame) -> pd.DataFrame:\n    employees[\"bonus\"] = employees['salary']*2\n    return employees",
+      "readmeContent": "# Create a New Column\n\n**Difficulty:** Easy  |  **Acceptance:** 90.1%\n\n**Tags:** —\n\n## Problem\n\nDataFrame employees\n+-------------+--------+\n| Column Name | Type.  |\n+-------------+--------+\n| name        | object |\n| salary      | int.   |\n+-------------+--------+\n\nA&nbsp;company plans to provide its employees with a bonus.\n\nWrite a solution to create a new column name bonus that contains the doubled values of the salary column.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\nDataFrame employees\n+---------+--------+\n| name    | salary |\n+---------+--------+\n| Piper   | 4548   |\n| Grace   | 28150  |\n| Georgia | 1103   |\n| Willow  | 6593   |\n| Finn    | 74576  |\n| Thomas  | 24433  |\n+---------+--------+\nOutput:\n+---------+--------+--------+\n| name    | salary | bonus  |\n+---------+--------+--------+\n| Piper   | 4548   | 9096   |\n| Grace   | 28150  | 56300  |\n| Georgia | 1103   | 2206   |\n| Willow  | 6593   | 13186  |\n| Finn    | 74576  | 149152 |\n| Thomas  | 24433  | 48866  |\n+---------+--------+--------+\nExplanation: \nA new column bonus is created by doubling the value in the column salary.\n\n## My Submission\n\n- Runtime: 342 ms\n- Memory: 68.6 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-create-a-new-column/lc-create-a-new-column.py",
+          "content": "import pandas as pd\n\ndef createBonusColumn(employees: pd.DataFrame) -> pd.DataFrame:\n    employees[\"bonus\"] = employees['salary']*2\n    return employees"
+        },
+        {
+          "path": "problems/lc-create-a-new-column/README.md",
+          "content": "# Create a New Column\n\n**Difficulty:** Easy  |  **Acceptance:** 90.1%\n\n**Tags:** —\n\n## Problem\n\nDataFrame employees\n+-------------+--------+\n| Column Name | Type.  |\n+-------------+--------+\n| name        | object |\n| salary      | int.   |\n+-------------+--------+\n\nA&nbsp;company plans to provide its employees with a bonus.\n\nWrite a solution to create a new column name bonus that contains the doubled values of the salary column.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\nDataFrame employees\n+---------+--------+\n| name    | salary |\n+---------+--------+\n| Piper   | 4548   |\n| Grace   | 28150  |\n| Georgia | 1103   |\n| Willow  | 6593   |\n| Finn    | 74576  |\n| Thomas  | 24433  |\n+---------+--------+\nOutput:\n+---------+--------+--------+\n| name    | salary | bonus  |\n+---------+--------+--------+\n| Piper   | 4548   | 9096   |\n| Grace   | 28150  | 56300  |\n| Georgia | 1103   | 2206   |\n| Willow  | 6593   | 13186  |\n| Finn    | 74576  | 149152 |\n| Thomas  | 24433  | 48866  |\n+---------+--------+--------+\nExplanation: \nA new column bonus is created by doubling the value in the column salary.\n\n## My Submission\n\n- Runtime: 342 ms\n- Memory: 68.6 MB\n"
+        }
+      ],
+      "timestamp": 1729715905000,
+      "runtime": "342 ms",
+      "memory": "68.6 MB",
+      "runtimePct": 5.015899999999971,
+      "memoryPct": 6.484,
+      "problemStatement": "<pre>\nDataFrame <code>employees</code>\n+-------------+--------+\n| Column Name | Type.  |\n+-------------+--------+\n| name        | object |\n| salary      | int.   |\n+-------------+--------+\n</pre>\n\n<p>A&nbsp;company plans to provide its employees with a bonus.</p>\n\n<p>Write a solution to create a new column name <code>bonus</code> that contains the <strong>doubled values</strong> of the <code>salary</code> column.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong>\nDataFrame employees\n+---------+--------+\n| name    | salary |\n+---------+--------+\n| Piper   | 4548   |\n| Grace   | 28150  |\n| Georgia | 1103   |\n| Willow  | 6593   |\n| Finn    | 74576  |\n| Thomas  | 24433  |\n+---------+--------+\n<strong>Output:</strong>\n+---------+--------+--------+\n| name    | salary | bonus  |\n+---------+--------+--------+\n| Piper   | 4548   | 9096   |\n| Grace   | 28150  | 56300  |\n| Georgia | 1103   | 2206   |\n| Willow  | 6593   | 13186  |\n| Finn    | 74576  | 149152 |\n| Thomas  | 24433  | 48866  |\n+---------+--------+--------+\n<strong>Explanation:</strong> \nA new column bonus is created by doubling the value in the column salary.</pre>\n",
+      "hints": [
+        "Consider using the `[]` brackets with the new column name at the left side of the assignment. The calculation of the value is done element-wise."
+      ],
+      "acRate": 90.14086919778218,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-construct-smallest-number-from-di-string::1432728977",
+      "submissionId": 1432728977,
+      "platform": "leetcode",
+      "title": "Construct Smallest Number From DI String",
+      "titleSlug": "construct-smallest-number-from-di-string",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "String",
+        "Backtracking",
+        "Stack",
+        "Greedy"
+      ],
+      "topic": "Greedy",
+      "code": "# class Solution:\n#     def smallestNumber(self, pattern: str) -> str:\n#         output = [1]\n#         pos = [_ for _ in range(2,11)]\n#         for char in pattern:\n#             if char == \"D\":\n#                 i = min([x for x in pos if x <= output[-1]])\n#                 pos.remove(i)\n#                 output.append(i)\n#             if char == 'I':\n#                 i = min([x for x in pos if x > output[-1]])\n#                 pos.remove(i)\n#                 output.append(i)\n\n#         return \"\".join(map(str, output))\n\nclass Solution:\n    def smallestNumber(self, pattern: str) -> str:\n        dp = [1]\n        temp = []\n        i = 2\n        for char in pattern:\n            if char == 'I':\n                while temp:\n                    dp.append(temp.pop())\n                dp.append(i)\n                i += 1\n            else:\n                temp.append(dp.pop())\n                dp.append(i)\n                i += 1\n        while temp:\n            dp.append(temp.pop())\n        s = \"\"\n        for i in dp:\n            s+= str(i)\n        return s",
+      "readmeContent": "# Construct Smallest Number From DI String\n\n**Difficulty:** Medium  |  **Acceptance:** 85.6%\n\n**Tags:** `String`, `Backtracking`, `Stack`, `Greedy`\n\n## Problem\n\nYou are given a 0-indexed string pattern of length n consisting of the characters 'I' meaning increasing and 'D' meaning decreasing.\n\nA 0-indexed string num of length n + 1 is created using the following conditions:\n\n\tnum consists of the digits '1' to '9', where each digit is used at most once.\n\tIf pattern[i] == 'I', then num[i] < num[i + 1].\n\tIf pattern[i] == 'D', then num[i] > num[i + 1].\n\nReturn the lexicographically smallest possible string num that meets the conditions.\n\n&nbsp;\nExample 1:\n\nInput: pattern = \"IIIDIDDD\"\nOutput: \"123549876\"\nExplanation:\nAt indices 0, 1, 2, and 4 we must have that num[i] < num[i+1].\nAt indices 3, 5, 6, and 7 we must have that num[i] > num[i+1].\nSome possible values of num are \"245639871\", \"135749862\", and \"123849765\".\nIt can be proven that \"123549876\" is the smallest possible num that meets the conditions.\nNote that \"123414321\" is not possible because the digit '1' is used more than once.\n\nExample 2:\n\nInput: pattern = \"DDD\"\nOutput: \"4321\"\nExplanation:\nSome possible values of num are \"9876\", \"7321\", and \"8742\".\nIt can be proven that \"4321\" is the smallest possible num that meets the conditions.\n\n&nbsp;\nConstraints:\n\n\t1 <= pattern.length <= 8\n\tpattern consists of only the letters 'I' and 'D'.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.7 MB\n\n## Similar Problems\n\n- [DI String Match](https://leetcode.com/problems/di-string-match/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-construct-smallest-number-from-di-string/lc-construct-smallest-number-from-di-string.py",
+          "content": "# class Solution:\n#     def smallestNumber(self, pattern: str) -> str:\n#         output = [1]\n#         pos = [_ for _ in range(2,11)]\n#         for char in pattern:\n#             if char == \"D\":\n#                 i = min([x for x in pos if x <= output[-1]])\n#                 pos.remove(i)\n#                 output.append(i)\n#             if char == 'I':\n#                 i = min([x for x in pos if x > output[-1]])\n#                 pos.remove(i)\n#                 output.append(i)\n\n#         return \"\".join(map(str, output))\n\nclass Solution:\n    def smallestNumber(self, pattern: str) -> str:\n        dp = [1]\n        temp = []\n        i = 2\n        for char in pattern:\n            if char == 'I':\n                while temp:\n                    dp.append(temp.pop())\n                dp.append(i)\n                i += 1\n            else:\n                temp.append(dp.pop())\n                dp.append(i)\n                i += 1\n        while temp:\n            dp.append(temp.pop())\n        s = \"\"\n        for i in dp:\n            s+= str(i)\n        return s"
+        },
+        {
+          "path": "problems/lc-construct-smallest-number-from-di-string/README.md",
+          "content": "# Construct Smallest Number From DI String\n\n**Difficulty:** Medium  |  **Acceptance:** 85.6%\n\n**Tags:** `String`, `Backtracking`, `Stack`, `Greedy`\n\n## Problem\n\nYou are given a 0-indexed string pattern of length n consisting of the characters 'I' meaning increasing and 'D' meaning decreasing.\n\nA 0-indexed string num of length n + 1 is created using the following conditions:\n\n\tnum consists of the digits '1' to '9', where each digit is used at most once.\n\tIf pattern[i] == 'I', then num[i] < num[i + 1].\n\tIf pattern[i] == 'D', then num[i] > num[i + 1].\n\nReturn the lexicographically smallest possible string num that meets the conditions.\n\n&nbsp;\nExample 1:\n\nInput: pattern = \"IIIDIDDD\"\nOutput: \"123549876\"\nExplanation:\nAt indices 0, 1, 2, and 4 we must have that num[i] < num[i+1].\nAt indices 3, 5, 6, and 7 we must have that num[i] > num[i+1].\nSome possible values of num are \"245639871\", \"135749862\", and \"123849765\".\nIt can be proven that \"123549876\" is the smallest possible num that meets the conditions.\nNote that \"123414321\" is not possible because the digit '1' is used more than once.\n\nExample 2:\n\nInput: pattern = \"DDD\"\nOutput: \"4321\"\nExplanation:\nSome possible values of num are \"9876\", \"7321\", and \"8742\".\nIt can be proven that \"4321\" is the smallest possible num that meets the conditions.\n\n&nbsp;\nConstraints:\n\n\t1 <= pattern.length <= 8\n\tpattern consists of only the letters 'I' and 'D'.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.7 MB\n\n## Similar Problems\n\n- [DI String Match](https://leetcode.com/problems/di-string-match/) — Easy\n"
+        }
+      ],
+      "timestamp": 1729795270000,
+      "runtime": "0 ms",
+      "memory": "16.7 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given a <strong>0-indexed</strong> string <code>pattern</code> of length <code>n</code> consisting of the characters <code>&#39;I&#39;</code> meaning <strong>increasing</strong> and <code>&#39;D&#39;</code> meaning <strong>decreasing</strong>.</p>\n\n<p>A <strong>0-indexed</strong> string <code>num</code> of length <code>n + 1</code> is created using the following conditions:</p>\n\n<ul>\n\t<li><code>num</code> consists of the digits <code>&#39;1&#39;</code> to <code>&#39;9&#39;</code>, where each digit is used <strong>at most</strong> once.</li>\n\t<li>If <code>pattern[i] == &#39;I&#39;</code>, then <code>num[i] &lt; num[i + 1]</code>.</li>\n\t<li>If <code>pattern[i] == &#39;D&#39;</code>, then <code>num[i] &gt; num[i + 1]</code>.</li>\n</ul>\n\n<p>Return <em>the lexicographically <strong>smallest</strong> possible string </em><code>num</code><em> that meets the conditions.</em></p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> pattern = &quot;IIIDIDDD&quot;\n<strong>Output:</strong> &quot;123549876&quot;\n<strong>Explanation:\n</strong>At indices 0, 1, 2, and 4 we must have that num[i] &lt; num[i+1].\nAt indices 3, 5, 6, and 7 we must have that num[i] &gt; num[i+1].\nSome possible values of num are &quot;245639871&quot;, &quot;135749862&quot;, and &quot;123849765&quot;.\nIt can be proven that &quot;123549876&quot; is the smallest possible num that meets the conditions.\nNote that &quot;123414321&quot; is not possible because the digit &#39;1&#39; is used more than once.</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> pattern = &quot;DDD&quot;\n<strong>Output:</strong> &quot;4321&quot;\n<strong>Explanation:</strong>\nSome possible values of num are &quot;9876&quot;, &quot;7321&quot;, and &quot;8742&quot;.\nIt can be proven that &quot;4321&quot; is the smallest possible num that meets the conditions.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= pattern.length &lt;= 8</code></li>\n\t<li><code>pattern</code> consists of only the letters <code>&#39;I&#39;</code> and <code>&#39;D&#39;</code>.</li>\n</ul>\n",
+      "hints": [
+        "With the constraints, could we generate every possible string?",
+        "Yes we can. Now we just need to check if the string meets all the conditions."
+      ],
+      "acRate": 85.57398294959803,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "di-string-match",
+          "title": "DI String Match",
           "isPaidOnly": false
         }
       ],
