@@ -1,30 +1,30 @@
 {
-  "updatedAt": "2026-05-16T18:50:09.959Z",
+  "updatedAt": "2026-05-16T18:51:22.119Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 76,
-    "easy": 62,
-    "medium": 13,
+    "total": 101,
+    "easy": 84,
+    "medium": 16,
     "hard": 1,
     "byPlatform": {
-      "leetcode": 76
+      "leetcode": 101
     },
     "byLang": {
       "C++": 1,
-      "Java": 11,
+      "Java": 12,
       "C": 1,
-      "Python3": 51,
+      "Python3": 56,
       "JavaScript": 2,
-      "pythondata": 4,
+      "pythondata": 13,
       "Pandas": 2,
-      "Python": 4
+      "Python": 14
     },
     "byTopic": {
       "Two Pointers": 4,
-      "Array": 31,
-      "String": 8,
+      "Array": 36,
+      "String": 9,
       "Math": 11,
-      "Untagged": 12,
+      "Untagged": 31,
       "Linked List": 1,
       "Hash Table": 8,
       "Binary Search": 1
@@ -4495,6 +4495,1018 @@
         }
       ],
       "hasSimilar": true
+    },
+    {
+      "id": "lc-drop-duplicate-rows::1432734217",
+      "submissionId": 1432734217,
+      "platform": "leetcode",
+      "title": "Drop Duplicate Rows",
+      "titleSlug": "drop-duplicate-rows",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python",
+        "ext": "py",
+        "slug": "python"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "import pandas as pd\n\ndef dropDuplicateEmails(customers: pd.DataFrame) -> pd.DataFrame:\n    return customers.drop_duplicates(subset = \"email\")",
+      "readmeContent": "# Drop Duplicate Rows\n\n**Difficulty:** Easy  |  **Acceptance:** 85.1%\n\n**Tags:** —\n\n## Problem\n\nDataFrame customers\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| customer_id | int    |\n| name        | object |\n| email       | object |\n+-------------+--------+\n\nThere are some duplicate rows in the DataFrame based on the email column.\n\nWrite a solution to remove these duplicate rows and keep only the first occurrence.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:\n+-------------+---------+---------------------+\n| customer_id | name    | email               |\n+-------------+---------+---------------------+\n| 1           | Ella    | emily@example.com   |\n| 2           | David   | michael@example.com |\n| 3           | Zachary | sarah@example.com   |\n| 4           | Alice   | john@example.com    |\n| 5           | Finn    | john@example.com    |\n| 6           | Violet  | alice@example.com   |\n+-------------+---------+---------------------+\nOutput:  \n+-------------+---------+---------------------+\n| customer_id | name    | email               |\n+-------------+---------+---------------------+\n| 1           | Ella    | emily@example.com   |\n| 2           | David   | michael@example.com |\n| 3           | Zachary | sarah@example.com   |\n| 4           | Alice   | john@example.com    |\n| 6           | Violet  | alice@example.com   |\n+-------------+---------+---------------------+\nExplanation:\nAlic (customer_id = 4) and Finn (customer_id = 5) both use john@example.com, so only the first occurrence of this email is retained.\n\n## My Submission\n\n- Runtime: 547 ms\n- Memory: 69.5 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-drop-duplicate-rows/lc-drop-duplicate-rows.py",
+          "content": "import pandas as pd\n\ndef dropDuplicateEmails(customers: pd.DataFrame) -> pd.DataFrame:\n    return customers.drop_duplicates(subset = \"email\")"
+        },
+        {
+          "path": "problems/lc-drop-duplicate-rows/README.md",
+          "content": "# Drop Duplicate Rows\n\n**Difficulty:** Easy  |  **Acceptance:** 85.1%\n\n**Tags:** —\n\n## Problem\n\nDataFrame customers\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| customer_id | int    |\n| name        | object |\n| email       | object |\n+-------------+--------+\n\nThere are some duplicate rows in the DataFrame based on the email column.\n\nWrite a solution to remove these duplicate rows and keep only the first occurrence.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:\n+-------------+---------+---------------------+\n| customer_id | name    | email               |\n+-------------+---------+---------------------+\n| 1           | Ella    | emily@example.com   |\n| 2           | David   | michael@example.com |\n| 3           | Zachary | sarah@example.com   |\n| 4           | Alice   | john@example.com    |\n| 5           | Finn    | john@example.com    |\n| 6           | Violet  | alice@example.com   |\n+-------------+---------+---------------------+\nOutput:  \n+-------------+---------+---------------------+\n| customer_id | name    | email               |\n+-------------+---------+---------------------+\n| 1           | Ella    | emily@example.com   |\n| 2           | David   | michael@example.com |\n| 3           | Zachary | sarah@example.com   |\n| 4           | Alice   | john@example.com    |\n| 6           | Violet  | alice@example.com   |\n+-------------+---------+---------------------+\nExplanation:\nAlic (customer_id = 4) and Finn (customer_id = 5) both use john@example.com, so only the first occurrence of this email is retained.\n\n## My Submission\n\n- Runtime: 547 ms\n- Memory: 69.5 MB\n"
+        }
+      ],
+      "timestamp": 1729795635000,
+      "runtime": "547 ms",
+      "memory": "69.5 MB",
+      "runtimePct": 5.2954999999999695,
+      "memoryPct": 10.938799999999988,
+      "problemStatement": "<pre>\nDataFrame customers\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| customer_id | int    |\n| name        | object |\n| email       | object |\n+-------------+--------+\n</pre>\n\n<p>There are some duplicate rows in the DataFrame based on the <code>email</code> column.</p>\n\n<p>Write a solution to remove these duplicate rows and keep only the <strong>first</strong> occurrence.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<pre>\n<strong class=\"example\">Example 1:</strong>\n<strong>Input:</strong>\n+-------------+---------+---------------------+\n| customer_id | name    | email               |\n+-------------+---------+---------------------+\n| 1           | Ella    | emily@example.com   |\n| 2           | David   | michael@example.com |\n| 3           | Zachary | sarah@example.com   |\n| 4           | Alice   | john@example.com    |\n| 5           | Finn    | john@example.com    |\n| 6           | Violet  | alice@example.com   |\n+-------------+---------+---------------------+\n<strong>Output: </strong> \n+-------------+---------+---------------------+\n| customer_id | name    | email               |\n+-------------+---------+---------------------+\n| 1           | Ella    | emily@example.com   |\n| 2           | David   | michael@example.com |\n| 3           | Zachary | sarah@example.com   |\n| 4           | Alice   | john@example.com    |\n| 6           | Violet  | alice@example.com   |\n+-------------+---------+---------------------+\n<strong>Explanation:</strong>\nAlic (customer_id = 4) and Finn (customer_id = 5) both use john@example.com, so only the first occurrence of this email is retained.\n</pre>\n",
+      "hints": [
+        "Consider using a build-in function in pandas library to remove the duplicate rows based on specified data."
+      ],
+      "acRate": 85.11049541921238,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-drop-duplicate-rows",
+      "submissionId": 1432734406,
+      "platform": "leetcode",
+      "title": "Drop Duplicate Rows",
+      "titleSlug": "drop-duplicate-rows",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "pythondata",
+        "ext": "txt",
+        "slug": "pythondata"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "readmeContent": "# Drop Duplicate Rows\n\n**Difficulty:** Easy  |  **Acceptance:** 85.1%\n\n**Tags:** —\n\n## Problem\n\nDataFrame customers\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| customer_id | int    |\n| name        | object |\n| email       | object |\n+-------------+--------+\n\nThere are some duplicate rows in the DataFrame based on the email column.\n\nWrite a solution to remove these duplicate rows and keep only the first occurrence.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:\n+-------------+---------+---------------------+\n| customer_id | name    | email               |\n+-------------+---------+---------------------+\n| 1           | Ella    | emily@example.com   |\n| 2           | David   | michael@example.com |\n| 3           | Zachary | sarah@example.com   |\n| 4           | Alice   | john@example.com    |\n| 5           | Finn    | john@example.com    |\n| 6           | Violet  | alice@example.com   |\n+-------------+---------+---------------------+\nOutput:  \n+-------------+---------+---------------------+\n| customer_id | name    | email               |\n+-------------+---------+---------------------+\n| 1           | Ella    | emily@example.com   |\n| 2           | David   | michael@example.com |\n| 3           | Zachary | sarah@example.com   |\n| 4           | Alice   | john@example.com    |\n| 6           | Violet  | alice@example.com   |\n+-------------+---------+---------------------+\nExplanation:\nAlic (customer_id = 4) and Finn (customer_id = 5) both use john@example.com, so only the first occurrence of this email is retained.\n\n## My Submission\n\n- Runtime: 393 ms\n- Memory: 69.8 MB\n",
+      "files": [
+        {
+          "path": "problems/drop-duplicate-rows/README.md",
+          "content": "# Drop Duplicate Rows\n\n**Difficulty:** Easy  |  **Acceptance:** 85.1%\n\n**Tags:** —\n\n## Problem\n\nDataFrame customers\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| customer_id | int    |\n| name        | object |\n| email       | object |\n+-------------+--------+\n\nThere are some duplicate rows in the DataFrame based on the email column.\n\nWrite a solution to remove these duplicate rows and keep only the first occurrence.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:\n+-------------+---------+---------------------+\n| customer_id | name    | email               |\n+-------------+---------+---------------------+\n| 1           | Ella    | emily@example.com   |\n| 2           | David   | michael@example.com |\n| 3           | Zachary | sarah@example.com   |\n| 4           | Alice   | john@example.com    |\n| 5           | Finn    | john@example.com    |\n| 6           | Violet  | alice@example.com   |\n+-------------+---------+---------------------+\nOutput:  \n+-------------+---------+---------------------+\n| customer_id | name    | email               |\n+-------------+---------+---------------------+\n| 1           | Ella    | emily@example.com   |\n| 2           | David   | michael@example.com |\n| 3           | Zachary | sarah@example.com   |\n| 4           | Alice   | john@example.com    |\n| 6           | Violet  | alice@example.com   |\n+-------------+---------+---------------------+\nExplanation:\nAlic (customer_id = 4) and Finn (customer_id = 5) both use john@example.com, so only the first occurrence of this email is retained.\n\n## My Submission\n\n- Runtime: 393 ms\n- Memory: 69.8 MB\n"
+        }
+      ],
+      "timestamp": 1729795647000,
+      "runtime": "393 ms",
+      "memory": "69.8 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<pre>\nDataFrame customers\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| customer_id | int    |\n| name        | object |\n| email       | object |\n+-------------+--------+\n</pre>\n\n<p>There are some duplicate rows in the DataFrame based on the <code>email</code> column.</p>\n\n<p>Write a solution to remove these duplicate rows and keep only the <strong>first</strong> occurrence.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<pre>\n<strong class=\"example\">Example 1:</strong>\n<strong>Input:</strong>\n+-------------+---------+---------------------+\n| customer_id | name    | email               |\n+-------------+---------+---------------------+\n| 1           | Ella    | emily@example.com   |\n| 2           | David   | michael@example.com |\n| 3           | Zachary | sarah@example.com   |\n| 4           | Alice   | john@example.com    |\n| 5           | Finn    | john@example.com    |\n| 6           | Violet  | alice@example.com   |\n+-------------+---------+---------------------+\n<strong>Output: </strong> \n+-------------+---------+---------------------+\n| customer_id | name    | email               |\n+-------------+---------+---------------------+\n| 1           | Ella    | emily@example.com   |\n| 2           | David   | michael@example.com |\n| 3           | Zachary | sarah@example.com   |\n| 4           | Alice   | john@example.com    |\n| 6           | Violet  | alice@example.com   |\n+-------------+---------+---------------------+\n<strong>Explanation:</strong>\nAlic (customer_id = 4) and Finn (customer_id = 5) both use john@example.com, so only the first occurrence of this email is retained.\n</pre>\n",
+      "hints": [
+        "Consider using a build-in function in pandas library to remove the duplicate rows based on specified data."
+      ],
+      "acRate": 85.12129833027237,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-drop-missing-data",
+      "submissionId": 1433132289,
+      "platform": "leetcode",
+      "title": "Drop Missing Data",
+      "titleSlug": "drop-missing-data",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "pythondata",
+        "ext": "txt",
+        "slug": "pythondata"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "readmeContent": "# Drop Missing Data\n\n**Difficulty:** Easy  |  **Acceptance:** 64.5%\n\n**Tags:** —\n\n## Problem\n\nDataFrame students\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nThere are some rows having missing values in the name column.\n\nWrite a solution to remove the rows with missing values.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 32         | Piper   | 5   |\n| 217        | None    | 19  |\n| 779        | Georgia | 20  |\n| 849        | Willow  | 14  |\n+------------+---------+-----+\nOutput:\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 32         | Piper   | 5   |\n| 779        | Georgia | 20  | \n| 849        | Willow  | 14  | \n+------------+---------+-----+\nExplanation: \nStudent with id 217 havs empty value in the name column, so it will be removed.\n\n## My Submission\n\n- Runtime: 393 ms\n- Memory: 70.1 MB\n",
+      "files": [
+        {
+          "path": "problems/drop-missing-data/README.md",
+          "content": "# Drop Missing Data\n\n**Difficulty:** Easy  |  **Acceptance:** 64.5%\n\n**Tags:** —\n\n## Problem\n\nDataFrame students\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nThere are some rows having missing values in the name column.\n\nWrite a solution to remove the rows with missing values.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 32         | Piper   | 5   |\n| 217        | None    | 19  |\n| 779        | Georgia | 20  |\n| 849        | Willow  | 14  |\n+------------+---------+-----+\nOutput:\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 32         | Piper   | 5   |\n| 779        | Georgia | 20  | \n| 849        | Willow  | 14  | \n+------------+---------+-----+\nExplanation: \nStudent with id 217 havs empty value in the name column, so it will be removed.\n\n## My Submission\n\n- Runtime: 393 ms\n- Memory: 70.1 MB\n"
+        }
+      ],
+      "timestamp": 1729837664000,
+      "runtime": "393 ms",
+      "memory": "70.1 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<pre>\nDataFrame students\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n</pre>\n\n<p>There are some rows having missing values in the <code>name</code> column.</p>\n\n<p>Write a solution to remove the rows with missing values.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:\n</strong>+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 32         | Piper   | 5   |\n| 217        | None    | 19  |\n| 779        | Georgia | 20  |\n| 849        | Willow  | 14  |\n+------------+---------+-----+\n<strong>Output:\n</strong>+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 32         | Piper   | 5   |\n| 779        | Georgia | 20  | \n| 849        | Willow  | 14  | \n+------------+---------+-----+\n<strong>Explanation:</strong> \nStudent with id 217 havs empty value in the name column, so it will be removed.</pre>\n",
+      "hints": [
+        "Consider using a build-in function in pandas library to remove the rows with missing values based on specified data."
+      ],
+      "acRate": 64.5340052833205,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-drop-missing-data::1433132289",
+      "submissionId": 1433132289,
+      "platform": "leetcode",
+      "title": "Drop Missing Data",
+      "titleSlug": "drop-missing-data",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python",
+        "ext": "py",
+        "slug": "python"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "import pandas as pd\n\ndef dropMissingData(students: pd.DataFrame) -> pd.DataFrame:\n    return students.dropna(subset = 'name')",
+      "readmeContent": "# Drop Missing Data\n\n**Difficulty:** Easy  |  **Acceptance:** 64.5%\n\n**Tags:** —\n\n## Problem\n\nDataFrame students\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nThere are some rows having missing values in the name column.\n\nWrite a solution to remove the rows with missing values.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 32         | Piper   | 5   |\n| 217        | None    | 19  |\n| 779        | Georgia | 20  |\n| 849        | Willow  | 14  |\n+------------+---------+-----+\nOutput:\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 32         | Piper   | 5   |\n| 779        | Georgia | 20  | \n| 849        | Willow  | 14  | \n+------------+---------+-----+\nExplanation: \nStudent with id 217 havs empty value in the name column, so it will be removed.\n\n## My Submission\n\n- Runtime: 393 ms\n- Memory: 70.1 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-drop-missing-data/lc-drop-missing-data.py",
+          "content": "import pandas as pd\n\ndef dropMissingData(students: pd.DataFrame) -> pd.DataFrame:\n    return students.dropna(subset = 'name')"
+        },
+        {
+          "path": "problems/lc-drop-missing-data/README.md",
+          "content": "# Drop Missing Data\n\n**Difficulty:** Easy  |  **Acceptance:** 64.5%\n\n**Tags:** —\n\n## Problem\n\nDataFrame students\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nThere are some rows having missing values in the name column.\n\nWrite a solution to remove the rows with missing values.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 32         | Piper   | 5   |\n| 217        | None    | 19  |\n| 779        | Georgia | 20  |\n| 849        | Willow  | 14  |\n+------------+---------+-----+\nOutput:\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 32         | Piper   | 5   |\n| 779        | Georgia | 20  | \n| 849        | Willow  | 14  | \n+------------+---------+-----+\nExplanation: \nStudent with id 217 havs empty value in the name column, so it will be removed.\n\n## My Submission\n\n- Runtime: 393 ms\n- Memory: 70.1 MB\n"
+        }
+      ],
+      "timestamp": 1729837664000,
+      "runtime": "393 ms",
+      "memory": "70.1 MB",
+      "runtimePct": 5.153500000000024,
+      "memoryPct": 6.277400000000027,
+      "problemStatement": "<pre>\nDataFrame students\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n</pre>\n\n<p>There are some rows having missing values in the <code>name</code> column.</p>\n\n<p>Write a solution to remove the rows with missing values.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:\n</strong>+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 32         | Piper   | 5   |\n| 217        | None    | 19  |\n| 779        | Georgia | 20  |\n| 849        | Willow  | 14  |\n+------------+---------+-----+\n<strong>Output:\n</strong>+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 32         | Piper   | 5   |\n| 779        | Georgia | 20  | \n| 849        | Willow  | 14  | \n+------------+---------+-----+\n<strong>Explanation:</strong> \nStudent with id 217 havs empty value in the name column, so it will be removed.</pre>\n",
+      "hints": [
+        "Consider using a build-in function in pandas library to remove the rows with missing values based on specified data."
+      ],
+      "acRate": 64.54162737110245,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-modify-columns",
+      "submissionId": 1433134107,
+      "platform": "leetcode",
+      "title": "Modify Columns",
+      "titleSlug": "modify-columns",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "pythondata",
+        "ext": "txt",
+        "slug": "pythondata"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "readmeContent": "# Modify Columns\n\n**Difficulty:** Easy  |  **Acceptance:** 92.3%\n\n**Tags:** —\n\n## Problem\n\nDataFrame employees\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| salary      | int    |\n+-------------+--------+\n\nA company intends to give its employees a pay rise.\n\nWrite a solution to modify the salary column by multiplying each salary by 2.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\nDataFrame employees\n+---------+--------+\n| name    | salary |\n+---------+--------+\n| Jack    | 19666  |\n| Piper   | 74754  |\n| Mia     | 62509  |\n| Ulysses | 54866  |\n+---------+--------+\nOutput:\n+---------+--------+\n| name    | salary |\n+---------+--------+\n| Jack    | 39332  |\n| Piper   | 149508 |\n| Mia     | 125018 |\n| Ulysses | 109732 |\n+---------+--------+\nExplanation:\nEvery salary has been doubled.\n\n## My Submission\n\n- Runtime: 377 ms\n- Memory: 69.2 MB\n",
+      "files": [
+        {
+          "path": "problems/modify-columns/README.md",
+          "content": "# Modify Columns\n\n**Difficulty:** Easy  |  **Acceptance:** 92.3%\n\n**Tags:** —\n\n## Problem\n\nDataFrame employees\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| salary      | int    |\n+-------------+--------+\n\nA company intends to give its employees a pay rise.\n\nWrite a solution to modify the salary column by multiplying each salary by 2.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\nDataFrame employees\n+---------+--------+\n| name    | salary |\n+---------+--------+\n| Jack    | 19666  |\n| Piper   | 74754  |\n| Mia     | 62509  |\n| Ulysses | 54866  |\n+---------+--------+\nOutput:\n+---------+--------+\n| name    | salary |\n+---------+--------+\n| Jack    | 39332  |\n| Piper   | 149508 |\n| Mia     | 125018 |\n| Ulysses | 109732 |\n+---------+--------+\nExplanation:\nEvery salary has been doubled.\n\n## My Submission\n\n- Runtime: 377 ms\n- Memory: 69.2 MB\n"
+        }
+      ],
+      "timestamp": 1729837816000,
+      "runtime": "377 ms",
+      "memory": "69.2 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<pre>\nDataFrame <code>employees</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| salary      | int    |\n+-------------+--------+\n</pre>\n\n<p>A company intends to give its employees a pay rise.</p>\n\n<p>Write a solution to <strong>modify</strong> the <code>salary</code> column by multiplying each salary by 2.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:\n</strong>DataFrame employees\n+---------+--------+\n| name    | salary |\n+---------+--------+\n| Jack    | 19666  |\n| Piper   | 74754  |\n| Mia     | 62509  |\n| Ulysses | 54866  |\n+---------+--------+\n<strong>Output:\n</strong>+---------+--------+\n| name    | salary |\n+---------+--------+\n| Jack    | 39332  |\n| Piper   | 149508 |\n| Mia     | 125018 |\n| Ulysses | 109732 |\n+---------+--------+\n<strong>Explanation:\n</strong>Every salary has been doubled.</pre>\n",
+      "hints": [
+        "Considering multiplying each salary value by 2, using a simple assignment operation. The calculation of the value is done column-wise."
+      ],
+      "acRate": 92.27476199483009,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-modify-columns::1433134107",
+      "submissionId": 1433134107,
+      "platform": "leetcode",
+      "title": "Modify Columns",
+      "titleSlug": "modify-columns",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python",
+        "ext": "py",
+        "slug": "python"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "import pandas as pd\n\ndef modifySalaryColumn(employees: pd.DataFrame) -> pd.DataFrame:\n    employees['salary'] *= 2\n    return employees",
+      "readmeContent": "# Modify Columns\n\n**Difficulty:** Easy  |  **Acceptance:** 92.3%\n\n**Tags:** —\n\n## Problem\n\nDataFrame employees\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| salary      | int    |\n+-------------+--------+\n\nA company intends to give its employees a pay rise.\n\nWrite a solution to modify the salary column by multiplying each salary by 2.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\nDataFrame employees\n+---------+--------+\n| name    | salary |\n+---------+--------+\n| Jack    | 19666  |\n| Piper   | 74754  |\n| Mia     | 62509  |\n| Ulysses | 54866  |\n+---------+--------+\nOutput:\n+---------+--------+\n| name    | salary |\n+---------+--------+\n| Jack    | 39332  |\n| Piper   | 149508 |\n| Mia     | 125018 |\n| Ulysses | 109732 |\n+---------+--------+\nExplanation:\nEvery salary has been doubled.\n\n## My Submission\n\n- Runtime: 377 ms\n- Memory: 69.2 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-modify-columns/lc-modify-columns.py",
+          "content": "import pandas as pd\n\ndef modifySalaryColumn(employees: pd.DataFrame) -> pd.DataFrame:\n    employees['salary'] *= 2\n    return employees"
+        },
+        {
+          "path": "problems/lc-modify-columns/README.md",
+          "content": "# Modify Columns\n\n**Difficulty:** Easy  |  **Acceptance:** 92.3%\n\n**Tags:** —\n\n## Problem\n\nDataFrame employees\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| salary      | int    |\n+-------------+--------+\n\nA company intends to give its employees a pay rise.\n\nWrite a solution to modify the salary column by multiplying each salary by 2.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\nDataFrame employees\n+---------+--------+\n| name    | salary |\n+---------+--------+\n| Jack    | 19666  |\n| Piper   | 74754  |\n| Mia     | 62509  |\n| Ulysses | 54866  |\n+---------+--------+\nOutput:\n+---------+--------+\n| name    | salary |\n+---------+--------+\n| Jack    | 39332  |\n| Piper   | 149508 |\n| Mia     | 125018 |\n| Ulysses | 109732 |\n+---------+--------+\nExplanation:\nEvery salary has been doubled.\n\n## My Submission\n\n- Runtime: 377 ms\n- Memory: 69.2 MB\n"
+        }
+      ],
+      "timestamp": 1729837816000,
+      "runtime": "377 ms",
+      "memory": "69.2 MB",
+      "runtimePct": 5.096900000000014,
+      "memoryPct": 5.848499999999994,
+      "problemStatement": "<pre>\nDataFrame <code>employees</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| salary      | int    |\n+-------------+--------+\n</pre>\n\n<p>A company intends to give its employees a pay rise.</p>\n\n<p>Write a solution to <strong>modify</strong> the <code>salary</code> column by multiplying each salary by 2.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:\n</strong>DataFrame employees\n+---------+--------+\n| name    | salary |\n+---------+--------+\n| Jack    | 19666  |\n| Piper   | 74754  |\n| Mia     | 62509  |\n| Ulysses | 54866  |\n+---------+--------+\n<strong>Output:\n</strong>+---------+--------+\n| name    | salary |\n+---------+--------+\n| Jack    | 39332  |\n| Piper   | 149508 |\n| Mia     | 125018 |\n| Ulysses | 109732 |\n+---------+--------+\n<strong>Explanation:\n</strong>Every salary has been doubled.</pre>\n",
+      "hints": [
+        "Considering multiplying each salary value by 2, using a simple assignment operation. The calculation of the value is done column-wise."
+      ],
+      "acRate": 92.27107816321782,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-rename-columns",
+      "submissionId": 1433138106,
+      "platform": "leetcode",
+      "title": "Rename Columns",
+      "titleSlug": "rename-columns",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "pythondata",
+        "ext": "txt",
+        "slug": "pythondata"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "readmeContent": "# Rename Columns\n\n**Difficulty:** Easy  |  **Acceptance:** 85.2%\n\n**Tags:** —\n\n## Problem\n\nDataFrame students\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| id          | int    |\n| first       | object |\n| last        | object |\n| age         | int    |\n+-------------+--------+\n\nWrite a solution to rename the columns as follows:\n\n\tid to student_id\n\tfirst to first_name\n\tlast to last_name\n\tage to age_in_years\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:\n+----+---------+----------+-----+\n| id | first   | last     | age |\n+----+---------+----------+-----+\n| 1  | Mason   | King     | 6   |\n| 2  | Ava     | Wright   | 7   |\n| 3  | Taylor  | Hall     | 16  |\n| 4  | Georgia | Thompson | 18  |\n| 5  | Thomas  | Moore    | 10  |\n+----+---------+----------+-----+\nOutput:\n+------------+------------+-----------+--------------+\n| student_id | first_name | last_name | age_in_years |\n+------------+------------+-----------+--------------+\n| 1          | Mason      | King      | 6            |\n| 2          | Ava        | Wright    | 7            |\n| 3          | Taylor     | Hall      | 16           |\n| 4          | Georgia    | Thompson  | 18           |\n| 5          | Thomas     | Moore     | 10           |\n+------------+------------+-----------+--------------+\nExplanation: \nThe column names are changed accordingly.\n\n## My Submission\n\n- Runtime: 332 ms\n- Memory: 69.5 MB\n",
+      "files": [
+        {
+          "path": "problems/rename-columns/README.md",
+          "content": "# Rename Columns\n\n**Difficulty:** Easy  |  **Acceptance:** 85.2%\n\n**Tags:** —\n\n## Problem\n\nDataFrame students\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| id          | int    |\n| first       | object |\n| last        | object |\n| age         | int    |\n+-------------+--------+\n\nWrite a solution to rename the columns as follows:\n\n\tid to student_id\n\tfirst to first_name\n\tlast to last_name\n\tage to age_in_years\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:\n+----+---------+----------+-----+\n| id | first   | last     | age |\n+----+---------+----------+-----+\n| 1  | Mason   | King     | 6   |\n| 2  | Ava     | Wright   | 7   |\n| 3  | Taylor  | Hall     | 16  |\n| 4  | Georgia | Thompson | 18  |\n| 5  | Thomas  | Moore    | 10  |\n+----+---------+----------+-----+\nOutput:\n+------------+------------+-----------+--------------+\n| student_id | first_name | last_name | age_in_years |\n+------------+------------+-----------+--------------+\n| 1          | Mason      | King      | 6            |\n| 2          | Ava        | Wright    | 7            |\n| 3          | Taylor     | Hall      | 16           |\n| 4          | Georgia    | Thompson  | 18           |\n| 5          | Thomas     | Moore     | 10           |\n+------------+------------+-----------+--------------+\nExplanation: \nThe column names are changed accordingly.\n\n## My Submission\n\n- Runtime: 332 ms\n- Memory: 69.5 MB\n"
+        }
+      ],
+      "timestamp": 1729838137000,
+      "runtime": "332 ms",
+      "memory": "69.5 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<pre>\nDataFrame <code>students</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| id          | int    |\n| first       | object |\n| last        | object |\n| age         | int    |\n+-------------+--------+\n</pre>\n\n<p>Write a solution to rename the columns as follows:</p>\n\n<ul>\n\t<li><code>id</code> to <code>student_id</code></li>\n\t<li><code>first</code> to <code>first_name</code></li>\n\t<li><code>last</code> to <code>last_name</code></li>\n\t<li><code>age</code> to <code>age_in_years</code></li>\n</ul>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<pre>\n<strong class=\"example\">Example 1:</strong>\n<strong>Input:\n</strong>+----+---------+----------+-----+\n| id | first   | last     | age |\n+----+---------+----------+-----+\n| 1  | Mason   | King     | 6   |\n| 2  | Ava     | Wright   | 7   |\n| 3  | Taylor  | Hall     | 16  |\n| 4  | Georgia | Thompson | 18  |\n| 5  | Thomas  | Moore    | 10  |\n+----+---------+----------+-----+\n<strong>Output:</strong>\n+------------+------------+-----------+--------------+\n| student_id | first_name | last_name | age_in_years |\n+------------+------------+-----------+--------------+\n| 1          | Mason      | King      | 6            |\n| 2          | Ava        | Wright    | 7            |\n| 3          | Taylor     | Hall      | 16           |\n| 4          | Georgia    | Thompson  | 18           |\n| 5          | Thomas     | Moore     | 10           |\n+------------+------------+-----------+--------------+\n<strong>Explanation:</strong> \nThe column names are changed accordingly.</pre>\n",
+      "hints": [
+        "Consider using a build-in function in pandas library with a dictionary to rename the columns as specified."
+      ],
+      "acRate": 85.227813830728,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-rename-columns::1433138106",
+      "submissionId": 1433138106,
+      "platform": "leetcode",
+      "title": "Rename Columns",
+      "titleSlug": "rename-columns",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python",
+        "ext": "py",
+        "slug": "python"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "import pandas as pd\n\ndef renameColumns(students: pd.DataFrame) -> pd.DataFrame:\n    return students.rename(columns = {'id': 'student_id', 'first': 'first_name', 'last': 'last_name', 'age': 'age_in_years'})",
+      "readmeContent": "# Rename Columns\n\n**Difficulty:** Easy  |  **Acceptance:** 85.2%\n\n**Tags:** —\n\n## Problem\n\nDataFrame students\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| id          | int    |\n| first       | object |\n| last        | object |\n| age         | int    |\n+-------------+--------+\n\nWrite a solution to rename the columns as follows:\n\n\tid to student_id\n\tfirst to first_name\n\tlast to last_name\n\tage to age_in_years\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:\n+----+---------+----------+-----+\n| id | first   | last     | age |\n+----+---------+----------+-----+\n| 1  | Mason   | King     | 6   |\n| 2  | Ava     | Wright   | 7   |\n| 3  | Taylor  | Hall     | 16  |\n| 4  | Georgia | Thompson | 18  |\n| 5  | Thomas  | Moore    | 10  |\n+----+---------+----------+-----+\nOutput:\n+------------+------------+-----------+--------------+\n| student_id | first_name | last_name | age_in_years |\n+------------+------------+-----------+--------------+\n| 1          | Mason      | King      | 6            |\n| 2          | Ava        | Wright    | 7            |\n| 3          | Taylor     | Hall      | 16           |\n| 4          | Georgia    | Thompson  | 18           |\n| 5          | Thomas     | Moore     | 10           |\n+------------+------------+-----------+--------------+\nExplanation: \nThe column names are changed accordingly.\n\n## My Submission\n\n- Runtime: 332 ms\n- Memory: 69.5 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-rename-columns/lc-rename-columns.py",
+          "content": "import pandas as pd\n\ndef renameColumns(students: pd.DataFrame) -> pd.DataFrame:\n    return students.rename(columns = {'id': 'student_id', 'first': 'first_name', 'last': 'last_name', 'age': 'age_in_years'})"
+        },
+        {
+          "path": "problems/lc-rename-columns/README.md",
+          "content": "# Rename Columns\n\n**Difficulty:** Easy  |  **Acceptance:** 85.2%\n\n**Tags:** —\n\n## Problem\n\nDataFrame students\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| id          | int    |\n| first       | object |\n| last        | object |\n| age         | int    |\n+-------------+--------+\n\nWrite a solution to rename the columns as follows:\n\n\tid to student_id\n\tfirst to first_name\n\tlast to last_name\n\tage to age_in_years\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:\n+----+---------+----------+-----+\n| id | first   | last     | age |\n+----+---------+----------+-----+\n| 1  | Mason   | King     | 6   |\n| 2  | Ava     | Wright   | 7   |\n| 3  | Taylor  | Hall     | 16  |\n| 4  | Georgia | Thompson | 18  |\n| 5  | Thomas  | Moore    | 10  |\n+----+---------+----------+-----+\nOutput:\n+------------+------------+-----------+--------------+\n| student_id | first_name | last_name | age_in_years |\n+------------+------------+-----------+--------------+\n| 1          | Mason      | King      | 6            |\n| 2          | Ava        | Wright    | 7            |\n| 3          | Taylor     | Hall      | 16           |\n| 4          | Georgia    | Thompson  | 18           |\n| 5          | Thomas     | Moore     | 10           |\n+------------+------------+-----------+--------------+\nExplanation: \nThe column names are changed accordingly.\n\n## My Submission\n\n- Runtime: 332 ms\n- Memory: 69.5 MB\n"
+        }
+      ],
+      "timestamp": 1729838137000,
+      "runtime": "332 ms",
+      "memory": "69.5 MB",
+      "runtimePct": 5.0908000000000335,
+      "memoryPct": 9.573200000000003,
+      "problemStatement": "<pre>\nDataFrame <code>students</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| id          | int    |\n| first       | object |\n| last        | object |\n| age         | int    |\n+-------------+--------+\n</pre>\n\n<p>Write a solution to rename the columns as follows:</p>\n\n<ul>\n\t<li><code>id</code> to <code>student_id</code></li>\n\t<li><code>first</code> to <code>first_name</code></li>\n\t<li><code>last</code> to <code>last_name</code></li>\n\t<li><code>age</code> to <code>age_in_years</code></li>\n</ul>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<pre>\n<strong class=\"example\">Example 1:</strong>\n<strong>Input:\n</strong>+----+---------+----------+-----+\n| id | first   | last     | age |\n+----+---------+----------+-----+\n| 1  | Mason   | King     | 6   |\n| 2  | Ava     | Wright   | 7   |\n| 3  | Taylor  | Hall     | 16  |\n| 4  | Georgia | Thompson | 18  |\n| 5  | Thomas  | Moore    | 10  |\n+----+---------+----------+-----+\n<strong>Output:</strong>\n+------------+------------+-----------+--------------+\n| student_id | first_name | last_name | age_in_years |\n+------------+------------+-----------+--------------+\n| 1          | Mason      | King      | 6            |\n| 2          | Ava        | Wright    | 7            |\n| 3          | Taylor     | Hall      | 16           |\n| 4          | Georgia    | Thompson  | 18           |\n| 5          | Thomas     | Moore     | 10           |\n+------------+------------+-----------+--------------+\n<strong>Explanation:</strong> \nThe column names are changed accordingly.</pre>\n",
+      "hints": [
+        "Consider using a build-in function in pandas library with a dictionary to rename the columns as specified."
+      ],
+      "acRate": 85.22835201215706,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-change-data-type::1433139571",
+      "submissionId": 1433139571,
+      "platform": "leetcode",
+      "title": "Change Data Type",
+      "titleSlug": "change-data-type",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python",
+        "ext": "py",
+        "slug": "python"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "import pandas as pd\n\ndef changeDatatype(students: pd.DataFrame) -> pd.DataFrame:\n    return students.astype({'grade':int})",
+      "readmeContent": "# Change Data Type\n\n**Difficulty:** Easy  |  **Acceptance:** 87.3%\n\n**Tags:** —\n\n## Problem\n\nDataFrame students\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n| grade       | float  |\n+-------------+--------+\n\nWrite a solution to correct the errors:\n\nThe grade column is stored as floats,&nbsp;convert it to integers.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:\nDataFrame students:\n+------------+------+-----+-------+\n| student_id | name | age | grade |\n+------------+------+-----+-------+\n| 1          | Ava  | 6   | 73.0  |\n| 2          | Kate | 15  | 87.0  |\n+------------+------+-----+-------+\nOutput:\n+------------+------+-----+-------+\n| student_id | name | age | grade |\n+------------+------+-----+-------+\n| 1          | Ava  | 6   | 73    |\n| 2          | Kate | 15  | 87    |\n+------------+------+-----+-------+\nExplanation: \nThe data types of the column grade is converted to int.\n\n## My Submission\n\n- Runtime: 474 ms\n- Memory: 68.9 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-change-data-type/lc-change-data-type.py",
+          "content": "import pandas as pd\n\ndef changeDatatype(students: pd.DataFrame) -> pd.DataFrame:\n    return students.astype({'grade':int})"
+        },
+        {
+          "path": "problems/lc-change-data-type/README.md",
+          "content": "# Change Data Type\n\n**Difficulty:** Easy  |  **Acceptance:** 87.3%\n\n**Tags:** —\n\n## Problem\n\nDataFrame students\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n| grade       | float  |\n+-------------+--------+\n\nWrite a solution to correct the errors:\n\nThe grade column is stored as floats,&nbsp;convert it to integers.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:\nDataFrame students:\n+------------+------+-----+-------+\n| student_id | name | age | grade |\n+------------+------+-----+-------+\n| 1          | Ava  | 6   | 73.0  |\n| 2          | Kate | 15  | 87.0  |\n+------------+------+-----+-------+\nOutput:\n+------------+------+-----+-------+\n| student_id | name | age | grade |\n+------------+------+-----+-------+\n| 1          | Ava  | 6   | 73    |\n| 2          | Kate | 15  | 87    |\n+------------+------+-----+-------+\nExplanation: \nThe data types of the column grade is converted to int.\n\n## My Submission\n\n- Runtime: 474 ms\n- Memory: 68.9 MB\n"
+        }
+      ],
+      "timestamp": 1729838254000,
+      "runtime": "474 ms",
+      "memory": "68.9 MB",
+      "runtimePct": 5.150499999999987,
+      "memoryPct": 9.87120000000001,
+      "problemStatement": "<pre>\nDataFrame <code>students</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n| grade       | float  |\n+-------------+--------+\n</pre>\n\n<p>Write a solution to correct the errors:</p>\n\n<p>The <code>grade</code> column is stored as floats,&nbsp;convert it to integers.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<pre>\n<strong class=\"example\">Example 1:</strong>\n<strong>Input:\n</strong>DataFrame students:\n+------------+------+-----+-------+\n| student_id | name | age | grade |\n+------------+------+-----+-------+\n| 1          | Ava  | 6   | 73.0  |\n| 2          | Kate | 15  | 87.0  |\n+------------+------+-----+-------+\n<strong>Output:\n</strong>+------------+------+-----+-------+\n| student_id | name | age | grade |\n+------------+------+-----+-------+\n| 1          | Ava  | 6   | 73    |\n| 2          | Kate | 15  | 87    |\n+------------+------+-----+-------+\n<strong>Explanation:</strong> \nThe data types of the column grade is converted to int.</pre>\n",
+      "hints": [
+        "Consider using a build-in function in pandas library with a dictionary to convert the datatype of columns as specified."
+      ],
+      "acRate": 87.28649273564223,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-fill-missing-data::1433144665",
+      "submissionId": 1433144665,
+      "platform": "leetcode",
+      "title": "Fill Missing Data",
+      "titleSlug": "fill-missing-data",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python",
+        "ext": "py",
+        "slug": "python"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "import pandas as pd\n\ndef fillMissingValues(products: pd.DataFrame) -> pd.DataFrame:\n    products['quantity'].fillna(value = 0, inplace = True)\n    return products",
+      "readmeContent": "# Fill Missing Data\n\n**Difficulty:** Easy  |  **Acceptance:** 72.5%\n\n**Tags:** —\n\n## Problem\n\nDataFrame products\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| quantity    | int    |\n| price       | int    |\n+-------------+--------+\n\nWrite a solution to fill in the missing value as 0 in the quantity column.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:+-----------------+----------+-------+\n| name            | quantity | price |\n+-----------------+----------+-------+\n| Wristwatch      | None     | 135   |\n| WirelessEarbuds | None     | 821   |\n| GolfClubs       | 779      | 9319  |\n| Printer         | 849      | 3051  |\n+-----------------+----------+-------+\nOutput:\n+-----------------+----------+-------+\n| name            | quantity | price |\n+-----------------+----------+-------+\n| Wristwatch      | 0        | 135   |\n| WirelessEarbuds | 0        | 821   |\n| GolfClubs       | 779      | 9319  |\n| Printer         | 849      | 3051  |\n+-----------------+----------+-------+\nExplanation: \nThe quantity for Wristwatch and WirelessEarbuds are filled by 0.\n\n## My Submission\n\n- Runtime: 379 ms\n- Memory: 69.1 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-fill-missing-data/lc-fill-missing-data.py",
+          "content": "import pandas as pd\n\ndef fillMissingValues(products: pd.DataFrame) -> pd.DataFrame:\n    products['quantity'].fillna(value = 0, inplace = True)\n    return products"
+        },
+        {
+          "path": "problems/lc-fill-missing-data/README.md",
+          "content": "# Fill Missing Data\n\n**Difficulty:** Easy  |  **Acceptance:** 72.5%\n\n**Tags:** —\n\n## Problem\n\nDataFrame products\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| quantity    | int    |\n| price       | int    |\n+-------------+--------+\n\nWrite a solution to fill in the missing value as 0 in the quantity column.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:+-----------------+----------+-------+\n| name            | quantity | price |\n+-----------------+----------+-------+\n| Wristwatch      | None     | 135   |\n| WirelessEarbuds | None     | 821   |\n| GolfClubs       | 779      | 9319  |\n| Printer         | 849      | 3051  |\n+-----------------+----------+-------+\nOutput:\n+-----------------+----------+-------+\n| name            | quantity | price |\n+-----------------+----------+-------+\n| Wristwatch      | 0        | 135   |\n| WirelessEarbuds | 0        | 821   |\n| GolfClubs       | 779      | 9319  |\n| Printer         | 849      | 3051  |\n+-----------------+----------+-------+\nExplanation: \nThe quantity for Wristwatch and WirelessEarbuds are filled by 0.\n\n## My Submission\n\n- Runtime: 379 ms\n- Memory: 69.1 MB\n"
+        }
+      ],
+      "timestamp": 1729838671000,
+      "runtime": "379 ms",
+      "memory": "69.1 MB",
+      "runtimePct": 5.124400000000005,
+      "memoryPct": 13.329500000000003,
+      "problemStatement": "<pre>\nDataFrame <code>products</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| quantity    | int    |\n| price       | int    |\n+-------------+--------+\n</pre>\n\n<p>Write a solution to fill in the missing value as <code><strong>0</strong></code> in the <code>quantity</code> column.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<pre>\n<strong class=\"example\">Example 1:</strong>\n<strong>Input:</strong>+-----------------+----------+-------+\n| name            | quantity | price |\n+-----------------+----------+-------+\n| Wristwatch      | None     | 135   |\n| WirelessEarbuds | None     | 821   |\n| GolfClubs       | 779      | 9319  |\n| Printer         | 849      | 3051  |\n+-----------------+----------+-------+\n<strong>Output:\n</strong>+-----------------+----------+-------+\n| name            | quantity | price |\n+-----------------+----------+-------+\n| Wristwatch      | 0        | 135   |\n| WirelessEarbuds | 0        | 821   |\n| GolfClubs       | 779      | 9319  |\n| Printer         | 849      | 3051  |\n+-----------------+----------+-------+\n<strong>Explanation:</strong> \nThe quantity for Wristwatch and WirelessEarbuds are filled by 0.</pre>\n",
+      "hints": [
+        "Consider using a build-in function in pandas library to fill the missing values of specified columns."
+      ],
+      "acRate": 72.48465749897308,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-fill-missing-data",
+      "submissionId": 1433144824,
+      "platform": "leetcode",
+      "title": "Fill Missing Data",
+      "titleSlug": "fill-missing-data",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "pythondata",
+        "ext": "txt",
+        "slug": "pythondata"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "readmeContent": "# Fill Missing Data\n\n**Difficulty:** Easy  |  **Acceptance:** 72.5%\n\n**Tags:** —\n\n## Problem\n\nDataFrame products\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| quantity    | int    |\n| price       | int    |\n+-------------+--------+\n\nWrite a solution to fill in the missing value as 0 in the quantity column.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:+-----------------+----------+-------+\n| name            | quantity | price |\n+-----------------+----------+-------+\n| Wristwatch      | None     | 135   |\n| WirelessEarbuds | None     | 821   |\n| GolfClubs       | 779      | 9319  |\n| Printer         | 849      | 3051  |\n+-----------------+----------+-------+\nOutput:\n+-----------------+----------+-------+\n| name            | quantity | price |\n+-----------------+----------+-------+\n| Wristwatch      | 0        | 135   |\n| WirelessEarbuds | 0        | 821   |\n| GolfClubs       | 779      | 9319  |\n| Printer         | 849      | 3051  |\n+-----------------+----------+-------+\nExplanation: \nThe quantity for Wristwatch and WirelessEarbuds are filled by 0.\n\n## My Submission\n\n- Runtime: 351 ms\n- Memory: 68.1 MB\n",
+      "files": [
+        {
+          "path": "problems/fill-missing-data/README.md",
+          "content": "# Fill Missing Data\n\n**Difficulty:** Easy  |  **Acceptance:** 72.5%\n\n**Tags:** —\n\n## Problem\n\nDataFrame products\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| quantity    | int    |\n| price       | int    |\n+-------------+--------+\n\nWrite a solution to fill in the missing value as 0 in the quantity column.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:+-----------------+----------+-------+\n| name            | quantity | price |\n+-----------------+----------+-------+\n| Wristwatch      | None     | 135   |\n| WirelessEarbuds | None     | 821   |\n| GolfClubs       | 779      | 9319  |\n| Printer         | 849      | 3051  |\n+-----------------+----------+-------+\nOutput:\n+-----------------+----------+-------+\n| name            | quantity | price |\n+-----------------+----------+-------+\n| Wristwatch      | 0        | 135   |\n| WirelessEarbuds | 0        | 821   |\n| GolfClubs       | 779      | 9319  |\n| Printer         | 849      | 3051  |\n+-----------------+----------+-------+\nExplanation: \nThe quantity for Wristwatch and WirelessEarbuds are filled by 0.\n\n## My Submission\n\n- Runtime: 351 ms\n- Memory: 68.1 MB\n"
+        }
+      ],
+      "timestamp": 1729838683000,
+      "runtime": "351 ms",
+      "memory": "68.1 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<pre>\nDataFrame <code>products</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| quantity    | int    |\n| price       | int    |\n+-------------+--------+\n</pre>\n\n<p>Write a solution to fill in the missing value as <code><strong>0</strong></code> in the <code>quantity</code> column.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<pre>\n<strong class=\"example\">Example 1:</strong>\n<strong>Input:</strong>+-----------------+----------+-------+\n| name            | quantity | price |\n+-----------------+----------+-------+\n| Wristwatch      | None     | 135   |\n| WirelessEarbuds | None     | 821   |\n| GolfClubs       | 779      | 9319  |\n| Printer         | 849      | 3051  |\n+-----------------+----------+-------+\n<strong>Output:\n</strong>+-----------------+----------+-------+\n| name            | quantity | price |\n+-----------------+----------+-------+\n| Wristwatch      | 0        | 135   |\n| WirelessEarbuds | 0        | 821   |\n| GolfClubs       | 779      | 9319  |\n| Printer         | 849      | 3051  |\n+-----------------+----------+-------+\n<strong>Explanation:</strong> \nThe quantity for Wristwatch and WirelessEarbuds are filled by 0.</pre>\n",
+      "hints": [
+        "Consider using a build-in function in pandas library to fill the missing values of specified columns."
+      ],
+      "acRate": 72.47439664605284,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-reshape-data-concatenate",
+      "submissionId": 1433146452,
+      "platform": "leetcode",
+      "title": "Reshape Data: Concatenate",
+      "titleSlug": "reshape-data-concatenate",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "pythondata",
+        "ext": "txt",
+        "slug": "pythondata"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "readmeContent": "# Reshape Data: Concatenate\n\n**Difficulty:** Easy  |  **Acceptance:** 90.4%\n\n**Tags:** —\n\n## Problem\n\nDataFrame df1\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nDataFrame df2\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nWrite a solution to concatenate these two DataFrames vertically into one DataFrame.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\ndf1\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 1          | Mason   | 8   |\n| 2          | Ava     | 6   |\n| 3          | Taylor  | 15  |\n| 4          | Georgia | 17  |\n+------------+---------+-----+\ndf2\n+------------+------+-----+\n| student_id | name | age |\n+------------+------+-----+\n| 5          | Leo  | 7   |\n| 6          | Alex | 7   |\n+------------+------+-----+\nOutput:\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 1          | Mason   | 8   |\n| 2          | Ava     | 6   |\n| 3          | Taylor  | 15  |\n| 4          | Georgia | 17  |\n| 5          | Leo     | 7   |\n| 6          | Alex    | 7   |\n+------------+---------+-----+\nExplanation:\nThe two DataFramess are stacked vertically, and their rows are combined.\n\n## My Submission\n\n- Runtime: 443 ms\n- Memory: 69 MB\n",
+      "files": [
+        {
+          "path": "problems/reshape-data-concatenate/README.md",
+          "content": "# Reshape Data: Concatenate\n\n**Difficulty:** Easy  |  **Acceptance:** 90.4%\n\n**Tags:** —\n\n## Problem\n\nDataFrame df1\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nDataFrame df2\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nWrite a solution to concatenate these two DataFrames vertically into one DataFrame.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\ndf1\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 1          | Mason   | 8   |\n| 2          | Ava     | 6   |\n| 3          | Taylor  | 15  |\n| 4          | Georgia | 17  |\n+------------+---------+-----+\ndf2\n+------------+------+-----+\n| student_id | name | age |\n+------------+------+-----+\n| 5          | Leo  | 7   |\n| 6          | Alex | 7   |\n+------------+------+-----+\nOutput:\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 1          | Mason   | 8   |\n| 2          | Ava     | 6   |\n| 3          | Taylor  | 15  |\n| 4          | Georgia | 17  |\n| 5          | Leo     | 7   |\n| 6          | Alex    | 7   |\n+------------+---------+-----+\nExplanation:\nThe two DataFramess are stacked vertically, and their rows are combined.\n\n## My Submission\n\n- Runtime: 443 ms\n- Memory: 69 MB\n"
+        }
+      ],
+      "timestamp": 1729838819000,
+      "runtime": "443 ms",
+      "memory": "69 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<pre>\nDataFrame <code>df1</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nDataFrame <code>df2</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\n</pre>\n\n<p>Write a solution to concatenate these two DataFrames <strong>vertically</strong> into one DataFrame.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:\ndf1</strong>\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 1          | Mason   | 8   |\n| 2          | Ava     | 6   |\n| 3          | Taylor  | 15  |\n| 4          | Georgia | 17  |\n+------------+---------+-----+\n<strong>df2\n</strong>+------------+------+-----+\n| student_id | name | age |\n+------------+------+-----+\n| 5          | Leo  | 7   |\n| 6          | Alex | 7   |\n+------------+------+-----+\n<strong>Output:</strong>\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 1          | Mason   | 8   |\n| 2          | Ava     | 6   |\n| 3          | Taylor  | 15  |\n| 4          | Georgia | 17  |\n| 5          | Leo     | 7   |\n| 6          | Alex    | 7   |\n+------------+---------+-----+\n<strong>Explanation:\n</strong>The two DataFramess are stacked vertically, and their rows are combined.</pre>\n",
+      "hints": [
+        "Consider using a built-in function in pandas library with the appropriate axis argument."
+      ],
+      "acRate": 90.41136753877943,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-reshape-data-concatenate::1433146452",
+      "submissionId": 1433146452,
+      "platform": "leetcode",
+      "title": "Reshape Data: Concatenate",
+      "titleSlug": "reshape-data-concatenate",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python",
+        "ext": "py",
+        "slug": "python"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "import pandas as pd\n\ndef concatenateTables(df1: pd.DataFrame, df2: pd.DataFrame) -> pd.DataFrame:\n    return pd.concat([df1, df2], axis=0)",
+      "readmeContent": "# Reshape Data: Concatenate\n\n**Difficulty:** Easy  |  **Acceptance:** 90.4%\n\n**Tags:** —\n\n## Problem\n\nDataFrame df1\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nDataFrame df2\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nWrite a solution to concatenate these two DataFrames vertically into one DataFrame.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\ndf1\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 1          | Mason   | 8   |\n| 2          | Ava     | 6   |\n| 3          | Taylor  | 15  |\n| 4          | Georgia | 17  |\n+------------+---------+-----+\ndf2\n+------------+------+-----+\n| student_id | name | age |\n+------------+------+-----+\n| 5          | Leo  | 7   |\n| 6          | Alex | 7   |\n+------------+------+-----+\nOutput:\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 1          | Mason   | 8   |\n| 2          | Ava     | 6   |\n| 3          | Taylor  | 15  |\n| 4          | Georgia | 17  |\n| 5          | Leo     | 7   |\n| 6          | Alex    | 7   |\n+------------+---------+-----+\nExplanation:\nThe two DataFramess are stacked vertically, and their rows are combined.\n\n## My Submission\n\n- Runtime: 443 ms\n- Memory: 69 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-reshape-data-concatenate/lc-reshape-data-concatenate.py",
+          "content": "import pandas as pd\n\ndef concatenateTables(df1: pd.DataFrame, df2: pd.DataFrame) -> pd.DataFrame:\n    return pd.concat([df1, df2], axis=0)"
+        },
+        {
+          "path": "problems/lc-reshape-data-concatenate/README.md",
+          "content": "# Reshape Data: Concatenate\n\n**Difficulty:** Easy  |  **Acceptance:** 90.4%\n\n**Tags:** —\n\n## Problem\n\nDataFrame df1\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nDataFrame df2\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nWrite a solution to concatenate these two DataFrames vertically into one DataFrame.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\ndf1\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 1          | Mason   | 8   |\n| 2          | Ava     | 6   |\n| 3          | Taylor  | 15  |\n| 4          | Georgia | 17  |\n+------------+---------+-----+\ndf2\n+------------+------+-----+\n| student_id | name | age |\n+------------+------+-----+\n| 5          | Leo  | 7   |\n| 6          | Alex | 7   |\n+------------+------+-----+\nOutput:\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 1          | Mason   | 8   |\n| 2          | Ava     | 6   |\n| 3          | Taylor  | 15  |\n| 4          | Georgia | 17  |\n| 5          | Leo     | 7   |\n| 6          | Alex    | 7   |\n+------------+---------+-----+\nExplanation:\nThe two DataFramess are stacked vertically, and their rows are combined.\n\n## My Submission\n\n- Runtime: 443 ms\n- Memory: 69 MB\n"
+        }
+      ],
+      "timestamp": 1729838819000,
+      "runtime": "443 ms",
+      "memory": "69 MB",
+      "runtimePct": 5.043599999999942,
+      "memoryPct": 6.416300000000021,
+      "problemStatement": "<pre>\nDataFrame <code>df1</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nDataFrame <code>df2</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\n</pre>\n\n<p>Write a solution to concatenate these two DataFrames <strong>vertically</strong> into one DataFrame.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:\ndf1</strong>\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 1          | Mason   | 8   |\n| 2          | Ava     | 6   |\n| 3          | Taylor  | 15  |\n| 4          | Georgia | 17  |\n+------------+---------+-----+\n<strong>df2\n</strong>+------------+------+-----+\n| student_id | name | age |\n+------------+------+-----+\n| 5          | Leo  | 7   |\n| 6          | Alex | 7   |\n+------------+------+-----+\n<strong>Output:</strong>\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 1          | Mason   | 8   |\n| 2          | Ava     | 6   |\n| 3          | Taylor  | 15  |\n| 4          | Georgia | 17  |\n| 5          | Leo     | 7   |\n| 6          | Alex    | 7   |\n+------------+---------+-----+\n<strong>Explanation:\n</strong>The two DataFramess are stacked vertically, and their rows are combined.</pre>\n",
+      "hints": [
+        "Consider using a built-in function in pandas library with the appropriate axis argument."
+      ],
+      "acRate": 90.40441043125023,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-reshape-data-pivot",
+      "submissionId": 1433500647,
+      "platform": "leetcode",
+      "title": "Reshape Data: Pivot",
+      "titleSlug": "reshape-data-pivot",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "pythondata",
+        "ext": "txt",
+        "slug": "pythondata"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "readmeContent": "# Reshape Data: Pivot\n\n**Difficulty:** Easy  |  **Acceptance:** 83.0%\n\n**Tags:** —\n\n## Problem\n\nDataFrame weather\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| city        | object |\n| month       | object |\n| temperature | int    |\n+-------------+--------+\n\nWrite a solution to pivot the data so that each row represents temperatures for a specific month, and each city is a separate column.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:\n+--------------+----------+-------------+\n| city         | month    | temperature |\n+--------------+----------+-------------+\n| Jacksonville | January  | 13          |\n| Jacksonville | February | 23          |\n| Jacksonville | March    | 38          |\n| Jacksonville | April    | 5           |\n| Jacksonville | May      | 34          |\n| ElPaso       | January  | 20          |\n| ElPaso       | February | 6           |\n| ElPaso       | March    | 26          |\n| ElPaso       | April    | 2           |\n| ElPaso       | May      | 43          |\n+--------------+----------+-------------+\nOutput:\n+----------+--------+--------------+\n| month    | ElPaso | Jacksonville |\n+----------+--------+--------------+\n| April    | 2      | 5            |\n| February | 6      | 23           |\n| January  | 20     | 13           |\n| March    | 26     | 38           |\n| May      | 43     | 34           |\n+----------+--------+--------------+\nExplanation:\nThe table is pivoted, each column represents a city, and each row represents a specific month.\n\n## My Submission\n\n- Runtime: 464 ms\n- Memory: 70.1 MB\n",
+      "files": [
+        {
+          "path": "problems/reshape-data-pivot/README.md",
+          "content": "# Reshape Data: Pivot\n\n**Difficulty:** Easy  |  **Acceptance:** 83.0%\n\n**Tags:** —\n\n## Problem\n\nDataFrame weather\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| city        | object |\n| month       | object |\n| temperature | int    |\n+-------------+--------+\n\nWrite a solution to pivot the data so that each row represents temperatures for a specific month, and each city is a separate column.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:\n+--------------+----------+-------------+\n| city         | month    | temperature |\n+--------------+----------+-------------+\n| Jacksonville | January  | 13          |\n| Jacksonville | February | 23          |\n| Jacksonville | March    | 38          |\n| Jacksonville | April    | 5           |\n| Jacksonville | May      | 34          |\n| ElPaso       | January  | 20          |\n| ElPaso       | February | 6           |\n| ElPaso       | March    | 26          |\n| ElPaso       | April    | 2           |\n| ElPaso       | May      | 43          |\n+--------------+----------+-------------+\nOutput:\n+----------+--------+--------------+\n| month    | ElPaso | Jacksonville |\n+----------+--------+--------------+\n| April    | 2      | 5            |\n| February | 6      | 23           |\n| January  | 20     | 13           |\n| March    | 26     | 38           |\n| May      | 43     | 34           |\n+----------+--------+--------------+\nExplanation:\nThe table is pivoted, each column represents a city, and each row represents a specific month.\n\n## My Submission\n\n- Runtime: 464 ms\n- Memory: 70.1 MB\n"
+        }
+      ],
+      "timestamp": 1729872212000,
+      "runtime": "464 ms",
+      "memory": "70.1 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<pre>\nDataFrame <code>weather</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| city        | object |\n| month       | object |\n| temperature | int    |\n+-------------+--------+\n</pre>\n\n<p>Write a solution to <strong>pivot</strong> the data so that each row represents temperatures for a specific month, and each city is a separate column.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<pre>\n<strong class=\"example\">Example 1:</strong>\n<strong>Input:</strong>\n+--------------+----------+-------------+\n| city         | month    | temperature |\n+--------------+----------+-------------+\n| Jacksonville | January  | 13          |\n| Jacksonville | February | 23          |\n| Jacksonville | March    | 38          |\n| Jacksonville | April    | 5           |\n| Jacksonville | May      | 34          |\n| ElPaso       | January  | 20          |\n| ElPaso       | February | 6           |\n| ElPaso       | March    | 26          |\n| ElPaso       | April    | 2           |\n| ElPaso       | May      | 43          |\n+--------------+----------+-------------+\n<strong>Output:</strong><code>\n+----------+--------+--------------+\n| month    | ElPaso | Jacksonville |\n+----------+--------+--------------+\n| April    | 2      | 5            |\n| February | 6      | 23           |\n| January  | 20     | 13           |\n| March    | 26     | 38           |\n| May      | 43     | 34           |\n+----------+--------+--------------+</code>\n<strong>Explanation:\n</strong>The table is pivoted, each column represents a city, and each row represents a specific month.</pre>\n",
+      "hints": [
+        "Consider using a built-in function in pandas library to transform the data"
+      ],
+      "acRate": 83.02002468251125,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-reshape-data-pivot::1433500647",
+      "submissionId": 1433500647,
+      "platform": "leetcode",
+      "title": "Reshape Data: Pivot",
+      "titleSlug": "reshape-data-pivot",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python",
+        "ext": "py",
+        "slug": "python"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "import pandas as pd\n\ndef pivotTable(weather: pd.DataFrame) -> pd.DataFrame:\n    return weather.pivot(index = 'month', columns = 'city', values = 'temperature')",
+      "readmeContent": "# Reshape Data: Pivot\n\n**Difficulty:** Easy  |  **Acceptance:** 83.0%\n\n**Tags:** —\n\n## Problem\n\nDataFrame weather\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| city        | object |\n| month       | object |\n| temperature | int    |\n+-------------+--------+\n\nWrite a solution to pivot the data so that each row represents temperatures for a specific month, and each city is a separate column.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:\n+--------------+----------+-------------+\n| city         | month    | temperature |\n+--------------+----------+-------------+\n| Jacksonville | January  | 13          |\n| Jacksonville | February | 23          |\n| Jacksonville | March    | 38          |\n| Jacksonville | April    | 5           |\n| Jacksonville | May      | 34          |\n| ElPaso       | January  | 20          |\n| ElPaso       | February | 6           |\n| ElPaso       | March    | 26          |\n| ElPaso       | April    | 2           |\n| ElPaso       | May      | 43          |\n+--------------+----------+-------------+\nOutput:\n+----------+--------+--------------+\n| month    | ElPaso | Jacksonville |\n+----------+--------+--------------+\n| April    | 2      | 5            |\n| February | 6      | 23           |\n| January  | 20     | 13           |\n| March    | 26     | 38           |\n| May      | 43     | 34           |\n+----------+--------+--------------+\nExplanation:\nThe table is pivoted, each column represents a city, and each row represents a specific month.\n\n## My Submission\n\n- Runtime: 464 ms\n- Memory: 70.1 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-reshape-data-pivot/lc-reshape-data-pivot.py",
+          "content": "import pandas as pd\n\ndef pivotTable(weather: pd.DataFrame) -> pd.DataFrame:\n    return weather.pivot(index = 'month', columns = 'city', values = 'temperature')"
+        },
+        {
+          "path": "problems/lc-reshape-data-pivot/README.md",
+          "content": "# Reshape Data: Pivot\n\n**Difficulty:** Easy  |  **Acceptance:** 83.0%\n\n**Tags:** —\n\n## Problem\n\nDataFrame weather\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| city        | object |\n| month       | object |\n| temperature | int    |\n+-------------+--------+\n\nWrite a solution to pivot the data so that each row represents temperatures for a specific month, and each city is a separate column.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:\n+--------------+----------+-------------+\n| city         | month    | temperature |\n+--------------+----------+-------------+\n| Jacksonville | January  | 13          |\n| Jacksonville | February | 23          |\n| Jacksonville | March    | 38          |\n| Jacksonville | April    | 5           |\n| Jacksonville | May      | 34          |\n| ElPaso       | January  | 20          |\n| ElPaso       | February | 6           |\n| ElPaso       | March    | 26          |\n| ElPaso       | April    | 2           |\n| ElPaso       | May      | 43          |\n+--------------+----------+-------------+\nOutput:\n+----------+--------+--------------+\n| month    | ElPaso | Jacksonville |\n+----------+--------+--------------+\n| April    | 2      | 5            |\n| February | 6      | 23           |\n| January  | 20     | 13           |\n| March    | 26     | 38           |\n| May      | 43     | 34           |\n+----------+--------+--------------+\nExplanation:\nThe table is pivoted, each column represents a city, and each row represents a specific month.\n\n## My Submission\n\n- Runtime: 464 ms\n- Memory: 70.1 MB\n"
+        }
+      ],
+      "timestamp": 1729872212000,
+      "runtime": "464 ms",
+      "memory": "70.1 MB",
+      "runtimePct": 5.044500000000023,
+      "memoryPct": 5.826000000000004,
+      "problemStatement": "<pre>\nDataFrame <code>weather</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| city        | object |\n| month       | object |\n| temperature | int    |\n+-------------+--------+\n</pre>\n\n<p>Write a solution to <strong>pivot</strong> the data so that each row represents temperatures for a specific month, and each city is a separate column.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<pre>\n<strong class=\"example\">Example 1:</strong>\n<strong>Input:</strong>\n+--------------+----------+-------------+\n| city         | month    | temperature |\n+--------------+----------+-------------+\n| Jacksonville | January  | 13          |\n| Jacksonville | February | 23          |\n| Jacksonville | March    | 38          |\n| Jacksonville | April    | 5           |\n| Jacksonville | May      | 34          |\n| ElPaso       | January  | 20          |\n| ElPaso       | February | 6           |\n| ElPaso       | March    | 26          |\n| ElPaso       | April    | 2           |\n| ElPaso       | May      | 43          |\n+--------------+----------+-------------+\n<strong>Output:</strong><code>\n+----------+--------+--------------+\n| month    | ElPaso | Jacksonville |\n+----------+--------+--------------+\n| April    | 2      | 5            |\n| February | 6      | 23           |\n| January  | 20     | 13           |\n| March    | 26     | 38           |\n| May      | 43     | 34           |\n+----------+--------+--------------+</code>\n<strong>Explanation:\n</strong>The table is pivoted, each column represents a city, and each row represents a specific month.</pre>\n",
+      "hints": [
+        "Consider using a built-in function in pandas library to transform the data"
+      ],
+      "acRate": 83.0200063512226,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-reshape-data-melt",
+      "submissionId": 1434100437,
+      "platform": "leetcode",
+      "title": "Reshape Data: Melt",
+      "titleSlug": "reshape-data-melt",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "pythondata",
+        "ext": "txt",
+        "slug": "pythondata"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "readmeContent": "# Reshape Data: Melt\n\n**Difficulty:** Easy  |  **Acceptance:** 85.9%\n\n**Tags:** —\n\n## Problem\n\nDataFrame report\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| product     | object |\n| quarter_1   | int    |\n| quarter_2   | int    |\n| quarter_3   | int    |\n| quarter_4   | int    |\n+-------------+--------+\n\nWrite a solution to reshape the data so that each row represents sales data for a product in a specific quarter.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\n+-------------+-----------+-----------+-----------+-----------+\n| product     | quarter_1 | quarter_2 | quarter_3 | quarter_4 |\n+-------------+-----------+-----------+-----------+-----------+\n| Umbrella    | 417       | 224       | 379       | 611       |\n| SleepingBag | 800       | 936       | 93        | 875       |\n+-------------+-----------+-----------+-----------+-----------+\nOutput:\n+-------------+-----------+-------+\n| product     | quarter   | sales |\n+-------------+-----------+-------+\n| Umbrella    | quarter_1 | 417   |\n| SleepingBag | quarter_1 | 800   |\n| Umbrella    | quarter_2 | 224   |\n| SleepingBag | quarter_2 | 936   |\n| Umbrella    | quarter_3 | 379   |\n| SleepingBag | quarter_3 | 93    |\n| Umbrella    | quarter_4 | 611   |\n| SleepingBag | quarter_4 | 875   |\n+-------------+-----------+-------+\nExplanation:\nThe DataFrame is reshaped from wide to long format. Each row represents the sales of a product in a quarter.\n\n## My Submission\n\n- Runtime: 375 ms\n- Memory: 69.6 MB\n",
+      "files": [
+        {
+          "path": "problems/reshape-data-melt/README.md",
+          "content": "# Reshape Data: Melt\n\n**Difficulty:** Easy  |  **Acceptance:** 85.9%\n\n**Tags:** —\n\n## Problem\n\nDataFrame report\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| product     | object |\n| quarter_1   | int    |\n| quarter_2   | int    |\n| quarter_3   | int    |\n| quarter_4   | int    |\n+-------------+--------+\n\nWrite a solution to reshape the data so that each row represents sales data for a product in a specific quarter.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\n+-------------+-----------+-----------+-----------+-----------+\n| product     | quarter_1 | quarter_2 | quarter_3 | quarter_4 |\n+-------------+-----------+-----------+-----------+-----------+\n| Umbrella    | 417       | 224       | 379       | 611       |\n| SleepingBag | 800       | 936       | 93        | 875       |\n+-------------+-----------+-----------+-----------+-----------+\nOutput:\n+-------------+-----------+-------+\n| product     | quarter   | sales |\n+-------------+-----------+-------+\n| Umbrella    | quarter_1 | 417   |\n| SleepingBag | quarter_1 | 800   |\n| Umbrella    | quarter_2 | 224   |\n| SleepingBag | quarter_2 | 936   |\n| Umbrella    | quarter_3 | 379   |\n| SleepingBag | quarter_3 | 93    |\n| Umbrella    | quarter_4 | 611   |\n| SleepingBag | quarter_4 | 875   |\n+-------------+-----------+-------+\nExplanation:\nThe DataFrame is reshaped from wide to long format. Each row represents the sales of a product in a quarter.\n\n## My Submission\n\n- Runtime: 375 ms\n- Memory: 69.6 MB\n"
+        }
+      ],
+      "timestamp": 1729937409000,
+      "runtime": "375 ms",
+      "memory": "69.6 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<pre>\nDataFrame <code>report</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| product     | object |\n| quarter_1   | int    |\n| quarter_2   | int    |\n| quarter_3   | int    |\n| quarter_4   | int    |\n+-------------+--------+\n</pre>\n\n<p>Write a solution to <strong>reshape</strong> the data so that each row represents sales data for a product in a specific quarter.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:\n</strong>+-------------+-----------+-----------+-----------+-----------+\n| product     | quarter_1 | quarter_2 | quarter_3 | quarter_4 |\n+-------------+-----------+-----------+-----------+-----------+\n| Umbrella    | 417       | 224       | 379       | 611       |\n| SleepingBag | 800       | 936       | 93        | 875       |\n+-------------+-----------+-----------+-----------+-----------+\n<strong>Output:</strong>\n+-------------+-----------+-------+\n| product     | quarter   | sales |\n+-------------+-----------+-------+\n| Umbrella    | quarter_1 | 417   |\n| SleepingBag | quarter_1 | 800   |\n| Umbrella    | quarter_2 | 224   |\n| SleepingBag | quarter_2 | 936   |\n| Umbrella    | quarter_3 | 379   |\n| SleepingBag | quarter_3 | 93    |\n| Umbrella    | quarter_4 | 611   |\n| SleepingBag | quarter_4 | 875   |\n+-------------+-----------+-------+\n<strong>Explanation:</strong>\nThe DataFrame is reshaped from wide to long format. Each row represents the sales of a product in a quarter.\n</pre>\n",
+      "hints": [
+        "Consider using a built-in function in pandas library to transform the data"
+      ],
+      "acRate": 85.89806206283032,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-reshape-data-melt::1434100437",
+      "submissionId": 1434100437,
+      "platform": "leetcode",
+      "title": "Reshape Data: Melt",
+      "titleSlug": "reshape-data-melt",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python",
+        "ext": "py",
+        "slug": "python"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "import pandas as pd\n\ndef meltTable(report: pd.DataFrame) -> pd.DataFrame:\n    return report.melt(id_vars = 'product', value_vars=['quarter_1', 'quarter_2', 'quarter_3', 'quarter_4'], var_name='quarter', value_name='sales')",
+      "readmeContent": "# Reshape Data: Melt\n\n**Difficulty:** Easy  |  **Acceptance:** 85.9%\n\n**Tags:** —\n\n## Problem\n\nDataFrame report\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| product     | object |\n| quarter_1   | int    |\n| quarter_2   | int    |\n| quarter_3   | int    |\n| quarter_4   | int    |\n+-------------+--------+\n\nWrite a solution to reshape the data so that each row represents sales data for a product in a specific quarter.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\n+-------------+-----------+-----------+-----------+-----------+\n| product     | quarter_1 | quarter_2 | quarter_3 | quarter_4 |\n+-------------+-----------+-----------+-----------+-----------+\n| Umbrella    | 417       | 224       | 379       | 611       |\n| SleepingBag | 800       | 936       | 93        | 875       |\n+-------------+-----------+-----------+-----------+-----------+\nOutput:\n+-------------+-----------+-------+\n| product     | quarter   | sales |\n+-------------+-----------+-------+\n| Umbrella    | quarter_1 | 417   |\n| SleepingBag | quarter_1 | 800   |\n| Umbrella    | quarter_2 | 224   |\n| SleepingBag | quarter_2 | 936   |\n| Umbrella    | quarter_3 | 379   |\n| SleepingBag | quarter_3 | 93    |\n| Umbrella    | quarter_4 | 611   |\n| SleepingBag | quarter_4 | 875   |\n+-------------+-----------+-------+\nExplanation:\nThe DataFrame is reshaped from wide to long format. Each row represents the sales of a product in a quarter.\n\n## My Submission\n\n- Runtime: 375 ms\n- Memory: 69.6 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-reshape-data-melt/lc-reshape-data-melt.py",
+          "content": "import pandas as pd\n\ndef meltTable(report: pd.DataFrame) -> pd.DataFrame:\n    return report.melt(id_vars = 'product', value_vars=['quarter_1', 'quarter_2', 'quarter_3', 'quarter_4'], var_name='quarter', value_name='sales')"
+        },
+        {
+          "path": "problems/lc-reshape-data-melt/README.md",
+          "content": "# Reshape Data: Melt\n\n**Difficulty:** Easy  |  **Acceptance:** 85.9%\n\n**Tags:** —\n\n## Problem\n\nDataFrame report\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| product     | object |\n| quarter_1   | int    |\n| quarter_2   | int    |\n| quarter_3   | int    |\n| quarter_4   | int    |\n+-------------+--------+\n\nWrite a solution to reshape the data so that each row represents sales data for a product in a specific quarter.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\n+-------------+-----------+-----------+-----------+-----------+\n| product     | quarter_1 | quarter_2 | quarter_3 | quarter_4 |\n+-------------+-----------+-----------+-----------+-----------+\n| Umbrella    | 417       | 224       | 379       | 611       |\n| SleepingBag | 800       | 936       | 93        | 875       |\n+-------------+-----------+-----------+-----------+-----------+\nOutput:\n+-------------+-----------+-------+\n| product     | quarter   | sales |\n+-------------+-----------+-------+\n| Umbrella    | quarter_1 | 417   |\n| SleepingBag | quarter_1 | 800   |\n| Umbrella    | quarter_2 | 224   |\n| SleepingBag | quarter_2 | 936   |\n| Umbrella    | quarter_3 | 379   |\n| SleepingBag | quarter_3 | 93    |\n| Umbrella    | quarter_4 | 611   |\n| SleepingBag | quarter_4 | 875   |\n+-------------+-----------+-------+\nExplanation:\nThe DataFrame is reshaped from wide to long format. Each row represents the sales of a product in a quarter.\n\n## My Submission\n\n- Runtime: 375 ms\n- Memory: 69.6 MB\n"
+        }
+      ],
+      "timestamp": 1729937409000,
+      "runtime": "375 ms",
+      "memory": "69.6 MB",
+      "runtimePct": 5.097300000000021,
+      "memoryPct": 5.357100000000006,
+      "problemStatement": "<pre>\nDataFrame <code>report</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| product     | object |\n| quarter_1   | int    |\n| quarter_2   | int    |\n| quarter_3   | int    |\n| quarter_4   | int    |\n+-------------+--------+\n</pre>\n\n<p>Write a solution to <strong>reshape</strong> the data so that each row represents sales data for a product in a specific quarter.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:\n</strong>+-------------+-----------+-----------+-----------+-----------+\n| product     | quarter_1 | quarter_2 | quarter_3 | quarter_4 |\n+-------------+-----------+-----------+-----------+-----------+\n| Umbrella    | 417       | 224       | 379       | 611       |\n| SleepingBag | 800       | 936       | 93        | 875       |\n+-------------+-----------+-----------+-----------+-----------+\n<strong>Output:</strong>\n+-------------+-----------+-------+\n| product     | quarter   | sales |\n+-------------+-----------+-------+\n| Umbrella    | quarter_1 | 417   |\n| SleepingBag | quarter_1 | 800   |\n| Umbrella    | quarter_2 | 224   |\n| SleepingBag | quarter_2 | 936   |\n| Umbrella    | quarter_3 | 379   |\n| SleepingBag | quarter_3 | 93    |\n| Umbrella    | quarter_4 | 611   |\n| SleepingBag | quarter_4 | 875   |\n+-------------+-----------+-------+\n<strong>Explanation:</strong>\nThe DataFrame is reshaped from wide to long format. Each row represents the sales of a product in a quarter.\n</pre>\n",
+      "hints": [
+        "Consider using a built-in function in pandas library to transform the data"
+      ],
+      "acRate": 85.88274170826304,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-method-chaining",
+      "submissionId": 1434101518,
+      "platform": "leetcode",
+      "title": "Method Chaining",
+      "titleSlug": "method-chaining",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "pythondata",
+        "ext": "txt",
+        "slug": "pythondata"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "readmeContent": "# Method Chaining\n\n**Difficulty:** Easy  |  **Acceptance:** 76.0%\n\n**Tags:** —\n\n## Problem\n\nDataFrame animals\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| species     | object |\n| age         | int    |\n| weight      | int    |\n+-------------+--------+\n\nWrite a solution to list the names of animals that weigh strictly more than 100 kilograms.\n\nReturn the&nbsp;animals sorted by weight in descending order.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput: \nDataFrame animals:\n+----------+---------+-----+--------+\n| name     | species | age | weight |\n+----------+---------+-----+--------+\n| Tatiana  | Snake   | 98  | 464    |\n| Khaled   | Giraffe | 50  | 41     |\n| Alex     | Leopard | 6   | 328    |\n| Jonathan | Monkey  | 45  | 463    |\n| Stefan   | Bear    | 100 | 50     |\n| Tommy    | Panda   | 26  | 349    |\n+----------+---------+-----+--------+\nOutput: \n+----------+\n| name     |\n+----------+\n| Tatiana  |\n| Jonathan |\n| Tommy    |\n| Alex     |\n+----------+\nExplanation: \nAll animals weighing more than 100 should be included in the results table.\nTatiana's weight is 464, Jonathan's weight is 463, Tommy's weight is 349, and Alex's weight is 328.\nThe results should be sorted in descending order of weight.\n\n&nbsp;\nIn Pandas, method chaining enables us to&nbsp;perform operations on a DataFrame without breaking up each operation into a separate line or creating multiple temporary variables.&nbsp;\n\nCan you complete this&nbsp;task in just one line of code using method chaining?\n\n## My Submission\n\n- Runtime: 373 ms\n- Memory: 70.3 MB\n",
+      "files": [
+        {
+          "path": "problems/method-chaining/README.md",
+          "content": "# Method Chaining\n\n**Difficulty:** Easy  |  **Acceptance:** 76.0%\n\n**Tags:** —\n\n## Problem\n\nDataFrame animals\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| species     | object |\n| age         | int    |\n| weight      | int    |\n+-------------+--------+\n\nWrite a solution to list the names of animals that weigh strictly more than 100 kilograms.\n\nReturn the&nbsp;animals sorted by weight in descending order.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput: \nDataFrame animals:\n+----------+---------+-----+--------+\n| name     | species | age | weight |\n+----------+---------+-----+--------+\n| Tatiana  | Snake   | 98  | 464    |\n| Khaled   | Giraffe | 50  | 41     |\n| Alex     | Leopard | 6   | 328    |\n| Jonathan | Monkey  | 45  | 463    |\n| Stefan   | Bear    | 100 | 50     |\n| Tommy    | Panda   | 26  | 349    |\n+----------+---------+-----+--------+\nOutput: \n+----------+\n| name     |\n+----------+\n| Tatiana  |\n| Jonathan |\n| Tommy    |\n| Alex     |\n+----------+\nExplanation: \nAll animals weighing more than 100 should be included in the results table.\nTatiana's weight is 464, Jonathan's weight is 463, Tommy's weight is 349, and Alex's weight is 328.\nThe results should be sorted in descending order of weight.\n\n&nbsp;\nIn Pandas, method chaining enables us to&nbsp;perform operations on a DataFrame without breaking up each operation into a separate line or creating multiple temporary variables.&nbsp;\n\nCan you complete this&nbsp;task in just one line of code using method chaining?\n\n## My Submission\n\n- Runtime: 373 ms\n- Memory: 70.3 MB\n"
+        }
+      ],
+      "timestamp": 1729937534000,
+      "runtime": "373 ms",
+      "memory": "70.3 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<pre>\nDataFrame <code>animals</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| species     | object |\n| age         | int    |\n| weight      | int    |\n+-------------+--------+\n</pre>\n\n<p>Write a solution to list the names of animals that weigh <strong>strictly more than</strong> <code>100</code> kilograms.</p>\n\n<p>Return the&nbsp;animals sorted by weight in <strong>descending order</strong>.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<p><strong>Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> \nDataFrame animals:\n+----------+---------+-----+--------+\n| name     | species | age | weight |\n+----------+---------+-----+--------+\n| Tatiana  | Snake   | 98  | 464    |\n| Khaled   | Giraffe | 50  | 41     |\n| Alex     | Leopard | 6   | 328    |\n| Jonathan | Monkey  | 45  | 463    |\n| Stefan   | Bear    | 100 | 50     |\n| Tommy    | Panda   | 26  | 349    |\n+----------+---------+-----+--------+\n<strong>Output:</strong> \n+----------+\n| name     |\n+----------+\n| Tatiana  |\n| Jonathan |\n| Tommy    |\n| Alex     |\n+----------+\n<strong>Explanation:</strong> \nAll animals weighing more than 100 should be included in the results table.\nTatiana&#39;s weight is 464, Jonathan&#39;s weight is 463, Tommy&#39;s weight is 349, and Alex&#39;s weight is 328.\nThe results should be sorted in descending order of weight.</pre>\n\n<p>&nbsp;</p>\n<p>In Pandas, <strong>method chaining</strong> enables us to&nbsp;perform operations on a DataFrame without breaking up each operation into a separate line or creating multiple temporary variables.&nbsp;</p>\n\n<p>Can you complete this&nbsp;task in just <strong>one line </strong>of code using method chaining?</p>\n",
+      "hints": null,
+      "acRate": 76.04024735352688,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-method-chaining::1434101518",
+      "submissionId": 1434101518,
+      "platform": "leetcode",
+      "title": "Method Chaining",
+      "titleSlug": "method-chaining",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python",
+        "ext": "py",
+        "slug": "python"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "import pandas as pd\n\ndef findHeavyAnimals(animals: pd.DataFrame) -> pd.DataFrame:\n    return animals[animals['weight'] > 100].sort_values(by='weight', ascending=False)[['name']]",
+      "readmeContent": "# Method Chaining\n\n**Difficulty:** Easy  |  **Acceptance:** 76.1%\n\n**Tags:** —\n\n## Problem\n\nDataFrame animals\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| species     | object |\n| age         | int    |\n| weight      | int    |\n+-------------+--------+\n\nWrite a solution to list the names of animals that weigh strictly more than 100 kilograms.\n\nReturn the&nbsp;animals sorted by weight in descending order.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput: \nDataFrame animals:\n+----------+---------+-----+--------+\n| name     | species | age | weight |\n+----------+---------+-----+--------+\n| Tatiana  | Snake   | 98  | 464    |\n| Khaled   | Giraffe | 50  | 41     |\n| Alex     | Leopard | 6   | 328    |\n| Jonathan | Monkey  | 45  | 463    |\n| Stefan   | Bear    | 100 | 50     |\n| Tommy    | Panda   | 26  | 349    |\n+----------+---------+-----+--------+\nOutput: \n+----------+\n| name     |\n+----------+\n| Tatiana  |\n| Jonathan |\n| Tommy    |\n| Alex     |\n+----------+\nExplanation: \nAll animals weighing more than 100 should be included in the results table.\nTatiana's weight is 464, Jonathan's weight is 463, Tommy's weight is 349, and Alex's weight is 328.\nThe results should be sorted in descending order of weight.\n\n&nbsp;\nIn Pandas, method chaining enables us to&nbsp;perform operations on a DataFrame without breaking up each operation into a separate line or creating multiple temporary variables.&nbsp;\n\nCan you complete this&nbsp;task in just one line of code using method chaining?\n\n## My Submission\n\n- Runtime: 373 ms\n- Memory: 70.3 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-method-chaining/lc-method-chaining.py",
+          "content": "import pandas as pd\n\ndef findHeavyAnimals(animals: pd.DataFrame) -> pd.DataFrame:\n    return animals[animals['weight'] > 100].sort_values(by='weight', ascending=False)[['name']]"
+        },
+        {
+          "path": "problems/lc-method-chaining/README.md",
+          "content": "# Method Chaining\n\n**Difficulty:** Easy  |  **Acceptance:** 76.1%\n\n**Tags:** —\n\n## Problem\n\nDataFrame animals\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| species     | object |\n| age         | int    |\n| weight      | int    |\n+-------------+--------+\n\nWrite a solution to list the names of animals that weigh strictly more than 100 kilograms.\n\nReturn the&nbsp;animals sorted by weight in descending order.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput: \nDataFrame animals:\n+----------+---------+-----+--------+\n| name     | species | age | weight |\n+----------+---------+-----+--------+\n| Tatiana  | Snake   | 98  | 464    |\n| Khaled   | Giraffe | 50  | 41     |\n| Alex     | Leopard | 6   | 328    |\n| Jonathan | Monkey  | 45  | 463    |\n| Stefan   | Bear    | 100 | 50     |\n| Tommy    | Panda   | 26  | 349    |\n+----------+---------+-----+--------+\nOutput: \n+----------+\n| name     |\n+----------+\n| Tatiana  |\n| Jonathan |\n| Tommy    |\n| Alex     |\n+----------+\nExplanation: \nAll animals weighing more than 100 should be included in the results table.\nTatiana's weight is 464, Jonathan's weight is 463, Tommy's weight is 349, and Alex's weight is 328.\nThe results should be sorted in descending order of weight.\n\n&nbsp;\nIn Pandas, method chaining enables us to&nbsp;perform operations on a DataFrame without breaking up each operation into a separate line or creating multiple temporary variables.&nbsp;\n\nCan you complete this&nbsp;task in just one line of code using method chaining?\n\n## My Submission\n\n- Runtime: 373 ms\n- Memory: 70.3 MB\n"
+        }
+      ],
+      "timestamp": 1729937534000,
+      "runtime": "373 ms",
+      "memory": "70.3 MB",
+      "runtimePct": 5.073700000000015,
+      "memoryPct": 8.823500000000028,
+      "problemStatement": "<pre>\nDataFrame <code>animals</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| species     | object |\n| age         | int    |\n| weight      | int    |\n+-------------+--------+\n</pre>\n\n<p>Write a solution to list the names of animals that weigh <strong>strictly more than</strong> <code>100</code> kilograms.</p>\n\n<p>Return the&nbsp;animals sorted by weight in <strong>descending order</strong>.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<p><strong>Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> \nDataFrame animals:\n+----------+---------+-----+--------+\n| name     | species | age | weight |\n+----------+---------+-----+--------+\n| Tatiana  | Snake   | 98  | 464    |\n| Khaled   | Giraffe | 50  | 41     |\n| Alex     | Leopard | 6   | 328    |\n| Jonathan | Monkey  | 45  | 463    |\n| Stefan   | Bear    | 100 | 50     |\n| Tommy    | Panda   | 26  | 349    |\n+----------+---------+-----+--------+\n<strong>Output:</strong> \n+----------+\n| name     |\n+----------+\n| Tatiana  |\n| Jonathan |\n| Tommy    |\n| Alex     |\n+----------+\n<strong>Explanation:</strong> \nAll animals weighing more than 100 should be included in the results table.\nTatiana&#39;s weight is 464, Jonathan&#39;s weight is 463, Tommy&#39;s weight is 349, and Alex&#39;s weight is 328.\nThe results should be sorted in descending order of weight.</pre>\n\n<p>&nbsp;</p>\n<p>In Pandas, <strong>method chaining</strong> enables us to&nbsp;perform operations on a DataFrame without breaking up each operation into a separate line or creating multiple temporary variables.&nbsp;</p>\n\n<p>Can you complete this&nbsp;task in just <strong>one line </strong>of code using method chaining?</p>\n",
+      "hints": null,
+      "acRate": 76.05259424629101,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-find-the-number-of-ways-to-place-people-i::1435349794",
+      "submissionId": 1435349794,
+      "platform": "leetcode",
+      "title": "Find the Number of Ways to Place People I",
+      "titleSlug": "find-the-number-of-ways-to-place-people-i",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Math",
+        "Geometry",
+        "Sorting",
+        "Enumeration"
+      ],
+      "topic": "Math",
+      "code": "class Solution:\n    def numberOfPairs(self, points: List[List[int]]) -> int:\n        points.sort(key = lambda x: (x[0],-x[1]))\n        output = 0\n        l = len(points)\n        for i in range(l):\n            start = points[i][0]\n            end = float(\"-inf\")\n            for j in range(i+1,l):\n                if points[j][1] > points[i][1]:\n                    continue\n                if points[j][1] > end:\n                    end = points[j][1]\n                    output += 1\n        return output",
+      "readmeContent": "# Find the Number of Ways to Place People I\n\n**Difficulty:** Medium  |  **Acceptance:** 64.0%\n\n**Tags:** `Array`, `Math`, `Geometry`, `Sorting`, `Enumeration`\n\n## Problem\n\nYou are given a 2D array points of size n x 2 representing integer coordinates of some points on a 2D plane, where points[i] = [xi, yi].\n\nCount the number of pairs of points (A, B), where\n\n\tA is on the upper left side of B, and\n\tthere are no other points in the rectangle (or line) they make (including the border), except for the points A and B.\n\nReturn the count.\n\n&nbsp;\nExample 1:\n\nInput: points = [[1,1],[2,2],[3,3]]\n\nOutput: 0\n\nExplanation:\n\nThere is no way to choose A and B such that&nbsp;A is on the upper left side of B.\n\nExample 2:\n\nInput: points = [[6,2],[4,4],[2,6]]\n\nOutput: 2\n\nExplanation:\n\n\tThe left one is the pair (points[1], points[0]), where points[1] is on the upper left side of points[0] and the rectangle is empty.\n\tThe middle one is the pair (points[2], points[1]), same as the left one it is a valid pair.\n\tThe right one is the pair (points[2], points[0]), where points[2] is on the upper left side of points[0], but points[1] is inside the rectangle so it's not a valid pair.\n\nExample 3:\n\nInput: points = [[3,1],[1,3],[1,1]]\n\nOutput: 2\n\nExplanation:\n\n\tThe left one is the pair (points[2], points[0]), where points[2] is on the upper left side of points[0] and there are no other points on the line they form. Note that it is a valid state when the two points form a line.\n\tThe middle one is the pair (points[1], points[2]), it is a valid pair same as the left one.\n\tThe right one is the pair (points[1], points[0]), it is not a valid pair as points[2] is on the border of the rectangle.\n\n&nbsp;\nConstraints:\n\n\t2 <= n <= 50\n\tpoints[i].length == 2\n\t0 <= points[i][0], points[i][1] <= 50\n\tAll points[i] are distinct.\n\n## My Submission\n\n- Runtime: 15 ms\n- Memory: 16.6 MB\n\n## Similar Problems\n\n- [Rectangle Area](https://leetcode.com/problems/rectangle-area/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-find-the-number-of-ways-to-place-people-i/lc-find-the-number-of-ways-to-place-people-i.py",
+          "content": "class Solution:\n    def numberOfPairs(self, points: List[List[int]]) -> int:\n        points.sort(key = lambda x: (x[0],-x[1]))\n        output = 0\n        l = len(points)\n        for i in range(l):\n            start = points[i][0]\n            end = float(\"-inf\")\n            for j in range(i+1,l):\n                if points[j][1] > points[i][1]:\n                    continue\n                if points[j][1] > end:\n                    end = points[j][1]\n                    output += 1\n        return output"
+        },
+        {
+          "path": "problems/lc-find-the-number-of-ways-to-place-people-i/README.md",
+          "content": "# Find the Number of Ways to Place People I\n\n**Difficulty:** Medium  |  **Acceptance:** 64.0%\n\n**Tags:** `Array`, `Math`, `Geometry`, `Sorting`, `Enumeration`\n\n## Problem\n\nYou are given a 2D array points of size n x 2 representing integer coordinates of some points on a 2D plane, where points[i] = [xi, yi].\n\nCount the number of pairs of points (A, B), where\n\n\tA is on the upper left side of B, and\n\tthere are no other points in the rectangle (or line) they make (including the border), except for the points A and B.\n\nReturn the count.\n\n&nbsp;\nExample 1:\n\nInput: points = [[1,1],[2,2],[3,3]]\n\nOutput: 0\n\nExplanation:\n\nThere is no way to choose A and B such that&nbsp;A is on the upper left side of B.\n\nExample 2:\n\nInput: points = [[6,2],[4,4],[2,6]]\n\nOutput: 2\n\nExplanation:\n\n\tThe left one is the pair (points[1], points[0]), where points[1] is on the upper left side of points[0] and the rectangle is empty.\n\tThe middle one is the pair (points[2], points[1]), same as the left one it is a valid pair.\n\tThe right one is the pair (points[2], points[0]), where points[2] is on the upper left side of points[0], but points[1] is inside the rectangle so it's not a valid pair.\n\nExample 3:\n\nInput: points = [[3,1],[1,3],[1,1]]\n\nOutput: 2\n\nExplanation:\n\n\tThe left one is the pair (points[2], points[0]), where points[2] is on the upper left side of points[0] and there are no other points on the line they form. Note that it is a valid state when the two points form a line.\n\tThe middle one is the pair (points[1], points[2]), it is a valid pair same as the left one.\n\tThe right one is the pair (points[1], points[0]), it is not a valid pair as points[2] is on the border of the rectangle.\n\n&nbsp;\nConstraints:\n\n\t2 <= n <= 50\n\tpoints[i].length == 2\n\t0 <= points[i][0], points[i][1] <= 50\n\tAll points[i] are distinct.\n\n## My Submission\n\n- Runtime: 15 ms\n- Memory: 16.6 MB\n\n## Similar Problems\n\n- [Rectangle Area](https://leetcode.com/problems/rectangle-area/) — Medium\n"
+        }
+      ],
+      "timestamp": 1730044905000,
+      "runtime": "15 ms",
+      "memory": "16.6 MB",
+      "runtimePct": 64.7885,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given a 2D array <code>points</code> of size <code>n x 2</code> representing integer coordinates of some points on a 2D plane, where <code>points[i] = [x<sub>i</sub>, y<sub>i</sub>]</code>.</p>\n\n<p>Count the number of pairs of points <code>(A, B)</code>, where</p>\n\n<ul>\n\t<li><code>A</code> is on the <strong>upper left</strong> side of <code>B</code>, and</li>\n\t<li>there are no other points in the rectangle (or line) they make (<strong>including the border</strong>), except for the points <code>A</code> and <code>B</code>.</li>\n</ul>\n\n<p>Return the count.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">points = [[1,1],[2,2],[3,3]]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">0</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p><img src=\"https://assets.leetcode.com/uploads/2024/01/04/example1alicebob.png\" style=\"width: 427px; height: 350px;\" /></p>\n\n<p>There is no way to choose <code>A</code> and <code>B</code> such that&nbsp;<code>A</code> is on the upper left side of <code>B</code>.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">points = [[6,2],[4,4],[2,6]]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">2</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p><img height=\"365\" src=\"https://assets.leetcode.com/uploads/2024/06/25/t2.jpg\" width=\"1321\" /></p>\n\n<ul>\n\t<li>The left one is the pair <code>(points[1], points[0])</code>, where <code>points[1]</code> is on the upper left side of <code>points[0]</code> and the rectangle is empty.</li>\n\t<li>The middle one is the pair <code>(points[2], points[1])</code>, same as the left one it is a valid pair.</li>\n\t<li>The right one is the pair <code>(points[2], points[0])</code>, where <code>points[2]</code> is on the upper left side of <code>points[0]</code>, but <code>points[1]</code> is inside the rectangle so it&#39;s not a valid pair.</li>\n</ul>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">points = [[3,1],[1,3],[1,1]]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">2</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p><img src=\"https://assets.leetcode.com/uploads/2024/06/25/t3.jpg\" style=\"width: 1269px; height: 350px;\" /></p>\n\n<ul>\n\t<li>The left one is the pair <code>(points[2], points[0])</code>, where <code>points[2]</code> is on the upper left side of <code>points[0]</code> and there are no other points on the line they form. Note that it is a valid state when the two points form a line.</li>\n\t<li>The middle one is the pair <code>(points[1], points[2])</code>, it is a valid pair same as the left one.</li>\n\t<li>The right one is the pair <code>(points[1], points[0])</code>, it is not a valid pair as <code>points[2]</code> is on the border of the rectangle.</li>\n</ul>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>2 &lt;= n &lt;= 50</code></li>\n\t<li><code>points[i].length == 2</code></li>\n\t<li><code>0 &lt;= points[i][0], points[i][1] &lt;= 50</code></li>\n\t<li>All <code>points[i]</code> are distinct.</li>\n</ul>\n",
+      "hints": [
+        "We can enumerate all the upper-left and lower-right corners.",
+        "If the upper-left corner is <code>(x1, y1)</code> and lower-right corner is <code>(x2, y2)</code>, check that there is no point <code>(x, y)</code> such that <code>x1 <= x <= x2</code> and <code>y2 <= y <= y1</code>."
+      ],
+      "acRate": 64.00019881154874,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "rectangle-area",
+          "title": "Rectangle Area",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-minimum-sum-of-mountain-triplets-i::1435378557",
+      "submissionId": 1435378557,
+      "platform": "leetcode",
+      "title": "Minimum Sum of Mountain Triplets I",
+      "titleSlug": "minimum-sum-of-mountain-triplets-i",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array"
+      ],
+      "topic": "Array",
+      "code": "class Solution:\n    def minimumSum(self, nums: List[int]) -> int:\n        n = len(nums)\n        output = float('inf')\n        for i in range(n - 2):\n            for j in range(i+1, n-1):\n                if nums[i] < nums[j]:\n                    for k in range(j+1,n):\n                        if nums[k] < nums[j]:\n                            output = min(output, nums[i]+nums[j]+nums[k])\n        return output if output != float('inf') else -1",
+      "readmeContent": "# Minimum Sum of Mountain Triplets I\n\n**Difficulty:** Easy  |  **Acceptance:** 67.4%\n\n**Tags:** `Array`\n\n## Problem\n\nYou are given a 0-indexed array nums of integers.\n\nA triplet of indices (i, j, k) is a mountain if:\n\n\ti < j < k\n\tnums[i] < nums[j] and nums[k] < nums[j]\n\nReturn the minimum possible sum of a mountain triplet of nums. If no such triplet exists, return -1.\n\n&nbsp;\nExample 1:\n\nInput: nums = [8,6,1,5,3]\nOutput: 9\nExplanation: Triplet (2, 3, 4) is a mountain triplet of sum 9 since: \n- 2 < 3 < 4\n- nums[2] < nums[3] and nums[4] < nums[3]\nAnd the sum of this triplet is nums[2] + nums[3] + nums[4] = 9. It can be shown that there are no mountain triplets with a sum of less than 9.\n\nExample 2:\n\nInput: nums = [5,4,8,7,10,2]\nOutput: 13\nExplanation: Triplet (1, 3, 5) is a mountain triplet of sum 13 since: \n- 1 < 3 < 5\n- nums[1] < nums[3] and nums[5] < nums[3]\nAnd the sum of this triplet is nums[1] + nums[3] + nums[5] = 13. It can be shown that there are no mountain triplets with a sum of less than 13.\n\nExample 3:\n\nInput: nums = [6,5,4,3,4,5]\nOutput: -1\nExplanation: It can be shown that there are no mountain triplets in nums.\n\n&nbsp;\nConstraints:\n\n\t3 <= nums.length <= 50\n\t1 <= nums[i] <= 50\n\n## My Submission\n\n- Runtime: 58 ms\n- Memory: 16.5 MB\n\n## Similar Problems\n\n- [3Sum](https://leetcode.com/problems/3sum/) — Medium\n- [Number of Arithmetic Triplets](https://leetcode.com/problems/number-of-arithmetic-triplets/) — Easy\n- [Maximum Value of an Ordered Triplet I](https://leetcode.com/problems/maximum-value-of-an-ordered-triplet-i/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-minimum-sum-of-mountain-triplets-i/lc-minimum-sum-of-mountain-triplets-i.py",
+          "content": "class Solution:\n    def minimumSum(self, nums: List[int]) -> int:\n        n = len(nums)\n        output = float('inf')\n        for i in range(n - 2):\n            for j in range(i+1, n-1):\n                if nums[i] < nums[j]:\n                    for k in range(j+1,n):\n                        if nums[k] < nums[j]:\n                            output = min(output, nums[i]+nums[j]+nums[k])\n        return output if output != float('inf') else -1"
+        },
+        {
+          "path": "problems/lc-minimum-sum-of-mountain-triplets-i/README.md",
+          "content": "# Minimum Sum of Mountain Triplets I\n\n**Difficulty:** Easy  |  **Acceptance:** 67.4%\n\n**Tags:** `Array`\n\n## Problem\n\nYou are given a 0-indexed array nums of integers.\n\nA triplet of indices (i, j, k) is a mountain if:\n\n\ti < j < k\n\tnums[i] < nums[j] and nums[k] < nums[j]\n\nReturn the minimum possible sum of a mountain triplet of nums. If no such triplet exists, return -1.\n\n&nbsp;\nExample 1:\n\nInput: nums = [8,6,1,5,3]\nOutput: 9\nExplanation: Triplet (2, 3, 4) is a mountain triplet of sum 9 since: \n- 2 < 3 < 4\n- nums[2] < nums[3] and nums[4] < nums[3]\nAnd the sum of this triplet is nums[2] + nums[3] + nums[4] = 9. It can be shown that there are no mountain triplets with a sum of less than 9.\n\nExample 2:\n\nInput: nums = [5,4,8,7,10,2]\nOutput: 13\nExplanation: Triplet (1, 3, 5) is a mountain triplet of sum 13 since: \n- 1 < 3 < 5\n- nums[1] < nums[3] and nums[5] < nums[3]\nAnd the sum of this triplet is nums[1] + nums[3] + nums[5] = 13. It can be shown that there are no mountain triplets with a sum of less than 13.\n\nExample 3:\n\nInput: nums = [6,5,4,3,4,5]\nOutput: -1\nExplanation: It can be shown that there are no mountain triplets in nums.\n\n&nbsp;\nConstraints:\n\n\t3 <= nums.length <= 50\n\t1 <= nums[i] <= 50\n\n## My Submission\n\n- Runtime: 58 ms\n- Memory: 16.5 MB\n\n## Similar Problems\n\n- [3Sum](https://leetcode.com/problems/3sum/) — Medium\n- [Number of Arithmetic Triplets](https://leetcode.com/problems/number-of-arithmetic-triplets/) — Easy\n- [Maximum Value of an Ordered Triplet I](https://leetcode.com/problems/maximum-value-of-an-ordered-triplet-i/) — Easy\n"
+        }
+      ],
+      "timestamp": 1730046996000,
+      "runtime": "58 ms",
+      "memory": "16.5 MB",
+      "runtimePct": 57.67659999999998,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given a <strong>0-indexed</strong> array <code>nums</code> of integers.</p>\n\n<p>A triplet of indices <code>(i, j, k)</code> is a <strong>mountain</strong> if:</p>\n\n<ul>\n\t<li><code>i &lt; j &lt; k</code></li>\n\t<li><code>nums[i] &lt; nums[j]</code> and <code>nums[k] &lt; nums[j]</code></li>\n</ul>\n\n<p>Return <em>the <strong>minimum possible sum</strong> of a mountain triplet of</em> <code>nums</code>. <em>If no such triplet exists, return</em> <code>-1</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [8,6,1,5,3]\n<strong>Output:</strong> 9\n<strong>Explanation:</strong> Triplet (2, 3, 4) is a mountain triplet of sum 9 since: \n- 2 &lt; 3 &lt; 4\n- nums[2] &lt; nums[3] and nums[4] &lt; nums[3]\nAnd the sum of this triplet is nums[2] + nums[3] + nums[4] = 9. It can be shown that there are no mountain triplets with a sum of less than 9.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [5,4,8,7,10,2]\n<strong>Output:</strong> 13\n<strong>Explanation:</strong> Triplet (1, 3, 5) is a mountain triplet of sum 13 since: \n- 1 &lt; 3 &lt; 5\n- nums[1] &lt; nums[3] and nums[5] &lt; nums[3]\nAnd the sum of this triplet is nums[1] + nums[3] + nums[5] = 13. It can be shown that there are no mountain triplets with a sum of less than 13.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [6,5,4,3,4,5]\n<strong>Output:</strong> -1\n<strong>Explanation:</strong> It can be shown that there are no mountain triplets in nums.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>3 &lt;= nums.length &lt;= 50</code></li>\n\t<li><code>1 &lt;= nums[i] &lt;= 50</code></li>\n</ul>\n",
+      "hints": [
+        "Bruteforce over all possible triplets."
+      ],
+      "acRate": 67.43571752858145,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "3sum",
+          "title": "3Sum",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "number-of-arithmetic-triplets",
+          "title": "Number of Arithmetic Triplets",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "maximum-value-of-an-ordered-triplet-i",
+          "title": "Maximum Value of an Ordered Triplet I",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-minimum-sum-of-mountain-triplets-ii::1435414883",
+      "submissionId": 1435414883,
+      "platform": "leetcode",
+      "title": "Minimum Sum of Mountain Triplets II",
+      "titleSlug": "minimum-sum-of-mountain-triplets-ii",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array"
+      ],
+      "topic": "Array",
+      "code": "class Solution:\n    def minimumSum(self, nums: List[int]) -> int:\n        n = len(nums)\n        output = float('inf')\n        left = [0]*n\n        right = [0]*n\n\n        left[0] = nums[0]\n        right[-1] = nums[-1]\n\n        for i in range(1,n):\n            left[i] = min(left[i-1], nums[i])\n        for i in range(n-2,-1,-1):\n            right[i] = min(right[i+1], nums[i])\n        \n        for i in range(n-1):\n            if left[i] < nums[i] and right[i] < nums[i]:\n                output = min(output, left[i]+nums[i]+right[i])\n        \n        return output if output != float('inf') else -1",
+      "readmeContent": "# Minimum Sum of Mountain Triplets II\n\n**Difficulty:** Medium  |  **Acceptance:** 54.6%\n\n**Tags:** `Array`\n\n## Problem\n\nYou are given a 0-indexed array nums of integers.\n\nA triplet of indices (i, j, k) is a mountain if:\n\n\ti < j < k\n\tnums[i] < nums[j] and nums[k] < nums[j]\n\nReturn the minimum possible sum of a mountain triplet of nums. If no such triplet exists, return -1.\n\n&nbsp;\nExample 1:\n\nInput: nums = [8,6,1,5,3]\nOutput: 9\nExplanation: Triplet (2, 3, 4) is a mountain triplet of sum 9 since: \n- 2 < 3 < 4\n- nums[2] < nums[3] and nums[4] < nums[3]\nAnd the sum of this triplet is nums[2] + nums[3] + nums[4] = 9. It can be shown that there are no mountain triplets with a sum of less than 9.\n\nExample 2:\n\nInput: nums = [5,4,8,7,10,2]\nOutput: 13\nExplanation: Triplet (1, 3, 5) is a mountain triplet of sum 13 since: \n- 1 < 3 < 5\n- nums[1] < nums[3] and nums[5] < nums[3]\nAnd the sum of this triplet is nums[1] + nums[3] + nums[5] = 13. It can be shown that there are no mountain triplets with a sum of less than 13.\n\nExample 3:\n\nInput: nums = [6,5,4,3,4,5]\nOutput: -1\nExplanation: It can be shown that there are no mountain triplets in nums.\n\n&nbsp;\nConstraints:\n\n\t3 <= nums.length <= 105\n\t1 <= nums[i] <= 108\n\n## My Submission\n\n- Runtime: 161 ms\n- Memory: 32.1 MB\n\n## Similar Problems\n\n- [3Sum](https://leetcode.com/problems/3sum/) — Medium\n- [Maximum Value of an Ordered Triplet II](https://leetcode.com/problems/maximum-value-of-an-ordered-triplet-ii/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-minimum-sum-of-mountain-triplets-ii/lc-minimum-sum-of-mountain-triplets-ii.py",
+          "content": "class Solution:\n    def minimumSum(self, nums: List[int]) -> int:\n        n = len(nums)\n        output = float('inf')\n        left = [0]*n\n        right = [0]*n\n\n        left[0] = nums[0]\n        right[-1] = nums[-1]\n\n        for i in range(1,n):\n            left[i] = min(left[i-1], nums[i])\n        for i in range(n-2,-1,-1):\n            right[i] = min(right[i+1], nums[i])\n        \n        for i in range(n-1):\n            if left[i] < nums[i] and right[i] < nums[i]:\n                output = min(output, left[i]+nums[i]+right[i])\n        \n        return output if output != float('inf') else -1"
+        },
+        {
+          "path": "problems/lc-minimum-sum-of-mountain-triplets-ii/README.md",
+          "content": "# Minimum Sum of Mountain Triplets II\n\n**Difficulty:** Medium  |  **Acceptance:** 54.6%\n\n**Tags:** `Array`\n\n## Problem\n\nYou are given a 0-indexed array nums of integers.\n\nA triplet of indices (i, j, k) is a mountain if:\n\n\ti < j < k\n\tnums[i] < nums[j] and nums[k] < nums[j]\n\nReturn the minimum possible sum of a mountain triplet of nums. If no such triplet exists, return -1.\n\n&nbsp;\nExample 1:\n\nInput: nums = [8,6,1,5,3]\nOutput: 9\nExplanation: Triplet (2, 3, 4) is a mountain triplet of sum 9 since: \n- 2 < 3 < 4\n- nums[2] < nums[3] and nums[4] < nums[3]\nAnd the sum of this triplet is nums[2] + nums[3] + nums[4] = 9. It can be shown that there are no mountain triplets with a sum of less than 9.\n\nExample 2:\n\nInput: nums = [5,4,8,7,10,2]\nOutput: 13\nExplanation: Triplet (1, 3, 5) is a mountain triplet of sum 13 since: \n- 1 < 3 < 5\n- nums[1] < nums[3] and nums[5] < nums[3]\nAnd the sum of this triplet is nums[1] + nums[3] + nums[5] = 13. It can be shown that there are no mountain triplets with a sum of less than 13.\n\nExample 3:\n\nInput: nums = [6,5,4,3,4,5]\nOutput: -1\nExplanation: It can be shown that there are no mountain triplets in nums.\n\n&nbsp;\nConstraints:\n\n\t3 <= nums.length <= 105\n\t1 <= nums[i] <= 108\n\n## My Submission\n\n- Runtime: 161 ms\n- Memory: 32.1 MB\n\n## Similar Problems\n\n- [3Sum](https://leetcode.com/problems/3sum/) — Medium\n- [Maximum Value of an Ordered Triplet II](https://leetcode.com/problems/maximum-value-of-an-ordered-triplet-ii/) — Medium\n"
+        }
+      ],
+      "timestamp": 1730049504000,
+      "runtime": "161 ms",
+      "memory": "32.1 MB",
+      "runtimePct": 9.209900000000044,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given a <strong>0-indexed</strong> array <code>nums</code> of integers.</p>\n\n<p>A triplet of indices <code>(i, j, k)</code> is a <strong>mountain</strong> if:</p>\n\n<ul>\n\t<li><code>i &lt; j &lt; k</code></li>\n\t<li><code>nums[i] &lt; nums[j]</code> and <code>nums[k] &lt; nums[j]</code></li>\n</ul>\n\n<p>Return <em>the <strong>minimum possible sum</strong> of a mountain triplet of</em> <code>nums</code>. <em>If no such triplet exists, return</em> <code>-1</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [8,6,1,5,3]\n<strong>Output:</strong> 9\n<strong>Explanation:</strong> Triplet (2, 3, 4) is a mountain triplet of sum 9 since: \n- 2 &lt; 3 &lt; 4\n- nums[2] &lt; nums[3] and nums[4] &lt; nums[3]\nAnd the sum of this triplet is nums[2] + nums[3] + nums[4] = 9. It can be shown that there are no mountain triplets with a sum of less than 9.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [5,4,8,7,10,2]\n<strong>Output:</strong> 13\n<strong>Explanation:</strong> Triplet (1, 3, 5) is a mountain triplet of sum 13 since: \n- 1 &lt; 3 &lt; 5\n- nums[1] &lt; nums[3] and nums[5] &lt; nums[3]\nAnd the sum of this triplet is nums[1] + nums[3] + nums[5] = 13. It can be shown that there are no mountain triplets with a sum of less than 13.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [6,5,4,3,4,5]\n<strong>Output:</strong> -1\n<strong>Explanation:</strong> It can be shown that there are no mountain triplets in nums.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>3 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>1 &lt;= nums[i] &lt;= 10<sup>8</sup></code></li>\n</ul>\n",
+      "hints": [
+        "If you fix index <code>j</code>, <code>i</code> will be the smallest integer to the left of <code>j</code>, and <code>k</code> the largest integer to the right of <code>j</code>.",
+        "To find <code>i</code> and <code>k</code>, preprocess the prefix minimum array <code>prefix_min[i] = min(nums[0], nums[1], ..., nums[i])</code>, and the suffix minimum array <code>suffix_min[i] = min(nums[i], nums[i + 1], ..., nums[i - 1])</code>."
+      ],
+      "acRate": 54.587372105546585,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "3sum",
+          "title": "3Sum",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "maximum-value-of-an-ordered-triplet-ii",
+          "title": "Maximum Value of an Ordered Triplet II",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-zigzag-conversion::1445726687",
+      "submissionId": 1445726687,
+      "platform": "leetcode",
+      "title": "Zigzag Conversion",
+      "titleSlug": "zigzag-conversion",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "String"
+      ],
+      "topic": "String",
+      "code": "class Solution:\n    def convert(self, s: str, numRows: int) -> str:\n        if numRows == 1 or numRows >= len(s):\n            return s\n        line = [''] * numRows\n        cycle_length = (numRows - 1) * 2\n        for i in range(len(s)):\n            cycle_pos = i % cycle_length\n            if cycle_pos < numRows:\n                line[cycle_pos] += s[i]\n            else:\n                line[cycle_length - cycle_pos] += s[i]\n            \n        return \"\".join(line)",
+      "readmeContent": "# Zigzag Conversion\n\n**Difficulty:** Medium  |  **Acceptance:** 54.1%\n\n**Tags:** `String`\n\n## Problem\n\nThe string \"PAYPALISHIRING\" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)\n\nP   A   H   N\nA P L S I I G\nY   I   R\n\nAnd then read line by line: \"PAHNAPLSIIGYIR\"\n\nWrite the code that will take a string and make this conversion given a number of rows:\n\nstring convert(string s, int numRows);\n\n&nbsp;\nExample 1:\n\nInput: s = \"PAYPALISHIRING\", numRows = 3\nOutput: \"PAHNAPLSIIGYIR\"\n\nExample 2:\n\nInput: s = \"PAYPALISHIRING\", numRows = 4\nOutput: \"PINALSIGYAHRPI\"\nExplanation:\nP     I    N\nA   L S  I G\nY A   H R\nP     I\n\nExample 3:\n\nInput: s = \"A\", numRows = 1\nOutput: \"A\"\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 1000\n\ts consists of English letters (lower-case and upper-case), ',' and '.'.\n\t1 <= numRows <= 1000\n\n## My Submission\n\n- Runtime: 11 ms\n- Memory: 16.7 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-zigzag-conversion/lc-zigzag-conversion.py",
+          "content": "class Solution:\n    def convert(self, s: str, numRows: int) -> str:\n        if numRows == 1 or numRows >= len(s):\n            return s\n        line = [''] * numRows\n        cycle_length = (numRows - 1) * 2\n        for i in range(len(s)):\n            cycle_pos = i % cycle_length\n            if cycle_pos < numRows:\n                line[cycle_pos] += s[i]\n            else:\n                line[cycle_length - cycle_pos] += s[i]\n            \n        return \"\".join(line)"
+        },
+        {
+          "path": "problems/lc-zigzag-conversion/README.md",
+          "content": "# Zigzag Conversion\n\n**Difficulty:** Medium  |  **Acceptance:** 54.1%\n\n**Tags:** `String`\n\n## Problem\n\nThe string \"PAYPALISHIRING\" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)\n\nP   A   H   N\nA P L S I I G\nY   I   R\n\nAnd then read line by line: \"PAHNAPLSIIGYIR\"\n\nWrite the code that will take a string and make this conversion given a number of rows:\n\nstring convert(string s, int numRows);\n\n&nbsp;\nExample 1:\n\nInput: s = \"PAYPALISHIRING\", numRows = 3\nOutput: \"PAHNAPLSIIGYIR\"\n\nExample 2:\n\nInput: s = \"PAYPALISHIRING\", numRows = 4\nOutput: \"PINALSIGYAHRPI\"\nExplanation:\nP     I    N\nA   L S  I G\nY A   H R\nP     I\n\nExample 3:\n\nInput: s = \"A\", numRows = 1\nOutput: \"A\"\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 1000\n\ts consists of English letters (lower-case and upper-case), ',' and '.'.\n\t1 <= numRows <= 1000\n\n## My Submission\n\n- Runtime: 11 ms\n- Memory: 16.7 MB\n"
+        }
+      ],
+      "timestamp": 1730981168000,
+      "runtime": "11 ms",
+      "memory": "16.7 MB",
+      "runtimePct": 55.90290000000001,
+      "memoryPct": 100,
+      "problemStatement": "<p>The string <code>&quot;PAYPALISHIRING&quot;</code> is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)</p>\n\n<pre>\nP   A   H   N\nA P L S I I G\nY   I   R\n</pre>\n\n<p>And then read line by line: <code>&quot;PAHNAPLSIIGYIR&quot;</code></p>\n\n<p>Write the code that will take a string and make this conversion given a number of rows:</p>\n\n<pre>\nstring convert(string s, int numRows);\n</pre>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;PAYPALISHIRING&quot;, numRows = 3\n<strong>Output:</strong> &quot;PAHNAPLSIIGYIR&quot;\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;PAYPALISHIRING&quot;, numRows = 4\n<strong>Output:</strong> &quot;PINALSIGYAHRPI&quot;\n<strong>Explanation:</strong>\nP     I    N\nA   L S  I G\nY A   H R\nP     I\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;A&quot;, numRows = 1\n<strong>Output:</strong> &quot;A&quot;\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 1000</code></li>\n\t<li><code>s</code> consists of English letters (lower-case and upper-case), <code>&#39;,&#39;</code> and <code>&#39;.&#39;</code>.</li>\n\t<li><code>1 &lt;= numRows &lt;= 1000</code></li>\n</ul>\n",
+      "hints": null,
+      "acRate": 54.11691294442973,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-split-the-array::1448736927",
+      "submissionId": 1448736927,
+      "platform": "leetcode",
+      "title": "Split the Array",
+      "titleSlug": "split-the-array",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Counting"
+      ],
+      "topic": "Hash Table",
+      "code": "class Solution:\n    def isPossibleToSplit(self, nums: List[int]) -> bool:\n        counter = Counter(nums)\n        for num in counter.values():\n            if num > 2:\n                return False\n        return True",
+      "readmeContent": "# Split the Array\n\n**Difficulty:** Easy  |  **Acceptance:** 61.2%\n\n**Tags:** `Array`, `Hash Table`, `Counting`\n\n## Problem\n\nYou are given an integer array nums of even length. You have to split the array into two parts nums1 and nums2 such that:\n\n\tnums1.length == nums2.length == nums.length / 2.\n\tnums1 should contain distinct elements.\n\tnums2 should also contain distinct elements.\n\nReturn true if it is possible to split the array, and false otherwise.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,1,2,2,3,4]\nOutput: true\nExplanation: One of the possible ways to split nums is nums1 = [1,2,3] and nums2 = [1,2,4].\n\nExample 2:\n\nInput: nums = [1,1,1,1]\nOutput: false\nExplanation: The only possible way to split nums is nums1 = [1,1] and nums2 = [1,1]. Both nums1 and nums2 do not contain distinct elements. Therefore, we return false.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 100\n\tnums.length % 2 == 0 \n\t1 <= nums[i] <= 100\n\n## My Submission\n\n- Runtime: 1 ms\n- Memory: 16.5 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-split-the-array/lc-split-the-array.py",
+          "content": "class Solution:\n    def isPossibleToSplit(self, nums: List[int]) -> bool:\n        counter = Counter(nums)\n        for num in counter.values():\n            if num > 2:\n                return False\n        return True"
+        },
+        {
+          "path": "problems/lc-split-the-array/README.md",
+          "content": "# Split the Array\n\n**Difficulty:** Easy  |  **Acceptance:** 61.2%\n\n**Tags:** `Array`, `Hash Table`, `Counting`\n\n## Problem\n\nYou are given an integer array nums of even length. You have to split the array into two parts nums1 and nums2 such that:\n\n\tnums1.length == nums2.length == nums.length / 2.\n\tnums1 should contain distinct elements.\n\tnums2 should also contain distinct elements.\n\nReturn true if it is possible to split the array, and false otherwise.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,1,2,2,3,4]\nOutput: true\nExplanation: One of the possible ways to split nums is nums1 = [1,2,3] and nums2 = [1,2,4].\n\nExample 2:\n\nInput: nums = [1,1,1,1]\nOutput: false\nExplanation: The only possible way to split nums is nums1 = [1,1] and nums2 = [1,1]. Both nums1 and nums2 do not contain distinct elements. Therefore, we return false.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 100\n\tnums.length % 2 == 0 \n\t1 <= nums[i] <= 100\n\n## My Submission\n\n- Runtime: 1 ms\n- Memory: 16.5 MB\n"
+        }
+      ],
+      "timestamp": 1731249478000,
+      "runtime": "1 ms",
+      "memory": "16.5 MB",
+      "runtimePct": 48.0769,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given an integer array <code>nums</code> of <strong>even</strong> length. You have to split the array into two parts <code>nums1</code> and <code>nums2</code> such that:</p>\n\n<ul>\n\t<li><code>nums1.length == nums2.length == nums.length / 2</code>.</li>\n\t<li><code>nums1</code> should contain <strong>distinct </strong>elements.</li>\n\t<li><code>nums2</code> should also contain <strong>distinct</strong> elements.</li>\n</ul>\n\n<p>Return <code>true</code><em> if it is possible to split the array, and </em><code>false</code> <em>otherwise</em><em>.</em></p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,1,2,2,3,4]\n<strong>Output:</strong> true\n<strong>Explanation:</strong> One of the possible ways to split nums is nums1 = [1,2,3] and nums2 = [1,2,4].\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,1,1,1]\n<strong>Output:</strong> false\n<strong>Explanation:</strong> The only possible way to split nums is nums1 = [1,1] and nums2 = [1,1]. Both nums1 and nums2 do not contain distinct elements. Therefore, we return false.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 100</code></li>\n\t<li><code>nums.length % 2 == 0 </code></li>\n\t<li><code>1 &lt;= nums[i] &lt;= 100</code></li>\n</ul>\n",
+      "hints": [
+        "It’s impossible if the same number occurs more than twice. So just check the frequency of each value."
+      ],
+      "acRate": 61.24744972311279,
+      "similar": null,
+      "hasSimilar": null,
+      "conflictPending": true,
+      "conflictCandidates": [
+        {
+          "id": "lc-split-the-array::1448744782",
+          "code": "class Solution:\n    def isPossibleToSplit(self, nums: List[int]) -> bool:\n        return len(nums) % 2 == 0 and max(Counter(nums).values()) < 3\n",
+          "lang": {
+            "name": "Python3",
+            "ext": "py",
+            "slug": "python3"
+          },
+          "runtime": "0 ms",
+          "memory": "16.7 MB",
+          "runtimePct": 100,
+          "memoryPct": 100,
+          "timestamp": 1731250137000,
+          "submissionId": 1448744782
+        }
+      ]
+    },
+    {
+      "id": "lc-split-the-array::1448742291",
+      "submissionId": 1448742291,
+      "platform": "leetcode",
+      "title": "Split the Array",
+      "titleSlug": "split-the-array",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Java",
+        "ext": "java",
+        "slug": "java"
+      },
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Counting"
+      ],
+      "topic": "Hash Table",
+      "code": "class Solution {\n    public boolean isPossibleToSplit(int[] nums) {\n        Map<Integer, Integer> frequencyMap = new HashMap<>();\n\n        // Count occurrences of each number\n        for (int num : nums) {\n            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);\n        }\n\n        // Check if any number has a frequency higher than 2\n        for (int frequency : frequencyMap.values()) {\n            if (frequency > 2) {\n                return false;\n            }\n        }\n\n        return true;\n    }\n}",
+      "readmeContent": "# Split the Array\n\n**Difficulty:** Easy  |  **Acceptance:** 61.2%\n\n**Tags:** `Array`, `Hash Table`, `Counting`\n\n## Problem\n\nYou are given an integer array nums of even length. You have to split the array into two parts nums1 and nums2 such that:\n\n\tnums1.length == nums2.length == nums.length / 2.\n\tnums1 should contain distinct elements.\n\tnums2 should also contain distinct elements.\n\nReturn true if it is possible to split the array, and false otherwise.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,1,2,2,3,4]\nOutput: true\nExplanation: One of the possible ways to split nums is nums1 = [1,2,3] and nums2 = [1,2,4].\n\nExample 2:\n\nInput: nums = [1,1,1,1]\nOutput: false\nExplanation: The only possible way to split nums is nums1 = [1,1] and nums2 = [1,1]. Both nums1 and nums2 do not contain distinct elements. Therefore, we return false.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 100\n\tnums.length % 2 == 0 \n\t1 <= nums[i] <= 100\n\n## My Submission\n\n- Runtime: 2 ms\n- Memory: 42.6 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-split-the-array/lc-split-the-array.java",
+          "content": "class Solution {\n    public boolean isPossibleToSplit(int[] nums) {\n        Map<Integer, Integer> frequencyMap = new HashMap<>();\n\n        // Count occurrences of each number\n        for (int num : nums) {\n            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);\n        }\n\n        // Check if any number has a frequency higher than 2\n        for (int frequency : frequencyMap.values()) {\n            if (frequency > 2) {\n                return false;\n            }\n        }\n\n        return true;\n    }\n}"
+        },
+        {
+          "path": "problems/lc-split-the-array/README.md",
+          "content": "# Split the Array\n\n**Difficulty:** Easy  |  **Acceptance:** 61.2%\n\n**Tags:** `Array`, `Hash Table`, `Counting`\n\n## Problem\n\nYou are given an integer array nums of even length. You have to split the array into two parts nums1 and nums2 such that:\n\n\tnums1.length == nums2.length == nums.length / 2.\n\tnums1 should contain distinct elements.\n\tnums2 should also contain distinct elements.\n\nReturn true if it is possible to split the array, and false otherwise.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,1,2,2,3,4]\nOutput: true\nExplanation: One of the possible ways to split nums is nums1 = [1,2,3] and nums2 = [1,2,4].\n\nExample 2:\n\nInput: nums = [1,1,1,1]\nOutput: false\nExplanation: The only possible way to split nums is nums1 = [1,1] and nums2 = [1,1]. Both nums1 and nums2 do not contain distinct elements. Therefore, we return false.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 100\n\tnums.length % 2 == 0 \n\t1 <= nums[i] <= 100\n\n## My Submission\n\n- Runtime: 2 ms\n- Memory: 42.6 MB\n"
+        }
+      ],
+      "timestamp": 1731249926000,
+      "runtime": "2 ms",
+      "memory": "42.6 MB",
+      "runtimePct": 60.125,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given an integer array <code>nums</code> of <strong>even</strong> length. You have to split the array into two parts <code>nums1</code> and <code>nums2</code> such that:</p>\n\n<ul>\n\t<li><code>nums1.length == nums2.length == nums.length / 2</code>.</li>\n\t<li><code>nums1</code> should contain <strong>distinct </strong>elements.</li>\n\t<li><code>nums2</code> should also contain <strong>distinct</strong> elements.</li>\n</ul>\n\n<p>Return <code>true</code><em> if it is possible to split the array, and </em><code>false</code> <em>otherwise</em><em>.</em></p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,1,2,2,3,4]\n<strong>Output:</strong> true\n<strong>Explanation:</strong> One of the possible ways to split nums is nums1 = [1,2,3] and nums2 = [1,2,4].\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,1,1,1]\n<strong>Output:</strong> false\n<strong>Explanation:</strong> The only possible way to split nums is nums1 = [1,1] and nums2 = [1,1]. Both nums1 and nums2 do not contain distinct elements. Therefore, we return false.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 100</code></li>\n\t<li><code>nums.length % 2 == 0 </code></li>\n\t<li><code>1 &lt;= nums[i] &lt;= 100</code></li>\n</ul>\n",
+      "hints": [
+        "It’s impossible if the same number occurs more than twice. So just check the frequency of each value."
+      ],
+      "acRate": 61.24744972311279,
+      "similar": null,
+      "hasSimilar": null
     }
   ]
 }
