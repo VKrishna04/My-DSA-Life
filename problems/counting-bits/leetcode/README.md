@@ -82,3 +82,27 @@ class Solution:
 
         return [bin(i).count('1') for i in range(n+1)]
 ```
+
+## AI Review
+
+### Analysis
+
+1.  **Complexity**
+    *   **Time Complexity:** $O(n \log n)$. For each number $i$ up to $n$, the `bin(i)` and `count('1')` operations take $O(\text{number of bits})$, which is $O(\log i)$. Summing this over $n$ yields $O(n \log n)$.
+    *   **Space Complexity:** $O(1)$ extra space (excluding the $O(n)$ space required for the output list).
+
+2.  **Correctness**
+    The solution is **correct** for all valid inputs ($n \ge 0$). It handles the edge case $n=0$ correctly, returning `[0]`.
+
+3.  **Optimization**
+    Improve time complexity to **$O(n)$** using **Dynamic Programming**. Instead of recomputing bits, use the relation that the number of bits in $i$ is the number of bits in $i // 2$ plus the last bit:
+    ```python
+    res = [0] * (n + 1)
+    for i in range(1, n + 1):
+        res[i] = res[i >> 1] + (i & 1)
+    return res
+    ```
+
+4.  **Key Algorithmic Pattern**
+    *   **Current Code:** Brute Force / Built-in Bit Manipulation.
+    *   **Optimal Approach:** Dynamic Programming (using the "Most Significant Bit" or "Least Significant Bit" transition).

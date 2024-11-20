@@ -79,3 +79,32 @@ class Solution:
                     results.add(i)
         return sorted(results)
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(N \cdot K + N \log N)$. In the worst case (e.g., all elements are `key`), the inner loop iterates $2K+1$ times for every $j$, and the final `sorted()` call takes $O(N \log N)$.
+*   **Space Complexity:** $O(N)$ to store indices in the `set`.
+
+### 2. Correctness
+The code is **correct**. It accurately identifies all valid indices and handles boundary conditions using `max(0, ...)` and `min(len(nums), ...)`. It correctly avoids duplicates via the `set`.
+
+### 3. Concrete Optimization
+You can achieve **$O(N)$ time** by avoiding redundant processing of indices. Keep track of the `last_added_index` to ensure each index is appended to a list only once:
+
+```python
+last_added = -1
+results = []
+for j in range(len(nums)):
+    if nums[j] == key:
+        start = max(last_added + 1, j - k)
+        end = min(len(nums) - 1, j + k)
+        for i in range(start, end + 1):
+            results.append(i)
+            last_added = i
+return results
+```
+This removes the `set` overhead and the final $O(N \log N)$ sort, as indices are added in increasing order.
+
+### 4. Key Algorithmic Pattern
+**Greedy Interval Merging / Two Pointers.** The problem involves finding the union of several intervals $[j-k, j+k]$.

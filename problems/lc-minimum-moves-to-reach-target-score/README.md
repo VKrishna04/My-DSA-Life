@@ -104,3 +104,26 @@ class Solution:
         steps += target - 1
         return steps
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(\min(\text{maxDoubles}, \log(\text{target})))$. Each division reduces the target by half, and the loop terminates early if `maxDoubles` reaches zero.
+*   **Space Complexity:** $O(1)$. Only a few integer variables are used.
+
+### 2. Correctness
+The solution is **correct**. Working backward from the target is the optimal greedy strategy: you should divide by 2 as late as possible (when the number is largest) to maximize the "value" of each double. It correctly handles `target = 1` and cases where `maxDoubles = 0`.
+
+### 3. Concrete Optimization
+Replace the modulo check and division with a more concise combined update. Instead of checking `if target % 2 != 0`, you can calculate the steps for both the potential decrement and the division in one go:
+
+```python
+while target > 1 and maxDoubles > 0:
+    steps += 1 + (target % 2)
+    target //= 2
+    maxDoubles -= 1
+```
+This reduces branching and uses integer division (`//`) instead of float conversion (`int(target / 2)`).
+
+### 4. Key Algorithmic Pattern
+**Greedy Strategy (Backward Induction):** By reversing the operations (divide instead of double, subtract instead of add), the greedy choice becomes clear: always divide by 2 if the number is even and doubles are available.

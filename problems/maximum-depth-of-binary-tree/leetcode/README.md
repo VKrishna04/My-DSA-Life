@@ -52,3 +52,21 @@ class Solution:
         # return math.log2(len(root)+1)
         return 0 if not root else 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time:** $O(N)$, where $N$ is the number of nodes, as each node is visited exactly once.
+*   **Space:** $O(H)$, where $H$ is the height of the tree. In the worst case (a skewed tree), this is $O(N)$; in a balanced tree, it is $O(\log N)$ due to the recursive call stack.
+
+### 2. Correctness
+The code is **correct**. It properly handles:
+*   **Empty Tree:** Returns 0 via the `if not root` check.
+*   **Single Node:** Returns $1 + \max(0, 0) = 1$.
+*   **Skewed/Balanced Trees:** Correctly propagates the maximum height upwards.
+
+### 3. Optimization
+To avoid a `RecursionError` on extremely deep trees (Python's default limit is 1000), use an **Iterative Breadth-First Search (BFS)** using a queue. This manages memory on the heap rather than the stack and can be safer for production-scale constraints.
+
+### 4. Key Algorithmic Pattern
+**Recursive Depth-First Search (DFS)** (specifically, a Post-order Traversal) utilizing the **Divide and Conquer** strategy.

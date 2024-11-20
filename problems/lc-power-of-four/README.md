@@ -53,3 +53,27 @@ class Solution:
 
         # return n>0 and (n & (n-1)==0) and (n % 3 == 1)
 ```
+
+## AI Review
+
+### Review of "Power of Four" Solution
+
+1.  **Complexity**
+    *   **Time:** $O(1)$. The loop runs a fixed number of times (~16 iterations) regardless of the input $n$.
+    *   **Space:** $O(1)$. A small list of constant size is created.
+
+2.  **Correctness**
+    *   **Runtime Error:** The code will fail because `math` is not imported.
+    *   **Logic:** Once imported, it is correct. It handles $n \le 0$ and non-powers correctly by exclusion from the precomputed list.
+    *   **Constraint Note:** Since $n$ is a 32-bit signed integer, the maximum power is $4^{15}$. Your range `range(16)` covers this.
+
+3.  **Optimization**
+    Use the commented-out **Bit Manipulation** approach. It avoids list creation and log calculations entirely:
+    ```python
+    return n > 0 and (n & (n - 1) == 0) and (n % 3 == 1)
+    ```
+    *   `n & (n - 1) == 0` checks if $n$ is a power of two.
+    *   `n % 3 == 1` distinguishes powers of four from other powers of two.
+
+4.  **Key Algorithmic Pattern**
+    **Precomputation / Lookup Table.** The solution generates all possible valid answers within the problem's constraints and performs a membership check.

@@ -111,3 +111,22 @@ class FindSumPairs:
 # obj.add(index,val)
 # param_2 = obj.count(tot)
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time:** 
+    *   `__init__`: $O(N_2)$ to build the frequency map.
+    *   `add`: $O(1)$ to update the list and hash map.
+    *   `count`: $O(N_1)$ per call, as it iterates through the entire `nums1` array.
+*   **Space:** $O(N_2)$ to store the frequency map and the `nums2` array.
+
+### 2. Correctness
+The logic is **correct**. It accurately tracks element frequencies in `nums2` to allow $O(1)$ lookups. Since `nums1` is shorter (per LeetCode constraints, typically $10^3$) and `nums2` is longer ($10^5$), iterating over `nums1` is the intended approach. `Counter` handles missing keys (returning 0) correctly.
+
+### 3. Concrete Optimization
+**Pre-calculate frequencies for `nums1`**: In `__init__`, create a `Counter` for `nums1`. In `count(tot)`, iterate over the unique elements of `nums1` using `for val, freq in self.nums1_freq.items():`. 
+*   **Impact:** Reduces `count` complexity from $O(N_1)$ to $O(\text{unique } N_1)$. If `nums1` contains many duplicates, this significantly speeds up the execution.
+
+### 4. Key Algorithmic Pattern
+**Hash Map (Frequency Table)**: Using a dictionary to trade space for time, enabling $O(1)$ complements search ($target - x$).

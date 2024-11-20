@@ -80,3 +80,28 @@ class Solution:
             return len(nums)
 
 ```
+
+## AI Review
+
+### Review of "Make Array Zero by Subtracting Equal Amounts" Solution
+
+1. **Complexity**
+   - **Time:** $O(n)$, where $n$ is the length of `nums`. Converting the list to a set takes linear time.
+   - **Space:** $O(n)$ in the worst case to store unique elements in the set.
+
+2. **Correctness**
+   The logic is **correct**. The number of operations required equals the number of unique non-zero integers in the array. Each operation removes the current smallest non-zero value, effectively collapsing one "level" of unique values.
+   - **Edge Case:** `nums = [0, 0, 0]` correctly returns `0`.
+   - **Edge Case:** `nums = [1, 2, 3]` correctly returns `3`.
+
+3. **Optimization**
+   While functional, using `try...finally` for control flow is non-idiomatic. You can achieve the same result more cleanly using a set comprehension or set subtraction:
+   ```python
+   return len({x for x in nums if x > 0})
+   # OR
+   return len(set(nums) - {0})
+   ```
+   This avoids the overhead of exception handling when `0` is missing.
+
+4. **Key Algorithmic Pattern**
+   **Hashing / Set Properties**: Leveraging the property that only unique non-zero values determine the total number of subtractions needed.

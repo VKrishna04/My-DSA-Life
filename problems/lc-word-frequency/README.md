@@ -48,3 +48,23 @@ day 1
 # Read from the file words.txt and output the word frequency list to stdout.
 tr -s ' ' '\n' < words.txt | sort | uniq -c | sort -nr | awk '{print $2, $1}';
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(N \log N)$, where $N$ is the total number of words. The bottleneck is the initial `sort` operation.
+*   **Space Complexity:** $O(N)$ to store words during the sorting phases.
+
+### 2. Correctness
+*   **Delimiter Issue:** The problem specifies words are separated by "one or more whitespace characters" (including tabs/newlines). `tr -s ' '` only handles spaces. 
+*   **Empty Lines:** If the input has leading/trailing spaces or multiple newlines, `tr` will produce empty lines which `uniq -c` will count as a word. 
+*   **Fix:** Use `tr -s '[:space:]' '\n'` and pipe through `sed '/^$/d'` to remove empty lines.
+
+### 3. Concrete Optimization
+Replace the first `sort | uniq -c` with a single `awk` command to count frequencies using an associative array. This reduces time complexity from $O(N \log N)$ to $O(N)$ for the counting phase.
+```bash
+awk '{for(i=1;i<=NF;i++) count[$i]++} END {for(w in count) print w, count[w]}' words.txt | sort -rnk2
+```
+
+### 4. Key Algorithmic Pattern
+**Unix Pipeline (Pipes-and-Filters):** Transforming a data stream through a sequence of discrete processing stages.

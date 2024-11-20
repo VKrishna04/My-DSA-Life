@@ -8,7 +8,7 @@
 | Topics | Hash Table, String, Sorting, Heap (Priority Queue), Bucket Sort, Counting |
 | Solved | 2024-11-20 |
 | Runtime | 6 ms (beats 83.8008%) |
-| Memory | 17.8 MB (beats 100%) |
+| Memory | 17.9 MB (beats 100%) |
 
 ## Problem Statement
 
@@ -49,6 +49,10 @@ Note that 'A' and 'a' are treated as two different characters.
 
 ## Solutions
 
+### Alt approach (Python3) — imported
+
+Submission #1458513764
+
 ```Python3
 from collections import Counter
 
@@ -64,3 +68,22 @@ class Solution:
 
         # return ''.join([char * freq for char, freq in sorted(Counter(s).items(), key=lambda x: x[1], reverse=True)])
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time**: $O(N + K \log K)$, where $N$ is the string length and $K$ is the number of unique characters. $O(N)$ to count, $O(K \log K)$ to sort unique characters.
+*   **Space**: $O(N + K)$ to store the frequency map and the final output string.
+
+### 2. Correctness
+**Correct.** It successfully handles:
+*   **Case Sensitivity**: 'A' and 'a' are treated as distinct keys.
+*   **Tie-breaking**: Characters with the same frequency can appear in any order (as per LeetCode requirements).
+*   **Edge Cases**: Empty strings or strings with one character return correctly.
+
+### 3. Optimization: Bucket Sort
+Instead of sorting, use **Bucket Sort** to achieve **$O(N)$ time**.
+Create a list of lists where `buckets[i]` stores characters appearing `i` times. Iterate from the highest index down to build the string. This avoids the $O(K \log K)$ sorting overhead.
+
+### 4. Key Algorithmic Pattern
+**Frequency Counting** (using a Hash Map/Counter) followed by **Greedy Sorting**.

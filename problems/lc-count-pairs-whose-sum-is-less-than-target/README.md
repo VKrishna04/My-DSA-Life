@@ -74,3 +74,25 @@ class Solution:
                     print(f"{nums[l]}, {nums[r]}")
         return ans
 ```
+
+## AI Review
+
+### Analysis
+
+1.  **Complexity**:
+    *   **Time**: $O(n^2)$ due to nested loops iterating through all pairs. The sort takes $O(n \log n)$, but the quadratic loops dominate.
+    *   **Space**: $O(n)$ (Python's `sort()` uses Timsort, which requires $O(n)$ auxiliary space).
+
+2.  **Correctness**:
+    *   The logic is correct for identifying all valid pairs.
+    *   **Edge Case/Issue**: The `print()` statement inside the nested loops is an "anti-pattern" for competitive programming. It will significantly slow down execution and likely lead to a **Time Limit Exceeded (TLE)** error on larger test cases.
+
+3.  **Optimization**:
+    *   Replace the inner loop with a **Two-Pointer** approach. Since the array is sorted:
+        *   Initialize `l = 0` and `r = n - 1`.
+        *   If `nums[l] + nums[r] < target`, then all elements between `l` and `r` paired with `nums[l]` are also valid. Add `r - l` to your answer and increment `l`.
+        *   Otherwise, decrement `r`.
+    *   This reduces time complexity to **$O(n \log n)$**.
+
+4.  **Key Algorithmic Pattern**:
+    *   Sorting + Two Pointers.

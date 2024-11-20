@@ -59,3 +59,26 @@ class Solution:
 
 
 ```
+
+## AI Review
+
+### Review of Python3 Solution
+
+**1. Complexity**
+*   **Time Complexity:** $O(N)$, where $N$ is the number of elements. The loop iterates through the list once.
+*   **Space Complexity:** $O(1)$, as it uses no additional data structures.
+
+**2. Correctness**
+*   **Verdict:** Correct but inefficient.
+*   **Edge Cases:** It handles all cases (empty lists, single elements, duplicates) because it checks every element. However, it fails to leverage the "sorted" property, which is the core challenge of the problem.
+
+**3. Optimization**
+Use **Modified Binary Search** to achieve an average time complexity of $O(\log N)$.
+*   Check if `nums[mid] == target`.
+*   If `nums[left] == nums[mid] == nums[right]`, increment `left` and decrement `right` (to handle duplicates).
+*   Otherwise, determine which half is sorted:
+    *   If `nums[left] <= nums[mid]`, the left half is sorted. Check if the target lies within it.
+    *   Else, the right half is sorted. Check if the target lies within it.
+
+**4. Key Algorithmic Pattern**
+**Binary Search** on a rotated sorted property. Specifically, handling the worst-case $O(N)$ scenario introduced by duplicates.

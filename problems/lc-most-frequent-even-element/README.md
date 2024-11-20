@@ -83,3 +83,25 @@ class Solution:
         return most_frequent_even
 
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(N)$, where $N$ is the number of elements in `nums`. We iterate through the list once to filter/count and once through the unique even elements.
+*   **Space Complexity:** $O(N)$ to store the frequency map and the temporary filtered list.
+
+### 2. Correctness
+The code is **correct**. 
+*   **Ties:** Handled correctly by checking `num < most_frequent_even`.
+*   **No even numbers:** `counts` will be empty, the loop won't execute, and it returns the initial `-1`.
+*   **Edge Case:** If the first even number is 0, `count > 0` will trigger, correctly updating `most_frequent_even`.
+
+### 3. Optimization
+Replace the **list comprehension** with a **generator expression** to save memory. The current code creates an intermediate list of all even numbers before counting.
+```python
+counts = Counter(num for num in nums if num % 2 == 0)
+```
+This reduces the peak memory usage by avoiding an extra $O(N)$ copy of the filtered data.
+
+### 4. Key Algorithmic Pattern
+**Frequency Counting (Hash Map):** Using a hash-based structure to track occurrences and performing a single-pass greedy update to find the maximum/minimum based on multiple criteria.

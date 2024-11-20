@@ -66,3 +66,26 @@ class Solution:
         return sum
 
 ```
+
+## AI Review
+
+### Analysis
+
+**1. Complexity**
+*   **Time:** $O(N^2)$, where $N$ is the length of `nums`. The prefix sum calculation is $O(N)$, but the `while sum in nums` loop performs a linear search ($O(N)$) up to $N$ times in the worst case (e.g., when many integers following the sum are present in the list).
+*   **Space:** $O(1)$, as it only stores a few integer variables.
+
+**2. Correctness**
+The logic is **correct**. It accurately identifies the longest sequential prefix starting from index 0 and iteratively finds the smallest missing integer $\ge$ sum. It handles single-element arrays and cases where the sum is already absent correctly.
+
+**3. Optimization**
+Convert `nums` into a **set** before the `while` loop. This reduces the lookup time from $O(N)$ to $O(1)$, bringing the overall time complexity down to **$O(N)$**.
+```python
+num_set = set(nums)
+while sum in num_set:
+    sum += 1
+```
+
+**4. Key Algorithmic Pattern**
+*   **Prefix Traversal:** Iterating until a condition is broken.
+*   **Hash Set Lookup:** (Optimized version) Using a set for efficient existence checks.

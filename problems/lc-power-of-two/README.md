@@ -7,8 +7,8 @@
 | Problem ID | `lc-power-of-two` |
 | Topics | Math, Bit Manipulation, Recursion |
 | Solved | 2025-06-01 |
-| Runtime | 0 ms (beats 100%) |
-| Memory | 17.7 MB (beats 100%) |
+| Runtime | 4 ms (beats 5.668899999999994%) |
+| Memory | 17.8 MB (beats 100%) |
 
 ## Problem Statement
 
@@ -47,6 +47,10 @@ An integer `n` is a power of two, if there exists an integer `x` such that `n ==
 
 ## Solutions
 
+### Alt approach (Python3) — imported
+
+Submission #1650968743
+
 ```Python3
 class Solution:
     def isPowerOfTwo(self, n: int) -> bool:
@@ -63,3 +67,25 @@ class Solution:
 
         return n > 0 and str(bin(n)).count('1') == 1
 ```
+
+## AI Review
+
+**1. Complexity**
+*   **Time:** $O(\log n)$ — converting an integer to a binary string and iterating through its bits requires logarithmic time relative to the value of $n$.
+*   **Space:** $O(\log n)$ — the string representation of the binary number is stored in memory.
+
+**2. Correctness**
+The logic is **correct**. It correctly identifies that a power of two in binary starts with '1' followed exclusively by '0's.
+*   **Edge cases:** 
+    *   `n = 0`: Returns `False` (Correct).
+    *   `n < 0`: `bin(-2)` is `'-0b10'`; the slice `[2:]` results in `'b10'`. Since `'b' != '1'`, it returns `False` (Correct).
+
+**3. Optimization**
+Use bitwise operators to achieve **$O(1)$ time and space** without string conversion:
+```python
+return n > 0 and (n & (n - 1)) == 0
+```
+This works because a power of two (e.g., `1000`) and its predecessor (e.g., `0111`) share no common set bits, so their bitwise AND is always zero.
+
+**4. Key Algorithmic Pattern**
+**Bit Manipulation** (specifically checking the Hamming weight or bit properties of an integer).

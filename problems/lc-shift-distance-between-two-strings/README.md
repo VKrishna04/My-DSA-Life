@@ -115,3 +115,20 @@ class Solution:
             totalc += min(forwardc, backwardc)
         return totalc
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(N \times \Sigma)$, where $N$ is the length of string `s` and $\Sigma = 26$. For each character, the code iterates up to 26 times to sum costs.
+*   **Space Complexity:** $O(1)$, as it uses a constant amount of extra space regardless of input size.
+
+### 2. Correctness
+The logic is **correct**. It correctly calculates the cumulative cost for shifting forward ($i \to i+1$) and backward ($i \to i-1$) using modulo arithmetic to handle the circular alphabet. It properly identifies the minimum of the two paths for every character pair.
+
+### 3. Optimization
+**Precompute a Cost Matrix:** Instead of recalculating sums for every character in the string, precompute a $26 \times 26$ matrix where `matrix[i][j]` stores the minimum cost to shift from character $i$ to $j$. 
+*   Use **Prefix Sums** of `nextCost` and `previousCost` to compute any `forwardc` or `backwardc` in $O(1)$. 
+*   This reduces the string traversal complexity from $O(N \times 26)$ to $O(N + 26^2)$.
+
+### 4. Key Algorithmic Pattern
+**Greedy with Prefix Sum Logic:** The problem treats each character position independently, making a local optimal choice (greedy) based on the computed costs of two possible directions.

@@ -50,3 +50,29 @@ class Solution:
         return  sum(i.count('1') * i.count('0') for i in zip(*map('{:032b}'.format,nums)))
 
 ```
+
+## AI Review
+
+### Review
+
+**1. Complexity**
+*   **Time:** $O(N \cdot K)$, where $N$ is the number of elements and $K$ is the bit-length (32). Each number is processed for each bit.
+*   **Space:** $O(N \cdot K)$. The `map` and `zip(*...)` construct creates $N$ strings and a transposed structure of $32 \times N$ characters in memory.
+
+**2. Correctness**
+*   **Correct.** The logic relies on the fact that the total Hamming distance is the sum of distances at each bit position. For a specific bit, the distance is the number of pairs $(0, 1)$, which equals `(count of 0s) * (count of 1s)`.
+*   **Edge cases:** Works for empty lists (returns 0) or lists with identical numbers.
+
+**3. Optimization**
+*   **Bitwise Operations:** String formatting is computationally expensive. Use bitwise shifts to count bits in $O(1)$ auxiliary space:
+    ```python
+    total = 0
+    for i in range(32):
+        ones = sum((n >> i) & 1 for n in nums)
+        total += ones * (len(nums) - ones)
+    return total
+    ```
+    This avoids $O(N)$ string allocations.
+
+**4. Key Algorithmic Pattern**
+*   **Bit Manipulation (Contribution of Each Bit):** Instead of comparing $O(N^2)$ pairs, calculate how much each bit position contributes to the total sum independently.

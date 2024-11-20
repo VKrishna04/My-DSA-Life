@@ -96,3 +96,26 @@ class SmallestInfiniteSet:
 # param_1 = obj.popSmallest()
 # obj.addBack(num)
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** 
+    *   `popSmallest`: **$O(N)$** worst-case (where $N$ is the number of elements added back), as the `while` loop may iterate through the `rm` set.
+    *   `addBack`: **$O(1)$** average (set operations).
+*   **Space Complexity:** **$O(N)$** to store the `rm` set.
+
+### 2. Correctness
+The logic is **correct**. It handles the "infinite" nature by using a pointer (`sm`) and tracks exceptions in a set. 
+*   **Edge Cases:** If `addBack` is called for a number already present in the "infinite" portion (i.e., `num >= self.sm`), it correctly ignores it because `num` won't be in `self.rm`.
+
+### 3. Optimization
+While your solution passes due to small constraints ($1000$ calls), the $O(N)$ `popSmallest` is inefficient.
+**Optimization:** Use a **Min-Heap** combined with a **Set** to track "added-back" numbers specifically.
+*   Keep an integer `threshold` (starting at 1) for the infinite sequence.
+*   Only store numbers in the heap if they are `< threshold`.
+*   `popSmallest`: If heap exists, pop min; otherwise, return `threshold` and increment it.
+*   This reduces `popSmallest` to **$O(\log N)$**.
+
+### 4. Key Algorithmic Pattern
+**Design with auxiliary data structures** (using a Set/Heap to track deviations from a contiguous range).

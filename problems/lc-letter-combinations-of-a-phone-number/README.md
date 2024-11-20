@@ -65,3 +65,20 @@ class Solution:
         return res
 
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(N \cdot 4^N)$, where $N$ is the length of `digits`. There are at most $4^N$ combinations, and constructing each string takes $O(N)$ time.
+*   **Space Complexity:** $O(N)$ for the recursion stack depth. (Ignoring the $O(N \cdot 4^N)$ space required for the output list).
+
+### 2. Correctness
+The code is **correct** and handles the primary edge case (empty input) with the `if digits:` check. It follows the standard recursive approach for generating permutations.
+
+### 3. Optimization
+**String Builder Pattern:** In Python, strings are immutable. Using `cur + c` creates a new string at every recursive step. While negligible for $N \le 4$, for larger inputs, passing a **list of characters** and using `''.join(path)` when `len(path) == len(digits)` is more memory-efficient.
+
+Alternatively, use a **mapping string** instead of a list in the dictionary (e.g., `'2': "abc"`) to save minor initialization overhead.
+
+### 4. Key Algorithmic Pattern
+**Backtracking (Depth-First Search):** The algorithm explores every possible branch of the decision tree (one digit at a time) and "backtracks" to explore alternative letters.

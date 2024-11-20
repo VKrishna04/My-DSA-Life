@@ -50,3 +50,22 @@ class Solution:
             return True
         return False
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time:** $O(m + n)$, where $m$ is the length of `ransomNote` and $n$ is the length of `magazine`. We iterate through both strings once.
+*   **Space:** $O(k)$ or $O(1)$, where $k$ is the number of unique characters. Since the input is limited to 26 lowercase English letters, the space is effectively constant.
+
+### 2. Correctness
+The code is **correct**. The intersection operator (`&`) for `Counter` objects takes the minimum of matching counts. If `s1 & s2 == s1`, it confirms `magazine` contains at least as many of each character as `ransomNote`. It handles empty strings and insufficient character counts correctly.
+
+### 3. Concrete Optimisation
+**Early Exit:** Instead of creating two full counters, count the `magazine` first. Then, iterate through `ransomNote` and decrement the counts in the magazine map. If a count reaches -1, return `False` immediately.
+```python
+# One-liner version of the same logic:
+return not (Counter(ransomNote) - Counter(magazine))
+```
+
+### 4. Key Algorithmic Pattern
+**Hash Table (Frequency Map)**. Specifically, using a multiset/counter to track character availability.

@@ -77,3 +77,28 @@ class Solution:
             res.append(val)
         return res
 ```
+
+## AI Review
+
+### Review
+**1. Complexity**
+*   **Time:** $O(N)$, where $N$ is the number of nodes. Each node is enqueued and dequeued exactly once.
+*   **Space:** $O(N)$. In a perfect binary tree, the queue holds up to $N/2$ nodes at the leaf level. The result list also stores $N$ values.
+
+**2. Correctness**
+The solution is **correct** and handles all standard cases:
+*   **Empty Tree:** Correctly returns `[]` due to the `if root` check.
+*   **Single Node:** Returns `[[val]]`.
+*   **Skewed Trees:** Correctly processes nodes level by level regardless of balance.
+
+**3. Concrete Optimization**
+Remove the `print(q)` statement. In LeetCode or production environments, I/O operations are extremely slow relative to memory operations and will significantly inflate the runtime (latency) for large trees. 
+
+Additionally, using a list comprehension or `map` inside the level loop can slightly improve execution speed, though it reduces readability:
+```python
+val = [node.val for node in q] # Get values before popping
+# Followed by standard child appending logic
+```
+
+**4. Key Algorithmic Pattern**
+**Breadth-First Search (BFS)** using a **Queue** with a nested loop for **Level-by-Level Processing**.

@@ -47,3 +47,23 @@ class Solution:
                 return i
         return -1
 ```
+
+## AI Review
+
+### Analysis
+
+**1. Complexity**
+*   **Time Complexity:** $O(N \cdot M)$, where $N$ is the length of `haystack` and $M$ is the length of `needle`. In each of the $N-M+1$ iterations, a string slice and comparison occur, both taking $O(M)$.
+*   **Space Complexity:** $O(M)$ in many Python implementations because slicing `haystack[i:i+len(needle)]` creates a new string copy of length $M$.
+
+**2. Correctness**
+The solution is correct and handles key edge cases:
+*   **Needle longer than haystack:** The `range` becomes empty or negative, correctly returning `-1`.
+*   **Empty needle:** If $M=0$, the loop runs once at $i=0$, compares `"" == ""`, and returns `0` (matching standard `strstr` behavior).
+*   **No match:** Returns `-1` after the loop completes.
+
+**3. Optimization**
+Use the **Knuth-Morris-Pratt (KMP) algorithm**. It improves time complexity to **$O(N + M)$** by using a "Partial Match" table (LPS array) to skip unnecessary comparisons, avoiding the $O(N \cdot M)$ worst-case scenario.
+
+**4. Key Algorithmic Pattern**
+**Sliding Window (Fixed Size)** / Brute Force String Matching.

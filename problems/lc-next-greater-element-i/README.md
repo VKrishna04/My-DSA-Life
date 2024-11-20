@@ -107,3 +107,22 @@ class Solution:
         
         # return ans
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time**: $O(n + m)$, where $n$ is the length of `nums2` and $m$ is the length of `nums1`. Each element in `nums2` is pushed and popped from the stack exactly once.
+*   **Space**: $O(n)$ to store the dictionary mapping and the stack.
+
+### 2. Correctness
+The solution is **correct**. It accurately identifies the first greater element to the right for each number. Since the problem guarantees all integers in `nums1` and `nums2` are unique, the hash map (`d`) safely stores values without collisions.
+
+### 3. Optimization
+You can remove the second `for` loop that sets `-1` for remaining stack elements. Instead, use the `.get()` method with a default value during the final list comprehension:
+```python
+return [d.get(x, -1) for x in nums1]
+```
+This is more idiomatic and slightly faster as it avoids an explicit secondary pass over the stack.
+
+### 4. Key Algorithmic Pattern
+**Monotonic Stack**: Specifically, a monotonic decreasing stack. This pattern is the standard approach for "Next Greater/Smaller Element" problems to reduce an $O(n^2)$ nested loop search to linear time.

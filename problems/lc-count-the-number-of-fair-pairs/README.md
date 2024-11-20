@@ -94,3 +94,21 @@ class Solution:
             count += right - left
         return count
 ```
+
+## AI Review
+
+### Review of "Count the Number of Fair Pairs" Solution
+
+**1. Complexity**
+*   **Time:** $O(n \log n)$. Sorting takes $O(n \log n)$, and the loop performs $n$ binary searches, each taking $O(\log n)$.
+*   **Space:** $O(1)$ to $O(n)$ depending on the Python version's `sort()` implementation (Timsort usually requires $O(n)$ auxiliary space).
+
+**2. Correctness**
+The solution is **correct**. Sorting allows the use of binary search to find the valid range for the second element $nums[j]$. By setting the search range to `i + 1`, it correctly ensures $i < j$ and avoids duplicate pairs. It handles negative numbers and large ranges effectively.
+
+**3. Optimization**
+Replace binary search with a **Two-Pointer** approach. You can calculate the number of pairs with `sum <= value` in $O(n)$ time using two pointers on a sorted array. 
+The total fair pairs = `countPairsLessThan(upper) - countPairsLessThan(lower - 1)`. This avoids the $O(\log n)$ overhead inside the loop, though the overall bottleneck remains $O(n \log n)$ due to sorting.
+
+**4. Key Algorithmic Pattern**
+**Sorting + Binary Search** (specifically, searching for a range $[lower-nums[i], upper-nums[i]]$ within the suffix of a sorted array).

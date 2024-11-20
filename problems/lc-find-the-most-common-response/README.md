@@ -83,3 +83,28 @@ class Solution:
         # print(a)
         return a[0][0]
 ```
+
+## AI Review
+
+### Complexity
+*   **Time:** $O(N + U \log U)$, where $N$ is the total number of strings and $U$ is the number of unique strings. Processing the lists takes $O(N)$, while sorting the counter items takes $O(U \log U)$.
+*   **Space:** $O(N)$, as the `ans` list stores up to $N$ elements before counting.
+
+### Correctness & Edge Cases
+*   **Empty Input:** If `responses` is empty, `a[0][0]` will raise an `IndexError`.
+*   **Duplicate Logic:** By using `set(i)`, the code counts a response only once per sublist. If the problem requires counting *every* occurrence, this is incorrect.
+*   **Tie-breaking:** The code correctly handles ties by sorting lexicographically (ascending) via `x[0]`.
+
+### Concrete Optimization
+Avoid creating the intermediate `ans` list (which consumes $O(N)$ extra space) and the $O(U \log U)$ sort. Update the `Counter` directly and use `max()` for $O(U)$ retrieval:
+```python3
+count = Counter()
+for res in responses:
+    count.update(set(res))
+return max(count.keys(), key=lambda x: (count[x], [-ord(c) for c in x])) # Simplified logic
+# Or more cleanly:
+return min(count.items(), key=lambda x: (-x[1], x[0]))[0]
+```
+
+### Key Algorithmic Pattern
+**Frequency Counting** using a Hash Map (Python's `Counter`).

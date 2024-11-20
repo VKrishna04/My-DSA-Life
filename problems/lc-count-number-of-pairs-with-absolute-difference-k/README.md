@@ -84,3 +84,27 @@ class Solution:
             count += len([j for j in range(len(nums)) if (nums[i]-k)==nums[j]])
         return count
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(n^2)$. The code uses a nested structure: an outer loop ($n$ iterations) and a list comprehension that scans the entire list again ($n$ iterations).
+*   **Space Complexity:** $O(n)$ due to the creation of temporary lists within the list comprehension.
+
+### 2. Correctness
+*   **Logical Flaw:** `sorted(nums)` returns a new list and does not sort in place; since the result isn't assigned, this line does nothing.
+*   **Pair Counting:** The logic `nums[i] - k == nums[j]` correctly identifies pairs where the difference is $k$. Since $k \ge 1$ (per LeetCode constraints), this effectively counts each unique pair $\{i, j\}$ exactly once (specifically when the larger element is at index $i$).
+*   **Edge Case:** If $k=0$, it would count $i=j$ as a pair, but the problem constraints usually specify $k \ge 1$ and $i < j$.
+
+### 3. Optimization
+Use a **Hash Map (Frequency Counter)** to achieve **$O(n)$ time** and **$O(1)$ auxiliary space** (since the range of numbers is limited to 1–100):
+```python
+counts = {}
+ans = 0
+for x in nums:
+    ans += counts.get(x - k, 0) + counts.get(x + k, 0)
+    counts[x] = counts.get(x, 0) + 1
+```
+
+### 4. Key Algorithmic Pattern
+**Frequency Counting (Hash Map)**. This transforms a search problem into a constant-time lookup.

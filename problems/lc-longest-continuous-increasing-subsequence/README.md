@@ -57,3 +57,33 @@ class Solution:
             best = max(best, count)
         return best
 ```
+
+## AI Review
+
+### Review
+
+**1. Complexity**
+*   **Time:** $O(n)$, where $n$ is the length of `nums`, as we traverse the list exactly once.
+*   **Space:** $O(1)$, as we only store two integer variables regardless of input size.
+
+**2. Correctness & Edge Cases**
+*   **Edge Case Failure:** The code fails on an empty list (`nums = []`). It initializes `best = 1` and returns it, but the correct answer for an empty list is `0`.
+*   **Single Element:** Works correctly for `nums = [x]`, returning `1`.
+*   **Strictly Decreasing:** Works correctly, returning `1`.
+
+**3. Concrete Optimization**
+Add a guard clause at the beginning to handle the empty input case and improve performance slightly by updating `best` only when a sequence breaks:
+
+```python
+if not nums: return 0
+# ... inside loop ...
+if nums[i] > nums[i - 1]:
+    count += 1
+else:
+    best = max(best, count)
+    count = 1
+return max(best, count)
+```
+
+**4. Key Algorithmic Pattern**
+**Greedy / Sliding Window:** It uses a "dynamic" window that expands as long as the condition (increasing) is met and resets immediately when the condition is violated.

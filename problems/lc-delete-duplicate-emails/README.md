@@ -66,3 +66,22 @@ from Person p1
 join Person p2
 on p1.email = p2.email and p1.id > p2.id
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity**: **$O(N^2)$** in the worst case (where $N$ is the number of rows). Without an index, MySQL performs a nested loop join. With an index on `email`, this improves toward **$O(N \log N)$**.
+*   **Space Complexity**: **$O(N)$** for the internal join buffer used to manage the cross-reference of IDs.
+
+### 2. Correctness
+*   **Status**: Fully correct for the problem constraints.
+*   **Edge Cases**:
+    *   **No duplicates**: The `p1.id > p2.id` condition will never be met; zero rows deleted (Correct).
+    *   **All emails identical**: Only the record with the absolute minimum `id` will remain (Correct).
+    *   **Multiple duplicates**: If three rows share an email (IDs 1, 2, 3), rows 2 and 3 will match the criteria and be deleted (Correct).
+
+### 3. Concrete Optimization
+**Add a Composite Index**: Create an index on `(email, id)`. This allows the database to locate duplicate groups and identify the minimum ID using an index scan rather than a full table scan, drastically reducing execution time for large datasets.
+
+### 4. Key Algorithmic Pattern
+**Self-Join**: Comparing a table to itself to identify relationships between rows (specifically a non-equi join on the `id` column).

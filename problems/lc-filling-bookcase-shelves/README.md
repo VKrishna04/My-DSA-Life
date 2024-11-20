@@ -7,8 +7,9 @@
 | Problem ID | `lc-filling-bookcase-shelves` |
 | Topics | Array, Dynamic Programming |
 | Solved | 2026-05-07 |
-| Runtime | 3 ms (beats 57.3276%) |
-| Memory | 19.4 MB (beats 94.8276%) |
+| Solve Time | 485m 24s |
+| Runtime | 3 ms (beats 57.2669%) |
+| Memory | 19.4 MB (beats 94.7939%) |
 
 ## Problem Statement
 

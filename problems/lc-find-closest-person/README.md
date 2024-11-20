@@ -7,7 +7,7 @@
 | Problem ID | `lc-find-closest-person` |
 | Topics | Math |
 | Solved | 2025-06-02 |
-| Runtime | 4 ms (beats 2.4753000000000025%) |
+| Runtime | 4 ms (beats 2%) |
 | Memory | 17.6 MB (beats 100%) |
 
 ## Problem Statement
@@ -107,3 +107,28 @@ class Solution:
 
         return 1 if a < b else 2 if a > b else 0
 ```
+
+## AI Review
+
+### Review
+
+**1. Complexity**
+*   **Time Complexity:** $O(1)$ — Basic arithmetic and comparisons take constant time.
+*   **Space Complexity:** $O(1)$ — Only a few integer variables are used.
+
+**2. Correctness**
+The solution is **correct**. It properly handles:
+*   **Equidistance:** Returns `0` when $|z-x| = |z-y|$.
+*   **Negative Coordinates:** `abs()` correctly calculates distance regardless of sign.
+*   **Large Integers:** Python 3 handles arbitrary-precision integers, preventing the overflow issues common in languages like C++ or Java.
+
+**3. Optimization**
+While the code is already optimal in terms of complexity, you can simplify the logic by removing the intermediate variables `a` and `b` to reduce memory overhead slightly (though negligible):
+
+```python
+return 1 if abs(z - x) < abs(z - y) else 2 if abs(z - x) > abs(z - y) else 0
+```
+However, the current version is more readable.
+
+**4. Key Algorithmic Pattern**
+*   **Absolute Difference / Manhattan Distance (1D):** The problem relies on calculating the magnitude of the displacement between points on a number line.

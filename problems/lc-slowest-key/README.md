@@ -104,3 +104,28 @@ class Solution:
         
         return keysPressed[nmax]
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(n)$, where $n$ is the length of `releaseTimes`. The code iterates through the list exactly once.
+*   **Space Complexity:** $O(1)$, as it only stores a few scalar variables regardless of input size.
+
+### 2. Correctness
+The code is **correct**. It properly handles:
+*   **Single-entry inputs:** If `len == 1`, the loop is skipped, and it correctly returns `keysPressed[0]`.
+*   **Tie-breaking:** The condition `maxe == diff and keysPressed[i] > keysPressed[nmax]` correctly implements the requirement to return the lexicographically larger key in case of a duration tie.
+
+### 3. Optimization
+**Reduce String Indexing:** Instead of storing the index `nmax`, store the best character directly (e.g., `res_char`). This avoids repeated indexing into the `keysPressed` string inside the loop and at the return statement.
+
+```python
+# Optimization example:
+res_key = keysPressed[0]
+# inside loop...
+if diff > maxe or (diff == maxe and keysPressed[i] > res_key):
+    maxe, res_key = diff, keysPressed[i]
+```
+
+### 4. Key Algorithmic Pattern
+**Linear Scan (Single Pass):** It maintains a "Running Maximum" of both the duration and the associated character while traversing the data once.

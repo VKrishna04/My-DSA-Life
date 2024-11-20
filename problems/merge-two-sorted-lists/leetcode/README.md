@@ -69,3 +69,29 @@ class Solution:
             
         return dummy.next
 ```
+
+## AI Review
+
+### Review
+
+**1. Complexity**
+*   **Time Complexity:** $O(n + m)$, where $n$ and $m$ are the lengths of the two lists. Each node is visited exactly once.
+*   **Space Complexity:** $O(1)$. The merge is performed in-place by reusing existing nodes; only a constant amount of extra space (dummy and pointers) is used.
+
+**2. Correctness**
+The implementation is correct and handles all edge cases:
+*   **Both lists empty:** Returns `None` via `dummy.next`.
+*   **One list empty:** Correctly returns the non-empty list.
+*   **Lists of different lengths:** The final `if` block successfully appends the remainder of the longer list.
+
+**3. Optimization**
+While the logic is efficient, you can simplify the final conditional attachment using Python’s short-circuiting:
+```python
+# Replace the final if-statement with:
+cur.next = list1 or list2
+```
+This removes the explicit `if/else` check and makes the code more idiomatic.
+
+**4. Key Algorithmic Pattern**
+*   **Dummy Node:** Used to simplify edge cases (like initializing the head of the result list).
+*   **Two Pointers:** Iterating through two sequences simultaneously to build a single sorted result.

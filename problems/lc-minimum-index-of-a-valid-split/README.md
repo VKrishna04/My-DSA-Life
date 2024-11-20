@@ -110,3 +110,28 @@ class Solution:
         return -1
 
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time:** $O(n)$, where $n$ is the length of `nums`. We traverse the list twice (once for frequency counting, once for the split check).
+*   **Space:** $O(n)$ to store the `full_counter` dictionary.
+
+### 2. Correctness
+The logic is **correct**. For a split to be valid with the same dominant element, that element *must* also be the dominant element of the entire array. The conditions `left_count * 2 > (i + 1)` and `right_count * 2 > (len(nums) - i - 1)` are correctly implemented using floor division logic.
+
+### 3. Concrete Optimization
+Use the **Boyer-Moore Voting Algorithm** to find the dominant element in $O(1)$ space and `collections.Counter` for cleaner code. Additionally, avoid the `max()` call on the dictionary to save a full pass.
+
+```python
+# Optimized snippet for finding dominant_element
+cand, count = None, 0
+for x in nums:
+    if count == 0: cand = x
+    count += 1 if x == cand else -1
+dominant_element = cand
+# Total count still needs one pass: dominant_count = nums.count(cand)
+```
+
+### 4. Key Algorithmic Pattern
+**Frequency Counting / Prefix Sums:** Tracking the cumulative frequency of a specific candidate element while iterating to evaluate subarray properties in constant time.

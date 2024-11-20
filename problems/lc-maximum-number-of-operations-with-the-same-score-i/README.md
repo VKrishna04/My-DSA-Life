@@ -78,3 +78,27 @@ class Solution:
                 break
         return count
 ```
+
+## AI Review
+
+### Review
+
+**1. Complexity**
+*   **Time Complexity:** $O(n)$, where $n$ is the length of `nums`. The loop processes pairs of elements once.
+*   **Space Complexity:** $O(1)$. It uses a constant amount of extra space regardless of input size.
+
+**2. Correctness**
+The logic is correct. It establishes the target score from the first pair and iterates through subsequent pairs as long as the sum matches. 
+*   **Edge Cases:** The constraint $n \ge 2$ ensures `nums[0] + nums[1]` is safe. The loop bound `len(nums) - 1` correctly prevents an `IndexError` on arrays with an odd number of elements (it stops before the lone trailing element).
+
+**3. Optimization**
+The current solution is already optimal in terms of complexity. However, for readability and slight overhead reduction in Python, you could use a `while` loop to avoid calculating `len(nums)` repeatedly or use `zip` with slicing:
+```python
+for a, b in zip(nums[2::2], nums[3::2]):
+    if a + b == score: count += 1
+    else: break
+```
+*Note: Slicing creates copies, so for very large $n$, the current index-based approach is more memory-efficient.*
+
+**4. Key Algorithmic Pattern**
+**Greedy / Simulation**: The algorithm greedily performs operations from the start of the array as long as the condition is met, stopping at the first mismatch.

@@ -1,3 +1,3 @@
-class Solution:
-    def isPossibleToSplit(self, nums: List[int]) -> bool:
+class Solution(object):
+    def isPossibleToSplit(self, nums):
         return len(nums) % 2 == 0 and max(Counter(nums).values()) < 3

@@ -57,3 +57,28 @@ class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         return len(nums) != len(set(nums))
 ```
+
+## AI Review
+
+### Review of "Contains Duplicate" Solution
+
+1.  **Complexity**
+    *   **Time:** $O(n)$ on average. Converting the list to a set requires one pass through the array, with $O(1)$ average-case insertions.
+    *   **Space:** $O(n)$. In the worst case (all elements unique), the set stores $n$ elements.
+
+2.  **Correctness**
+    *   The solution is **correct** and handles all edge cases, including empty lists (returns `False`), single-element lists (returns `False`), and lists where all elements are identical (returns `True`).
+
+3.  **Optimization**
+    *   **Early Exit:** The current code always processes the entire list. For very large arrays where a duplicate might appear at the beginning, you can optimize by iterating manually:
+        ```python
+        seen = set()
+        for n in nums:
+            if n in seen: return True
+            seen.add(n)
+        return False
+        ```
+        This maintains $O(n)$ worst-case but achieves $O(1)$ best-case time complexity.
+
+4.  **Key Algorithmic Pattern**
+    *   **Hash Set / Hashing:** Utilizing the unique property and constant-time lookup of a hash-based data structure to detect collisions.

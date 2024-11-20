@@ -78,3 +78,26 @@ class Solution:
         #     return -1
         # return count
 ```
+
+## AI Review
+
+### Review of Coin Change Solution
+
+**1. Complexity**
+*   **Time Complexity:** $O(S \cdot n)$, where $S$ is the `amount` and $n$ is the number of `coins`. We iterate through every amount up to $S$ for every coin.
+*   **Space Complexity:** $O(S)$ to store the `dp` array.
+
+**2. Correctness**
+The implementation is **correct**. It properly initializes the base case (`dp[0] = 0`), handles unreachable amounts using `float('inf')`, and correctly returns `-1` if no solution exists. It avoids the "Greedy" pitfall (shown in your commented-out code) which fails on cases like `coins=[1, 3, 4], amount=6`.
+
+**3. Optimization**
+Swap the loop order and adjust the range to eliminate the conditional check:
+```python
+for coin in coins:
+    for curr_amt in range(coin, amount + 1):
+        dp[curr_amt] = min(dp[curr_amt], dp[curr_amt - coin] + 1)
+```
+This reduces the number of operations by starting the inner loop only where `curr_amt - coin` is valid and improves cache locality.
+
+**4. Key Algorithmic Pattern**
+**Dynamic Programming (Iterative, Bottom-Up)**. Specifically, this is a variation of the **Unbounded Knapsack Problem**, where items (coins) can be reused infinitely to reach a target value.

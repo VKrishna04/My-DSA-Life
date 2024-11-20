@@ -26,6 +26,29 @@
     "platform": "leetcode",
     "slug": "01-matrix"
   },
+  "leetcode::3sum": {
+    "aiInsights": [
+      {
+        "summary": "### Review of 3Sum Solution\n\n**1. Complexity**\n*   **Time Complexity:** $O(n^2)$. Sorting takes $O(n \\log n)$, and the nested loops (outer loop with inner two-pointer scan) take $O(n^2)$.\n*   **Space ",
+        "ts": 1779355525388,
+        "weakAreas": [
+          "edge cases",
+          "O(n²) complexity",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1098,
+        "providerId": "gemini",
+        "ts": 1779355525397
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "3sum"
+  },
   "leetcode::assign-cookies": {
     "aiInsights": [
       {
@@ -48,6 +71,28 @@
     "platform": "leetcode",
     "slug": "assign-cookies"
   },
+  "leetcode::binary-number-with-alternating-bits": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(1)$. Bitwise operations on fixed-width integers (32-bit for most LeetCode cases) are constant time.\n*   **Space Complexity:** $O(1)$. No additional data s",
+        "ts": 1779356439218,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1092,
+        "providerId": "gemini",
+        "ts": 1779356439227
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "binary-number-with-alternating-bits"
+  },
   "leetcode::binary-search": {
     "aiInsights": [
       {
@@ -69,6 +114,217 @@
     "platform": "leetcode",
     "slug": "binary-search"
   },
+  "leetcode::binary-tree-level-order-traversal": {
+    "aiInsights": [
+      {
+        "summary": "### Review\n**1. Complexity**\n*   **Time:** $O(N)$, where $N$ is the number of nodes. Each node is enqueued and dequeued exactly once.\n*   **Space:** $O(N)$. In a perfect binary tree, the queue holds u",
+        "ts": 1779355823632,
+        "weakAreas": [
+          "O(n²) complexity",
+          "space complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1185,
+        "providerId": "gemini",
+        "ts": 1779355823650
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "binary-tree-level-order-traversal"
+  },
+  "leetcode::can-make-arithmetic-progression-from-sequence": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(N \\log N)$ due to the `arr.sort()` function. The subsequent linear scan is $O(N)$.\n*   **Space Complexity:** $O(1)$ or $O(N)$ depending on the Python vers",
+        "ts": 1779358708452,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1231,
+        "providerId": "gemini",
+        "ts": 1779358708494
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "can-make-arithmetic-progression-from-sequence"
+  },
+  "leetcode::climbing-stairs-ii": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the `costs` array. We iterate through the list once.\n*   **Space Complexity:** $O(1)$. We only maintain three scalar varia",
+        "ts": 1779288916199,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1217,
+        "providerId": "gemini",
+        "ts": 1779288916235
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "climbing-stairs-ii"
+  },
+  "leetcode::coin-change": {
+    "aiInsights": [
+      {
+        "summary": "### Review of Coin Change Solution\n\n**1. Complexity**\n*   **Time Complexity:** $O(S \\cdot n)$, where $S$ is the `amount` and $n$ is the number of `coins`. We iterate through every amount up to $S$ for",
+        "ts": 1779288934656,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1196,
+        "providerId": "gemini",
+        "ts": 1779288935066
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "coin-change"
+  },
+  "leetcode::consecutive-characters": {
+    "aiInsights": [
+      {
+        "summary": "**1. Complexity**\n*   **Time:** $O(N)$, where $N$ is the length of the string, as we traverse the input once.\n*   **Space:** $O(1)$, as we only store two integer variables.\n\n**2. Correctness**\nThe log",
+        "ts": 1779354870450,
+        "weakAreas": [
+          "edge cases"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1005,
+        "providerId": "gemini",
+        "ts": 1779354870479
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "consecutive-characters"
+  },
+  "leetcode::contains-duplicate": {
+    "aiInsights": [
+      {
+        "summary": "### Review of \"Contains Duplicate\" Solution\n\n1.  **Complexity**\n    *   **Time:** $O(n)$ on average. Converting the list to a set requires one pass through the array, with $O(1)$ average-case insertio",
+        "ts": 1779356125940,
+        "weakAreas": [
+          "edge cases",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1153,
+        "providerId": "gemini",
+        "ts": 1779356125954
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "contains-duplicate"
+  },
+  "leetcode::count-number-of-pairs-with-absolute-difference-k": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n^2)$. The code uses a nested structure: an outer loop ($n$ iterations) and a list comprehension that scans the entire list again ($n$ iterations).\n*   **",
+        "ts": 1779354742498,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1302,
+        "providerId": "gemini",
+        "ts": 1779354745672
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "count-number-of-pairs-with-absolute-difference-k"
+  },
+  "leetcode::count-pairs-whose-sum-is-less-than-target": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n1.  **Complexity**:\n    *   **Time**: $O(n^2)$ due to nested loops iterating through all pairs. The sort takes $O(n \\log n)$, but the quadratic loops dominate.\n    *   **Space**: $O(n)$ ",
+        "ts": 1779355139360,
+        "weakAreas": [
+          "edge cases",
+          "O(n²) complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1096,
+        "providerId": "gemini",
+        "ts": 1779355139383
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "count-pairs-whose-sum-is-less-than-target"
+  },
+  "leetcode::count-the-number-of-fair-pairs": {
+    "aiInsights": [
+      {
+        "summary": "### Review of \"Count the Number of Fair Pairs\" Solution\n\n**1. Complexity**\n*   **Time:** $O(n \\log n)$. Sorting takes $O(n \\log n)$, and the loop performs $n$ binary searches, each taking $O(\\log n)$.",
+        "ts": 1779354876855,
+        "weakAreas": []
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1205,
+        "providerId": "gemini",
+        "ts": 1779354876888
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "count-the-number-of-fair-pairs"
+  },
+  "leetcode::counting-bits": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n1.  **Complexity**\n    *   **Time Complexity:** $O(n \\log n)$. For each number $i$ up to $n$, the `bin(i)` and `count('1')` operations take $O(\\text{number of bits})$, which is $O(\\log i",
+        "ts": 1779358169969,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1080,
+        "providerId": "gemini",
+        "ts": 1779358170021
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "counting-bits"
+  },
   "leetcode::course-schedule": {
     "aiInsights": [
       {
@@ -88,6 +344,149 @@
     ],
     "platform": "leetcode",
     "slug": "course-schedule"
+  },
+  "leetcode::delete-duplicate-emails": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity**: **$O(N^2)$** in the worst case (where $N$ is the number of rows). Without an index, MySQL performs a nested loop join. With an index on `email`, this improve",
+        "ts": 1779356423520,
+        "weakAreas": [
+          "edge cases",
+          "O(n²) complexity",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1227,
+        "providerId": "gemini",
+        "ts": 1779356423538
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "delete-duplicate-emails"
+  },
+  "leetcode::filling-bookcase-shelves": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n^2)$, where $n$ is the number of books. The nested loops iterate through each book and potentially backtrack through all previous books to evaluate parti",
+        "ts": 1779288897606,
+        "weakAreas": [
+          "edge cases",
+          "O(n²) complexity",
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n^2)$, where $n$ is the number of books. For each book, we potentially iterate back through all preceding books to check shelf configurations.\n*   **Space",
+        "ts": 1779288899081,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1287,
+        "providerId": "gemini",
+        "ts": 1779288897632
+      },
+      {
+        "length": 1229,
+        "providerId": "gemini",
+        "ts": 1779288899320
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "filling-bookcase-shelves"
+  },
+  "leetcode::find-all-k-distant-indices-in-an-array": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(N \\cdot K + N \\log N)$. In the worst case (e.g., all elements are `key`), the inner loop iterates $2K+1$ times for every $j$, and the final `sorted()` cal",
+        "ts": 1779354863588,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1244,
+        "providerId": "gemini",
+        "ts": 1779354863617
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "find-all-k-distant-indices-in-an-array"
+  },
+  "leetcode::find-closest-person": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(1)$ — Performs a constant number of arithmetic and comparison operations.\n*   **Space Complexity:** $O(1)$ — Uses a fixed amount of extra space regardless",
+        "ts": 1779357365602,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(1)$. The operations (subtraction, absolute value, and comparison) take constant time regardless of the input size.\n*   **Space Complexity:** $O(1)$. Only ",
+        "ts": 1779357379517,
+        "weakAreas": [
+          "edge cases",
+          "integer overflow",
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(1)$ — Basic arithmetic and comparisons take constant time.\n*   **Space Complexity:** $O(1)$ — Only a few integer variables are used.\n\n**2. Cor",
+        "ts": 1779357569895,
+        "weakAreas": [
+          "integer overflow",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1248,
+        "providerId": "gemini",
+        "ts": 1779357066994
+      },
+      {
+        "length": 1095,
+        "providerId": "gemini",
+        "ts": 1779357365742
+      },
+      {
+        "length": 1084,
+        "providerId": "gemini",
+        "ts": 1779357569914
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "find-closest-person"
+  },
+  "leetcode::find-closest-person::method::0": {
+    "aiReviews": [
+      {
+        "length": 1382,
+        "providerId": "gemini",
+        "ts": 1779357379599
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "find-closest-person::method::0"
   },
   "leetcode::find-greatest-common-divisor-of-array": {
     "aiInsights": [
@@ -154,6 +553,67 @@
     "platform": "leetcode",
     "slug": "find-peak-element"
   },
+  "leetcode::find-the-index-of-the-first-occurrence-in-a-string": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(N \\cdot M)$, where $N$ is the length of `haystack` and $M$ is the length of `needle`. In each of the $N-M+1$ iterations, a string slice and ",
+        "ts": 1779298298428,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1091,
+        "providerId": "gemini",
+        "ts": 1779298298444
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "find-the-index-of-the-first-occurrence-in-a-string"
+  },
+  "leetcode::find-the-most-common-response": {
+    "aiInsights": [
+      {
+        "summary": "### Complexity\n*   **Time:** $O(N + U \\log U)$, where $N$ is the total number of strings and $U$ is the number of unique strings. Processing the lists takes $O(N)$, while sorting the counter items tak",
+        "ts": 1779296270146,
+        "weakAreas": [
+          "edge cases",
+          "null/empty input"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1232,
+        "providerId": "gemini",
+        "ts": 1779296272482
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "find-the-most-common-response"
+  },
+  "leetcode::finding-pairs-with-a-certain-sum": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time:** \n    *   `__init__`: $O(N_2)$ to build the frequency map.\n    *   `add`: $O(1)$ to update the list and hash map.\n    *   `count`: $O(N_1)$ per call, as it iterates thro",
+        "ts": 1779354766115,
+        "weakAreas": []
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1191,
+        "providerId": "gemini",
+        "ts": 1779354767913
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "finding-pairs-with-a-certain-sum"
+  },
   "leetcode::greatest-common-divisor-of-strings": {
     "aiInsights": [
       {
@@ -173,6 +633,28 @@
     ],
     "platform": "leetcode",
     "slug": "greatest-common-divisor-of-strings"
+  },
+  "leetcode::hamming-distance": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(W)$, where $W$ is the number of bits (at most 31 for this problem). The `bin()` conversion and `.count()` both iterate over the bit-string.\n*   **Space Co",
+        "ts": 1779356742126,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1097,
+        "providerId": "gemini",
+        "ts": 1779356742306
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "hamming-distance"
   },
   "leetcode::house-robber": {
     "aiInsights": [
@@ -261,6 +743,259 @@
     "platform": "leetcode",
     "slug": "koko-eating-bananas"
   },
+  "leetcode::length-of-last-word": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time:** $O(n)$, where $n$ is the length of the string. Both `strip()` and `split()` require a full pass over the input.\n*   **Space:** $O(n)$. `split()` creates a list of all w",
+        "ts": 1779358595652,
+        "weakAreas": [
+          "space complexity"
+        ]
+      },
+      {
+        "summary": "**1. Complexity**\n*   **Time:** $O(N)$, where $N$ is the length of the string. `strip()` and `split()` both traverse the string.\n*   **Space:** $O(N)$. `split()` creates a list of all words, and `stri",
+        "ts": 1779358602412,
+        "weakAreas": [
+          "space complexity"
+        ]
+      },
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the string $s$. The `strip()` and `split()` methods both traverse the string once.\n*   **Space Complexity:** $O(n)$. This ",
+        "ts": 1779358682948,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1168,
+        "providerId": "gemini",
+        "ts": 1779358595682
+      },
+      {
+        "length": 1069,
+        "providerId": "gemini",
+        "ts": 1779358602457
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "length-of-last-word"
+  },
+  "leetcode::length-of-last-word::method::0": {
+    "aiReviews": [
+      {
+        "length": 1293,
+        "providerId": "gemini",
+        "ts": 1779358683045
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "length-of-last-word::method::0"
+  },
+  "leetcode::letter-combinations-of-a-phone-number": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(N \\cdot 4^N)$, where $N$ is the length of `digits`. There are at most $4^N$ combinations, and constructing each string takes $O(N)$ time.\n*   **Space Comp",
+        "ts": 1779355817086,
+        "weakAreas": [
+          "edge cases",
+          "null/empty input",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1166,
+        "providerId": "gemini",
+        "ts": 1779355817107
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "letter-combinations-of-a-phone-number"
+  },
+  "leetcode::longest-common-prefix": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(N \\cdot M \\log N)$, where $N$ is the number of strings and $M$ is the maximum string length. Sorting strings involves $O(M)$ time for each comparison.\n*  ",
+        "ts": 1779358581541,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1107,
+        "providerId": "gemini",
+        "ts": 1779358581576
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "longest-common-prefix"
+  },
+  "leetcode::longest-continuous-increasing-subsequence": {
+    "aiInsights": [
+      {
+        "summary": "### Review\n\n**1. Complexity**\n*   **Time:** $O(n)$, where $n$ is the length of `nums`, as we traverse the list exactly once.\n*   **Space:** $O(1)$, as we only store two integer variables regardless of",
+        "ts": 1779355155909,
+        "weakAreas": [
+          "edge cases",
+          "null/empty input"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1095,
+        "providerId": "gemini",
+        "ts": 1779355155924
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "longest-continuous-increasing-subsequence"
+  },
+  "leetcode::majority-element": {
+    "aiInsights": [
+      {
+        "summary": "### Review of Majority Element Solution\n\n**1. Complexity**\n*   **Time Complexity:** $O(n)$ — Requires one pass to build the frequency map and one pass to iterate through its keys.\n*   **Space Complexi",
+        "ts": 1779372386038,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### 1. Complexity\n*   **Time:** $O(n)$, where $n$ is the length of `nums`. Creating the `Counter` takes $O(n)$ and iterating over its items takes $O(n)$.\n*   **Space:** $O(n)$ to store the frequency m",
+        "ts": 1779372397511,
+        "weakAreas": [
+          "edge cases"
+        ]
+      },
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of `nums`. Creating the `Counter` and iterating through its items both take linear time.\n*   **Space Complexity:** $O(n)$ to ",
+        "ts": 1779380037109,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1093,
+        "providerId": "gemini",
+        "ts": 1779372386534
+      },
+      {
+        "length": 1144,
+        "providerId": "gemini",
+        "ts": 1779372397947
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "majority-element"
+  },
+  "leetcode::majority-element-ii": {
+    "aiInsights": [
+      {
+        "summary": "**1. Complexity**\n*   **Time:** $O(n)$ — Building the hash map takes linear time.\n*   **Space:** $O(n)$ — In the worst case (all unique elements), the `Counter` stores $n$ entries.\n\n**2. Correctness**",
+        "ts": 1779359797755,
+        "weakAreas": [
+          "edge cases"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1053,
+        "providerId": "gemini",
+        "ts": 1779359797870
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "majority-element-ii"
+  },
+  "leetcode::majority-element::method::0": {
+    "aiReviews": [
+      {
+        "length": 1083,
+        "providerId": "gemini",
+        "ts": 1779380037125
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "majority-element::method::0"
+  },
+  "leetcode::make-array-zero-by-subtracting-equal-amounts": {
+    "aiInsights": [
+      {
+        "summary": "### Review of \"Make Array Zero by Subtracting Equal Amounts\" Solution\n\n1. **Complexity**\n   - **Time:** $O(n)$, where $n$ is the length of `nums`. Converting the list to a set takes linear time.\n   - ",
+        "ts": 1779356118364,
+        "weakAreas": [
+          "edge cases"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1187,
+        "providerId": "gemini",
+        "ts": 1779356118375
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "make-array-zero-by-subtracting-equal-amounts"
+  },
+  "leetcode::maximum-depth-of-binary-tree": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time:** $O(N)$, where $N$ is the number of nodes, as each node is visited exactly once.\n*   **Space:** $O(H)$, where $H$ is the height of the tree. In the worst case (a skewed ",
+        "ts": 1779355830650,
+        "weakAreas": [
+          "space complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 981,
+        "providerId": "gemini",
+        "ts": 1779355830663
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "maximum-depth-of-binary-tree"
+  },
+  "leetcode::maximum-number-of-operations-with-the-same-score-i": {
+    "aiInsights": [
+      {
+        "summary": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(n)$, where $n$ is the length of `nums`. The loop processes pairs of elements once.\n*   **Space Complexity:** $O(1)$. It uses a constant amount",
+        "ts": 1779355518201,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1299,
+        "providerId": "gemini",
+        "ts": 1779355518213
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "maximum-number-of-operations-with-the-same-score-i"
+  },
   "leetcode::maximum-subarray": {
     "aiInsights": [
       {
@@ -278,6 +1013,28 @@
     ],
     "platform": "leetcode",
     "slug": "maximum-subarray"
+  },
+  "leetcode::merge-two-sorted-lists": {
+    "aiInsights": [
+      {
+        "summary": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(n + m)$, where $n$ and $m$ are the lengths of the two lists. Each node is visited exactly once.\n*   **Space Complexity:** $O(1)$. The merge is",
+        "ts": 1779355531776,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1146,
+        "providerId": "gemini",
+        "ts": 1779355531787
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "merge-two-sorted-lists"
   },
   "leetcode::min-cost-climbing-stairs": {
     "aiInsights": [
@@ -301,6 +1058,60 @@
     "platform": "leetcode",
     "slug": "min-cost-climbing-stairs"
   },
+  "leetcode::minimize-maximum-pair-sum-in-array": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n \\log n)$ due to the `nums.sort()` operation. The subsequent two-pointer traversal is $O(n)$.\n*   **Space Complexity:** $O(1)$ or $O(n)$ depending on the",
+        "ts": 1779355217389,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### Analysis\n\n**1. Complexity**\n*   **Time:** $O(N \\log N)$ due to the sorting step. The subsequent linear pass is $O(N)$.\n*   **Space:** $O(N)$ to store the `ans` list. (Note: Python's `sort()` also ",
+        "ts": 1779355223551,
+        "weakAreas": [
+          "edge cases"
+        ]
+      },
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n \\log n)$ due to the sorting step. The subsequent two-pointer traversal is $O(n)$.\n*   **Space Complexity:** $O(n)$ in the worst case for Python’s Timsor",
+        "ts": 1779355230703,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1065,
+        "providerId": "gemini",
+        "ts": 1779355217421
+      },
+      {
+        "length": 1147,
+        "providerId": "gemini",
+        "ts": 1779355223564
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "minimize-maximum-pair-sum-in-array"
+  },
+  "leetcode::minimize-maximum-pair-sum-in-array::method::0": {
+    "aiReviews": [
+      {
+        "length": 1241,
+        "providerId": "gemini",
+        "ts": 1779355230713
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "minimize-maximum-pair-sum-in-array::method::0"
+  },
   "leetcode::minimum-cost-for-tickets": {
     "aiInsights": [
       {
@@ -322,6 +1133,89 @@
     ],
     "platform": "leetcode",
     "slug": "minimum-cost-for-tickets"
+  },
+  "leetcode::minimum-index-of-a-valid-split": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time:** $O(n)$, where $n$ is the length of `nums`. We traverse the list twice (once for frequency counting, once for the split check).\n*   **Space:** $O(n)$ to store the `full_",
+        "ts": 1779359782058,
+        "weakAreas": []
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1229,
+        "providerId": "gemini",
+        "ts": 1779359782154
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "minimum-index-of-a-valid-split"
+  },
+  "leetcode::minimum-moves-to-reach-target-score": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(\\min(\\text{maxDoubles}, \\log(\\text{target})))$. Each division reduces the target by half, and the loop terminates early if `maxDoubles` reaches zero.\n*   ",
+        "ts": 1779296569575,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1278,
+        "providerId": "gemini",
+        "ts": 1779296569693
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "minimum-moves-to-reach-target-score"
+  },
+  "leetcode::minimum-operations-to-exceed-threshold-value-i": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time:** $O(n)$, where $n$ is the length of `nums`. Each element is visited once.\n*   **Space:** $O(n)$. The list comprehension creates a new intermediate list in memory contain",
+        "ts": 1779380044382,
+        "weakAreas": [
+          "edge cases",
+          "space complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1037,
+        "providerId": "gemini",
+        "ts": 1779380044400
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "minimum-operations-to-exceed-threshold-value-i"
+  },
+  "leetcode::minimum-positive-sum-subarray": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n^2)$, where $n$ is the length of `nums`. The nested loops iterate through all possible subarrays.\n*   **Space Complexity:** $O(1)$, as it only uses a few",
+        "ts": 1779359176355,
+        "weakAreas": [
+          "edge cases",
+          "O(n²) complexity",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1252,
+        "providerId": "gemini",
+        "ts": 1779359176393
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "minimum-positive-sum-subarray"
   },
   "leetcode::minimum-time-to-make-rope-colorful": {
     "aiInsights": [
@@ -345,6 +1239,329 @@
     "platform": "leetcode",
     "slug": "minimum-time-to-make-rope-colorful"
   },
+  "leetcode::missing-number": {
+    "aiInsights": [
+      {
+        "summary": "### Review\n**1. Complexity**\n*   **Time:** $O(n)$ — Requires a single pass through the list to calculate the sum.\n*   **Space:** $O(1)$ — Only stores a few integer variables regardless of input size.\n",
+        "ts": 1779358781216,
+        "weakAreas": [
+          "edge cases",
+          "integer overflow"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1117,
+        "providerId": "gemini",
+        "ts": 1779358781263
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "missing-number"
+  },
+  "leetcode::most-frequent-even-element": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(N)$, where $N$ is the number of elements in `nums`. We iterate through the list once to filter/count and once through the unique even elements.\n*   **Spac",
+        "ts": 1779359790950,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1184,
+        "providerId": "gemini",
+        "ts": 1779359790994
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "most-frequent-even-element"
+  },
+  "leetcode::next-greater-element-i": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time**: $O(n + m)$, where $n$ is the length of `nums2` and $m$ is the length of `nums1`. Each element in `nums2` is pushed and popped from the stack exactly once.\n*   **Space**",
+        "ts": 1779358344752,
+        "weakAreas": [
+          "O(n²) complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1102,
+        "providerId": "gemini",
+        "ts": 1779358344774
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "next-greater-element-i"
+  },
+  "leetcode::number-of-1-bits": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(k)$, where $k$ is the number of bits in $n$ (for a 32-bit integer, this is effectively $O(1)$). Converting an integer to a string takes time proportional ",
+        "ts": 1779356748973,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(k)$, where $k$ is the number of bits in $n$ (for a 32-bit integer, this is effectively $O(1)$). Converting to a string and iterating through i",
+        "ts": 1779358162909,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1122,
+        "providerId": "gemini",
+        "ts": 1779356749021
+      },
+      {
+        "length": 1105,
+        "providerId": "gemini",
+        "ts": 1779358163537
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "number-of-1-bits"
+  },
+  "leetcode::number-of-employees-who-met-the-target": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the `hours` list. The code iterates through the list once.\n*   **Space Complexity:** $O(n)$. The list comprehension create",
+        "ts": 1779380053988,
+        "weakAreas": [
+          "edge cases",
+          "null/empty input",
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the number of employees. The list is traversed once.\n*   **Space Complexity:** $O(n)$. The list comprehension creates a new intermediate",
+        "ts": 1779380339169,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1048,
+        "providerId": "gemini",
+        "ts": 1779380054000
+      },
+      {
+        "length": 1012,
+        "providerId": "gemini",
+        "ts": 1779380339187
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "number-of-employees-who-met-the-target"
+  },
+  "leetcode::pascals-triangle": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n^2)$, where $n$ is `numRows`. Each element in the triangle is calculated exactly once through a simple addition.\n*   **Space Complexity:** $O(n^2)$ to st",
+        "ts": 1779358337126,
+        "weakAreas": [
+          "edge cases",
+          "O(n²) complexity",
+          "integer overflow",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1191,
+        "providerId": "gemini",
+        "ts": 1779358337150
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "pascals-triangle"
+  },
+  "leetcode::power-of-four": {
+    "aiInsights": [
+      {
+        "summary": "### Review of \"Power of Four\" Solution\n\n1.  **Complexity**\n    *   **Time:** $O(1)$. The loop runs a fixed number of times (~16 iterations) regardless of the input $n$.\n    *   **Space:** $O(1)$. A sm",
+        "ts": 1779357455130,
+        "weakAreas": []
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1142,
+        "providerId": "gemini",
+        "ts": 1779357455231
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "power-of-four"
+  },
+  "leetcode::power-of-three": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(1)$. The exponentiation and modulo operations take constant time for fixed-width integers.\n*   **Space Complexity:** $O(1)$. No additional memory is alloc",
+        "ts": 1779357463408,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "**1. Complexity**\n*   **Time:** $O(\\log_3 n)$ — The input $n$ is divided by 3 in each iteration.\n*   **Space:** $O(1)$ — Only a constant amount of extra space is used.\n\n**2. Correctness**\n*   **Edge C",
+        "ts": 1779357582892,
+        "weakAreas": [
+          "edge cases"
+        ]
+      },
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity**: $O(1)$. Both the power calculation (pre-computed by the compiler or small constant) and the modulo operation take constant time.\n*   **Space Complexity**: $O",
+        "ts": 1779357592263,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1094,
+        "providerId": "gemini",
+        "ts": 1779357463460
+      },
+      {
+        "length": 1012,
+        "providerId": "gemini",
+        "ts": 1779357583103
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "power-of-three"
+  },
+  "leetcode::power-of-three::method::0": {
+    "aiReviews": [
+      {
+        "length": 1242,
+        "providerId": "gemini",
+        "ts": 1779357592285
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "power-of-three::method::0"
+  },
+  "leetcode::power-of-two": {
+    "aiInsights": [
+      {
+        "summary": "### Review of \"Power of Two\" Solution\n\n**1. Complexity**\n*   **Time:** $O(\\log n)$. Converting an integer to a binary string and counting characters both scale with the number of bits in $n$.\n*   **Sp",
+        "ts": 1779357853221,
+        "weakAreas": []
+      },
+      {
+        "summary": "**1. Complexity**\n*   **Time:** $O(\\log n)$ — converting an integer to a binary string and iterating through its bits requires logarithmic time relative to the value of $n$.\n*   **Space:** $O(\\log n)$",
+        "ts": 1779357860585,
+        "weakAreas": [
+          "edge cases",
+          "space complexity"
+        ]
+      },
+      {
+        "summary": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(\\log n)$. The `bin(n)` function and `.count()` both iterate over the bits of $n$. The number of bits is proportional to $\\log_2 n$.\n*   **Spac",
+        "ts": 1779357868628,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1053,
+        "providerId": "gemini",
+        "ts": 1779357853244
+      },
+      {
+        "length": 1042,
+        "providerId": "gemini",
+        "ts": 1779357860605
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "power-of-two"
+  },
+  "leetcode::power-of-two::method::0": {
+    "aiReviews": [
+      {
+        "length": 984,
+        "providerId": "gemini",
+        "ts": 1779357868644
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "power-of-two::method::0"
+  },
+  "leetcode::ransom-note": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time:** $O(m + n)$, where $m$ is the length of `ransomNote` and $n$ is the length of `magazine`. We iterate through both strings once.\n*   **Space:** $O(k)$ or $O(1)$, where $k",
+        "ts": 1779358797738,
+        "weakAreas": []
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1130,
+        "providerId": "gemini",
+        "ts": 1779358797766
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "ransom-note"
+  },
+  "leetcode::reverse-bits": {
+    "aiInsights": [
+      {
+        "summary": "### Review of Reverse Bits Solution\n\n1.  **Complexity:**\n    *   **Time Complexity:** $O(1)$. The loop runs exactly 32 iterations, regardless of the input value.\n    *   **Space Complexity:** $O(1)$. ",
+        "ts": 1779358154744,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1225,
+        "providerId": "gemini",
+        "ts": 1779358154764
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "reverse-bits"
+  },
   "leetcode::rotting-oranges": {
     "aiInsights": [
       {
@@ -364,6 +1581,363 @@
     ],
     "platform": "leetcode",
     "slug": "rotting-oranges"
+  },
+  "leetcode::search-in-rotated-sorted-array": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n1.  **Complexity**:\n    *   **Time**: $O(n)$ — The algorithm performs a linear scan through the array.\n    *   **Space**: $O(1)$ — Only a single loop index is stored.\n\n2.  **Correctness*",
+        "ts": 1779288234079,
+        "weakAreas": [
+          "edge cases"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1088,
+        "providerId": "gemini",
+        "ts": 1779288234378
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "search-in-rotated-sorted-array"
+  },
+  "leetcode::search-in-rotated-sorted-array-ii": {
+    "aiInsights": [
+      {
+        "summary": "### Review of Python3 Solution\n\n**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of elements. The loop iterates through the list once.\n*   **Space Complexity:** $O(1)$, as it",
+        "ts": 1779296259683,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1148,
+        "providerId": "gemini",
+        "ts": 1779296259787
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "search-in-rotated-sorted-array-ii"
+  },
+  "leetcode::shift-distance-between-two-strings": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(N \\times \\Sigma)$, where $N$ is the length of string `s` and $\\Sigma = 26$. For each character, the code iterates up to 26 times to sum costs.\n*   **Space",
+        "ts": 1779359184987,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1230,
+        "providerId": "gemini",
+        "ts": 1779359185017
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "shift-distance-between-two-strings"
+  },
+  "leetcode::slowest-key": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of `releaseTimes`. The code iterates through the list exactly once.\n*   **Space Complexity:** $O(1)$, as it only stores a few",
+        "ts": 1779358692051,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1222,
+        "providerId": "gemini",
+        "ts": 1779358692098
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "slowest-key"
+  },
+  "leetcode::smallest-missing-integer-greater-than-sequential-prefix-sum": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n**1. Complexity**\n*   **Time:** $O(N^2)$, where $N$ is the length of `nums`. The prefix sum calculation is $O(N)$, but the `while sum in nums` loop performs a linear search ($O(N)$) up t",
+        "ts": 1779358353839,
+        "weakAreas": [
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1076,
+        "providerId": "gemini",
+        "ts": 1779358353879
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "smallest-missing-integer-greater-than-sequential-prefix-sum"
+  },
+  "leetcode::smallest-number-in-infinite-set": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time:** \n    *   `popSmallest`: **$O(n)$** worst-case. While set lookups are $O(1)$, the `while` loop can iterate through all previously popped elements.\n    *   `addBack`: **$",
+        "ts": 1779298288444,
+        "weakAreas": [
+          "edge cases"
+        ]
+      },
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** \n    *   `popSmallest`: **$O(N)$** worst-case (where $N$ is the number of elements added back), as the `while` loop may iterate through the `rm` set.\n    *  ",
+        "ts": 1779354731230,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1119,
+        "providerId": "gemini",
+        "ts": 1779298288482
+      },
+      {
+        "length": 1284,
+        "providerId": "gemini",
+        "ts": 1779354732121
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "smallest-number-in-infinite-set"
+  },
+  "leetcode::sort-characters-by-frequency": {
+    "aiInsights": [
+      {
+        "summary": "1. **Complexity**:\n   - **Time**: $O(N + K \\log K)$, where $N$ is the string length and $K$ is the number of unique characters. Counting takes $O(N)$; sorting the unique characters takes $O(K \\log K)$",
+        "ts": 1779359192902,
+        "weakAreas": [
+          "edge cases"
+        ]
+      },
+      {
+        "summary": "### 1. Complexity\n*   **Time**: $O(N + K \\log K)$, where $N$ is the string length and $K$ is the number of unique characters. $O(N)$ to count, $O(K \\log K)$ to sort unique characters.\n*   **Space**: $",
+        "ts": 1779359476544,
+        "weakAreas": [
+          "edge cases"
+        ]
+      },
+      {
+        "summary": "**1. Complexity**\n*   **Time:** $O(N + K \\log K)$, where $N$ is the string length and $K$ is the number of unique characters. In the worst case (all unique), it is $O(N \\log N)$.\n*   **Space:** $O(N +",
+        "ts": 1779359484364,
+        "weakAreas": [
+          "edge cases"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 861,
+        "providerId": "gemini",
+        "ts": 1779359192937
+      },
+      {
+        "length": 988,
+        "providerId": "gemini",
+        "ts": 1779359476575
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "sort-characters-by-frequency"
+  },
+  "leetcode::sort-characters-by-frequency::method::0": {
+    "aiReviews": [
+      {
+        "length": 1169,
+        "providerId": "gemini",
+        "ts": 1779359484393
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "sort-characters-by-frequency::method::0"
+  },
+  "leetcode::split-the-array": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of `nums`. We iterate through the array once and the map values once.\n*   **Space Complexity:** $O(n)$ to store the frequenci",
+        "ts": 1779388264828,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of `nums`. We iterate through the array once to count frequencies and once through the unique values.\n*   **Space Complexity:",
+        "ts": 1779389038103,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of `nums`. The code iterates through the array once to build the frequency map and once through the values to find the maximu",
+        "ts": 1779389048908,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1259,
+        "providerId": "gemini",
+        "ts": 1779380347120
+      },
+      {
+        "length": 1113,
+        "providerId": "gemini",
+        "ts": 1779380653041
+      },
+      {
+        "length": 1146,
+        "providerId": "gemini",
+        "ts": 1779389038136
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "split-the-array"
+  },
+  "leetcode::split-the-array::method::0": {
+    "aiReviews": [
+      {
+        "length": 1223,
+        "providerId": "gemini",
+        "ts": 1779389048947
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "split-the-array::method::0"
+  },
+  "leetcode::sqrtx": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(\\log x)$. The search space is halved in each iteration.\n*   **Space Complexity:** $O(1)$. It uses a constant amount of extra space.\n\n**2. Co",
+        "ts": 1779355146628,
+        "weakAreas": [
+          "edge cases",
+          "integer overflow",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 979,
+        "providerId": "gemini",
+        "ts": 1779355146702
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "sqrtx"
+  },
+  "leetcode::tenth-line": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(1)$ relative to total file size. Because of the `exit` command, the script only processes the first 10 lines and ignores the rest, regardless of how large",
+        "ts": 1779356134379,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1237,
+        "providerId": "gemini",
+        "ts": 1779356134388
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "tenth-line"
+  },
+  "leetcode::top-k-frequent-elements": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n1.  **Complexity**: \n    *   **Time**: $O(N + k \\log M)$, where $N$ is the number of elements and $M$ is the number of unique elements. Counting takes $O(N)$, heapifying takes $O(M)$, an",
+        "ts": 1779359491613,
+        "weakAreas": [
+          "edge cases",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1011,
+        "providerId": "gemini",
+        "ts": 1779359491638
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "top-k-frequent-elements"
+  },
+  "leetcode::total-hamming-distance": {
+    "aiInsights": [
+      {
+        "summary": "### Review\n\n**1. Complexity**\n*   **Time:** $O(N \\cdot K)$, where $N$ is the number of elements and $K$ is the bit-length (32). Each number is processed for each bit.\n*   **Space:** $O(N \\cdot K)$. Th",
+        "ts": 1779356731455,
+        "weakAreas": [
+          "edge cases",
+          "space complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1232,
+        "providerId": "gemini",
+        "ts": 1779356731933
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "total-hamming-distance"
+  },
+  "leetcode::ugly-number": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(\\log n)$. Each division step significantly reduces $n$. The number of iterations is proportional to the sum of the exponents in the prime factorization of",
+        "ts": 1779358789677,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1184,
+        "providerId": "gemini",
+        "ts": 1779358789715
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "ugly-number"
   },
   "leetcode::unique-paths": {
     "aiInsights": [
@@ -386,5 +1960,44 @@
     ],
     "platform": "leetcode",
     "slug": "unique-paths"
+  },
+  "leetcode::word-frequency": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(N \\log N)$, where $N$ is the total number of words. The bottleneck is the initial `sort` operation.\n*   **Space Complexity:** $O(N)$ to store words during",
+        "ts": 1779356430721,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1142,
+        "providerId": "gemini",
+        "ts": 1779356430757
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "word-frequency"
+  },
+  "leetcode::zigzag-conversion": {
+    "aiInsights": [
+      {
+        "summary": "**1. Complexity**\n*   **Time:** $O(n)$, where $n$ is the length of string `s`. We iterate through the string once and perform a final join.\n*   **Space:** $O(n)$ to store the characters in the `line` ",
+        "ts": 1779389061519,
+        "weakAreas": []
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1212,
+        "providerId": "gemini",
+        "ts": 1779389061583
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "zigzag-conversion"
   }
 }

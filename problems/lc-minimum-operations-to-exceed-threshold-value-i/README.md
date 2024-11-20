@@ -70,3 +70,24 @@ class Solution:
     def minOperations(self, nums: List[int], k: int) -> int:
         return len([i for i in nums if i < k])
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time:** $O(n)$, where $n$ is the length of `nums`. Each element is visited once.
+*   **Space:** $O(n)$. The list comprehension creates a new intermediate list in memory containing all elements smaller than $k$.
+
+### 2. Correctness
+The logic is correct. To make all elements $\ge k$, every element strictly less than $k$ must be removed. The count of these elements represents the minimum operations.
+*   **Edge Cases:** Handles cases where all elements are already $\ge k$ (returns 0) or all are $< k$ (returns `len(nums)`) correctly.
+
+### 3. Optimization
+**Use a generator expression** to reduce space complexity from **$O(n)$ to $O(1)$**. 
+Instead of building a full list in memory, count elements lazily:
+```python
+return sum(1 for i in nums if i < k)
+```
+This avoids the memory overhead of storing the filtered elements.
+
+### 4. Key Algorithmic Pattern
+**Linear Scan / Filtering:** The solution iterates through the collection and applies a predicate (`i < k`) to count occurrences that satisfy the condition.

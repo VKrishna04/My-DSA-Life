@@ -7,8 +7,8 @@
 | Problem ID | `lc-number-of-employees-who-met-the-target` |
 | Topics | Array |
 | Solved | 2024-11-10 |
-| Runtime | 4 ms |
-| Memory | 16.7 MB |
+| Runtime | 0 ms (beats 100%) |
+| Memory | 16.8 MB (beats 100%) |
 
 ## Problem Statement
 
@@ -57,3 +57,35 @@ There are 0 employees who met the target.
 Iterate over the elements of array hours and check if the value is greater than or equal to target.
 
 </details>
+
+## Solutions
+
+```Python3
+class Solution:
+    def numberOfEmployeesWhoMetTarget(self, hours: List[int], target: int) -> int:
+        # return len(hours) % 2 == 0 and max(Counter(hours).values()) < target
+        return len([i for i in range(len(hours)) if hours[i] >= target])
+```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(n)$, where $n$ is the number of employees. The list is traversed once.
+*   **Space Complexity:** $O(n)$. The list comprehension creates a new intermediate list in memory to store the indices before calculating the length.
+
+### 2. Correctness
+The logic is **correct**. It accurately implements the requirement to count elements where `hours[i] >= target`. 
+*   **Edge Cases:** Handles empty lists (returns 0) and cases where all or no employees meet the target correctly.
+
+### 3. Optimization
+**Reduce Space Complexity to $O(1)$:**
+Instead of creating a new list, use a generator expression with the `sum()` function. This counts the occurrences without allocating extra memory.
+
+```python
+return sum(1 for h in hours if h >= target)
+# Or even more idiomatic:
+return sum(h >= target for h in hours)
+```
+
+### 4. Key Algorithmic Pattern
+*   **Linear Scan / Filtering:** Iterating through a collection once to count or extract elements that satisfy a specific condition.

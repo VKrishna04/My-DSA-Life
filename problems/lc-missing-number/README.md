@@ -79,3 +79,28 @@ class Solution:
         exs = s * ( s + 1) // 2
         return exs - sum ( nums )
 ```
+
+## AI Review
+
+### Review
+**1. Complexity**
+*   **Time:** $O(n)$ — Requires a single pass through the list to calculate the sum.
+*   **Space:** $O(1)$ — Only stores a few integer variables regardless of input size.
+
+**2. Correctness**
+The solution is **correct**. It leverages Gauss' Summation Formula to find the expected sum of the first $n$ natural numbers.
+*   **Edge Cases:** It correctly handles cases where the missing number is `0` or `n` (the boundaries). 
+*   **Overflow:** While large sums can overflow 32-bit/64-bit integers in languages like C++ or Java, Python handles arbitrarily large integers, making this implementation robust.
+
+**3. Optimization**
+The current approach is already optimal for Python. However, in environments with fixed-width integers, you could use **Bitwise XOR** to prevent potential overflow:
+```python
+res = len(nums)
+for i, num in enumerate(nums):
+    res ^= i ^ num
+return res
+```
+This performs the same logic without calculating large sums.
+
+**4. Key Algorithmic Pattern**
+**Mathematical/Summation Formula:** Using the property that the sum of a sequence $0 \dots n$ is $\frac{n(n+1)}{2}$.

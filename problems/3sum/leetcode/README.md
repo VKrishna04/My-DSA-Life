@@ -106,3 +106,26 @@ class Solution:
                     j -= 1
         return ans
 ```
+
+## AI Review
+
+### Review of 3Sum Solution
+
+**1. Complexity**
+*   **Time Complexity:** $O(n^2)$. Sorting takes $O(n \log n)$, and the nested loops (outer loop with inner two-pointer scan) take $O(n^2)$.
+*   **Space Complexity:** $O(1)$ to $O(n)$. Excluding the output list, space depends on the sorting implementation (Python’s Timsort uses $O(n)$).
+
+**2. Correctness**
+The solution is **correct**. It effectively avoids duplicate triplets by:
+1.  Skipping identical `nums[k]` values in the outer loop.
+2.  Skipping identical `nums[i]` and `nums[j]` values after finding a valid triplet.
+It handles edge cases like empty arrays or arrays with fewer than three elements via the `range(len(nums)-2)` bound.
+
+**3. Concrete Optimization**
+**Early Exit:** Since the array is sorted, if `nums[k] > 0`, you can immediately `break` the loop. If the smallest number in the triplet is positive, the sum will never reach zero.
+```python
+if nums[k] > 0: break
+```
+
+**4. Key Algorithmic Pattern**
+**Two Pointers** (applied on a **Sorted Array**). This reduces the search for the remaining two elements from $O(n^2)$ to $O(n)$.

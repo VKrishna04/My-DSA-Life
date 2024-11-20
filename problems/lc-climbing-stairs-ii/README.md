@@ -155,3 +155,20 @@ class Solution:
         
         return back1
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(n)$, where $n$ is the length of the `costs` array. We iterate through the list once.
+*   **Space Complexity:** $O(1)$. We only maintain three scalar variables regardless of input size.
+
+### 2. Correctness
+**Flawed Initialization:** Setting `back1 = back2 = back3 = 0` is likely incorrect. This implies you can "arrive" at the starting position from non-existent previous steps with zero cost. 
+*   **Edge Case:** For the first step, it calculates `min(0+1, 0+4, 0+9)`, making the first step cost `costs[0] + 1`. In typical climbing problems, the first step cost should just be its entry cost. 
+*   **Fix:** Initialize `back1` to 0 and `back2`, `back3` to infinity (or a large constant) to represent unreachable states before the staircase begins.
+
+### 3. Optimization
+**Generalization:** If the number of step options (currently 3) increases to $k$, replace individual variables with a **circular buffer** or **deque** of size $k$. This maintains $O(1)$ space while making the logic scalable to any number of allowed jumps.
+
+### 4. Key Algorithmic Pattern
+**Dynamic Programming with State Compression** (Iterative bottom-up approach using a sliding window to save space).
