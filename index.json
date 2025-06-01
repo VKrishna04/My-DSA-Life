@@ -1,32 +1,32 @@
 {
-  "updatedAt": "2026-05-16T18:51:22.119Z",
+  "updatedAt": "2026-05-16T18:52:15.146Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 101,
-    "easy": 84,
-    "medium": 16,
+    "total": 126,
+    "easy": 103,
+    "medium": 22,
     "hard": 1,
     "byPlatform": {
-      "leetcode": 101
+      "leetcode": 126
     },
     "byLang": {
       "C++": 1,
       "Java": 12,
       "C": 1,
-      "Python3": 56,
+      "Python3": 80,
       "JavaScript": 2,
       "pythondata": 13,
       "Pandas": 2,
-      "Python": 14
+      "Python": 15
     },
     "byTopic": {
       "Two Pointers": 4,
-      "Array": 36,
-      "String": 9,
-      "Math": 11,
+      "Array": 55,
+      "String": 11,
+      "Math": 12,
       "Untagged": 31,
       "Linked List": 1,
-      "Hash Table": 8,
+      "Hash Table": 11,
       "Binary Search": 1
     }
   },
@@ -5507,6 +5507,1619 @@
       "acRate": 61.24744972311279,
       "similar": null,
       "hasSimilar": null
+    },
+    {
+      "id": "lc-split-the-array::1448744519",
+      "submissionId": 1448744519,
+      "platform": "leetcode",
+      "title": "Split the Array",
+      "titleSlug": "split-the-array",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python",
+        "ext": "py",
+        "slug": "python"
+      },
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Counting"
+      ],
+      "topic": "Hash Table",
+      "code": "class Solution(object):\n    def isPossibleToSplit(self, nums):\n        return len(nums) % 2 == 0 and max(Counter(nums).values()) < 3\n",
+      "readmeContent": "# Split the Array\n\n**Difficulty:** Easy  |  **Acceptance:** 61.2%\n\n**Tags:** `Array`, `Hash Table`, `Counting`\n\n## Problem\n\nYou are given an integer array nums of even length. You have to split the array into two parts nums1 and nums2 such that:\n\n\tnums1.length == nums2.length == nums.length / 2.\n\tnums1 should contain distinct elements.\n\tnums2 should also contain distinct elements.\n\nReturn true if it is possible to split the array, and false otherwise.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,1,2,2,3,4]\nOutput: true\nExplanation: One of the possible ways to split nums is nums1 = [1,2,3] and nums2 = [1,2,4].\n\nExample 2:\n\nInput: nums = [1,1,1,1]\nOutput: false\nExplanation: The only possible way to split nums is nums1 = [1,1] and nums2 = [1,1]. Both nums1 and nums2 do not contain distinct elements. Therefore, we return false.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 100\n\tnums.length % 2 == 0 \n\t1 <= nums[i] <= 100\n\n## My Submission\n\n- Runtime: 8 ms\n- Memory: 11.6 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-split-the-array/lc-split-the-array.py",
+          "content": "class Solution(object):\n    def isPossibleToSplit(self, nums):\n        return len(nums) % 2 == 0 and max(Counter(nums).values()) < 3\n"
+        },
+        {
+          "path": "problems/lc-split-the-array/README.md",
+          "content": "# Split the Array\n\n**Difficulty:** Easy  |  **Acceptance:** 61.2%\n\n**Tags:** `Array`, `Hash Table`, `Counting`\n\n## Problem\n\nYou are given an integer array nums of even length. You have to split the array into two parts nums1 and nums2 such that:\n\n\tnums1.length == nums2.length == nums.length / 2.\n\tnums1 should contain distinct elements.\n\tnums2 should also contain distinct elements.\n\nReturn true if it is possible to split the array, and false otherwise.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,1,2,2,3,4]\nOutput: true\nExplanation: One of the possible ways to split nums is nums1 = [1,2,3] and nums2 = [1,2,4].\n\nExample 2:\n\nInput: nums = [1,1,1,1]\nOutput: false\nExplanation: The only possible way to split nums is nums1 = [1,1] and nums2 = [1,1]. Both nums1 and nums2 do not contain distinct elements. Therefore, we return false.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 100\n\tnums.length % 2 == 0 \n\t1 <= nums[i] <= 100\n\n## My Submission\n\n- Runtime: 8 ms\n- Memory: 11.6 MB\n"
+        }
+      ],
+      "timestamp": 1731250114000,
+      "runtime": "8 ms",
+      "memory": "11.6 MB",
+      "runtimePct": 9,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given an integer array <code>nums</code> of <strong>even</strong> length. You have to split the array into two parts <code>nums1</code> and <code>nums2</code> such that:</p>\n\n<ul>\n\t<li><code>nums1.length == nums2.length == nums.length / 2</code>.</li>\n\t<li><code>nums1</code> should contain <strong>distinct </strong>elements.</li>\n\t<li><code>nums2</code> should also contain <strong>distinct</strong> elements.</li>\n</ul>\n\n<p>Return <code>true</code><em> if it is possible to split the array, and </em><code>false</code> <em>otherwise</em><em>.</em></p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,1,2,2,3,4]\n<strong>Output:</strong> true\n<strong>Explanation:</strong> One of the possible ways to split nums is nums1 = [1,2,3] and nums2 = [1,2,4].\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,1,1,1]\n<strong>Output:</strong> false\n<strong>Explanation:</strong> The only possible way to split nums is nums1 = [1,1] and nums2 = [1,1]. Both nums1 and nums2 do not contain distinct elements. Therefore, we return false.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 100</code></li>\n\t<li><code>nums.length % 2 == 0 </code></li>\n\t<li><code>1 &lt;= nums[i] &lt;= 100</code></li>\n</ul>\n",
+      "hints": [
+        "It’s impossible if the same number occurs more than twice. So just check the frequency of each value."
+      ],
+      "acRate": 61.24744972311279,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-split-the-array::1448744782",
+      "submissionId": 1448744782,
+      "platform": "leetcode",
+      "title": "Split the Array",
+      "titleSlug": "split-the-array",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Counting"
+      ],
+      "topic": "Hash Table",
+      "code": "class Solution:\n    def isPossibleToSplit(self, nums: List[int]) -> bool:\n        return len(nums) % 2 == 0 and max(Counter(nums).values()) < 3\n",
+      "readmeContent": "# Split the Array\n\n**Difficulty:** Easy  |  **Acceptance:** 61.2%\n\n**Tags:** `Array`, `Hash Table`, `Counting`\n\n## Problem\n\nYou are given an integer array nums of even length. You have to split the array into two parts nums1 and nums2 such that:\n\n\tnums1.length == nums2.length == nums.length / 2.\n\tnums1 should contain distinct elements.\n\tnums2 should also contain distinct elements.\n\nReturn true if it is possible to split the array, and false otherwise.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,1,2,2,3,4]\nOutput: true\nExplanation: One of the possible ways to split nums is nums1 = [1,2,3] and nums2 = [1,2,4].\n\nExample 2:\n\nInput: nums = [1,1,1,1]\nOutput: false\nExplanation: The only possible way to split nums is nums1 = [1,1] and nums2 = [1,1]. Both nums1 and nums2 do not contain distinct elements. Therefore, we return false.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 100\n\tnums.length % 2 == 0 \n\t1 <= nums[i] <= 100\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.7 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-split-the-array/lc-split-the-array.py",
+          "content": "class Solution:\n    def isPossibleToSplit(self, nums: List[int]) -> bool:\n        return len(nums) % 2 == 0 and max(Counter(nums).values()) < 3\n"
+        },
+        {
+          "path": "problems/lc-split-the-array/README.md",
+          "content": "# Split the Array\n\n**Difficulty:** Easy  |  **Acceptance:** 61.2%\n\n**Tags:** `Array`, `Hash Table`, `Counting`\n\n## Problem\n\nYou are given an integer array nums of even length. You have to split the array into two parts nums1 and nums2 such that:\n\n\tnums1.length == nums2.length == nums.length / 2.\n\tnums1 should contain distinct elements.\n\tnums2 should also contain distinct elements.\n\nReturn true if it is possible to split the array, and false otherwise.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,1,2,2,3,4]\nOutput: true\nExplanation: One of the possible ways to split nums is nums1 = [1,2,3] and nums2 = [1,2,4].\n\nExample 2:\n\nInput: nums = [1,1,1,1]\nOutput: false\nExplanation: The only possible way to split nums is nums1 = [1,1] and nums2 = [1,1]. Both nums1 and nums2 do not contain distinct elements. Therefore, we return false.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 100\n\tnums.length % 2 == 0 \n\t1 <= nums[i] <= 100\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.7 MB\n"
+        }
+      ],
+      "timestamp": 1731250137000,
+      "runtime": "0 ms",
+      "memory": "16.7 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given an integer array <code>nums</code> of <strong>even</strong> length. You have to split the array into two parts <code>nums1</code> and <code>nums2</code> such that:</p>\n\n<ul>\n\t<li><code>nums1.length == nums2.length == nums.length / 2</code>.</li>\n\t<li><code>nums1</code> should contain <strong>distinct </strong>elements.</li>\n\t<li><code>nums2</code> should also contain <strong>distinct</strong> elements.</li>\n</ul>\n\n<p>Return <code>true</code><em> if it is possible to split the array, and </em><code>false</code> <em>otherwise</em><em>.</em></p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,1,2,2,3,4]\n<strong>Output:</strong> true\n<strong>Explanation:</strong> One of the possible ways to split nums is nums1 = [1,2,3] and nums2 = [1,2,4].\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,1,1,1]\n<strong>Output:</strong> false\n<strong>Explanation:</strong> The only possible way to split nums is nums1 = [1,1] and nums2 = [1,1]. Both nums1 and nums2 do not contain distinct elements. Therefore, we return false.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 100</code></li>\n\t<li><code>nums.length % 2 == 0 </code></li>\n\t<li><code>1 &lt;= nums[i] &lt;= 100</code></li>\n</ul>\n",
+      "hints": [
+        "It’s impossible if the same number occurs more than twice. So just check the frequency of each value."
+      ],
+      "acRate": 61.24744972311279,
+      "similar": null,
+      "hasSimilar": null,
+      "isDuplicate": true,
+      "duplicateOf": "lc-split-the-array::1448736927"
+    },
+    {
+      "id": "lc-number-of-employees-who-met-the-target::1448974448",
+      "submissionId": 1448974448,
+      "platform": "leetcode",
+      "title": "Number of Employees Who Met the Target",
+      "titleSlug": "number-of-employees-who-met-the-target",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array"
+      ],
+      "topic": "Array",
+      "code": "class Solution:\n    def numberOfEmployeesWhoMetTarget(self, hours: List[int], target: int) -> int:\n        # return len(hours) % 2 == 0 and max(Counter(hours).values()) < target\n        return len([i for i in range(len(hours)) if hours[i] >= target])",
+      "readmeContent": "# Number of Employees Who Met the Target\n\n**Difficulty:** Easy  |  **Acceptance:** 87.8%\n\n**Tags:** `Array`\n\n## Problem\n\nThere are n employees in a company, numbered from 0 to n - 1. Each employee i has worked for hours[i] hours in the company.\n\nThe company requires each employee to work for at least target hours.\n\nYou are given a 0-indexed array of non-negative integers hours of length n and a non-negative integer target.\n\nReturn the integer denoting the number of employees who worked at least target hours.\n\n&nbsp;\nExample 1:\n\nInput: hours = [0,1,2,3,4], target = 2\nOutput: 3\nExplanation: The company wants each employee to work for at least 2 hours.\n- Employee 0 worked for 0 hours and didn't meet the target.\n- Employee 1 worked for 1 hours and didn't meet the target.\n- Employee 2 worked for 2 hours and met the target.\n- Employee 3 worked for 3 hours and met the target.\n- Employee 4 worked for 4 hours and met the target.\nThere are 3 employees who met the target.\n\nExample 2:\n\nInput: hours = [5,1,4,2,2], target = 6\nOutput: 0\nExplanation: The company wants each employee to work for at least 6 hours.\nThere are 0 employees who met the target.\n\n&nbsp;\nConstraints:\n\n\t1 <= n == hours.length <= 50\n\t0 <=&nbsp;hours[i], target <= 105\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.8 MB\n\n## Similar Problems\n\n- [Minimum Operations to Exceed Threshold Value I](https://leetcode.com/problems/minimum-operations-to-exceed-threshold-value-i/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-number-of-employees-who-met-the-target/lc-number-of-employees-who-met-the-target.py",
+          "content": "class Solution:\n    def numberOfEmployeesWhoMetTarget(self, hours: List[int], target: int) -> int:\n        # return len(hours) % 2 == 0 and max(Counter(hours).values()) < target\n        return len([i for i in range(len(hours)) if hours[i] >= target])"
+        },
+        {
+          "path": "problems/lc-number-of-employees-who-met-the-target/README.md",
+          "content": "# Number of Employees Who Met the Target\n\n**Difficulty:** Easy  |  **Acceptance:** 87.8%\n\n**Tags:** `Array`\n\n## Problem\n\nThere are n employees in a company, numbered from 0 to n - 1. Each employee i has worked for hours[i] hours in the company.\n\nThe company requires each employee to work for at least target hours.\n\nYou are given a 0-indexed array of non-negative integers hours of length n and a non-negative integer target.\n\nReturn the integer denoting the number of employees who worked at least target hours.\n\n&nbsp;\nExample 1:\n\nInput: hours = [0,1,2,3,4], target = 2\nOutput: 3\nExplanation: The company wants each employee to work for at least 2 hours.\n- Employee 0 worked for 0 hours and didn't meet the target.\n- Employee 1 worked for 1 hours and didn't meet the target.\n- Employee 2 worked for 2 hours and met the target.\n- Employee 3 worked for 3 hours and met the target.\n- Employee 4 worked for 4 hours and met the target.\nThere are 3 employees who met the target.\n\nExample 2:\n\nInput: hours = [5,1,4,2,2], target = 6\nOutput: 0\nExplanation: The company wants each employee to work for at least 6 hours.\nThere are 0 employees who met the target.\n\n&nbsp;\nConstraints:\n\n\t1 <= n == hours.length <= 50\n\t0 <=&nbsp;hours[i], target <= 105\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.8 MB\n\n## Similar Problems\n\n- [Minimum Operations to Exceed Threshold Value I](https://leetcode.com/problems/minimum-operations-to-exceed-threshold-value-i/) — Easy\n"
+        }
+      ],
+      "timestamp": 1731268004000,
+      "runtime": "0 ms",
+      "memory": "16.8 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>There are <code>n</code> employees in a company, numbered from <code>0</code> to <code>n - 1</code>. Each employee <code>i</code> has worked for <code>hours[i]</code> hours in the company.</p>\n\n<p>The company requires each employee to work for <strong>at least</strong> <code>target</code> hours.</p>\n\n<p>You are given a <strong>0-indexed</strong> array of non-negative integers <code>hours</code> of length <code>n</code> and a non-negative integer <code>target</code>.</p>\n\n<p>Return <em>the integer denoting the number of employees who worked at least</em> <code>target</code> <em>hours</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> hours = [0,1,2,3,4], target = 2\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> The company wants each employee to work for at least 2 hours.\n- Employee 0 worked for 0 hours and didn&#39;t meet the target.\n- Employee 1 worked for 1 hours and didn&#39;t meet the target.\n- Employee 2 worked for 2 hours and met the target.\n- Employee 3 worked for 3 hours and met the target.\n- Employee 4 worked for 4 hours and met the target.\nThere are 3 employees who met the target.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> hours = [5,1,4,2,2], target = 6\n<strong>Output:</strong> 0\n<strong>Explanation:</strong> The company wants each employee to work for at least 6 hours.\nThere are 0 employees who met the target.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= n == hours.length &lt;= 50</code></li>\n\t<li><code>0 &lt;=&nbsp;hours[i], target &lt;= 10<sup>5</sup></code></li>\n</ul>\n",
+      "hints": [
+        "Iterate over the elements of array hours and check if the value is greater than or equal to target."
+      ],
+      "acRate": 87.837082153479,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "minimum-operations-to-exceed-threshold-value-i",
+          "title": "Minimum Operations to Exceed Threshold Value I",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-number-of-employees-who-met-the-target::1448974557",
+      "submissionId": 1448974557,
+      "platform": "leetcode",
+      "title": "Number of Employees Who Met the Target",
+      "titleSlug": "number-of-employees-who-met-the-target",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array"
+      ],
+      "topic": "Array",
+      "code": "",
+      "readmeContent": "# Number of Employees Who Met the Target\n\n**Difficulty:** Easy  |  **Acceptance:** 87.8%\n\n**Tags:** `Array`\n\n## Problem\n\nThere are n employees in a company, numbered from 0 to n - 1. Each employee i has worked for hours[i] hours in the company.\n\nThe company requires each employee to work for at least target hours.\n\nYou are given a 0-indexed array of non-negative integers hours of length n and a non-negative integer target.\n\nReturn the integer denoting the number of employees who worked at least target hours.\n\n&nbsp;\nExample 1:\n\nInput: hours = [0,1,2,3,4], target = 2\nOutput: 3\nExplanation: The company wants each employee to work for at least 2 hours.\n- Employee 0 worked for 0 hours and didn't meet the target.\n- Employee 1 worked for 1 hours and didn't meet the target.\n- Employee 2 worked for 2 hours and met the target.\n- Employee 3 worked for 3 hours and met the target.\n- Employee 4 worked for 4 hours and met the target.\nThere are 3 employees who met the target.\n\nExample 2:\n\nInput: hours = [5,1,4,2,2], target = 6\nOutput: 0\nExplanation: The company wants each employee to work for at least 6 hours.\nThere are 0 employees who met the target.\n\n&nbsp;\nConstraints:\n\n\t1 <= n == hours.length <= 50\n\t0 <=&nbsp;hours[i], target <= 105\n\n## My Submission\n\n- Runtime: 4 ms\n- Memory: 16.7 MB\n\n## Similar Problems\n\n- [Minimum Operations to Exceed Threshold Value I](https://leetcode.com/problems/minimum-operations-to-exceed-threshold-value-i/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-number-of-employees-who-met-the-target/README.md",
+          "content": "# Number of Employees Who Met the Target\n\n**Difficulty:** Easy  |  **Acceptance:** 87.8%\n\n**Tags:** `Array`\n\n## Problem\n\nThere are n employees in a company, numbered from 0 to n - 1. Each employee i has worked for hours[i] hours in the company.\n\nThe company requires each employee to work for at least target hours.\n\nYou are given a 0-indexed array of non-negative integers hours of length n and a non-negative integer target.\n\nReturn the integer denoting the number of employees who worked at least target hours.\n\n&nbsp;\nExample 1:\n\nInput: hours = [0,1,2,3,4], target = 2\nOutput: 3\nExplanation: The company wants each employee to work for at least 2 hours.\n- Employee 0 worked for 0 hours and didn't meet the target.\n- Employee 1 worked for 1 hours and didn't meet the target.\n- Employee 2 worked for 2 hours and met the target.\n- Employee 3 worked for 3 hours and met the target.\n- Employee 4 worked for 4 hours and met the target.\nThere are 3 employees who met the target.\n\nExample 2:\n\nInput: hours = [5,1,4,2,2], target = 6\nOutput: 0\nExplanation: The company wants each employee to work for at least 6 hours.\nThere are 0 employees who met the target.\n\n&nbsp;\nConstraints:\n\n\t1 <= n == hours.length <= 50\n\t0 <=&nbsp;hours[i], target <= 105\n\n## My Submission\n\n- Runtime: 4 ms\n- Memory: 16.7 MB\n\n## Similar Problems\n\n- [Minimum Operations to Exceed Threshold Value I](https://leetcode.com/problems/minimum-operations-to-exceed-threshold-value-i/) — Easy\n"
+        }
+      ],
+      "timestamp": 1731268014000,
+      "runtime": "4 ms",
+      "memory": "16.7 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<p>There are <code>n</code> employees in a company, numbered from <code>0</code> to <code>n - 1</code>. Each employee <code>i</code> has worked for <code>hours[i]</code> hours in the company.</p>\n\n<p>The company requires each employee to work for <strong>at least</strong> <code>target</code> hours.</p>\n\n<p>You are given a <strong>0-indexed</strong> array of non-negative integers <code>hours</code> of length <code>n</code> and a non-negative integer <code>target</code>.</p>\n\n<p>Return <em>the integer denoting the number of employees who worked at least</em> <code>target</code> <em>hours</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> hours = [0,1,2,3,4], target = 2\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> The company wants each employee to work for at least 2 hours.\n- Employee 0 worked for 0 hours and didn&#39;t meet the target.\n- Employee 1 worked for 1 hours and didn&#39;t meet the target.\n- Employee 2 worked for 2 hours and met the target.\n- Employee 3 worked for 3 hours and met the target.\n- Employee 4 worked for 4 hours and met the target.\nThere are 3 employees who met the target.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> hours = [5,1,4,2,2], target = 6\n<strong>Output:</strong> 0\n<strong>Explanation:</strong> The company wants each employee to work for at least 6 hours.\nThere are 0 employees who met the target.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= n == hours.length &lt;= 50</code></li>\n\t<li><code>0 &lt;=&nbsp;hours[i], target &lt;= 10<sup>5</sup></code></li>\n</ul>\n",
+      "hints": [
+        "Iterate over the elements of array hours and check if the value is greater than or equal to target."
+      ],
+      "acRate": 87.8314687658203,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "minimum-operations-to-exceed-threshold-value-i",
+          "title": "Minimum Operations to Exceed Threshold Value I",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "isDuplicate": true,
+      "duplicateOf": "lc-number-of-employees-who-met-the-target::1448978974"
+    },
+    {
+      "id": "lc-minimum-operations-to-exceed-threshold-value-i::1448975552",
+      "submissionId": 1448975552,
+      "platform": "leetcode",
+      "title": "Minimum Operations to Exceed Threshold Value I",
+      "titleSlug": "minimum-operations-to-exceed-threshold-value-i",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array"
+      ],
+      "topic": "Array",
+      "code": "class Solution:\n    def minOperations(self, nums: List[int], k: int) -> int:\n        return len([i for i in nums if i < k])",
+      "readmeContent": "# Minimum Operations to Exceed Threshold Value I\n\n**Difficulty:** Easy  |  **Acceptance:** 86.8%\n\n**Tags:** `Array`\n\n## Problem\n\nYou are given a 0-indexed integer array nums, and an integer k.\n\nIn one operation, you can remove one occurrence of the smallest element of nums.\n\nReturn the minimum number of operations needed so that all elements of the array are greater than or equal to k.\n\n&nbsp;\nExample 1:\n\nInput: nums = [2,11,10,1,3], k = 10\nOutput: 3\nExplanation: After one operation, nums becomes equal to [2, 11, 10, 3].\nAfter two operations, nums becomes equal to [11, 10, 3].\nAfter three operations, nums becomes equal to [11, 10].\nAt this stage, all the elements of nums are greater than or equal to 10 so we can stop.\nIt can be shown that 3 is the minimum number of operations needed so that all elements of the array are greater than or equal to 10.\n\nExample 2:\n\nInput: nums = [1,1,2,4,9], k = 1\nOutput: 0\nExplanation: All elements of the array are greater than or equal to 1 so we do not need to apply any operations on nums.\n\nExample 3:\n\nInput: nums = [1,1,2,4,9], k = 9\nOutput: 4\nExplanation: only a single element of nums is greater than or equal to 9 so we need to apply the operations 4 times on nums.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 50\n\t1 <= nums[i] <= 109\n\t1 <= k <= 109\n\tThe input is generated such that there is at least one index i such that nums[i] >= k.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.8 MB\n\n## Similar Problems\n\n- [Search Insert Position](https://leetcode.com/problems/search-insert-position/) — Easy\n- [Majority Element](https://leetcode.com/problems/majority-element/) — Easy\n- [Number of Employees Who Met the Target](https://leetcode.com/problems/number-of-employees-who-met-the-target/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-minimum-operations-to-exceed-threshold-value-i/lc-minimum-operations-to-exceed-threshold-value-i.py",
+          "content": "class Solution:\n    def minOperations(self, nums: List[int], k: int) -> int:\n        return len([i for i in nums if i < k])"
+        },
+        {
+          "path": "problems/lc-minimum-operations-to-exceed-threshold-value-i/README.md",
+          "content": "# Minimum Operations to Exceed Threshold Value I\n\n**Difficulty:** Easy  |  **Acceptance:** 86.8%\n\n**Tags:** `Array`\n\n## Problem\n\nYou are given a 0-indexed integer array nums, and an integer k.\n\nIn one operation, you can remove one occurrence of the smallest element of nums.\n\nReturn the minimum number of operations needed so that all elements of the array are greater than or equal to k.\n\n&nbsp;\nExample 1:\n\nInput: nums = [2,11,10,1,3], k = 10\nOutput: 3\nExplanation: After one operation, nums becomes equal to [2, 11, 10, 3].\nAfter two operations, nums becomes equal to [11, 10, 3].\nAfter three operations, nums becomes equal to [11, 10].\nAt this stage, all the elements of nums are greater than or equal to 10 so we can stop.\nIt can be shown that 3 is the minimum number of operations needed so that all elements of the array are greater than or equal to 10.\n\nExample 2:\n\nInput: nums = [1,1,2,4,9], k = 1\nOutput: 0\nExplanation: All elements of the array are greater than or equal to 1 so we do not need to apply any operations on nums.\n\nExample 3:\n\nInput: nums = [1,1,2,4,9], k = 9\nOutput: 4\nExplanation: only a single element of nums is greater than or equal to 9 so we need to apply the operations 4 times on nums.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 50\n\t1 <= nums[i] <= 109\n\t1 <= k <= 109\n\tThe input is generated such that there is at least one index i such that nums[i] >= k.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.8 MB\n\n## Similar Problems\n\n- [Search Insert Position](https://leetcode.com/problems/search-insert-position/) — Easy\n- [Majority Element](https://leetcode.com/problems/majority-element/) — Easy\n- [Number of Employees Who Met the Target](https://leetcode.com/problems/number-of-employees-who-met-the-target/) — Easy\n"
+        }
+      ],
+      "timestamp": 1731268101000,
+      "runtime": "0 ms",
+      "memory": "16.8 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given a <strong>0-indexed</strong> integer array <code>nums</code>, and an integer <code>k</code>.</p>\n\n<p>In one operation, you can remove one occurrence of the smallest element of <code>nums</code>.</p>\n\n<p>Return <em>the <strong>minimum</strong> number of operations needed so that all elements of the array are greater than or equal to</em> <code>k</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [2,11,10,1,3], k = 10\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> After one operation, nums becomes equal to [2, 11, 10, 3].\nAfter two operations, nums becomes equal to [11, 10, 3].\nAfter three operations, nums becomes equal to [11, 10].\nAt this stage, all the elements of nums are greater than or equal to 10 so we can stop.\nIt can be shown that 3 is the minimum number of operations needed so that all elements of the array are greater than or equal to 10.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,1,2,4,9], k = 1\n<strong>Output:</strong> 0\n<strong>Explanation:</strong> All elements of the array are greater than or equal to 1 so we do not need to apply any operations on nums.</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,1,2,4,9], k = 9\n<strong>Output:</strong> 4\n<strong>Explanation:</strong> only a single element of nums is greater than or equal to 9 so we need to apply the operations 4 times on nums.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 50</code></li>\n\t<li><code>1 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>\n\t<li><code>1 &lt;= k &lt;= 10<sup>9</sup></code></li>\n\t<li>The input is generated such that there is at least one index <code>i</code> such that <code>nums[i] &gt;= k</code>.</li>\n</ul>\n",
+      "hints": [
+        "Iterate over <code>nums</code> and count the number of elements less than <code>k</code>."
+      ],
+      "acRate": 86.75482156354386,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "search-insert-position",
+          "title": "Search Insert Position",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "majority-element",
+          "title": "Majority Element",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "number-of-employees-who-met-the-target",
+          "title": "Number of Employees Who Met the Target",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-majority-element::1448985394",
+      "submissionId": 1448985394,
+      "platform": "leetcode",
+      "title": "Majority Element",
+      "titleSlug": "majority-element",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Divide and Conquer",
+        "Sorting",
+        "Counting"
+      ],
+      "topic": "Divide and Conquer",
+      "code": "class Solution:\n    def majorityElement(self, nums: List[int]) -> int:\n        return max([num for num, count in Counter(nums).items() if count > len(nums)/2])",
+      "readmeContent": "# Majority Element\n\n**Difficulty:** Easy  |  **Acceptance:** 66.3%\n\n**Tags:** `Array`, `Hash Table`, `Divide and Conquer`, `Sorting`, `Counting`\n\n## Problem\n\nGiven an array nums of size n, return the majority element.\n\nThe majority element is the element that appears more than &lfloor;n / 2&rfloor; times. You may assume that the majority element always exists in the array.\n\n&nbsp;\nExample 1:\nInput: nums = [3,2,3]\nOutput: 3\nExample 2:\nInput: nums = [2,2,1,1,1,2,2]\nOutput: 2\n\n&nbsp;\nConstraints:\n\n\tn == nums.length\n\t1 <= n <= 5 * 104\n\t-109 <= nums[i] <= 109\n\tThe input is generated such that a majority element will exist in the array.\n\n&nbsp;\nFollow-up: Could you solve the problem in linear time and in O(1) space?\n\n## My Submission\n\n- Runtime: 7 ms\n- Memory: 18.4 MB\n\n## Similar Problems\n\n- [Majority Element II](https://leetcode.com/problems/majority-element-ii/) — Medium\n- [Most Frequent Even Element](https://leetcode.com/problems/most-frequent-even-element/) — Easy\n- [Minimum Index of a Valid Split](https://leetcode.com/problems/minimum-index-of-a-valid-split/) — Medium\n- [Minimum Operations to Exceed Threshold Value I](https://leetcode.com/problems/minimum-operations-to-exceed-threshold-value-i/) — Easy\n- [Find the Most Common Response](https://leetcode.com/problems/find-the-most-common-response/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-majority-element/lc-majority-element.py",
+          "content": "class Solution:\n    def majorityElement(self, nums: List[int]) -> int:\n        return max([num for num, count in Counter(nums).items() if count > len(nums)/2])"
+        },
+        {
+          "path": "problems/lc-majority-element/README.md",
+          "content": "# Majority Element\n\n**Difficulty:** Easy  |  **Acceptance:** 66.3%\n\n**Tags:** `Array`, `Hash Table`, `Divide and Conquer`, `Sorting`, `Counting`\n\n## Problem\n\nGiven an array nums of size n, return the majority element.\n\nThe majority element is the element that appears more than &lfloor;n / 2&rfloor; times. You may assume that the majority element always exists in the array.\n\n&nbsp;\nExample 1:\nInput: nums = [3,2,3]\nOutput: 3\nExample 2:\nInput: nums = [2,2,1,1,1,2,2]\nOutput: 2\n\n&nbsp;\nConstraints:\n\n\tn == nums.length\n\t1 <= n <= 5 * 104\n\t-109 <= nums[i] <= 109\n\tThe input is generated such that a majority element will exist in the array.\n\n&nbsp;\nFollow-up: Could you solve the problem in linear time and in O(1) space?\n\n## My Submission\n\n- Runtime: 7 ms\n- Memory: 18.4 MB\n\n## Similar Problems\n\n- [Majority Element II](https://leetcode.com/problems/majority-element-ii/) — Medium\n- [Most Frequent Even Element](https://leetcode.com/problems/most-frequent-even-element/) — Easy\n- [Minimum Index of a Valid Split](https://leetcode.com/problems/minimum-index-of-a-valid-split/) — Medium\n- [Minimum Operations to Exceed Threshold Value I](https://leetcode.com/problems/minimum-operations-to-exceed-threshold-value-i/) — Easy\n- [Find the Most Common Response](https://leetcode.com/problems/find-the-most-common-response/) — Medium\n"
+        }
+      ],
+      "timestamp": 1731269043000,
+      "runtime": "7 ms",
+      "memory": "18.4 MB",
+      "runtimePct": 57.99060000000001,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an array <code>nums</code> of size <code>n</code>, return <em>the majority element</em>.</p>\n\n<p>The majority element is the element that appears more than <code>&lfloor;n / 2&rfloor;</code> times. You may assume that the majority element always exists in the array.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<pre><strong>Input:</strong> nums = [3,2,3]\n<strong>Output:</strong> 3\n</pre><p><strong class=\"example\">Example 2:</strong></p>\n<pre><strong>Input:</strong> nums = [2,2,1,1,1,2,2]\n<strong>Output:</strong> 2\n</pre>\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>n == nums.length</code></li>\n\t<li><code>1 &lt;= n &lt;= 5 * 10<sup>4</sup></code></li>\n\t<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>\n\t<li>The input is generated such that a majority element will exist in the array.</li>\n</ul>\n\n<p>&nbsp;</p>\n<strong>Follow-up:</strong> Could you solve the problem in linear time and in <code>O(1)</code> space?",
+      "hints": null,
+      "acRate": 66.28160487641446,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "majority-element-ii",
+          "title": "Majority Element II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "most-frequent-even-element",
+          "title": "Most Frequent Even Element",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "minimum-index-of-a-valid-split",
+          "title": "Minimum Index of a Valid Split",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "minimum-operations-to-exceed-threshold-value-i",
+          "title": "Minimum Operations to Exceed Threshold Value I",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "find-the-most-common-response",
+          "title": "Find the Most Common Response",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "find-valid-pair-of-adjacent-digits-in-string",
+          "title": "Find Valid Pair of Adjacent Digits in String",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "conflictPending": true,
+      "conflictCandidates": [
+        {
+          "id": "lc-majority-element::1448986088",
+          "code": "class Solution:\n    def majorityElement(self, nums: List[int]) -> int:\n        return [num for num, count in Counter(nums).items() if count > len(nums)/2][0]",
+          "lang": {
+            "name": "Python3",
+            "ext": "py",
+            "slug": "python3"
+          },
+          "runtime": "7 ms",
+          "memory": "18.5 MB",
+          "runtimePct": 57.99060000000001,
+          "memoryPct": 100,
+          "timestamp": 1731269111000,
+          "submissionId": 1448986088
+        }
+      ]
+    },
+    {
+      "id": "lc-majority-element::1448986088",
+      "submissionId": 1448986088,
+      "platform": "leetcode",
+      "title": "Majority Element",
+      "titleSlug": "majority-element",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Divide and Conquer",
+        "Sorting",
+        "Counting"
+      ],
+      "topic": "Divide and Conquer",
+      "code": "class Solution:\n    def majorityElement(self, nums: List[int]) -> int:\n        return [num for num, count in Counter(nums).items() if count > len(nums)/2][0]",
+      "readmeContent": "# Majority Element\n\n**Difficulty:** Easy  |  **Acceptance:** 66.3%\n\n**Tags:** `Array`, `Hash Table`, `Divide and Conquer`, `Sorting`, `Counting`\n\n## Problem\n\nGiven an array nums of size n, return the majority element.\n\nThe majority element is the element that appears more than &lfloor;n / 2&rfloor; times. You may assume that the majority element always exists in the array.\n\n&nbsp;\nExample 1:\nInput: nums = [3,2,3]\nOutput: 3\nExample 2:\nInput: nums = [2,2,1,1,1,2,2]\nOutput: 2\n\n&nbsp;\nConstraints:\n\n\tn == nums.length\n\t1 <= n <= 5 * 104\n\t-109 <= nums[i] <= 109\n\tThe input is generated such that a majority element will exist in the array.\n\n&nbsp;\nFollow-up: Could you solve the problem in linear time and in O(1) space?\n\n## My Submission\n\n- Runtime: 7 ms\n- Memory: 18.5 MB\n\n## Similar Problems\n\n- [Majority Element II](https://leetcode.com/problems/majority-element-ii/) — Medium\n- [Most Frequent Even Element](https://leetcode.com/problems/most-frequent-even-element/) — Easy\n- [Minimum Index of a Valid Split](https://leetcode.com/problems/minimum-index-of-a-valid-split/) — Medium\n- [Minimum Operations to Exceed Threshold Value I](https://leetcode.com/problems/minimum-operations-to-exceed-threshold-value-i/) — Easy\n- [Find the Most Common Response](https://leetcode.com/problems/find-the-most-common-response/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-majority-element/lc-majority-element.py",
+          "content": "class Solution:\n    def majorityElement(self, nums: List[int]) -> int:\n        return [num for num, count in Counter(nums).items() if count > len(nums)/2][0]"
+        },
+        {
+          "path": "problems/lc-majority-element/README.md",
+          "content": "# Majority Element\n\n**Difficulty:** Easy  |  **Acceptance:** 66.3%\n\n**Tags:** `Array`, `Hash Table`, `Divide and Conquer`, `Sorting`, `Counting`\n\n## Problem\n\nGiven an array nums of size n, return the majority element.\n\nThe majority element is the element that appears more than &lfloor;n / 2&rfloor; times. You may assume that the majority element always exists in the array.\n\n&nbsp;\nExample 1:\nInput: nums = [3,2,3]\nOutput: 3\nExample 2:\nInput: nums = [2,2,1,1,1,2,2]\nOutput: 2\n\n&nbsp;\nConstraints:\n\n\tn == nums.length\n\t1 <= n <= 5 * 104\n\t-109 <= nums[i] <= 109\n\tThe input is generated such that a majority element will exist in the array.\n\n&nbsp;\nFollow-up: Could you solve the problem in linear time and in O(1) space?\n\n## My Submission\n\n- Runtime: 7 ms\n- Memory: 18.5 MB\n\n## Similar Problems\n\n- [Majority Element II](https://leetcode.com/problems/majority-element-ii/) — Medium\n- [Most Frequent Even Element](https://leetcode.com/problems/most-frequent-even-element/) — Easy\n- [Minimum Index of a Valid Split](https://leetcode.com/problems/minimum-index-of-a-valid-split/) — Medium\n- [Minimum Operations to Exceed Threshold Value I](https://leetcode.com/problems/minimum-operations-to-exceed-threshold-value-i/) — Easy\n- [Find the Most Common Response](https://leetcode.com/problems/find-the-most-common-response/) — Medium\n"
+        }
+      ],
+      "timestamp": 1731269111000,
+      "runtime": "7 ms",
+      "memory": "18.5 MB",
+      "runtimePct": 57.99060000000001,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an array <code>nums</code> of size <code>n</code>, return <em>the majority element</em>.</p>\n\n<p>The majority element is the element that appears more than <code>&lfloor;n / 2&rfloor;</code> times. You may assume that the majority element always exists in the array.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<pre><strong>Input:</strong> nums = [3,2,3]\n<strong>Output:</strong> 3\n</pre><p><strong class=\"example\">Example 2:</strong></p>\n<pre><strong>Input:</strong> nums = [2,2,1,1,1,2,2]\n<strong>Output:</strong> 2\n</pre>\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>n == nums.length</code></li>\n\t<li><code>1 &lt;= n &lt;= 5 * 10<sup>4</sup></code></li>\n\t<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>\n\t<li>The input is generated such that a majority element will exist in the array.</li>\n</ul>\n\n<p>&nbsp;</p>\n<strong>Follow-up:</strong> Could you solve the problem in linear time and in <code>O(1)</code> space?",
+      "hints": null,
+      "acRate": 66.28160487641446,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "majority-element-ii",
+          "title": "Majority Element II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "most-frequent-even-element",
+          "title": "Most Frequent Even Element",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "minimum-index-of-a-valid-split",
+          "title": "Minimum Index of a Valid Split",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "minimum-operations-to-exceed-threshold-value-i",
+          "title": "Minimum Operations to Exceed Threshold Value I",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "find-the-most-common-response",
+          "title": "Find the Most Common Response",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "find-valid-pair-of-adjacent-digits-in-string",
+          "title": "Find Valid Pair of Adjacent Digits in String",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "isDuplicate": true,
+      "duplicateOf": "lc-majority-element::1448985394"
+    },
+    {
+      "id": "lc-majority-element-ii::1448987288",
+      "submissionId": 1448987288,
+      "platform": "leetcode",
+      "title": "Majority Element II",
+      "titleSlug": "majority-element-ii",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Sorting",
+        "Counting"
+      ],
+      "topic": "Hash Table",
+      "code": "class Solution:\n    def majorityElement(self, nums: List[int]) -> List[int]:\n        return [num for num, count in Counter(nums).items() if count > len(nums)/3]",
+      "readmeContent": "# Majority Element II\n\n**Difficulty:** Medium  |  **Acceptance:** 56.1%\n\n**Tags:** `Array`, `Hash Table`, `Sorting`, `Counting`\n\n## Problem\n\nGiven an integer array of size n, find all elements that appear more than &lfloor; n/3 &rfloor; times.\n\n&nbsp;\nExample 1:\n\nInput: nums = [3,2,3]\nOutput: [3]\n\nExample 2:\n\nInput: nums = [1]\nOutput: [1]\n\nExample 3:\n\nInput: nums = [1,2]\nOutput: [1,2]\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 5 * 104\n\t-109 <= nums[i] <= 109\n\n&nbsp;\nFollow up: Could you solve the problem in linear time and in O(1) space?\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 18.3 MB\n\n## Similar Problems\n\n- [Majority Element](https://leetcode.com/problems/majority-element/) — Easy\n- [Most Frequent Even Element](https://leetcode.com/problems/most-frequent-even-element/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-majority-element-ii/lc-majority-element-ii.py",
+          "content": "class Solution:\n    def majorityElement(self, nums: List[int]) -> List[int]:\n        return [num for num, count in Counter(nums).items() if count > len(nums)/3]"
+        },
+        {
+          "path": "problems/lc-majority-element-ii/README.md",
+          "content": "# Majority Element II\n\n**Difficulty:** Medium  |  **Acceptance:** 56.1%\n\n**Tags:** `Array`, `Hash Table`, `Sorting`, `Counting`\n\n## Problem\n\nGiven an integer array of size n, find all elements that appear more than &lfloor; n/3 &rfloor; times.\n\n&nbsp;\nExample 1:\n\nInput: nums = [3,2,3]\nOutput: [3]\n\nExample 2:\n\nInput: nums = [1]\nOutput: [1]\n\nExample 3:\n\nInput: nums = [1,2]\nOutput: [1,2]\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 5 * 104\n\t-109 <= nums[i] <= 109\n\n&nbsp;\nFollow up: Could you solve the problem in linear time and in O(1) space?\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 18.3 MB\n\n## Similar Problems\n\n- [Majority Element](https://leetcode.com/problems/majority-element/) — Easy\n- [Most Frequent Even Element](https://leetcode.com/problems/most-frequent-even-element/) — Easy\n"
+        }
+      ],
+      "timestamp": 1731269234000,
+      "runtime": "3 ms",
+      "memory": "18.3 MB",
+      "runtimePct": 92.829,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an integer array of size <code>n</code>, find all elements that appear more than <code>&lfloor; n/3 &rfloor;</code> times.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [3,2,3]\n<strong>Output:</strong> [3]\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1]\n<strong>Output:</strong> [1]\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,2]\n<strong>Output:</strong> [1,2]\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 5 * 10<sup>4</sup></code></li>\n\t<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Follow up:</strong> Could you solve the problem in linear time and in <code>O(1)</code> space?</p>\n",
+      "hints": [
+        "Think about the possible number of elements that can appear more than ⌊ n/3 ⌋ times in the array.",
+        "It can be at most two. Why?",
+        "Consider using Boyer-Moore Voting Algorithm, which is efficient for finding elements that appear more than a certain threshold."
+      ],
+      "acRate": 56.12581614684283,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "majority-element",
+          "title": "Majority Element",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "most-frequent-even-element",
+          "title": "Most Frequent Even Element",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-most-frequent-even-element::1448999875",
+      "submissionId": 1448999875,
+      "platform": "leetcode",
+      "title": "Most Frequent Even Element",
+      "titleSlug": "most-frequent-even-element",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Counting"
+      ],
+      "topic": "Hash Table",
+      "code": "from typing import List\nfrom collections import Counter\n\nclass Solution:\n    def mostFrequentEven(self, nums: List[int]) -> int:\n        counts = Counter([num for num in nums if num % 2 == 0])\n        \n        most_frequent_even = -1\n        max_count = 0\n\n        for num, count in counts.items():\n            if count > max_count or (count == max_count and num < most_frequent_even):\n                most_frequent_even = num\n                max_count = count\n\n        return most_frequent_even\n",
+      "readmeContent": "# Most Frequent Even Element\n\n**Difficulty:** Easy  |  **Acceptance:** 53.6%\n\n**Tags:** `Array`, `Hash Table`, `Counting`\n\n## Problem\n\nGiven an integer array nums, return the most frequent even element.\n\nIf there is a tie, return the smallest one. If there is no such element, return -1.\n\n&nbsp;\nExample 1:\n\nInput: nums = [0,1,2,2,4,4,1]\nOutput: 2\nExplanation:\nThe even elements are 0, 2, and 4. Of these, 2 and 4 appear the most.\nWe return the smallest one, which is 2.\n\nExample 2:\n\nInput: nums = [4,4,4,9,2,4]\nOutput: 4\nExplanation: 4 is the even element appears the most.\n\nExample 3:\n\nInput: nums = [29,47,21,41,13,37,25,7]\nOutput: -1\nExplanation: There is no even element.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 2000\n\t0 <= nums[i] <= 105\n\n## My Submission\n\n- Runtime: 7 ms\n- Memory: 17 MB\n\n## Similar Problems\n\n- [Majority Element](https://leetcode.com/problems/majority-element/) — Easy\n- [Majority Element II](https://leetcode.com/problems/majority-element-ii/) — Medium\n- [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) — Medium\n- [Sort Characters By Frequency](https://leetcode.com/problems/sort-characters-by-frequency/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-most-frequent-even-element/lc-most-frequent-even-element.py",
+          "content": "from typing import List\nfrom collections import Counter\n\nclass Solution:\n    def mostFrequentEven(self, nums: List[int]) -> int:\n        counts = Counter([num for num in nums if num % 2 == 0])\n        \n        most_frequent_even = -1\n        max_count = 0\n\n        for num, count in counts.items():\n            if count > max_count or (count == max_count and num < most_frequent_even):\n                most_frequent_even = num\n                max_count = count\n\n        return most_frequent_even\n"
+        },
+        {
+          "path": "problems/lc-most-frequent-even-element/README.md",
+          "content": "# Most Frequent Even Element\n\n**Difficulty:** Easy  |  **Acceptance:** 53.6%\n\n**Tags:** `Array`, `Hash Table`, `Counting`\n\n## Problem\n\nGiven an integer array nums, return the most frequent even element.\n\nIf there is a tie, return the smallest one. If there is no such element, return -1.\n\n&nbsp;\nExample 1:\n\nInput: nums = [0,1,2,2,4,4,1]\nOutput: 2\nExplanation:\nThe even elements are 0, 2, and 4. Of these, 2 and 4 appear the most.\nWe return the smallest one, which is 2.\n\nExample 2:\n\nInput: nums = [4,4,4,9,2,4]\nOutput: 4\nExplanation: 4 is the even element appears the most.\n\nExample 3:\n\nInput: nums = [29,47,21,41,13,37,25,7]\nOutput: -1\nExplanation: There is no even element.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 2000\n\t0 <= nums[i] <= 105\n\n## My Submission\n\n- Runtime: 7 ms\n- Memory: 17 MB\n\n## Similar Problems\n\n- [Majority Element](https://leetcode.com/problems/majority-element/) — Easy\n- [Majority Element II](https://leetcode.com/problems/majority-element-ii/) — Medium\n- [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) — Medium\n- [Sort Characters By Frequency](https://leetcode.com/problems/sort-characters-by-frequency/) — Medium\n"
+        }
+      ],
+      "timestamp": 1731270519000,
+      "runtime": "7 ms",
+      "memory": "17 MB",
+      "runtimePct": 99.548,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an integer array <code>nums</code>, return <em>the most frequent even element</em>.</p>\n\n<p>If there is a tie, return the <strong>smallest</strong> one. If there is no such element, return <code>-1</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [0,1,2,2,4,4,1]\n<strong>Output:</strong> 2\n<strong>Explanation:</strong>\nThe even elements are 0, 2, and 4. Of these, 2 and 4 appear the most.\nWe return the smallest one, which is 2.</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [4,4,4,9,2,4]\n<strong>Output:</strong> 4\n<strong>Explanation:</strong> 4 is the even element appears the most.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [29,47,21,41,13,37,25,7]\n<strong>Output:</strong> -1\n<strong>Explanation:</strong> There is no even element.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 2000</code></li>\n\t<li><code>0 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>\n</ul>\n",
+      "hints": [
+        "Could you count the frequency of each even element in the array?",
+        "Would a hashmap help?"
+      ],
+      "acRate": 53.62316035581293,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "majority-element",
+          "title": "Majority Element",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "majority-element-ii",
+          "title": "Majority Element II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "top-k-frequent-elements",
+          "title": "Top K Frequent Elements",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "sort-characters-by-frequency",
+          "title": "Sort Characters By Frequency",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-minimum-index-of-a-valid-split::1451861442",
+      "submissionId": 1451861442,
+      "platform": "leetcode",
+      "title": "Minimum Index of a Valid Split",
+      "titleSlug": "minimum-index-of-a-valid-split",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Sorting"
+      ],
+      "topic": "Hash Table",
+      "code": "class Solution:\n    def minimumIndex(self, nums: List[int]) -> int:\n        def count_elements(nums):\n            counter = {}\n            for num in nums:\n                if num in counter:\n                    counter[num] += 1\n                else:\n                    counter[num] = 1\n            return counter\n\n        full_counter = count_elements(nums)\n        dominant_element = max(full_counter, key=full_counter.get)\n        \n        dominant_count = full_counter[dominant_element]\n        \n        left_count = 0\n        for i in range(len(nums)):\n            if nums[i] == dominant_element:\n                left_count += 1\n            right_count = dominant_count - left_count\n            \n            if left_count > (i + 1) // 2 and right_count > (len(nums) - i - 1) // 2:\n                return i\n        return -1\n",
+      "readmeContent": "# Minimum Index of a Valid Split\n\n**Difficulty:** Medium  |  **Acceptance:** 75.5%\n\n**Tags:** `Array`, `Hash Table`, `Sorting`\n\n## Problem\n\nAn element x of an integer array arr of length m is dominant if more than half the elements of arr have a value of x.\n\nYou are given a 0-indexed integer array nums of length n with one dominant element.\n\nYou can split nums at an index i into two arrays nums[0, ..., i] and nums[i + 1, ..., n - 1], but the split is only valid if:\n\n\t0 <= i < n - 1\n\tnums[0, ..., i], and nums[i + 1, ..., n - 1] have the same dominant element.\n\nHere, nums[i, ..., j] denotes the subarray of nums starting at index i and ending at index j, both ends being inclusive. Particularly, if j < i then nums[i, ..., j] denotes an empty subarray.\n\nReturn the minimum index of a valid split. If no valid split exists, return -1.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,2,2,2]\nOutput: 2\nExplanation: We can split the array at index 2 to obtain arrays [1,2,2] and [2]. \nIn array [1,2,2], element 2 is dominant since it occurs twice in the array and 2 * 2 > 3. \nIn array [2], element 2 is dominant since it occurs once in the array and 1 * 2 > 1.\nBoth [1,2,2] and [2] have the same dominant element as nums, so this is a valid split. \nIt can be shown that index 2 is the minimum index of a valid split. \n\nExample 2:\n\nInput: nums = [2,1,3,1,1,1,7,1,2,1]\nOutput: 4\nExplanation: We can split the array at index 4 to obtain arrays [2,1,3,1,1] and [1,7,1,2,1].\nIn array [2,1,3,1,1], element 1 is dominant since it occurs thrice in the array and 3 * 2 > 5.\nIn array [1,7,1,2,1], element 1 is dominant since it occurs thrice in the array and 3 * 2 > 5.\nBoth [2,1,3,1,1] and [1,7,1,2,1] have the same dominant element as nums, so this is a valid split.\nIt can be shown that index 4 is the minimum index of a valid split.\n\nExample 3:\n\nInput: nums = [3,3,3,3,7,2,2]\nOutput: -1\nExplanation: It can be shown that there is no valid split.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 105\n\t1 <= nums[i] <= 109\n\tnums has exactly one dominant element.\n\n## My Submission\n\n- Runtime: 67 ms\n- Memory: 33.2 MB\n\n## Similar Problems\n\n- [Majority Element](https://leetcode.com/problems/majority-element/) — Easy\n- [Partition Array into Disjoint Intervals](https://leetcode.com/problems/partition-array-into-disjoint-intervals/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-minimum-index-of-a-valid-split/lc-minimum-index-of-a-valid-split.py",
+          "content": "class Solution:\n    def minimumIndex(self, nums: List[int]) -> int:\n        def count_elements(nums):\n            counter = {}\n            for num in nums:\n                if num in counter:\n                    counter[num] += 1\n                else:\n                    counter[num] = 1\n            return counter\n\n        full_counter = count_elements(nums)\n        dominant_element = max(full_counter, key=full_counter.get)\n        \n        dominant_count = full_counter[dominant_element]\n        \n        left_count = 0\n        for i in range(len(nums)):\n            if nums[i] == dominant_element:\n                left_count += 1\n            right_count = dominant_count - left_count\n            \n            if left_count > (i + 1) // 2 and right_count > (len(nums) - i - 1) // 2:\n                return i\n        return -1\n"
+        },
+        {
+          "path": "problems/lc-minimum-index-of-a-valid-split/README.md",
+          "content": "# Minimum Index of a Valid Split\n\n**Difficulty:** Medium  |  **Acceptance:** 75.5%\n\n**Tags:** `Array`, `Hash Table`, `Sorting`\n\n## Problem\n\nAn element x of an integer array arr of length m is dominant if more than half the elements of arr have a value of x.\n\nYou are given a 0-indexed integer array nums of length n with one dominant element.\n\nYou can split nums at an index i into two arrays nums[0, ..., i] and nums[i + 1, ..., n - 1], but the split is only valid if:\n\n\t0 <= i < n - 1\n\tnums[0, ..., i], and nums[i + 1, ..., n - 1] have the same dominant element.\n\nHere, nums[i, ..., j] denotes the subarray of nums starting at index i and ending at index j, both ends being inclusive. Particularly, if j < i then nums[i, ..., j] denotes an empty subarray.\n\nReturn the minimum index of a valid split. If no valid split exists, return -1.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,2,2,2]\nOutput: 2\nExplanation: We can split the array at index 2 to obtain arrays [1,2,2] and [2]. \nIn array [1,2,2], element 2 is dominant since it occurs twice in the array and 2 * 2 > 3. \nIn array [2], element 2 is dominant since it occurs once in the array and 1 * 2 > 1.\nBoth [1,2,2] and [2] have the same dominant element as nums, so this is a valid split. \nIt can be shown that index 2 is the minimum index of a valid split. \n\nExample 2:\n\nInput: nums = [2,1,3,1,1,1,7,1,2,1]\nOutput: 4\nExplanation: We can split the array at index 4 to obtain arrays [2,1,3,1,1] and [1,7,1,2,1].\nIn array [2,1,3,1,1], element 1 is dominant since it occurs thrice in the array and 3 * 2 > 5.\nIn array [1,7,1,2,1], element 1 is dominant since it occurs thrice in the array and 3 * 2 > 5.\nBoth [2,1,3,1,1] and [1,7,1,2,1] have the same dominant element as nums, so this is a valid split.\nIt can be shown that index 4 is the minimum index of a valid split.\n\nExample 3:\n\nInput: nums = [3,3,3,3,7,2,2]\nOutput: -1\nExplanation: It can be shown that there is no valid split.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 105\n\t1 <= nums[i] <= 109\n\tnums has exactly one dominant element.\n\n## My Submission\n\n- Runtime: 67 ms\n- Memory: 33.2 MB\n\n## Similar Problems\n\n- [Majority Element](https://leetcode.com/problems/majority-element/) — Easy\n- [Partition Array into Disjoint Intervals](https://leetcode.com/problems/partition-array-into-disjoint-intervals/) — Medium\n"
+        }
+      ],
+      "timestamp": 1731521488000,
+      "runtime": "67 ms",
+      "memory": "33.2 MB",
+      "runtimePct": 52.792100000000026,
+      "memoryPct": 65.48230000000001,
+      "problemStatement": "<p>An element <code>x</code> of an integer array <code>arr</code> of length <code>m</code> is <strong>dominant</strong> if <strong>more than half</strong> the elements of <code>arr</code> have a value of <code>x</code>.</p>\n\n<p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> of length <code>n</code> with one <strong>dominant</strong> element.</p>\n\n<p>You can split <code>nums</code> at an index <code>i</code> into two arrays <code>nums[0, ..., i]</code> and <code>nums[i + 1, ..., n - 1]</code>, but the split is only <strong>valid</strong> if:</p>\n\n<ul>\n\t<li><code>0 &lt;= i &lt; n - 1</code></li>\n\t<li><code>nums[0, ..., i]</code>, and <code>nums[i + 1, ..., n - 1]</code> have the same dominant element.</li>\n</ul>\n\n<p>Here, <code>nums[i, ..., j]</code> denotes the subarray of <code>nums</code> starting at index <code>i</code> and ending at index <code>j</code>, both ends being inclusive. Particularly, if <code>j &lt; i</code> then <code>nums[i, ..., j]</code> denotes an empty subarray.</p>\n\n<p>Return <em>the <strong>minimum</strong> index of a <strong>valid split</strong></em>. If no valid split exists, return <code>-1</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,2,2,2]\n<strong>Output:</strong> 2\n<strong>Explanation:</strong> We can split the array at index 2 to obtain arrays [1,2,2] and [2]. \nIn array [1,2,2], element 2 is dominant since it occurs twice in the array and 2 * 2 &gt; 3. \nIn array [2], element 2 is dominant since it occurs once in the array and 1 * 2 &gt; 1.\nBoth [1,2,2] and [2] have the same dominant element as nums, so this is a valid split. \nIt can be shown that index 2 is the minimum index of a valid split. </pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [2,1,3,1,1,1,7,1,2,1]\n<strong>Output:</strong> 4\n<strong>Explanation:</strong> We can split the array at index 4 to obtain arrays [2,1,3,1,1] and [1,7,1,2,1].\nIn array [2,1,3,1,1], element 1 is dominant since it occurs thrice in the array and 3 * 2 &gt; 5.\nIn array [1,7,1,2,1], element 1 is dominant since it occurs thrice in the array and 3 * 2 &gt; 5.\nBoth [2,1,3,1,1] and [1,7,1,2,1] have the same dominant element as nums, so this is a valid split.\nIt can be shown that index 4 is the minimum index of a valid split.</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [3,3,3,3,7,2,2]\n<strong>Output:</strong> -1\n<strong>Explanation:</strong> It can be shown that there is no valid split.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>1 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>\n\t<li><code>nums</code> has exactly one dominant element.</li>\n</ul>\n",
+      "hints": [
+        "Find the dominant element of nums by using a hashmap to maintain element frequency, we denote the dominant element as x and its frequency as f.",
+        "For each index in [0, n - 2], calculate f1, x’s frequency in the subarray [0, i] when looping the index. And f2, x’s frequency in the subarray [i + 1, n - 1] which is equal to f - f1. Then we can check whether x is dominant in both subarrays."
+      ],
+      "acRate": 75.48967627588506,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "majority-element",
+          "title": "Majority Element",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "partition-array-into-disjoint-intervals",
+          "title": "Partition Array into Disjoint Intervals",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-top-k-frequent-elements::1458507035",
+      "submissionId": 1458507035,
+      "platform": "leetcode",
+      "title": "Top K Frequent Elements",
+      "titleSlug": "top-k-frequent-elements",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Divide and Conquer",
+        "Sorting",
+        "Heap (Priority Queue)",
+        "Bucket Sort",
+        "Counting",
+        "Quickselect"
+      ],
+      "topic": "Divide and Conquer",
+      "code": "from collections import Counter\nclass Solution:\n    def topKFrequent(self, nums: List[int], k: int) -> List[int]:\n        map = Counter(nums)\n        heap = [(-count,value) for value,count in map.items()]\n        \n        heapq.heapify(heap)\n        result = []\n        for i in range(k):\n            element = heapq.heappop(heap)\n            result.append(element[1])\n        return result\n        ",
+      "readmeContent": "# Top K Frequent Elements\n\n**Difficulty:** Medium  |  **Acceptance:** 66.4%\n\n**Tags:** `Array`, `Hash Table`, `Divide and Conquer`, `Sorting`, `Heap (Priority Queue)`, `Bucket Sort`, `Counting`, `Quickselect`\n\n## Problem\n\nGiven an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,1,1,2,2,3], k = 2\n\nOutput: [1,2]\n\nExample 2:\n\nInput: nums = [1], k = 1\n\nOutput: [1]\n\nExample 3:\n\nInput: nums = [1,2,1,2,1,2,3,1,3,2], k = 2\n\nOutput: [1,2]\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 105\n\t-104 <= nums[i] <= 104\n\tk is in the range [1, the number of unique elements in the array].\n\tIt is guaranteed that the answer is unique.\n\n&nbsp;\nFollow up: Your algorithm's time complexity must be better than O(n log n), where n is the array's size.\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 20.3 MB\n\n## Similar Problems\n\n- [Word Frequency](https://leetcode.com/problems/word-frequency/) — Medium\n- [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) — Medium\n- [Sort Characters By Frequency](https://leetcode.com/problems/sort-characters-by-frequency/) — Medium\n- [Split Array into Consecutive Subsequences](https://leetcode.com/problems/split-array-into-consecutive-subsequences/) — Medium\n- [Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-top-k-frequent-elements/lc-top-k-frequent-elements.py",
+          "content": "from collections import Counter\nclass Solution:\n    def topKFrequent(self, nums: List[int], k: int) -> List[int]:\n        map = Counter(nums)\n        heap = [(-count,value) for value,count in map.items()]\n        \n        heapq.heapify(heap)\n        result = []\n        for i in range(k):\n            element = heapq.heappop(heap)\n            result.append(element[1])\n        return result\n        "
+        },
+        {
+          "path": "problems/lc-top-k-frequent-elements/README.md",
+          "content": "# Top K Frequent Elements\n\n**Difficulty:** Medium  |  **Acceptance:** 66.4%\n\n**Tags:** `Array`, `Hash Table`, `Divide and Conquer`, `Sorting`, `Heap (Priority Queue)`, `Bucket Sort`, `Counting`, `Quickselect`\n\n## Problem\n\nGiven an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,1,1,2,2,3], k = 2\n\nOutput: [1,2]\n\nExample 2:\n\nInput: nums = [1], k = 1\n\nOutput: [1]\n\nExample 3:\n\nInput: nums = [1,2,1,2,1,2,3,1,3,2], k = 2\n\nOutput: [1,2]\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 105\n\t-104 <= nums[i] <= 104\n\tk is in the range [1, the number of unique elements in the array].\n\tIt is guaranteed that the answer is unique.\n\n&nbsp;\nFollow up: Your algorithm's time complexity must be better than O(n log n), where n is the array's size.\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 20.3 MB\n\n## Similar Problems\n\n- [Word Frequency](https://leetcode.com/problems/word-frequency/) — Medium\n- [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) — Medium\n- [Sort Characters By Frequency](https://leetcode.com/problems/sort-characters-by-frequency/) — Medium\n- [Split Array into Consecutive Subsequences](https://leetcode.com/problems/split-array-into-consecutive-subsequences/) — Medium\n- [Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/) — Medium\n"
+        }
+      ],
+      "timestamp": 1732126927000,
+      "runtime": "3 ms",
+      "memory": "20.3 MB",
+      "runtimePct": 88.8868,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an integer array <code>nums</code> and an integer <code>k</code>, return <em>the</em> <code>k</code> <em>most frequent elements</em>. You may return the answer in <strong>any order</strong>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1,1,1,2,2,3], k = 2</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">[1,2]</span></p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1], k = 1</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">[1]</span></p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1,2,1,2,1,2,3,1,3,2], k = 2</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">[1,2]</span></p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>\n\t<li><code>k</code> is in the range <code>[1, the number of unique elements in the array]</code>.</li>\n\t<li>It is <strong>guaranteed</strong> that the answer is <strong>unique</strong>.</li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Follow up:</strong> Your algorithm&#39;s time complexity must be better than <code>O(n log n)</code>, where n is the array&#39;s size.</p>\n",
+      "hints": null,
+      "acRate": 66.40000296224434,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "word-frequency",
+          "title": "Word Frequency",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "kth-largest-element-in-an-array",
+          "title": "Kth Largest Element in an Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "sort-characters-by-frequency",
+          "title": "Sort Characters By Frequency",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "split-array-into-consecutive-subsequences",
+          "title": "Split Array into Consecutive Subsequences",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "top-k-frequent-words",
+          "title": "Top K Frequent Words",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "k-closest-points-to-origin",
+          "title": "K Closest Points to Origin",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "sender-with-largest-word-count",
+          "title": "Sender With Largest Word Count",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "most-frequent-even-element",
+          "title": "Most Frequent Even Element",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-sort-characters-by-frequency::1458513295",
+      "submissionId": 1458513295,
+      "platform": "leetcode",
+      "title": "Sort Characters By Frequency",
+      "titleSlug": "sort-characters-by-frequency",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Hash Table",
+        "String",
+        "Sorting",
+        "Heap (Priority Queue)",
+        "Bucket Sort",
+        "Counting"
+      ],
+      "topic": "Hash Table",
+      "code": "from collections import Counter\n\nclass Solution:\n    def frequencySort(self, s: str) -> str:\n        # count = Counter(s)\n        \n        # sorted_chars = sorted(count.items(), key=lambda x: x[1], reverse=True)\n        \n        # result = ''.join([char * freq for char, freq in sorted_chars])\n\n        return ''.join([char * freq for char, freq in sorted(Counter(s).items(), key=lambda x: x[1], reverse=True)])",
+      "readmeContent": "# Sort Characters By Frequency\n\n**Difficulty:** Medium  |  **Acceptance:** 75.3%\n\n**Tags:** `Hash Table`, `String`, `Sorting`, `Heap (Priority Queue)`, `Bucket Sort`, `Counting`\n\n## Problem\n\nGiven a string s, sort it in decreasing order based on the frequency of the characters. The frequency of a character is the number of times it appears in the string.\n\nReturn the sorted string. If there are multiple answers, return any of them.\n\n&nbsp;\nExample 1:\n\nInput: s = \"tree\"\nOutput: \"eert\"\nExplanation: 'e' appears twice while 'r' and 't' both appear once.\nSo 'e' must appear before both 'r' and 't'. Therefore \"eetr\" is also a valid answer.\n\nExample 2:\n\nInput: s = \"cccaaa\"\nOutput: \"aaaccc\"\nExplanation: Both 'c' and 'a' appear three times, so both \"cccaaa\" and \"aaaccc\" are valid answers.\nNote that \"cacaca\" is incorrect, as the same characters must be together.\n\nExample 3:\n\nInput: s = \"Aabb\"\nOutput: \"bbAa\"\nExplanation: \"bbaA\" is also a valid answer, but \"Aabb\" is incorrect.\nNote that 'A' and 'a' are treated as two different characters.\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 5 * 105\n\ts consists of uppercase and lowercase English letters and digits.\n\n## My Submission\n\n- Runtime: 6 ms\n- Memory: 17.9 MB\n\n## Similar Problems\n\n- [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) — Medium\n- [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/) — Easy\n- [Sort Array by Increasing Frequency](https://leetcode.com/problems/sort-array-by-increasing-frequency/) — Easy\n- [Percentage of Letter in String](https://leetcode.com/problems/percentage-of-letter-in-string/) — Easy\n- [Maximum Number of Pairs in Array](https://leetcode.com/problems/maximum-number-of-pairs-in-array/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-sort-characters-by-frequency/lc-sort-characters-by-frequency.py",
+          "content": "from collections import Counter\n\nclass Solution:\n    def frequencySort(self, s: str) -> str:\n        # count = Counter(s)\n        \n        # sorted_chars = sorted(count.items(), key=lambda x: x[1], reverse=True)\n        \n        # result = ''.join([char * freq for char, freq in sorted_chars])\n\n        return ''.join([char * freq for char, freq in sorted(Counter(s).items(), key=lambda x: x[1], reverse=True)])"
+        },
+        {
+          "path": "problems/lc-sort-characters-by-frequency/README.md",
+          "content": "# Sort Characters By Frequency\n\n**Difficulty:** Medium  |  **Acceptance:** 75.3%\n\n**Tags:** `Hash Table`, `String`, `Sorting`, `Heap (Priority Queue)`, `Bucket Sort`, `Counting`\n\n## Problem\n\nGiven a string s, sort it in decreasing order based on the frequency of the characters. The frequency of a character is the number of times it appears in the string.\n\nReturn the sorted string. If there are multiple answers, return any of them.\n\n&nbsp;\nExample 1:\n\nInput: s = \"tree\"\nOutput: \"eert\"\nExplanation: 'e' appears twice while 'r' and 't' both appear once.\nSo 'e' must appear before both 'r' and 't'. Therefore \"eetr\" is also a valid answer.\n\nExample 2:\n\nInput: s = \"cccaaa\"\nOutput: \"aaaccc\"\nExplanation: Both 'c' and 'a' appear three times, so both \"cccaaa\" and \"aaaccc\" are valid answers.\nNote that \"cacaca\" is incorrect, as the same characters must be together.\n\nExample 3:\n\nInput: s = \"Aabb\"\nOutput: \"bbAa\"\nExplanation: \"bbaA\" is also a valid answer, but \"Aabb\" is incorrect.\nNote that 'A' and 'a' are treated as two different characters.\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 5 * 105\n\ts consists of uppercase and lowercase English letters and digits.\n\n## My Submission\n\n- Runtime: 6 ms\n- Memory: 17.9 MB\n\n## Similar Problems\n\n- [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) — Medium\n- [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/) — Easy\n- [Sort Array by Increasing Frequency](https://leetcode.com/problems/sort-array-by-increasing-frequency/) — Easy\n- [Percentage of Letter in String](https://leetcode.com/problems/percentage-of-letter-in-string/) — Easy\n- [Maximum Number of Pairs in Array](https://leetcode.com/problems/maximum-number-of-pairs-in-array/) — Easy\n"
+        }
+      ],
+      "timestamp": 1732127348000,
+      "runtime": "6 ms",
+      "memory": "17.9 MB",
+      "runtimePct": 83.8008,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given a string <code>s</code>, sort it in <strong>decreasing order</strong> based on the <strong>frequency</strong> of the characters. The <strong>frequency</strong> of a character is the number of times it appears in the string.</p>\n\n<p>Return <em>the sorted string</em>. If there are multiple answers, return <em>any of them</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;tree&quot;\n<strong>Output:</strong> &quot;eert&quot;\n<strong>Explanation:</strong> &#39;e&#39; appears twice while &#39;r&#39; and &#39;t&#39; both appear once.\nSo &#39;e&#39; must appear before both &#39;r&#39; and &#39;t&#39;. Therefore &quot;eetr&quot; is also a valid answer.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;cccaaa&quot;\n<strong>Output:</strong> &quot;aaaccc&quot;\n<strong>Explanation:</strong> Both &#39;c&#39; and &#39;a&#39; appear three times, so both &quot;cccaaa&quot; and &quot;aaaccc&quot; are valid answers.\nNote that &quot;cacaca&quot; is incorrect, as the same characters must be together.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;Aabb&quot;\n<strong>Output:</strong> &quot;bbAa&quot;\n<strong>Explanation:</strong> &quot;bbaA&quot; is also a valid answer, but &quot;Aabb&quot; is incorrect.\nNote that &#39;A&#39; and &#39;a&#39; are treated as two different characters.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 5 * 10<sup>5</sup></code></li>\n\t<li><code>s</code> consists of uppercase and lowercase English letters and digits.</li>\n</ul>\n",
+      "hints": null,
+      "acRate": 75.31420707948142,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "top-k-frequent-elements",
+          "title": "Top K Frequent Elements",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "first-unique-character-in-a-string",
+          "title": "First Unique Character in a String",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "sort-array-by-increasing-frequency",
+          "title": "Sort Array by Increasing Frequency",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "percentage-of-letter-in-string",
+          "title": "Percentage of Letter in String",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "maximum-number-of-pairs-in-array",
+          "title": "Maximum Number of Pairs in Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "node-with-highest-edge-score",
+          "title": "Node With Highest Edge Score",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "most-frequent-even-element",
+          "title": "Most Frequent Even Element",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "count-pairs-of-similar-strings",
+          "title": "Count Pairs Of Similar Strings",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "conflictPending": true,
+      "conflictCandidates": [
+        {
+          "id": "lc-sort-characters-by-frequency::1458513764",
+          "code": "from collections import Counter\n\nclass Solution:\n    def frequencySort(self, s: str) -> str:\n        count = Counter(s)\n        \n        sorted_chars = sorted(count.items(), key=lambda x: x[1], reverse=True)\n        \n        result = ''.join([char * freq for char, freq in sorted_chars])\n\n        return result\n\n        # return ''.join([char * freq for char, freq in sorted(Counter(s).items(), key=lambda x: x[1], reverse=True)])",
+          "lang": {
+            "name": "Python3",
+            "ext": "py",
+            "slug": "python3"
+          },
+          "runtime": "6 ms",
+          "memory": "17.8 MB",
+          "runtimePct": 83.8008,
+          "memoryPct": 100,
+          "timestamp": 1732127378000,
+          "submissionId": 1458513764
+        }
+      ]
+    },
+    {
+      "id": "lc-sort-characters-by-frequency::1458513764",
+      "submissionId": 1458513764,
+      "platform": "leetcode",
+      "title": "Sort Characters By Frequency",
+      "titleSlug": "sort-characters-by-frequency",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Hash Table",
+        "String",
+        "Sorting",
+        "Heap (Priority Queue)",
+        "Bucket Sort",
+        "Counting"
+      ],
+      "topic": "Hash Table",
+      "code": "from collections import Counter\n\nclass Solution:\n    def frequencySort(self, s: str) -> str:\n        count = Counter(s)\n        \n        sorted_chars = sorted(count.items(), key=lambda x: x[1], reverse=True)\n        \n        result = ''.join([char * freq for char, freq in sorted_chars])\n\n        return result\n\n        # return ''.join([char * freq for char, freq in sorted(Counter(s).items(), key=lambda x: x[1], reverse=True)])",
+      "readmeContent": "# Sort Characters By Frequency\n\n**Difficulty:** Medium  |  **Acceptance:** 75.3%\n\n**Tags:** `Hash Table`, `String`, `Sorting`, `Heap (Priority Queue)`, `Bucket Sort`, `Counting`\n\n## Problem\n\nGiven a string s, sort it in decreasing order based on the frequency of the characters. The frequency of a character is the number of times it appears in the string.\n\nReturn the sorted string. If there are multiple answers, return any of them.\n\n&nbsp;\nExample 1:\n\nInput: s = \"tree\"\nOutput: \"eert\"\nExplanation: 'e' appears twice while 'r' and 't' both appear once.\nSo 'e' must appear before both 'r' and 't'. Therefore \"eetr\" is also a valid answer.\n\nExample 2:\n\nInput: s = \"cccaaa\"\nOutput: \"aaaccc\"\nExplanation: Both 'c' and 'a' appear three times, so both \"cccaaa\" and \"aaaccc\" are valid answers.\nNote that \"cacaca\" is incorrect, as the same characters must be together.\n\nExample 3:\n\nInput: s = \"Aabb\"\nOutput: \"bbAa\"\nExplanation: \"bbaA\" is also a valid answer, but \"Aabb\" is incorrect.\nNote that 'A' and 'a' are treated as two different characters.\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 5 * 105\n\ts consists of uppercase and lowercase English letters and digits.\n\n## My Submission\n\n- Runtime: 6 ms\n- Memory: 17.8 MB\n\n## Similar Problems\n\n- [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) — Medium\n- [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/) — Easy\n- [Sort Array by Increasing Frequency](https://leetcode.com/problems/sort-array-by-increasing-frequency/) — Easy\n- [Percentage of Letter in String](https://leetcode.com/problems/percentage-of-letter-in-string/) — Easy\n- [Maximum Number of Pairs in Array](https://leetcode.com/problems/maximum-number-of-pairs-in-array/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-sort-characters-by-frequency/lc-sort-characters-by-frequency.py",
+          "content": "from collections import Counter\n\nclass Solution:\n    def frequencySort(self, s: str) -> str:\n        count = Counter(s)\n        \n        sorted_chars = sorted(count.items(), key=lambda x: x[1], reverse=True)\n        \n        result = ''.join([char * freq for char, freq in sorted_chars])\n\n        return result\n\n        # return ''.join([char * freq for char, freq in sorted(Counter(s).items(), key=lambda x: x[1], reverse=True)])"
+        },
+        {
+          "path": "problems/lc-sort-characters-by-frequency/README.md",
+          "content": "# Sort Characters By Frequency\n\n**Difficulty:** Medium  |  **Acceptance:** 75.3%\n\n**Tags:** `Hash Table`, `String`, `Sorting`, `Heap (Priority Queue)`, `Bucket Sort`, `Counting`\n\n## Problem\n\nGiven a string s, sort it in decreasing order based on the frequency of the characters. The frequency of a character is the number of times it appears in the string.\n\nReturn the sorted string. If there are multiple answers, return any of them.\n\n&nbsp;\nExample 1:\n\nInput: s = \"tree\"\nOutput: \"eert\"\nExplanation: 'e' appears twice while 'r' and 't' both appear once.\nSo 'e' must appear before both 'r' and 't'. Therefore \"eetr\" is also a valid answer.\n\nExample 2:\n\nInput: s = \"cccaaa\"\nOutput: \"aaaccc\"\nExplanation: Both 'c' and 'a' appear three times, so both \"cccaaa\" and \"aaaccc\" are valid answers.\nNote that \"cacaca\" is incorrect, as the same characters must be together.\n\nExample 3:\n\nInput: s = \"Aabb\"\nOutput: \"bbAa\"\nExplanation: \"bbaA\" is also a valid answer, but \"Aabb\" is incorrect.\nNote that 'A' and 'a' are treated as two different characters.\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 5 * 105\n\ts consists of uppercase and lowercase English letters and digits.\n\n## My Submission\n\n- Runtime: 6 ms\n- Memory: 17.8 MB\n\n## Similar Problems\n\n- [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) — Medium\n- [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/) — Easy\n- [Sort Array by Increasing Frequency](https://leetcode.com/problems/sort-array-by-increasing-frequency/) — Easy\n- [Percentage of Letter in String](https://leetcode.com/problems/percentage-of-letter-in-string/) — Easy\n- [Maximum Number of Pairs in Array](https://leetcode.com/problems/maximum-number-of-pairs-in-array/) — Easy\n"
+        }
+      ],
+      "timestamp": 1732127378000,
+      "runtime": "6 ms",
+      "memory": "17.8 MB",
+      "runtimePct": 83.8008,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given a string <code>s</code>, sort it in <strong>decreasing order</strong> based on the <strong>frequency</strong> of the characters. The <strong>frequency</strong> of a character is the number of times it appears in the string.</p>\n\n<p>Return <em>the sorted string</em>. If there are multiple answers, return <em>any of them</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;tree&quot;\n<strong>Output:</strong> &quot;eert&quot;\n<strong>Explanation:</strong> &#39;e&#39; appears twice while &#39;r&#39; and &#39;t&#39; both appear once.\nSo &#39;e&#39; must appear before both &#39;r&#39; and &#39;t&#39;. Therefore &quot;eetr&quot; is also a valid answer.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;cccaaa&quot;\n<strong>Output:</strong> &quot;aaaccc&quot;\n<strong>Explanation:</strong> Both &#39;c&#39; and &#39;a&#39; appear three times, so both &quot;cccaaa&quot; and &quot;aaaccc&quot; are valid answers.\nNote that &quot;cacaca&quot; is incorrect, as the same characters must be together.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;Aabb&quot;\n<strong>Output:</strong> &quot;bbAa&quot;\n<strong>Explanation:</strong> &quot;bbaA&quot; is also a valid answer, but &quot;Aabb&quot; is incorrect.\nNote that &#39;A&#39; and &#39;a&#39; are treated as two different characters.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 5 * 10<sup>5</sup></code></li>\n\t<li><code>s</code> consists of uppercase and lowercase English letters and digits.</li>\n</ul>\n",
+      "hints": null,
+      "acRate": 75.31420707948142,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "top-k-frequent-elements",
+          "title": "Top K Frequent Elements",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "first-unique-character-in-a-string",
+          "title": "First Unique Character in a String",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "sort-array-by-increasing-frequency",
+          "title": "Sort Array by Increasing Frequency",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "percentage-of-letter-in-string",
+          "title": "Percentage of Letter in String",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "maximum-number-of-pairs-in-array",
+          "title": "Maximum Number of Pairs in Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "node-with-highest-edge-score",
+          "title": "Node With Highest Edge Score",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "most-frequent-even-element",
+          "title": "Most Frequent Even Element",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "count-pairs-of-similar-strings",
+          "title": "Count Pairs Of Similar Strings",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "isDuplicate": true,
+      "duplicateOf": "lc-sort-characters-by-frequency::1458513295"
+    },
+    {
+      "id": "lc-shift-distance-between-two-strings::1460841171",
+      "submissionId": 1460841171,
+      "platform": "leetcode",
+      "title": "Shift Distance Between Two Strings",
+      "titleSlug": "shift-distance-between-two-strings",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "String",
+        "Prefix Sum"
+      ],
+      "topic": "Array",
+      "code": "class Solution:\n    def shiftDistance(self, s: str, t: str, nextCost: List[int], previousCost: List[int]) -> int:\n        totalc = 0\n        alfa = 26\n\n        for chars, chart in zip(s,t):\n            start = ord(chars) - ord('a')\n            target = ord(chart) - ord('a')\n\n            forward = (target - start) % alfa\n            backward = (start - target) % alfa\n\n            forwardc = sum(nextCost[(start + i) % alfa] for i in range(forward))\n            backwardc = sum(previousCost[(start - i) % alfa] for i in range(backward))\n\n            totalc += min(forwardc, backwardc)\n        return totalc",
+      "readmeContent": "# Shift Distance Between Two Strings\n\n**Difficulty:** Medium  |  **Acceptance:** 53.6%\n\n**Tags:** `Array`, `String`, `Prefix Sum`\n\n## Problem\n\nYou are given two strings s and t of the same length, and two integer arrays nextCost and previousCost.\n\nIn one operation, you can pick any index i of s, and perform either one of the following actions:\n\n\tShift s[i] to the next letter in the alphabet. If s[i] == 'z', you should replace it with 'a'. This operation costs nextCost[j] where j is the index of s[i] in the alphabet.\n\tShift s[i] to the previous letter in the alphabet. If s[i] == 'a', you should replace it with 'z'. This operation costs previousCost[j] where j is the index of s[i] in the alphabet.\n\nThe shift distance is the minimum total cost of operations required to transform s into t.\n\nReturn the shift distance from s to t.\n\n&nbsp;\nExample 1:\n\nInput: s = \"abab\", t = \"baba\", nextCost = [100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], previousCost = [1,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]\n\nOutput: 2\n\nExplanation:\n\n\tWe choose index i = 0 and shift s[0] 25 times to the previous character for a total cost of 1.\n\tWe choose index i = 1 and shift s[1] 25 times to the next character for a total cost of 0.\n\tWe choose index i = 2 and shift s[2] 25 times to the previous character for a total cost of 1.\n\tWe choose index i = 3 and shift s[3] 25 times to the next character for a total cost of 0.\n\nExample 2:\n\nInput: s = \"leet\", t = \"code\", nextCost = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1], previousCost = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]\n\nOutput: 31\n\nExplanation:\n\n\tWe choose index i = 0 and shift s[0] 9 times to the previous character for a total cost of 9.\n\tWe choose index i = 1 and shift s[1] 10 times to the next character for a total cost of 10.\n\tWe choose index i = 2 and shift s[2] 1 time to the previous character for a total cost of 1.\n\tWe choose index i = 3 and shift s[3] 11 times to the next character for a total cost of 11.\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length == t.length <= 105\n\ts and t consist only of lowercase English letters.\n\tnextCost.length == previousCost.length == 26\n\t0 <= nextCost[i], previousCost[i] <= 109\n\n## My Submission\n\n- Runtime: 2445 ms\n- Memory: 17.9 MB\n\n## Similar Problems\n\n- [Shifting Letters](https://leetcode.com/problems/shifting-letters/) — Medium\n- [Shifting Letters II](https://leetcode.com/problems/shifting-letters-ii/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-shift-distance-between-two-strings/lc-shift-distance-between-two-strings.py",
+          "content": "class Solution:\n    def shiftDistance(self, s: str, t: str, nextCost: List[int], previousCost: List[int]) -> int:\n        totalc = 0\n        alfa = 26\n\n        for chars, chart in zip(s,t):\n            start = ord(chars) - ord('a')\n            target = ord(chart) - ord('a')\n\n            forward = (target - start) % alfa\n            backward = (start - target) % alfa\n\n            forwardc = sum(nextCost[(start + i) % alfa] for i in range(forward))\n            backwardc = sum(previousCost[(start - i) % alfa] for i in range(backward))\n\n            totalc += min(forwardc, backwardc)\n        return totalc"
+        },
+        {
+          "path": "problems/lc-shift-distance-between-two-strings/README.md",
+          "content": "# Shift Distance Between Two Strings\n\n**Difficulty:** Medium  |  **Acceptance:** 53.6%\n\n**Tags:** `Array`, `String`, `Prefix Sum`\n\n## Problem\n\nYou are given two strings s and t of the same length, and two integer arrays nextCost and previousCost.\n\nIn one operation, you can pick any index i of s, and perform either one of the following actions:\n\n\tShift s[i] to the next letter in the alphabet. If s[i] == 'z', you should replace it with 'a'. This operation costs nextCost[j] where j is the index of s[i] in the alphabet.\n\tShift s[i] to the previous letter in the alphabet. If s[i] == 'a', you should replace it with 'z'. This operation costs previousCost[j] where j is the index of s[i] in the alphabet.\n\nThe shift distance is the minimum total cost of operations required to transform s into t.\n\nReturn the shift distance from s to t.\n\n&nbsp;\nExample 1:\n\nInput: s = \"abab\", t = \"baba\", nextCost = [100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], previousCost = [1,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]\n\nOutput: 2\n\nExplanation:\n\n\tWe choose index i = 0 and shift s[0] 25 times to the previous character for a total cost of 1.\n\tWe choose index i = 1 and shift s[1] 25 times to the next character for a total cost of 0.\n\tWe choose index i = 2 and shift s[2] 25 times to the previous character for a total cost of 1.\n\tWe choose index i = 3 and shift s[3] 25 times to the next character for a total cost of 0.\n\nExample 2:\n\nInput: s = \"leet\", t = \"code\", nextCost = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1], previousCost = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]\n\nOutput: 31\n\nExplanation:\n\n\tWe choose index i = 0 and shift s[0] 9 times to the previous character for a total cost of 9.\n\tWe choose index i = 1 and shift s[1] 10 times to the next character for a total cost of 10.\n\tWe choose index i = 2 and shift s[2] 1 time to the previous character for a total cost of 1.\n\tWe choose index i = 3 and shift s[3] 11 times to the next character for a total cost of 11.\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length == t.length <= 105\n\ts and t consist only of lowercase English letters.\n\tnextCost.length == previousCost.length == 26\n\t0 <= nextCost[i], previousCost[i] <= 109\n\n## My Submission\n\n- Runtime: 2445 ms\n- Memory: 17.9 MB\n\n## Similar Problems\n\n- [Shifting Letters](https://leetcode.com/problems/shifting-letters/) — Medium\n- [Shifting Letters II](https://leetcode.com/problems/shifting-letters-ii/) — Medium\n"
+        }
+      ],
+      "timestamp": 1732373827000,
+      "runtime": "2445 ms",
+      "memory": "17.9 MB",
+      "runtimePct": 7.318000000000165,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given two strings <code>s</code> and <code>t</code> of the same length, and two integer arrays <code>nextCost</code> and <code>previousCost</code>.</p>\n\n<p>In one operation, you can pick any index <code>i</code> of <code>s</code>, and perform <strong>either one</strong> of the following actions:</p>\n\n<ul>\n\t<li>Shift <code>s[i]</code> to the next letter in the alphabet. If <code>s[i] == &#39;z&#39;</code>, you should replace it with <code>&#39;a&#39;</code>. This operation costs <code>nextCost[j]</code> where <code>j</code> is the index of <code>s[i]</code> in the alphabet.</li>\n\t<li>Shift <code>s[i]</code> to the previous letter in the alphabet. If <code>s[i] == &#39;a&#39;</code>, you should replace it with <code>&#39;z&#39;</code>. This operation costs <code>previousCost[j]</code> where <code>j</code> is the index of <code>s[i]</code> in the alphabet.</li>\n</ul>\n\n<p>The <strong>shift distance</strong> is the <strong>minimum</strong> total cost of operations required to transform <code>s</code> into <code>t</code>.</p>\n\n<p>Return the <strong>shift distance</strong> from <code>s</code> to <code>t</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;abab&quot;, t = &quot;baba&quot;, nextCost = [100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], previousCost = [1,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">2</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<ul>\n\t<li>We choose index <code>i = 0</code> and shift <code>s[0]</code> 25 times to the previous character for a total cost of 1.</li>\n\t<li>We choose index <code>i = 1</code> and shift <code>s[1]</code> 25 times to the next character for a total cost of 0.</li>\n\t<li>We choose index <code>i = 2</code> and shift <code>s[2]</code> 25 times to the previous character for a total cost of 1.</li>\n\t<li>We choose index <code>i = 3</code> and shift <code>s[3]</code> 25 times to the next character for a total cost of 0.</li>\n</ul>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;leet&quot;, t = &quot;code&quot;, nextCost = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1], previousCost = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">31</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<ul>\n\t<li>We choose index <code>i = 0</code> and shift <code>s[0]</code> 9 times to the previous character for a total cost of 9.</li>\n\t<li>We choose index <code>i = 1</code> and shift <code>s[1]</code> 10 times to the next character for a total cost of 10.</li>\n\t<li>We choose index <code>i = 2</code> and shift <code>s[2]</code> 1 time to the previous character for a total cost of 1.</li>\n\t<li>We choose index <code>i = 3</code> and shift <code>s[3]</code> 11 times to the next character for a total cost of 11.</li>\n</ul>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length == t.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>s</code> and <code>t</code> consist only of lowercase English letters.</li>\n\t<li><code>nextCost.length == previousCost.length == 26</code></li>\n\t<li><code>0 &lt;= nextCost[i], previousCost[i] &lt;= 10<sup>9</sup></code></li>\n</ul>\n",
+      "hints": [
+        "- For every unordered pair of characters <code>(a, b)</code>, the cost of turning <code>a</code> into <code>b</code> is equal to the minimum between: \r\n<ul>\r\n<li>If <code>i < j</code>, <code>nextCost[i] + nextCost[i + 1] + … + nextCost[j - 1]</code>, and <code>nextCost[i] + nextCost[i + 1] + … + nextCost[25] + nextCost[0] + … + nextCost[j - 1]</code> otherwise.</li>\r\n    \r\n    <li>If <code>i < j</code>, <code>prevCost[i] + prevCost[i - 1] + … + prevCost[0] + prevCost[25] + … + prevCost[j + 1]</code>, and <code>prevCost[i] + prevCost[i - 1] + … + prevCost[j + 1]</code> otherwise.</li>\r\n    </ul>\r\n    Where <code>i</code> and <code>j</code> are the indices of <code>a</code> and <code>b</code> in the alphabet.",
+        "The shift distance is the sum of costs of turning <code>s[i]</code> into <code>t[i]</code>."
+      ],
+      "acRate": 53.57055589492975,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "shifting-letters",
+          "title": "Shifting Letters",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "shifting-letters-ii",
+          "title": "Shifting Letters II",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-minimum-positive-sum-subarray::1461265703",
+      "submissionId": 1461265703,
+      "platform": "leetcode",
+      "title": "Minimum Positive Sum Subarray ",
+      "titleSlug": "minimum-positive-sum-subarray",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Sliding Window",
+        "Prefix Sum"
+      ],
+      "topic": "Sliding Window",
+      "code": "class Solution:\n    def minimumSumSubarray(self, nums: List[int], l: int, r: int) -> int:\n        n = len(nums)\n        minsum = float('inf')\n        \n        for start in range(n):\n            currsum = 0\n            for end in range(start, n):\n                currsum += nums[end]\n                length = end - start + 1\n                if l <= length <= r and currsum > 0:\n                    minsum = min(minsum, currsum)\n        \n        return minsum if minsum != float('inf') else -1",
+      "readmeContent": "# Minimum Positive Sum Subarray \n\n**Difficulty:** Easy  |  **Acceptance:** 45.1%\n\n**Tags:** `Array`, `Sliding Window`, `Prefix Sum`\n\n## Problem\n\nYou are given an integer array nums and two integers l and r. Your task is to find the minimum sum of a subarray whose size is between l and r (inclusive) and whose sum is greater than 0.\n\nReturn the minimum sum of such a subarray. If no such subarray exists, return -1.\n\nA subarray is a contiguous non-empty sequence of elements within an array.\n\n&nbsp;\nExample 1:\n\nInput: nums = [3, -2, 1, 4], l = 2, r = 3\n\nOutput: 1\n\nExplanation:\n\nThe subarrays of length between l = 2 and r = 3 where the sum is greater than 0 are:\n\n\t[3, -2] with a sum of 1\n\t[1, 4] with a sum of 5\n\t[3, -2, 1] with a sum of 2\n\t[-2, 1, 4] with a sum of 3\n\nOut of these, the subarray [3, -2] has a sum of 1, which is the smallest positive sum. Hence, the answer is 1.\n\nExample 2:\n\nInput: nums = [-2, 2, -3, 1], l = 2, r = 3\n\nOutput: -1\n\nExplanation:\n\nThere is no subarray of length between l and r that has a sum greater than 0. So, the answer is -1.\n\nExample 3:\n\nInput: nums = [1, 2, 3, 4], l = 2, r = 4\n\nOutput: 3\n\nExplanation:\n\nThe subarray [1, 2] has a length of 2 and the minimum sum greater than 0. So, the answer is 3.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 100\n\t1 <= l <= r <= nums.length\n\t-1000 <= nums[i] <= 1000\n\n## My Submission\n\n- Runtime: 59 ms\n- Memory: 16.8 MB\n\n## Similar Problems\n\n- [Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-minimum-positive-sum-subarray/lc-minimum-positive-sum-subarray.py",
+          "content": "class Solution:\n    def minimumSumSubarray(self, nums: List[int], l: int, r: int) -> int:\n        n = len(nums)\n        minsum = float('inf')\n        \n        for start in range(n):\n            currsum = 0\n            for end in range(start, n):\n                currsum += nums[end]\n                length = end - start + 1\n                if l <= length <= r and currsum > 0:\n                    minsum = min(minsum, currsum)\n        \n        return minsum if minsum != float('inf') else -1"
+        },
+        {
+          "path": "problems/lc-minimum-positive-sum-subarray/README.md",
+          "content": "# Minimum Positive Sum Subarray \n\n**Difficulty:** Easy  |  **Acceptance:** 45.1%\n\n**Tags:** `Array`, `Sliding Window`, `Prefix Sum`\n\n## Problem\n\nYou are given an integer array nums and two integers l and r. Your task is to find the minimum sum of a subarray whose size is between l and r (inclusive) and whose sum is greater than 0.\n\nReturn the minimum sum of such a subarray. If no such subarray exists, return -1.\n\nA subarray is a contiguous non-empty sequence of elements within an array.\n\n&nbsp;\nExample 1:\n\nInput: nums = [3, -2, 1, 4], l = 2, r = 3\n\nOutput: 1\n\nExplanation:\n\nThe subarrays of length between l = 2 and r = 3 where the sum is greater than 0 are:\n\n\t[3, -2] with a sum of 1\n\t[1, 4] with a sum of 5\n\t[3, -2, 1] with a sum of 2\n\t[-2, 1, 4] with a sum of 3\n\nOut of these, the subarray [3, -2] has a sum of 1, which is the smallest positive sum. Hence, the answer is 1.\n\nExample 2:\n\nInput: nums = [-2, 2, -3, 1], l = 2, r = 3\n\nOutput: -1\n\nExplanation:\n\nThere is no subarray of length between l and r that has a sum greater than 0. So, the answer is -1.\n\nExample 3:\n\nInput: nums = [1, 2, 3, 4], l = 2, r = 4\n\nOutput: 3\n\nExplanation:\n\nThe subarray [1, 2] has a length of 2 and the minimum sum greater than 0. So, the answer is 3.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 100\n\t1 <= l <= r <= nums.length\n\t-1000 <= nums[i] <= 1000\n\n## My Submission\n\n- Runtime: 59 ms\n- Memory: 16.8 MB\n\n## Similar Problems\n\n- [Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/) — Medium\n"
+        }
+      ],
+      "timestamp": 1732416710000,
+      "runtime": "59 ms",
+      "memory": "16.8 MB",
+      "runtimePct": 28.009900000000048,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given an integer array <code>nums</code> and <strong>two</strong> integers <code>l</code> and <code>r</code>. Your task is to find the <strong>minimum</strong> sum of a <strong>subarray</strong> whose size is between <code>l</code> and <code>r</code> (inclusive) and whose sum is greater than 0.</p>\n\n<p>Return the <strong>minimum</strong> sum of such a subarray. If no such subarray exists, return -1.</p>\n\n<p>A <strong>subarray</strong> is a contiguous <b>non-empty</b> sequence of elements within an array.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [3, -2, 1, 4], l = 2, r = 3</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">1</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The subarrays of length between <code>l = 2</code> and <code>r = 3</code> where the sum is greater than 0 are:</p>\n\n<ul>\n\t<li><code>[3, -2]</code> with a sum of 1</li>\n\t<li><code>[1, 4]</code> with a sum of 5</li>\n\t<li><code>[3, -2, 1]</code> with a sum of 2</li>\n\t<li><code>[-2, 1, 4]</code> with a sum of 3</li>\n</ul>\n\n<p>Out of these, the subarray <code>[3, -2]</code> has a sum of 1, which is the smallest positive sum. Hence, the answer is 1.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [-2, 2, -3, 1], l = 2, r = 3</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">-1</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>There is no subarray of length between <code>l</code> and <code>r</code> that has a sum greater than 0. So, the answer is -1.</p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1, 2, 3, 4], l = 2, r = 4</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">3</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The subarray <code>[1, 2]</code> has a length of 2 and the minimum sum greater than 0. So, the answer is 3.</p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 100</code></li>\n\t<li><code>1 &lt;= l &lt;= r &lt;= nums.length</code></li>\n\t<li><code>-1000 &lt;= nums[i] &lt;= 1000</code></li>\n</ul>\n",
+      "hints": [
+        "Check every subarray, since constraints are small."
+      ],
+      "acRate": 45.063187389207634,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "minimum-size-subarray-sum",
+          "title": "Minimum Size Subarray Sum",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-ransom-note::1626469933",
+      "submissionId": 1626469933,
+      "platform": "leetcode",
+      "title": "Ransom Note",
+      "titleSlug": "ransom-note",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Hash Table",
+        "String",
+        "Counting"
+      ],
+      "topic": "Hash Table",
+      "code": "class Solution:\n    def canConstruct(self, ransomNote: str, magazine: str) -> bool:\n        s1 = Counter(ransomNote)\n        s2 = Counter(magazine)\n        if s1 & s2 == s1:\n            return True\n        return False",
+      "readmeContent": "# Ransom Note\n\n**Difficulty:** Easy  |  **Acceptance:** 65.9%\n\n**Tags:** `Hash Table`, `String`, `Counting`\n\n## Problem\n\nGiven two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.\n\nEach letter in magazine can only be used once in ransomNote.\n\n&nbsp;\nExample 1:\nInput: ransomNote = \"a\", magazine = \"b\"\nOutput: false\nExample 2:\nInput: ransomNote = \"aa\", magazine = \"ab\"\nOutput: false\nExample 3:\nInput: ransomNote = \"aa\", magazine = \"aab\"\nOutput: true\n\n&nbsp;\nConstraints:\n\n\t1 <= ransomNote.length, magazine.length <= 105\n\transomNote and magazine consist of lowercase English letters.\n\n## My Submission\n\n- Runtime: 16 ms\n- Memory: 18.1 MB\n\n## Similar Problems\n\n- [Stickers to Spell Word](https://leetcode.com/problems/stickers-to-spell-word/) — Hard\n- [Find Words That Can Be Formed by Characters](https://leetcode.com/problems/find-words-that-can-be-formed-by-characters/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-ransom-note/lc-ransom-note.py",
+          "content": "class Solution:\n    def canConstruct(self, ransomNote: str, magazine: str) -> bool:\n        s1 = Counter(ransomNote)\n        s2 = Counter(magazine)\n        if s1 & s2 == s1:\n            return True\n        return False"
+        },
+        {
+          "path": "problems/lc-ransom-note/README.md",
+          "content": "# Ransom Note\n\n**Difficulty:** Easy  |  **Acceptance:** 65.9%\n\n**Tags:** `Hash Table`, `String`, `Counting`\n\n## Problem\n\nGiven two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.\n\nEach letter in magazine can only be used once in ransomNote.\n\n&nbsp;\nExample 1:\nInput: ransomNote = \"a\", magazine = \"b\"\nOutput: false\nExample 2:\nInput: ransomNote = \"aa\", magazine = \"ab\"\nOutput: false\nExample 3:\nInput: ransomNote = \"aa\", magazine = \"aab\"\nOutput: true\n\n&nbsp;\nConstraints:\n\n\t1 <= ransomNote.length, magazine.length <= 105\n\transomNote and magazine consist of lowercase English letters.\n\n## My Submission\n\n- Runtime: 16 ms\n- Memory: 18.1 MB\n\n## Similar Problems\n\n- [Stickers to Spell Word](https://leetcode.com/problems/stickers-to-spell-word/) — Hard\n- [Find Words That Can Be Formed by Characters](https://leetcode.com/problems/find-words-that-can-be-formed-by-characters/) — Easy\n"
+        }
+      ],
+      "timestamp": 1746479514000,
+      "runtime": "16 ms",
+      "memory": "18.1 MB",
+      "runtimePct": 65.05100000000002,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given two strings <code>ransomNote</code> and <code>magazine</code>, return <code>true</code><em> if </em><code>ransomNote</code><em> can be constructed by using the letters from </em><code>magazine</code><em> and </em><code>false</code><em> otherwise</em>.</p>\n\n<p>Each letter in <code>magazine</code> can only be used once in <code>ransomNote</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<pre><strong>Input:</strong> ransomNote = \"a\", magazine = \"b\"\n<strong>Output:</strong> false\n</pre><p><strong class=\"example\">Example 2:</strong></p>\n<pre><strong>Input:</strong> ransomNote = \"aa\", magazine = \"ab\"\n<strong>Output:</strong> false\n</pre><p><strong class=\"example\">Example 3:</strong></p>\n<pre><strong>Input:</strong> ransomNote = \"aa\", magazine = \"aab\"\n<strong>Output:</strong> true\n</pre>\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= ransomNote.length, magazine.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>ransomNote</code> and <code>magazine</code> consist of lowercase English letters.</li>\n</ul>\n",
+      "hints": null,
+      "acRate": 65.9462562312224,
+      "similar": [
+        {
+          "difficulty": "Hard",
+          "titleSlug": "stickers-to-spell-word",
+          "title": "Stickers to Spell Word",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "find-words-that-can-be-formed-by-characters",
+          "title": "Find Words That Can Be Formed by Characters",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-ugly-number::1626696575",
+      "submissionId": 1626696575,
+      "platform": "leetcode",
+      "title": "Ugly Number",
+      "titleSlug": "ugly-number",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Math"
+      ],
+      "topic": "Math",
+      "code": "class Solution:\n    def isUgly(self, n: int) -> bool:\n        if n<=0:\n            return False\n        while n>0:\n            if n%2==0:\n                n//=2\n            elif n%3==0:\n                n//=3\n            elif n%5==0:\n                n//=5\n            else:\n                break\n        return n==1",
+      "readmeContent": "# Ugly Number\n\n**Difficulty:** Easy  |  **Acceptance:** 43.5%\n\n**Tags:** `Math`\n\n## Problem\n\nAn ugly number is a positive integer which does not have a prime factor other than 2, 3, and 5.\n\nGiven an integer n, return true if n is an ugly number.\n\n&nbsp;\nExample 1:\n\nInput: n = 6\nOutput: true\nExplanation: 6 = 2 &times; 3\n\nExample 2:\n\nInput: n = 1\nOutput: true\nExplanation: 1 has no prime factors.\n\nExample 3:\n\nInput: n = 14\nOutput: false\nExplanation: 14 is not ugly since it includes the prime factor 7.\n\n&nbsp;\nConstraints:\n\n\t-231 <= n <= 231 - 1\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.9 MB\n\n## Similar Problems\n\n- [Happy Number](https://leetcode.com/problems/happy-number/) — Easy\n- [Count Primes](https://leetcode.com/problems/count-primes/) — Medium\n- [Ugly Number II](https://leetcode.com/problems/ugly-number-ii/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-ugly-number/lc-ugly-number.py",
+          "content": "class Solution:\n    def isUgly(self, n: int) -> bool:\n        if n<=0:\n            return False\n        while n>0:\n            if n%2==0:\n                n//=2\n            elif n%3==0:\n                n//=3\n            elif n%5==0:\n                n//=5\n            else:\n                break\n        return n==1"
+        },
+        {
+          "path": "problems/lc-ugly-number/README.md",
+          "content": "# Ugly Number\n\n**Difficulty:** Easy  |  **Acceptance:** 43.5%\n\n**Tags:** `Math`\n\n## Problem\n\nAn ugly number is a positive integer which does not have a prime factor other than 2, 3, and 5.\n\nGiven an integer n, return true if n is an ugly number.\n\n&nbsp;\nExample 1:\n\nInput: n = 6\nOutput: true\nExplanation: 6 = 2 &times; 3\n\nExample 2:\n\nInput: n = 1\nOutput: true\nExplanation: 1 has no prime factors.\n\nExample 3:\n\nInput: n = 14\nOutput: false\nExplanation: 14 is not ugly since it includes the prime factor 7.\n\n&nbsp;\nConstraints:\n\n\t-231 <= n <= 231 - 1\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.9 MB\n\n## Similar Problems\n\n- [Happy Number](https://leetcode.com/problems/happy-number/) — Easy\n- [Count Primes](https://leetcode.com/problems/count-primes/) — Medium\n- [Ugly Number II](https://leetcode.com/problems/ugly-number-ii/) — Medium\n"
+        }
+      ],
+      "timestamp": 1746508341000,
+      "runtime": "0 ms",
+      "memory": "17.9 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>An <strong>ugly number</strong> is a <em>positive</em> integer which does not have a prime factor other than 2, 3, and 5.</p>\n\n<p>Given an integer <code>n</code>, return <code>true</code> <em>if</em> <code>n</code> <em>is an <strong>ugly number</strong></em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 6\n<strong>Output:</strong> true\n<strong>Explanation:</strong> 6 = 2 &times; 3\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 1\n<strong>Output:</strong> true\n<strong>Explanation:</strong> 1 has no prime factors.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 14\n<strong>Output:</strong> false\n<strong>Explanation:</strong> 14 is not ugly since it includes the prime factor 7.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>-2<sup>31</sup> &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>\n",
+      "hints": null,
+      "acRate": 43.520007971082684,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "happy-number",
+          "title": "Happy Number",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "count-primes",
+          "title": "Count Primes",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "ugly-number-ii",
+          "title": "Ugly Number II",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-missing-number::1626720145",
+      "submissionId": 1626720145,
+      "platform": "leetcode",
+      "title": "Missing Number",
+      "titleSlug": "missing-number",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Math",
+        "Binary Search",
+        "Bit Manipulation",
+        "Sorting"
+      ],
+      "topic": "Bit Manipulation",
+      "code": "class Solution:\n    def missingNumber(self, nums: List[int]) -> int:\n        s = len(nums)\n        exs = s * ( s + 1) // 2\n        return exs - sum ( nums )",
+      "readmeContent": "# Missing Number\n\n**Difficulty:** Easy  |  **Acceptance:** 72.0%\n\n**Tags:** `Array`, `Hash Table`, `Math`, `Binary Search`, `Bit Manipulation`, `Sorting`\n\n## Problem\n\nGiven an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.\n\n&nbsp;\nExample 1:\n\nInput: nums = [3,0,1]\n\nOutput: 2\n\nExplanation:\n\nn = 3 since there are 3 numbers, so all numbers are in the range [0,3]. 2 is the missing number in the range since it does not appear in nums.\n\nExample 2:\n\nInput: nums = [0,1]\n\nOutput: 2\n\nExplanation:\n\nn = 2 since there are 2 numbers, so all numbers are in the range [0,2]. 2 is the missing number in the range since it does not appear in nums.\n\nExample 3:\n\nInput: nums = [9,6,4,2,3,5,7,0,1]\n\nOutput: 8\n\nExplanation:\n\nn = 9 since there are 9 numbers, so all numbers are in the range [0,9]. 8 is the missing number in the range since it does not appear in nums.\n\n&nbsp;\n\n&nbsp;\n\n&nbsp;\n\n&nbsp;\n\n&nbsp;\nConstraints:\n\n\tn == nums.length\n\t1 <= n <= 104\n\t0 <= nums[i] <= n\n\tAll the numbers of nums are unique.\n\n&nbsp;\nFollow up: Could you implement a solution using only O(1) extra space complexity and O(n) runtime complexity?\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 18.6 MB\n\n## Similar Problems\n\n- [First Missing Positive](https://leetcode.com/problems/first-missing-positive/) — Hard\n- [Single Number](https://leetcode.com/problems/single-number/) — Easy\n- [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) — Medium\n- [Couples Holding Hands](https://leetcode.com/problems/couples-holding-hands/) — Hard\n- [Find Unique Binary String](https://leetcode.com/problems/find-unique-binary-string/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-missing-number/lc-missing-number.py",
+          "content": "class Solution:\n    def missingNumber(self, nums: List[int]) -> int:\n        s = len(nums)\n        exs = s * ( s + 1) // 2\n        return exs - sum ( nums )"
+        },
+        {
+          "path": "problems/lc-missing-number/README.md",
+          "content": "# Missing Number\n\n**Difficulty:** Easy  |  **Acceptance:** 72.0%\n\n**Tags:** `Array`, `Hash Table`, `Math`, `Binary Search`, `Bit Manipulation`, `Sorting`\n\n## Problem\n\nGiven an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.\n\n&nbsp;\nExample 1:\n\nInput: nums = [3,0,1]\n\nOutput: 2\n\nExplanation:\n\nn = 3 since there are 3 numbers, so all numbers are in the range [0,3]. 2 is the missing number in the range since it does not appear in nums.\n\nExample 2:\n\nInput: nums = [0,1]\n\nOutput: 2\n\nExplanation:\n\nn = 2 since there are 2 numbers, so all numbers are in the range [0,2]. 2 is the missing number in the range since it does not appear in nums.\n\nExample 3:\n\nInput: nums = [9,6,4,2,3,5,7,0,1]\n\nOutput: 8\n\nExplanation:\n\nn = 9 since there are 9 numbers, so all numbers are in the range [0,9]. 8 is the missing number in the range since it does not appear in nums.\n\n&nbsp;\n\n&nbsp;\n\n&nbsp;\n\n&nbsp;\n\n&nbsp;\nConstraints:\n\n\tn == nums.length\n\t1 <= n <= 104\n\t0 <= nums[i] <= n\n\tAll the numbers of nums are unique.\n\n&nbsp;\nFollow up: Could you implement a solution using only O(1) extra space complexity and O(n) runtime complexity?\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 18.6 MB\n\n## Similar Problems\n\n- [First Missing Positive](https://leetcode.com/problems/first-missing-positive/) — Hard\n- [Single Number](https://leetcode.com/problems/single-number/) — Easy\n- [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) — Medium\n- [Couples Holding Hands](https://leetcode.com/problems/couples-holding-hands/) — Hard\n- [Find Unique Binary String](https://leetcode.com/problems/find-unique-binary-string/) — Medium\n"
+        }
+      ],
+      "timestamp": 1746510386000,
+      "runtime": "0 ms",
+      "memory": "18.6 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an array <code>nums</code> containing <code>n</code> distinct numbers in the range <code>[0, n]</code>, return <em>the only number in the range that is missing from the array.</em></p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [3,0,1]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">2</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p><code>n = 3</code> since there are 3 numbers, so all numbers are in the range <code>[0,3]</code>. 2 is the missing number in the range since it does not appear in <code>nums</code>.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [0,1]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">2</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p><code>n = 2</code> since there are 2 numbers, so all numbers are in the range <code>[0,2]</code>. 2 is the missing number in the range since it does not appear in <code>nums</code>.</p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [9,6,4,2,3,5,7,0,1]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">8</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p><code>n = 9</code> since there are 9 numbers, so all numbers are in the range <code>[0,9]</code>. 8 is the missing number in the range since it does not appear in <code>nums</code>.</p>\n</div>\n\n<div class=\"simple-translate-system-theme\" id=\"simple-translate\">\n<div>\n<div class=\"simple-translate-button isShow\" style=\"background-image: url(&quot;moz-extension://8a9ffb6b-7e69-4e93-aae1-436a1448eff6/icons/512.png&quot;); height: 22px; width: 22px; top: 318px; left: 36px;\">&nbsp;</div>\n\n<div class=\"simple-translate-panel \" style=\"width: 300px; height: 200px; top: 0px; left: 0px; font-size: 13px;\">\n<div class=\"simple-translate-result-wrapper\" style=\"overflow: hidden;\">\n<div class=\"simple-translate-move\" draggable=\"true\">&nbsp;</div>\n\n<div class=\"simple-translate-result-contents\">\n<p class=\"simple-translate-result\" dir=\"auto\">&nbsp;</p>\n\n<p class=\"simple-translate-candidate\" dir=\"auto\">&nbsp;</p>\n</div>\n</div>\n</div>\n</div>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>n == nums.length</code></li>\n\t<li><code>1 &lt;= n &lt;= 10<sup>4</sup></code></li>\n\t<li><code>0 &lt;= nums[i] &lt;= n</code></li>\n\t<li>All the numbers of <code>nums</code> are <strong>unique</strong>.</li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Follow up:</strong> Could you implement a solution using only <code>O(1)</code> extra space complexity and <code>O(n)</code> runtime complexity?</p>\n",
+      "hints": null,
+      "acRate": 71.97846184579984,
+      "similar": [
+        {
+          "difficulty": "Hard",
+          "titleSlug": "first-missing-positive",
+          "title": "First Missing Positive",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "single-number",
+          "title": "Single Number",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "find-the-duplicate-number",
+          "title": "Find the Duplicate Number",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "couples-holding-hands",
+          "title": "Couples Holding Hands",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "find-unique-binary-string",
+          "title": "Find Unique Binary String",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "find-the-largest-almost-missing-integer",
+          "title": "Find the Largest Almost Missing Integer",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-can-make-arithmetic-progression-from-sequence::1626740114",
+      "submissionId": 1626740114,
+      "platform": "leetcode",
+      "title": "Can Make Arithmetic Progression From Sequence",
+      "titleSlug": "can-make-arithmetic-progression-from-sequence",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Sorting"
+      ],
+      "topic": "Sorting",
+      "code": "class Solution:\n    def canMakeArithmeticProgression(self, arr: List[int]) -> bool:\n        arr.sort()\n        for i in range(len(arr)):\n            if i == 0:\n                diff = arr[1] - arr[0]\n            if (i != 0) and (i != len(arr)-1):\n                if arr[i] - arr[i-1] != arr[i+1] - arr[i] != diff:\n                    return False\n        return True",
+      "readmeContent": "# Can Make Arithmetic Progression From Sequence\n\n**Difficulty:** Easy  |  **Acceptance:** 68.9%\n\n**Tags:** `Array`, `Sorting`\n\n## Problem\n\nA sequence of numbers is called an arithmetic progression if the difference between any two consecutive elements is the same.\n\nGiven an array of numbers arr, return true if the array can be rearranged to form an arithmetic progression. Otherwise, return false.\n\n&nbsp;\nExample 1:\n\nInput: arr = [3,5,1]\nOutput: true\nExplanation: We can reorder the elements as [1,3,5] or [5,3,1] with differences 2 and -2 respectively, between each consecutive elements.\n\nExample 2:\n\nInput: arr = [1,2,4]\nOutput: false\nExplanation: There is no way to reorder the elements to obtain an arithmetic progression.\n\n&nbsp;\nConstraints:\n\n\t2 <= arr.length <= 1000\n\t-106 <= arr[i] <= 106\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.6 MB\n\n## Similar Problems\n\n- [Arithmetic Subarrays](https://leetcode.com/problems/arithmetic-subarrays/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-can-make-arithmetic-progression-from-sequence/lc-can-make-arithmetic-progression-from-sequence.py",
+          "content": "class Solution:\n    def canMakeArithmeticProgression(self, arr: List[int]) -> bool:\n        arr.sort()\n        for i in range(len(arr)):\n            if i == 0:\n                diff = arr[1] - arr[0]\n            if (i != 0) and (i != len(arr)-1):\n                if arr[i] - arr[i-1] != arr[i+1] - arr[i] != diff:\n                    return False\n        return True"
+        },
+        {
+          "path": "problems/lc-can-make-arithmetic-progression-from-sequence/README.md",
+          "content": "# Can Make Arithmetic Progression From Sequence\n\n**Difficulty:** Easy  |  **Acceptance:** 68.9%\n\n**Tags:** `Array`, `Sorting`\n\n## Problem\n\nA sequence of numbers is called an arithmetic progression if the difference between any two consecutive elements is the same.\n\nGiven an array of numbers arr, return true if the array can be rearranged to form an arithmetic progression. Otherwise, return false.\n\n&nbsp;\nExample 1:\n\nInput: arr = [3,5,1]\nOutput: true\nExplanation: We can reorder the elements as [1,3,5] or [5,3,1] with differences 2 and -2 respectively, between each consecutive elements.\n\nExample 2:\n\nInput: arr = [1,2,4]\nOutput: false\nExplanation: There is no way to reorder the elements to obtain an arithmetic progression.\n\n&nbsp;\nConstraints:\n\n\t2 <= arr.length <= 1000\n\t-106 <= arr[i] <= 106\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.6 MB\n\n## Similar Problems\n\n- [Arithmetic Subarrays](https://leetcode.com/problems/arithmetic-subarrays/) — Medium\n"
+        }
+      ],
+      "timestamp": 1746512029000,
+      "runtime": "0 ms",
+      "memory": "17.6 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>A sequence of numbers is called an <strong>arithmetic progression</strong> if the difference between any two consecutive elements is the same.</p>\n\n<p>Given an array of numbers <code>arr</code>, return <code>true</code> <em>if the array can be rearranged to form an <strong>arithmetic progression</strong>. Otherwise, return</em> <code>false</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> arr = [3,5,1]\n<strong>Output:</strong> true\n<strong>Explanation: </strong>We can reorder the elements as [1,3,5] or [5,3,1] with differences 2 and -2 respectively, between each consecutive elements.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> arr = [1,2,4]\n<strong>Output:</strong> false\n<strong>Explanation: </strong>There is no way to reorder the elements to obtain an arithmetic progression.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>2 &lt;= arr.length &lt;= 1000</code></li>\n\t<li><code>-10<sup>6</sup> &lt;= arr[i] &lt;= 10<sup>6</sup></code></li>\n</ul>\n",
+      "hints": [
+        "Consider that any valid arithmetic progression will be in sorted order.",
+        "Sort the array, then check if the differences of all consecutive elements are equal."
+      ],
+      "acRate": 68.93131752910867,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "arithmetic-subarrays",
+          "title": "Arithmetic Subarrays",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-slowest-key::1627212876",
+      "submissionId": 1627212876,
+      "platform": "leetcode",
+      "title": "Slowest Key",
+      "titleSlug": "slowest-key",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "String"
+      ],
+      "topic": "Array",
+      "code": "class Solution:\n    def slowestKey(self, releaseTimes: List[int], keysPressed: str) -> str:\n        maxe = releaseTimes[0]\n        nmax = 0\n        for i in range(1,len(releaseTimes)):\n            diff = releaseTimes[i] - releaseTimes[i-1]\n            if maxe < diff or ( maxe == diff and keysPressed[i] > keysPressed[nmax]):\n                # print(maxe)\n                maxe = diff\n                # print(maxe)\n                nmax = i\n        \n        return keysPressed[nmax]",
+      "readmeContent": "# Slowest Key\n\n**Difficulty:** Easy  |  **Acceptance:** 59.6%\n\n**Tags:** `Array`, `String`\n\n## Problem\n\nA newly designed keypad was tested, where a tester pressed a sequence of n keys, one at a time.\n\nYou are given a string keysPressed of length n, where keysPressed[i] was the ith key pressed in the testing sequence, and a sorted list releaseTimes, where releaseTimes[i] was the time the ith key was released. Both arrays are 0-indexed. The 0th key was pressed at the time 0,&nbsp;and every subsequent key was pressed at the exact time the previous key was released.\n\nThe tester wants to know the key of the keypress that had the longest duration. The ith keypress had a duration of releaseTimes[i] - releaseTimes[i - 1], and the 0th keypress had a duration of releaseTimes[0].\n\nNote that the same key could have been pressed multiple times during the test, and these multiple presses of the same key may not have had the same duration.\n\nReturn the key of the keypress that had the longest duration. If there are multiple such keypresses, return the lexicographically largest key of the keypresses.\n\n&nbsp;\nExample 1:\n\nInput: releaseTimes = [9,29,49,50], keysPressed = \"cbcd\"\nOutput: \"c\"\nExplanation: The keypresses were as follows:\nKeypress for 'c' had a duration of 9 (pressed at time 0 and released at time 9).\nKeypress for 'b' had a duration of 29 - 9 = 20 (pressed at time 9 right after the release of the previous character and released at time 29).\nKeypress for 'c' had a duration of 49 - 29 = 20 (pressed at time 29 right after the release of the previous character and released at time 49).\nKeypress for 'd' had a duration of 50 - 49 = 1 (pressed at time 49 right after the release of the previous character and released at time 50).\nThe longest of these was the keypress for 'b' and the second keypress for 'c', both with duration 20.\n'c' is lexicographically larger than 'b', so the answer is 'c'.\n\nExample 2:\n\nInput: releaseTimes = [12,23,36,46,62], keysPressed = \"spuda\"\nOutput: \"a\"\nExplanation: The keypresses were as follows:\nKeypress for 's' had a duration of 12.\nKeypress for 'p' had a duration of 23 - 12 = 11.\nKeypress for 'u' had a duration of 36 - 23 = 13.\nKeypress for 'd' had a duration of 46 - 36 = 10.\nKeypress for 'a' had a duration of 62 - 46 = 16.\nThe longest of these was the keypress for 'a' with duration 16.\n\n&nbsp;\nConstraints:\n\n\treleaseTimes.length == n\n\tkeysPressed.length == n\n\t2 <= n <= 1000\n\t1 <= releaseTimes[i] <= 109\n\treleaseTimes[i] < releaseTimes[i+1]\n\tkeysPressed contains only lowercase English letters.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.7 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-slowest-key/lc-slowest-key.py",
+          "content": "class Solution:\n    def slowestKey(self, releaseTimes: List[int], keysPressed: str) -> str:\n        maxe = releaseTimes[0]\n        nmax = 0\n        for i in range(1,len(releaseTimes)):\n            diff = releaseTimes[i] - releaseTimes[i-1]\n            if maxe < diff or ( maxe == diff and keysPressed[i] > keysPressed[nmax]):\n                # print(maxe)\n                maxe = diff\n                # print(maxe)\n                nmax = i\n        \n        return keysPressed[nmax]"
+        },
+        {
+          "path": "problems/lc-slowest-key/README.md",
+          "content": "# Slowest Key\n\n**Difficulty:** Easy  |  **Acceptance:** 59.6%\n\n**Tags:** `Array`, `String`\n\n## Problem\n\nA newly designed keypad was tested, where a tester pressed a sequence of n keys, one at a time.\n\nYou are given a string keysPressed of length n, where keysPressed[i] was the ith key pressed in the testing sequence, and a sorted list releaseTimes, where releaseTimes[i] was the time the ith key was released. Both arrays are 0-indexed. The 0th key was pressed at the time 0,&nbsp;and every subsequent key was pressed at the exact time the previous key was released.\n\nThe tester wants to know the key of the keypress that had the longest duration. The ith keypress had a duration of releaseTimes[i] - releaseTimes[i - 1], and the 0th keypress had a duration of releaseTimes[0].\n\nNote that the same key could have been pressed multiple times during the test, and these multiple presses of the same key may not have had the same duration.\n\nReturn the key of the keypress that had the longest duration. If there are multiple such keypresses, return the lexicographically largest key of the keypresses.\n\n&nbsp;\nExample 1:\n\nInput: releaseTimes = [9,29,49,50], keysPressed = \"cbcd\"\nOutput: \"c\"\nExplanation: The keypresses were as follows:\nKeypress for 'c' had a duration of 9 (pressed at time 0 and released at time 9).\nKeypress for 'b' had a duration of 29 - 9 = 20 (pressed at time 9 right after the release of the previous character and released at time 29).\nKeypress for 'c' had a duration of 49 - 29 = 20 (pressed at time 29 right after the release of the previous character and released at time 49).\nKeypress for 'd' had a duration of 50 - 49 = 1 (pressed at time 49 right after the release of the previous character and released at time 50).\nThe longest of these was the keypress for 'b' and the second keypress for 'c', both with duration 20.\n'c' is lexicographically larger than 'b', so the answer is 'c'.\n\nExample 2:\n\nInput: releaseTimes = [12,23,36,46,62], keysPressed = \"spuda\"\nOutput: \"a\"\nExplanation: The keypresses were as follows:\nKeypress for 's' had a duration of 12.\nKeypress for 'p' had a duration of 23 - 12 = 11.\nKeypress for 'u' had a duration of 36 - 23 = 13.\nKeypress for 'd' had a duration of 46 - 36 = 10.\nKeypress for 'a' had a duration of 62 - 46 = 16.\nThe longest of these was the keypress for 'a' with duration 16.\n\n&nbsp;\nConstraints:\n\n\treleaseTimes.length == n\n\tkeysPressed.length == n\n\t2 <= n <= 1000\n\t1 <= releaseTimes[i] <= 109\n\treleaseTimes[i] < releaseTimes[i+1]\n\tkeysPressed contains only lowercase English letters.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.7 MB\n"
+        }
+      ],
+      "timestamp": 1746553615000,
+      "runtime": "0 ms",
+      "memory": "17.7 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>A newly designed keypad was tested, where a tester pressed a sequence of <code>n</code> keys, one at a time.</p>\n\n<p>You are given a string <code>keysPressed</code> of length <code>n</code>, where <code>keysPressed[i]</code> was the <code>i<sup>th</sup></code> key pressed in the testing sequence, and a sorted list <code>releaseTimes</code>, where <code>releaseTimes[i]</code> was the time the <code>i<sup>th</sup></code> key was released. Both arrays are <strong>0-indexed</strong>. The <code>0<sup>th</sup></code> key was pressed at the time <code>0</code>,&nbsp;and every subsequent key was pressed at the <strong>exact</strong> time the previous key was released.</p>\n\n<p>The tester wants to know the key of the keypress that had the <strong>longest duration</strong>. The <code>i<sup>th</sup></code><sup> </sup>keypress had a <strong>duration</strong> of <code>releaseTimes[i] - releaseTimes[i - 1]</code>, and the <code>0<sup>th</sup></code> keypress had a duration of <code>releaseTimes[0]</code>.</p>\n\n<p>Note that the same key could have been pressed multiple times during the test, and these multiple presses of the same key <strong>may not</strong> have had the same <strong>duration</strong>.</p>\n\n<p><em>Return the key of the keypress that had the <strong>longest duration</strong>. If there are multiple such keypresses, return the lexicographically largest key of the keypresses.</em></p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> releaseTimes = [9,29,49,50], keysPressed = &quot;cbcd&quot;\n<strong>Output:</strong> &quot;c&quot;\n<strong>Explanation:</strong> The keypresses were as follows:\nKeypress for &#39;c&#39; had a duration of 9 (pressed at time 0 and released at time 9).\nKeypress for &#39;b&#39; had a duration of 29 - 9 = 20 (pressed at time 9 right after the release of the previous character and released at time 29).\nKeypress for &#39;c&#39; had a duration of 49 - 29 = 20 (pressed at time 29 right after the release of the previous character and released at time 49).\nKeypress for &#39;d&#39; had a duration of 50 - 49 = 1 (pressed at time 49 right after the release of the previous character and released at time 50).\nThe longest of these was the keypress for &#39;b&#39; and the second keypress for &#39;c&#39;, both with duration 20.\n&#39;c&#39; is lexicographically larger than &#39;b&#39;, so the answer is &#39;c&#39;.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> releaseTimes = [12,23,36,46,62], keysPressed = &quot;spuda&quot;\n<strong>Output:</strong> &quot;a&quot;\n<strong>Explanation:</strong> The keypresses were as follows:\nKeypress for &#39;s&#39; had a duration of 12.\nKeypress for &#39;p&#39; had a duration of 23 - 12 = 11.\nKeypress for &#39;u&#39; had a duration of 36 - 23 = 13.\nKeypress for &#39;d&#39; had a duration of 46 - 36 = 10.\nKeypress for &#39;a&#39; had a duration of 62 - 46 = 16.\nThe longest of these was the keypress for &#39;a&#39; with duration 16.</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>releaseTimes.length == n</code></li>\n\t<li><code>keysPressed.length == n</code></li>\n\t<li><code>2 &lt;= n &lt;= 1000</code></li>\n\t<li><code>1 &lt;= releaseTimes[i] &lt;= 10<sup>9</sup></code></li>\n\t<li><code>releaseTimes[i] &lt; releaseTimes[i+1]</code></li>\n\t<li><code>keysPressed</code> contains only lowercase English letters.</li>\n</ul>\n",
+      "hints": [
+        "Get for each press its key and amount of time taken.",
+        "Iterate on the presses, maintaining the answer so far.",
+        "The current press will change the answer if and only if its amount of time taken is longer than that of the previous answer, or they are equal but the key is larger than that of the previous answer."
+      ],
+      "acRate": 59.615121389861955,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-length-of-last-word::1627215076",
+      "submissionId": 1627215076,
+      "platform": "leetcode",
+      "title": "Length of Last Word",
+      "titleSlug": "length-of-last-word",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "String"
+      ],
+      "topic": "String",
+      "code": "class Solution:\n    def lengthOfLastWord(self, s: str) -> int:\n        s = s.strip().split(\" \")\n        l = s[-1]\n        return len(l)",
+      "readmeContent": "# Length of Last Word\n\n**Difficulty:** Easy  |  **Acceptance:** 58.8%\n\n**Tags:** `String`\n\n## Problem\n\nGiven a string s consisting of words and spaces, return the length of the last word in the string.\n\nA word is a maximal substring consisting of non-space characters only.\n\n&nbsp;\nExample 1:\n\nInput: s = \"Hello World\"\nOutput: 5\nExplanation: The last word is \"World\" with length 5.\n\nExample 2:\n\nInput: s = \"   fly me   to   the moon  \"\nOutput: 4\nExplanation: The last word is \"moon\" with length 4.\n\nExample 3:\n\nInput: s = \"luffy is still joyboy\"\nOutput: 6\nExplanation: The last word is \"joyboy\" with length 6.\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 104\n\ts consists of only English letters and spaces ' '.\n\tThere will be at least one word in s.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.8 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-length-of-last-word/lc-length-of-last-word.py",
+          "content": "class Solution:\n    def lengthOfLastWord(self, s: str) -> int:\n        s = s.strip().split(\" \")\n        l = s[-1]\n        return len(l)"
+        },
+        {
+          "path": "problems/lc-length-of-last-word/README.md",
+          "content": "# Length of Last Word\n\n**Difficulty:** Easy  |  **Acceptance:** 58.8%\n\n**Tags:** `String`\n\n## Problem\n\nGiven a string s consisting of words and spaces, return the length of the last word in the string.\n\nA word is a maximal substring consisting of non-space characters only.\n\n&nbsp;\nExample 1:\n\nInput: s = \"Hello World\"\nOutput: 5\nExplanation: The last word is \"World\" with length 5.\n\nExample 2:\n\nInput: s = \"   fly me   to   the moon  \"\nOutput: 4\nExplanation: The last word is \"moon\" with length 4.\n\nExample 3:\n\nInput: s = \"luffy is still joyboy\"\nOutput: 6\nExplanation: The last word is \"joyboy\" with length 6.\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 104\n\ts consists of only English letters and spaces ' '.\n\tThere will be at least one word in s.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.8 MB\n"
+        }
+      ],
+      "timestamp": 1746553756000,
+      "runtime": "0 ms",
+      "memory": "17.8 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given a string <code>s</code> consisting of words and spaces, return <em>the length of the <strong>last</strong> word in the string.</em></p>\n\n<p>A <strong>word</strong> is a maximal <span data-keyword=\"substring-nonempty\">substring</span> consisting of non-space characters only.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;Hello World&quot;\n<strong>Output:</strong> 5\n<strong>Explanation:</strong> The last word is &quot;World&quot; with length 5.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;   fly me   to   the moon  &quot;\n<strong>Output:</strong> 4\n<strong>Explanation:</strong> The last word is &quot;moon&quot; with length 4.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;luffy is still joyboy&quot;\n<strong>Output:</strong> 6\n<strong>Explanation:</strong> The last word is &quot;joyboy&quot; with length 6.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>s</code> consists of only English letters and spaces <code>&#39; &#39;</code>.</li>\n\t<li>There will be at least one word in <code>s</code>.</li>\n</ul>\n",
+      "hints": null,
+      "acRate": 58.79397122925491,
+      "similar": null,
+      "hasSimilar": null,
+      "conflictPending": true,
+      "conflictCandidates": [
+        {
+          "id": "lc-length-of-last-word::1627215692",
+          "code": "class Solution:\n    def lengthOfLastWord(self, s: str) -> int:\n        return len(s.strip().split(\" \")[-1])\n",
+          "lang": {
+            "name": "Python3",
+            "ext": "py",
+            "slug": "python3"
+          },
+          "runtime": "0 ms",
+          "memory": "17.7 MB",
+          "runtimePct": 100,
+          "memoryPct": 100,
+          "timestamp": 1746553799000,
+          "submissionId": 1627215692
+        }
+      ]
+    },
+    {
+      "id": "lc-length-of-last-word::1627215692",
+      "submissionId": 1627215692,
+      "platform": "leetcode",
+      "title": "Length of Last Word",
+      "titleSlug": "length-of-last-word",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "String"
+      ],
+      "topic": "String",
+      "code": "class Solution:\n    def lengthOfLastWord(self, s: str) -> int:\n        return len(s.strip().split(\" \")[-1])\n",
+      "readmeContent": "# Length of Last Word\n\n**Difficulty:** Easy  |  **Acceptance:** 58.8%\n\n**Tags:** `String`\n\n## Problem\n\nGiven a string s consisting of words and spaces, return the length of the last word in the string.\n\nA word is a maximal substring consisting of non-space characters only.\n\n&nbsp;\nExample 1:\n\nInput: s = \"Hello World\"\nOutput: 5\nExplanation: The last word is \"World\" with length 5.\n\nExample 2:\n\nInput: s = \"   fly me   to   the moon  \"\nOutput: 4\nExplanation: The last word is \"moon\" with length 4.\n\nExample 3:\n\nInput: s = \"luffy is still joyboy\"\nOutput: 6\nExplanation: The last word is \"joyboy\" with length 6.\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 104\n\ts consists of only English letters and spaces ' '.\n\tThere will be at least one word in s.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.7 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-length-of-last-word/lc-length-of-last-word.py",
+          "content": "class Solution:\n    def lengthOfLastWord(self, s: str) -> int:\n        return len(s.strip().split(\" \")[-1])\n"
+        },
+        {
+          "path": "problems/lc-length-of-last-word/README.md",
+          "content": "# Length of Last Word\n\n**Difficulty:** Easy  |  **Acceptance:** 58.8%\n\n**Tags:** `String`\n\n## Problem\n\nGiven a string s consisting of words and spaces, return the length of the last word in the string.\n\nA word is a maximal substring consisting of non-space characters only.\n\n&nbsp;\nExample 1:\n\nInput: s = \"Hello World\"\nOutput: 5\nExplanation: The last word is \"World\" with length 5.\n\nExample 2:\n\nInput: s = \"   fly me   to   the moon  \"\nOutput: 4\nExplanation: The last word is \"moon\" with length 4.\n\nExample 3:\n\nInput: s = \"luffy is still joyboy\"\nOutput: 6\nExplanation: The last word is \"joyboy\" with length 6.\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 104\n\ts consists of only English letters and spaces ' '.\n\tThere will be at least one word in s.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.7 MB\n"
+        }
+      ],
+      "timestamp": 1746553799000,
+      "runtime": "0 ms",
+      "memory": "17.7 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given a string <code>s</code> consisting of words and spaces, return <em>the length of the <strong>last</strong> word in the string.</em></p>\n\n<p>A <strong>word</strong> is a maximal <span data-keyword=\"substring-nonempty\">substring</span> consisting of non-space characters only.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;Hello World&quot;\n<strong>Output:</strong> 5\n<strong>Explanation:</strong> The last word is &quot;World&quot; with length 5.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;   fly me   to   the moon  &quot;\n<strong>Output:</strong> 4\n<strong>Explanation:</strong> The last word is &quot;moon&quot; with length 4.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;luffy is still joyboy&quot;\n<strong>Output:</strong> 6\n<strong>Explanation:</strong> The last word is &quot;joyboy&quot; with length 6.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>s</code> consists of only English letters and spaces <code>&#39; &#39;</code>.</li>\n\t<li>There will be at least one word in <code>s</code>.</li>\n</ul>\n",
+      "hints": null,
+      "acRate": 58.79397122925491,
+      "similar": null,
+      "hasSimilar": null,
+      "isDuplicate": true,
+      "duplicateOf": "lc-length-of-last-word::1627215076"
+    },
+    {
+      "id": "lc-longest-common-prefix::1650472821",
+      "submissionId": 1650472821,
+      "platform": "leetcode",
+      "title": "Longest Common Prefix",
+      "titleSlug": "longest-common-prefix",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "String",
+        "Trie"
+      ],
+      "topic": "Trie",
+      "code": "class Solution:\n    def longestCommonPrefix(self, strs: List[str]) -> str:\n        lng = \"\"\n        strs = sorted(strs)\n        for i in range(min(len(strs[0]),len(strs[-1]))):\n            if (strs[0][i] != strs[-1][i]):\n                return lng\n            lng+=strs[0][i]\n        \n        return lng",
+      "readmeContent": "# Longest Common Prefix\n\n**Difficulty:** Easy  |  **Acceptance:** 47.5%\n\n**Tags:** `Array`, `String`, `Trie`\n\n## Problem\n\nWrite a function to find the longest common prefix string amongst an array of strings.\n\nIf there is no common prefix, return an empty string \"\".\n\n&nbsp;\nExample 1:\n\nInput: strs = [\"flower\",\"flow\",\"flight\"]\nOutput: \"fl\"\n\nExample 2:\n\nInput: strs = [\"dog\",\"racecar\",\"car\"]\nOutput: \"\"\nExplanation: There is no common prefix among the input strings.\n\n&nbsp;\nConstraints:\n\n\t1 <= strs.length <= 200\n\t0 <= strs[i].length <= 200\n\tstrs[i] consists of only lowercase English letters if it is non-empty.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.8 MB\n\n## Similar Problems\n\n- [Smallest Missing Integer Greater Than Sequential Prefix Sum](https://leetcode.com/problems/smallest-missing-integer-greater-than-sequential-prefix-sum/) — Easy\n- [Find the Length of the Longest Common Prefix](https://leetcode.com/problems/find-the-length-of-the-longest-common-prefix/) — Medium\n- [Longest Common Suffix Queries](https://leetcode.com/problems/longest-common-suffix-queries/) — Hard\n",
+      "files": [
+        {
+          "path": "problems/lc-longest-common-prefix/lc-longest-common-prefix.py",
+          "content": "class Solution:\n    def longestCommonPrefix(self, strs: List[str]) -> str:\n        lng = \"\"\n        strs = sorted(strs)\n        for i in range(min(len(strs[0]),len(strs[-1]))):\n            if (strs[0][i] != strs[-1][i]):\n                return lng\n            lng+=strs[0][i]\n        \n        return lng"
+        },
+        {
+          "path": "problems/lc-longest-common-prefix/README.md",
+          "content": "# Longest Common Prefix\n\n**Difficulty:** Easy  |  **Acceptance:** 47.5%\n\n**Tags:** `Array`, `String`, `Trie`\n\n## Problem\n\nWrite a function to find the longest common prefix string amongst an array of strings.\n\nIf there is no common prefix, return an empty string \"\".\n\n&nbsp;\nExample 1:\n\nInput: strs = [\"flower\",\"flow\",\"flight\"]\nOutput: \"fl\"\n\nExample 2:\n\nInput: strs = [\"dog\",\"racecar\",\"car\"]\nOutput: \"\"\nExplanation: There is no common prefix among the input strings.\n\n&nbsp;\nConstraints:\n\n\t1 <= strs.length <= 200\n\t0 <= strs[i].length <= 200\n\tstrs[i] consists of only lowercase English letters if it is non-empty.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.8 MB\n\n## Similar Problems\n\n- [Smallest Missing Integer Greater Than Sequential Prefix Sum](https://leetcode.com/problems/smallest-missing-integer-greater-than-sequential-prefix-sum/) — Easy\n- [Find the Length of the Longest Common Prefix](https://leetcode.com/problems/find-the-length-of-the-longest-common-prefix/) — Medium\n- [Longest Common Suffix Queries](https://leetcode.com/problems/longest-common-suffix-queries/) — Hard\n"
+        }
+      ],
+      "timestamp": 1748762079000,
+      "runtime": "0 ms",
+      "memory": "17.8 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>Write a function to find the longest common prefix string amongst an array of strings.</p>\n\n<p>If there is no common prefix, return an empty string <code>&quot;&quot;</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> strs = [&quot;flower&quot;,&quot;flow&quot;,&quot;flight&quot;]\n<strong>Output:</strong> &quot;fl&quot;\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> strs = [&quot;dog&quot;,&quot;racecar&quot;,&quot;car&quot;]\n<strong>Output:</strong> &quot;&quot;\n<strong>Explanation:</strong> There is no common prefix among the input strings.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= strs.length &lt;= 200</code></li>\n\t<li><code>0 &lt;= strs[i].length &lt;= 200</code></li>\n\t<li><code>strs[i]</code> consists of only lowercase English letters if it is non-empty.</li>\n</ul>\n",
+      "hints": null,
+      "acRate": 47.54132901227897,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "smallest-missing-integer-greater-than-sequential-prefix-sum",
+          "title": "Smallest Missing Integer Greater Than Sequential Prefix Sum",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "find-the-length-of-the-longest-common-prefix",
+          "title": "Find the Length of the Longest Common Prefix",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "longest-common-suffix-queries",
+          "title": "Longest Common Suffix Queries",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-smallest-missing-integer-greater-than-sequential-prefix-sum::1650604745",
+      "submissionId": 1650604745,
+      "platform": "leetcode",
+      "title": "Smallest Missing Integer Greater Than Sequential Prefix Sum",
+      "titleSlug": "smallest-missing-integer-greater-than-sequential-prefix-sum",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Sorting"
+      ],
+      "topic": "Hash Table",
+      "code": "class Solution:\n    def missingInteger(self, nums: List[int]) -> int:\n        sum = nums[0]\n        for i in range(1, len(nums)):\n            if nums[i] == nums[i - 1] + 1:\n                sum += nums[i]\n            else:\n                break\n        while sum in nums:\n            sum += 1\n\n        return sum\n",
+      "readmeContent": "# Smallest Missing Integer Greater Than Sequential Prefix Sum\n\n**Difficulty:** Easy  |  **Acceptance:** 35.5%\n\n**Tags:** `Array`, `Hash Table`, `Sorting`\n\n## Problem\n\nYou are given a 0-indexed array of integers nums.\n\nA prefix nums[0..i] is sequential if, for all 1 <= j <= i, nums[j] = nums[j - 1] + 1. In particular, the prefix consisting only of nums[0] is sequential.\n\nReturn the smallest integer x missing from nums such that x is greater than or equal to the sum of the longest sequential prefix.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,2,3,2,5]\nOutput: 6\nExplanation: The longest sequential prefix of nums is [1,2,3] with a sum of 6. 6 is not in the array, therefore 6 is the smallest missing integer greater than or equal to the sum of the longest sequential prefix.\n\nExample 2:\n\nInput: nums = [3,4,5,1,12,14,13]\nOutput: 15\nExplanation: The longest sequential prefix of nums is [3,4,5] with a sum of 12. 12, 13, and 14 belong to the array while 15 does not. Therefore 15 is the smallest missing integer greater than or equal to the sum of the longest sequential prefix.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 50\n\t1 <= nums[i] <= 50\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.7 MB\n\n## Similar Problems\n\n- [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) — Easy\n- [First Missing Positive](https://leetcode.com/problems/first-missing-positive/) — Hard\n- [Next Greater Element I](https://leetcode.com/problems/next-greater-element-i/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-smallest-missing-integer-greater-than-sequential-prefix-sum/lc-smallest-missing-integer-greater-than-sequential-prefix-sum.py",
+          "content": "class Solution:\n    def missingInteger(self, nums: List[int]) -> int:\n        sum = nums[0]\n        for i in range(1, len(nums)):\n            if nums[i] == nums[i - 1] + 1:\n                sum += nums[i]\n            else:\n                break\n        while sum in nums:\n            sum += 1\n\n        return sum\n"
+        },
+        {
+          "path": "problems/lc-smallest-missing-integer-greater-than-sequential-prefix-sum/README.md",
+          "content": "# Smallest Missing Integer Greater Than Sequential Prefix Sum\n\n**Difficulty:** Easy  |  **Acceptance:** 35.5%\n\n**Tags:** `Array`, `Hash Table`, `Sorting`\n\n## Problem\n\nYou are given a 0-indexed array of integers nums.\n\nA prefix nums[0..i] is sequential if, for all 1 <= j <= i, nums[j] = nums[j - 1] + 1. In particular, the prefix consisting only of nums[0] is sequential.\n\nReturn the smallest integer x missing from nums such that x is greater than or equal to the sum of the longest sequential prefix.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,2,3,2,5]\nOutput: 6\nExplanation: The longest sequential prefix of nums is [1,2,3] with a sum of 6. 6 is not in the array, therefore 6 is the smallest missing integer greater than or equal to the sum of the longest sequential prefix.\n\nExample 2:\n\nInput: nums = [3,4,5,1,12,14,13]\nOutput: 15\nExplanation: The longest sequential prefix of nums is [3,4,5] with a sum of 12. 12, 13, and 14 belong to the array while 15 does not. Therefore 15 is the smallest missing integer greater than or equal to the sum of the longest sequential prefix.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 50\n\t1 <= nums[i] <= 50\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.7 MB\n\n## Similar Problems\n\n- [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) — Easy\n- [First Missing Positive](https://leetcode.com/problems/first-missing-positive/) — Hard\n- [Next Greater Element I](https://leetcode.com/problems/next-greater-element-i/) — Easy\n"
+        }
+      ],
+      "timestamp": 1748773293000,
+      "runtime": "0 ms",
+      "memory": "17.7 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given a <strong>0-indexed</strong> array of integers <code>nums</code>.</p>\n\n<p>A prefix <code>nums[0..i]</code> is <strong>sequential</strong> if, for all <code>1 &lt;= j &lt;= i</code>, <code>nums[j] = nums[j - 1] + 1</code>. In particular, the prefix consisting only of <code>nums[0]</code> is <strong>sequential</strong>.</p>\n\n<p>Return <em>the <strong>smallest</strong> integer</em> <code>x</code> <em>missing from</em> <code>nums</code> <em>such that</em> <code>x</code> <em>is greater than or equal to the sum of the <strong>longest</strong> sequential prefix.</em></p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,2,3,2,5]\n<strong>Output:</strong> 6\n<strong>Explanation:</strong> The longest sequential prefix of nums is [1,2,3] with a sum of 6. 6 is not in the array, therefore 6 is the smallest missing integer greater than or equal to the sum of the longest sequential prefix.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [3,4,5,1,12,14,13]\n<strong>Output:</strong> 15\n<strong>Explanation:</strong> The longest sequential prefix of nums is [3,4,5] with a sum of 12. 12, 13, and 14 belong to the array while 15 does not. Therefore 15 is the smallest missing integer greater than or equal to the sum of the longest sequential prefix.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 50</code></li>\n\t<li><code>1 &lt;= nums[i] &lt;= 50</code></li>\n</ul>\n",
+      "hints": [
+        "To find the longest sequential prefix, iterate from left to right. For a fixed <code>i</code>, if <code>nums[i] != nums[i - 1] + 1</code> then the longest sequential prefix ends at <code>i - 1</code>."
+      ],
+      "acRate": 35.4551469372002,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "longest-common-prefix",
+          "title": "Longest Common Prefix",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "first-missing-positive",
+          "title": "First Missing Positive",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "next-greater-element-i",
+          "title": "Next Greater Element I",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-next-greater-element-i::1650915399",
+      "submissionId": 1650915399,
+      "platform": "leetcode",
+      "title": "Next Greater Element I",
+      "titleSlug": "next-greater-element-i",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Stack",
+        "Monotonic Stack"
+      ],
+      "topic": "Hash Table",
+      "code": "class Solution:\n    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:\n        stack = []\n        d = {}\n\n        for n in nums2:\n            while stack and n > stack[-1]:\n                d[stack.pop()] = n\n            stack.append(n)\n        for n in stack:\n            d[n] = -1\n        return [d[x] for x in nums1]\n\n\n        # ans = []\n        # count = 0\n        # for i in range(len(nums1)):\n        #     for j in range(len(nums2)):\n\n        #         if (nums1[i] == nums2[j]) :\n        #             count = j\n        #             break\n        #     print(f\"count -> {count} | {nums2[count]} \")\n        #     a = -1\n        #     for j in range(count, len(nums2)):\n        #         if nums2[j] > nums2[count]:\n        #             print(f\"----count -> {count} | {nums2[count]} | {j}\")\n        #             a = j\n            \n        #     ans.append(a)\n            \n\n            # print(i)\n            # for j in range(count, len(nums2)):\n            #     print(f\"i -> {i} j -> {j}\")\n            #     if j == len(nums2):\n            #         print(\"==\")\n            #         j = -1\n            #         break\n            #     if (nums1[i] <= nums2[j]):\n            #         print(\"<=\")\n            #         j += 1\n            #     if (nums1[i] > nums2[j]):\n            #         print(f\"{i} {nums1[i]} > found at {j} {nums2[j]}\")\n            #         ans.append(j)\n            #         break\n        \n        # return ans",
+      "readmeContent": "# Next Greater Element I\n\n**Difficulty:** Easy  |  **Acceptance:** 76.1%\n\n**Tags:** `Array`, `Hash Table`, `Stack`, `Monotonic Stack`\n\n## Problem\n\nThe next greater element of some element x in an array is the first greater element that is to the right of x in the same array.\n\nYou are given two distinct 0-indexed integer arrays nums1 and nums2, where nums1 is a subset of nums2.\n\nFor each 0 <= i < nums1.length, find the index j such that nums1[i] == nums2[j] and determine the next greater element of nums2[j] in nums2. If there is no next greater element, then the answer for this query is -1.\n\nReturn an array ans of length nums1.length such that ans[i] is the next greater element as described above.\n\n&nbsp;\nExample 1:\n\nInput: nums1 = [4,1,2], nums2 = [1,3,4,2]\nOutput: [-1,3,-1]\nExplanation: The next greater element for each value of nums1 is as follows:\n- 4 is underlined in nums2 = [1,3,4,2]. There is no next greater element, so the answer is -1.\n- 1 is underlined in nums2 = [1,3,4,2]. The next greater element is 3.\n- 2 is underlined in nums2 = [1,3,4,2]. There is no next greater element, so the answer is -1.\n\nExample 2:\n\nInput: nums1 = [2,4], nums2 = [1,2,3,4]\nOutput: [3,-1]\nExplanation: The next greater element for each value of nums1 is as follows:\n- 2 is underlined in nums2 = [1,2,3,4]. The next greater element is 3.\n- 4 is underlined in nums2 = [1,2,3,4]. There is no next greater element, so the answer is -1.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums1.length <= nums2.length <= 1000\n\t0 <= nums1[i], nums2[i] <= 104\n\tAll integers in nums1 and nums2 are unique.\n\tAll the integers of nums1 also appear in nums2.\n\n&nbsp;\nFollow up: Could you find an O(nums1.length + nums2.length) solution?\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 18.1 MB\n\n## Similar Problems\n\n- [Next Greater Element II](https://leetcode.com/problems/next-greater-element-ii/) — Medium\n- [Next Greater Element III](https://leetcode.com/problems/next-greater-element-iii/) — Medium\n- [Daily Temperatures](https://leetcode.com/problems/daily-temperatures/) — Medium\n- [Sum of Subarray Ranges](https://leetcode.com/problems/sum-of-subarray-ranges/) — Medium\n- [Sum of Total Strength of Wizards](https://leetcode.com/problems/sum-of-total-strength-of-wizards/) — Hard\n",
+      "files": [
+        {
+          "path": "problems/lc-next-greater-element-i/lc-next-greater-element-i.py",
+          "content": "class Solution:\n    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:\n        stack = []\n        d = {}\n\n        for n in nums2:\n            while stack and n > stack[-1]:\n                d[stack.pop()] = n\n            stack.append(n)\n        for n in stack:\n            d[n] = -1\n        return [d[x] for x in nums1]\n\n\n        # ans = []\n        # count = 0\n        # for i in range(len(nums1)):\n        #     for j in range(len(nums2)):\n\n        #         if (nums1[i] == nums2[j]) :\n        #             count = j\n        #             break\n        #     print(f\"count -> {count} | {nums2[count]} \")\n        #     a = -1\n        #     for j in range(count, len(nums2)):\n        #         if nums2[j] > nums2[count]:\n        #             print(f\"----count -> {count} | {nums2[count]} | {j}\")\n        #             a = j\n            \n        #     ans.append(a)\n            \n\n            # print(i)\n            # for j in range(count, len(nums2)):\n            #     print(f\"i -> {i} j -> {j}\")\n            #     if j == len(nums2):\n            #         print(\"==\")\n            #         j = -1\n            #         break\n            #     if (nums1[i] <= nums2[j]):\n            #         print(\"<=\")\n            #         j += 1\n            #     if (nums1[i] > nums2[j]):\n            #         print(f\"{i} {nums1[i]} > found at {j} {nums2[j]}\")\n            #         ans.append(j)\n            #         break\n        \n        # return ans"
+        },
+        {
+          "path": "problems/lc-next-greater-element-i/README.md",
+          "content": "# Next Greater Element I\n\n**Difficulty:** Easy  |  **Acceptance:** 76.1%\n\n**Tags:** `Array`, `Hash Table`, `Stack`, `Monotonic Stack`\n\n## Problem\n\nThe next greater element of some element x in an array is the first greater element that is to the right of x in the same array.\n\nYou are given two distinct 0-indexed integer arrays nums1 and nums2, where nums1 is a subset of nums2.\n\nFor each 0 <= i < nums1.length, find the index j such that nums1[i] == nums2[j] and determine the next greater element of nums2[j] in nums2. If there is no next greater element, then the answer for this query is -1.\n\nReturn an array ans of length nums1.length such that ans[i] is the next greater element as described above.\n\n&nbsp;\nExample 1:\n\nInput: nums1 = [4,1,2], nums2 = [1,3,4,2]\nOutput: [-1,3,-1]\nExplanation: The next greater element for each value of nums1 is as follows:\n- 4 is underlined in nums2 = [1,3,4,2]. There is no next greater element, so the answer is -1.\n- 1 is underlined in nums2 = [1,3,4,2]. The next greater element is 3.\n- 2 is underlined in nums2 = [1,3,4,2]. There is no next greater element, so the answer is -1.\n\nExample 2:\n\nInput: nums1 = [2,4], nums2 = [1,2,3,4]\nOutput: [3,-1]\nExplanation: The next greater element for each value of nums1 is as follows:\n- 2 is underlined in nums2 = [1,2,3,4]. The next greater element is 3.\n- 4 is underlined in nums2 = [1,2,3,4]. There is no next greater element, so the answer is -1.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums1.length <= nums2.length <= 1000\n\t0 <= nums1[i], nums2[i] <= 104\n\tAll integers in nums1 and nums2 are unique.\n\tAll the integers of nums1 also appear in nums2.\n\n&nbsp;\nFollow up: Could you find an O(nums1.length + nums2.length) solution?\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 18.1 MB\n\n## Similar Problems\n\n- [Next Greater Element II](https://leetcode.com/problems/next-greater-element-ii/) — Medium\n- [Next Greater Element III](https://leetcode.com/problems/next-greater-element-iii/) — Medium\n- [Daily Temperatures](https://leetcode.com/problems/daily-temperatures/) — Medium\n- [Sum of Subarray Ranges](https://leetcode.com/problems/sum-of-subarray-ranges/) — Medium\n- [Sum of Total Strength of Wizards](https://leetcode.com/problems/sum-of-total-strength-of-wizards/) — Hard\n"
+        }
+      ],
+      "timestamp": 1748797354000,
+      "runtime": "0 ms",
+      "memory": "18.1 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>The <strong>next greater element</strong> of some element <code>x</code> in an array is the <strong>first greater</strong> element that is <strong>to the right</strong> of <code>x</code> in the same array.</p>\n\n<p>You are given two <strong>distinct 0-indexed</strong> integer arrays <code>nums1</code> and <code>nums2</code>, where <code>nums1</code> is a subset of <code>nums2</code>.</p>\n\n<p>For each <code>0 &lt;= i &lt; nums1.length</code>, find the index <code>j</code> such that <code>nums1[i] == nums2[j]</code> and determine the <strong>next greater element</strong> of <code>nums2[j]</code> in <code>nums2</code>. If there is no next greater element, then the answer for this query is <code>-1</code>.</p>\n\n<p>Return <em>an array </em><code>ans</code><em> of length </em><code>nums1.length</code><em> such that </em><code>ans[i]</code><em> is the <strong>next greater element</strong> as described above.</em></p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums1 = [4,1,2], nums2 = [1,3,4,2]\n<strong>Output:</strong> [-1,3,-1]\n<strong>Explanation:</strong> The next greater element for each value of nums1 is as follows:\n- 4 is underlined in nums2 = [1,3,<u>4</u>,2]. There is no next greater element, so the answer is -1.\n- 1 is underlined in nums2 = [<u>1</u>,3,4,2]. The next greater element is 3.\n- 2 is underlined in nums2 = [1,3,4,<u>2</u>]. There is no next greater element, so the answer is -1.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums1 = [2,4], nums2 = [1,2,3,4]\n<strong>Output:</strong> [3,-1]\n<strong>Explanation:</strong> The next greater element for each value of nums1 is as follows:\n- 2 is underlined in nums2 = [1,<u>2</u>,3,4]. The next greater element is 3.\n- 4 is underlined in nums2 = [1,2,3,<u>4</u>]. There is no next greater element, so the answer is -1.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums1.length &lt;= nums2.length &lt;= 1000</code></li>\n\t<li><code>0 &lt;= nums1[i], nums2[i] &lt;= 10<sup>4</sup></code></li>\n\t<li>All integers in <code>nums1</code> and <code>nums2</code> are <strong>unique</strong>.</li>\n\t<li>All the integers of <code>nums1</code> also appear in <code>nums2</code>.</li>\n</ul>\n\n<p>&nbsp;</p>\n<strong>Follow up:</strong> Could you find an <code>O(nums1.length + nums2.length)</code> solution?",
+      "hints": null,
+      "acRate": 76.11849523680918,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "next-greater-element-ii",
+          "title": "Next Greater Element II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "next-greater-element-iii",
+          "title": "Next Greater Element III",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "daily-temperatures",
+          "title": "Daily Temperatures",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "sum-of-subarray-ranges",
+          "title": "Sum of Subarray Ranges",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "sum-of-total-strength-of-wizards",
+          "title": "Sum of Total Strength of Wizards",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "next-greater-element-iv",
+          "title": "Next Greater Element IV",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "remove-nodes-from-linked-list",
+          "title": "Remove Nodes From Linked List",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "smallest-missing-integer-greater-than-sequential-prefix-sum",
+          "title": "Smallest Missing Integer Greater Than Sequential Prefix Sum",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
     }
   ]
 }
