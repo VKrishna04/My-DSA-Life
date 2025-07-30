@@ -1,33 +1,41 @@
 {
-  "updatedAt": "2026-05-16T18:52:15.146Z",
+  "updatedAt": "2026-05-16T18:53:12.613Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 126,
-    "easy": 103,
-    "medium": 22,
+    "total": 151,
+    "easy": 124,
+    "medium": 26,
     "hard": 1,
     "byPlatform": {
-      "leetcode": 126
+      "leetcode": 151
     },
     "byLang": {
       "C++": 1,
       "Java": 12,
       "C": 1,
-      "Python3": 80,
+      "Python3": 102,
       "JavaScript": 2,
       "pythondata": 13,
       "Pandas": 2,
-      "Python": 15
+      "Python": 15,
+      "Bash": 2,
+      "MySQL": 1
     },
     "byTopic": {
       "Two Pointers": 4,
-      "Array": 55,
+      "Array": 59,
       "String": 11,
-      "Math": 12,
+      "Math": 20,
       "Untagged": 31,
-      "Linked List": 1,
-      "Hash Table": 11,
-      "Binary Search": 1
+      "Linked List": 2,
+      "Hash Table": 12,
+      "Binary Search": 1,
+      "Dynamic Programming": 1,
+      "Divide and Conquer": 3,
+      "Bit Manipulation": 2,
+      "Shell": 2,
+      "Database": 1,
+      "Tree": 2
     }
   },
   "meta": {
@@ -7116,6 +7124,1541 @@
           "difficulty": "Easy",
           "titleSlug": "smallest-missing-integer-greater-than-sequential-prefix-sum",
           "title": "Smallest Missing Integer Greater Than Sequential Prefix Sum",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-pascals-triangle::1650929295",
+      "submissionId": 1650929295,
+      "platform": "leetcode",
+      "title": "Pascal's Triangle",
+      "titleSlug": "pascals-triangle",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Dynamic Programming"
+      ],
+      "topic": "Dynamic Programming",
+      "code": "class Solution:\n    def generate(self, numRows: int) -> List[List[int]]:\n        # new = [[0], [1], [0]]\n        \n        # for i in range(numRows):\n        #     new.append(list(new[i-1] + new[i]) for i in range(len(new)))\n        \n        \n        if numRows == 1:\n            return [[1]]\n        \n        prev = self.generate(numRows-1)\n        pre = prev[-1]\n        cur = [1]\n\n        for i in range(1, numRows-1):\n            cur.append(pre[i-1] + pre[i])\n        \n        cur.append(1)\n        prev.append(cur)\n\n        return prev\n\n\n        return ans\n\n",
+      "readmeContent": "# Pascal's Triangle\n\n**Difficulty:** Easy  |  **Acceptance:** 78.9%\n\n**Tags:** `Array`, `Dynamic Programming`\n\n## Problem\n\nGiven an integer numRows, return the first numRows of Pascal's triangle.\n\nIn Pascal's triangle, each number is the sum of the two numbers directly above it as shown:\n\n&nbsp;\nExample 1:\nInput: numRows = 5\nOutput: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]\nExample 2:\nInput: numRows = 1\nOutput: [[1]]\n\n&nbsp;\nConstraints:\n\n\t1 <= numRows <= 30\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 18 MB\n\n## Similar Problems\n\n- [Pascal's Triangle II](https://leetcode.com/problems/pascals-triangle-ii/) — Easy\n- [Check If Digits Are Equal in String After Operations II](https://leetcode.com/problems/check-if-digits-are-equal-in-string-after-operations-ii/) — Hard\n",
+      "files": [
+        {
+          "path": "problems/lc-pascals-triangle/lc-pascals-triangle.py",
+          "content": "class Solution:\n    def generate(self, numRows: int) -> List[List[int]]:\n        # new = [[0], [1], [0]]\n        \n        # for i in range(numRows):\n        #     new.append(list(new[i-1] + new[i]) for i in range(len(new)))\n        \n        \n        if numRows == 1:\n            return [[1]]\n        \n        prev = self.generate(numRows-1)\n        pre = prev[-1]\n        cur = [1]\n\n        for i in range(1, numRows-1):\n            cur.append(pre[i-1] + pre[i])\n        \n        cur.append(1)\n        prev.append(cur)\n\n        return prev\n\n\n        return ans\n\n"
+        },
+        {
+          "path": "problems/lc-pascals-triangle/README.md",
+          "content": "# Pascal's Triangle\n\n**Difficulty:** Easy  |  **Acceptance:** 78.9%\n\n**Tags:** `Array`, `Dynamic Programming`\n\n## Problem\n\nGiven an integer numRows, return the first numRows of Pascal's triangle.\n\nIn Pascal's triangle, each number is the sum of the two numbers directly above it as shown:\n\n&nbsp;\nExample 1:\nInput: numRows = 5\nOutput: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]\nExample 2:\nInput: numRows = 1\nOutput: [[1]]\n\n&nbsp;\nConstraints:\n\n\t1 <= numRows <= 30\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 18 MB\n\n## Similar Problems\n\n- [Pascal's Triangle II](https://leetcode.com/problems/pascals-triangle-ii/) — Easy\n- [Check If Digits Are Equal in String After Operations II](https://leetcode.com/problems/check-if-digits-are-equal-in-string-after-operations-ii/) — Hard\n"
+        }
+      ],
+      "timestamp": 1748798288000,
+      "runtime": "0 ms",
+      "memory": "18 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an integer <code>numRows</code>, return the first numRows of <strong>Pascal&#39;s triangle</strong>.</p>\n\n<p>In <strong>Pascal&#39;s triangle</strong>, each number is the sum of the two numbers directly above it as shown:</p>\n<img alt=\"\" src=\"https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif\" style=\"height:240px; width:260px\" />\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<pre><strong>Input:</strong> numRows = 5\n<strong>Output:</strong> [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]\n</pre><p><strong class=\"example\">Example 2:</strong></p>\n<pre><strong>Input:</strong> numRows = 1\n<strong>Output:</strong> [[1]]\n</pre>\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= numRows &lt;= 30</code></li>\n</ul>\n",
+      "hints": null,
+      "acRate": 78.91346507279732,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "pascals-triangle-ii",
+          "title": "Pascal's Triangle II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "check-if-digits-are-equal-in-string-after-operations-ii",
+          "title": "Check If Digits Are Equal in String After Operations II",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-counting-bits::1650939576",
+      "submissionId": 1650939576,
+      "platform": "leetcode",
+      "title": "Counting Bits",
+      "titleSlug": "counting-bits",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Dynamic Programming",
+        "Bit Manipulation"
+      ],
+      "topic": "Dynamic Programming",
+      "code": "class Solution:\n    def countBits(self, n: int) -> List[int]:     \n\n        return [bin(i).count('1') for i in range(n+1)]",
+      "readmeContent": "# Counting Bits\n\n**Difficulty:** Easy  |  **Acceptance:** 80.6%\n\n**Tags:** `Dynamic Programming`, `Bit Manipulation`\n\n## Problem\n\nGiven an integer n, return an array ans of length n + 1 such that for each i (0 <= i <= n), ans[i] is the number of 1's in the binary representation of i.\n\n&nbsp;\nExample 1:\n\nInput: n = 2\nOutput: [0,1,1]\nExplanation:\n0 --> 0\n1 --> 1\n2 --> 10\n\nExample 2:\n\nInput: n = 5\nOutput: [0,1,1,2,1,2]\nExplanation:\n0 --> 0\n1 --> 1\n2 --> 10\n3 --> 11\n4 --> 100\n5 --> 101\n\n&nbsp;\nConstraints:\n\n\t0 <= n <= 105\n\n&nbsp;\nFollow up:\n\n\tIt is very easy to come up with a solution with a runtime of O(n log n). Can you do it in linear time O(n) and possibly in a single pass?\n\tCan you do it without using any built-in function (i.e., like __builtin_popcount in C++)?\n\n## My Submission\n\n- Runtime: 11 ms\n- Memory: 18.5 MB\n\n## Similar Problems\n\n- [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/) — Easy\n- [Sum of Values at Indices With K Set Bits](https://leetcode.com/problems/sum-of-values-at-indices-with-k-set-bits/) — Easy\n- [Find the K-or of an Array](https://leetcode.com/problems/find-the-k-or-of-an-array/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-counting-bits/lc-counting-bits.py",
+          "content": "class Solution:\n    def countBits(self, n: int) -> List[int]:     \n\n        return [bin(i).count('1') for i in range(n+1)]"
+        },
+        {
+          "path": "problems/lc-counting-bits/README.md",
+          "content": "# Counting Bits\n\n**Difficulty:** Easy  |  **Acceptance:** 80.6%\n\n**Tags:** `Dynamic Programming`, `Bit Manipulation`\n\n## Problem\n\nGiven an integer n, return an array ans of length n + 1 such that for each i (0 <= i <= n), ans[i] is the number of 1's in the binary representation of i.\n\n&nbsp;\nExample 1:\n\nInput: n = 2\nOutput: [0,1,1]\nExplanation:\n0 --> 0\n1 --> 1\n2 --> 10\n\nExample 2:\n\nInput: n = 5\nOutput: [0,1,1,2,1,2]\nExplanation:\n0 --> 0\n1 --> 1\n2 --> 10\n3 --> 11\n4 --> 100\n5 --> 101\n\n&nbsp;\nConstraints:\n\n\t0 <= n <= 105\n\n&nbsp;\nFollow up:\n\n\tIt is very easy to come up with a solution with a runtime of O(n log n). Can you do it in linear time O(n) and possibly in a single pass?\n\tCan you do it without using any built-in function (i.e., like __builtin_popcount in C++)?\n\n## My Submission\n\n- Runtime: 11 ms\n- Memory: 18.5 MB\n\n## Similar Problems\n\n- [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/) — Easy\n- [Sum of Values at Indices With K Set Bits](https://leetcode.com/problems/sum-of-values-at-indices-with-k-set-bits/) — Easy\n- [Find the K-or of an Array](https://leetcode.com/problems/find-the-k-or-of-an-array/) — Easy\n"
+        }
+      ],
+      "timestamp": 1748798966000,
+      "runtime": "11 ms",
+      "memory": "18.5 MB",
+      "runtimePct": 29.637399999999992,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an integer <code>n</code>, return <em>an array </em><code>ans</code><em> of length </em><code>n + 1</code><em> such that for each </em><code>i</code><em> </em>(<code>0 &lt;= i &lt;= n</code>)<em>, </em><code>ans[i]</code><em> is the <strong>number of </strong></em><code>1</code><em><strong>&#39;s</strong> in the binary representation of </em><code>i</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 2\n<strong>Output:</strong> [0,1,1]\n<strong>Explanation:</strong>\n0 --&gt; 0\n1 --&gt; 1\n2 --&gt; 10\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 5\n<strong>Output:</strong> [0,1,1,2,1,2]\n<strong>Explanation:</strong>\n0 --&gt; 0\n1 --&gt; 1\n2 --&gt; 10\n3 --&gt; 11\n4 --&gt; 100\n5 --&gt; 101\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>0 &lt;= n &lt;= 10<sup>5</sup></code></li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Follow up:</strong></p>\n\n<ul>\n\t<li>It is very easy to come up with a solution with a runtime of <code>O(n log n)</code>. Can you do it in linear time <code>O(n)</code> and possibly in a single pass?</li>\n\t<li>Can you do it without using any built-in function (i.e., like <code>__builtin_popcount</code> in C++)?</li>\n</ul>\n",
+      "hints": [
+        "You should make use of what you have produced already.",
+        "Divide the numbers in ranges like [2-3], [4-7], [8-15] and so on. And try to generate new range from previous.",
+        "Or does the odd/even status of the number help you in calculating the number of 1s?"
+      ],
+      "acRate": 80.58448510803971,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "number-of-1-bits",
+          "title": "Number of 1 Bits",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "sum-of-values-at-indices-with-k-set-bits",
+          "title": "Sum of Values at Indices With K Set Bits",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "find-the-k-or-of-an-array",
+          "title": "Find the K-or of an Array",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-number-of-1-bits::1650943714",
+      "submissionId": 1650943714,
+      "platform": "leetcode",
+      "title": "Number of 1 Bits",
+      "titleSlug": "number-of-1-bits",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Divide and Conquer",
+        "Bit Manipulation"
+      ],
+      "topic": "Divide and Conquer",
+      "code": "class Solution:\n    def hammingWeight(self, n: int) -> int:\n        return bin(n).count('1')",
+      "readmeContent": "# Number of 1 Bits\n\n**Difficulty:** Easy  |  **Acceptance:** 76.8%\n\n**Tags:** `Divide and Conquer`, `Bit Manipulation`\n\n## Problem\n\nGiven a positive integer n, write a function that returns the number of set bits in its binary representation (also known as the Hamming weight).\n\n&nbsp;\nExample 1:\n\nInput: n = 11\n\nOutput: 3\n\nExplanation:\n\nThe input binary string 1011 has a total of three set bits.\n\nExample 2:\n\nInput: n = 128\n\nOutput: 1\n\nExplanation:\n\nThe input binary string 10000000 has a total of one set bit.\n\nExample 3:\n\nInput: n = 2147483645\n\nOutput: 30\n\nExplanation:\n\nThe input binary string 1111111111111111111111111111101 has a total of thirty set bits.\n\n&nbsp;\nConstraints:\n\n\t1 <= n <= 231 - 1\n\n&nbsp;\nFollow up: If this function is called many times, how would you optimize it?\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.8 MB\n\n## Similar Problems\n\n- [Reverse Bits](https://leetcode.com/problems/reverse-bits/) — Easy\n- [Power of Two](https://leetcode.com/problems/power-of-two/) — Easy\n- [Counting Bits](https://leetcode.com/problems/counting-bits/) — Easy\n- [Binary Watch](https://leetcode.com/problems/binary-watch/) — Easy\n- [Hamming Distance](https://leetcode.com/problems/hamming-distance/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-number-of-1-bits/lc-number-of-1-bits.py",
+          "content": "class Solution:\n    def hammingWeight(self, n: int) -> int:\n        return bin(n).count('1')"
+        },
+        {
+          "path": "problems/lc-number-of-1-bits/README.md",
+          "content": "# Number of 1 Bits\n\n**Difficulty:** Easy  |  **Acceptance:** 76.8%\n\n**Tags:** `Divide and Conquer`, `Bit Manipulation`\n\n## Problem\n\nGiven a positive integer n, write a function that returns the number of set bits in its binary representation (also known as the Hamming weight).\n\n&nbsp;\nExample 1:\n\nInput: n = 11\n\nOutput: 3\n\nExplanation:\n\nThe input binary string 1011 has a total of three set bits.\n\nExample 2:\n\nInput: n = 128\n\nOutput: 1\n\nExplanation:\n\nThe input binary string 10000000 has a total of one set bit.\n\nExample 3:\n\nInput: n = 2147483645\n\nOutput: 30\n\nExplanation:\n\nThe input binary string 1111111111111111111111111111101 has a total of thirty set bits.\n\n&nbsp;\nConstraints:\n\n\t1 <= n <= 231 - 1\n\n&nbsp;\nFollow up: If this function is called many times, how would you optimize it?\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.8 MB\n\n## Similar Problems\n\n- [Reverse Bits](https://leetcode.com/problems/reverse-bits/) — Easy\n- [Power of Two](https://leetcode.com/problems/power-of-two/) — Easy\n- [Counting Bits](https://leetcode.com/problems/counting-bits/) — Easy\n- [Binary Watch](https://leetcode.com/problems/binary-watch/) — Easy\n- [Hamming Distance](https://leetcode.com/problems/hamming-distance/) — Easy\n"
+        }
+      ],
+      "timestamp": 1748799239000,
+      "runtime": "0 ms",
+      "memory": "17.8 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given a positive integer <code>n</code>, write a function that returns the number of <span data-keyword=\"set-bit\">set bits</span> in its binary representation (also known as the <a href=\"http://en.wikipedia.org/wiki/Hamming_weight\" target=\"_blank\">Hamming weight</a>).</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">n = 11</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">3</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The input binary string <strong>1011</strong> has a total of three set bits.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">n = 128</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">1</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The input binary string <strong>10000000</strong> has a total of one set bit.</p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">n = 2147483645</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">30</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The input binary string <strong>1111111111111111111111111111101</strong> has a total of thirty set bits.</p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>\n\n<p>&nbsp;</p>\n<strong>Follow up:</strong> If this function is called many times, how would you optimize it?",
+      "hints": null,
+      "acRate": 76.80398472780543,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "reverse-bits",
+          "title": "Reverse Bits",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "power-of-two",
+          "title": "Power of Two",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "counting-bits",
+          "title": "Counting Bits",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "binary-watch",
+          "title": "Binary Watch",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "hamming-distance",
+          "title": "Hamming Distance",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "binary-number-with-alternating-bits",
+          "title": "Binary Number with Alternating Bits",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "prime-number-of-set-bits-in-binary-representation",
+          "title": "Prime Number of Set Bits in Binary Representation",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "convert-date-to-binary",
+          "title": "Convert Date to Binary",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-reverse-bits::1650957577",
+      "submissionId": 1650957577,
+      "platform": "leetcode",
+      "title": "Reverse Bits",
+      "titleSlug": "reverse-bits",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Divide and Conquer",
+        "Bit Manipulation"
+      ],
+      "topic": "Divide and Conquer",
+      "code": "class Solution:\n    def reverseBits(self, n: int) -> int:\n        res = 0\n        for i in range(32):\n            res = (res << 1) | (n & 1)\n            n >>= 1\n        return res",
+      "readmeContent": "# Reverse Bits\n\n**Difficulty:** Easy  |  **Acceptance:** 68.4%\n\n**Tags:** `Divide and Conquer`, `Bit Manipulation`\n\n## Problem\n\nReverse bits of a given 32 bits signed integer.\n\n&nbsp;\nExample 1:\n\nInput: n = 43261596\n\nOutput: 964176192\n\nExplanation:\n\n\t\n\t\t\n\t\t\tInteger\n\t\t\tBinary\n\t\t\n\t\t\n\t\t\t43261596\n\t\t\t00000010100101000001111010011100\n\t\t\n\t\t\n\t\t\t964176192\n\t\t\t00111001011110000010100101000000\n\t\t\n\t\n\nExample 2:\n\nInput: n = 2147483644\n\nOutput: 1073741822\n\nExplanation:\n\n\t\n\t\t\n\t\t\tInteger\n\t\t\tBinary\n\t\t\n\t\t\n\t\t\t2147483644\n\t\t\t01111111111111111111111111111100\n\t\t\n\t\t\n\t\t\t1073741822\n\t\t\t00111111111111111111111111111110\n\t\t\n\t\n\n&nbsp;\nConstraints:\n\n\t0 <= n <= 231 - 2\n\tn is even.\n\n&nbsp;\nFollow up: If this function is called many times, how would you optimize it?\n\n## My Submission\n\n- Runtime: 46 ms\n- Memory: 17.7 MB\n\n## Similar Problems\n\n- [Reverse Integer](https://leetcode.com/problems/reverse-integer/) — Medium\n- [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/) — Easy\n- [A Number After a Double Reversal](https://leetcode.com/problems/a-number-after-a-double-reversal/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-reverse-bits/lc-reverse-bits.py",
+          "content": "class Solution:\n    def reverseBits(self, n: int) -> int:\n        res = 0\n        for i in range(32):\n            res = (res << 1) | (n & 1)\n            n >>= 1\n        return res"
+        },
+        {
+          "path": "problems/lc-reverse-bits/README.md",
+          "content": "# Reverse Bits\n\n**Difficulty:** Easy  |  **Acceptance:** 68.4%\n\n**Tags:** `Divide and Conquer`, `Bit Manipulation`\n\n## Problem\n\nReverse bits of a given 32 bits signed integer.\n\n&nbsp;\nExample 1:\n\nInput: n = 43261596\n\nOutput: 964176192\n\nExplanation:\n\n\t\n\t\t\n\t\t\tInteger\n\t\t\tBinary\n\t\t\n\t\t\n\t\t\t43261596\n\t\t\t00000010100101000001111010011100\n\t\t\n\t\t\n\t\t\t964176192\n\t\t\t00111001011110000010100101000000\n\t\t\n\t\n\nExample 2:\n\nInput: n = 2147483644\n\nOutput: 1073741822\n\nExplanation:\n\n\t\n\t\t\n\t\t\tInteger\n\t\t\tBinary\n\t\t\n\t\t\n\t\t\t2147483644\n\t\t\t01111111111111111111111111111100\n\t\t\n\t\t\n\t\t\t1073741822\n\t\t\t00111111111111111111111111111110\n\t\t\n\t\n\n&nbsp;\nConstraints:\n\n\t0 <= n <= 231 - 2\n\tn is even.\n\n&nbsp;\nFollow up: If this function is called many times, how would you optimize it?\n\n## My Submission\n\n- Runtime: 46 ms\n- Memory: 17.7 MB\n\n## Similar Problems\n\n- [Reverse Integer](https://leetcode.com/problems/reverse-integer/) — Medium\n- [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/) — Easy\n- [A Number After a Double Reversal](https://leetcode.com/problems/a-number-after-a-double-reversal/) — Easy\n"
+        }
+      ],
+      "timestamp": 1748800142000,
+      "runtime": "46 ms",
+      "memory": "17.7 MB",
+      "runtimePct": 57.6247,
+      "memoryPct": 100,
+      "problemStatement": "<p>Reverse bits of a given 32 bits signed integer.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">n = 43261596</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">964176192</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<table>\n\t<tbody>\n\t\t<tr>\n\t\t\t<th>Integer</th>\n\t\t\t<th>Binary</th>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>43261596</td>\n\t\t\t<td>00000010100101000001111010011100</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>964176192</td>\n\t\t\t<td>00111001011110000010100101000000</td>\n\t\t</tr>\n\t</tbody>\n</table>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">n = 2147483644</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">1073741822</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<table>\n\t<tbody>\n\t\t<tr>\n\t\t\t<th>Integer</th>\n\t\t\t<th>Binary</th>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>2147483644</td>\n\t\t\t<td>01111111111111111111111111111100</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>1073741822</td>\n\t\t\t<td>00111111111111111111111111111110</td>\n\t\t</tr>\n\t</tbody>\n</table>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>0 &lt;= n &lt;= 2<sup>31</sup> - 2</code></li>\n\t<li><code>n</code> is even.</li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Follow up:</strong> If this function is called many times, how would you optimize it?</p>\n",
+      "hints": null,
+      "acRate": 68.3854989897618,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "reverse-integer",
+          "title": "Reverse Integer",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "number-of-1-bits",
+          "title": "Number of 1 Bits",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "a-number-after-a-double-reversal",
+          "title": "A Number After a Double Reversal",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-power-of-two::1650965939",
+      "submissionId": 1650965939,
+      "platform": "leetcode",
+      "title": "Power of Two",
+      "titleSlug": "power-of-two",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Math",
+        "Bit Manipulation",
+        "Recursion"
+      ],
+      "topic": "Recursion",
+      "code": "class Solution:\n    def isPowerOfTwo(self, n: int) -> bool:\n        n = str(bin(n))[2:]\n        print(n)\n    \n        if n[0] != '1':\n            return False\n        \n        for i in range(1,len(n)):\n            if n[i] != '0':\n                return False\n        return True",
+      "readmeContent": "# Power of Two\n\n**Difficulty:** Easy  |  **Acceptance:** 50.1%\n\n**Tags:** `Math`, `Bit Manipulation`, `Recursion`\n\n## Problem\n\nGiven an integer n, return true if it is a power of two. Otherwise, return false.\n\nAn integer n is a power of two, if there exists an integer x such that n == 2x.\n\n&nbsp;\nExample 1:\n\nInput: n = 1\nOutput: true\nExplanation: 20 = 1\n\nExample 2:\n\nInput: n = 16\nOutput: true\nExplanation: 24 = 16\n\nExample 3:\n\nInput: n = 3\nOutput: false\n\n&nbsp;\nConstraints:\n\n\t-231 <= n <= 231 - 1\n\n&nbsp;\nFollow up: Could you solve it without loops/recursion?\n\n## My Submission\n\n- Runtime: 4 ms\n- Memory: 17.8 MB\n\n## Similar Problems\n\n- [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/) — Easy\n- [Power of Three](https://leetcode.com/problems/power-of-three/) — Easy\n- [Power of Four](https://leetcode.com/problems/power-of-four/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-power-of-two/lc-power-of-two.py",
+          "content": "class Solution:\n    def isPowerOfTwo(self, n: int) -> bool:\n        n = str(bin(n))[2:]\n        print(n)\n    \n        if n[0] != '1':\n            return False\n        \n        for i in range(1,len(n)):\n            if n[i] != '0':\n                return False\n        return True"
+        },
+        {
+          "path": "problems/lc-power-of-two/README.md",
+          "content": "# Power of Two\n\n**Difficulty:** Easy  |  **Acceptance:** 50.1%\n\n**Tags:** `Math`, `Bit Manipulation`, `Recursion`\n\n## Problem\n\nGiven an integer n, return true if it is a power of two. Otherwise, return false.\n\nAn integer n is a power of two, if there exists an integer x such that n == 2x.\n\n&nbsp;\nExample 1:\n\nInput: n = 1\nOutput: true\nExplanation: 20 = 1\n\nExample 2:\n\nInput: n = 16\nOutput: true\nExplanation: 24 = 16\n\nExample 3:\n\nInput: n = 3\nOutput: false\n\n&nbsp;\nConstraints:\n\n\t-231 <= n <= 231 - 1\n\n&nbsp;\nFollow up: Could you solve it without loops/recursion?\n\n## My Submission\n\n- Runtime: 4 ms\n- Memory: 17.8 MB\n\n## Similar Problems\n\n- [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/) — Easy\n- [Power of Three](https://leetcode.com/problems/power-of-three/) — Easy\n- [Power of Four](https://leetcode.com/problems/power-of-four/) — Easy\n"
+        }
+      ],
+      "timestamp": 1748800689000,
+      "runtime": "4 ms",
+      "memory": "17.8 MB",
+      "runtimePct": 5.668899999999994,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an integer <code>n</code>, return <em><code>true</code> if it is a power of two. Otherwise, return <code>false</code></em>.</p>\n\n<p>An integer <code>n</code> is a power of two, if there exists an integer <code>x</code> such that <code>n == 2<sup>x</sup></code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 1\n<strong>Output:</strong> true\n<strong>Explanation: </strong>2<sup>0</sup> = 1\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 16\n<strong>Output:</strong> true\n<strong>Explanation: </strong>2<sup>4</sup> = 16\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 3\n<strong>Output:</strong> false\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>-2<sup>31</sup> &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>\n\n<p>&nbsp;</p>\n<strong>Follow up:</strong> Could you solve it without loops/recursion?",
+      "hints": null,
+      "acRate": 50.09712202318646,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "number-of-1-bits",
+          "title": "Number of 1 Bits",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "power-of-three",
+          "title": "Power of Three",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "power-of-four",
+          "title": "Power of Four",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "conflictPending": true,
+      "conflictCandidates": [
+        {
+          "id": "lc-power-of-two::1650968743",
+          "code": "class Solution:\n    def isPowerOfTwo(self, n: int) -> bool:\n        # n = str(bin(n))[2:]\n        # print(n)\n    \n        # if n[0] != '1':\n        #     return False\n        \n        # for i in range(1,len(n)):\n        #     if n[i] != '0':\n        #         return False\n        # return True\n\n        return n > 0 and str(bin(n)).count('1') == 1",
+          "lang": {
+            "name": "Python3",
+            "ext": "py",
+            "slug": "python3"
+          },
+          "runtime": "0 ms",
+          "memory": "17.7 MB",
+          "runtimePct": 100,
+          "memoryPct": 100,
+          "timestamp": 1748800884000,
+          "submissionId": 1650968743
+        }
+      ]
+    },
+    {
+      "id": "lc-power-of-two::1650968743",
+      "submissionId": 1650968743,
+      "platform": "leetcode",
+      "title": "Power of Two",
+      "titleSlug": "power-of-two",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Math",
+        "Bit Manipulation",
+        "Recursion"
+      ],
+      "topic": "Recursion",
+      "code": "class Solution:\n    def isPowerOfTwo(self, n: int) -> bool:\n        # n = str(bin(n))[2:]\n        # print(n)\n    \n        # if n[0] != '1':\n        #     return False\n        \n        # for i in range(1,len(n)):\n        #     if n[i] != '0':\n        #         return False\n        # return True\n\n        return n > 0 and str(bin(n)).count('1') == 1",
+      "readmeContent": "# Power of Two\n\n**Difficulty:** Easy  |  **Acceptance:** 50.1%\n\n**Tags:** `Math`, `Bit Manipulation`, `Recursion`\n\n## Problem\n\nGiven an integer n, return true if it is a power of two. Otherwise, return false.\n\nAn integer n is a power of two, if there exists an integer x such that n == 2x.\n\n&nbsp;\nExample 1:\n\nInput: n = 1\nOutput: true\nExplanation: 20 = 1\n\nExample 2:\n\nInput: n = 16\nOutput: true\nExplanation: 24 = 16\n\nExample 3:\n\nInput: n = 3\nOutput: false\n\n&nbsp;\nConstraints:\n\n\t-231 <= n <= 231 - 1\n\n&nbsp;\nFollow up: Could you solve it without loops/recursion?\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.7 MB\n\n## Similar Problems\n\n- [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/) — Easy\n- [Power of Three](https://leetcode.com/problems/power-of-three/) — Easy\n- [Power of Four](https://leetcode.com/problems/power-of-four/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-power-of-two/lc-power-of-two.py",
+          "content": "class Solution:\n    def isPowerOfTwo(self, n: int) -> bool:\n        # n = str(bin(n))[2:]\n        # print(n)\n    \n        # if n[0] != '1':\n        #     return False\n        \n        # for i in range(1,len(n)):\n        #     if n[i] != '0':\n        #         return False\n        # return True\n\n        return n > 0 and str(bin(n)).count('1') == 1"
+        },
+        {
+          "path": "problems/lc-power-of-two/README.md",
+          "content": "# Power of Two\n\n**Difficulty:** Easy  |  **Acceptance:** 50.1%\n\n**Tags:** `Math`, `Bit Manipulation`, `Recursion`\n\n## Problem\n\nGiven an integer n, return true if it is a power of two. Otherwise, return false.\n\nAn integer n is a power of two, if there exists an integer x such that n == 2x.\n\n&nbsp;\nExample 1:\n\nInput: n = 1\nOutput: true\nExplanation: 20 = 1\n\nExample 2:\n\nInput: n = 16\nOutput: true\nExplanation: 24 = 16\n\nExample 3:\n\nInput: n = 3\nOutput: false\n\n&nbsp;\nConstraints:\n\n\t-231 <= n <= 231 - 1\n\n&nbsp;\nFollow up: Could you solve it without loops/recursion?\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.7 MB\n\n## Similar Problems\n\n- [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/) — Easy\n- [Power of Three](https://leetcode.com/problems/power-of-three/) — Easy\n- [Power of Four](https://leetcode.com/problems/power-of-four/) — Easy\n"
+        }
+      ],
+      "timestamp": 1748800884000,
+      "runtime": "0 ms",
+      "memory": "17.7 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an integer <code>n</code>, return <em><code>true</code> if it is a power of two. Otherwise, return <code>false</code></em>.</p>\n\n<p>An integer <code>n</code> is a power of two, if there exists an integer <code>x</code> such that <code>n == 2<sup>x</sup></code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 1\n<strong>Output:</strong> true\n<strong>Explanation: </strong>2<sup>0</sup> = 1\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 16\n<strong>Output:</strong> true\n<strong>Explanation: </strong>2<sup>4</sup> = 16\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 3\n<strong>Output:</strong> false\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>-2<sup>31</sup> &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>\n\n<p>&nbsp;</p>\n<strong>Follow up:</strong> Could you solve it without loops/recursion?",
+      "hints": null,
+      "acRate": 50.09712202318646,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "number-of-1-bits",
+          "title": "Number of 1 Bits",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "power-of-three",
+          "title": "Power of Three",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "power-of-four",
+          "title": "Power of Four",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "isDuplicate": true,
+      "duplicateOf": "lc-power-of-two::1650965939"
+    },
+    {
+      "id": "lc-power-of-three::1650980140",
+      "submissionId": 1650980140,
+      "platform": "leetcode",
+      "title": "Power of Three",
+      "titleSlug": "power-of-three",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Math",
+        "Recursion"
+      ],
+      "topic": "Recursion",
+      "code": "class Solution:\n    def isPowerOfThree(self, n: int) -> bool:\n        while n >= 3:\n            # print(n)\n            n /= 3\n        # print(n)\n        if n != 1:\n            return False\n        return True",
+      "readmeContent": "# Power of Three\n\n**Difficulty:** Easy  |  **Acceptance:** 51.1%\n\n**Tags:** `Math`, `Recursion`\n\n## Problem\n\nGiven an integer n, return true if it is a power of three. Otherwise, return false.\n\nAn integer n is a power of three, if there exists an integer x such that n == 3x.\n\n&nbsp;\nExample 1:\n\nInput: n = 27\nOutput: true\nExplanation: 27 = 33\n\nExample 2:\n\nInput: n = 0\nOutput: false\nExplanation: There is no x where 3x = 0.\n\nExample 3:\n\nInput: n = -1\nOutput: false\nExplanation: There is no x where 3x = (-1).\n\n&nbsp;\nConstraints:\n\n\t-231 <= n <= 231 - 1\n\n&nbsp;\nFollow up: Could you solve it without loops/recursion?\n\n## My Submission\n\n- Runtime: 20 ms\n- Memory: 17.9 MB\n\n## Similar Problems\n\n- [Power of Two](https://leetcode.com/problems/power-of-two/) — Easy\n- [Power of Four](https://leetcode.com/problems/power-of-four/) — Easy\n- [Check if Number is a Sum of Powers of Three](https://leetcode.com/problems/check-if-number-is-a-sum-of-powers-of-three/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-power-of-three/lc-power-of-three.py",
+          "content": "class Solution:\n    def isPowerOfThree(self, n: int) -> bool:\n        while n >= 3:\n            # print(n)\n            n /= 3\n        # print(n)\n        if n != 1:\n            return False\n        return True"
+        },
+        {
+          "path": "problems/lc-power-of-three/README.md",
+          "content": "# Power of Three\n\n**Difficulty:** Easy  |  **Acceptance:** 51.1%\n\n**Tags:** `Math`, `Recursion`\n\n## Problem\n\nGiven an integer n, return true if it is a power of three. Otherwise, return false.\n\nAn integer n is a power of three, if there exists an integer x such that n == 3x.\n\n&nbsp;\nExample 1:\n\nInput: n = 27\nOutput: true\nExplanation: 27 = 33\n\nExample 2:\n\nInput: n = 0\nOutput: false\nExplanation: There is no x where 3x = 0.\n\nExample 3:\n\nInput: n = -1\nOutput: false\nExplanation: There is no x where 3x = (-1).\n\n&nbsp;\nConstraints:\n\n\t-231 <= n <= 231 - 1\n\n&nbsp;\nFollow up: Could you solve it without loops/recursion?\n\n## My Submission\n\n- Runtime: 20 ms\n- Memory: 17.9 MB\n\n## Similar Problems\n\n- [Power of Two](https://leetcode.com/problems/power-of-two/) — Easy\n- [Power of Four](https://leetcode.com/problems/power-of-four/) — Easy\n- [Check if Number is a Sum of Powers of Three](https://leetcode.com/problems/check-if-number-is-a-sum-of-powers-of-three/) — Medium\n"
+        }
+      ],
+      "timestamp": 1748801661000,
+      "runtime": "20 ms",
+      "memory": "17.9 MB",
+      "runtimePct": 14.0719,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an integer <code>n</code>, return <em><code>true</code> if it is a power of three. Otherwise, return <code>false</code></em>.</p>\n\n<p>An integer <code>n</code> is a power of three, if there exists an integer <code>x</code> such that <code>n == 3<sup>x</sup></code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 27\n<strong>Output:</strong> true\n<strong>Explanation:</strong> 27 = 3<sup>3</sup>\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 0\n<strong>Output:</strong> false\n<strong>Explanation:</strong> There is no x where 3<sup>x</sup> = 0.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = -1\n<strong>Output:</strong> false\n<strong>Explanation:</strong> There is no x where 3<sup>x</sup> = (-1).\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>-2<sup>31</sup> &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>\n\n<p>&nbsp;</p>\n<strong>Follow up:</strong> Could you solve it without loops/recursion?",
+      "hints": null,
+      "acRate": 51.0604225694698,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "power-of-two",
+          "title": "Power of Two",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "power-of-four",
+          "title": "Power of Four",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "check-if-number-is-a-sum-of-powers-of-three",
+          "title": "Check if Number is a Sum of Powers of Three",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "conflictPending": true,
+      "conflictCandidates": [
+        {
+          "id": "lc-power-of-three::1650981852",
+          "code": "class Solution:\n    def isPowerOfThree(self, n: int) -> bool:\n        # while n >= 3:\n        #     # print(n)\n        #     n /= 3\n        # # print(n)\n        # if n != 1:\n        #     return False\n        # return True\n\n        return n>0 and 3**19%n==0",
+          "lang": {
+            "name": "Python3",
+            "ext": "py",
+            "slug": "python3"
+          },
+          "runtime": "4 ms",
+          "memory": "17.8 MB",
+          "runtimePct": 84.63830000000002,
+          "memoryPct": 100,
+          "timestamp": 1748801773000,
+          "submissionId": 1650981852
+        }
+      ]
+    },
+    {
+      "id": "lc-power-of-three::1650981852",
+      "submissionId": 1650981852,
+      "platform": "leetcode",
+      "title": "Power of Three",
+      "titleSlug": "power-of-three",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Math",
+        "Recursion"
+      ],
+      "topic": "Recursion",
+      "code": "class Solution:\n    def isPowerOfThree(self, n: int) -> bool:\n        # while n >= 3:\n        #     # print(n)\n        #     n /= 3\n        # # print(n)\n        # if n != 1:\n        #     return False\n        # return True\n\n        return n>0 and 3**19%n==0",
+      "readmeContent": "# Power of Three\n\n**Difficulty:** Easy  |  **Acceptance:** 51.1%\n\n**Tags:** `Math`, `Recursion`\n\n## Problem\n\nGiven an integer n, return true if it is a power of three. Otherwise, return false.\n\nAn integer n is a power of three, if there exists an integer x such that n == 3x.\n\n&nbsp;\nExample 1:\n\nInput: n = 27\nOutput: true\nExplanation: 27 = 33\n\nExample 2:\n\nInput: n = 0\nOutput: false\nExplanation: There is no x where 3x = 0.\n\nExample 3:\n\nInput: n = -1\nOutput: false\nExplanation: There is no x where 3x = (-1).\n\n&nbsp;\nConstraints:\n\n\t-231 <= n <= 231 - 1\n\n&nbsp;\nFollow up: Could you solve it without loops/recursion?\n\n## My Submission\n\n- Runtime: 4 ms\n- Memory: 17.8 MB\n\n## Similar Problems\n\n- [Power of Two](https://leetcode.com/problems/power-of-two/) — Easy\n- [Power of Four](https://leetcode.com/problems/power-of-four/) — Easy\n- [Check if Number is a Sum of Powers of Three](https://leetcode.com/problems/check-if-number-is-a-sum-of-powers-of-three/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-power-of-three/lc-power-of-three.py",
+          "content": "class Solution:\n    def isPowerOfThree(self, n: int) -> bool:\n        # while n >= 3:\n        #     # print(n)\n        #     n /= 3\n        # # print(n)\n        # if n != 1:\n        #     return False\n        # return True\n\n        return n>0 and 3**19%n==0"
+        },
+        {
+          "path": "problems/lc-power-of-three/README.md",
+          "content": "# Power of Three\n\n**Difficulty:** Easy  |  **Acceptance:** 51.1%\n\n**Tags:** `Math`, `Recursion`\n\n## Problem\n\nGiven an integer n, return true if it is a power of three. Otherwise, return false.\n\nAn integer n is a power of three, if there exists an integer x such that n == 3x.\n\n&nbsp;\nExample 1:\n\nInput: n = 27\nOutput: true\nExplanation: 27 = 33\n\nExample 2:\n\nInput: n = 0\nOutput: false\nExplanation: There is no x where 3x = 0.\n\nExample 3:\n\nInput: n = -1\nOutput: false\nExplanation: There is no x where 3x = (-1).\n\n&nbsp;\nConstraints:\n\n\t-231 <= n <= 231 - 1\n\n&nbsp;\nFollow up: Could you solve it without loops/recursion?\n\n## My Submission\n\n- Runtime: 4 ms\n- Memory: 17.8 MB\n\n## Similar Problems\n\n- [Power of Two](https://leetcode.com/problems/power-of-two/) — Easy\n- [Power of Four](https://leetcode.com/problems/power-of-four/) — Easy\n- [Check if Number is a Sum of Powers of Three](https://leetcode.com/problems/check-if-number-is-a-sum-of-powers-of-three/) — Medium\n"
+        }
+      ],
+      "timestamp": 1748801773000,
+      "runtime": "4 ms",
+      "memory": "17.8 MB",
+      "runtimePct": 84.63830000000002,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an integer <code>n</code>, return <em><code>true</code> if it is a power of three. Otherwise, return <code>false</code></em>.</p>\n\n<p>An integer <code>n</code> is a power of three, if there exists an integer <code>x</code> such that <code>n == 3<sup>x</sup></code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 27\n<strong>Output:</strong> true\n<strong>Explanation:</strong> 27 = 3<sup>3</sup>\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 0\n<strong>Output:</strong> false\n<strong>Explanation:</strong> There is no x where 3<sup>x</sup> = 0.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = -1\n<strong>Output:</strong> false\n<strong>Explanation:</strong> There is no x where 3<sup>x</sup> = (-1).\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>-2<sup>31</sup> &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>\n\n<p>&nbsp;</p>\n<strong>Follow up:</strong> Could you solve it without loops/recursion?",
+      "hints": null,
+      "acRate": 51.0604225694698,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "power-of-two",
+          "title": "Power of Two",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "power-of-four",
+          "title": "Power of Four",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "check-if-number-is-a-sum-of-powers-of-three",
+          "title": "Check if Number is a Sum of Powers of Three",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "isDuplicate": true,
+      "duplicateOf": "lc-power-of-three::1650980140"
+    },
+    {
+      "id": "lc-power-of-four::1651385553",
+      "submissionId": 1651385553,
+      "platform": "leetcode",
+      "title": "Power of Four",
+      "titleSlug": "power-of-four",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Math",
+        "Bit Manipulation",
+        "Recursion"
+      ],
+      "topic": "Recursion",
+      "code": "class Solution:\n    def isPowerOfFour(self, n: int) -> bool:\n       \n        if n not in [4**i for i in range(int(math.log(2**31,4))+1)]:\n            return False\n        return True\n\n        # return n>0 and (n & (n-1)==0) and (n % 3 == 1)",
+      "readmeContent": "# Power of Four\n\n**Difficulty:** Easy  |  **Acceptance:** 52.0%\n\n**Tags:** `Math`, `Bit Manipulation`, `Recursion`\n\n## Problem\n\nGiven an integer n, return true if it is a power of four. Otherwise, return false.\n\nAn integer n is a power of four, if there exists an integer x such that n == 4x.\n\n&nbsp;\nExample 1:\nInput: n = 16\nOutput: true\nExample 2:\nInput: n = 5\nOutput: false\nExample 3:\nInput: n = 1\nOutput: true\n\n&nbsp;\nConstraints:\n\n\t-231 <= n <= 231 - 1\n\n&nbsp;\nFollow up: Could you solve it without loops/recursion?\n\n## My Submission\n\n- Runtime: 2 ms\n- Memory: 17.8 MB\n\n## Similar Problems\n\n- [Power of Two](https://leetcode.com/problems/power-of-two/) — Easy\n- [Power of Three](https://leetcode.com/problems/power-of-three/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-power-of-four/lc-power-of-four.py",
+          "content": "class Solution:\n    def isPowerOfFour(self, n: int) -> bool:\n       \n        if n not in [4**i for i in range(int(math.log(2**31,4))+1)]:\n            return False\n        return True\n\n        # return n>0 and (n & (n-1)==0) and (n % 3 == 1)"
+        },
+        {
+          "path": "problems/lc-power-of-four/README.md",
+          "content": "# Power of Four\n\n**Difficulty:** Easy  |  **Acceptance:** 52.0%\n\n**Tags:** `Math`, `Bit Manipulation`, `Recursion`\n\n## Problem\n\nGiven an integer n, return true if it is a power of four. Otherwise, return false.\n\nAn integer n is a power of four, if there exists an integer x such that n == 4x.\n\n&nbsp;\nExample 1:\nInput: n = 16\nOutput: true\nExample 2:\nInput: n = 5\nOutput: false\nExample 3:\nInput: n = 1\nOutput: true\n\n&nbsp;\nConstraints:\n\n\t-231 <= n <= 231 - 1\n\n&nbsp;\nFollow up: Could you solve it without loops/recursion?\n\n## My Submission\n\n- Runtime: 2 ms\n- Memory: 17.8 MB\n\n## Similar Problems\n\n- [Power of Two](https://leetcode.com/problems/power-of-two/) — Easy\n- [Power of Three](https://leetcode.com/problems/power-of-three/) — Easy\n"
+        }
+      ],
+      "timestamp": 1748845822000,
+      "runtime": "2 ms",
+      "memory": "17.8 MB",
+      "runtimePct": 17.511499999999998,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an integer <code>n</code>, return <em><code>true</code> if it is a power of four. Otherwise, return <code>false</code></em>.</p>\n\n<p>An integer <code>n</code> is a power of four, if there exists an integer <code>x</code> such that <code>n == 4<sup>x</sup></code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<pre><strong>Input:</strong> n = 16\n<strong>Output:</strong> true\n</pre><p><strong class=\"example\">Example 2:</strong></p>\n<pre><strong>Input:</strong> n = 5\n<strong>Output:</strong> false\n</pre><p><strong class=\"example\">Example 3:</strong></p>\n<pre><strong>Input:</strong> n = 1\n<strong>Output:</strong> true\n</pre>\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>-2<sup>31</sup> &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>\n\n<p>&nbsp;</p>\n<strong>Follow up:</strong> Could you solve it without loops/recursion?",
+      "hints": null,
+      "acRate": 52.03002709654386,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "power-of-two",
+          "title": "Power of Two",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "power-of-three",
+          "title": "Power of Three",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-find-closest-person::1651389613",
+      "submissionId": 1651389613,
+      "platform": "leetcode",
+      "title": "Find Closest Person",
+      "titleSlug": "find-closest-person",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Math"
+      ],
+      "topic": "Math",
+      "code": "class Solution:\n    def findClosest(self, x: int, y: int, z: int) -> int:\n        a = abs(z - x) \n        b = abs(z - y)\n        if b > a:\n            return 1\n        elif a > b:\n            return 2\n        else:\n            return 0",
+      "readmeContent": "# Find Closest Person\n\n**Difficulty:** Easy  |  **Acceptance:** 89.0%\n\n**Tags:** `Math`\n\n## Problem\n\nYou are given three integers x, y, and z, representing the positions of three people on a number line:\n\n\tx is the position of Person 1.\n\ty is the position of Person 2.\n\tz is the position of Person 3, who does not move.\n\nBoth Person 1 and Person 2 move toward Person 3 at the same speed.\n\nDetermine which person reaches Person 3 first:\n\n\tReturn 1 if Person 1 arrives first.\n\tReturn 2 if Person 2 arrives first.\n\tReturn 0 if both arrive at the same time.\n\nReturn the result accordingly.\n\n&nbsp;\nExample 1:\n\nInput: x = 2, y = 7, z = 4\n\nOutput: 1\n\nExplanation:\n\n\tPerson 1 is at position 2 and can reach Person 3 (at position 4) in 2 steps.\n\tPerson 2 is at position 7 and can reach Person 3 in 3 steps.\n\nSince Person 1 reaches Person 3 first, the output is 1.\n\nExample 2:\n\nInput: x = 2, y = 5, z = 6\n\nOutput: 2\n\nExplanation:\n\n\tPerson 1 is at position 2 and can reach Person 3 (at position 6) in 4 steps.\n\tPerson 2 is at position 5 and can reach Person 3 in 1 step.\n\nSince Person 2 reaches Person 3 first, the output is 2.\n\nExample 3:\n\nInput: x = 1, y = 5, z = 3\n\nOutput: 0\n\nExplanation:\n\n\tPerson 1 is at position 1 and can reach Person 3 (at position 3) in 2 steps.\n\tPerson 2 is at position 5 and can reach Person 3 in 2 steps.\n\nSince both Person 1 and Person 2 reach Person 3 at the same time, the output is 0.\n\n&nbsp;\nConstraints:\n\n\t1 <= x, y, z <= 100\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 17.5 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-find-closest-person/lc-find-closest-person.py",
+          "content": "class Solution:\n    def findClosest(self, x: int, y: int, z: int) -> int:\n        a = abs(z - x) \n        b = abs(z - y)\n        if b > a:\n            return 1\n        elif a > b:\n            return 2\n        else:\n            return 0"
+        },
+        {
+          "path": "problems/lc-find-closest-person/README.md",
+          "content": "# Find Closest Person\n\n**Difficulty:** Easy  |  **Acceptance:** 89.0%\n\n**Tags:** `Math`\n\n## Problem\n\nYou are given three integers x, y, and z, representing the positions of three people on a number line:\n\n\tx is the position of Person 1.\n\ty is the position of Person 2.\n\tz is the position of Person 3, who does not move.\n\nBoth Person 1 and Person 2 move toward Person 3 at the same speed.\n\nDetermine which person reaches Person 3 first:\n\n\tReturn 1 if Person 1 arrives first.\n\tReturn 2 if Person 2 arrives first.\n\tReturn 0 if both arrive at the same time.\n\nReturn the result accordingly.\n\n&nbsp;\nExample 1:\n\nInput: x = 2, y = 7, z = 4\n\nOutput: 1\n\nExplanation:\n\n\tPerson 1 is at position 2 and can reach Person 3 (at position 4) in 2 steps.\n\tPerson 2 is at position 7 and can reach Person 3 in 3 steps.\n\nSince Person 1 reaches Person 3 first, the output is 1.\n\nExample 2:\n\nInput: x = 2, y = 5, z = 6\n\nOutput: 2\n\nExplanation:\n\n\tPerson 1 is at position 2 and can reach Person 3 (at position 6) in 4 steps.\n\tPerson 2 is at position 5 and can reach Person 3 in 1 step.\n\nSince Person 2 reaches Person 3 first, the output is 2.\n\nExample 3:\n\nInput: x = 1, y = 5, z = 3\n\nOutput: 0\n\nExplanation:\n\n\tPerson 1 is at position 1 and can reach Person 3 (at position 3) in 2 steps.\n\tPerson 2 is at position 5 and can reach Person 3 in 2 steps.\n\nSince both Person 1 and Person 2 reach Person 3 at the same time, the output is 0.\n\n&nbsp;\nConstraints:\n\n\t1 <= x, y, z <= 100\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 17.5 MB\n"
+        }
+      ],
+      "timestamp": 1748846101000,
+      "runtime": "3 ms",
+      "memory": "17.5 MB",
+      "runtimePct": 7.5496000000000025,
+      "memoryPct": 100,
+      "problemStatement": "<p data-end=\"116\" data-start=\"0\">You are given three integers <code data-end=\"33\" data-start=\"30\">x</code>, <code data-end=\"38\" data-start=\"35\">y</code>, and <code data-end=\"47\" data-start=\"44\">z</code>, representing the positions of three people on a number line:</p>\n\n<ul data-end=\"252\" data-start=\"118\">\n\t<li data-end=\"154\" data-start=\"118\"><code data-end=\"123\" data-start=\"120\">x</code> is the position of Person 1.</li>\n\t<li data-end=\"191\" data-start=\"155\"><code data-end=\"160\" data-start=\"157\">y</code> is the position of Person 2.</li>\n\t<li data-end=\"252\" data-start=\"192\"><code data-end=\"197\" data-start=\"194\">z</code> is the position of Person 3, who does <strong>not</strong> move.</li>\n</ul>\n\n<p data-end=\"322\" data-start=\"254\">Both Person 1 and Person 2 move toward Person 3 at the <strong>same</strong> speed.</p>\n\n<p data-end=\"372\" data-start=\"324\">Determine which person reaches Person 3 <strong>first</strong>:</p>\n\n<ul data-end=\"505\" data-start=\"374\">\n\t<li data-end=\"415\" data-start=\"374\">Return 1 if Person 1 arrives first.</li>\n\t<li data-end=\"457\" data-start=\"416\">Return 2 if Person 2 arrives first.</li>\n\t<li data-end=\"505\" data-start=\"458\">Return 0 if both arrive at the <strong>same</strong> time.</li>\n</ul>\n\n<p data-end=\"537\" data-is-last-node=\"\" data-is-only-node=\"\" data-start=\"507\">Return the result accordingly.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">x = 2, y = 7, z = 4</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">1</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<ul data-end=\"258\" data-start=\"113\">\n\t<li data-end=\"193\" data-start=\"113\">Person 1 is at position 2 and can reach Person 3 (at position 4) in 2 steps.</li>\n\t<li data-end=\"258\" data-start=\"194\">Person 2 is at position 7 and can reach Person 3 in 3 steps.</li>\n</ul>\n\n<p data-end=\"317\" data-is-last-node=\"\" data-is-only-node=\"\" data-start=\"260\">Since Person 1 reaches Person 3 first, the output is 1.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">x = 2, y = 5, z = 6</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">2</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<ul data-end=\"245\" data-start=\"92\">\n\t<li data-end=\"174\" data-start=\"92\">Person 1 is at position 2 and can reach Person 3 (at position 6) in 4 steps.</li>\n\t<li data-end=\"245\" data-start=\"175\">Person 2 is at position 5 and can reach Person 3 in 1 step.</li>\n</ul>\n\n<p data-end=\"304\" data-is-last-node=\"\" data-is-only-node=\"\" data-start=\"247\">Since Person 2 reaches Person 3 first, the output is 2.</p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">x = 1, y = 5, z = 3</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">0</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<ul data-end=\"245\" data-start=\"92\">\n\t<li data-end=\"174\" data-start=\"92\">Person 1 is at position 1 and can reach Person 3 (at position 3) in 2 steps.</li>\n\t<li data-end=\"245\" data-start=\"175\">Person 2 is at position 5 and can reach Person 3 in 2 steps.</li>\n</ul>\n\n<p data-end=\"304\" data-is-last-node=\"\" data-is-only-node=\"\" data-start=\"247\">Since both Person 1 and Person 2 reach Person 3 at the same time, the output is 0.</p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= x, y, z &lt;= 100</code></li>\n</ul>\n",
+      "hints": [
+        "Compare the distances from Persons 1 and 2 to Person 3 to determine the answer."
+      ],
+      "acRate": 88.97454248031899,
+      "similar": null,
+      "hasSimilar": null,
+      "conflictPending": true,
+      "conflictCandidates": [
+        {
+          "id": "lc-find-closest-person::1651390442",
+          "code": "class Solution:\n    def findClosest(self, x: int, y: int, z: int) -> int:\n        a = abs(z - x) \n        b = abs(z - y)\n        # if b > a:\n        #     return 1\n        # elif a > b:\n        #     return 2\n        # else:\n        #     return 0\n\n        return 1 if a < b else 2 if a > b else 0",
+          "lang": {
+            "name": "Python3",
+            "ext": "py",
+            "slug": "python3"
+          },
+          "runtime": "4 ms",
+          "memory": "17.6 MB",
+          "runtimePct": 2.4753000000000025,
+          "memoryPct": 100,
+          "timestamp": 1748846155000,
+          "submissionId": 1651390442
+        }
+      ]
+    },
+    {
+      "id": "lc-find-closest-person",
+      "submissionId": 1651390442,
+      "platform": "leetcode",
+      "title": "Find Closest Person",
+      "titleSlug": "find-closest-person",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Math"
+      ],
+      "topic": "Math",
+      "code": "",
+      "readmeContent": "# Find Closest Person\n\n**Difficulty:** Easy  |  **Acceptance:** 89.0%\n\n**Tags:** `Math`\n\n## Problem\n\nYou are given three integers x, y, and z, representing the positions of three people on a number line:\n\n\tx is the position of Person 1.\n\ty is the position of Person 2.\n\tz is the position of Person 3, who does not move.\n\nBoth Person 1 and Person 2 move toward Person 3 at the same speed.\n\nDetermine which person reaches Person 3 first:\n\n\tReturn 1 if Person 1 arrives first.\n\tReturn 2 if Person 2 arrives first.\n\tReturn 0 if both arrive at the same time.\n\nReturn the result accordingly.\n\n&nbsp;\nExample 1:\n\nInput: x = 2, y = 7, z = 4\n\nOutput: 1\n\nExplanation:\n\n\tPerson 1 is at position 2 and can reach Person 3 (at position 4) in 2 steps.\n\tPerson 2 is at position 7 and can reach Person 3 in 3 steps.\n\nSince Person 1 reaches Person 3 first, the output is 1.\n\nExample 2:\n\nInput: x = 2, y = 5, z = 6\n\nOutput: 2\n\nExplanation:\n\n\tPerson 1 is at position 2 and can reach Person 3 (at position 6) in 4 steps.\n\tPerson 2 is at position 5 and can reach Person 3 in 1 step.\n\nSince Person 2 reaches Person 3 first, the output is 2.\n\nExample 3:\n\nInput: x = 1, y = 5, z = 3\n\nOutput: 0\n\nExplanation:\n\n\tPerson 1 is at position 1 and can reach Person 3 (at position 3) in 2 steps.\n\tPerson 2 is at position 5 and can reach Person 3 in 2 steps.\n\nSince both Person 1 and Person 2 reach Person 3 at the same time, the output is 0.\n\n&nbsp;\nConstraints:\n\n\t1 <= x, y, z <= 100\n\n## My Submission\n\n- Runtime: 4 ms\n- Memory: 17.6 MB\n",
+      "files": [
+        {
+          "path": "problems/find-closest-person/README.md",
+          "content": "# Find Closest Person\n\n**Difficulty:** Easy  |  **Acceptance:** 89.0%\n\n**Tags:** `Math`\n\n## Problem\n\nYou are given three integers x, y, and z, representing the positions of three people on a number line:\n\n\tx is the position of Person 1.\n\ty is the position of Person 2.\n\tz is the position of Person 3, who does not move.\n\nBoth Person 1 and Person 2 move toward Person 3 at the same speed.\n\nDetermine which person reaches Person 3 first:\n\n\tReturn 1 if Person 1 arrives first.\n\tReturn 2 if Person 2 arrives first.\n\tReturn 0 if both arrive at the same time.\n\nReturn the result accordingly.\n\n&nbsp;\nExample 1:\n\nInput: x = 2, y = 7, z = 4\n\nOutput: 1\n\nExplanation:\n\n\tPerson 1 is at position 2 and can reach Person 3 (at position 4) in 2 steps.\n\tPerson 2 is at position 7 and can reach Person 3 in 3 steps.\n\nSince Person 1 reaches Person 3 first, the output is 1.\n\nExample 2:\n\nInput: x = 2, y = 5, z = 6\n\nOutput: 2\n\nExplanation:\n\n\tPerson 1 is at position 2 and can reach Person 3 (at position 6) in 4 steps.\n\tPerson 2 is at position 5 and can reach Person 3 in 1 step.\n\nSince Person 2 reaches Person 3 first, the output is 2.\n\nExample 3:\n\nInput: x = 1, y = 5, z = 3\n\nOutput: 0\n\nExplanation:\n\n\tPerson 1 is at position 1 and can reach Person 3 (at position 3) in 2 steps.\n\tPerson 2 is at position 5 and can reach Person 3 in 2 steps.\n\nSince both Person 1 and Person 2 reach Person 3 at the same time, the output is 0.\n\n&nbsp;\nConstraints:\n\n\t1 <= x, y, z <= 100\n\n## My Submission\n\n- Runtime: 4 ms\n- Memory: 17.6 MB\n"
+        }
+      ],
+      "timestamp": 1748846155000,
+      "runtime": "4 ms",
+      "memory": "17.6 MB",
+      "runtimePct": null,
+      "memoryPct": null,
+      "problemStatement": "<p data-end=\"116\" data-start=\"0\">You are given three integers <code data-end=\"33\" data-start=\"30\">x</code>, <code data-end=\"38\" data-start=\"35\">y</code>, and <code data-end=\"47\" data-start=\"44\">z</code>, representing the positions of three people on a number line:</p>\n\n<ul data-end=\"252\" data-start=\"118\">\n\t<li data-end=\"154\" data-start=\"118\"><code data-end=\"123\" data-start=\"120\">x</code> is the position of Person 1.</li>\n\t<li data-end=\"191\" data-start=\"155\"><code data-end=\"160\" data-start=\"157\">y</code> is the position of Person 2.</li>\n\t<li data-end=\"252\" data-start=\"192\"><code data-end=\"197\" data-start=\"194\">z</code> is the position of Person 3, who does <strong>not</strong> move.</li>\n</ul>\n\n<p data-end=\"322\" data-start=\"254\">Both Person 1 and Person 2 move toward Person 3 at the <strong>same</strong> speed.</p>\n\n<p data-end=\"372\" data-start=\"324\">Determine which person reaches Person 3 <strong>first</strong>:</p>\n\n<ul data-end=\"505\" data-start=\"374\">\n\t<li data-end=\"415\" data-start=\"374\">Return 1 if Person 1 arrives first.</li>\n\t<li data-end=\"457\" data-start=\"416\">Return 2 if Person 2 arrives first.</li>\n\t<li data-end=\"505\" data-start=\"458\">Return 0 if both arrive at the <strong>same</strong> time.</li>\n</ul>\n\n<p data-end=\"537\" data-is-last-node=\"\" data-is-only-node=\"\" data-start=\"507\">Return the result accordingly.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">x = 2, y = 7, z = 4</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">1</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<ul data-end=\"258\" data-start=\"113\">\n\t<li data-end=\"193\" data-start=\"113\">Person 1 is at position 2 and can reach Person 3 (at position 4) in 2 steps.</li>\n\t<li data-end=\"258\" data-start=\"194\">Person 2 is at position 7 and can reach Person 3 in 3 steps.</li>\n</ul>\n\n<p data-end=\"317\" data-is-last-node=\"\" data-is-only-node=\"\" data-start=\"260\">Since Person 1 reaches Person 3 first, the output is 1.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">x = 2, y = 5, z = 6</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">2</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<ul data-end=\"245\" data-start=\"92\">\n\t<li data-end=\"174\" data-start=\"92\">Person 1 is at position 2 and can reach Person 3 (at position 6) in 4 steps.</li>\n\t<li data-end=\"245\" data-start=\"175\">Person 2 is at position 5 and can reach Person 3 in 1 step.</li>\n</ul>\n\n<p data-end=\"304\" data-is-last-node=\"\" data-is-only-node=\"\" data-start=\"247\">Since Person 2 reaches Person 3 first, the output is 2.</p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">x = 1, y = 5, z = 3</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">0</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<ul data-end=\"245\" data-start=\"92\">\n\t<li data-end=\"174\" data-start=\"92\">Person 1 is at position 1 and can reach Person 3 (at position 3) in 2 steps.</li>\n\t<li data-end=\"245\" data-start=\"175\">Person 2 is at position 5 and can reach Person 3 in 2 steps.</li>\n</ul>\n\n<p data-end=\"304\" data-is-last-node=\"\" data-is-only-node=\"\" data-start=\"247\">Since both Person 1 and Person 2 reach Person 3 at the same time, the output is 0.</p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= x, y, z &lt;= 100</code></li>\n</ul>\n",
+      "hints": [
+        "Compare the distances from Persons 1 and 2 to Person 3 to determine the answer."
+      ],
+      "acRate": 88.96970888419258,
+      "similar": null,
+      "hasSimilar": null,
+      "isDuplicate": true,
+      "duplicateOf": "lc-find-closest-person::1651390442"
+    },
+    {
+      "id": "lc-find-closest-person::1651390442",
+      "submissionId": 1651390442,
+      "platform": "leetcode",
+      "title": "Find Closest Person",
+      "titleSlug": "find-closest-person",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Math"
+      ],
+      "topic": "Math",
+      "code": "class Solution:\n    def findClosest(self, x: int, y: int, z: int) -> int:\n        a = abs(z - x) \n        b = abs(z - y)\n        # if b > a:\n        #     return 1\n        # elif a > b:\n        #     return 2\n        # else:\n        #     return 0\n\n        return 1 if a < b else 2 if a > b else 0",
+      "readmeContent": "# Find Closest Person\n\n**Difficulty:** Easy  |  **Acceptance:** 89.0%\n\n**Tags:** `Math`\n\n## Problem\n\nYou are given three integers x, y, and z, representing the positions of three people on a number line:\n\n\tx is the position of Person 1.\n\ty is the position of Person 2.\n\tz is the position of Person 3, who does not move.\n\nBoth Person 1 and Person 2 move toward Person 3 at the same speed.\n\nDetermine which person reaches Person 3 first:\n\n\tReturn 1 if Person 1 arrives first.\n\tReturn 2 if Person 2 arrives first.\n\tReturn 0 if both arrive at the same time.\n\nReturn the result accordingly.\n\n&nbsp;\nExample 1:\n\nInput: x = 2, y = 7, z = 4\n\nOutput: 1\n\nExplanation:\n\n\tPerson 1 is at position 2 and can reach Person 3 (at position 4) in 2 steps.\n\tPerson 2 is at position 7 and can reach Person 3 in 3 steps.\n\nSince Person 1 reaches Person 3 first, the output is 1.\n\nExample 2:\n\nInput: x = 2, y = 5, z = 6\n\nOutput: 2\n\nExplanation:\n\n\tPerson 1 is at position 2 and can reach Person 3 (at position 6) in 4 steps.\n\tPerson 2 is at position 5 and can reach Person 3 in 1 step.\n\nSince Person 2 reaches Person 3 first, the output is 2.\n\nExample 3:\n\nInput: x = 1, y = 5, z = 3\n\nOutput: 0\n\nExplanation:\n\n\tPerson 1 is at position 1 and can reach Person 3 (at position 3) in 2 steps.\n\tPerson 2 is at position 5 and can reach Person 3 in 2 steps.\n\nSince both Person 1 and Person 2 reach Person 3 at the same time, the output is 0.\n\n&nbsp;\nConstraints:\n\n\t1 <= x, y, z <= 100\n\n## My Submission\n\n- Runtime: 4 ms\n- Memory: 17.6 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-find-closest-person/lc-find-closest-person.py",
+          "content": "class Solution:\n    def findClosest(self, x: int, y: int, z: int) -> int:\n        a = abs(z - x) \n        b = abs(z - y)\n        # if b > a:\n        #     return 1\n        # elif a > b:\n        #     return 2\n        # else:\n        #     return 0\n\n        return 1 if a < b else 2 if a > b else 0"
+        },
+        {
+          "path": "problems/lc-find-closest-person/README.md",
+          "content": "# Find Closest Person\n\n**Difficulty:** Easy  |  **Acceptance:** 89.0%\n\n**Tags:** `Math`\n\n## Problem\n\nYou are given three integers x, y, and z, representing the positions of three people on a number line:\n\n\tx is the position of Person 1.\n\ty is the position of Person 2.\n\tz is the position of Person 3, who does not move.\n\nBoth Person 1 and Person 2 move toward Person 3 at the same speed.\n\nDetermine which person reaches Person 3 first:\n\n\tReturn 1 if Person 1 arrives first.\n\tReturn 2 if Person 2 arrives first.\n\tReturn 0 if both arrive at the same time.\n\nReturn the result accordingly.\n\n&nbsp;\nExample 1:\n\nInput: x = 2, y = 7, z = 4\n\nOutput: 1\n\nExplanation:\n\n\tPerson 1 is at position 2 and can reach Person 3 (at position 4) in 2 steps.\n\tPerson 2 is at position 7 and can reach Person 3 in 3 steps.\n\nSince Person 1 reaches Person 3 first, the output is 1.\n\nExample 2:\n\nInput: x = 2, y = 5, z = 6\n\nOutput: 2\n\nExplanation:\n\n\tPerson 1 is at position 2 and can reach Person 3 (at position 6) in 4 steps.\n\tPerson 2 is at position 5 and can reach Person 3 in 1 step.\n\nSince Person 2 reaches Person 3 first, the output is 2.\n\nExample 3:\n\nInput: x = 1, y = 5, z = 3\n\nOutput: 0\n\nExplanation:\n\n\tPerson 1 is at position 1 and can reach Person 3 (at position 3) in 2 steps.\n\tPerson 2 is at position 5 and can reach Person 3 in 2 steps.\n\nSince both Person 1 and Person 2 reach Person 3 at the same time, the output is 0.\n\n&nbsp;\nConstraints:\n\n\t1 <= x, y, z <= 100\n\n## My Submission\n\n- Runtime: 4 ms\n- Memory: 17.6 MB\n"
+        }
+      ],
+      "timestamp": 1748846155000,
+      "runtime": "4 ms",
+      "memory": "17.6 MB",
+      "runtimePct": 2.4753000000000025,
+      "memoryPct": 100,
+      "problemStatement": "<p data-end=\"116\" data-start=\"0\">You are given three integers <code data-end=\"33\" data-start=\"30\">x</code>, <code data-end=\"38\" data-start=\"35\">y</code>, and <code data-end=\"47\" data-start=\"44\">z</code>, representing the positions of three people on a number line:</p>\n\n<ul data-end=\"252\" data-start=\"118\">\n\t<li data-end=\"154\" data-start=\"118\"><code data-end=\"123\" data-start=\"120\">x</code> is the position of Person 1.</li>\n\t<li data-end=\"191\" data-start=\"155\"><code data-end=\"160\" data-start=\"157\">y</code> is the position of Person 2.</li>\n\t<li data-end=\"252\" data-start=\"192\"><code data-end=\"197\" data-start=\"194\">z</code> is the position of Person 3, who does <strong>not</strong> move.</li>\n</ul>\n\n<p data-end=\"322\" data-start=\"254\">Both Person 1 and Person 2 move toward Person 3 at the <strong>same</strong> speed.</p>\n\n<p data-end=\"372\" data-start=\"324\">Determine which person reaches Person 3 <strong>first</strong>:</p>\n\n<ul data-end=\"505\" data-start=\"374\">\n\t<li data-end=\"415\" data-start=\"374\">Return 1 if Person 1 arrives first.</li>\n\t<li data-end=\"457\" data-start=\"416\">Return 2 if Person 2 arrives first.</li>\n\t<li data-end=\"505\" data-start=\"458\">Return 0 if both arrive at the <strong>same</strong> time.</li>\n</ul>\n\n<p data-end=\"537\" data-is-last-node=\"\" data-is-only-node=\"\" data-start=\"507\">Return the result accordingly.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">x = 2, y = 7, z = 4</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">1</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<ul data-end=\"258\" data-start=\"113\">\n\t<li data-end=\"193\" data-start=\"113\">Person 1 is at position 2 and can reach Person 3 (at position 4) in 2 steps.</li>\n\t<li data-end=\"258\" data-start=\"194\">Person 2 is at position 7 and can reach Person 3 in 3 steps.</li>\n</ul>\n\n<p data-end=\"317\" data-is-last-node=\"\" data-is-only-node=\"\" data-start=\"260\">Since Person 1 reaches Person 3 first, the output is 1.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">x = 2, y = 5, z = 6</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">2</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<ul data-end=\"245\" data-start=\"92\">\n\t<li data-end=\"174\" data-start=\"92\">Person 1 is at position 2 and can reach Person 3 (at position 6) in 4 steps.</li>\n\t<li data-end=\"245\" data-start=\"175\">Person 2 is at position 5 and can reach Person 3 in 1 step.</li>\n</ul>\n\n<p data-end=\"304\" data-is-last-node=\"\" data-is-only-node=\"\" data-start=\"247\">Since Person 2 reaches Person 3 first, the output is 2.</p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">x = 1, y = 5, z = 3</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">0</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<ul data-end=\"245\" data-start=\"92\">\n\t<li data-end=\"174\" data-start=\"92\">Person 1 is at position 1 and can reach Person 3 (at position 3) in 2 steps.</li>\n\t<li data-end=\"245\" data-start=\"175\">Person 2 is at position 5 and can reach Person 3 in 2 steps.</li>\n</ul>\n\n<p data-end=\"304\" data-is-last-node=\"\" data-is-only-node=\"\" data-start=\"247\">Since both Person 1 and Person 2 reach Person 3 at the same time, the output is 0.</p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= x, y, z &lt;= 100</code></li>\n</ul>\n",
+      "hints": [
+        "Compare the distances from Persons 1 and 2 to Person 3 to determine the answer."
+      ],
+      "acRate": 88.97454248031899,
+      "similar": null,
+      "hasSimilar": null,
+      "isDuplicate": true,
+      "duplicateOf": "lc-find-closest-person::1651389613"
+    },
+    {
+      "id": "lc-number-of-1-bits::1651630536",
+      "submissionId": 1651630536,
+      "platform": "leetcode",
+      "title": "Number of 1 Bits",
+      "titleSlug": "number-of-1-bits",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "slug": "python3",
+        "ext": "py"
+      },
+      "tags": [
+        "Divide and Conquer",
+        "Bit Manipulation"
+      ],
+      "topic": "Divide and Conquer",
+      "code": "class Solution:\n    def hammingWeight(self, n: int) -> int:\n        return bin(n).count('1')",
+      "readmeContent": "# Number of 1 Bits\n\n**Difficulty:** Easy  |  **Acceptance:** 76.8%\n\n**Tags:** `Divide and Conquer`, `Bit Manipulation`\n\n## Problem\n\nGiven a positive integer n, write a function that returns the number of set bits in its binary representation (also known as the Hamming weight).\n\n&nbsp;\nExample 1:\n\nInput: n = 11\n\nOutput: 3\n\nExplanation:\n\nThe input binary string 1011 has a total of three set bits.\n\nExample 2:\n\nInput: n = 128\n\nOutput: 1\n\nExplanation:\n\nThe input binary string 10000000 has a total of one set bit.\n\nExample 3:\n\nInput: n = 2147483645\n\nOutput: 30\n\nExplanation:\n\nThe input binary string 1111111111111111111111111111101 has a total of thirty set bits.\n\n&nbsp;\nConstraints:\n\n\t1 <= n <= 231 - 1\n\n&nbsp;\nFollow up: If this function is called many times, how would you optimize it?\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.8 MB\n\n## Similar Problems\n\n- [Reverse Bits](https://leetcode.com/problems/reverse-bits/) — Easy\n- [Power of Two](https://leetcode.com/problems/power-of-two/) — Easy\n- [Counting Bits](https://leetcode.com/problems/counting-bits/) — Easy\n- [Binary Watch](https://leetcode.com/problems/binary-watch/) — Easy\n- [Hamming Distance](https://leetcode.com/problems/hamming-distance/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-number-of-1-bits/README.md",
+          "content": "# Number of 1 Bits\n\n**Difficulty:** Easy  |  **Acceptance:** 76.8%\n\n**Tags:** `Divide and Conquer`, `Bit Manipulation`\n\n## Problem\n\nGiven a positive integer n, write a function that returns the number of set bits in its binary representation (also known as the Hamming weight).\n\n&nbsp;\nExample 1:\n\nInput: n = 11\n\nOutput: 3\n\nExplanation:\n\nThe input binary string 1011 has a total of three set bits.\n\nExample 2:\n\nInput: n = 128\n\nOutput: 1\n\nExplanation:\n\nThe input binary string 10000000 has a total of one set bit.\n\nExample 3:\n\nInput: n = 2147483645\n\nOutput: 30\n\nExplanation:\n\nThe input binary string 1111111111111111111111111111101 has a total of thirty set bits.\n\n&nbsp;\nConstraints:\n\n\t1 <= n <= 231 - 1\n\n&nbsp;\nFollow up: If this function is called many times, how would you optimize it?\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.8 MB\n\n## Similar Problems\n\n- [Reverse Bits](https://leetcode.com/problems/reverse-bits/) — Easy\n- [Power of Two](https://leetcode.com/problems/power-of-two/) — Easy\n- [Counting Bits](https://leetcode.com/problems/counting-bits/) — Easy\n- [Binary Watch](https://leetcode.com/problems/binary-watch/) — Easy\n- [Hamming Distance](https://leetcode.com/problems/hamming-distance/) — Easy\n"
+        }
+      ],
+      "timestamp": 1748864639000,
+      "runtime": "0 ms",
+      "memory": "17.8 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given a positive integer <code>n</code>, write a function that returns the number of <span data-keyword=\"set-bit\">set bits</span> in its binary representation (also known as the <a href=\"http://en.wikipedia.org/wiki/Hamming_weight\" target=\"_blank\">Hamming weight</a>).</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">n = 11</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">3</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The input binary string <strong>1011</strong> has a total of three set bits.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">n = 128</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">1</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The input binary string <strong>10000000</strong> has a total of one set bit.</p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">n = 2147483645</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">30</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The input binary string <strong>1111111111111111111111111111101</strong> has a total of thirty set bits.</p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>\n\n<p>&nbsp;</p>\n<strong>Follow up:</strong> If this function is called many times, how would you optimize it?",
+      "hints": null,
+      "acRate": 76.8038838325162,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "reverse-bits",
+          "title": "Reverse Bits",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "power-of-two",
+          "title": "Power of Two",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "counting-bits",
+          "title": "Counting Bits",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "binary-watch",
+          "title": "Binary Watch",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "hamming-distance",
+          "title": "Hamming Distance",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "binary-number-with-alternating-bits",
+          "title": "Binary Number with Alternating Bits",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "prime-number-of-set-bits-in-binary-representation",
+          "title": "Prime Number of Set Bits in Binary Representation",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "convert-date-to-binary",
+          "title": "Convert Date to Binary",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true,
+      "isDuplicate": true,
+      "duplicateOf": "lc-number-of-1-bits::1650943714"
+    },
+    {
+      "id": "lc-hamming-distance::1651663412",
+      "submissionId": 1651663412,
+      "platform": "leetcode",
+      "title": "Hamming Distance",
+      "titleSlug": "hamming-distance",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Bit Manipulation"
+      ],
+      "topic": "Bit Manipulation",
+      "code": "class Solution:\n    def hammingDistance(self, x: int, y: int) -> int:\n        return bin(x ^ y)[2:].count(\"1\")\n",
+      "readmeContent": "# Hamming Distance\n\n**Difficulty:** Easy  |  **Acceptance:** 76.8%\n\n**Tags:** `Bit Manipulation`\n\n## Problem\n\nThe Hamming distance between two integers is the number of positions at which the corresponding bits are different.\n\nGiven two integers x and y, return the Hamming distance between them.\n\n&nbsp;\nExample 1:\n\nInput: x = 1, y = 4\nOutput: 2\nExplanation:\n1   (0 0 0 1)\n4   (0 1 0 0)\n       &uarr;   &uarr;\nThe above arrows point to positions where the corresponding bits are different.\n\nExample 2:\n\nInput: x = 3, y = 1\nOutput: 1\n\n&nbsp;\nConstraints:\n\n\t0 <=&nbsp;x, y <= 231 - 1\n\n&nbsp;\nNote: This question is the same as  2220: Minimum Bit Flips to Convert Number.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.9 MB\n\n## Similar Problems\n\n- [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/) — Easy\n- [Total Hamming Distance](https://leetcode.com/problems/total-hamming-distance/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-hamming-distance/lc-hamming-distance.py",
+          "content": "class Solution:\n    def hammingDistance(self, x: int, y: int) -> int:\n        return bin(x ^ y)[2:].count(\"1\")\n"
+        },
+        {
+          "path": "problems/lc-hamming-distance/README.md",
+          "content": "# Hamming Distance\n\n**Difficulty:** Easy  |  **Acceptance:** 76.8%\n\n**Tags:** `Bit Manipulation`\n\n## Problem\n\nThe Hamming distance between two integers is the number of positions at which the corresponding bits are different.\n\nGiven two integers x and y, return the Hamming distance between them.\n\n&nbsp;\nExample 1:\n\nInput: x = 1, y = 4\nOutput: 2\nExplanation:\n1   (0 0 0 1)\n4   (0 1 0 0)\n       &uarr;   &uarr;\nThe above arrows point to positions where the corresponding bits are different.\n\nExample 2:\n\nInput: x = 3, y = 1\nOutput: 1\n\n&nbsp;\nConstraints:\n\n\t0 <=&nbsp;x, y <= 231 - 1\n\n&nbsp;\nNote: This question is the same as  2220: Minimum Bit Flips to Convert Number.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.9 MB\n\n## Similar Problems\n\n- [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/) — Easy\n- [Total Hamming Distance](https://leetcode.com/problems/total-hamming-distance/) — Medium\n"
+        }
+      ],
+      "timestamp": 1748867363000,
+      "runtime": "0 ms",
+      "memory": "17.9 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>The <a href=\"https://en.wikipedia.org/wiki/Hamming_distance\" target=\"_blank\">Hamming distance</a> between two integers is the number of positions at which the corresponding bits are different.</p>\n\n<p>Given two integers <code>x</code> and <code>y</code>, return <em>the <strong>Hamming distance</strong> between them</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> x = 1, y = 4\n<strong>Output:</strong> 2\n<strong>Explanation:</strong>\n1   (0 0 0 1)\n4   (0 1 0 0)\n       &uarr;   &uarr;\nThe above arrows point to positions where the corresponding bits are different.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> x = 3, y = 1\n<strong>Output:</strong> 1\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>0 &lt;=&nbsp;x, y &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Note:</strong> This question is the same as <a href=\"https://leetcode.com/problems/minimum-bit-flips-to-convert-number/description/\" target=\"_blank\"> 2220: Minimum Bit Flips to Convert Number.</a></p>\n",
+      "hints": null,
+      "acRate": 76.7755796714438,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "number-of-1-bits",
+          "title": "Number of 1 Bits",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "total-hamming-distance",
+          "title": "Total Hamming Distance",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-total-hamming-distance::1651693230",
+      "submissionId": 1651693230,
+      "platform": "leetcode",
+      "title": "Total Hamming Distance",
+      "titleSlug": "total-hamming-distance",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Math",
+        "Bit Manipulation"
+      ],
+      "topic": "Bit Manipulation",
+      "code": "class Solution:\n    def totalHammingDistance(self, nums: List[int]) -> int:\n        return  sum(i.count('1') * i.count('0') for i in zip(*map('{:032b}'.format,nums)))\n",
+      "readmeContent": "# Total Hamming Distance\n\n**Difficulty:** Medium  |  **Acceptance:** 54.9%\n\n**Tags:** `Array`, `Math`, `Bit Manipulation`\n\n## Problem\n\nThe Hamming distance between two integers is the number of positions at which the corresponding bits are different.\n\nGiven an integer array nums, return the sum of Hamming distances between all the pairs of the integers in nums.\n\n&nbsp;\nExample 1:\n\nInput: nums = [4,14,2]\nOutput: 6\nExplanation: In binary representation, the 4 is 0100, 14 is 1110, and 2 is 0010 (just\nshowing the four bits relevant in this case).\nThe answer will be:\nHammingDistance(4, 14) + HammingDistance(4, 2) + HammingDistance(14, 2) = 2 + 2 + 2 = 6.\n\nExample 2:\n\nInput: nums = [4,14,4]\nOutput: 4\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 104\n\t0 <= nums[i] <= 109\n\tThe answer for the given input will fit in a 32-bit integer.\n\n## My Submission\n\n- Runtime: 114 ms\n- Memory: 20.1 MB\n\n## Similar Problems\n\n- [Hamming Distance](https://leetcode.com/problems/hamming-distance/) — Easy\n- [Sum of Digit Differences of All Pairs](https://leetcode.com/problems/sum-of-digit-differences-of-all-pairs/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-total-hamming-distance/lc-total-hamming-distance.py",
+          "content": "class Solution:\n    def totalHammingDistance(self, nums: List[int]) -> int:\n        return  sum(i.count('1') * i.count('0') for i in zip(*map('{:032b}'.format,nums)))\n"
+        },
+        {
+          "path": "problems/lc-total-hamming-distance/README.md",
+          "content": "# Total Hamming Distance\n\n**Difficulty:** Medium  |  **Acceptance:** 54.9%\n\n**Tags:** `Array`, `Math`, `Bit Manipulation`\n\n## Problem\n\nThe Hamming distance between two integers is the number of positions at which the corresponding bits are different.\n\nGiven an integer array nums, return the sum of Hamming distances between all the pairs of the integers in nums.\n\n&nbsp;\nExample 1:\n\nInput: nums = [4,14,2]\nOutput: 6\nExplanation: In binary representation, the 4 is 0100, 14 is 1110, and 2 is 0010 (just\nshowing the four bits relevant in this case).\nThe answer will be:\nHammingDistance(4, 14) + HammingDistance(4, 2) + HammingDistance(14, 2) = 2 + 2 + 2 = 6.\n\nExample 2:\n\nInput: nums = [4,14,4]\nOutput: 4\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 104\n\t0 <= nums[i] <= 109\n\tThe answer for the given input will fit in a 32-bit integer.\n\n## My Submission\n\n- Runtime: 114 ms\n- Memory: 20.1 MB\n\n## Similar Problems\n\n- [Hamming Distance](https://leetcode.com/problems/hamming-distance/) — Easy\n- [Sum of Digit Differences of All Pairs](https://leetcode.com/problems/sum-of-digit-differences-of-all-pairs/) — Medium\n"
+        }
+      ],
+      "timestamp": 1748869685000,
+      "runtime": "114 ms",
+      "memory": "20.1 MB",
+      "runtimePct": 91.95130000000006,
+      "memoryPct": 100,
+      "problemStatement": "<p>The <a href=\"https://en.wikipedia.org/wiki/Hamming_distance\" target=\"_blank\">Hamming distance</a> between two integers is the number of positions at which the corresponding bits are different.</p>\n\n<p>Given an integer array <code>nums</code>, return <em>the sum of <strong>Hamming distances</strong> between all the pairs of the integers in</em> <code>nums</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [4,14,2]\n<strong>Output:</strong> 6\n<strong>Explanation:</strong> In binary representation, the 4 is 0100, 14 is 1110, and 2 is 0010 (just\nshowing the four bits relevant in this case).\nThe answer will be:\nHammingDistance(4, 14) + HammingDistance(4, 2) + HammingDistance(14, 2) = 2 + 2 + 2 = 6.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [4,14,4]\n<strong>Output:</strong> 4\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>0 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>\n\t<li>The answer for the given input will fit in a <strong>32-bit</strong> integer.</li>\n</ul>\n",
+      "hints": null,
+      "acRate": 54.85441389057788,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "hamming-distance",
+          "title": "Hamming Distance",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "sum-of-digit-differences-of-all-pairs",
+          "title": "Sum of Digit Differences of All Pairs",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-binary-number-with-alternating-bits::1651695247",
+      "submissionId": 1651695247,
+      "platform": "leetcode",
+      "title": "Binary Number with Alternating Bits",
+      "titleSlug": "binary-number-with-alternating-bits",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Bit Manipulation"
+      ],
+      "topic": "Bit Manipulation",
+      "code": "class Solution:\n    def hasAlternatingBits(self, n: int) -> bool:\n        x = n ^ (n >> 1)\n        return (x & (x+1)) == 0",
+      "readmeContent": "# Binary Number with Alternating Bits\n\n**Difficulty:** Easy  |  **Acceptance:** 69.9%\n\n**Tags:** `Bit Manipulation`\n\n## Problem\n\nGiven a positive integer, check whether it has alternating bits: namely, if two adjacent bits will always have different values.\n\n&nbsp;\nExample 1:\n\nInput: n = 5\nOutput: true\nExplanation: The binary representation of 5 is: 101\n\nExample 2:\n\nInput: n = 7\nOutput: false\nExplanation: The binary representation of 7 is: 111.\n\nExample 3:\n\nInput: n = 11\nOutput: false\nExplanation: The binary representation of 11 is: 1011.\n\n&nbsp;\nConstraints:\n\n\t1 <= n <= 231 - 1\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.9 MB\n\n## Similar Problems\n\n- [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-binary-number-with-alternating-bits/lc-binary-number-with-alternating-bits.py",
+          "content": "class Solution:\n    def hasAlternatingBits(self, n: int) -> bool:\n        x = n ^ (n >> 1)\n        return (x & (x+1)) == 0"
+        },
+        {
+          "path": "problems/lc-binary-number-with-alternating-bits/README.md",
+          "content": "# Binary Number with Alternating Bits\n\n**Difficulty:** Easy  |  **Acceptance:** 69.9%\n\n**Tags:** `Bit Manipulation`\n\n## Problem\n\nGiven a positive integer, check whether it has alternating bits: namely, if two adjacent bits will always have different values.\n\n&nbsp;\nExample 1:\n\nInput: n = 5\nOutput: true\nExplanation: The binary representation of 5 is: 101\n\nExample 2:\n\nInput: n = 7\nOutput: false\nExplanation: The binary representation of 7 is: 111.\n\nExample 3:\n\nInput: n = 11\nOutput: false\nExplanation: The binary representation of 11 is: 1011.\n\n&nbsp;\nConstraints:\n\n\t1 <= n <= 231 - 1\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.9 MB\n\n## Similar Problems\n\n- [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/) — Easy\n"
+        }
+      ],
+      "timestamp": 1748869843000,
+      "runtime": "0 ms",
+      "memory": "17.9 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given a positive integer, check whether it has alternating bits: namely, if two adjacent bits will always have different values.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 5\n<strong>Output:</strong> true\n<strong>Explanation:</strong> The binary representation of 5 is: 101\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 7\n<strong>Output:</strong> false\n<strong>Explanation:</strong> The binary representation of 7 is: 111.</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 11\n<strong>Output:</strong> false\n<strong>Explanation:</strong> The binary representation of 11 is: 1011.</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>\n",
+      "hints": null,
+      "acRate": 69.87008849312349,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "number-of-1-bits",
+          "title": "Number of 1 Bits",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-word-frequency::1651698937",
+      "submissionId": 1651698937,
+      "platform": "leetcode",
+      "title": "Word Frequency",
+      "titleSlug": "word-frequency",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Bash",
+        "ext": "sh",
+        "slug": "bash"
+      },
+      "tags": [
+        "Shell"
+      ],
+      "topic": "Shell",
+      "code": "# Read from the file words.txt and output the word frequency list to stdout.\ntr -s ' ' '\\n' < words.txt | sort | uniq -c | sort -nr | awk '{print $2, $1}';",
+      "readmeContent": "# Word Frequency\n\n**Difficulty:** Medium  |  **Acceptance:** 29.0%\n\n**Tags:** `Shell`\n\n## Problem\n\nWrite a bash script to calculate the frequency of each word in a text file words.txt.\n\nFor simplicity sake, you may assume:\n\n\twords.txt contains only lowercase characters and space ' ' characters.\n\tEach word must consist of lowercase characters only.\n\tWords are separated by one or more whitespace characters.\n\nExample:\n\nAssume that words.txt has the following content:\n\nthe day is sunny the the\nthe sunny is is\n\nYour script should output the following, sorted by descending frequency:\n\nthe 4\nis 3\nsunny 2\nday 1\n\nNote:\n\n\tDon't worry about handling ties, it is guaranteed that each word's frequency count is unique.\n\tCould you write it in one-line using Unix pipes?\n\n## My Submission\n\n- Runtime: 86 ms\n- Memory: 3.9 MB\n\n## Similar Problems\n\n- [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-word-frequency/lc-word-frequency.sh",
+          "content": "# Read from the file words.txt and output the word frequency list to stdout.\ntr -s ' ' '\\n' < words.txt | sort | uniq -c | sort -nr | awk '{print $2, $1}';"
+        },
+        {
+          "path": "problems/lc-word-frequency/README.md",
+          "content": "# Word Frequency\n\n**Difficulty:** Medium  |  **Acceptance:** 29.0%\n\n**Tags:** `Shell`\n\n## Problem\n\nWrite a bash script to calculate the frequency of each word in a text file words.txt.\n\nFor simplicity sake, you may assume:\n\n\twords.txt contains only lowercase characters and space ' ' characters.\n\tEach word must consist of lowercase characters only.\n\tWords are separated by one or more whitespace characters.\n\nExample:\n\nAssume that words.txt has the following content:\n\nthe day is sunny the the\nthe sunny is is\n\nYour script should output the following, sorted by descending frequency:\n\nthe 4\nis 3\nsunny 2\nday 1\n\nNote:\n\n\tDon't worry about handling ties, it is guaranteed that each word's frequency count is unique.\n\tCould you write it in one-line using Unix pipes?\n\n## My Submission\n\n- Runtime: 86 ms\n- Memory: 3.9 MB\n\n## Similar Problems\n\n- [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) — Medium\n"
+        }
+      ],
+      "timestamp": 1748870128000,
+      "runtime": "86 ms",
+      "memory": "3.9 MB",
+      "runtimePct": 15.703799999999957,
+      "memoryPct": 24.560199999999995,
+      "problemStatement": "<p>Write a bash script to calculate the <span data-keyword=\"frequency-textfile\">frequency</span> of each word in a text file <code>words.txt</code>.</p>\n\n<p>For simplicity sake, you may assume:</p>\n\n<ul>\n\t<li><code>words.txt</code> contains only lowercase characters and space <code>&#39; &#39;</code> characters.</li>\n\t<li>Each word must consist of lowercase characters only.</li>\n\t<li>Words are separated by one or more whitespace characters.</li>\n</ul>\n\n<p><strong class=\"example\">Example:</strong></p>\n\n<p>Assume that <code>words.txt</code> has the following content:</p>\n\n<pre>\nthe day is sunny the the\nthe sunny is is\n</pre>\n\n<p>Your script should output the following, sorted by descending frequency:</p>\n\n<pre>\nthe 4\nis 3\nsunny 2\nday 1\n</pre>\n\n<p><b>Note:</b></p>\n\n<ul>\n\t<li>Don&#39;t worry about handling ties, it is guaranteed that each word&#39;s frequency count is unique.</li>\n\t<li>Could you write it in one-line using <a href=\"http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-4.html\">Unix pipes</a>?</li>\n</ul>\n",
+      "hints": null,
+      "acRate": 29.033209461452252,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "top-k-frequent-elements",
+          "title": "Top K Frequent Elements",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-delete-duplicate-emails::1651706736",
+      "submissionId": 1651706736,
+      "platform": "leetcode",
+      "title": "Delete Duplicate Emails",
+      "titleSlug": "delete-duplicate-emails",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "MySQL",
+        "ext": "sql",
+        "slug": "mysql"
+      },
+      "tags": [
+        "Database"
+      ],
+      "topic": "Database",
+      "code": "# Write your MySQL query statement below\ndelete p1\nfrom Person p1\njoin Person p2\non p1.email = p2.email and p1.id > p2.id",
+      "readmeContent": "# Delete Duplicate Emails\n\n**Difficulty:** Easy  |  **Acceptance:** 66.0%\n\n**Tags:** `Database`\n\n## Problem\n\nTable: Person\n\n+-------------+---------+\n| Column Name | Type    |\n+-------------+---------+\n| id          | int     |\n| email       | varchar |\n+-------------+---------+\nid is the primary key (column with unique values) for this table.\nEach row of this table contains an email. The emails will not contain uppercase letters.\n\n&nbsp;\n\nWrite a solution to delete all duplicate emails, keeping only one unique email with the smallest id.\n\nFor SQL users, please note that you are supposed to write a DELETE statement and not a SELECT one.\n\nFor Pandas users, please note that you are supposed to modify Person in place.\n\nAfter running your script, the answer shown is the Person table. The driver will first compile and run your piece of code and then show the Person table. The final order of the Person table does not matter.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput: \nPerson table:\n+----+------------------+\n| id | email            |\n+----+------------------+\n| 1  | john@example.com |\n| 2  | bob@example.com  |\n| 3  | john@example.com |\n+----+------------------+\nOutput: \n+----+------------------+\n| id | email            |\n+----+------------------+\n| 1  | john@example.com |\n| 2  | bob@example.com  |\n+----+------------------+\nExplanation: john@example.com is repeated two times. We keep the row with the smallest Id = 1.\n\n## My Submission\n\n- Runtime: 962 ms\n- Memory: 0B\n",
+      "files": [
+        {
+          "path": "problems/lc-delete-duplicate-emails/lc-delete-duplicate-emails.sql",
+          "content": "# Write your MySQL query statement below\ndelete p1\nfrom Person p1\njoin Person p2\non p1.email = p2.email and p1.id > p2.id"
+        },
+        {
+          "path": "problems/lc-delete-duplicate-emails/README.md",
+          "content": "# Delete Duplicate Emails\n\n**Difficulty:** Easy  |  **Acceptance:** 66.0%\n\n**Tags:** `Database`\n\n## Problem\n\nTable: Person\n\n+-------------+---------+\n| Column Name | Type    |\n+-------------+---------+\n| id          | int     |\n| email       | varchar |\n+-------------+---------+\nid is the primary key (column with unique values) for this table.\nEach row of this table contains an email. The emails will not contain uppercase letters.\n\n&nbsp;\n\nWrite a solution to delete all duplicate emails, keeping only one unique email with the smallest id.\n\nFor SQL users, please note that you are supposed to write a DELETE statement and not a SELECT one.\n\nFor Pandas users, please note that you are supposed to modify Person in place.\n\nAfter running your script, the answer shown is the Person table. The driver will first compile and run your piece of code and then show the Person table. The final order of the Person table does not matter.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput: \nPerson table:\n+----+------------------+\n| id | email            |\n+----+------------------+\n| 1  | john@example.com |\n| 2  | bob@example.com  |\n| 3  | john@example.com |\n+----+------------------+\nOutput: \n+----+------------------+\n| id | email            |\n+----+------------------+\n| 1  | john@example.com |\n| 2  | bob@example.com  |\n+----+------------------+\nExplanation: john@example.com is repeated two times. We keep the row with the smallest Id = 1.\n\n## My Submission\n\n- Runtime: 962 ms\n- Memory: 0B\n"
+        }
+      ],
+      "timestamp": 1748870730000,
+      "runtime": "962 ms",
+      "memory": "0B",
+      "runtimePct": 16.175500000000074,
+      "memoryPct": 100,
+      "problemStatement": "<p>Table: <code>Person</code></p>\n\n<pre>\n+-------------+---------+\n| Column Name | Type    |\n+-------------+---------+\n| id          | int     |\n| email       | varchar |\n+-------------+---------+\nid is the primary key (column with unique values) for this table.\nEach row of this table contains an email. The emails will not contain uppercase letters.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>Write a solution to<strong> delete</strong> all duplicate emails, keeping only one unique email with the smallest <code>id</code>.</p>\n\n<p>For SQL users, please note that you are supposed to write a <code>DELETE</code> statement and not a <code>SELECT</code> one.</p>\n\n<p>For Pandas users, please note that you are supposed to modify <code>Person</code> in place.</p>\n\n<p>After running your script, the answer shown is the <code>Person</code> table. The driver will first compile and run your piece of code and then show the <code>Person</code> table. The final order of the <code>Person</code> table <strong>does not matter</strong>.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> \nPerson table:\n+----+------------------+\n| id | email            |\n+----+------------------+\n| 1  | john@example.com |\n| 2  | bob@example.com  |\n| 3  | john@example.com |\n+----+------------------+\n<strong>Output:</strong> \n+----+------------------+\n| id | email            |\n+----+------------------+\n| 1  | john@example.com |\n| 2  | bob@example.com  |\n+----+------------------+\n<strong>Explanation:</strong> john@example.com is repeated two times. We keep the row with the smallest Id = 1.\n</pre>\n",
+      "hints": null,
+      "acRate": 65.9793508574141,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-tenth-line::1651709018",
+      "submissionId": 1651709018,
+      "platform": "leetcode",
+      "title": "Tenth Line",
+      "titleSlug": "tenth-line",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Bash",
+        "ext": "sh",
+        "slug": "bash"
+      },
+      "tags": [
+        "Shell"
+      ],
+      "topic": "Shell",
+      "code": "# Read from the file file.txt and output the tenth line to stdout.\nawk 'NR == 10 {print; exit}' file.txt",
+      "readmeContent": "# Tenth Line\n\n**Difficulty:** Easy  |  **Acceptance:** 36.7%\n\n**Tags:** `Shell`\n\n## Problem\n\nGiven a text file&nbsp;file.txt, print&nbsp;just the 10th line of the&nbsp;file.\r\n\r\nExample:\r\n\r\nAssume that file.txt has the following content:\r\n\r\n\r\nLine 1\r\nLine 2\r\nLine 3\r\nLine 4\r\nLine 5\r\nLine 6\r\nLine 7\r\nLine 8\r\nLine 9\r\nLine 10\r\n\r\n\r\nYour script should output the tenth line, which is:\r\n\r\n\r\nLine 10\r\n\r\n\r\nNote:\r\n1. If the file contains less than 10 lines, what should you output?\r\n2. There's at least three different solutions. Try to explore all possibilities.\n\n## My Submission\n\n- Runtime: 21 ms\n- Memory: 4 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-tenth-line/lc-tenth-line.sh",
+          "content": "# Read from the file file.txt and output the tenth line to stdout.\nawk 'NR == 10 {print; exit}' file.txt"
+        },
+        {
+          "path": "problems/lc-tenth-line/README.md",
+          "content": "# Tenth Line\n\n**Difficulty:** Easy  |  **Acceptance:** 36.7%\n\n**Tags:** `Shell`\n\n## Problem\n\nGiven a text file&nbsp;file.txt, print&nbsp;just the 10th line of the&nbsp;file.\r\n\r\nExample:\r\n\r\nAssume that file.txt has the following content:\r\n\r\n\r\nLine 1\r\nLine 2\r\nLine 3\r\nLine 4\r\nLine 5\r\nLine 6\r\nLine 7\r\nLine 8\r\nLine 9\r\nLine 10\r\n\r\n\r\nYour script should output the tenth line, which is:\r\n\r\n\r\nLine 10\r\n\r\n\r\nNote:\r\n1. If the file contains less than 10 lines, what should you output?\r\n2. There's at least three different solutions. Try to explore all possibilities.\n\n## My Submission\n\n- Runtime: 21 ms\n- Memory: 4 MB\n"
+        }
+      ],
+      "timestamp": 1748870903000,
+      "runtime": "21 ms",
+      "memory": "4 MB",
+      "runtimePct": 86.8768,
+      "memoryPct": 1.250700000000009,
+      "problemStatement": "<p>Given a text file&nbsp;<code>file.txt</code>, print&nbsp;just the 10th line of the&nbsp;file.</p>\r\n\r\n<p><strong class=\"example\">Example:</strong></p>\r\n\r\n<p>Assume that <code>file.txt</code> has the following content:</p>\r\n\r\n<pre>\r\nLine 1\r\nLine 2\r\nLine 3\r\nLine 4\r\nLine 5\r\nLine 6\r\nLine 7\r\nLine 8\r\nLine 9\r\nLine 10\r\n</pre>\r\n\r\n<p>Your script should output the tenth line, which is:</p>\r\n\r\n<pre>\r\nLine 10\r\n</pre>\r\n\r\n<div class=\"spoilers\"><b>Note:</b><br />\r\n1. If the file contains less than 10 lines, what should you output?<br />\r\n2. There&#39;s at least three different solutions. Try to explore all possibilities.</div>\r\n",
+      "hints": null,
+      "acRate": 36.732425485863736,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-contains-duplicate::1651715436",
+      "submissionId": 1651715436,
+      "platform": "leetcode",
+      "title": "Contains Duplicate",
+      "titleSlug": "contains-duplicate",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Sorting"
+      ],
+      "topic": "Hash Table",
+      "code": "class Solution:\n    def containsDuplicate(self, nums: List[int]) -> bool:\n        return len(nums) != len(set(nums))",
+      "readmeContent": "# Contains Duplicate\n\n**Difficulty:** Easy  |  **Acceptance:** 64.3%\n\n**Tags:** `Array`, `Hash Table`, `Sorting`\n\n## Problem\n\nGiven an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,2,3,1]\n\nOutput: true\n\nExplanation:\n\nThe element 1 occurs at the indices 0 and 3.\n\nExample 2:\n\nInput: nums = [1,2,3,4]\n\nOutput: false\n\nExplanation:\n\nAll elements are distinct.\n\nExample 3:\n\nInput: nums = [1,1,1,3,3,4,3,2,4,2]\n\nOutput: true\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 105\n\t-109 <= nums[i] <= 109\n\n## My Submission\n\n- Runtime: 9 ms\n- Memory: 31.5 MB\n\n## Similar Problems\n\n- [Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/) — Easy\n- [Contains Duplicate III](https://leetcode.com/problems/contains-duplicate-iii/) — Hard\n- [Make Array Zero by Subtracting Equal Amounts](https://leetcode.com/problems/make-array-zero-by-subtracting-equal-amounts/) — Easy\n- [Find Valid Pair of Adjacent Digits in String](https://leetcode.com/problems/find-valid-pair-of-adjacent-digits-in-string/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-contains-duplicate/lc-contains-duplicate.py",
+          "content": "class Solution:\n    def containsDuplicate(self, nums: List[int]) -> bool:\n        return len(nums) != len(set(nums))"
+        },
+        {
+          "path": "problems/lc-contains-duplicate/README.md",
+          "content": "# Contains Duplicate\n\n**Difficulty:** Easy  |  **Acceptance:** 64.3%\n\n**Tags:** `Array`, `Hash Table`, `Sorting`\n\n## Problem\n\nGiven an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,2,3,1]\n\nOutput: true\n\nExplanation:\n\nThe element 1 occurs at the indices 0 and 3.\n\nExample 2:\n\nInput: nums = [1,2,3,4]\n\nOutput: false\n\nExplanation:\n\nAll elements are distinct.\n\nExample 3:\n\nInput: nums = [1,1,1,3,3,4,3,2,4,2]\n\nOutput: true\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 105\n\t-109 <= nums[i] <= 109\n\n## My Submission\n\n- Runtime: 9 ms\n- Memory: 31.5 MB\n\n## Similar Problems\n\n- [Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/) — Easy\n- [Contains Duplicate III](https://leetcode.com/problems/contains-duplicate-iii/) — Hard\n- [Make Array Zero by Subtracting Equal Amounts](https://leetcode.com/problems/make-array-zero-by-subtracting-equal-amounts/) — Easy\n- [Find Valid Pair of Adjacent Digits in String](https://leetcode.com/problems/find-valid-pair-of-adjacent-digits-in-string/) — Easy\n"
+        }
+      ],
+      "timestamp": 1748871383000,
+      "runtime": "9 ms",
+      "memory": "31.5 MB",
+      "runtimePct": 73.13409999999999,
+      "memoryPct": 53.13849999999995,
+      "problemStatement": "<p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears <strong>at least twice</strong> in the array, and return <code>false</code> if every element is distinct.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1,2,3,1]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">true</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The element 1 occurs at the indices 0 and 3.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1,2,3,4]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">false</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>All elements are distinct.</p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1,1,1,3,3,4,3,2,4,2]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">true</span></p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>\n</ul>\n",
+      "hints": null,
+      "acRate": 64.33490727092546,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "contains-duplicate-ii",
+          "title": "Contains Duplicate II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "contains-duplicate-iii",
+          "title": "Contains Duplicate III",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "make-array-zero-by-subtracting-equal-amounts",
+          "title": "Make Array Zero by Subtracting Equal Amounts",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "find-valid-pair-of-adjacent-digits-in-string",
+          "title": "Find Valid Pair of Adjacent Digits in String",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-make-array-zero-by-subtracting-equal-amounts::1651723108",
+      "submissionId": 1651723108,
+      "platform": "leetcode",
+      "title": "Make Array Zero by Subtracting Equal Amounts",
+      "titleSlug": "make-array-zero-by-subtracting-equal-amounts",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Greedy",
+        "Sorting",
+        "Heap (Priority Queue)",
+        "Simulation"
+      ],
+      "topic": "Greedy",
+      "code": "class Solution:\n    def minimumOperations(self, nums: List[int]) -> int:\n        nums = set(nums)\n        try:\n            nums.remove(0)\n        finally:\n            return len(nums)\n",
+      "readmeContent": "# Make Array Zero by Subtracting Equal Amounts\n\n**Difficulty:** Easy  |  **Acceptance:** 73.8%\n\n**Tags:** `Array`, `Hash Table`, `Greedy`, `Sorting`, `Heap (Priority Queue)`, `Simulation`\n\n## Problem\n\nYou are given a non-negative integer array nums. In one operation, you must:\n\n\tChoose a positive integer x such that x is less than or equal to the smallest non-zero element in nums.\n\tSubtract x from every positive element in nums.\n\nReturn the minimum number of operations to make every element in nums equal to 0.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,5,0,3,5]\nOutput: 3\nExplanation:\nIn the first operation, choose x = 1. Now, nums = [0,4,0,2,4].\nIn the second operation, choose x = 2. Now, nums = [0,2,0,0,2].\nIn the third operation, choose x = 2. Now, nums = [0,0,0,0,0].\n\nExample 2:\n\nInput: nums = [0]\nOutput: 0\nExplanation: Each element in nums is already 0 so no operations are needed.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 100\n\t0 <= nums[i] <= 100\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 17.9 MB\n\n## Similar Problems\n\n- [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-make-array-zero-by-subtracting-equal-amounts/lc-make-array-zero-by-subtracting-equal-amounts.py",
+          "content": "class Solution:\n    def minimumOperations(self, nums: List[int]) -> int:\n        nums = set(nums)\n        try:\n            nums.remove(0)\n        finally:\n            return len(nums)\n"
+        },
+        {
+          "path": "problems/lc-make-array-zero-by-subtracting-equal-amounts/README.md",
+          "content": "# Make Array Zero by Subtracting Equal Amounts\n\n**Difficulty:** Easy  |  **Acceptance:** 73.8%\n\n**Tags:** `Array`, `Hash Table`, `Greedy`, `Sorting`, `Heap (Priority Queue)`, `Simulation`\n\n## Problem\n\nYou are given a non-negative integer array nums. In one operation, you must:\n\n\tChoose a positive integer x such that x is less than or equal to the smallest non-zero element in nums.\n\tSubtract x from every positive element in nums.\n\nReturn the minimum number of operations to make every element in nums equal to 0.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,5,0,3,5]\nOutput: 3\nExplanation:\nIn the first operation, choose x = 1. Now, nums = [0,4,0,2,4].\nIn the second operation, choose x = 2. Now, nums = [0,2,0,0,2].\nIn the third operation, choose x = 2. Now, nums = [0,0,0,0,0].\n\nExample 2:\n\nInput: nums = [0]\nOutput: 0\nExplanation: Each element in nums is already 0 so no operations are needed.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 100\n\t0 <= nums[i] <= 100\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 17.9 MB\n\n## Similar Problems\n\n- [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) — Easy\n"
+        }
+      ],
+      "timestamp": 1748871945000,
+      "runtime": "3 ms",
+      "memory": "17.9 MB",
+      "runtimePct": 21.767000000000003,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given a non-negative integer array <code>nums</code>. In one operation, you must:</p>\n\n<ul>\n\t<li>Choose a positive integer <code>x</code> such that <code>x</code> is less than or equal to the <strong>smallest non-zero</strong> element in <code>nums</code>.</li>\n\t<li>Subtract <code>x</code> from every <strong>positive</strong> element in <code>nums</code>.</li>\n</ul>\n\n<p>Return <em>the <strong>minimum</strong> number of operations to make every element in </em><code>nums</code><em> equal to </em><code>0</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,5,0,3,5]\n<strong>Output:</strong> 3\n<strong>Explanation:</strong>\nIn the first operation, choose x = 1. Now, nums = [0,4,0,2,4].\nIn the second operation, choose x = 2. Now, nums = [0,2,0,0,2].\nIn the third operation, choose x = 2. Now, nums = [0,0,0,0,0].\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [0]\n<strong>Output:</strong> 0\n<strong>Explanation:</strong> Each element in nums is already 0 so no operations are needed.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 100</code></li>\n\t<li><code>0 &lt;= nums[i] &lt;= 100</code></li>\n</ul>\n",
+      "hints": [
+        "It is always best to set x as the smallest non-zero element in nums.",
+        "Elements with the same value will always take the same number of operations to become 0. Contrarily, elements with different values will always take a different number of operations to become 0.",
+        "The answer is the number of unique non-zero numbers in nums."
+      ],
+      "acRate": 73.78760099944836,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "contains-duplicate",
+          "title": "Contains Duplicate",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-maximum-depth-of-binary-tree::1707642652",
+      "submissionId": 1707642652,
+      "platform": "leetcode",
+      "title": "Maximum Depth of Binary Tree",
+      "titleSlug": "maximum-depth-of-binary-tree",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Tree",
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Binary Tree"
+      ],
+      "topic": "Tree",
+      "code": "# import math\n\n# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution:\n    def maxDepth(self, root: Optional[TreeNode]) -> int:\n        # return math.log2(len(root)+1)\n        return 0 if not root else 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))",
+      "readmeContent": "# Maximum Depth of Binary Tree\n\n**Difficulty:** Easy  |  **Acceptance:** 78.2%\n\n**Tags:** `Tree`, `Depth-First Search`, `Breadth-First Search`, `Binary Tree`\n\n## Problem\n\nGiven the root of a binary tree, return its maximum depth.\n\nA binary tree's maximum depth&nbsp;is the number of nodes along the longest path from the root node down to the farthest leaf node.\n\n&nbsp;\nExample 1:\n\nInput: root = [3,9,20,null,null,15,7]\nOutput: 3\n\nExample 2:\n\nInput: root = [1,null,2]\nOutput: 2\n\n&nbsp;\nConstraints:\n\n\tThe number of nodes in the tree is in the range [0, 104].\n\t-100 <= Node.val <= 100\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 18.9 MB\n\n## Similar Problems\n\n- [Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/) — Easy\n- [Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/) — Easy\n- [Maximum Depth of N-ary Tree](https://leetcode.com/problems/maximum-depth-of-n-ary-tree/) — Easy\n- [Time Needed to Inform All Employees](https://leetcode.com/problems/time-needed-to-inform-all-employees/) — Medium\n- [Amount of Time for Binary Tree to Be Infected](https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-maximum-depth-of-binary-tree/lc-maximum-depth-of-binary-tree.py",
+          "content": "# import math\n\n# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution:\n    def maxDepth(self, root: Optional[TreeNode]) -> int:\n        # return math.log2(len(root)+1)\n        return 0 if not root else 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))"
+        },
+        {
+          "path": "problems/lc-maximum-depth-of-binary-tree/README.md",
+          "content": "# Maximum Depth of Binary Tree\n\n**Difficulty:** Easy  |  **Acceptance:** 78.2%\n\n**Tags:** `Tree`, `Depth-First Search`, `Breadth-First Search`, `Binary Tree`\n\n## Problem\n\nGiven the root of a binary tree, return its maximum depth.\n\nA binary tree's maximum depth&nbsp;is the number of nodes along the longest path from the root node down to the farthest leaf node.\n\n&nbsp;\nExample 1:\n\nInput: root = [3,9,20,null,null,15,7]\nOutput: 3\n\nExample 2:\n\nInput: root = [1,null,2]\nOutput: 2\n\n&nbsp;\nConstraints:\n\n\tThe number of nodes in the tree is in the range [0, 104].\n\t-100 <= Node.val <= 100\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 18.9 MB\n\n## Similar Problems\n\n- [Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/) — Easy\n- [Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/) — Easy\n- [Maximum Depth of N-ary Tree](https://leetcode.com/problems/maximum-depth-of-n-ary-tree/) — Easy\n- [Time Needed to Inform All Employees](https://leetcode.com/problems/time-needed-to-inform-all-employees/) — Medium\n- [Amount of Time for Binary Tree to Be Infected](https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/) — Medium\n"
+        }
+      ],
+      "timestamp": 1753208852000,
+      "runtime": "3 ms",
+      "memory": "18.9 MB",
+      "runtimePct": 22.307900000000004,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given the <code>root</code> of a binary tree, return <em>its maximum depth</em>.</p>\n\n<p>A binary tree&#39;s <strong>maximum depth</strong>&nbsp;is the number of nodes along the longest path from the root node down to the farthest leaf node.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/11/26/tmp-tree.jpg\" style=\"width: 400px; height: 277px;\" />\n<pre>\n<strong>Input:</strong> root = [3,9,20,null,null,15,7]\n<strong>Output:</strong> 3\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> root = [1,null,2]\n<strong>Output:</strong> 2\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li>The number of nodes in the tree is in the range <code>[0, 10<sup>4</sup>]</code>.</li>\n\t<li><code>-100 &lt;= Node.val &lt;= 100</code></li>\n</ul>\n",
+      "hints": null,
+      "acRate": 78.16600789482142,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "balanced-binary-tree",
+          "title": "Balanced Binary Tree",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "minimum-depth-of-binary-tree",
+          "title": "Minimum Depth of Binary Tree",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "maximum-depth-of-n-ary-tree",
+          "title": "Maximum Depth of N-ary Tree",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "time-needed-to-inform-all-employees",
+          "title": "Time Needed to Inform All Employees",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "amount-of-time-for-binary-tree-to-be-infected",
+          "title": "Amount of Time for Binary Tree to Be Infected",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "height-of-binary-tree-after-subtree-removal-queries",
+          "title": "Height of Binary Tree After Subtree Removal Queries",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-binary-tree-level-order-traversal::1707691360",
+      "submissionId": 1707691360,
+      "platform": "leetcode",
+      "title": "Binary Tree Level Order Traversal",
+      "titleSlug": "binary-tree-level-order-traversal",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Tree",
+        "Breadth-First Search",
+        "Binary Tree"
+      ],
+      "topic": "Tree",
+      "code": "# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution:\n    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:\n        res = []\n        q = collections.deque()\n        if root:\n            q.append(root)\n        print(q)\n        while q:\n            val = []\n            \n            for _ in range(len(q)):\n                node = q.popleft()\n                val.append(node.val)\n                if node.left:\n                    q.append(node.left)\n                if node.right:\n                    q.append(node.right)\n            res.append(val)\n        return res",
+      "readmeContent": "# Binary Tree Level Order Traversal\n\n**Difficulty:** Medium  |  **Acceptance:** 72.6%\n\n**Tags:** `Tree`, `Breadth-First Search`, `Binary Tree`\n\n## Problem\n\nGiven the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).\n\n&nbsp;\nExample 1:\n\nInput: root = [3,9,20,null,null,15,7]\nOutput: [[3],[9,20],[15,7]]\n\nExample 2:\n\nInput: root = [1]\nOutput: [[1]]\n\nExample 3:\n\nInput: root = []\nOutput: []\n\n&nbsp;\nConstraints:\n\n\tThe number of nodes in the tree is in the range [0, 2000].\n\t-1000 <= Node.val <= 1000\n\n## My Submission\n\n- Runtime: 558 ms\n- Memory: 19.9 MB\n\n## Similar Problems\n\n- [Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/) — Medium\n- [Binary Tree Level Order Traversal II](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/) — Medium\n- [Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/) — Easy\n- [Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree/) — Easy\n- [N-ary Tree Level Order Traversal](https://leetcode.com/problems/n-ary-tree-level-order-traversal/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-binary-tree-level-order-traversal/lc-binary-tree-level-order-traversal.py",
+          "content": "# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution:\n    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:\n        res = []\n        q = collections.deque()\n        if root:\n            q.append(root)\n        print(q)\n        while q:\n            val = []\n            \n            for _ in range(len(q)):\n                node = q.popleft()\n                val.append(node.val)\n                if node.left:\n                    q.append(node.left)\n                if node.right:\n                    q.append(node.right)\n            res.append(val)\n        return res"
+        },
+        {
+          "path": "problems/lc-binary-tree-level-order-traversal/README.md",
+          "content": "# Binary Tree Level Order Traversal\n\n**Difficulty:** Medium  |  **Acceptance:** 72.6%\n\n**Tags:** `Tree`, `Breadth-First Search`, `Binary Tree`\n\n## Problem\n\nGiven the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).\n\n&nbsp;\nExample 1:\n\nInput: root = [3,9,20,null,null,15,7]\nOutput: [[3],[9,20],[15,7]]\n\nExample 2:\n\nInput: root = [1]\nOutput: [[1]]\n\nExample 3:\n\nInput: root = []\nOutput: []\n\n&nbsp;\nConstraints:\n\n\tThe number of nodes in the tree is in the range [0, 2000].\n\t-1000 <= Node.val <= 1000\n\n## My Submission\n\n- Runtime: 558 ms\n- Memory: 19.9 MB\n\n## Similar Problems\n\n- [Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/) — Medium\n- [Binary Tree Level Order Traversal II](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/) — Medium\n- [Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/) — Easy\n- [Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree/) — Easy\n- [N-ary Tree Level Order Traversal](https://leetcode.com/problems/n-ary-tree-level-order-traversal/) — Medium\n"
+        }
+      ],
+      "timestamp": 1753211566000,
+      "runtime": "558 ms",
+      "memory": "19.9 MB",
+      "runtimePct": 1.324300000000001,
+      "memoryPct": 60.85600000000002,
+      "problemStatement": "<p>Given the <code>root</code> of a binary tree, return <em>the level order traversal of its nodes&#39; values</em>. (i.e., from left to right, level by level).</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2021/02/19/tree1.jpg\" style=\"width: 277px; height: 302px;\" />\n<pre>\n<strong>Input:</strong> root = [3,9,20,null,null,15,7]\n<strong>Output:</strong> [[3],[9,20],[15,7]]\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> root = [1]\n<strong>Output:</strong> [[1]]\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> root = []\n<strong>Output:</strong> []\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li>The number of nodes in the tree is in the range <code>[0, 2000]</code>.</li>\n\t<li><code>-1000 &lt;= Node.val &lt;= 1000</code></li>\n</ul>\n",
+      "hints": [
+        "Use a queue to perform BFS."
+      ],
+      "acRate": 72.646439873955,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "binary-tree-zigzag-level-order-traversal",
+          "title": "Binary Tree Zigzag Level Order Traversal",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "binary-tree-level-order-traversal-ii",
+          "title": "Binary Tree Level Order Traversal II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "minimum-depth-of-binary-tree",
+          "title": "Minimum Depth of Binary Tree",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "average-of-levels-in-binary-tree",
+          "title": "Average of Levels in Binary Tree",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "n-ary-tree-level-order-traversal",
+          "title": "N-ary Tree Level Order Traversal",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "cousins-in-binary-tree",
+          "title": "Cousins in Binary Tree",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "minimum-number-of-operations-to-sort-a-binary-tree-by-level",
+          "title": "Minimum Number of Operations to Sort a Binary Tree by Level",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "divide-nodes-into-the-maximum-number-of-groups",
+          "title": "Divide Nodes Into the Maximum Number of Groups",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-letter-combinations-of-a-phone-number::1708822302",
+      "submissionId": 1708822302,
+      "platform": "leetcode",
+      "title": "Letter Combinations of a Phone Number",
+      "titleSlug": "letter-combinations-of-a-phone-number",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Hash Table",
+        "String",
+        "Backtracking"
+      ],
+      "topic": "Backtracking",
+      "code": "class Solution:\n    def letterCombinations(self, digits: str) -> List[str]:\n        res = []\n        \n        alpha = {\n            '2': [\"a\", \"b\", \"c\"],\n            '3': [\"d\", \"e\", \"f\"],\n            '4': [\"g\", \"h\", \"i\"],\n            '5': [\"j\", \"k\", \"l\"],\n            '6': [\"m\", \"n\", \"o\"],\n            '7': [\"p\", \"q\", \"r\", \"s\"],\n            '8': [\"t\", \"u\", \"v\"],\n            '9': [\"w\", \"x\", \"y\", \"z\"],\n        }\n        \n        def back(i,cur):\n            if len(cur) == len(digits):\n                res.append(cur)\n                return\n            for c in alpha[digits[i]]:\n                back(i+1,cur+c)\n        if digits:\n            back(0,\"\")\n        return res\n",
+      "readmeContent": "# Letter Combinations of a Phone Number\n\n**Difficulty:** Medium  |  **Acceptance:** 66.0%\n\n**Tags:** `Hash Table`, `String`, `Backtracking`\n\n## Problem\n\nGiven a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.\n\nA mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.\n\n&nbsp;\nExample 1:\n\nInput: digits = \"23\"\nOutput: [\"ad\",\"ae\",\"af\",\"bd\",\"be\",\"bf\",\"cd\",\"ce\",\"cf\"]\n\nExample 2:\n\nInput: digits = \"2\"\nOutput: [\"a\",\"b\",\"c\"]\n\n&nbsp;\nConstraints:\n\n\t1 <= digits.length <= 4\n\tdigits[i] is a digit in the range ['2', '9'].\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.8 MB\n\n## Similar Problems\n\n- [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/) — Medium\n- [Combination Sum](https://leetcode.com/problems/combination-sum/) — Medium\n- [Binary Watch](https://leetcode.com/problems/binary-watch/) — Easy\n- [Count Number of Texts](https://leetcode.com/problems/count-number-of-texts/) — Medium\n- [Minimum Number of Pushes to Type Word I](https://leetcode.com/problems/minimum-number-of-pushes-to-type-word-i/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-letter-combinations-of-a-phone-number/lc-letter-combinations-of-a-phone-number.py",
+          "content": "class Solution:\n    def letterCombinations(self, digits: str) -> List[str]:\n        res = []\n        \n        alpha = {\n            '2': [\"a\", \"b\", \"c\"],\n            '3': [\"d\", \"e\", \"f\"],\n            '4': [\"g\", \"h\", \"i\"],\n            '5': [\"j\", \"k\", \"l\"],\n            '6': [\"m\", \"n\", \"o\"],\n            '7': [\"p\", \"q\", \"r\", \"s\"],\n            '8': [\"t\", \"u\", \"v\"],\n            '9': [\"w\", \"x\", \"y\", \"z\"],\n        }\n        \n        def back(i,cur):\n            if len(cur) == len(digits):\n                res.append(cur)\n                return\n            for c in alpha[digits[i]]:\n                back(i+1,cur+c)\n        if digits:\n            back(0,\"\")\n        return res\n"
+        },
+        {
+          "path": "problems/lc-letter-combinations-of-a-phone-number/README.md",
+          "content": "# Letter Combinations of a Phone Number\n\n**Difficulty:** Medium  |  **Acceptance:** 66.0%\n\n**Tags:** `Hash Table`, `String`, `Backtracking`\n\n## Problem\n\nGiven a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.\n\nA mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.\n\n&nbsp;\nExample 1:\n\nInput: digits = \"23\"\nOutput: [\"ad\",\"ae\",\"af\",\"bd\",\"be\",\"bf\",\"cd\",\"ce\",\"cf\"]\n\nExample 2:\n\nInput: digits = \"2\"\nOutput: [\"a\",\"b\",\"c\"]\n\n&nbsp;\nConstraints:\n\n\t1 <= digits.length <= 4\n\tdigits[i] is a digit in the range ['2', '9'].\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.8 MB\n\n## Similar Problems\n\n- [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/) — Medium\n- [Combination Sum](https://leetcode.com/problems/combination-sum/) — Medium\n- [Binary Watch](https://leetcode.com/problems/binary-watch/) — Easy\n- [Count Number of Texts](https://leetcode.com/problems/count-number-of-texts/) — Medium\n- [Minimum Number of Pushes to Type Word I](https://leetcode.com/problems/minimum-number-of-pushes-to-type-word-i/) — Easy\n"
+        }
+      ],
+      "timestamp": 1753292336000,
+      "runtime": "0 ms",
+      "memory": "17.8 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given a string containing digits from <code>2-9</code> inclusive, return all possible letter combinations that the number could represent. Return the answer in <strong>any order</strong>.</p>\n\n<p>A mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.</p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2022/03/15/1200px-telephone-keypad2svg.png\" style=\"width: 300px; height: 243px;\" />\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> digits = &quot;23&quot;\n<strong>Output:</strong> [&quot;ad&quot;,&quot;ae&quot;,&quot;af&quot;,&quot;bd&quot;,&quot;be&quot;,&quot;bf&quot;,&quot;cd&quot;,&quot;ce&quot;,&quot;cf&quot;]\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> digits = &quot;2&quot;\n<strong>Output:</strong> [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;]\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= digits.length &lt;= 4</code></li>\n\t<li><code>digits[i]</code> is a digit in the range <code>[&#39;2&#39;, &#39;9&#39;]</code>.</li>\n</ul>\n",
+      "hints": null,
+      "acRate": 66.02623979682167,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "generate-parentheses",
+          "title": "Generate Parentheses",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "combination-sum",
+          "title": "Combination Sum",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "binary-watch",
+          "title": "Binary Watch",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "count-number-of-texts",
+          "title": "Count Number of Texts",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "minimum-number-of-pushes-to-type-word-i",
+          "title": "Minimum Number of Pushes to Type Word I",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "minimum-number-of-pushes-to-type-word-ii",
+          "title": "Minimum Number of Pushes to Type Word II",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-merge-two-sorted-lists::1716712147",
+      "submissionId": 1716712147,
+      "platform": "leetcode",
+      "title": "Merge Two Sorted Lists",
+      "titleSlug": "merge-two-sorted-lists",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Linked List",
+        "Recursion"
+      ],
+      "topic": "Recursion",
+      "code": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:\n        cur = dummy = ListNode()\n        while list1 and list2:               \n            if list1.val < list2.val:\n                cur.next = list1\n                list1, cur = list1.next, list1\n            else:\n                cur.next = list2\n                list2, cur = list2.next, list2\n                \n        if list1 or list2:\n            cur.next = list1 if list1 else list2\n            \n        return dummy.next",
+      "readmeContent": "# Merge Two Sorted Lists\n\n**Difficulty:** Easy  |  **Acceptance:** 68.3%\n\n**Tags:** `Linked List`, `Recursion`\n\n## Problem\n\nYou are given the heads of two sorted linked lists list1 and list2.\n\nMerge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.\n\nReturn the head of the merged linked list.\n\n&nbsp;\nExample 1:\n\nInput: list1 = [1,2,4], list2 = [1,3,4]\nOutput: [1,1,2,3,4,4]\n\nExample 2:\n\nInput: list1 = [], list2 = []\nOutput: []\n\nExample 3:\n\nInput: list1 = [], list2 = [0]\nOutput: [0]\n\n&nbsp;\nConstraints:\n\n\tThe number of nodes in both lists is in the range [0, 50].\n\t-100 <= Node.val <= 100\n\tBoth list1 and list2 are sorted in non-decreasing order.\n\n## My Submission\n\n- Runtime: 1 ms\n- Memory: 17.6 MB\n\n## Similar Problems\n\n- [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) — Hard\n- [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) — Easy\n- [Sort List](https://leetcode.com/problems/sort-list/) — Medium\n- [Merge Two 2D Arrays by Summing Values](https://leetcode.com/problems/merge-two-2d-arrays-by-summing-values/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-merge-two-sorted-lists/lc-merge-two-sorted-lists.py",
+          "content": "# Definition for singly-linked list.\n# class ListNode:\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution:\n    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:\n        cur = dummy = ListNode()\n        while list1 and list2:               \n            if list1.val < list2.val:\n                cur.next = list1\n                list1, cur = list1.next, list1\n            else:\n                cur.next = list2\n                list2, cur = list2.next, list2\n                \n        if list1 or list2:\n            cur.next = list1 if list1 else list2\n            \n        return dummy.next"
+        },
+        {
+          "path": "problems/lc-merge-two-sorted-lists/README.md",
+          "content": "# Merge Two Sorted Lists\n\n**Difficulty:** Easy  |  **Acceptance:** 68.3%\n\n**Tags:** `Linked List`, `Recursion`\n\n## Problem\n\nYou are given the heads of two sorted linked lists list1 and list2.\n\nMerge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.\n\nReturn the head of the merged linked list.\n\n&nbsp;\nExample 1:\n\nInput: list1 = [1,2,4], list2 = [1,3,4]\nOutput: [1,1,2,3,4,4]\n\nExample 2:\n\nInput: list1 = [], list2 = []\nOutput: []\n\nExample 3:\n\nInput: list1 = [], list2 = [0]\nOutput: [0]\n\n&nbsp;\nConstraints:\n\n\tThe number of nodes in both lists is in the range [0, 50].\n\t-100 <= Node.val <= 100\n\tBoth list1 and list2 are sorted in non-decreasing order.\n\n## My Submission\n\n- Runtime: 1 ms\n- Memory: 17.6 MB\n\n## Similar Problems\n\n- [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) — Hard\n- [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) — Easy\n- [Sort List](https://leetcode.com/problems/sort-list/) — Medium\n- [Merge Two 2D Arrays by Summing Values](https://leetcode.com/problems/merge-two-2d-arrays-by-summing-values/) — Easy\n"
+        }
+      ],
+      "timestamp": 1753856636000,
+      "runtime": "1 ms",
+      "memory": "17.6 MB",
+      "runtimePct": 18.977900000000005,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given the heads of two sorted linked lists <code>list1</code> and <code>list2</code>.</p>\n\n<p>Merge the two lists into one <strong>sorted</strong> list. The list should be made by splicing together the nodes of the first two lists.</p>\n\n<p>Return <em>the head of the merged linked list</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/10/03/merge_ex1.jpg\" style=\"width: 662px; height: 302px;\" />\n<pre>\n<strong>Input:</strong> list1 = [1,2,4], list2 = [1,3,4]\n<strong>Output:</strong> [1,1,2,3,4,4]\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> list1 = [], list2 = []\n<strong>Output:</strong> []\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> list1 = [], list2 = [0]\n<strong>Output:</strong> [0]\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li>The number of nodes in both lists is in the range <code>[0, 50]</code>.</li>\n\t<li><code>-100 &lt;= Node.val &lt;= 100</code></li>\n\t<li>Both <code>list1</code> and <code>list2</code> are sorted in <strong>non-decreasing</strong> order.</li>\n</ul>\n",
+      "hints": null,
+      "acRate": 68.26977622808114,
+      "similar": [
+        {
+          "difficulty": "Hard",
+          "titleSlug": "merge-k-sorted-lists",
+          "title": "Merge k Sorted Lists",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "merge-sorted-array",
+          "title": "Merge Sorted Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "sort-list",
+          "title": "Sort List",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "merge-two-2d-arrays-by-summing-values",
+          "title": "Merge Two 2D Arrays by Summing Values",
           "isPaidOnly": false
         }
       ],
