@@ -5,9 +5,27 @@
     },
     "byMode": {
       "direct": 2,
-      "guided": 11
+      "guided": 13
     },
-    "total": 13
+    "total": 15
+  },
+  "leetcode::3sum": {
+    "difficulty": "Medium",
+    "lang": "Python3",
+    "platform": "leetcode",
+    "slug": "3sum",
+    "solves": [
+      {
+        "elapsedSeconds": 0,
+        "lang": "Python3",
+        "ts": 1789467813613
+      }
+    ],
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting"
+    ]
   },
   "leetcode::binary-search": {
     "difficulty": "Easy",

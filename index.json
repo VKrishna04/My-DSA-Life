@@ -1,19 +1,19 @@
 {
-  "updatedAt": "2026-09-15T09:52:51.143Z",
+  "updatedAt": "2026-09-15T10:23:33.813Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 318,
+    "total": 319,
     "easy": 177,
-    "medium": 128,
+    "medium": 129,
     "hard": 11,
     "unknownDifficulty": 2,
     "byPlatform": {
       "geeksforgeeks": 55,
-      "leetcode": 263
+      "leetcode": 264
     },
     "byLang": {
       "python3": 5,
-      "Python3": 202,
+      "Python3": 203,
       "Unknown": 45,
       "MySQL": 15,
       "Java": 12,
@@ -36,7 +36,7 @@
       "Depth-First Search": 1,
       "Linked List": 8,
       "Bit Manipulation": 3,
-      "Array": 136,
+      "Array": 137,
       "Searching": 2,
       "Hash Table": 14,
       "Java": 1,
@@ -2008,6 +2008,115 @@
         "problems/lc-01-matrix/lc-01-matrix.py",
         "problems/lc-01-matrix/README.md"
       ],
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "lc-3sum",
+      "forceCommit": false,
+      "submissionId": null,
+      "title": "3Sum",
+      "titleSlug": "3sum",
+      "difficulty": "Medium",
+      "topic": "Two Pointers",
+      "tags": [
+        "Array",
+        "Two Pointers",
+        "Sorting"
+      ],
+      "canonical": {
+        "addedAt": "2025-04-24",
+        "aliases": [
+          {
+            "id": 15,
+            "platform": "leetcode",
+            "slug": "3sum"
+          }
+        ],
+        "canonicalId": "3sum",
+        "canonicalTitle": "3Sum",
+        "confirmedBy": "system-init",
+        "difficulty": "medium",
+        "pattern": "two-pointer",
+        "tags": [
+          "array"
+        ],
+        "topic": "two-pointers",
+        "voteCount": 98
+      },
+      "readmeContent": "# [15] 3Sum\n**Difficulty:** Medium  |  **Acceptance:** 39.9%  |  **Likes:** 36343 / **Dislikes:** 3321\n**Tags:** `Array`, `Two Pointers`, `Sorting`\n## Problem\nGiven an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.\n\nNotice that the solution set must not contain duplicate triplets.\n\n&nbsp;\nExample 1:\n\nInput: nums = [-1,0,1,2,-1,-4]\nOutput: [[-1,-1,2],[-1,0,1]]\nExplanation: \nnums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.\nnums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.\nnums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.\nThe distinct triplets are [-1,0,1] and [-1,-1,2].\nNotice that the order of the output and the order of the triplets does not matter.\n\nExample 2:\n\nInput: nums = [0,1,1]\nOutput: []\nExplanation: The only possible triplet does not sum up to 0.\n\nExample 3:\n\nInput: nums = [0,0,0]\nOutput: [[0,0,0]]\nExplanation: The only possible triplet sums up to 0.\n\n&nbsp;\nConstraints:\n\n\t3 <= nums.length <= 3000\n\t-105 <= nums[i] <= 105\n## My Submission\n\n- Runtime: 539 ms (beats 79.7%)\n- Memory: 20.7 MB (beats 100.0%)\n\n## Similar Problems\n\n- [Two Sum](https://leetcode.com/problems/two-sum/) — Easy\n- [3Sum Closest](https://leetcode.com/problems/3sum-closest/) — Medium\n- [4Sum](https://leetcode.com/problems/4sum/) — Medium\n- [Number of Arithmetic Triplets](https://leetcode.com/problems/number-of-arithmetic-triplets/) — Easy\n- [Minimum Sum of Mountain Triplets I](https://leetcode.com/problems/minimum-sum-of-mountain-triplets-i/) — Easy\n",
+      "code": "class Solution:\n    def threeSum(self, nums: List[int]) -> List[List[int]]:\n        nums.sort()\n        ans = []\n\n        for k in range(len(nums)-2):\n            if k > 0 and nums[k] == nums[k-1]:\n                continue\n            target = -nums[k]\n\n            i = k+1\n            j = len(nums) - 1\n\n            while i < j:\n                if nums[i] + nums[j] < target:\n                    i += 1\n                \n                elif nums[i] + nums[j] > target:\n                    j -= 1\n                \n                else:\n                    ans.append([nums[k], nums[i], nums[j]])\n\n                    while i < j and nums[i] == nums[i+1]:\n                        i += 1\n                    while i < j and nums[j] == nums[j-1]:\n                        j -= 1\n                    i += 1\n                    j -= 1\n        return ans",
+      "files": [
+        {
+          "path": "problems/3sum/leetcode/lc-3sum.py",
+          "content": "class Solution:\n    def threeSum(self, nums: List[int]) -> List[List[int]]:\n        nums.sort()\n        ans = []\n\n        for k in range(len(nums)-2):\n            if k > 0 and nums[k] == nums[k-1]:\n                continue\n            target = -nums[k]\n\n            i = k+1\n            j = len(nums) - 1\n\n            while i < j:\n                if nums[i] + nums[j] < target:\n                    i += 1\n                \n                elif nums[i] + nums[j] > target:\n                    j -= 1\n                \n                else:\n                    ans.append([nums[k], nums[i], nums[j]])\n\n                    while i < j and nums[i] == nums[i+1]:\n                        i += 1\n                    while i < j and nums[j] == nums[j-1]:\n                        j -= 1\n                    i += 1\n                    j -= 1\n        return ans"
+        },
+        {
+          "path": "problems/3sum/README.md",
+          "content": "# [15] 3Sum\n**Difficulty:** Medium  |  **Acceptance:** 39.9%  |  **Likes:** 36343 / **Dislikes:** 3321\n**Tags:** `Array`, `Two Pointers`, `Sorting`\n## Problem\nGiven an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.\n\nNotice that the solution set must not contain duplicate triplets.\n\n&nbsp;\nExample 1:\n\nInput: nums = [-1,0,1,2,-1,-4]\nOutput: [[-1,-1,2],[-1,0,1]]\nExplanation: \nnums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.\nnums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.\nnums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.\nThe distinct triplets are [-1,0,1] and [-1,-1,2].\nNotice that the order of the output and the order of the triplets does not matter.\n\nExample 2:\n\nInput: nums = [0,1,1]\nOutput: []\nExplanation: The only possible triplet does not sum up to 0.\n\nExample 3:\n\nInput: nums = [0,0,0]\nOutput: [[0,0,0]]\nExplanation: The only possible triplet sums up to 0.\n\n&nbsp;\nConstraints:\n\n\t3 <= nums.length <= 3000\n\t-105 <= nums[i] <= 105\n## My Submission\n\n- Runtime: 539 ms (beats 79.7%)\n- Memory: 20.7 MB (beats 100.0%)\n\n## Similar Problems\n\n- [Two Sum](https://leetcode.com/problems/two-sum/) — Easy\n- [3Sum Closest](https://leetcode.com/problems/3sum-closest/) — Medium\n- [4Sum](https://leetcode.com/problems/4sum/) — Medium\n- [Number of Arithmetic Triplets](https://leetcode.com/problems/number-of-arithmetic-triplets/) — Easy\n- [Minimum Sum of Mountain Triplets I](https://leetcode.com/problems/minimum-sum-of-mountain-triplets-i/) — Easy\n"
+        }
+      ],
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "runtime": "539 ms",
+      "memory": "20.7 MB",
+      "runtimePct": 79.74919999999989,
+      "memoryPct": 99.9661,
+      "timestamp": 1754848048000,
+      "acRate": 39.86969769218645,
+      "likes": 36343,
+      "dislikes": 3321,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "two-sum",
+          "title": "Two Sum",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "3sum-closest",
+          "title": "3Sum Closest",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "4sum",
+          "title": "4Sum",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "number-of-arithmetic-triplets",
+          "title": "Number of Arithmetic Triplets",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "minimum-sum-of-mountain-triplets-i",
+          "title": "Minimum Sum of Mountain Triplets I",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "minimum-sum-of-mountain-triplets-ii",
+          "title": "Minimum Sum of Mountain Triplets II",
+          "isPaidOnly": false
+        }
+      ],
+      "problemStatement": "<p>Given an integer array nums, return all the triplets <code>[nums[i], nums[j], nums[k]]</code> such that <code>i != j</code>, <code>i != k</code>, and <code>j != k</code>, and <code>nums[i] + nums[j] + nums[k] == 0</code>.</p>\n\n<p>Notice that the solution set must not contain duplicate triplets.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [-1,0,1,2,-1,-4]\n<strong>Output:</strong> [[-1,-1,2],[-1,0,1]]\n<strong>Explanation:</strong> \nnums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.\nnums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.\nnums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.\nThe distinct triplets are [-1,0,1] and [-1,-1,2].\nNotice that the order of the output and the order of the triplets does not matter.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [0,1,1]\n<strong>Output:</strong> []\n<strong>Explanation:</strong> The only possible triplet does not sum up to 0.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [0,0,0]\n<strong>Output:</strong> [[0,0,0]]\n<strong>Explanation:</strong> The only possible triplet sums up to 0.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>3 &lt;= nums.length &lt;= 3000</code></li>\n\t<li><code>-10<sup>5</sup> &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>\n</ul>\n",
+      "elapsedSeconds": 0,
+      "hasSimilar": true,
+      "submissionsUrl": "https://leetcode.com/problems/3sum/submissions/",
+      "notes": "",
+      "methodTitle": "",
+      "isDuplicate": true,
+      "duplicateOf": "lc-3sum::1730412472",
+      "_requestAIReview": true,
+      "platform": "leetcode",
       "methods": [],
       "manuallyEdited": false
     },
@@ -19819,7 +19928,13 @@
       "isDuplicate": false,
       "duplicateOf": null,
       "_requestAIReview": true,
-      "platform": "leetcode"
+      "platform": "leetcode",
+      "_committedPaths": [
+        "problems/two-sum-ii-input-array-is-sorted/leetcode/lc-two-sum-ii-input-array-is-sorted.py",
+        "problems/two-sum-ii-input-array-is-sorted/leetcode/README.md"
+      ],
+      "methods": [],
+      "manuallyEdited": false
     },
     {
       "id": "lc-two-sum::1430566383",
