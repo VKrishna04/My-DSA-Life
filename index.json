@@ -1,19 +1,19 @@
 {
-  "updatedAt": "2026-05-16T18:53:12.613Z",
+  "updatedAt": "2026-05-16T18:54:06.910Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 151,
-    "easy": 124,
-    "medium": 26,
+    "total": 176,
+    "easy": 132,
+    "medium": 43,
     "hard": 1,
     "byPlatform": {
-      "leetcode": 151
+      "leetcode": 176
     },
     "byLang": {
       "C++": 1,
       "Java": 12,
       "C": 1,
-      "Python3": 102,
+      "Python3": 127,
       "JavaScript": 2,
       "pythondata": 13,
       "Pandas": 2,
@@ -22,13 +22,13 @@
       "MySQL": 1
     },
     "byTopic": {
-      "Two Pointers": 4,
-      "Array": 59,
-      "String": 11,
-      "Math": 20,
+      "Two Pointers": 5,
+      "Array": 79,
+      "String": 12,
+      "Math": 22,
       "Untagged": 31,
       "Linked List": 2,
-      "Hash Table": 12,
+      "Hash Table": 13,
       "Binary Search": 1,
       "Dynamic Programming": 1,
       "Divide and Conquer": 3,
@@ -8659,6 +8659,1576 @@
           "difficulty": "Easy",
           "titleSlug": "merge-two-2d-arrays-by-summing-values",
           "title": "Merge Two 2D Arrays by Summing Values",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-3sum::1730412472",
+      "submissionId": 1730412472,
+      "platform": "leetcode",
+      "title": "3Sum",
+      "titleSlug": "3sum",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Two Pointers",
+        "Sorting"
+      ],
+      "topic": "Two Pointers",
+      "code": "class Solution:\n    def threeSum(self, nums: List[int]) -> List[List[int]]:\n        nums.sort()\n        ans = []\n\n        for k in range(len(nums)-2):\n            if k > 0 and nums[k] == nums[k-1]:\n                continue\n            target = -nums[k]\n\n            i = k+1\n            j = len(nums) - 1\n\n            while i < j:\n                if nums[i] + nums[j] < target:\n                    i += 1\n                \n                elif nums[i] + nums[j] > target:\n                    j -= 1\n                \n                else:\n                    ans.append([nums[k], nums[i], nums[j]])\n\n                    while i < j and nums[i] == nums[i+1]:\n                        i += 1\n                    while i < j and nums[j] == nums[j-1]:\n                        j -= 1\n                    i += 1\n                    j -= 1\n        return ans",
+      "readmeContent": "# 3Sum\n\n**Difficulty:** Medium  |  **Acceptance:** 39.1%\n\n**Tags:** `Array`, `Two Pointers`, `Sorting`\n\n## Problem\n\nGiven an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.\n\nNotice that the solution set must not contain duplicate triplets.\n\n&nbsp;\nExample 1:\n\nInput: nums = [-1,0,1,2,-1,-4]\nOutput: [[-1,-1,2],[-1,0,1]]\nExplanation: \nnums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.\nnums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.\nnums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.\nThe distinct triplets are [-1,0,1] and [-1,-1,2].\nNotice that the order of the output and the order of the triplets does not matter.\n\nExample 2:\n\nInput: nums = [0,1,1]\nOutput: []\nExplanation: The only possible triplet does not sum up to 0.\n\nExample 3:\n\nInput: nums = [0,0,0]\nOutput: [[0,0,0]]\nExplanation: The only possible triplet sums up to 0.\n\n&nbsp;\nConstraints:\n\n\t3 <= nums.length <= 3000\n\t-105 <= nums[i] <= 105\n\n## My Submission\n\n- Runtime: 539 ms\n- Memory: 20.7 MB\n\n## Similar Problems\n\n- [Two Sum](https://leetcode.com/problems/two-sum/) — Easy\n- [3Sum Closest](https://leetcode.com/problems/3sum-closest/) — Medium\n- [4Sum](https://leetcode.com/problems/4sum/) — Medium\n- [Number of Arithmetic Triplets](https://leetcode.com/problems/number-of-arithmetic-triplets/) — Easy\n- [Minimum Sum of Mountain Triplets I](https://leetcode.com/problems/minimum-sum-of-mountain-triplets-i/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-3sum/lc-3sum.py",
+          "content": "class Solution:\n    def threeSum(self, nums: List[int]) -> List[List[int]]:\n        nums.sort()\n        ans = []\n\n        for k in range(len(nums)-2):\n            if k > 0 and nums[k] == nums[k-1]:\n                continue\n            target = -nums[k]\n\n            i = k+1\n            j = len(nums) - 1\n\n            while i < j:\n                if nums[i] + nums[j] < target:\n                    i += 1\n                \n                elif nums[i] + nums[j] > target:\n                    j -= 1\n                \n                else:\n                    ans.append([nums[k], nums[i], nums[j]])\n\n                    while i < j and nums[i] == nums[i+1]:\n                        i += 1\n                    while i < j and nums[j] == nums[j-1]:\n                        j -= 1\n                    i += 1\n                    j -= 1\n        return ans"
+        },
+        {
+          "path": "problems/lc-3sum/README.md",
+          "content": "# 3Sum\n\n**Difficulty:** Medium  |  **Acceptance:** 39.1%\n\n**Tags:** `Array`, `Two Pointers`, `Sorting`\n\n## Problem\n\nGiven an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.\n\nNotice that the solution set must not contain duplicate triplets.\n\n&nbsp;\nExample 1:\n\nInput: nums = [-1,0,1,2,-1,-4]\nOutput: [[-1,-1,2],[-1,0,1]]\nExplanation: \nnums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.\nnums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.\nnums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.\nThe distinct triplets are [-1,0,1] and [-1,-1,2].\nNotice that the order of the output and the order of the triplets does not matter.\n\nExample 2:\n\nInput: nums = [0,1,1]\nOutput: []\nExplanation: The only possible triplet does not sum up to 0.\n\nExample 3:\n\nInput: nums = [0,0,0]\nOutput: [[0,0,0]]\nExplanation: The only possible triplet sums up to 0.\n\n&nbsp;\nConstraints:\n\n\t3 <= nums.length <= 3000\n\t-105 <= nums[i] <= 105\n\n## My Submission\n\n- Runtime: 539 ms\n- Memory: 20.7 MB\n\n## Similar Problems\n\n- [Two Sum](https://leetcode.com/problems/two-sum/) — Easy\n- [3Sum Closest](https://leetcode.com/problems/3sum-closest/) — Medium\n- [4Sum](https://leetcode.com/problems/4sum/) — Medium\n- [Number of Arithmetic Triplets](https://leetcode.com/problems/number-of-arithmetic-triplets/) — Easy\n- [Minimum Sum of Mountain Triplets I](https://leetcode.com/problems/minimum-sum-of-mountain-triplets-i/) — Easy\n"
+        }
+      ],
+      "timestamp": 1754848047000,
+      "runtime": "539 ms",
+      "memory": "20.7 MB",
+      "runtimePct": 81.44000000000004,
+      "memoryPct": 99.967,
+      "problemStatement": "<p>Given an integer array nums, return all the triplets <code>[nums[i], nums[j], nums[k]]</code> such that <code>i != j</code>, <code>i != k</code>, and <code>j != k</code>, and <code>nums[i] + nums[j] + nums[k] == 0</code>.</p>\n\n<p>Notice that the solution set must not contain duplicate triplets.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [-1,0,1,2,-1,-4]\n<strong>Output:</strong> [[-1,-1,2],[-1,0,1]]\n<strong>Explanation:</strong> \nnums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.\nnums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.\nnums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.\nThe distinct triplets are [-1,0,1] and [-1,-1,2].\nNotice that the order of the output and the order of the triplets does not matter.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [0,1,1]\n<strong>Output:</strong> []\n<strong>Explanation:</strong> The only possible triplet does not sum up to 0.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [0,0,0]\n<strong>Output:</strong> [[0,0,0]]\n<strong>Explanation:</strong> The only possible triplet sums up to 0.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>3 &lt;= nums.length &lt;= 3000</code></li>\n\t<li><code>-10<sup>5</sup> &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>\n</ul>\n",
+      "hints": [
+        "So, we essentially need to find three numbers x, y, and z such that they add up to the given value. If we fix one of the numbers say x, we are left with the two-sum problem at hand!",
+        "For the two-sum problem, if we fix one of the numbers, say x, we have to scan the entire array to find the next number y, which is value - x where value is the input parameter. Can we change our array somehow so that this search becomes faster?",
+        "The second train of thought for two-sum is, without changing the array, can we use additional space somehow? Like maybe a hash map to speed up the search?"
+      ],
+      "acRate": 39.051859053012016,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "two-sum",
+          "title": "Two Sum",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "3sum-closest",
+          "title": "3Sum Closest",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "4sum",
+          "title": "4Sum",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "number-of-arithmetic-triplets",
+          "title": "Number of Arithmetic Triplets",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "minimum-sum-of-mountain-triplets-i",
+          "title": "Minimum Sum of Mountain Triplets I",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "minimum-sum-of-mountain-triplets-ii",
+          "title": "Minimum Sum of Mountain Triplets II",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-maximum-number-of-operations-with-the-same-score-i::1730434235",
+      "submissionId": 1730434235,
+      "platform": "leetcode",
+      "title": "Maximum Number of Operations With the Same Score I",
+      "titleSlug": "maximum-number-of-operations-with-the-same-score-i",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Simulation"
+      ],
+      "topic": "Array",
+      "code": "class Solution:\n    def maxOperations(self, nums: List[int]) -> int:\n        score = nums[0]+nums[1]\n        count = 1\n        for i in range(2,len(nums)-1,2):\n            if nums[i] + nums[i+1] == score:\n                count += 1\n            else:\n                break\n        return count",
+      "readmeContent": "# Maximum Number of Operations With the Same Score I\n\n**Difficulty:** Easy  |  **Acceptance:** 52.9%\n\n**Tags:** `Array`, `Simulation`\n\n## Problem\n\nYou are given an array of integers nums. Consider the following operation:\n\n\tDelete the first two elements nums and define the score of the operation as the sum of these two elements.\n\nYou can perform this operation until nums contains fewer than two elements. Additionally, the same score must be achieved in all operations.\n\nReturn the maximum number of operations you can perform.\n\n&nbsp;\nExample 1:\n\nInput: nums = [3,2,1,4,5]\n\nOutput: 2\n\nExplanation:\n\n\tWe can perform the first operation with the score 3 + 2 = 5. After this operation, nums = [1,4,5].\n\tWe can perform the second operation as its score is 4 + 1 = 5, the same as the previous operation. After this operation, nums = [5].\n\tAs there are fewer than two elements, we can't perform more operations.\n\nExample 2:\n\nInput: nums = [1,5,3,3,4,1,3,2,2,3]\n\nOutput: 2\n\nExplanation:\n\n\tWe can perform the first operation with the score 1 + 5 = 6. After this operation, nums = [3,3,4,1,3,2,2,3].\n\tWe can perform the second operation as its score is 3 + 3 = 6, the same as the previous operation. After this operation, nums = [4,1,3,2,2,3].\n\tWe cannot perform the next operation as its score is 4 + 1 = 5, which is different from the previous scores.\n\nExample 3:\n\nInput: nums = [5,3]\n\nOutput: 1\n\n&nbsp;\nConstraints:\n\n\t2 <= nums.length <= 100\n\t1 <= nums[i] <= 1000\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.9 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-maximum-number-of-operations-with-the-same-score-i/lc-maximum-number-of-operations-with-the-same-score-i.py",
+          "content": "class Solution:\n    def maxOperations(self, nums: List[int]) -> int:\n        score = nums[0]+nums[1]\n        count = 1\n        for i in range(2,len(nums)-1,2):\n            if nums[i] + nums[i+1] == score:\n                count += 1\n            else:\n                break\n        return count"
+        },
+        {
+          "path": "problems/lc-maximum-number-of-operations-with-the-same-score-i/README.md",
+          "content": "# Maximum Number of Operations With the Same Score I\n\n**Difficulty:** Easy  |  **Acceptance:** 52.9%\n\n**Tags:** `Array`, `Simulation`\n\n## Problem\n\nYou are given an array of integers nums. Consider the following operation:\n\n\tDelete the first two elements nums and define the score of the operation as the sum of these two elements.\n\nYou can perform this operation until nums contains fewer than two elements. Additionally, the same score must be achieved in all operations.\n\nReturn the maximum number of operations you can perform.\n\n&nbsp;\nExample 1:\n\nInput: nums = [3,2,1,4,5]\n\nOutput: 2\n\nExplanation:\n\n\tWe can perform the first operation with the score 3 + 2 = 5. After this operation, nums = [1,4,5].\n\tWe can perform the second operation as its score is 4 + 1 = 5, the same as the previous operation. After this operation, nums = [5].\n\tAs there are fewer than two elements, we can't perform more operations.\n\nExample 2:\n\nInput: nums = [1,5,3,3,4,1,3,2,2,3]\n\nOutput: 2\n\nExplanation:\n\n\tWe can perform the first operation with the score 1 + 5 = 6. After this operation, nums = [3,3,4,1,3,2,2,3].\n\tWe can perform the second operation as its score is 3 + 3 = 6, the same as the previous operation. After this operation, nums = [4,1,3,2,2,3].\n\tWe cannot perform the next operation as its score is 4 + 1 = 5, which is different from the previous scores.\n\nExample 3:\n\nInput: nums = [5,3]\n\nOutput: 1\n\n&nbsp;\nConstraints:\n\n\t2 <= nums.length <= 100\n\t1 <= nums[i] <= 1000\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.9 MB\n"
+        }
+      ],
+      "timestamp": 1754849200000,
+      "runtime": "0 ms",
+      "memory": "17.9 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given an array of integers <code>nums</code>. Consider the following operation:</p>\n\n<ul>\n\t<li>Delete the first two elements <code>nums</code> and define the <em>score</em> of the operation as the sum of these two elements.</li>\n</ul>\n\n<p>You can perform this operation until <code>nums</code> contains fewer than two elements. Additionally, the <strong>same</strong> <em>score</em> must be achieved in <strong>all</strong> operations.</p>\n\n<p>Return the <strong>maximum</strong> number of operations you can perform.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [3,2,1,4,5]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">2</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<ul>\n\t<li>We can perform the first operation with the score <code>3 + 2 = 5</code>. After this operation, <code>nums = [1,4,5]</code>.</li>\n\t<li>We can perform the second operation as its score is <code>4 + 1 = 5</code>, the same as the previous operation. After this operation, <code>nums = [5]</code>.</li>\n\t<li>As there are fewer than two elements, we can&#39;t perform more operations.</li>\n</ul>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1,5,3,3,4,1,3,2,2,3]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">2</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<ul>\n\t<li>We can perform the first operation with the score <code>1 + 5 = 6</code>. After this operation, <code>nums = [3,3,4,1,3,2,2,3]</code>.</li>\n\t<li>We can perform the second operation as its score is <code>3 + 3 = 6</code>, the same as the previous operation. After this operation, <code>nums = [4,1,3,2,2,3]</code>.</li>\n\t<li>We cannot perform the next operation as its score is <code>4 + 1 = 5</code>, which is different from the previous scores.</li>\n</ul>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [5,3]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">1</span></p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>2 &lt;= nums.length &lt;= 100</code></li>\n\t<li><code>1 &lt;= nums[i] &lt;= 1000</code></li>\n</ul>\n",
+      "hints": null,
+      "acRate": 52.886345053148,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-minimize-maximum-pair-sum-in-array::1730450212",
+      "submissionId": 1730450212,
+      "platform": "leetcode",
+      "title": "Minimize Maximum Pair Sum in Array",
+      "titleSlug": "minimize-maximum-pair-sum-in-array",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Two Pointers",
+        "Greedy",
+        "Sorting"
+      ],
+      "topic": "Greedy",
+      "code": "class Solution:\n    def minPairSum(self, nums: List[int]) -> int:\n        nums.sort()\n        print(nums)\n        ans = []\n\n        for i in range(int(len(nums)/2)):\n            ans.append(nums[i]+nums[len(nums)-i-1])\n        \n        return max(ans)",
+      "readmeContent": "# Minimize Maximum Pair Sum in Array\n\n**Difficulty:** Medium  |  **Acceptance:** 83.3%\n\n**Tags:** `Array`, `Two Pointers`, `Greedy`, `Sorting`\n\n## Problem\n\nThe pair sum of a pair (a,b) is equal to a + b. The maximum pair sum is the largest pair sum in a list of pairs.\r\n\r\n\r\n\tFor example, if we have pairs (1,5), (2,3), and (4,4), the maximum pair sum would be max(1+5, 2+3, 4+4) = max(6, 5, 8) = 8.\r\n\r\n\r\nGiven an array nums of even length n, pair up the elements of nums into n / 2 pairs such that:\r\n\r\n\r\n\tEach element of nums is in exactly one pair, and\r\n\tThe maximum pair sum is minimized.\r\n\r\n\r\nReturn the minimized maximum pair sum after optimally pairing up the elements.\r\n\r\n&nbsp;\r\nExample 1:\r\n\r\n\r\nInput: nums = [3,5,2,3]\r\nOutput: 7\r\nExplanation: The elements can be paired up into pairs (3,3) and (5,2).\r\nThe maximum pair sum is max(3+3, 5+2) = max(6, 7) = 7.\r\n\r\n\r\nExample 2:\r\n\r\n\r\nInput: nums = [3,5,4,2,4,6]\r\nOutput: 8\r\nExplanation: The elements can be paired up into pairs (3,5), (4,4), and (6,2).\r\nThe maximum pair sum is max(3+5, 4+4, 6+2) = max(8, 8, 8) = 8.\r\n\r\n\r\n&nbsp;\r\nConstraints:\r\n\r\n\r\n\tn == nums.length\r\n\t2 <= n <= 105\r\n\tn is even.\r\n\t1 <= nums[i] <= 105\n\n## My Submission\n\n- Runtime: 978 ms\n- Memory: 30.7 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-minimize-maximum-pair-sum-in-array/lc-minimize-maximum-pair-sum-in-array.py",
+          "content": "class Solution:\n    def minPairSum(self, nums: List[int]) -> int:\n        nums.sort()\n        print(nums)\n        ans = []\n\n        for i in range(int(len(nums)/2)):\n            ans.append(nums[i]+nums[len(nums)-i-1])\n        \n        return max(ans)"
+        },
+        {
+          "path": "problems/lc-minimize-maximum-pair-sum-in-array/README.md",
+          "content": "# Minimize Maximum Pair Sum in Array\n\n**Difficulty:** Medium  |  **Acceptance:** 83.3%\n\n**Tags:** `Array`, `Two Pointers`, `Greedy`, `Sorting`\n\n## Problem\n\nThe pair sum of a pair (a,b) is equal to a + b. The maximum pair sum is the largest pair sum in a list of pairs.\r\n\r\n\r\n\tFor example, if we have pairs (1,5), (2,3), and (4,4), the maximum pair sum would be max(1+5, 2+3, 4+4) = max(6, 5, 8) = 8.\r\n\r\n\r\nGiven an array nums of even length n, pair up the elements of nums into n / 2 pairs such that:\r\n\r\n\r\n\tEach element of nums is in exactly one pair, and\r\n\tThe maximum pair sum is minimized.\r\n\r\n\r\nReturn the minimized maximum pair sum after optimally pairing up the elements.\r\n\r\n&nbsp;\r\nExample 1:\r\n\r\n\r\nInput: nums = [3,5,2,3]\r\nOutput: 7\r\nExplanation: The elements can be paired up into pairs (3,3) and (5,2).\r\nThe maximum pair sum is max(3+3, 5+2) = max(6, 7) = 7.\r\n\r\n\r\nExample 2:\r\n\r\n\r\nInput: nums = [3,5,4,2,4,6]\r\nOutput: 8\r\nExplanation: The elements can be paired up into pairs (3,5), (4,4), and (6,2).\r\nThe maximum pair sum is max(3+5, 4+4, 6+2) = max(8, 8, 8) = 8.\r\n\r\n\r\n&nbsp;\r\nConstraints:\r\n\r\n\r\n\tn == nums.length\r\n\t2 <= n <= 105\r\n\tn is even.\r\n\t1 <= nums[i] <= 105\n\n## My Submission\n\n- Runtime: 978 ms\n- Memory: 30.7 MB\n"
+        }
+      ],
+      "timestamp": 1754850077000,
+      "runtime": "978 ms",
+      "memory": "30.7 MB",
+      "runtimePct": 5.055999999999983,
+      "memoryPct": 99.6904,
+      "problemStatement": "<p>The <strong>pair sum</strong> of a pair <code>(a,b)</code> is equal to <code>a + b</code>. The <strong>maximum pair sum</strong> is the largest <strong>pair sum</strong> in a list of pairs.</p>\r\n\r\n<ul>\r\n\t<li>For example, if we have pairs <code>(1,5)</code>, <code>(2,3)</code>, and <code>(4,4)</code>, the <strong>maximum pair sum</strong> would be <code>max(1+5, 2+3, 4+4) = max(6, 5, 8) = 8</code>.</li>\r\n</ul>\r\n\r\n<p>Given an array <code>nums</code> of <strong>even</strong> length <code>n</code>, pair up the elements of <code>nums</code> into <code>n / 2</code> pairs such that:</p>\r\n\r\n<ul>\r\n\t<li>Each element of <code>nums</code> is in <strong>exactly one</strong> pair, and</li>\r\n\t<li>The <strong>maximum pair sum </strong>is <strong>minimized</strong>.</li>\r\n</ul>\r\n\r\n<p>Return <em>the minimized <strong>maximum pair sum</strong> after optimally pairing up the elements</em>.</p>\r\n\r\n<p>&nbsp;</p>\r\n<p><strong class=\"example\">Example 1:</strong></p>\r\n\r\n<pre>\r\n<strong>Input:</strong> nums = [3,5,2,3]\r\n<strong>Output:</strong> 7\r\n<strong>Explanation:</strong> The elements can be paired up into pairs (3,3) and (5,2).\r\nThe maximum pair sum is max(3+3, 5+2) = max(6, 7) = 7.\r\n</pre>\r\n\r\n<p><strong class=\"example\">Example 2:</strong></p>\r\n\r\n<pre>\r\n<strong>Input:</strong> nums = [3,5,4,2,4,6]\r\n<strong>Output:</strong> 8\r\n<strong>Explanation:</strong> The elements can be paired up into pairs (3,5), (4,4), and (6,2).\r\nThe maximum pair sum is max(3+5, 4+4, 6+2) = max(8, 8, 8) = 8.\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n<p><strong>Constraints:</strong></p>\r\n\r\n<ul>\r\n\t<li><code>n == nums.length</code></li>\r\n\t<li><code>2 &lt;= n &lt;= 10<sup>5</sup></code></li>\r\n\t<li><code>n</code> is <strong>even</strong>.</li>\r\n\t<li><code>1 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>\r\n</ul>",
+      "hints": [
+        "Would sorting help find the optimal order?",
+        "Given a specific element, how would you minimize its specific pairwise sum?"
+      ],
+      "acRate": 83.2901099393876,
+      "similar": null,
+      "hasSimilar": null,
+      "conflictPending": true,
+      "conflictCandidates": [
+        {
+          "id": "lc-minimize-maximum-pair-sum-in-array::1730457343",
+          "code": "class Solution:\n    def minPairSum(self, nums: List[int]) -> int:\n        nums.sort()\n        i = 0\n        j = len(nums) - 1\n        res = 0\n\n        while i < j:\n            res = max(res, nums[i] + nums[j])\n            i += 1\n            j -= 1\n        \n        return res",
+          "lang": {
+            "name": "Python3",
+            "ext": "py",
+            "slug": "python3"
+          },
+          "runtime": "930 ms",
+          "memory": "31.4 MB",
+          "runtimePct": 5.055999999999983,
+          "memoryPct": 99.5872,
+          "timestamp": 1754850478000,
+          "submissionId": 1730457343
+        }
+      ]
+    },
+    {
+      "id": "lc-minimize-maximum-pair-sum-in-array::1730457343",
+      "submissionId": 1730457343,
+      "platform": "leetcode",
+      "title": "Minimize Maximum Pair Sum in Array",
+      "titleSlug": "minimize-maximum-pair-sum-in-array",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Two Pointers",
+        "Greedy",
+        "Sorting"
+      ],
+      "topic": "Greedy",
+      "code": "class Solution:\n    def minPairSum(self, nums: List[int]) -> int:\n        nums.sort()\n        i = 0\n        j = len(nums) - 1\n        res = 0\n\n        while i < j:\n            res = max(res, nums[i] + nums[j])\n            i += 1\n            j -= 1\n        \n        return res",
+      "readmeContent": "# Minimize Maximum Pair Sum in Array\n\n**Difficulty:** Medium  |  **Acceptance:** 83.3%\n\n**Tags:** `Array`, `Two Pointers`, `Greedy`, `Sorting`\n\n## Problem\n\nThe pair sum of a pair (a,b) is equal to a + b. The maximum pair sum is the largest pair sum in a list of pairs.\r\n\r\n\r\n\tFor example, if we have pairs (1,5), (2,3), and (4,4), the maximum pair sum would be max(1+5, 2+3, 4+4) = max(6, 5, 8) = 8.\r\n\r\n\r\nGiven an array nums of even length n, pair up the elements of nums into n / 2 pairs such that:\r\n\r\n\r\n\tEach element of nums is in exactly one pair, and\r\n\tThe maximum pair sum is minimized.\r\n\r\n\r\nReturn the minimized maximum pair sum after optimally pairing up the elements.\r\n\r\n&nbsp;\r\nExample 1:\r\n\r\n\r\nInput: nums = [3,5,2,3]\r\nOutput: 7\r\nExplanation: The elements can be paired up into pairs (3,3) and (5,2).\r\nThe maximum pair sum is max(3+3, 5+2) = max(6, 7) = 7.\r\n\r\n\r\nExample 2:\r\n\r\n\r\nInput: nums = [3,5,4,2,4,6]\r\nOutput: 8\r\nExplanation: The elements can be paired up into pairs (3,5), (4,4), and (6,2).\r\nThe maximum pair sum is max(3+5, 4+4, 6+2) = max(8, 8, 8) = 8.\r\n\r\n\r\n&nbsp;\r\nConstraints:\r\n\r\n\r\n\tn == nums.length\r\n\t2 <= n <= 105\r\n\tn is even.\r\n\t1 <= nums[i] <= 105\n\n## My Submission\n\n- Runtime: 930 ms\n- Memory: 31.4 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-minimize-maximum-pair-sum-in-array/lc-minimize-maximum-pair-sum-in-array.py",
+          "content": "class Solution:\n    def minPairSum(self, nums: List[int]) -> int:\n        nums.sort()\n        i = 0\n        j = len(nums) - 1\n        res = 0\n\n        while i < j:\n            res = max(res, nums[i] + nums[j])\n            i += 1\n            j -= 1\n        \n        return res"
+        },
+        {
+          "path": "problems/lc-minimize-maximum-pair-sum-in-array/README.md",
+          "content": "# Minimize Maximum Pair Sum in Array\n\n**Difficulty:** Medium  |  **Acceptance:** 83.3%\n\n**Tags:** `Array`, `Two Pointers`, `Greedy`, `Sorting`\n\n## Problem\n\nThe pair sum of a pair (a,b) is equal to a + b. The maximum pair sum is the largest pair sum in a list of pairs.\r\n\r\n\r\n\tFor example, if we have pairs (1,5), (2,3), and (4,4), the maximum pair sum would be max(1+5, 2+3, 4+4) = max(6, 5, 8) = 8.\r\n\r\n\r\nGiven an array nums of even length n, pair up the elements of nums into n / 2 pairs such that:\r\n\r\n\r\n\tEach element of nums is in exactly one pair, and\r\n\tThe maximum pair sum is minimized.\r\n\r\n\r\nReturn the minimized maximum pair sum after optimally pairing up the elements.\r\n\r\n&nbsp;\r\nExample 1:\r\n\r\n\r\nInput: nums = [3,5,2,3]\r\nOutput: 7\r\nExplanation: The elements can be paired up into pairs (3,3) and (5,2).\r\nThe maximum pair sum is max(3+3, 5+2) = max(6, 7) = 7.\r\n\r\n\r\nExample 2:\r\n\r\n\r\nInput: nums = [3,5,4,2,4,6]\r\nOutput: 8\r\nExplanation: The elements can be paired up into pairs (3,5), (4,4), and (6,2).\r\nThe maximum pair sum is max(3+5, 4+4, 6+2) = max(8, 8, 8) = 8.\r\n\r\n\r\n&nbsp;\r\nConstraints:\r\n\r\n\r\n\tn == nums.length\r\n\t2 <= n <= 105\r\n\tn is even.\r\n\t1 <= nums[i] <= 105\n\n## My Submission\n\n- Runtime: 930 ms\n- Memory: 31.4 MB\n"
+        }
+      ],
+      "timestamp": 1754850478000,
+      "runtime": "930 ms",
+      "memory": "31.4 MB",
+      "runtimePct": 5.055999999999983,
+      "memoryPct": 99.5872,
+      "problemStatement": "<p>The <strong>pair sum</strong> of a pair <code>(a,b)</code> is equal to <code>a + b</code>. The <strong>maximum pair sum</strong> is the largest <strong>pair sum</strong> in a list of pairs.</p>\r\n\r\n<ul>\r\n\t<li>For example, if we have pairs <code>(1,5)</code>, <code>(2,3)</code>, and <code>(4,4)</code>, the <strong>maximum pair sum</strong> would be <code>max(1+5, 2+3, 4+4) = max(6, 5, 8) = 8</code>.</li>\r\n</ul>\r\n\r\n<p>Given an array <code>nums</code> of <strong>even</strong> length <code>n</code>, pair up the elements of <code>nums</code> into <code>n / 2</code> pairs such that:</p>\r\n\r\n<ul>\r\n\t<li>Each element of <code>nums</code> is in <strong>exactly one</strong> pair, and</li>\r\n\t<li>The <strong>maximum pair sum </strong>is <strong>minimized</strong>.</li>\r\n</ul>\r\n\r\n<p>Return <em>the minimized <strong>maximum pair sum</strong> after optimally pairing up the elements</em>.</p>\r\n\r\n<p>&nbsp;</p>\r\n<p><strong class=\"example\">Example 1:</strong></p>\r\n\r\n<pre>\r\n<strong>Input:</strong> nums = [3,5,2,3]\r\n<strong>Output:</strong> 7\r\n<strong>Explanation:</strong> The elements can be paired up into pairs (3,3) and (5,2).\r\nThe maximum pair sum is max(3+3, 5+2) = max(6, 7) = 7.\r\n</pre>\r\n\r\n<p><strong class=\"example\">Example 2:</strong></p>\r\n\r\n<pre>\r\n<strong>Input:</strong> nums = [3,5,4,2,4,6]\r\n<strong>Output:</strong> 8\r\n<strong>Explanation:</strong> The elements can be paired up into pairs (3,5), (4,4), and (6,2).\r\nThe maximum pair sum is max(3+5, 4+4, 6+2) = max(8, 8, 8) = 8.\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n<p><strong>Constraints:</strong></p>\r\n\r\n<ul>\r\n\t<li><code>n == nums.length</code></li>\r\n\t<li><code>2 &lt;= n &lt;= 10<sup>5</sup></code></li>\r\n\t<li><code>n</code> is <strong>even</strong>.</li>\r\n\t<li><code>1 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>\r\n</ul>",
+      "hints": [
+        "Would sorting help find the optimal order?",
+        "Given a specific element, how would you minimize its specific pairwise sum?"
+      ],
+      "acRate": 83.2901099393876,
+      "similar": null,
+      "hasSimilar": null,
+      "isDuplicate": true,
+      "duplicateOf": "lc-minimize-maximum-pair-sum-in-array::1730450212"
+    },
+    {
+      "id": "lc-longest-continuous-increasing-subsequence::1731540158",
+      "submissionId": 1731540158,
+      "platform": "leetcode",
+      "title": "Longest Continuous Increasing Subsequence",
+      "titleSlug": "longest-continuous-increasing-subsequence",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array"
+      ],
+      "topic": "Array",
+      "code": "class Solution:\n    def findLengthOfLCIS(self, nums: List[int]) -> int:\n        best = count = 1\n\n        for i in range(1, len(nums)):\n            if nums[i] > nums[i - 1]:\n                count += 1\n            else:\n                count = 1\n            \n            best = max(best, count)\n        return best",
+      "readmeContent": "# Longest Continuous Increasing Subsequence\n\n**Difficulty:** Easy  |  **Acceptance:** 52.0%\n\n**Tags:** `Array`\n\n## Problem\n\nGiven an unsorted array of integers nums, return the length of the longest continuous increasing subsequence (i.e. subarray). The subsequence must be strictly increasing.\n\nA continuous increasing subsequence is defined by two indices l and r (l < r) such that it is [nums[l], nums[l + 1], ..., nums[r - 1], nums[r]] and for each l <= i < r, nums[i] < nums[i + 1].\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,3,5,4,7]\nOutput: 3\nExplanation: The longest continuous increasing subsequence is [1,3,5] with length 3.\nEven though [1,3,5,7] is an increasing subsequence, it is not continuous as elements 5 and 7 are separated by element\n4.\n\nExample 2:\n\nInput: nums = [2,2,2,2,2]\nOutput: 1\nExplanation: The longest continuous increasing subsequence is [2] with length 1. Note that it must be strictly\nincreasing.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 104\n\t-109 <= nums[i] <= 109\n\n## My Submission\n\n- Runtime: 4 ms\n- Memory: 18.8 MB\n\n## Similar Problems\n\n- [Number of Longest Increasing Subsequence](https://leetcode.com/problems/number-of-longest-increasing-subsequence/) — Medium\n- [Consecutive Characters](https://leetcode.com/problems/consecutive-characters/) — Easy\n- [Longest Increasing Subsequence II](https://leetcode.com/problems/longest-increasing-subsequence-ii/) — Hard\n",
+      "files": [
+        {
+          "path": "problems/lc-longest-continuous-increasing-subsequence/lc-longest-continuous-increasing-subsequence.py",
+          "content": "class Solution:\n    def findLengthOfLCIS(self, nums: List[int]) -> int:\n        best = count = 1\n\n        for i in range(1, len(nums)):\n            if nums[i] > nums[i - 1]:\n                count += 1\n            else:\n                count = 1\n            \n            best = max(best, count)\n        return best"
+        },
+        {
+          "path": "problems/lc-longest-continuous-increasing-subsequence/README.md",
+          "content": "# Longest Continuous Increasing Subsequence\n\n**Difficulty:** Easy  |  **Acceptance:** 52.0%\n\n**Tags:** `Array`\n\n## Problem\n\nGiven an unsorted array of integers nums, return the length of the longest continuous increasing subsequence (i.e. subarray). The subsequence must be strictly increasing.\n\nA continuous increasing subsequence is defined by two indices l and r (l < r) such that it is [nums[l], nums[l + 1], ..., nums[r - 1], nums[r]] and for each l <= i < r, nums[i] < nums[i + 1].\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,3,5,4,7]\nOutput: 3\nExplanation: The longest continuous increasing subsequence is [1,3,5] with length 3.\nEven though [1,3,5,7] is an increasing subsequence, it is not continuous as elements 5 and 7 are separated by element\n4.\n\nExample 2:\n\nInput: nums = [2,2,2,2,2]\nOutput: 1\nExplanation: The longest continuous increasing subsequence is [2] with length 1. Note that it must be strictly\nincreasing.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 104\n\t-109 <= nums[i] <= 109\n\n## My Submission\n\n- Runtime: 4 ms\n- Memory: 18.8 MB\n\n## Similar Problems\n\n- [Number of Longest Increasing Subsequence](https://leetcode.com/problems/number-of-longest-increasing-subsequence/) — Medium\n- [Consecutive Characters](https://leetcode.com/problems/consecutive-characters/) — Easy\n- [Longest Increasing Subsequence II](https://leetcode.com/problems/longest-increasing-subsequence-ii/) — Hard\n"
+        }
+      ],
+      "timestamp": 1754933193000,
+      "runtime": "4 ms",
+      "memory": "18.8 MB",
+      "runtimePct": 17.758699999999997,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an unsorted array of integers <code>nums</code>, return <em>the length of the longest <strong>continuous increasing subsequence</strong> (i.e. subarray)</em>. The subsequence must be <strong>strictly</strong> increasing.</p>\n\n<p>A <strong>continuous increasing subsequence</strong> is defined by two indices <code>l</code> and <code>r</code> (<code>l &lt; r</code>) such that it is <code>[nums[l], nums[l + 1], ..., nums[r - 1], nums[r]]</code> and for each <code>l &lt;= i &lt; r</code>, <code>nums[i] &lt; nums[i + 1]</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,3,5,4,7]\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> The longest continuous increasing subsequence is [1,3,5] with length 3.\nEven though [1,3,5,7] is an increasing subsequence, it is not continuous as elements 5 and 7 are separated by element\n4.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [2,2,2,2,2]\n<strong>Output:</strong> 1\n<strong>Explanation:</strong> The longest continuous increasing subsequence is [2] with length 1. Note that it must be strictly\nincreasing.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>\n</ul>\n",
+      "hints": null,
+      "acRate": 52.041842687588016,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "number-of-longest-increasing-subsequence",
+          "title": "Number of Longest Increasing Subsequence",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "consecutive-characters",
+          "title": "Consecutive Characters",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "longest-increasing-subsequence-ii",
+          "title": "Longest Increasing Subsequence II",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-sqrtx::1733769228",
+      "submissionId": 1733769228,
+      "platform": "leetcode",
+      "title": "Sqrt(x)",
+      "titleSlug": "sqrtx",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Math",
+        "Binary Search"
+      ],
+      "topic": "Math",
+      "code": "class Solution:\n    def mySqrt(self, x: int) -> int:\n        if x < 2:\n            return x\n        \n        left, right = 1, x\n        while left <= right:\n            mid = left + (right - left) // 2\n            if mid == x // mid:\n                return mid\n            elif mid > x // mid:\n                right = mid - 1\n            else:\n                left = mid + 1\n        return right\n",
+      "readmeContent": "# Sqrt(x)\n\n**Difficulty:** Easy  |  **Acceptance:** 41.8%\n\n**Tags:** `Math`, `Binary Search`\n\n## Problem\n\nGiven a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.\n\nYou must not use any built-in exponent function or operator.\n\n\tFor example, do not use pow(x, 0.5) in c++ or x ** 0.5 in python.\n\n&nbsp;\nExample 1:\n\nInput: x = 4\nOutput: 2\nExplanation: The square root of 4 is 2, so we return 2.\n\nExample 2:\n\nInput: x = 8\nOutput: 2\nExplanation: The square root of 8 is 2.82842..., and since we round it down to the nearest integer, 2 is returned.\n\n&nbsp;\nConstraints:\n\n\t0 <= x <= 231 - 1\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 17.8 MB\n\n## Similar Problems\n\n- [Pow(x, n)](https://leetcode.com/problems/powx-n/) — Medium\n- [Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-sqrtx/lc-sqrtx.py",
+          "content": "class Solution:\n    def mySqrt(self, x: int) -> int:\n        if x < 2:\n            return x\n        \n        left, right = 1, x\n        while left <= right:\n            mid = left + (right - left) // 2\n            if mid == x // mid:\n                return mid\n            elif mid > x // mid:\n                right = mid - 1\n            else:\n                left = mid + 1\n        return right\n"
+        },
+        {
+          "path": "problems/lc-sqrtx/README.md",
+          "content": "# Sqrt(x)\n\n**Difficulty:** Easy  |  **Acceptance:** 41.8%\n\n**Tags:** `Math`, `Binary Search`\n\n## Problem\n\nGiven a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.\n\nYou must not use any built-in exponent function or operator.\n\n\tFor example, do not use pow(x, 0.5) in c++ or x ** 0.5 in python.\n\n&nbsp;\nExample 1:\n\nInput: x = 4\nOutput: 2\nExplanation: The square root of 4 is 2, so we return 2.\n\nExample 2:\n\nInput: x = 8\nOutput: 2\nExplanation: The square root of 8 is 2.82842..., and since we round it down to the nearest integer, 2 is returned.\n\n&nbsp;\nConstraints:\n\n\t0 <= x <= 231 - 1\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 17.8 MB\n\n## Similar Problems\n\n- [Pow(x, n)](https://leetcode.com/problems/powx-n/) — Medium\n- [Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square/) — Easy\n"
+        }
+      ],
+      "timestamp": 1755092258000,
+      "runtime": "3 ms",
+      "memory": "17.8 MB",
+      "runtimePct": 67.64080000000001,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given a non-negative integer <code>x</code>, return <em>the square root of </em><code>x</code><em> rounded down to the nearest integer</em>. The returned integer should be <strong>non-negative</strong> as well.</p>\n\n<p>You <strong>must not use</strong> any built-in exponent function or operator.</p>\n\n<ul>\n\t<li>For example, do not use <code>pow(x, 0.5)</code> in c++ or <code>x ** 0.5</code> in python.</li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> x = 4\n<strong>Output:</strong> 2\n<strong>Explanation:</strong> The square root of 4 is 2, so we return 2.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> x = 8\n<strong>Output:</strong> 2\n<strong>Explanation:</strong> The square root of 8 is 2.82842..., and since we round it down to the nearest integer, 2 is returned.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>0 &lt;= x &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>\n",
+      "hints": [
+        "Try exploring all integers. (Credits: @annujoshi)",
+        "Use the sorted property of integers to reduced the search space. (Credits: @annujoshi)"
+      ],
+      "acRate": 41.785001892248474,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "powx-n",
+          "title": "Pow(x, n)",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "valid-perfect-square",
+          "title": "Valid Perfect Square",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-count-pairs-whose-sum-is-less-than-target::1761207970",
+      "submissionId": 1761207970,
+      "platform": "leetcode",
+      "title": "Count Pairs Whose Sum is Less than Target",
+      "titleSlug": "count-pairs-whose-sum-is-less-than-target",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Two Pointers",
+        "Binary Search",
+        "Sorting"
+      ],
+      "topic": "Two Pointers",
+      "code": "class Solution:\n    def countPairs(self, nums: List[int], target: int) -> int:\n        if len(nums) == 1:\n            return 0\n        nums.sort()\n        ans = 0\n        for l in range(len(nums)-1):\n            for r in range(l+1,len(nums)):\n                if nums[l]+nums[r]<target:\n                    ans += 1\n                    print(f\"{nums[l]}, {nums[r]}\")\n        return ans",
+      "readmeContent": "# Count Pairs Whose Sum is Less than Target\n\n**Difficulty:** Easy  |  **Acceptance:** 87.7%\n\n**Tags:** `Array`, `Two Pointers`, `Binary Search`, `Sorting`\n\n## Problem\n\nGiven a 0-indexed integer array nums of length n and an integer target, return the number of pairs (i, j) where 0 <= i < j < n and nums[i] + nums[j] < target.\n&nbsp;\nExample 1:\n\nInput: nums = [-1,1,2,3,1], target = 2\nOutput: 3\nExplanation: There are 3 pairs of indices that satisfy the conditions in the statement:\n- (0, 1) since 0 < 1 and nums[0] + nums[1] = 0 < target\n- (0, 2) since 0 < 2 and nums[0] + nums[2] = 1 < target \n- (0, 4) since 0 < 4 and nums[0] + nums[4] = 0 < target\nNote that (0, 3) is not counted since nums[0] + nums[3] is not strictly less than the target.\n\nExample 2:\n\nInput: nums = [-6,2,5,-2,-7,-1,3], target = -2\nOutput: 10\nExplanation: There are 10 pairs of indices that satisfy the conditions in the statement:\n- (0, 1) since 0 < 1 and nums[0] + nums[1] = -4 < target\n- (0, 3) since 0 < 3 and nums[0] + nums[3] = -8 < target\n- (0, 4) since 0 < 4 and nums[0] + nums[4] = -13 < target\n- (0, 5) since 0 < 5 and nums[0] + nums[5] = -7 < target\n- (0, 6) since 0 < 6 and nums[0] + nums[6] = -3 < target\n- (1, 4) since 1 < 4 and nums[1] + nums[4] = -5 < target\n- (3, 4) since 3 < 4 and nums[3] + nums[4] = -9 < target\n- (3, 5) since 3 < 5 and nums[3] + nums[5] = -3 < target\n- (4, 5) since 4 < 5 and nums[4] + nums[5] = -8 < target\n- (4, 6) since 4 < 6 and nums[4] + nums[6] = -4 < target\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length == n <= 50\n\t-50 <= nums[i], target <= 50\n\n## My Submission\n\n- Runtime: 26 ms\n- Memory: 17.6 MB\n\n## Similar Problems\n\n- [Two Sum](https://leetcode.com/problems/two-sum/) — Easy\n- [Count the Number of Fair Pairs](https://leetcode.com/problems/count-the-number-of-fair-pairs/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-count-pairs-whose-sum-is-less-than-target/lc-count-pairs-whose-sum-is-less-than-target.py",
+          "content": "class Solution:\n    def countPairs(self, nums: List[int], target: int) -> int:\n        if len(nums) == 1:\n            return 0\n        nums.sort()\n        ans = 0\n        for l in range(len(nums)-1):\n            for r in range(l+1,len(nums)):\n                if nums[l]+nums[r]<target:\n                    ans += 1\n                    print(f\"{nums[l]}, {nums[r]}\")\n        return ans"
+        },
+        {
+          "path": "problems/lc-count-pairs-whose-sum-is-less-than-target/README.md",
+          "content": "# Count Pairs Whose Sum is Less than Target\n\n**Difficulty:** Easy  |  **Acceptance:** 87.7%\n\n**Tags:** `Array`, `Two Pointers`, `Binary Search`, `Sorting`\n\n## Problem\n\nGiven a 0-indexed integer array nums of length n and an integer target, return the number of pairs (i, j) where 0 <= i < j < n and nums[i] + nums[j] < target.\n&nbsp;\nExample 1:\n\nInput: nums = [-1,1,2,3,1], target = 2\nOutput: 3\nExplanation: There are 3 pairs of indices that satisfy the conditions in the statement:\n- (0, 1) since 0 < 1 and nums[0] + nums[1] = 0 < target\n- (0, 2) since 0 < 2 and nums[0] + nums[2] = 1 < target \n- (0, 4) since 0 < 4 and nums[0] + nums[4] = 0 < target\nNote that (0, 3) is not counted since nums[0] + nums[3] is not strictly less than the target.\n\nExample 2:\n\nInput: nums = [-6,2,5,-2,-7,-1,3], target = -2\nOutput: 10\nExplanation: There are 10 pairs of indices that satisfy the conditions in the statement:\n- (0, 1) since 0 < 1 and nums[0] + nums[1] = -4 < target\n- (0, 3) since 0 < 3 and nums[0] + nums[3] = -8 < target\n- (0, 4) since 0 < 4 and nums[0] + nums[4] = -13 < target\n- (0, 5) since 0 < 5 and nums[0] + nums[5] = -7 < target\n- (0, 6) since 0 < 6 and nums[0] + nums[6] = -3 < target\n- (1, 4) since 1 < 4 and nums[1] + nums[4] = -5 < target\n- (3, 4) since 3 < 4 and nums[3] + nums[4] = -9 < target\n- (3, 5) since 3 < 5 and nums[3] + nums[5] = -3 < target\n- (4, 5) since 4 < 5 and nums[4] + nums[5] = -8 < target\n- (4, 6) since 4 < 6 and nums[4] + nums[6] = -4 < target\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length == n <= 50\n\t-50 <= nums[i], target <= 50\n\n## My Submission\n\n- Runtime: 26 ms\n- Memory: 17.6 MB\n\n## Similar Problems\n\n- [Two Sum](https://leetcode.com/problems/two-sum/) — Easy\n- [Count the Number of Fair Pairs](https://leetcode.com/problems/count-the-number-of-fair-pairs/) — Medium\n"
+        }
+      ],
+      "timestamp": 1757142983000,
+      "runtime": "26 ms",
+      "memory": "17.6 MB",
+      "runtimePct": 7.117700000000001,
+      "memoryPct": 100,
+      "problemStatement": "Given a <strong>0-indexed</strong> integer array <code>nums</code> of length <code>n</code> and an integer <code>target</code>, return <em>the number of pairs</em> <code>(i, j)</code> <em>where</em> <code>0 &lt;= i &lt; j &lt; n</code> <em>and</em> <code>nums[i] + nums[j] &lt; target</code>.\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [-1,1,2,3,1], target = 2\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> There are 3 pairs of indices that satisfy the conditions in the statement:\n- (0, 1) since 0 &lt; 1 and nums[0] + nums[1] = 0 &lt; target\n- (0, 2) since 0 &lt; 2 and nums[0] + nums[2] = 1 &lt; target \n- (0, 4) since 0 &lt; 4 and nums[0] + nums[4] = 0 &lt; target\nNote that (0, 3) is not counted since nums[0] + nums[3] is not strictly less than the target.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [-6,2,5,-2,-7,-1,3], target = -2\n<strong>Output:</strong> 10\n<strong>Explanation:</strong> There are 10 pairs of indices that satisfy the conditions in the statement:\n- (0, 1) since 0 &lt; 1 and nums[0] + nums[1] = -4 &lt; target\n- (0, 3) since 0 &lt; 3 and nums[0] + nums[3] = -8 &lt; target\n- (0, 4) since 0 &lt; 4 and nums[0] + nums[4] = -13 &lt; target\n- (0, 5) since 0 &lt; 5 and nums[0] + nums[5] = -7 &lt; target\n- (0, 6) since 0 &lt; 6 and nums[0] + nums[6] = -3 &lt; target\n- (1, 4) since 1 &lt; 4 and nums[1] + nums[4] = -5 &lt; target\n- (3, 4) since 3 &lt; 4 and nums[3] + nums[4] = -9 &lt; target\n- (3, 5) since 3 &lt; 5 and nums[3] + nums[5] = -3 &lt; target\n- (4, 5) since 4 &lt; 5 and nums[4] + nums[5] = -8 &lt; target\n- (4, 6) since 4 &lt; 6 and nums[4] + nums[6] = -4 &lt; target\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length == n &lt;= 50</code></li>\n\t<li><code>-50 &lt;= nums[i], target &lt;= 50</code></li>\n</ul>\n",
+      "hints": [
+        "The constraints are small enough for a brute-force solution to pass"
+      ],
+      "acRate": 87.74534096688794,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "two-sum",
+          "title": "Two Sum",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "count-the-number-of-fair-pairs",
+          "title": "Count the Number of Fair Pairs",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-count-the-number-of-fair-pairs::1761545599",
+      "submissionId": 1761545599,
+      "platform": "leetcode",
+      "title": "Count the Number of Fair Pairs",
+      "titleSlug": "count-the-number-of-fair-pairs",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Two Pointers",
+        "Binary Search",
+        "Sorting"
+      ],
+      "topic": "Two Pointers",
+      "code": "from bisect import bisect_left, bisect_right\nclass Solution:\n    def countFairPairs(self, nums: List[int], lower: int, upper: int) -> int:\n        # if len(nums) == 1:\n        #     return 0\n        # nums.sort()\n        # ans = 0\n        # for l in range(len(nums)-1):\n        #     for r in range(l+1,len(nums)):\n        #         if lower<=(nums[l]+nums[r])<=upper:\n        #             ans += 1\n        #             print(f\"{nums[l]}, {nums[r]}\")\n        # return ans\n\n        nums.sort()\n        count = 0\n        for i in range(len(nums)):\n            left = bisect_left(nums, lower - nums[i], i+1)\n            right = bisect_right(nums, upper - nums[i], i+1)\n            count += right - left\n        return count",
+      "readmeContent": "# Count the Number of Fair Pairs\n\n**Difficulty:** Medium  |  **Acceptance:** 52.7%\n\n**Tags:** `Array`, `Two Pointers`, `Binary Search`, `Sorting`\n\n## Problem\n\nGiven a 0-indexed integer array nums of size n and two integers lower and upper, return the number of fair pairs.\n\nA pair (i, j) is fair if:\n\n\t0 <= i < j < n, and\n\tlower <= nums[i] + nums[j] <= upper\n\n&nbsp;\nExample 1:\n\nInput: nums = [0,1,7,4,4,5], lower = 3, upper = 6\nOutput: 6\nExplanation: There are 6 fair pairs: (0,3), (0,4), (0,5), (1,3), (1,4), and (1,5).\n\nExample 2:\n\nInput: nums = [1,7,9,2,5], lower = 11, upper = 11\nOutput: 1\nExplanation: There is a single fair pair: (2,3).\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 105\n\tnums.length == n\n\t-109&nbsp;<= nums[i] <= 109\n\t-109&nbsp;<= lower <= upper <= 109\n\n## My Submission\n\n- Runtime: 267 ms\n- Memory: 32.2 MB\n\n## Similar Problems\n\n- [Count of Range Sum](https://leetcode.com/problems/count-of-range-sum/) — Hard\n- [Finding Pairs With a Certain Sum](https://leetcode.com/problems/finding-pairs-with-a-certain-sum/) — Medium\n- [Count Number of Pairs With Absolute Difference K](https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/) — Easy\n- [Count Pairs Whose Sum is Less than Target](https://leetcode.com/problems/count-pairs-whose-sum-is-less-than-target/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-count-the-number-of-fair-pairs/lc-count-the-number-of-fair-pairs.py",
+          "content": "from bisect import bisect_left, bisect_right\nclass Solution:\n    def countFairPairs(self, nums: List[int], lower: int, upper: int) -> int:\n        # if len(nums) == 1:\n        #     return 0\n        # nums.sort()\n        # ans = 0\n        # for l in range(len(nums)-1):\n        #     for r in range(l+1,len(nums)):\n        #         if lower<=(nums[l]+nums[r])<=upper:\n        #             ans += 1\n        #             print(f\"{nums[l]}, {nums[r]}\")\n        # return ans\n\n        nums.sort()\n        count = 0\n        for i in range(len(nums)):\n            left = bisect_left(nums, lower - nums[i], i+1)\n            right = bisect_right(nums, upper - nums[i], i+1)\n            count += right - left\n        return count"
+        },
+        {
+          "path": "problems/lc-count-the-number-of-fair-pairs/README.md",
+          "content": "# Count the Number of Fair Pairs\n\n**Difficulty:** Medium  |  **Acceptance:** 52.7%\n\n**Tags:** `Array`, `Two Pointers`, `Binary Search`, `Sorting`\n\n## Problem\n\nGiven a 0-indexed integer array nums of size n and two integers lower and upper, return the number of fair pairs.\n\nA pair (i, j) is fair if:\n\n\t0 <= i < j < n, and\n\tlower <= nums[i] + nums[j] <= upper\n\n&nbsp;\nExample 1:\n\nInput: nums = [0,1,7,4,4,5], lower = 3, upper = 6\nOutput: 6\nExplanation: There are 6 fair pairs: (0,3), (0,4), (0,5), (1,3), (1,4), and (1,5).\n\nExample 2:\n\nInput: nums = [1,7,9,2,5], lower = 11, upper = 11\nOutput: 1\nExplanation: There is a single fair pair: (2,3).\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 105\n\tnums.length == n\n\t-109&nbsp;<= nums[i] <= 109\n\t-109&nbsp;<= lower <= upper <= 109\n\n## My Submission\n\n- Runtime: 267 ms\n- Memory: 32.2 MB\n\n## Similar Problems\n\n- [Count of Range Sum](https://leetcode.com/problems/count-of-range-sum/) — Hard\n- [Finding Pairs With a Certain Sum](https://leetcode.com/problems/finding-pairs-with-a-certain-sum/) — Medium\n- [Count Number of Pairs With Absolute Difference K](https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/) — Easy\n- [Count Pairs Whose Sum is Less than Target](https://leetcode.com/problems/count-pairs-whose-sum-is-less-than-target/) — Easy\n"
+        }
+      ],
+      "timestamp": 1757168091000,
+      "runtime": "267 ms",
+      "memory": "32.2 MB",
+      "runtimePct": 50.544000000000096,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given a <strong>0-indexed</strong> integer array <code>nums</code> of size <code>n</code> and two integers <code>lower</code> and <code>upper</code>, return <em>the number of fair pairs</em>.</p>\n\n<p>A pair <code>(i, j)</code> is <b>fair </b>if:</p>\n\n<ul>\n\t<li><code>0 &lt;= i &lt; j &lt; n</code>, and</li>\n\t<li><code>lower &lt;= nums[i] + nums[j] &lt;= upper</code></li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [0,1,7,4,4,5], lower = 3, upper = 6\n<strong>Output:</strong> 6\n<strong>Explanation:</strong> There are 6 fair pairs: (0,3), (0,4), (0,5), (1,3), (1,4), and (1,5).\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,7,9,2,5], lower = 11, upper = 11\n<strong>Output:</strong> 1\n<strong>Explanation:</strong> There is a single fair pair: (2,3).\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>nums.length == n</code></li>\n\t<li><code><font face=\"monospace\">-10<sup>9</sup></font>&nbsp;&lt;= nums[i] &lt;= 10<sup>9</sup></code></li>\n\t<li><code><font face=\"monospace\">-10<sup>9</sup>&nbsp;&lt;= lower &lt;= upper &lt;= 10<sup>9</sup></font></code></li>\n</ul>\n",
+      "hints": [
+        "Sort the array in ascending order.",
+        "For each number in the array, keep track of the smallest and largest numbers in the array that can form a fair pair with this number.",
+        "As you move to larger number, both boundaries move down."
+      ],
+      "acRate": 52.660205957102534,
+      "similar": [
+        {
+          "difficulty": "Hard",
+          "titleSlug": "count-of-range-sum",
+          "title": "Count of Range Sum",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "finding-pairs-with-a-certain-sum",
+          "title": "Finding Pairs With a Certain Sum",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "count-number-of-pairs-with-absolute-difference-k",
+          "title": "Count Number of Pairs With Absolute Difference K",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "count-pairs-whose-sum-is-less-than-target",
+          "title": "Count Pairs Whose Sum is Less than Target",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-consecutive-characters::1761747697",
+      "submissionId": 1761747697,
+      "platform": "leetcode",
+      "title": "Consecutive Characters",
+      "titleSlug": "consecutive-characters",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "String"
+      ],
+      "topic": "String",
+      "code": "class Solution:\n    def maxPower(self, s: str) -> int:\n        mc = c = 1\n        for i in range(1, len(s)):\n            if s[i] == s[i-1]:\n                c+= 1\n                mc = max(mc,c)\n            else:\n                c = 1\n        return mc",
+      "readmeContent": "# Consecutive Characters\n\n**Difficulty:** Easy  |  **Acceptance:** 60.4%\n\n**Tags:** `String`\n\n## Problem\n\nThe power of the string is the maximum length of a non-empty substring that contains only one unique character.\n\nGiven a string s, return the power of s.\n\n&nbsp;\nExample 1:\n\nInput: s = \"leetcode\"\nOutput: 2\nExplanation: The substring \"ee\" is of length 2 with the character 'e' only.\n\nExample 2:\n\nInput: s = \"abbcccddddeeeeedcba\"\nOutput: 5\nExplanation: The substring \"eeeee\" is of length 5 with the character 'e' only.\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 500\n\ts consists of only lowercase English letters.\n\n## My Submission\n\n- Runtime: 2 ms\n- Memory: 17.9 MB\n\n## Similar Problems\n\n- [Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones/) — Easy\n- [Longest Continuous Increasing Subsequence](https://leetcode.com/problems/longest-continuous-increasing-subsequence/) — Easy\n- [Count Number of Homogenous Substrings](https://leetcode.com/problems/count-number-of-homogenous-substrings/) — Medium\n- [Longest Substring of One Repeating Character](https://leetcode.com/problems/longest-substring-of-one-repeating-character/) — Hard\n- [Minimum Number of Chairs in a Waiting Room](https://leetcode.com/problems/minimum-number-of-chairs-in-a-waiting-room/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-consecutive-characters/lc-consecutive-characters.py",
+          "content": "class Solution:\n    def maxPower(self, s: str) -> int:\n        mc = c = 1\n        for i in range(1, len(s)):\n            if s[i] == s[i-1]:\n                c+= 1\n                mc = max(mc,c)\n            else:\n                c = 1\n        return mc"
+        },
+        {
+          "path": "problems/lc-consecutive-characters/README.md",
+          "content": "# Consecutive Characters\n\n**Difficulty:** Easy  |  **Acceptance:** 60.4%\n\n**Tags:** `String`\n\n## Problem\n\nThe power of the string is the maximum length of a non-empty substring that contains only one unique character.\n\nGiven a string s, return the power of s.\n\n&nbsp;\nExample 1:\n\nInput: s = \"leetcode\"\nOutput: 2\nExplanation: The substring \"ee\" is of length 2 with the character 'e' only.\n\nExample 2:\n\nInput: s = \"abbcccddddeeeeedcba\"\nOutput: 5\nExplanation: The substring \"eeeee\" is of length 5 with the character 'e' only.\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 500\n\ts consists of only lowercase English letters.\n\n## My Submission\n\n- Runtime: 2 ms\n- Memory: 17.9 MB\n\n## Similar Problems\n\n- [Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones/) — Easy\n- [Longest Continuous Increasing Subsequence](https://leetcode.com/problems/longest-continuous-increasing-subsequence/) — Easy\n- [Count Number of Homogenous Substrings](https://leetcode.com/problems/count-number-of-homogenous-substrings/) — Medium\n- [Longest Substring of One Repeating Character](https://leetcode.com/problems/longest-substring-of-one-repeating-character/) — Hard\n- [Minimum Number of Chairs in a Waiting Room](https://leetcode.com/problems/minimum-number-of-chairs-in-a-waiting-room/) — Easy\n"
+        }
+      ],
+      "timestamp": 1757180443000,
+      "runtime": "2 ms",
+      "memory": "17.9 MB",
+      "runtimePct": 87.2789,
+      "memoryPct": 100,
+      "problemStatement": "<p>The <strong>power</strong> of the string is the maximum length of a non-empty substring that contains only one unique character.</p>\n\n<p>Given a string <code>s</code>, return <em>the <strong>power</strong> of</em> <code>s</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;leetcode&quot;\n<strong>Output:</strong> 2\n<strong>Explanation:</strong> The substring &quot;ee&quot; is of length 2 with the character &#39;e&#39; only.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;abbcccddddeeeeedcba&quot;\n<strong>Output:</strong> 5\n<strong>Explanation:</strong> The substring &quot;eeeee&quot; is of length 5 with the character &#39;e&#39; only.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 500</code></li>\n\t<li><code>s</code> consists of only lowercase English letters.</li>\n</ul>\n",
+      "hints": [
+        "Keep an array power where power[i] is the maximum power of the i-th character.",
+        "The answer is max(power[i])."
+      ],
+      "acRate": 60.36402670015476,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "max-consecutive-ones",
+          "title": "Max Consecutive Ones",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "longest-continuous-increasing-subsequence",
+          "title": "Longest Continuous Increasing Subsequence",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "count-number-of-homogenous-substrings",
+          "title": "Count Number of Homogenous Substrings",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "longest-substring-of-one-repeating-character",
+          "title": "Longest Substring of One Repeating Character",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "minimum-number-of-chairs-in-a-waiting-room",
+          "title": "Minimum Number of Chairs in a Waiting Room",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-find-all-k-distant-indices-in-an-array::1762915066",
+      "submissionId": 1762915066,
+      "platform": "leetcode",
+      "title": "Find All K-Distant Indices in an Array",
+      "titleSlug": "find-all-k-distant-indices-in-an-array",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Two Pointers"
+      ],
+      "topic": "Two Pointers",
+      "code": "class Solution:\n    def findKDistantIndices(self, nums: List[int], key: int, k: int) -> List[int]:\n        results = set()\n        for j in range(len(nums)):\n            if nums[j] == key:\n                for i in range(max(0, j - k), min(len(nums), j+k+1)):\n                    results.add(i)\n        return sorted(results)",
+      "readmeContent": "# Find All K-Distant Indices in an Array\n\n**Difficulty:** Easy  |  **Acceptance:** 77.3%\n\n**Tags:** `Array`, `Two Pointers`\n\n## Problem\n\nYou are given a 0-indexed integer array nums and two integers key and k. A k-distant index is an index i of nums for which there exists at least one index j such that |i - j| <= k and nums[j] == key.\n\nReturn a list of all k-distant indices sorted in increasing order.\n\n&nbsp;\nExample 1:\n\nInput: nums = [3,4,9,1,3,9,5], key = 9, k = 1\nOutput: [1,2,3,4,5,6]\nExplanation: Here, nums[2] == key and nums[5] == key.\n- For index 0, |0 - 2| > k and |0 - 5| > k, so there is no j where |0 - j| <= k and nums[j] == key. Thus, 0 is not a k-distant index.\n- For index 1, |1 - 2| <= k and nums[2] == key, so 1 is a k-distant index.\n- For index 2, |2 - 2| <= k and nums[2] == key, so 2 is a k-distant index.\n- For index 3, |3 - 2| <= k and nums[2] == key, so 3 is a k-distant index.\n- For index 4, |4 - 5| <= k and nums[5] == key, so 4 is a k-distant index.\n- For index 5, |5 - 5| <= k and nums[5] == key, so 5 is a k-distant index.\n- For index 6, |6 - 5| <= k and nums[5] == key, so 6 is a k-distant index.\nThus, we return [1,2,3,4,5,6] which is sorted in increasing order. \n\nExample 2:\n\nInput: nums = [2,2,2,2,2], key = 2, k = 2\nOutput: [0,1,2,3,4]\nExplanation: For all indices i in nums, there exists some index j such that |i - j| <= k and nums[j] == key, so every index is a k-distant index. \nHence, we return [0,1,2,3,4].\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 1000\n\t1 <= nums[i] <= 1000\n\tkey is an integer from the array nums.\n\t1 <= k <= nums.length\n\n## My Submission\n\n- Runtime: 175 ms\n- Memory: 18 MB\n\n## Similar Problems\n\n- [Two Sum](https://leetcode.com/problems/two-sum/) — Easy\n- [Minimum Absolute Difference Between Elements With Constraint](https://leetcode.com/problems/minimum-absolute-difference-between-elements-with-constraint/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-find-all-k-distant-indices-in-an-array/lc-find-all-k-distant-indices-in-an-array.py",
+          "content": "class Solution:\n    def findKDistantIndices(self, nums: List[int], key: int, k: int) -> List[int]:\n        results = set()\n        for j in range(len(nums)):\n            if nums[j] == key:\n                for i in range(max(0, j - k), min(len(nums), j+k+1)):\n                    results.add(i)\n        return sorted(results)"
+        },
+        {
+          "path": "problems/lc-find-all-k-distant-indices-in-an-array/README.md",
+          "content": "# Find All K-Distant Indices in an Array\n\n**Difficulty:** Easy  |  **Acceptance:** 77.3%\n\n**Tags:** `Array`, `Two Pointers`\n\n## Problem\n\nYou are given a 0-indexed integer array nums and two integers key and k. A k-distant index is an index i of nums for which there exists at least one index j such that |i - j| <= k and nums[j] == key.\n\nReturn a list of all k-distant indices sorted in increasing order.\n\n&nbsp;\nExample 1:\n\nInput: nums = [3,4,9,1,3,9,5], key = 9, k = 1\nOutput: [1,2,3,4,5,6]\nExplanation: Here, nums[2] == key and nums[5] == key.\n- For index 0, |0 - 2| > k and |0 - 5| > k, so there is no j where |0 - j| <= k and nums[j] == key. Thus, 0 is not a k-distant index.\n- For index 1, |1 - 2| <= k and nums[2] == key, so 1 is a k-distant index.\n- For index 2, |2 - 2| <= k and nums[2] == key, so 2 is a k-distant index.\n- For index 3, |3 - 2| <= k and nums[2] == key, so 3 is a k-distant index.\n- For index 4, |4 - 5| <= k and nums[5] == key, so 4 is a k-distant index.\n- For index 5, |5 - 5| <= k and nums[5] == key, so 5 is a k-distant index.\n- For index 6, |6 - 5| <= k and nums[5] == key, so 6 is a k-distant index.\nThus, we return [1,2,3,4,5,6] which is sorted in increasing order. \n\nExample 2:\n\nInput: nums = [2,2,2,2,2], key = 2, k = 2\nOutput: [0,1,2,3,4]\nExplanation: For all indices i in nums, there exists some index j such that |i - j| <= k and nums[j] == key, so every index is a k-distant index. \nHence, we return [0,1,2,3,4].\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 1000\n\t1 <= nums[i] <= 1000\n\tkey is an integer from the array nums.\n\t1 <= k <= nums.length\n\n## My Submission\n\n- Runtime: 175 ms\n- Memory: 18 MB\n\n## Similar Problems\n\n- [Two Sum](https://leetcode.com/problems/two-sum/) — Easy\n- [Minimum Absolute Difference Between Elements With Constraint](https://leetcode.com/problems/minimum-absolute-difference-between-elements-with-constraint/) — Medium\n"
+        }
+      ],
+      "timestamp": 1757265155000,
+      "runtime": "175 ms",
+      "memory": "18 MB",
+      "runtimePct": 35.10959999999995,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> and two integers <code>key</code> and <code>k</code>. A <strong>k-distant index</strong> is an index <code>i</code> of <code>nums</code> for which there exists at least one index <code>j</code> such that <code>|i - j| &lt;= k</code> and <code>nums[j] == key</code>.</p>\n\n<p>Return <em>a list of all k-distant indices sorted in <strong>increasing order</strong></em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [3,4,9,1,3,9,5], key = 9, k = 1\n<strong>Output:</strong> [1,2,3,4,5,6]\n<strong>Explanation:</strong> Here, <code>nums[2] == key</code> and <code>nums[5] == key.\n- For index 0, |0 - 2| &gt; k and |0 - 5| &gt; k, so there is no j</code> where <code>|0 - j| &lt;= k</code> and <code>nums[j] == key. Thus, 0 is not a k-distant index.\n- For index 1, |1 - 2| &lt;= k and nums[2] == key, so 1 is a k-distant index.\n- For index 2, |2 - 2| &lt;= k and nums[2] == key, so 2 is a k-distant index.\n- For index 3, |3 - 2| &lt;= k and nums[2] == key, so 3 is a k-distant index.\n- For index 4, |4 - 5| &lt;= k and nums[5] == key, so 4 is a k-distant index.\n- For index 5, |5 - 5| &lt;= k and nums[5] == key, so 5 is a k-distant index.\n- For index 6, |6 - 5| &lt;= k and nums[5] == key, so 6 is a k-distant index.\n</code>Thus, we return [1,2,3,4,5,6] which is sorted in increasing order. \n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [2,2,2,2,2], key = 2, k = 2\n<strong>Output:</strong> [0,1,2,3,4]\n<strong>Explanation:</strong> For all indices i in nums, there exists some index j such that |i - j| &lt;= k and nums[j] == key, so every index is a k-distant index. \nHence, we return [0,1,2,3,4].\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 1000</code></li>\n\t<li><code>1 &lt;= nums[i] &lt;= 1000</code></li>\n\t<li><code>key</code> is an integer from the array <code>nums</code>.</li>\n\t<li><code>1 &lt;= k &lt;= nums.length</code></li>\n</ul>\n",
+      "hints": [
+        "For every occurrence of key in nums, find all indices within distance k from it.",
+        "Use a hash table to remove duplicate indices."
+      ],
+      "acRate": 77.30810412760752,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "two-sum",
+          "title": "Two Sum",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "minimum-absolute-difference-between-elements-with-constraint",
+          "title": "Minimum Absolute Difference Between Elements With Constraint",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-finding-pairs-with-a-certain-sum::1764184136",
+      "submissionId": 1764184136,
+      "platform": "leetcode",
+      "title": "Finding Pairs With a Certain Sum",
+      "titleSlug": "finding-pairs-with-a-certain-sum",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Design"
+      ],
+      "topic": "Hash Table",
+      "code": "from collections import Counter\nclass FindSumPairs:\n\n    def __init__(self, nums1: List[int], nums2: List[int]):\n        self.nums1 = nums1\n        self.nums2 = nums2\n        self.freq = Counter(nums2)\n\n    def add(self, index: int, val: int) -> None:\n        old = self.nums2[index]\n        self.freq[old] -= 1\n        self.nums2[index] += val\n        self.freq[self.nums2[index]] += 1\n\n    def count(self, tot: int) -> int:\n        result = 0\n        for num in self.nums1:\n            result += self.freq[tot - num]\n        return result\n\n\n# Your FindSumPairs object will be instantiated and called as such:\n# obj = FindSumPairs(nums1, nums2)\n# obj.add(index,val)\n# param_2 = obj.count(tot)",
+      "readmeContent": "# Finding Pairs With a Certain Sum\n\n**Difficulty:** Medium  |  **Acceptance:** 61.6%\n\n**Tags:** `Array`, `Hash Table`, `Design`\n\n## Problem\n\nYou are given two integer arrays nums1 and nums2. You are tasked to implement a data structure that supports queries of two types:\n\n\tAdd a positive integer to an element of a given index in the array nums2.\n\tCount the number of pairs (i, j) such that nums1[i] + nums2[j] equals a given value (0 <= i < nums1.length and 0 <= j < nums2.length).\n\nImplement the FindSumPairs class:\n\n\tFindSumPairs(int[] nums1, int[] nums2) Initializes the FindSumPairs object with two integer arrays nums1 and nums2.\n\tvoid add(int index, int val) Adds val to nums2[index], i.e., apply nums2[index] += val.\n\tint count(int tot) Returns the number of pairs (i, j) such that nums1[i] + nums2[j] == tot.\n\n&nbsp;\nExample 1:\n\nInput\n[\"FindSumPairs\", \"count\", \"add\", \"count\", \"count\", \"add\", \"add\", \"count\"]\n[[[1, 1, 2, 2, 2, 3], [1, 4, 5, 2, 5, 4]], [7], [3, 2], [8], [4], [0, 1], [1, 1], [7]]\nOutput\n[null, 8, null, 2, 1, null, null, 11]\n\nExplanation\nFindSumPairs findSumPairs = new FindSumPairs([1, 1, 2, 2, 2, 3], [1, 4, 5, 2, 5, 4]);\nfindSumPairs.count(7);  // return 8; pairs (2,2), (3,2), (4,2), (2,4), (3,4), (4,4) make 2 + 5 and pairs (5,1), (5,5) make 3 + 4\nfindSumPairs.add(3, 2); // now nums2 = [1,4,5,4,5,4]\nfindSumPairs.count(8);  // return 2; pairs (5,2), (5,4) make 3 + 5\nfindSumPairs.count(4);  // return 1; pair (5,0) makes 3 + 1\nfindSumPairs.add(0, 1); // now nums2 = [2,4,5,4,5,4]\nfindSumPairs.add(1, 1); // now nums2 = [2,5,5,4,5,4]\nfindSumPairs.count(7);  // return 11; pairs (2,1), (2,2), (2,4), (3,1), (3,2), (3,4), (4,1), (4,2), (4,4) make 2 + 5 and pairs (5,3), (5,5) make 3 + 4\n\n&nbsp;\nConstraints:\n\n\t1 <= nums1.length <= 1000\n\t1 <= nums2.length <= 105\n\t1 <= nums1[i] <= 109\n\t1 <= nums2[i] <= 105\n\t0 <= index < nums2.length\n\t1 <= val <= 105\n\t1 <= tot <= 109\n\tAt most 1000 calls are made to add and count each.\n\n## My Submission\n\n- Runtime: 406 ms\n- Memory: 48.3 MB\n\n## Similar Problems\n\n- [Count Number of Pairs With Absolute Difference K](https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/) — Easy\n- [Number of Distinct Averages](https://leetcode.com/problems/number-of-distinct-averages/) — Easy\n- [Count the Number of Fair Pairs](https://leetcode.com/problems/count-the-number-of-fair-pairs/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-finding-pairs-with-a-certain-sum/lc-finding-pairs-with-a-certain-sum.py",
+          "content": "from collections import Counter\nclass FindSumPairs:\n\n    def __init__(self, nums1: List[int], nums2: List[int]):\n        self.nums1 = nums1\n        self.nums2 = nums2\n        self.freq = Counter(nums2)\n\n    def add(self, index: int, val: int) -> None:\n        old = self.nums2[index]\n        self.freq[old] -= 1\n        self.nums2[index] += val\n        self.freq[self.nums2[index]] += 1\n\n    def count(self, tot: int) -> int:\n        result = 0\n        for num in self.nums1:\n            result += self.freq[tot - num]\n        return result\n\n\n# Your FindSumPairs object will be instantiated and called as such:\n# obj = FindSumPairs(nums1, nums2)\n# obj.add(index,val)\n# param_2 = obj.count(tot)"
+        },
+        {
+          "path": "problems/lc-finding-pairs-with-a-certain-sum/README.md",
+          "content": "# Finding Pairs With a Certain Sum\n\n**Difficulty:** Medium  |  **Acceptance:** 61.6%\n\n**Tags:** `Array`, `Hash Table`, `Design`\n\n## Problem\n\nYou are given two integer arrays nums1 and nums2. You are tasked to implement a data structure that supports queries of two types:\n\n\tAdd a positive integer to an element of a given index in the array nums2.\n\tCount the number of pairs (i, j) such that nums1[i] + nums2[j] equals a given value (0 <= i < nums1.length and 0 <= j < nums2.length).\n\nImplement the FindSumPairs class:\n\n\tFindSumPairs(int[] nums1, int[] nums2) Initializes the FindSumPairs object with two integer arrays nums1 and nums2.\n\tvoid add(int index, int val) Adds val to nums2[index], i.e., apply nums2[index] += val.\n\tint count(int tot) Returns the number of pairs (i, j) such that nums1[i] + nums2[j] == tot.\n\n&nbsp;\nExample 1:\n\nInput\n[\"FindSumPairs\", \"count\", \"add\", \"count\", \"count\", \"add\", \"add\", \"count\"]\n[[[1, 1, 2, 2, 2, 3], [1, 4, 5, 2, 5, 4]], [7], [3, 2], [8], [4], [0, 1], [1, 1], [7]]\nOutput\n[null, 8, null, 2, 1, null, null, 11]\n\nExplanation\nFindSumPairs findSumPairs = new FindSumPairs([1, 1, 2, 2, 2, 3], [1, 4, 5, 2, 5, 4]);\nfindSumPairs.count(7);  // return 8; pairs (2,2), (3,2), (4,2), (2,4), (3,4), (4,4) make 2 + 5 and pairs (5,1), (5,5) make 3 + 4\nfindSumPairs.add(3, 2); // now nums2 = [1,4,5,4,5,4]\nfindSumPairs.count(8);  // return 2; pairs (5,2), (5,4) make 3 + 5\nfindSumPairs.count(4);  // return 1; pair (5,0) makes 3 + 1\nfindSumPairs.add(0, 1); // now nums2 = [2,4,5,4,5,4]\nfindSumPairs.add(1, 1); // now nums2 = [2,5,5,4,5,4]\nfindSumPairs.count(7);  // return 11; pairs (2,1), (2,2), (2,4), (3,1), (3,2), (3,4), (4,1), (4,2), (4,4) make 2 + 5 and pairs (5,3), (5,5) make 3 + 4\n\n&nbsp;\nConstraints:\n\n\t1 <= nums1.length <= 1000\n\t1 <= nums2.length <= 105\n\t1 <= nums1[i] <= 109\n\t1 <= nums2[i] <= 105\n\t0 <= index < nums2.length\n\t1 <= val <= 105\n\t1 <= tot <= 109\n\tAt most 1000 calls are made to add and count each.\n\n## My Submission\n\n- Runtime: 406 ms\n- Memory: 48.3 MB\n\n## Similar Problems\n\n- [Count Number of Pairs With Absolute Difference K](https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/) — Easy\n- [Number of Distinct Averages](https://leetcode.com/problems/number-of-distinct-averages/) — Easy\n- [Count the Number of Fair Pairs](https://leetcode.com/problems/count-the-number-of-fair-pairs/) — Medium\n"
+        }
+      ],
+      "timestamp": 1757356973000,
+      "runtime": "406 ms",
+      "memory": "48.3 MB",
+      "runtimePct": 10.941699999999745,
+      "memoryPct": 85.57209999999999,
+      "problemStatement": "<p>You are given two integer arrays <code>nums1</code> and <code>nums2</code>. You are tasked to implement a data structure that supports queries of two types:</p>\n\n<ol>\n\t<li><strong>Add</strong> a positive integer to an element of a given index in the array <code>nums2</code>.</li>\n\t<li><strong>Count</strong> the number of pairs <code>(i, j)</code> such that <code>nums1[i] + nums2[j]</code> equals a given value (<code>0 &lt;= i &lt; nums1.length</code> and <code>0 &lt;= j &lt; nums2.length</code>).</li>\n</ol>\n\n<p>Implement the <code>FindSumPairs</code> class:</p>\n\n<ul>\n\t<li><code>FindSumPairs(int[] nums1, int[] nums2)</code> Initializes the <code>FindSumPairs</code> object with two integer arrays <code>nums1</code> and <code>nums2</code>.</li>\n\t<li><code>void add(int index, int val)</code> Adds <code>val</code> to <code>nums2[index]</code>, i.e., apply <code>nums2[index] += val</code>.</li>\n\t<li><code>int count(int tot)</code> Returns the number of pairs <code>(i, j)</code> such that <code>nums1[i] + nums2[j] == tot</code>.</li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input</strong>\n[&quot;FindSumPairs&quot;, &quot;count&quot;, &quot;add&quot;, &quot;count&quot;, &quot;count&quot;, &quot;add&quot;, &quot;add&quot;, &quot;count&quot;]\n[[[1, 1, 2, 2, 2, 3], [1, 4, 5, 2, 5, 4]], [7], [3, 2], [8], [4], [0, 1], [1, 1], [7]]\n<strong>Output</strong>\n[null, 8, null, 2, 1, null, null, 11]\n\n<strong>Explanation</strong>\nFindSumPairs findSumPairs = new FindSumPairs([1, 1, 2, 2, 2, 3], [1, 4, 5, 2, 5, 4]);\nfindSumPairs.count(7);  // return 8; pairs (2,2), (3,2), (4,2), (2,4), (3,4), (4,4) make 2 + 5 and pairs (5,1), (5,5) make 3 + 4\nfindSumPairs.add(3, 2); // now nums2 = [1,4,5,<strong><u>4</u></strong><code>,5,4</code>]\nfindSumPairs.count(8);  // return 2; pairs (5,2), (5,4) make 3 + 5\nfindSumPairs.count(4);  // return 1; pair (5,0) makes 3 + 1\nfindSumPairs.add(0, 1); // now nums2 = [<strong><u><code>2</code></u></strong>,4,5,4<code>,5,4</code>]\nfindSumPairs.add(1, 1); // now nums2 = [<code>2</code>,<strong><u>5</u></strong>,5,4<code>,5,4</code>]\nfindSumPairs.count(7);  // return 11; pairs (2,1), (2,2), (2,4), (3,1), (3,2), (3,4), (4,1), (4,2), (4,4) make 2 + 5 and pairs (5,3), (5,5) make 3 + 4\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums1.length &lt;= 1000</code></li>\n\t<li><code>1 &lt;= nums2.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>1 &lt;= nums1[i] &lt;= 10<sup>9</sup></code></li>\n\t<li><code>1 &lt;= nums2[i] &lt;= 10<sup>5</sup></code></li>\n\t<li><code>0 &lt;= index &lt; nums2.length</code></li>\n\t<li><code>1 &lt;= val &lt;= 10<sup>5</sup></code></li>\n\t<li><code>1 &lt;= tot &lt;= 10<sup>9</sup></code></li>\n\t<li>At most <code>1000</code> calls are made to <code>add</code> and <code>count</code> <strong>each</strong>.</li>\n</ul>\n",
+      "hints": [
+        "The length of nums1 is small in comparison to that of nums2",
+        "If we iterate over elements of nums1 we just need to find the count of tot - element for all elements in nums1"
+      ],
+      "acRate": 61.56176741902997,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "count-number-of-pairs-with-absolute-difference-k",
+          "title": "Count Number of Pairs With Absolute Difference K",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "number-of-distinct-averages",
+          "title": "Number of Distinct Averages",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "count-the-number-of-fair-pairs",
+          "title": "Count the Number of Fair Pairs",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-count-number-of-pairs-with-absolute-difference-k::1765393180",
+      "submissionId": 1765393180,
+      "platform": "leetcode",
+      "title": "Count Number of Pairs With Absolute Difference K",
+      "titleSlug": "count-number-of-pairs-with-absolute-difference-k",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Counting"
+      ],
+      "topic": "Hash Table",
+      "code": "class Solution:\n    def countKDifference(self, nums: List[int], k: int) -> int:\n        count = 0\n        sorted(nums)\n        for i in range(len(nums)):\n            count += len([j for j in range(len(nums)) if (nums[i]-k)==nums[j]])\n        return count",
+      "readmeContent": "# Count Number of Pairs With Absolute Difference K\n\n**Difficulty:** Easy  |  **Acceptance:** 85.4%\n\n**Tags:** `Array`, `Hash Table`, `Counting`\n\n## Problem\n\nGiven an integer array nums and an integer k, return the number of pairs (i, j) where i < j such that |nums[i] - nums[j]| == k.\n\nThe value of |x| is defined as:\n\n\tx if x >= 0.\n\t-x if x < 0.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,2,2,1], k = 1\nOutput: 4\nExplanation: The pairs with an absolute difference of 1 are:\n- [1,2,2,1]\n- [1,2,2,1]\n- [1,2,2,1]\n- [1,2,2,1]\n\nExample 2:\n\nInput: nums = [1,3], k = 3\nOutput: 0\nExplanation: There are no pairs with an absolute difference of 3.\n\nExample 3:\n\nInput: nums = [3,2,1,5,4], k = 2\nOutput: 3\nExplanation: The pairs with an absolute difference of 2 are:\n- [3,2,1,5,4]\n- [3,2,1,5,4]\n- [3,2,1,5,4]\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 200\n\t1 <= nums[i] <= 100\n\t1 <= k <= 99\n\n## My Submission\n\n- Runtime: 115 ms\n- Memory: 17.7 MB\n\n## Similar Problems\n\n- [Two Sum](https://leetcode.com/problems/two-sum/) — Easy\n- [K-diff Pairs in an Array](https://leetcode.com/problems/k-diff-pairs-in-an-array/) — Medium\n- [Finding Pairs With a Certain Sum](https://leetcode.com/problems/finding-pairs-with-a-certain-sum/) — Medium\n- [Count Equal and Divisible Pairs in an Array](https://leetcode.com/problems/count-equal-and-divisible-pairs-in-an-array/) — Easy\n- [Count Number of Bad Pairs](https://leetcode.com/problems/count-number-of-bad-pairs/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-count-number-of-pairs-with-absolute-difference-k/lc-count-number-of-pairs-with-absolute-difference-k.py",
+          "content": "class Solution:\n    def countKDifference(self, nums: List[int], k: int) -> int:\n        count = 0\n        sorted(nums)\n        for i in range(len(nums)):\n            count += len([j for j in range(len(nums)) if (nums[i]-k)==nums[j]])\n        return count"
+        },
+        {
+          "path": "problems/lc-count-number-of-pairs-with-absolute-difference-k/README.md",
+          "content": "# Count Number of Pairs With Absolute Difference K\n\n**Difficulty:** Easy  |  **Acceptance:** 85.4%\n\n**Tags:** `Array`, `Hash Table`, `Counting`\n\n## Problem\n\nGiven an integer array nums and an integer k, return the number of pairs (i, j) where i < j such that |nums[i] - nums[j]| == k.\n\nThe value of |x| is defined as:\n\n\tx if x >= 0.\n\t-x if x < 0.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,2,2,1], k = 1\nOutput: 4\nExplanation: The pairs with an absolute difference of 1 are:\n- [1,2,2,1]\n- [1,2,2,1]\n- [1,2,2,1]\n- [1,2,2,1]\n\nExample 2:\n\nInput: nums = [1,3], k = 3\nOutput: 0\nExplanation: There are no pairs with an absolute difference of 3.\n\nExample 3:\n\nInput: nums = [3,2,1,5,4], k = 2\nOutput: 3\nExplanation: The pairs with an absolute difference of 2 are:\n- [3,2,1,5,4]\n- [3,2,1,5,4]\n- [3,2,1,5,4]\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 200\n\t1 <= nums[i] <= 100\n\t1 <= k <= 99\n\n## My Submission\n\n- Runtime: 115 ms\n- Memory: 17.7 MB\n\n## Similar Problems\n\n- [Two Sum](https://leetcode.com/problems/two-sum/) — Easy\n- [K-diff Pairs in an Array](https://leetcode.com/problems/k-diff-pairs-in-an-array/) — Medium\n- [Finding Pairs With a Certain Sum](https://leetcode.com/problems/finding-pairs-with-a-certain-sum/) — Medium\n- [Count Equal and Divisible Pairs in an Array](https://leetcode.com/problems/count-equal-and-divisible-pairs-in-an-array/) — Easy\n- [Count Number of Bad Pairs](https://leetcode.com/problems/count-number-of-bad-pairs/) — Medium\n"
+        }
+      ],
+      "timestamp": 1757449762000,
+      "runtime": "115 ms",
+      "memory": "17.7 MB",
+      "runtimePct": 5.330000000000007,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given an integer array <code>nums</code> and an integer <code>k</code>, return <em>the number of pairs</em> <code>(i, j)</code> <em>where</em> <code>i &lt; j</code> <em>such that</em> <code>|nums[i] - nums[j]| == k</code>.</p>\n\n<p>The value of <code>|x|</code> is defined as:</p>\n\n<ul>\n\t<li><code>x</code> if <code>x &gt;= 0</code>.</li>\n\t<li><code>-x</code> if <code>x &lt; 0</code>.</li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,2,2,1], k = 1\n<strong>Output:</strong> 4\n<strong>Explanation:</strong> The pairs with an absolute difference of 1 are:\n- [<strong><u>1</u></strong>,<strong><u>2</u></strong>,2,1]\n- [<strong><u>1</u></strong>,2,<strong><u>2</u></strong>,1]\n- [1,<strong><u>2</u></strong>,2,<strong><u>1</u></strong>]\n- [1,2,<strong><u>2</u></strong>,<strong><u>1</u></strong>]\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,3], k = 3\n<strong>Output:</strong> 0\n<strong>Explanation:</strong> There are no pairs with an absolute difference of 3.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [3,2,1,5,4], k = 2\n<strong>Output:</strong> 3\n<b>Explanation:</b> The pairs with an absolute difference of 2 are:\n- [<strong><u>3</u></strong>,2,<strong><u>1</u></strong>,5,4]\n- [<strong><u>3</u></strong>,2,1,<strong><u>5</u></strong>,4]\n- [3,<strong><u>2</u></strong>,1,5,<strong><u>4</u></strong>]\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 200</code></li>\n\t<li><code>1 &lt;= nums[i] &lt;= 100</code></li>\n\t<li><code>1 &lt;= k &lt;= 99</code></li>\n</ul>\n",
+      "hints": [
+        "Can we check every possible pair?",
+        "Can we use a nested for loop to solve this problem?"
+      ],
+      "acRate": 85.38896503225529,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "two-sum",
+          "title": "Two Sum",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "k-diff-pairs-in-an-array",
+          "title": "K-diff Pairs in an Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "finding-pairs-with-a-certain-sum",
+          "title": "Finding Pairs With a Certain Sum",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "count-equal-and-divisible-pairs-in-an-array",
+          "title": "Count Equal and Divisible Pairs in an Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "count-number-of-bad-pairs",
+          "title": "Count Number of Bad Pairs",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "count-the-number-of-fair-pairs",
+          "title": "Count the Number of Fair Pairs",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-find-the-index-of-the-first-occurrence-in-a-string::1772724594",
+      "submissionId": 1772724594,
+      "platform": "leetcode",
+      "title": "Find the Index of the First Occurrence in a String",
+      "titleSlug": "find-the-index-of-the-first-occurrence-in-a-string",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Two Pointers",
+        "String",
+        "String Matching"
+      ],
+      "topic": "Two Pointers",
+      "code": "class Solution:\n    def strStr(self, haystack: str, needle: str) -> int:\n        for i in range(len(haystack) - len(needle) + 1):\n            if haystack[i:i+len(needle)] == needle:\n                return i\n        return -1",
+      "readmeContent": "# Find the Index of the First Occurrence in a String\n\n**Difficulty:** Easy  |  **Acceptance:** 46.6%\n\n**Tags:** `Two Pointers`, `String`, `String Matching`\n\n## Problem\n\nGiven two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.\n\n&nbsp;\nExample 1:\n\nInput: haystack = \"sadbutsad\", needle = \"sad\"\nOutput: 0\nExplanation: \"sad\" occurs at index 0 and 6.\nThe first occurrence is at index 0, so we return 0.\n\nExample 2:\n\nInput: haystack = \"leetcode\", needle = \"leeto\"\nOutput: -1\nExplanation: \"leeto\" did not occur in \"leetcode\", so we return -1.\n\n&nbsp;\nConstraints:\n\n\t1 <= haystack.length, needle.length <= 104\n\thaystack and needle consist of only lowercase English characters.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.6 MB\n\n## Similar Problems\n\n- [Shortest Palindrome](https://leetcode.com/problems/shortest-palindrome/) — Hard\n- [Repeated Substring Pattern](https://leetcode.com/problems/repeated-substring-pattern/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-find-the-index-of-the-first-occurrence-in-a-string/lc-find-the-index-of-the-first-occurrence-in-a-string.py",
+          "content": "class Solution:\n    def strStr(self, haystack: str, needle: str) -> int:\n        for i in range(len(haystack) - len(needle) + 1):\n            if haystack[i:i+len(needle)] == needle:\n                return i\n        return -1"
+        },
+        {
+          "path": "problems/lc-find-the-index-of-the-first-occurrence-in-a-string/README.md",
+          "content": "# Find the Index of the First Occurrence in a String\n\n**Difficulty:** Easy  |  **Acceptance:** 46.6%\n\n**Tags:** `Two Pointers`, `String`, `String Matching`\n\n## Problem\n\nGiven two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.\n\n&nbsp;\nExample 1:\n\nInput: haystack = \"sadbutsad\", needle = \"sad\"\nOutput: 0\nExplanation: \"sad\" occurs at index 0 and 6.\nThe first occurrence is at index 0, so we return 0.\n\nExample 2:\n\nInput: haystack = \"leetcode\", needle = \"leeto\"\nOutput: -1\nExplanation: \"leeto\" did not occur in \"leetcode\", so we return -1.\n\n&nbsp;\nConstraints:\n\n\t1 <= haystack.length, needle.length <= 104\n\thaystack and needle consist of only lowercase English characters.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.6 MB\n\n## Similar Problems\n\n- [Shortest Palindrome](https://leetcode.com/problems/shortest-palindrome/) — Hard\n- [Repeated Substring Pattern](https://leetcode.com/problems/repeated-substring-pattern/) — Easy\n"
+        }
+      ],
+      "timestamp": 1758027280000,
+      "runtime": "0 ms",
+      "memory": "17.6 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>Given two strings <code>needle</code> and <code>haystack</code>, return the index of the first occurrence of <code>needle</code> in <code>haystack</code>, or <code>-1</code> if <code>needle</code> is not part of <code>haystack</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> haystack = &quot;sadbutsad&quot;, needle = &quot;sad&quot;\n<strong>Output:</strong> 0\n<strong>Explanation:</strong> &quot;sad&quot; occurs at index 0 and 6.\nThe first occurrence is at index 0, so we return 0.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> haystack = &quot;leetcode&quot;, needle = &quot;leeto&quot;\n<strong>Output:</strong> -1\n<strong>Explanation:</strong> &quot;leeto&quot; did not occur in &quot;leetcode&quot;, so we return -1.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= haystack.length, needle.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>haystack</code> and <code>needle</code> consist of only lowercase English characters.</li>\n</ul>\n",
+      "hints": null,
+      "acRate": 46.63003831026683,
+      "similar": [
+        {
+          "difficulty": "Hard",
+          "titleSlug": "shortest-palindrome",
+          "title": "Shortest Palindrome",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "repeated-substring-pattern",
+          "title": "Repeated Substring Pattern",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-smallest-number-in-infinite-set::1777012123",
+      "submissionId": 1777012123,
+      "platform": "leetcode",
+      "title": "Smallest Number in Infinite Set",
+      "titleSlug": "smallest-number-in-infinite-set",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Hash Table",
+        "Design",
+        "Heap (Priority Queue)",
+        "Ordered Set"
+      ],
+      "topic": "Hash Table",
+      "code": "class SmallestInfiniteSet:\n\n    def __init__(self):\n        self.sm = 1\n        self.rm = set()\n\n    def popSmallest(self) -> int:\n        ans = self.sm\n        self.rm.add(ans)\n        while self.sm in self.rm:\n            self.sm += 1\n        return ans\n\n    def addBack(self, num: int) -> None:\n        if num in self.rm:\n            self.rm.remove(num)\n            if num < self.sm:\n                self.sm = num\n\n\n# Your SmallestInfiniteSet object will be instantiated and called as such:\n# obj = SmallestInfiniteSet()\n# param_1 = obj.popSmallest()\n# obj.addBack(num)",
+      "readmeContent": "# Smallest Number in Infinite Set\n\n**Difficulty:** Medium  |  **Acceptance:** 70.6%\n\n**Tags:** `Hash Table`, `Design`, `Heap (Priority Queue)`, `Ordered Set`\n\n## Problem\n\nYou have a set which contains all positive integers [1, 2, 3, 4, 5, ...].\n\nImplement the SmallestInfiniteSet class:\n\n\tSmallestInfiniteSet() Initializes the SmallestInfiniteSet object to contain all positive integers.\n\tint popSmallest() Removes and returns the smallest integer contained in the infinite set.\n\tvoid addBack(int num) Adds a positive integer num back into the infinite set, if it is not already in the infinite set.\n\n&nbsp;\nExample 1:\n\nInput\n[\"SmallestInfiniteSet\", \"addBack\", \"popSmallest\", \"popSmallest\", \"popSmallest\", \"addBack\", \"popSmallest\", \"popSmallest\", \"popSmallest\"]\n[[], [2], [], [], [], [1], [], [], []]\nOutput\n[null, null, 1, 2, 3, null, 1, 4, 5]\n\nExplanation\nSmallestInfiniteSet smallestInfiniteSet = new SmallestInfiniteSet();\nsmallestInfiniteSet.addBack(2);    // 2 is already in the set, so no change is made.\nsmallestInfiniteSet.popSmallest(); // return 1, since 1 is the smallest number, and remove it from the set.\nsmallestInfiniteSet.popSmallest(); // return 2, and remove it from the set.\nsmallestInfiniteSet.popSmallest(); // return 3, and remove it from the set.\nsmallestInfiniteSet.addBack(1);    // 1 is added back to the set.\nsmallestInfiniteSet.popSmallest(); // return 1, since 1 was added back to the set and\n                                   // is the smallest number, and remove it from the set.\nsmallestInfiniteSet.popSmallest(); // return 4, and remove it from the set.\nsmallestInfiniteSet.popSmallest(); // return 5, and remove it from the set.\n\n&nbsp;\nConstraints:\n\n\t1 <= num <= 1000\n\tAt most 1000 calls will be made in total to popSmallest and addBack.\n\n## My Submission\n\n- Runtime: 22 ms\n- Memory: 18.5 MB\n\n## Similar Problems\n\n- [First Missing Positive](https://leetcode.com/problems/first-missing-positive/) — Hard\n",
+      "files": [
+        {
+          "path": "problems/lc-smallest-number-in-infinite-set/lc-smallest-number-in-infinite-set.py",
+          "content": "class SmallestInfiniteSet:\n\n    def __init__(self):\n        self.sm = 1\n        self.rm = set()\n\n    def popSmallest(self) -> int:\n        ans = self.sm\n        self.rm.add(ans)\n        while self.sm in self.rm:\n            self.sm += 1\n        return ans\n\n    def addBack(self, num: int) -> None:\n        if num in self.rm:\n            self.rm.remove(num)\n            if num < self.sm:\n                self.sm = num\n\n\n# Your SmallestInfiniteSet object will be instantiated and called as such:\n# obj = SmallestInfiniteSet()\n# param_1 = obj.popSmallest()\n# obj.addBack(num)"
+        },
+        {
+          "path": "problems/lc-smallest-number-in-infinite-set/README.md",
+          "content": "# Smallest Number in Infinite Set\n\n**Difficulty:** Medium  |  **Acceptance:** 70.6%\n\n**Tags:** `Hash Table`, `Design`, `Heap (Priority Queue)`, `Ordered Set`\n\n## Problem\n\nYou have a set which contains all positive integers [1, 2, 3, 4, 5, ...].\n\nImplement the SmallestInfiniteSet class:\n\n\tSmallestInfiniteSet() Initializes the SmallestInfiniteSet object to contain all positive integers.\n\tint popSmallest() Removes and returns the smallest integer contained in the infinite set.\n\tvoid addBack(int num) Adds a positive integer num back into the infinite set, if it is not already in the infinite set.\n\n&nbsp;\nExample 1:\n\nInput\n[\"SmallestInfiniteSet\", \"addBack\", \"popSmallest\", \"popSmallest\", \"popSmallest\", \"addBack\", \"popSmallest\", \"popSmallest\", \"popSmallest\"]\n[[], [2], [], [], [], [1], [], [], []]\nOutput\n[null, null, 1, 2, 3, null, 1, 4, 5]\n\nExplanation\nSmallestInfiniteSet smallestInfiniteSet = new SmallestInfiniteSet();\nsmallestInfiniteSet.addBack(2);    // 2 is already in the set, so no change is made.\nsmallestInfiniteSet.popSmallest(); // return 1, since 1 is the smallest number, and remove it from the set.\nsmallestInfiniteSet.popSmallest(); // return 2, and remove it from the set.\nsmallestInfiniteSet.popSmallest(); // return 3, and remove it from the set.\nsmallestInfiniteSet.addBack(1);    // 1 is added back to the set.\nsmallestInfiniteSet.popSmallest(); // return 1, since 1 was added back to the set and\n                                   // is the smallest number, and remove it from the set.\nsmallestInfiniteSet.popSmallest(); // return 4, and remove it from the set.\nsmallestInfiniteSet.popSmallest(); // return 5, and remove it from the set.\n\n&nbsp;\nConstraints:\n\n\t1 <= num <= 1000\n\tAt most 1000 calls will be made in total to popSmallest and addBack.\n\n## My Submission\n\n- Runtime: 22 ms\n- Memory: 18.5 MB\n\n## Similar Problems\n\n- [First Missing Positive](https://leetcode.com/problems/first-missing-positive/) — Hard\n"
+        }
+      ],
+      "timestamp": 1758373115000,
+      "runtime": "22 ms",
+      "memory": "18.5 MB",
+      "runtimePct": 45.25490000000001,
+      "memoryPct": 100,
+      "problemStatement": "<p>You have a set which contains all positive integers <code>[1, 2, 3, 4, 5, ...]</code>.</p>\n\n<p>Implement the <code>SmallestInfiniteSet</code> class:</p>\n\n<ul>\n\t<li><code>SmallestInfiniteSet()</code> Initializes the <strong>SmallestInfiniteSet</strong> object to contain <strong>all</strong> positive integers.</li>\n\t<li><code>int popSmallest()</code> <strong>Removes</strong> and returns the smallest integer contained in the infinite set.</li>\n\t<li><code>void addBack(int num)</code> <strong>Adds</strong> a positive integer <code>num</code> back into the infinite set, if it is <strong>not</strong> already in the infinite set.</li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input</strong>\n[&quot;SmallestInfiniteSet&quot;, &quot;addBack&quot;, &quot;popSmallest&quot;, &quot;popSmallest&quot;, &quot;popSmallest&quot;, &quot;addBack&quot;, &quot;popSmallest&quot;, &quot;popSmallest&quot;, &quot;popSmallest&quot;]\n[[], [2], [], [], [], [1], [], [], []]\n<strong>Output</strong>\n[null, null, 1, 2, 3, null, 1, 4, 5]\n\n<strong>Explanation</strong>\nSmallestInfiniteSet smallestInfiniteSet = new SmallestInfiniteSet();\nsmallestInfiniteSet.addBack(2);    // 2 is already in the set, so no change is made.\nsmallestInfiniteSet.popSmallest(); // return 1, since 1 is the smallest number, and remove it from the set.\nsmallestInfiniteSet.popSmallest(); // return 2, and remove it from the set.\nsmallestInfiniteSet.popSmallest(); // return 3, and remove it from the set.\nsmallestInfiniteSet.addBack(1);    // 1 is added back to the set.\nsmallestInfiniteSet.popSmallest(); // return 1, since 1 was added back to the set and\n                                   // is the smallest number, and remove it from the set.\nsmallestInfiniteSet.popSmallest(); // return 4, and remove it from the set.\nsmallestInfiniteSet.popSmallest(); // return 5, and remove it from the set.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= num &lt;= 1000</code></li>\n\t<li>At most <code>1000</code> calls will be made <strong>in total</strong> to <code>popSmallest</code> and <code>addBack</code>.</li>\n</ul>\n",
+      "hints": [
+        "Based on the constraints, what is the maximum element that can possibly be popped?",
+        "Maintain whether elements are in or not in the set. How many elements do we consider?"
+      ],
+      "acRate": 70.58772056871123,
+      "similar": [
+        {
+          "difficulty": "Hard",
+          "titleSlug": "first-missing-positive",
+          "title": "First Missing Positive",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-minimum-moves-to-reach-target-score::1777023549",
+      "submissionId": 1777023549,
+      "platform": "leetcode",
+      "title": "Minimum Moves to Reach Target Score",
+      "titleSlug": "minimum-moves-to-reach-target-score",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Math",
+        "Greedy"
+      ],
+      "topic": "Greedy",
+      "code": "class Solution:\n    def minMoves(self, target: int, maxDoubles: int) -> int:\n        steps = 0\n\n        while target != 1:\n            if target % 2 != 0:\n                # the target is odd\n                steps += 1\n                print(f\"odd {target}\")\n                target -= 1\n            \n            # Now all targets are even\n\n            if maxDoubles > 0:\n                print(f\"even {target}\")\n                target = int(target / 2)\n                maxDoubles -= 1\n                steps += 1\n            else:\n                break\n        print(f\"steps {steps}, target {target-1}\")\n        steps += target - 1\n        return steps",
+      "readmeContent": "# Minimum Moves to Reach Target Score\n\n**Difficulty:** Medium  |  **Acceptance:** 52.4%\n\n**Tags:** `Math`, `Greedy`\n\n## Problem\n\nYou are playing a game with integers. You start with the integer 1 and you want to reach the integer target.\n\nIn one move, you can either:\n\n\tIncrement the current integer by one (i.e., x = x + 1).\n\tDouble the current integer (i.e., x = 2 * x).\n\nYou can use the increment operation any number of times, however, you can only use the double operation at most maxDoubles times.\n\nGiven the two integers target and maxDoubles, return the minimum number of moves needed to reach target starting with 1.\n\n&nbsp;\nExample 1:\n\nInput: target = 5, maxDoubles = 0\nOutput: 4\nExplanation: Keep incrementing by 1 until you reach target.\n\nExample 2:\n\nInput: target = 19, maxDoubles = 2\nOutput: 7\nExplanation: Initially, x = 1\nIncrement 3 times so x = 4\nDouble once so x = 8\nIncrement once so x = 9\nDouble again so x = 18\nIncrement once so x = 19\n\nExample 3:\n\nInput: target = 10, maxDoubles = 4\nOutput: 4\nExplanation: Initially, x = 1\nIncrement once so x = 2\nDouble once so x = 4\nIncrement once so x = 5\nDouble again so x = 10\n\n&nbsp;\nConstraints:\n\n\t1 <= target <= 109\n\t0 <= maxDoubles <= 100\n\n## My Submission\n\n- Runtime: 2 ms\n- Memory: 17.8 MB\n\n## Similar Problems\n\n- [Number of Steps to Reduce a Number to Zero](https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/) — Easy\n- [Number of Steps to Reduce a Number in Binary Representation to One](https://leetcode.com/problems/number-of-steps-to-reduce-a-number-in-binary-representation-to-one/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-minimum-moves-to-reach-target-score/lc-minimum-moves-to-reach-target-score.py",
+          "content": "class Solution:\n    def minMoves(self, target: int, maxDoubles: int) -> int:\n        steps = 0\n\n        while target != 1:\n            if target % 2 != 0:\n                # the target is odd\n                steps += 1\n                print(f\"odd {target}\")\n                target -= 1\n            \n            # Now all targets are even\n\n            if maxDoubles > 0:\n                print(f\"even {target}\")\n                target = int(target / 2)\n                maxDoubles -= 1\n                steps += 1\n            else:\n                break\n        print(f\"steps {steps}, target {target-1}\")\n        steps += target - 1\n        return steps"
+        },
+        {
+          "path": "problems/lc-minimum-moves-to-reach-target-score/README.md",
+          "content": "# Minimum Moves to Reach Target Score\n\n**Difficulty:** Medium  |  **Acceptance:** 52.4%\n\n**Tags:** `Math`, `Greedy`\n\n## Problem\n\nYou are playing a game with integers. You start with the integer 1 and you want to reach the integer target.\n\nIn one move, you can either:\n\n\tIncrement the current integer by one (i.e., x = x + 1).\n\tDouble the current integer (i.e., x = 2 * x).\n\nYou can use the increment operation any number of times, however, you can only use the double operation at most maxDoubles times.\n\nGiven the two integers target and maxDoubles, return the minimum number of moves needed to reach target starting with 1.\n\n&nbsp;\nExample 1:\n\nInput: target = 5, maxDoubles = 0\nOutput: 4\nExplanation: Keep incrementing by 1 until you reach target.\n\nExample 2:\n\nInput: target = 19, maxDoubles = 2\nOutput: 7\nExplanation: Initially, x = 1\nIncrement 3 times so x = 4\nDouble once so x = 8\nIncrement once so x = 9\nDouble again so x = 18\nIncrement once so x = 19\n\nExample 3:\n\nInput: target = 10, maxDoubles = 4\nOutput: 4\nExplanation: Initially, x = 1\nIncrement once so x = 2\nDouble once so x = 4\nIncrement once so x = 5\nDouble again so x = 10\n\n&nbsp;\nConstraints:\n\n\t1 <= target <= 109\n\t0 <= maxDoubles <= 100\n\n## My Submission\n\n- Runtime: 2 ms\n- Memory: 17.8 MB\n\n## Similar Problems\n\n- [Number of Steps to Reduce a Number to Zero](https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/) — Easy\n- [Number of Steps to Reduce a Number in Binary Representation to One](https://leetcode.com/problems/number-of-steps-to-reduce-a-number-in-binary-representation-to-one/) — Medium\n"
+        }
+      ],
+      "timestamp": 1758374078000,
+      "runtime": "2 ms",
+      "memory": "17.8 MB",
+      "runtimePct": 14,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are playing a game with integers. You start with the integer <code>1</code> and you want to reach the integer <code>target</code>.</p>\n\n<p>In one move, you can either:</p>\n\n<ul>\n\t<li><strong>Increment</strong> the current integer by one (i.e., <code>x = x + 1</code>).</li>\n\t<li><strong>Double</strong> the current integer (i.e., <code>x = 2 * x</code>).</li>\n</ul>\n\n<p>You can use the <strong>increment</strong> operation <strong>any</strong> number of times, however, you can only use the <strong>double</strong> operation <strong>at most</strong> <code>maxDoubles</code> times.</p>\n\n<p>Given the two integers <code>target</code> and <code>maxDoubles</code>, return <em>the minimum number of moves needed to reach </em><code>target</code><em> starting with </em><code>1</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> target = 5, maxDoubles = 0\n<strong>Output:</strong> 4\n<strong>Explanation:</strong> Keep incrementing by 1 until you reach target.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> target = 19, maxDoubles = 2\n<strong>Output:</strong> 7\n<strong>Explanation:</strong> Initially, x = 1\nIncrement 3 times so x = 4\nDouble once so x = 8\nIncrement once so x = 9\nDouble again so x = 18\nIncrement once so x = 19\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> target = 10, maxDoubles = 4\n<strong>Output:</strong> 4\n<strong>Explanation:</strong><b> </b>Initially, x = 1\nIncrement once so x = 2\nDouble once so x = 4\nIncrement once so x = 5\nDouble again so x = 10\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= target &lt;= 10<sup>9</sup></code></li>\n\t<li><code>0 &lt;= maxDoubles &lt;= 100</code></li>\n</ul>\n",
+      "hints": [
+        "Solve the opposite problem: start at the given score and move to 1.",
+        "It is better to use the move of the second type once we can to lose more scores fast."
+      ],
+      "acRate": 52.40096544972741,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "number-of-steps-to-reduce-a-number-to-zero",
+          "title": "Number of Steps to Reduce a Number to Zero",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "number-of-steps-to-reduce-a-number-in-binary-representation-to-one",
+          "title": "Number of Steps to Reduce a Number in Binary Representation to One",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-find-the-most-common-response::1777708235",
+      "submissionId": 1777708235,
+      "platform": "leetcode",
+      "title": "Find the Most Common Response",
+      "titleSlug": "find-the-most-common-response",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Hash Table",
+        "String",
+        "Counting"
+      ],
+      "topic": "Hash Table",
+      "code": "from collections import Counter\nclass Solution:\n    def findCommonResponse(self, responses: List[List[str]]) -> str:\n        ans = []\n        for i in responses:\n            ans.extend(set(i))\n        # print(ans)\n        count = Counter(ans)\n        # print(count)\n        a = sorted(count.items(), key=lambda x: (-x[1], x[0]))\n        # print(a)\n        return a[0][0]",
+      "readmeContent": "# Find the Most Common Response\n\n**Difficulty:** Medium  |  **Acceptance:** 74.9%\n\n**Tags:** `Array`, `Hash Table`, `String`, `Counting`\n\n## Problem\n\nYou are given a 2D string array responses where each responses[i] is an array of strings representing survey responses from the ith day.\n\nReturn the most common response across all days after removing duplicate responses within each responses[i]. If there is a tie, return the lexicographically smallest response.\n\n&nbsp;\nExample 1:\n\nInput: responses = [[\"good\",\"ok\",\"good\",\"ok\"],[\"ok\",\"bad\",\"good\",\"ok\",\"ok\"],[\"good\"],[\"bad\"]]\n\nOutput: \"good\"\n\nExplanation:\n\n\tAfter removing duplicates within each list, responses = [[\"good\", \"ok\"], [\"ok\", \"bad\", \"good\"], [\"good\"], [\"bad\"]].\n\t\"good\" appears 3 times, \"ok\" appears 2 times, and \"bad\" appears 2 times.\n\tReturn \"good\" because it has the highest frequency.\n\nExample 2:\n\nInput: responses = [[\"good\",\"ok\",\"good\"],[\"ok\",\"bad\"],[\"bad\",\"notsure\"],[\"great\",\"good\"]]\n\nOutput: \"bad\"\n\nExplanation:\n\n\tAfter removing duplicates within each list we have responses = [[\"good\", \"ok\"], [\"ok\", \"bad\"], [\"bad\", \"notsure\"], [\"great\", \"good\"]].\n\t\"bad\", \"good\", and \"ok\" each occur 2 times.\n\tThe output is \"bad\" because it is the lexicographically smallest amongst the words with the highest frequency.\n\n&nbsp;\nConstraints:\n\n\t1 <= responses.length <= 1000\n\t1 <= responses[i].length <= 1000\n\t1 <= responses[i][j].length <= 10\n\tresponses[i][j] consists of only lowercase English letters\n\n## My Submission\n\n- Runtime: 1051 ms\n- Memory: 298.2 MB\n\n## Similar Problems\n\n- [Majority Element](https://leetcode.com/problems/majority-element/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/lc-find-the-most-common-response/lc-find-the-most-common-response.py",
+          "content": "from collections import Counter\nclass Solution:\n    def findCommonResponse(self, responses: List[List[str]]) -> str:\n        ans = []\n        for i in responses:\n            ans.extend(set(i))\n        # print(ans)\n        count = Counter(ans)\n        # print(count)\n        a = sorted(count.items(), key=lambda x: (-x[1], x[0]))\n        # print(a)\n        return a[0][0]"
+        },
+        {
+          "path": "problems/lc-find-the-most-common-response/README.md",
+          "content": "# Find the Most Common Response\n\n**Difficulty:** Medium  |  **Acceptance:** 74.9%\n\n**Tags:** `Array`, `Hash Table`, `String`, `Counting`\n\n## Problem\n\nYou are given a 2D string array responses where each responses[i] is an array of strings representing survey responses from the ith day.\n\nReturn the most common response across all days after removing duplicate responses within each responses[i]. If there is a tie, return the lexicographically smallest response.\n\n&nbsp;\nExample 1:\n\nInput: responses = [[\"good\",\"ok\",\"good\",\"ok\"],[\"ok\",\"bad\",\"good\",\"ok\",\"ok\"],[\"good\"],[\"bad\"]]\n\nOutput: \"good\"\n\nExplanation:\n\n\tAfter removing duplicates within each list, responses = [[\"good\", \"ok\"], [\"ok\", \"bad\", \"good\"], [\"good\"], [\"bad\"]].\n\t\"good\" appears 3 times, \"ok\" appears 2 times, and \"bad\" appears 2 times.\n\tReturn \"good\" because it has the highest frequency.\n\nExample 2:\n\nInput: responses = [[\"good\",\"ok\",\"good\"],[\"ok\",\"bad\"],[\"bad\",\"notsure\"],[\"great\",\"good\"]]\n\nOutput: \"bad\"\n\nExplanation:\n\n\tAfter removing duplicates within each list we have responses = [[\"good\", \"ok\"], [\"ok\", \"bad\"], [\"bad\", \"notsure\"], [\"great\", \"good\"]].\n\t\"bad\", \"good\", and \"ok\" each occur 2 times.\n\tThe output is \"bad\" because it is the lexicographically smallest amongst the words with the highest frequency.\n\n&nbsp;\nConstraints:\n\n\t1 <= responses.length <= 1000\n\t1 <= responses[i].length <= 1000\n\t1 <= responses[i][j].length <= 10\n\tresponses[i][j] consists of only lowercase English letters\n\n## My Submission\n\n- Runtime: 1051 ms\n- Memory: 298.2 MB\n\n## Similar Problems\n\n- [Majority Element](https://leetcode.com/problems/majority-element/) — Easy\n"
+        }
+      ],
+      "timestamp": 1758429498000,
+      "runtime": "1051 ms",
+      "memory": "298.2 MB",
+      "runtimePct": 5.081900000000191,
+      "memoryPct": 5.08360000000005,
+      "problemStatement": "<p>You are given a 2D string array <code>responses</code> where each <code>responses[i]</code> is an array of strings representing survey responses from the <code>i<sup>th</sup></code> day.</p>\n\n<p>Return the <strong>most common</strong> response across all days after removing <strong>duplicate</strong> responses within each <code>responses[i]</code>. If there is a tie, return the <em><span data-keyword=\"lexicographically-smaller-string\">lexicographically smallest</span></em> response.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">responses = [[&quot;good&quot;,&quot;ok&quot;,&quot;good&quot;,&quot;ok&quot;],[&quot;ok&quot;,&quot;bad&quot;,&quot;good&quot;,&quot;ok&quot;,&quot;ok&quot;],[&quot;good&quot;],[&quot;bad&quot;]]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">&quot;good&quot;</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<ul>\n\t<li>After removing duplicates within each list, <code>responses = [[&quot;good&quot;, &quot;ok&quot;], [&quot;ok&quot;, &quot;bad&quot;, &quot;good&quot;], [&quot;good&quot;], [&quot;bad&quot;]]</code>.</li>\n\t<li><code>&quot;good&quot;</code> appears 3 times, <code>&quot;ok&quot;</code> appears 2 times, and <code>&quot;bad&quot;</code> appears 2 times.</li>\n\t<li>Return <code>&quot;good&quot;</code> because it has the highest frequency.</li>\n</ul>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">responses = [[&quot;good&quot;,&quot;ok&quot;,&quot;good&quot;],[&quot;ok&quot;,&quot;bad&quot;],[&quot;bad&quot;,&quot;notsure&quot;],[&quot;great&quot;,&quot;good&quot;]]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">&quot;bad&quot;</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<ul>\n\t<li>After removing duplicates within each list we have <code>responses = [[&quot;good&quot;, &quot;ok&quot;], [&quot;ok&quot;, &quot;bad&quot;], [&quot;bad&quot;, &quot;notsure&quot;], [&quot;great&quot;, &quot;good&quot;]]</code>.</li>\n\t<li><code>&quot;bad&quot;</code>, <code>&quot;good&quot;</code>, and <code>&quot;ok&quot;</code> each occur 2 times.</li>\n\t<li>The output is <code>&quot;bad&quot;</code> because it is the lexicographically smallest amongst the words with the highest frequency.</li>\n</ul>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= responses.length &lt;= 1000</code></li>\n\t<li><code>1 &lt;= responses[i].length &lt;= 1000</code></li>\n\t<li><code>1 &lt;= responses[i][j].length &lt;= 10</code></li>\n\t<li><code>responses[i][j]</code> consists of only lowercase English letters</li>\n</ul>\n",
+      "hints": [
+        "Use a HashMap."
+      ],
+      "acRate": 74.85225750531873,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "majority-element",
+          "title": "Majority Element",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-coin-change::1777857768",
+      "submissionId": 1777857768,
+      "platform": "leetcode",
+      "title": "Coin Change",
+      "titleSlug": "coin-change",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Dynamic Programming",
+        "Breadth-First Search"
+      ],
+      "topic": "Dynamic Programming",
+      "code": "class Solution:\n    def coinChange(self, coins: List[int], amount: int) -> int:\n        dp = [float('inf')] * (amount + 1)\n        dp[0] = 0\n        for curr_amt in range(1,amount+1):\n            for coin in coins:\n                if curr_amt - coin >= 0 and dp[curr_amt - coin] != float('inf'):\n                    dp[curr_amt] = min(dp[curr_amt], 1 + dp[curr_amt - coin])\n        \n        if dp[amount] == float('inf'):\n            return -1\n        else:\n            return dp[amount]\n\n        # if amount == 0:\n        #     return 0\n        # count = 0\n        # coins.sort(reverse=True)\n\n        # for i in coins:\n        #     print(f\"coin -> {i}\")\n        #     while i <= amount:\n        #         count += 1\n        #         print(f\"  amount -> {amount}, new amount -> {amount - i}\")\n        #         amount -= i\n        # if count == 0 or amount != 0:\n        #     return -1\n        # return count",
+      "readmeContent": "# Coin Change\n\n**Difficulty:** Medium  |  **Acceptance:** 48.4%\n\n**Tags:** `Array`, `Dynamic Programming`, `Breadth-First Search`\n\n## Problem\n\nYou are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money.\n\nReturn the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.\n\nYou may assume that you have an infinite number of each kind of coin.\n\n&nbsp;\nExample 1:\n\nInput: coins = [1,2,5], amount = 11\nOutput: 3\nExplanation: 11 = 5 + 5 + 1\n\nExample 2:\n\nInput: coins = [2], amount = 3\nOutput: -1\n\nExample 3:\n\nInput: coins = [1], amount = 0\nOutput: 0\n\n&nbsp;\nConstraints:\n\n\t1 <= coins.length <= 12\n\t1 <= coins[i] <= 231 - 1\n\t0 <= amount <= 104\n\n## My Submission\n\n- Runtime: 1245 ms\n- Memory: 18.1 MB\n\n## Similar Problems\n\n- [Minimum Cost For Tickets](https://leetcode.com/problems/minimum-cost-for-tickets/) — Medium\n- [Maximum Value of K Coins From Piles](https://leetcode.com/problems/maximum-value-of-k-coins-from-piles/) — Hard\n- [Minimum Number of Operations to Convert Time](https://leetcode.com/problems/minimum-number-of-operations-to-convert-time/) — Easy\n- [Minimum Cost to Split an Array](https://leetcode.com/problems/minimum-cost-to-split-an-array/) — Hard\n- [Count of Sub-Multisets With Bounded Sum](https://leetcode.com/problems/count-of-sub-multisets-with-bounded-sum/) — Hard\n",
+      "files": [
+        {
+          "path": "problems/lc-coin-change/lc-coin-change.py",
+          "content": "class Solution:\n    def coinChange(self, coins: List[int], amount: int) -> int:\n        dp = [float('inf')] * (amount + 1)\n        dp[0] = 0\n        for curr_amt in range(1,amount+1):\n            for coin in coins:\n                if curr_amt - coin >= 0 and dp[curr_amt - coin] != float('inf'):\n                    dp[curr_amt] = min(dp[curr_amt], 1 + dp[curr_amt - coin])\n        \n        if dp[amount] == float('inf'):\n            return -1\n        else:\n            return dp[amount]\n\n        # if amount == 0:\n        #     return 0\n        # count = 0\n        # coins.sort(reverse=True)\n\n        # for i in coins:\n        #     print(f\"coin -> {i}\")\n        #     while i <= amount:\n        #         count += 1\n        #         print(f\"  amount -> {amount}, new amount -> {amount - i}\")\n        #         amount -= i\n        # if count == 0 or amount != 0:\n        #     return -1\n        # return count"
+        },
+        {
+          "path": "problems/lc-coin-change/README.md",
+          "content": "# Coin Change\n\n**Difficulty:** Medium  |  **Acceptance:** 48.4%\n\n**Tags:** `Array`, `Dynamic Programming`, `Breadth-First Search`\n\n## Problem\n\nYou are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money.\n\nReturn the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.\n\nYou may assume that you have an infinite number of each kind of coin.\n\n&nbsp;\nExample 1:\n\nInput: coins = [1,2,5], amount = 11\nOutput: 3\nExplanation: 11 = 5 + 5 + 1\n\nExample 2:\n\nInput: coins = [2], amount = 3\nOutput: -1\n\nExample 3:\n\nInput: coins = [1], amount = 0\nOutput: 0\n\n&nbsp;\nConstraints:\n\n\t1 <= coins.length <= 12\n\t1 <= coins[i] <= 231 - 1\n\t0 <= amount <= 104\n\n## My Submission\n\n- Runtime: 1245 ms\n- Memory: 18.1 MB\n\n## Similar Problems\n\n- [Minimum Cost For Tickets](https://leetcode.com/problems/minimum-cost-for-tickets/) — Medium\n- [Maximum Value of K Coins From Piles](https://leetcode.com/problems/maximum-value-of-k-coins-from-piles/) — Hard\n- [Minimum Number of Operations to Convert Time](https://leetcode.com/problems/minimum-number-of-operations-to-convert-time/) — Easy\n- [Minimum Cost to Split an Array](https://leetcode.com/problems/minimum-cost-to-split-an-array/) — Hard\n- [Count of Sub-Multisets With Bounded Sum](https://leetcode.com/problems/count-of-sub-multisets-with-bounded-sum/) — Hard\n"
+        }
+      ],
+      "timestamp": 1758441308000,
+      "runtime": "1245 ms",
+      "memory": "18.1 MB",
+      "runtimePct": 7.211500000000692,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given an integer array <code>coins</code> representing coins of different denominations and an integer <code>amount</code> representing a total amount of money.</p>\n\n<p>Return <em>the fewest number of coins that you need to make up that amount</em>. If that amount of money cannot be made up by any combination of the coins, return <code>-1</code>.</p>\n\n<p>You may assume that you have an infinite number of each kind of coin.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> coins = [1,2,5], amount = 11\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> 11 = 5 + 5 + 1\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> coins = [2], amount = 3\n<strong>Output:</strong> -1\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> coins = [1], amount = 0\n<strong>Output:</strong> 0\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= coins.length &lt;= 12</code></li>\n\t<li><code>1 &lt;= coins[i] &lt;= 2<sup>31</sup> - 1</code></li>\n\t<li><code>0 &lt;= amount &lt;= 10<sup>4</sup></code></li>\n</ul>\n",
+      "hints": null,
+      "acRate": 48.37742453658957,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "minimum-cost-for-tickets",
+          "title": "Minimum Cost For Tickets",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "maximum-value-of-k-coins-from-piles",
+          "title": "Maximum Value of K Coins From Piles",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "minimum-number-of-operations-to-convert-time",
+          "title": "Minimum Number of Operations to Convert Time",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "minimum-cost-to-split-an-array",
+          "title": "Minimum Cost to Split an Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "count-of-sub-multisets-with-bounded-sum",
+          "title": "Count of Sub-Multisets With Bounded Sum",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "length-of-the-longest-subsequence-that-sums-to-target",
+          "title": "Length of the Longest Subsequence That Sums to Target",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "minimum-number-of-coins-to-be-added",
+          "title": "Minimum Number of Coins to be Added",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "inverse-coin-change",
+          "title": "Inverse Coin Change",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-climbing-stairs-ii::1869084198",
+      "submissionId": 1869084198,
+      "platform": "leetcode",
+      "title": "Climbing Stairs II",
+      "titleSlug": "climbing-stairs-ii",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Dynamic Programming"
+      ],
+      "topic": "Dynamic Programming",
+      "code": "class Solution:\n    def climbStairs(self, n: int, costs: List[int]) -> int:\n        back1 = back2 = back3 = 0\n\n        for stepCost in costs:\n            minCost = min(back1 + 1, back2 + 4, back3 + 9)\n\n            back1, back2, back3 = stepCost + minCost, back1, back2\n        \n        return back1",
+      "readmeContent": "# Climbing Stairs II\n\n**Difficulty:** Medium  |  **Acceptance:** 64.1%\n\n**Tags:** `Array`, `Dynamic Programming`\n\n## Problem\n\nYou are climbing a staircase with n + 1 steps, numbered from 0 to n.\n\nYou are also given a 1-indexed integer array costs of length n, where costs[i] is the cost of step i.\n\nFrom step i, you can jump only to step i + 1, i + 2, or i + 3. The cost of jumping from step i to step j is defined as: costs[j] + (j - i)2\n\nYou start from step 0 with cost = 0.\n\nReturn the minimum total cost to reach step n.\n\n&nbsp;\nExample 1:\n\nInput: n = 4, costs = [1,2,3,4]\n\nOutput: 13\n\nExplanation:\n\nOne optimal path is 0 &rarr; 1 &rarr; 2 &rarr; 4\n\n\t\n\t\t\n\t\t\tJump\n\t\t\tCost Calculation\n\t\t\tCost\n\t\t\n\t\n\t\n\t\t\n\t\t\t0 &rarr; 1\n\t\t\tcosts[1] + (1 - 0)2 = 1 + 1\n\t\t\t2\n\t\t\n\t\t\n\t\t\t1 &rarr; 2\n\t\t\tcosts[2] + (2 - 1)2 = 2 + 1\n\t\t\t3\n\t\t\n\t\t\n\t\t\t2 &rarr; 4\n\t\t\tcosts[4] + (4 - 2)2 = 4 + 4\n\t\t\t8\n\t\t\n\t\n\nThus, the minimum total cost is 2 + 3 + 8 = 13\n\nExample 2:\n\nInput: n = 4, costs = [5,1,6,2]\n\nOutput: 11\n\nExplanation:\n\nOne optimal path is 0 &rarr; 2 &rarr; 4\n\n\t\n\t\t\n\t\t\tJump\n\t\t\tCost Calculation\n\t\t\tCost\n\t\t\n\t\n\t\n\t\t\n\t\t\t0 &rarr; 2\n\t\t\tcosts[2] + (2 - 0)2 = 1 + 4\n\t\t\t5\n\t\t\n\t\t\n\t\t\t2 &rarr; 4\n\t\t\tcosts[4] + (4 - 2)2 = 2 + 4\n\t\t\t6\n\t\t\n\t\n\nThus, the minimum total cost is 5 + 6 = 11\n\nExample 3:\n\nInput: n = 3, costs = [9,8,3]\n\nOutput: 12\n\nExplanation:\n\nThe optimal path is 0 &rarr; 3 with total cost = costs[3] + (3 - 0)2 = 3 + 9 = 12\n\n&nbsp;\nConstraints:\n\n\t1 <= n == costs.length <= 105​​​​​​​\n\t1 <= costs[i] <= 104\n\n## My Submission\n\n- Runtime: 190 ms\n- Memory: 31 MB\n",
+      "files": [
+        {
+          "path": "problems/lc-climbing-stairs-ii/lc-climbing-stairs-ii.py",
+          "content": "class Solution:\n    def climbStairs(self, n: int, costs: List[int]) -> int:\n        back1 = back2 = back3 = 0\n\n        for stepCost in costs:\n            minCost = min(back1 + 1, back2 + 4, back3 + 9)\n\n            back1, back2, back3 = stepCost + minCost, back1, back2\n        \n        return back1"
+        },
+        {
+          "path": "problems/lc-climbing-stairs-ii/README.md",
+          "content": "# Climbing Stairs II\n\n**Difficulty:** Medium  |  **Acceptance:** 64.1%\n\n**Tags:** `Array`, `Dynamic Programming`\n\n## Problem\n\nYou are climbing a staircase with n + 1 steps, numbered from 0 to n.\n\nYou are also given a 1-indexed integer array costs of length n, where costs[i] is the cost of step i.\n\nFrom step i, you can jump only to step i + 1, i + 2, or i + 3. The cost of jumping from step i to step j is defined as: costs[j] + (j - i)2\n\nYou start from step 0 with cost = 0.\n\nReturn the minimum total cost to reach step n.\n\n&nbsp;\nExample 1:\n\nInput: n = 4, costs = [1,2,3,4]\n\nOutput: 13\n\nExplanation:\n\nOne optimal path is 0 &rarr; 1 &rarr; 2 &rarr; 4\n\n\t\n\t\t\n\t\t\tJump\n\t\t\tCost Calculation\n\t\t\tCost\n\t\t\n\t\n\t\n\t\t\n\t\t\t0 &rarr; 1\n\t\t\tcosts[1] + (1 - 0)2 = 1 + 1\n\t\t\t2\n\t\t\n\t\t\n\t\t\t1 &rarr; 2\n\t\t\tcosts[2] + (2 - 1)2 = 2 + 1\n\t\t\t3\n\t\t\n\t\t\n\t\t\t2 &rarr; 4\n\t\t\tcosts[4] + (4 - 2)2 = 4 + 4\n\t\t\t8\n\t\t\n\t\n\nThus, the minimum total cost is 2 + 3 + 8 = 13\n\nExample 2:\n\nInput: n = 4, costs = [5,1,6,2]\n\nOutput: 11\n\nExplanation:\n\nOne optimal path is 0 &rarr; 2 &rarr; 4\n\n\t\n\t\t\n\t\t\tJump\n\t\t\tCost Calculation\n\t\t\tCost\n\t\t\n\t\n\t\n\t\t\n\t\t\t0 &rarr; 2\n\t\t\tcosts[2] + (2 - 0)2 = 1 + 4\n\t\t\t5\n\t\t\n\t\t\n\t\t\t2 &rarr; 4\n\t\t\tcosts[4] + (4 - 2)2 = 2 + 4\n\t\t\t6\n\t\t\n\t\n\nThus, the minimum total cost is 5 + 6 = 11\n\nExample 3:\n\nInput: n = 3, costs = [9,8,3]\n\nOutput: 12\n\nExplanation:\n\nThe optimal path is 0 &rarr; 3 with total cost = costs[3] + (3 - 0)2 = 3 + 9 = 12\n\n&nbsp;\nConstraints:\n\n\t1 <= n == costs.length <= 105​​​​​​​\n\t1 <= costs[i] <= 104\n\n## My Submission\n\n- Runtime: 190 ms\n- Memory: 31 MB\n"
+        }
+      ],
+      "timestamp": 1767075488000,
+      "runtime": "190 ms",
+      "memory": "31 MB",
+      "runtimePct": 91.513,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are climbing a staircase with <code>n + 1</code> steps, numbered from 0 to <code>n</code>.</p>\n\n<p>You are also given a <strong>1-indexed</strong> integer array <code>costs</code> of length <code>n</code>, where <code>costs[i]</code> is the cost of step <code>i</code>.</p>\n\n<p>From step <code>i</code>, you can jump <strong>only</strong> to step <code>i + 1</code>, <code>i + 2</code>, or <code>i + 3</code>. The cost of jumping from step <code>i</code> to step <code>j</code> is defined as: <code>costs[j] + (j - i)<sup>2</sup></code></p>\n\n<p>You start from step 0 with <code>cost = 0</code>.</p>\n\n<p>Return the <strong>minimum</strong> total cost to reach step <code>n</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">n = 4, costs = [1,2,3,4]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">13</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>One optimal path is <code>0 &rarr; 1 &rarr; 2 &rarr; 4</code></p>\n\n<table style=\"border: 1px solid black;\">\n\t<tbody>\n\t\t<tr>\n\t\t\t<th style=\"border: 1px solid black;\">Jump</th>\n\t\t\t<th style=\"border: 1px solid black;\">Cost Calculation</th>\n\t\t\t<th style=\"border: 1px solid black;\">Cost</th>\n\t\t</tr>\n\t</tbody>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td style=\"border: 1px solid black;\">0 &rarr; 1</td>\n\t\t\t<td style=\"border: 1px solid black;\"><code>costs[1] + (1 - 0)<sup>2</sup> = 1 + 1</code></td>\n\t\t\t<td style=\"border: 1px solid black;\">2</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"border: 1px solid black;\">1 &rarr; 2</td>\n\t\t\t<td style=\"border: 1px solid black;\"><code>costs[2] + (2 - 1)<sup>2</sup> = 2 + 1</code></td>\n\t\t\t<td style=\"border: 1px solid black;\">3</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"border: 1px solid black;\">2 &rarr; 4</td>\n\t\t\t<td style=\"border: 1px solid black;\"><code>costs[4] + (4 - 2)<sup>2</sup> = 4 + 4</code></td>\n\t\t\t<td style=\"border: 1px solid black;\">8</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n<p>Thus, the minimum total cost is <code>2 + 3 + 8 = 13</code></p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">n = 4, costs = [5,1,6,2]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">11</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>One optimal path is <code>0 &rarr; 2 &rarr; 4</code></p>\n\n<table style=\"border: 1px solid black;\">\n\t<tbody>\n\t\t<tr>\n\t\t\t<th style=\"border: 1px solid black;\">Jump</th>\n\t\t\t<th style=\"border: 1px solid black;\">Cost Calculation</th>\n\t\t\t<th style=\"border: 1px solid black;\">Cost</th>\n\t\t</tr>\n\t</tbody>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td style=\"border: 1px solid black;\">0 &rarr; 2</td>\n\t\t\t<td style=\"border: 1px solid black;\"><code>costs[2] + (2 - 0)<sup>2</sup> = 1 + 4</code></td>\n\t\t\t<td style=\"border: 1px solid black;\">5</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"border: 1px solid black;\">2 &rarr; 4</td>\n\t\t\t<td style=\"border: 1px solid black;\"><code>costs[4] + (4 - 2)<sup>2</sup> = 2 + 4</code></td>\n\t\t\t<td style=\"border: 1px solid black;\">6</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n<p>Thus, the minimum total cost is <code>5 + 6 = 11</code></p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">n = 3, costs = [9,8,3]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">12</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The optimal path is <code>0 &rarr; 3</code> with total cost = <code>costs[3] + (3 - 0)<sup>2</sup> = 3 + 9 = 12</code></p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= n == costs.length &lt;= 10<sup>5</sup>​​​​​​​</code></li>\n\t<li><code>1 &lt;= costs[i] &lt;= 10<sup>4</sup></code></li>\n</ul>\n",
+      "hints": [
+        "Use dynamic programming where <code>dp[j]</code> represents the minimum cost to reach step <code>j</code>.",
+        "From step <code>i</code>, you can jump to <code>i+1</code>, <code>i+2</code>, or <code>i+3</code>. Transition depends only on the previous three states.",
+        "<code>dp[j] = min(dp[i] + costs[j] + (j - i)<sup>2</sup>)</code> for all <code>i</code> in {<code>j-1</code>, <code>j-2</code>, <code>j-3</code>}.",
+        "Initialize <code>dp[0] = 0</code> and compute up to <code>dp[n]</code>; the answer is <code>dp[n]</code>."
+      ],
+      "acRate": 64.12399426183497,
+      "similar": null,
+      "hasSimilar": null
+    },
+    {
+      "id": "lc-search-in-rotated-sorted-array-ii::1870290248",
+      "submissionId": 1870290248,
+      "platform": "leetcode",
+      "title": "Search in Rotated Sorted Array II",
+      "titleSlug": "search-in-rotated-sorted-array-ii",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Binary Search"
+      ],
+      "topic": "Binary Search",
+      "code": "class Solution:\n    def search(self, nums: List[int], target: int) -> bool:\n        for i in nums:\n            if i == target:\n                return True\n        return False\n\n",
+      "readmeContent": "# Search in Rotated Sorted Array II\n\n**Difficulty:** Medium  |  **Acceptance:** 40.0%\n\n**Tags:** `Array`, `Binary Search`\n\n## Problem\n\nThere is an integer array nums sorted in non-decreasing order (not necessarily with distinct values).\n\nBefore being passed to your function, nums is rotated at an unknown pivot index k (0 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,4,4,5,6,6,7] might be rotated at pivot index 5 and become [4,5,6,6,7,0,1,2,4,4].\n\nGiven the array nums after the rotation and an integer target, return true if target is in nums, or false if it is not in nums.\n\nYou must decrease the overall operation steps as much as possible.\n\n&nbsp;\nExample 1:\nInput: nums = [2,5,6,0,0,1,2], target = 0\nOutput: true\nExample 2:\nInput: nums = [2,5,6,0,0,1,2], target = 3\nOutput: false\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 5000\n\t-104 <= nums[i] <= 104\n\tnums is guaranteed to be rotated at some pivot.\n\t-104 <= target <= 104\n\n&nbsp;\nFollow up: This problem is similar to&nbsp;Search in Rotated Sorted Array, but&nbsp;nums may contain duplicates. Would this affect the runtime complexity? How and why?\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.8 MB\n\n## Similar Problems\n\n- [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-search-in-rotated-sorted-array-ii/lc-search-in-rotated-sorted-array-ii.py",
+          "content": "class Solution:\n    def search(self, nums: List[int], target: int) -> bool:\n        for i in nums:\n            if i == target:\n                return True\n        return False\n\n"
+        },
+        {
+          "path": "problems/lc-search-in-rotated-sorted-array-ii/README.md",
+          "content": "# Search in Rotated Sorted Array II\n\n**Difficulty:** Medium  |  **Acceptance:** 40.0%\n\n**Tags:** `Array`, `Binary Search`\n\n## Problem\n\nThere is an integer array nums sorted in non-decreasing order (not necessarily with distinct values).\n\nBefore being passed to your function, nums is rotated at an unknown pivot index k (0 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,4,4,5,6,6,7] might be rotated at pivot index 5 and become [4,5,6,6,7,0,1,2,4,4].\n\nGiven the array nums after the rotation and an integer target, return true if target is in nums, or false if it is not in nums.\n\nYou must decrease the overall operation steps as much as possible.\n\n&nbsp;\nExample 1:\nInput: nums = [2,5,6,0,0,1,2], target = 0\nOutput: true\nExample 2:\nInput: nums = [2,5,6,0,0,1,2], target = 3\nOutput: false\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 5000\n\t-104 <= nums[i] <= 104\n\tnums is guaranteed to be rotated at some pivot.\n\t-104 <= target <= 104\n\n&nbsp;\nFollow up: This problem is similar to&nbsp;Search in Rotated Sorted Array, but&nbsp;nums may contain duplicates. Would this affect the runtime complexity? How and why?\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.8 MB\n\n## Similar Problems\n\n- [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) — Medium\n"
+        }
+      ],
+      "timestamp": 1767187029000,
+      "runtime": "0 ms",
+      "memory": "17.8 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>There is an integer array <code>nums</code> sorted in non-decreasing order (not necessarily with <strong>distinct</strong> values).</p>\n\n<p>Before being passed to your function, <code>nums</code> is <strong>rotated</strong> at an unknown pivot index <code>k</code> (<code>0 &lt;= k &lt; nums.length</code>) such that the resulting array is <code>[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]</code> (<strong>0-indexed</strong>). For example, <code>[0,1,2,4,4,4,5,6,6,7]</code> might be rotated at pivot index <code>5</code> and become <code>[4,5,6,6,7,0,1,2,4,4]</code>.</p>\n\n<p>Given the array <code>nums</code> <strong>after</strong> the rotation and an integer <code>target</code>, return <code>true</code><em> if </em><code>target</code><em> is in </em><code>nums</code><em>, or </em><code>false</code><em> if it is not in </em><code>nums</code><em>.</em></p>\n\n<p>You must decrease the overall operation steps as much as possible.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<pre><strong>Input:</strong> nums = [2,5,6,0,0,1,2], target = 0\n<strong>Output:</strong> true\n</pre><p><strong class=\"example\">Example 2:</strong></p>\n<pre><strong>Input:</strong> nums = [2,5,6,0,0,1,2], target = 3\n<strong>Output:</strong> false\n</pre>\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 5000</code></li>\n\t<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>\n\t<li><code>nums</code> is guaranteed to be rotated at some pivot.</li>\n\t<li><code>-10<sup>4</sup> &lt;= target &lt;= 10<sup>4</sup></code></li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Follow up:</strong> This problem is similar to&nbsp;<a href=\"/problems/search-in-rotated-sorted-array/description/\" target=\"_blank\">Search in Rotated Sorted Array</a>, but&nbsp;<code>nums</code> may contain <strong>duplicates</strong>. Would this affect the runtime complexity? How and why?</p>\n",
+      "hints": null,
+      "acRate": 40.029234365920566,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "search-in-rotated-sorted-array",
+          "title": "Search in Rotated Sorted Array",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-find-minimum-in-rotated-sorted-array::1870297243",
+      "submissionId": 1870297243,
+      "platform": "leetcode",
+      "title": "Find Minimum in Rotated Sorted Array",
+      "titleSlug": "find-minimum-in-rotated-sorted-array",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Binary Search"
+      ],
+      "topic": "Binary Search",
+      "code": "class Solution:\n    def findMin(self, nums: List[int]) -> int:\n        if nums[0] <= nums[-1]:\n            return nums[0]\n        for i in range(len(nums)):\n            if nums[0] > nums[i]:\n                               \n                return nums[i]\n",
+      "readmeContent": "# Find Minimum in Rotated Sorted Array\n\n**Difficulty:** Medium  |  **Acceptance:** 54.6%\n\n**Tags:** `Array`, `Binary Search`\n\n## Problem\n\nSuppose an array of length n sorted in ascending order is rotated between 1 and n times. For example, the array nums = [0,1,2,4,5,6,7] might become:\n\n\t[4,5,6,7,0,1,2] if it was rotated 4 times.\n\t[0,1,2,4,5,6,7] if it was rotated 7 times.\n\nNotice that rotating an array [a[0], a[1], a[2], ..., a[n-1]] 1 time results in the array [a[n-1], a[0], a[1], a[2], ..., a[n-2]].\n\nGiven the sorted rotated array nums of unique elements, return the minimum element of this array.\n\nYou must write an algorithm that runs in&nbsp;O(log n) time.\n\n&nbsp;\nExample 1:\n\nInput: nums = [3,4,5,1,2]\nOutput: 1\nExplanation: The original array was [1,2,3,4,5] rotated 3 times.\n\nExample 2:\n\nInput: nums = [4,5,6,7,0,1,2]\nOutput: 0\nExplanation: The original array was [0,1,2,4,5,6,7] and it was rotated 4 times.\n\nExample 3:\n\nInput: nums = [11,13,15,17]\nOutput: 11\nExplanation: The original array was [11,13,15,17] and it was rotated 4 times. \n\n&nbsp;\nConstraints:\n\n\tn == nums.length\n\t1 <= n <= 5000\n\t-5000 <= nums[i] <= 5000\n\tAll the integers of nums are unique.\n\tnums is sorted and rotated between 1 and n times.\n\n## My Submission\n\n- Runtime: 2 ms\n- Memory: 17.4 MB\n\n## Similar Problems\n\n- [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) — Medium\n- [Find Minimum in Rotated Sorted Array II](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/) — Hard\n",
+      "files": [
+        {
+          "path": "problems/lc-find-minimum-in-rotated-sorted-array/lc-find-minimum-in-rotated-sorted-array.py",
+          "content": "class Solution:\n    def findMin(self, nums: List[int]) -> int:\n        if nums[0] <= nums[-1]:\n            return nums[0]\n        for i in range(len(nums)):\n            if nums[0] > nums[i]:\n                               \n                return nums[i]\n"
+        },
+        {
+          "path": "problems/lc-find-minimum-in-rotated-sorted-array/README.md",
+          "content": "# Find Minimum in Rotated Sorted Array\n\n**Difficulty:** Medium  |  **Acceptance:** 54.6%\n\n**Tags:** `Array`, `Binary Search`\n\n## Problem\n\nSuppose an array of length n sorted in ascending order is rotated between 1 and n times. For example, the array nums = [0,1,2,4,5,6,7] might become:\n\n\t[4,5,6,7,0,1,2] if it was rotated 4 times.\n\t[0,1,2,4,5,6,7] if it was rotated 7 times.\n\nNotice that rotating an array [a[0], a[1], a[2], ..., a[n-1]] 1 time results in the array [a[n-1], a[0], a[1], a[2], ..., a[n-2]].\n\nGiven the sorted rotated array nums of unique elements, return the minimum element of this array.\n\nYou must write an algorithm that runs in&nbsp;O(log n) time.\n\n&nbsp;\nExample 1:\n\nInput: nums = [3,4,5,1,2]\nOutput: 1\nExplanation: The original array was [1,2,3,4,5] rotated 3 times.\n\nExample 2:\n\nInput: nums = [4,5,6,7,0,1,2]\nOutput: 0\nExplanation: The original array was [0,1,2,4,5,6,7] and it was rotated 4 times.\n\nExample 3:\n\nInput: nums = [11,13,15,17]\nOutput: 11\nExplanation: The original array was [11,13,15,17] and it was rotated 4 times. \n\n&nbsp;\nConstraints:\n\n\tn == nums.length\n\t1 <= n <= 5000\n\t-5000 <= nums[i] <= 5000\n\tAll the integers of nums are unique.\n\tnums is sorted and rotated between 1 and n times.\n\n## My Submission\n\n- Runtime: 2 ms\n- Memory: 17.4 MB\n\n## Similar Problems\n\n- [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) — Medium\n- [Find Minimum in Rotated Sorted Array II](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/) — Hard\n"
+        }
+      ],
+      "timestamp": 1767187706000,
+      "runtime": "2 ms",
+      "memory": "17.4 MB",
+      "runtimePct": 3.5203999999999938,
+      "memoryPct": 100,
+      "problemStatement": "<p>Suppose an array of length <code>n</code> sorted in ascending order is <strong>rotated</strong> between <code>1</code> and <code>n</code> times. For example, the array <code>nums = [0,1,2,4,5,6,7]</code> might become:</p>\n\n<ul>\n\t<li><code>[4,5,6,7,0,1,2]</code> if it was rotated <code>4</code> times.</li>\n\t<li><code>[0,1,2,4,5,6,7]</code> if it was rotated <code>7</code> times.</li>\n</ul>\n\n<p>Notice that <strong>rotating</strong> an array <code>[a[0], a[1], a[2], ..., a[n-1]]</code> 1 time results in the array <code>[a[n-1], a[0], a[1], a[2], ..., a[n-2]]</code>.</p>\n\n<p>Given the sorted rotated array <code>nums</code> of <strong>unique</strong> elements, return <em>the minimum element of this array</em>.</p>\n\n<p>You must write an algorithm that runs in&nbsp;<code>O(log n) time</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [3,4,5,1,2]\n<strong>Output:</strong> 1\n<strong>Explanation:</strong> The original array was [1,2,3,4,5] rotated 3 times.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [4,5,6,7,0,1,2]\n<strong>Output:</strong> 0\n<strong>Explanation:</strong> The original array was [0,1,2,4,5,6,7] and it was rotated 4 times.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [11,13,15,17]\n<strong>Output:</strong> 11\n<strong>Explanation:</strong> The original array was [11,13,15,17] and it was rotated 4 times. \n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>n == nums.length</code></li>\n\t<li><code>1 &lt;= n &lt;= 5000</code></li>\n\t<li><code>-5000 &lt;= nums[i] &lt;= 5000</code></li>\n\t<li>All the integers of <code>nums</code> are <strong>unique</strong>.</li>\n\t<li><code>nums</code> is sorted and rotated between <code>1</code> and <code>n</code> times.</li>\n</ul>\n",
+      "hints": [
+        "Array was originally in ascending order. Now that the array is rotated, there would be a point in the array where there is a small deflection from the increasing sequence. eg. The array would be something like [4, 5, 6, 7, 0, 1, 2].",
+        "You can divide the search space into two and see which direction to go.\r\nCan you think of an algorithm which has O(logN) search complexity?",
+        "<ol>\r\n<li>All the elements to the left of inflection point > first element of the array.</li>\r\n<li>All the elements to the right of inflection point < first element of the array.</li>\r\n<ol>"
+      ],
+      "acRate": 54.61240594623853,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "search-in-rotated-sorted-array",
+          "title": "Search in Rotated Sorted Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "find-minimum-in-rotated-sorted-array-ii",
+          "title": "Find Minimum in Rotated Sorted Array II",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-search-in-rotated-sorted-array::1870298973",
+      "submissionId": 1870298973,
+      "platform": "leetcode",
+      "title": "Search in Rotated Sorted Array",
+      "titleSlug": "search-in-rotated-sorted-array",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Binary Search"
+      ],
+      "topic": "Binary Search",
+      "code": "class Solution:\n    def search(self, nums: List[int], target: int) -> int:\n        for i in range(len(nums)):\n            if target == nums[i]:\n                return i\n        return -1",
+      "readmeContent": "# Search in Rotated Sorted Array\n\n**Difficulty:** Medium  |  **Acceptance:** 44.5%\n\n**Tags:** `Array`, `Binary Search`\n\n## Problem\n\nThere is an integer array nums sorted in ascending order (with distinct values).\n\nPrior to being passed to your function, nums is possibly left rotated at an unknown index k (1 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be left rotated by&nbsp;3&nbsp;indices and become [4,5,6,7,0,1,2].\n\nGiven the array nums after the possible rotation and an integer target, return the index of target if it is in nums, or -1 if it is not in nums.\n\nYou must write an algorithm with O(log n) runtime complexity.\n\n&nbsp;\nExample 1:\nInput: nums = [4,5,6,7,0,1,2], target = 0\nOutput: 4\nExample 2:\nInput: nums = [4,5,6,7,0,1,2], target = 3\nOutput: -1\nExample 3:\nInput: nums = [1], target = 0\nOutput: -1\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 5000\n\t-104 <= nums[i] <= 104\n\tAll values of nums are unique.\n\tnums is an ascending array that is possibly rotated.\n\t-104 <= target <= 104\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.3 MB\n\n## Similar Problems\n\n- [Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/) — Medium\n- [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-search-in-rotated-sorted-array/lc-search-in-rotated-sorted-array.py",
+          "content": "class Solution:\n    def search(self, nums: List[int], target: int) -> int:\n        for i in range(len(nums)):\n            if target == nums[i]:\n                return i\n        return -1"
+        },
+        {
+          "path": "problems/lc-search-in-rotated-sorted-array/README.md",
+          "content": "# Search in Rotated Sorted Array\n\n**Difficulty:** Medium  |  **Acceptance:** 44.5%\n\n**Tags:** `Array`, `Binary Search`\n\n## Problem\n\nThere is an integer array nums sorted in ascending order (with distinct values).\n\nPrior to being passed to your function, nums is possibly left rotated at an unknown index k (1 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be left rotated by&nbsp;3&nbsp;indices and become [4,5,6,7,0,1,2].\n\nGiven the array nums after the possible rotation and an integer target, return the index of target if it is in nums, or -1 if it is not in nums.\n\nYou must write an algorithm with O(log n) runtime complexity.\n\n&nbsp;\nExample 1:\nInput: nums = [4,5,6,7,0,1,2], target = 0\nOutput: 4\nExample 2:\nInput: nums = [4,5,6,7,0,1,2], target = 3\nOutput: -1\nExample 3:\nInput: nums = [1], target = 0\nOutput: -1\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 5000\n\t-104 <= nums[i] <= 104\n\tAll values of nums are unique.\n\tnums is an ascending array that is possibly rotated.\n\t-104 <= target <= 104\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.3 MB\n\n## Similar Problems\n\n- [Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/) — Medium\n- [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) — Medium\n"
+        }
+      ],
+      "timestamp": 1767187867000,
+      "runtime": "0 ms",
+      "memory": "17.3 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>There is an integer array <code>nums</code> sorted in ascending order (with <strong>distinct</strong> values).</p>\n\n<p>Prior to being passed to your function, <code>nums</code> is <strong>possibly left rotated</strong> at an unknown index <code>k</code> (<code>1 &lt;= k &lt; nums.length</code>) such that the resulting array is <code>[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]</code> (<strong>0-indexed</strong>). For example, <code>[0,1,2,4,5,6,7]</code> might be left rotated by&nbsp;<code>3</code>&nbsp;indices and become <code>[4,5,6,7,0,1,2]</code>.</p>\n\n<p>Given the array <code>nums</code> <strong>after</strong> the possible rotation and an integer <code>target</code>, return <em>the index of </em><code>target</code><em> if it is in </em><code>nums</code><em>, or </em><code>-1</code><em> if it is not in </em><code>nums</code>.</p>\n\n<p>You must write an algorithm with <code>O(log n)</code> runtime complexity.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<pre><strong>Input:</strong> nums = [4,5,6,7,0,1,2], target = 0\n<strong>Output:</strong> 4\n</pre><p><strong class=\"example\">Example 2:</strong></p>\n<pre><strong>Input:</strong> nums = [4,5,6,7,0,1,2], target = 3\n<strong>Output:</strong> -1\n</pre><p><strong class=\"example\">Example 3:</strong></p>\n<pre><strong>Input:</strong> nums = [1], target = 0\n<strong>Output:</strong> -1\n</pre>\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 5000</code></li>\n\t<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>\n\t<li>All values of <code>nums</code> are <strong>unique</strong>.</li>\n\t<li><code>nums</code> is an ascending array that is possibly rotated.</li>\n\t<li><code>-10<sup>4</sup> &lt;= target &lt;= 10<sup>4</sup></code></li>\n</ul>\n",
+      "hints": null,
+      "acRate": 44.52323588150256,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "search-in-rotated-sorted-array-ii",
+          "title": "Search in Rotated Sorted Array II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "find-minimum-in-rotated-sorted-array",
+          "title": "Find Minimum in Rotated Sorted Array",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-find-peak-element",
+      "submissionId": 1870513534,
+      "platform": "leetcode",
+      "title": "Find Peak Element",
+      "titleSlug": "find-peak-element",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "slug": "python3",
+        "ext": "py"
+      },
+      "tags": [
+        "Array",
+        "Binary Search"
+      ],
+      "topic": "Binary Search",
+      "code": "class Solution:\n    def findPeakElement(self, nums: List[int]) -> int:\n        # Linear\n        \n        # for i in range(len(nums)):\n        #     if (i==0 or (nums[i] > nums[i-1])) and (i == len(nums)-1 or (nums[i] > nums[i+1])):\n        #         return i\n\n        # O(log n) Binar Search\n\n        n = len(nums)\n\n        if n == 1 or nums[0] > nums[1]:\n            return 0\n        \n        if nums[-1] > nums[-2]:\n            return n-1\n\n        low = 1\n        high = n-2\n        \n        while low < high:\n            mid = (low+high)//2\n\n            if nums[mid] < nums[mid+1]:\n                low = mid + 1\n            else:\n                high = mid\n        return low\n        \n        ",
+      "readmeContent": "# Find Peak Element\n\n**Difficulty:** Medium  |  **Acceptance:** 46.9%\n\n**Tags:** `Array`, `Binary Search`\n\n## Problem\n\nA peak element is an element that is strictly greater than its neighbors.\n\nGiven a 0-indexed integer array nums, find a peak element, and return its index. If the array contains multiple peaks, return the index to any of the peaks.\n\nYou may imagine that nums[-1] = nums[n] = -&infin;. In other words, an element is always considered to be strictly greater than a neighbor that is outside the array.\n\nYou must write an algorithm that runs in O(log n) time.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,2,3,1]\nOutput: 2\nExplanation: 3 is a peak element and your function should return the index number 2.\n\nExample 2:\n\nInput: nums = [1,2,1,3,5,6,4]\nOutput: 5\nExplanation: Your function can return either index number 1 where the peak element is 2, or index number 5 where the peak element is 6.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 1000\n\t-231 <= nums[i] <= 231 - 1\n\tnums[i] != nums[i + 1] for all valid i.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.6 MB\n\n## Similar Problems\n\n- [Peak Index in a Mountain Array](https://leetcode.com/problems/peak-index-in-a-mountain-array/) — Medium\n- [Find a Peak Element II](https://leetcode.com/problems/find-a-peak-element-ii/) — Medium\n- [Count Hills and Valleys in an Array](https://leetcode.com/problems/count-hills-and-valleys-in-an-array/) — Easy\n- [Find the Peaks](https://leetcode.com/problems/find-the-peaks/) — Easy\n",
+      "files": [
+        {
+          "path": "problems/find-peak-element/README.md",
+          "content": "# Find Peak Element\n\n**Difficulty:** Medium  |  **Acceptance:** 46.9%\n\n**Tags:** `Array`, `Binary Search`\n\n## Problem\n\nA peak element is an element that is strictly greater than its neighbors.\n\nGiven a 0-indexed integer array nums, find a peak element, and return its index. If the array contains multiple peaks, return the index to any of the peaks.\n\nYou may imagine that nums[-1] = nums[n] = -&infin;. In other words, an element is always considered to be strictly greater than a neighbor that is outside the array.\n\nYou must write an algorithm that runs in O(log n) time.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,2,3,1]\nOutput: 2\nExplanation: 3 is a peak element and your function should return the index number 2.\n\nExample 2:\n\nInput: nums = [1,2,1,3,5,6,4]\nOutput: 5\nExplanation: Your function can return either index number 1 where the peak element is 2, or index number 5 where the peak element is 6.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 1000\n\t-231 <= nums[i] <= 231 - 1\n\tnums[i] != nums[i + 1] for all valid i.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 17.6 MB\n\n## Similar Problems\n\n- [Peak Index in a Mountain Array](https://leetcode.com/problems/peak-index-in-a-mountain-array/) — Medium\n- [Find a Peak Element II](https://leetcode.com/problems/find-a-peak-element-ii/) — Medium\n- [Count Hills and Valleys in an Array](https://leetcode.com/problems/count-hills-and-valleys-in-an-array/) — Easy\n- [Find the Peaks](https://leetcode.com/problems/find-the-peaks/) — Easy\n"
+        }
+      ],
+      "timestamp": 1767208319000,
+      "runtime": "0 ms",
+      "memory": "17.6 MB",
+      "runtimePct": 100,
+      "memoryPct": 100,
+      "problemStatement": "<p>A peak element is an element that is strictly greater than its neighbors.</p>\n\n<p>Given a <strong>0-indexed</strong> integer array <code>nums</code>, find a peak element, and return its index. If the array contains multiple peaks, return the index to <strong>any of the peaks</strong>.</p>\n\n<p>You may imagine that <code>nums[-1] = nums[n] = -&infin;</code>. In other words, an element is always considered to be strictly greater than a neighbor that is outside the array.</p>\n\n<p>You must write an algorithm that runs in <code>O(log n)</code> time.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,2,3,1]\n<strong>Output:</strong> 2\n<strong>Explanation:</strong> 3 is a peak element and your function should return the index number 2.</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,2,1,3,5,6,4]\n<strong>Output:</strong> 5\n<strong>Explanation:</strong> Your function can return either index number 1 where the peak element is 2, or index number 5 where the peak element is 6.</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 1000</code></li>\n\t<li><code>-2<sup>31</sup> &lt;= nums[i] &lt;= 2<sup>31</sup> - 1</code></li>\n\t<li><code>nums[i] != nums[i + 1]</code> for all valid <code>i</code>.</li>\n</ul>\n",
+      "hints": [],
+      "acRate": 46.94734011872723,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "peak-index-in-a-mountain-array",
+          "title": "Peak Index in a Mountain Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "find-a-peak-element-ii",
+          "title": "Find a Peak Element II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "count-hills-and-valleys-in-an-array",
+          "title": "Count Hills and Valleys in an Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "find-the-peaks",
+          "title": "Find the Peaks",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-koko-eating-bananas::1871324972",
+      "submissionId": 1871324972,
+      "platform": "leetcode",
+      "title": "Koko Eating Bananas",
+      "titleSlug": "koko-eating-bananas",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Binary Search"
+      ],
+      "topic": "Binary Search",
+      "code": "class Solution:\n    def minEatingSpeed(self, piles: List[int], h: int) -> int:\n        def feasible(speed):\n            return sum( (pile - 1) // speed + 1 for pile in piles) <= h\n\n        left , right = 1, max(piles)\n\n        while left < right:\n            mid = left + (right - left) // 2\n\n            if feasible(mid):\n                right = mid\n            else:\n                left = mid + 1\n        return left",
+      "readmeContent": "# Koko Eating Bananas\n\n**Difficulty:** Medium  |  **Acceptance:** 50.0%\n\n**Tags:** `Array`, `Binary Search`\n\n## Problem\n\nKoko loves to eat bananas. There are n piles of bananas, the ith pile has piles[i] bananas. The guards have gone and will come back in h hours.\n\nKoko can decide her bananas-per-hour eating speed of k. Each hour, she chooses some pile of bananas and eats k bananas from that pile. If the pile has less than k bananas, she eats all of them instead and will not eat any more bananas during this hour.\n\nKoko likes to eat slowly but still wants to finish eating all the bananas before the guards return.\n\nReturn the minimum integer k such that she can eat all the bananas within h hours.\n\n&nbsp;\nExample 1:\n\nInput: piles = [3,6,7,11], h = 8\nOutput: 4\n\nExample 2:\n\nInput: piles = [30,11,23,4,20], h = 5\nOutput: 30\n\nExample 3:\n\nInput: piles = [30,11,23,4,20], h = 6\nOutput: 23\n\n&nbsp;\nConstraints:\n\n\t1 <= piles.length <= 104\n\tpiles.length <= h <= 109\n\t1 <= piles[i] <= 109\n\n## My Submission\n\n- Runtime: 155 ms\n- Memory: 18.9 MB\n\n## Similar Problems\n\n- [Maximum Candies Allocated to K Children](https://leetcode.com/problems/maximum-candies-allocated-to-k-children/) — Medium\n- [Minimized Maximum of Products Distributed to Any Store](https://leetcode.com/problems/minimized-maximum-of-products-distributed-to-any-store/) — Medium\n- [Frog Jump II](https://leetcode.com/problems/frog-jump-ii/) — Medium\n- [Minimum Time to Repair Cars](https://leetcode.com/problems/minimum-time-to-repair-cars/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-koko-eating-bananas/lc-koko-eating-bananas.py",
+          "content": "class Solution:\n    def minEatingSpeed(self, piles: List[int], h: int) -> int:\n        def feasible(speed):\n            return sum( (pile - 1) // speed + 1 for pile in piles) <= h\n\n        left , right = 1, max(piles)\n\n        while left < right:\n            mid = left + (right - left) // 2\n\n            if feasible(mid):\n                right = mid\n            else:\n                left = mid + 1\n        return left"
+        },
+        {
+          "path": "problems/lc-koko-eating-bananas/README.md",
+          "content": "# Koko Eating Bananas\n\n**Difficulty:** Medium  |  **Acceptance:** 50.0%\n\n**Tags:** `Array`, `Binary Search`\n\n## Problem\n\nKoko loves to eat bananas. There are n piles of bananas, the ith pile has piles[i] bananas. The guards have gone and will come back in h hours.\n\nKoko can decide her bananas-per-hour eating speed of k. Each hour, she chooses some pile of bananas and eats k bananas from that pile. If the pile has less than k bananas, she eats all of them instead and will not eat any more bananas during this hour.\n\nKoko likes to eat slowly but still wants to finish eating all the bananas before the guards return.\n\nReturn the minimum integer k such that she can eat all the bananas within h hours.\n\n&nbsp;\nExample 1:\n\nInput: piles = [3,6,7,11], h = 8\nOutput: 4\n\nExample 2:\n\nInput: piles = [30,11,23,4,20], h = 5\nOutput: 30\n\nExample 3:\n\nInput: piles = [30,11,23,4,20], h = 6\nOutput: 23\n\n&nbsp;\nConstraints:\n\n\t1 <= piles.length <= 104\n\tpiles.length <= h <= 109\n\t1 <= piles[i] <= 109\n\n## My Submission\n\n- Runtime: 155 ms\n- Memory: 18.9 MB\n\n## Similar Problems\n\n- [Maximum Candies Allocated to K Children](https://leetcode.com/problems/maximum-candies-allocated-to-k-children/) — Medium\n- [Minimized Maximum of Products Distributed to Any Store](https://leetcode.com/problems/minimized-maximum-of-products-distributed-to-any-store/) — Medium\n- [Frog Jump II](https://leetcode.com/problems/frog-jump-ii/) — Medium\n- [Minimum Time to Repair Cars](https://leetcode.com/problems/minimum-time-to-repair-cars/) — Medium\n"
+        }
+      ],
+      "timestamp": 1767293071000,
+      "runtime": "155 ms",
+      "memory": "18.9 MB",
+      "runtimePct": 92.65689999999984,
+      "memoryPct": 100,
+      "problemStatement": "<p>Koko loves to eat bananas. There are <code>n</code> piles of bananas, the <code>i<sup>th</sup></code> pile has <code>piles[i]</code> bananas. The guards have gone and will come back in <code>h</code> hours.</p>\n\n<p>Koko can decide her bananas-per-hour eating speed of <code>k</code>. Each hour, she chooses some pile of bananas and eats <code>k</code> bananas from that pile. If the pile has less than <code>k</code> bananas, she eats all of them instead and will not eat any more bananas during this hour.</p>\n\n<p>Koko likes to eat slowly but still wants to finish eating all the bananas before the guards return.</p>\n\n<p>Return <em>the minimum integer</em> <code>k</code> <em>such that she can eat all the bananas within</em> <code>h</code> <em>hours</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> piles = [3,6,7,11], h = 8\n<strong>Output:</strong> 4\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> piles = [30,11,23,4,20], h = 5\n<strong>Output:</strong> 30\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> piles = [30,11,23,4,20], h = 6\n<strong>Output:</strong> 23\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= piles.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>piles.length &lt;= h &lt;= 10<sup>9</sup></code></li>\n\t<li><code>1 &lt;= piles[i] &lt;= 10<sup>9</sup></code></li>\n</ul>\n",
+      "hints": null,
+      "acRate": 50.01037929726496,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "maximum-candies-allocated-to-k-children",
+          "title": "Maximum Candies Allocated to K Children",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "minimized-maximum-of-products-distributed-to-any-store",
+          "title": "Minimized Maximum of Products Distributed to Any Store",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "frog-jump-ii",
+          "title": "Frog Jump II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "minimum-time-to-repair-cars",
+          "title": "Minimum Time to Repair Cars",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-jump-game::1871756970",
+      "submissionId": 1871756970,
+      "platform": "leetcode",
+      "title": "Jump Game",
+      "titleSlug": "jump-game",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Dynamic Programming",
+        "Greedy"
+      ],
+      "topic": "Dynamic Programming",
+      "code": "class Solution:\n    def canJump(self, nums: List[int]) -> bool:\n        max_reach = 0\n\n        for i in range(len(nums)):\n            if i > max_reach:\n                return False\n            max_reach = max(max_reach, nums[i]+i)\n        return True",
+      "readmeContent": "# Jump Game\n\n**Difficulty:** Medium  |  **Acceptance:** 40.9%\n\n**Tags:** `Array`, `Dynamic Programming`, `Greedy`\n\n## Problem\n\nYou are given an integer array nums. You are initially positioned at the array's first index, and each element in the array represents your maximum jump length at that position.\n\nReturn true if you can reach the last index, or false otherwise.\n\n&nbsp;\nExample 1:\n\nInput: nums = [2,3,1,1,4]\nOutput: true\nExplanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.\n\nExample 2:\n\nInput: nums = [3,2,1,0,4]\nOutput: false\nExplanation: You will always arrive at index 3 no matter what. Its maximum jump length is 0, which makes it impossible to reach the last index.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 104\n\t0 <= nums[i] <= 105\n\n## My Submission\n\n- Runtime: 44 ms\n- Memory: 18.4 MB\n\n## Similar Problems\n\n- [Jump Game II](https://leetcode.com/problems/jump-game-ii/) — Medium\n- [Jump Game III](https://leetcode.com/problems/jump-game-iii/) — Medium\n- [Jump Game VII](https://leetcode.com/problems/jump-game-vii/) — Medium\n- [Minimum Number of Visited Cells in a Grid](https://leetcode.com/problems/minimum-number-of-visited-cells-in-a-grid/) — Hard\n- [Largest Element in an Array after Merge Operations](https://leetcode.com/problems/largest-element-in-an-array-after-merge-operations/) — Medium\n",
+      "files": [
+        {
+          "path": "problems/lc-jump-game/lc-jump-game.py",
+          "content": "class Solution:\n    def canJump(self, nums: List[int]) -> bool:\n        max_reach = 0\n\n        for i in range(len(nums)):\n            if i > max_reach:\n                return False\n            max_reach = max(max_reach, nums[i]+i)\n        return True"
+        },
+        {
+          "path": "problems/lc-jump-game/README.md",
+          "content": "# Jump Game\n\n**Difficulty:** Medium  |  **Acceptance:** 40.9%\n\n**Tags:** `Array`, `Dynamic Programming`, `Greedy`\n\n## Problem\n\nYou are given an integer array nums. You are initially positioned at the array's first index, and each element in the array represents your maximum jump length at that position.\n\nReturn true if you can reach the last index, or false otherwise.\n\n&nbsp;\nExample 1:\n\nInput: nums = [2,3,1,1,4]\nOutput: true\nExplanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.\n\nExample 2:\n\nInput: nums = [3,2,1,0,4]\nOutput: false\nExplanation: You will always arrive at index 3 no matter what. Its maximum jump length is 0, which makes it impossible to reach the last index.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 104\n\t0 <= nums[i] <= 105\n\n## My Submission\n\n- Runtime: 44 ms\n- Memory: 18.4 MB\n\n## Similar Problems\n\n- [Jump Game II](https://leetcode.com/problems/jump-game-ii/) — Medium\n- [Jump Game III](https://leetcode.com/problems/jump-game-iii/) — Medium\n- [Jump Game VII](https://leetcode.com/problems/jump-game-vii/) — Medium\n- [Minimum Number of Visited Cells in a Grid](https://leetcode.com/problems/minimum-number-of-visited-cells-in-a-grid/) — Hard\n- [Largest Element in an Array after Merge Operations](https://leetcode.com/problems/largest-element-in-an-array-after-merge-operations/) — Medium\n"
+        }
+      ],
+      "timestamp": 1767338350000,
+      "runtime": "44 ms",
+      "memory": "18.4 MB",
+      "runtimePct": 16.32220000000003,
+      "memoryPct": 100,
+      "problemStatement": "<p>You are given an integer array <code>nums</code>. You are initially positioned at the array&#39;s <strong>first index</strong>, and each element in the array represents your maximum jump length at that position.</p>\n\n<p>Return <code>true</code><em> if you can reach the last index, or </em><code>false</code><em> otherwise</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [2,3,1,1,4]\n<strong>Output:</strong> true\n<strong>Explanation:</strong> Jump 1 step from index 0 to 1, then 3 steps to the last index.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [3,2,1,0,4]\n<strong>Output:</strong> false\n<strong>Explanation:</strong> You will always arrive at index 3 no matter what. Its maximum jump length is 0, which makes it impossible to reach the last index.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>0 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>\n</ul>\n",
+      "hints": null,
+      "acRate": 40.86316247900129,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "jump-game-ii",
+          "title": "Jump Game II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "jump-game-iii",
+          "title": "Jump Game III",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "jump-game-vii",
+          "title": "Jump Game VII",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "minimum-number-of-visited-cells-in-a-grid",
+          "title": "Minimum Number of Visited Cells in a Grid",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "largest-element-in-an-array-after-merge-operations",
+          "title": "Largest Element in an Array after Merge Operations",
+          "isPaidOnly": false
+        }
+      ],
+      "hasSimilar": true
+    },
+    {
+      "id": "lc-maximum-subarray::1871817412",
+      "submissionId": 1871817412,
+      "platform": "leetcode",
+      "title": "Maximum Subarray",
+      "titleSlug": "maximum-subarray",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Array",
+        "Divide and Conquer",
+        "Dynamic Programming"
+      ],
+      "topic": "Dynamic Programming",
+      "code": "class Solution:\n    def maxSubArray(self, nums: List[int]) -> int:\n        curr = ans = nums[0]\n\n        for x in nums[1:]:\n            curr = max(x, curr + x)\n            ans = max(ans, curr)\n        return ans",
+      "readmeContent": "# Maximum Subarray\n\n**Difficulty:** Medium  |  **Acceptance:** 53.3%\n\n**Tags:** `Array`, `Divide and Conquer`, `Dynamic Programming`\n\n## Problem\n\nGiven an integer array nums, find the subarray with the largest sum, and return its sum.\n\n&nbsp;\nExample 1:\n\nInput: nums = [-2,1,-3,4,-1,2,1,-5,4]\nOutput: 6\nExplanation: The subarray [4,-1,2,1] has the largest sum 6.\n\nExample 2:\n\nInput: nums = [1]\nOutput: 1\nExplanation: The subarray [1] has the largest sum 1.\n\nExample 3:\n\nInput: nums = [5,4,-1,7,8]\nOutput: 23\nExplanation: The subarray [5,4,-1,7,8] has the largest sum 23.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 105\n\t-104 <= nums[i] <= 104\n\n&nbsp;\nFollow up: If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.\n\n## My Submission\n\n- Runtime: 94 ms\n- Memory: 30 MB\n\n## Similar Problems\n\n- [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) — Easy\n- [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) — Medium\n- [Degree of an Array](https://leetcode.com/problems/degree-of-an-array/) — Easy\n- [Longest Turbulent Subarray](https://leetcode.com/problems/longest-turbulent-subarray/) — Medium\n- [Maximum Score Of Spliced Array](https://leetcode.com/problems/maximum-score-of-spliced-array/) — Hard\n",
+      "files": [
+        {
+          "path": "problems/lc-maximum-subarray/lc-maximum-subarray.py",
+          "content": "class Solution:\n    def maxSubArray(self, nums: List[int]) -> int:\n        curr = ans = nums[0]\n\n        for x in nums[1:]:\n            curr = max(x, curr + x)\n            ans = max(ans, curr)\n        return ans"
+        },
+        {
+          "path": "problems/lc-maximum-subarray/README.md",
+          "content": "# Maximum Subarray\n\n**Difficulty:** Medium  |  **Acceptance:** 53.3%\n\n**Tags:** `Array`, `Divide and Conquer`, `Dynamic Programming`\n\n## Problem\n\nGiven an integer array nums, find the subarray with the largest sum, and return its sum.\n\n&nbsp;\nExample 1:\n\nInput: nums = [-2,1,-3,4,-1,2,1,-5,4]\nOutput: 6\nExplanation: The subarray [4,-1,2,1] has the largest sum 6.\n\nExample 2:\n\nInput: nums = [1]\nOutput: 1\nExplanation: The subarray [1] has the largest sum 1.\n\nExample 3:\n\nInput: nums = [5,4,-1,7,8]\nOutput: 23\nExplanation: The subarray [5,4,-1,7,8] has the largest sum 23.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 105\n\t-104 <= nums[i] <= 104\n\n&nbsp;\nFollow up: If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.\n\n## My Submission\n\n- Runtime: 94 ms\n- Memory: 30 MB\n\n## Similar Problems\n\n- [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) — Easy\n- [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) — Medium\n- [Degree of an Array](https://leetcode.com/problems/degree-of-an-array/) — Easy\n- [Longest Turbulent Subarray](https://leetcode.com/problems/longest-turbulent-subarray/) — Medium\n- [Maximum Score Of Spliced Array](https://leetcode.com/problems/maximum-score-of-spliced-array/) — Hard\n"
+        }
+      ],
+      "timestamp": 1767342752000,
+      "runtime": "94 ms",
+      "memory": "30 MB",
+      "runtimePct": 5.176500000000063,
+      "memoryPct": 99.99520000000001,
+      "problemStatement": "<p>Given an integer array <code>nums</code>, find the <span data-keyword=\"subarray-nonempty\">subarray</span> with the largest sum, and return <em>its sum</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [-2,1,-3,4,-1,2,1,-5,4]\n<strong>Output:</strong> 6\n<strong>Explanation:</strong> The subarray [4,-1,2,1] has the largest sum 6.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1]\n<strong>Output:</strong> 1\n<strong>Explanation:</strong> The subarray [1] has the largest sum 1.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [5,4,-1,7,8]\n<strong>Output:</strong> 23\n<strong>Explanation:</strong> The subarray [5,4,-1,7,8] has the largest sum 23.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Follow up:</strong> If you have figured out the <code>O(n)</code> solution, try coding another solution using the <strong>divide and conquer</strong> approach, which is more subtle.</p>\n",
+      "hints": null,
+      "acRate": 53.29567032246077,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "best-time-to-buy-and-sell-stock",
+          "title": "Best Time to Buy and Sell Stock",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "maximum-product-subarray",
+          "title": "Maximum Product Subarray",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "degree-of-an-array",
+          "title": "Degree of an Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "longest-turbulent-subarray",
+          "title": "Longest Turbulent Subarray",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "maximum-score-of-spliced-array",
+          "title": "Maximum Score Of Spliced Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "maximum-absolute-sum-of-any-subarray",
+          "title": "Maximum Absolute Sum of Any Subarray",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "substring-with-largest-variance",
+          "title": "Substring With Largest Variance",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "count-subarrays-with-score-less-than-k",
+          "title": "Count Subarrays With Score Less Than K",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "maximum-value-of-a-string-in-an-array",
+          "title": "Maximum Value of a String in an Array",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "find-the-substring-with-maximum-cost",
+          "title": "Find the Substring With Maximum Cost",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "k-items-with-the-maximum-sum",
+          "title": "K Items With the Maximum Sum",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "maximum-good-subarray-sum",
+          "title": "Maximum Good Subarray Sum",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "maximize-subarray-sum-after-removing-all-occurrences-of-one-element",
+          "title": "Maximize Subarray Sum After Removing All Occurrences of One Element",
           "isPaidOnly": false
         }
       ],
