@@ -1,1 +1,19 @@
-{}
+{
+  "leetcode::binary-search": {
+    "difficulty": "Easy",
+    "lang": "Python",
+    "platform": "leetcode",
+    "slug": "binary-search",
+    "solves": [
+      {
+        "elapsedSeconds": 0,
+        "lang": "Python",
+        "ts": 1789453250817
+      }
+    ],
+    "tags": [
+      "Array",
+      "Binary Search"
+    ]
+  }
+}

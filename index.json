@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-09-15T06:18:01.004Z",
+  "updatedAt": "2026-09-15T06:20:50.975Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 316,
-    "easy": 176,
+    "total": 317,
+    "easy": 177,
     "medium": 127,
     "hard": 11,
     "unknownDifficulty": 2,
     "byPlatform": {
       "geeksforgeeks": 55,
-      "leetcode": 261
+      "leetcode": 262
     },
     "byLang": {
       "python3": 5,
@@ -17,7 +17,7 @@
       "Unknown": 45,
       "MySQL": 15,
       "Java": 12,
-      "Python": 16,
+      "Python": 17,
       "Pandas": 14,
       "JavaScript": 3,
       "C++": 1,
@@ -36,7 +36,7 @@
       "Depth-First Search": 1,
       "Linked List": 8,
       "Bit Manipulation": 3,
-      "Array": 134,
+      "Array": 135,
       "Searching": 2,
       "Hash Table": 14,
       "Java": 1,
@@ -3014,6 +3014,84 @@
       ],
       "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(1)$. Bitwise operations on fixed-width integers (32-bit for most LeetCode cases) are constant time.\n*   **Space Complexity:** $O(1)$. No additional data structures are used.\n\n### 2. Correctness\nThe logic is sound. \n*   If bits alternate (e.g., `1010`), shifting by one and XORing results in a block of ones (`1111`).\n*   The expression `(x & (x + 1)) == 0` is a classic bitwise trick to check if a number consists entirely of set bits (all ones).\n*   **Edge Cases:** For $n=1$ (binary `1`), it returns `True`. For $n=0$ (if applicable), it returns `True`. Large integers are handled by Python's arbitrary-precision arithmetic.\n\n### 3. Optimization\nThis solution is already **mathematically optimal**. It avoids loops and string conversions, making it faster than iterative $O(\\log n)$ approaches. No further optimizations are required.\n\n### 4. Key Algorithmic Pattern\n**Bit Manipulation:** Specifically, using the **XOR shift** property to identify patterns and the **power-of-two/all-ones** check (`x & (x+1)`) to validate the resulting bitmask.",
       "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "lc-binary-search",
+      "forceCommit": false,
+      "submissionId": null,
+      "title": "Binary Search",
+      "titleSlug": "binary-search",
+      "difficulty": "Easy",
+      "topic": "Binary Search",
+      "tags": [
+        "Array",
+        "Binary Search"
+      ],
+      "canonical": {
+        "addedAt": "2025-04-24",
+        "aliases": [
+          {
+            "id": 704,
+            "platform": "leetcode",
+            "slug": "binary-search"
+          }
+        ],
+        "canonicalId": "binary-search",
+        "canonicalTitle": "Binary Search",
+        "confirmedBy": "system-init",
+        "difficulty": "easy",
+        "pattern": "binary-search",
+        "tags": [
+          "array"
+        ],
+        "topic": "binary-search",
+        "voteCount": 90
+      },
+      "readmeContent": "# [704] Binary Search\n**Difficulty:** Easy  |  **Acceptance:** 61.4%  |  **Likes:** 13776 / **Dislikes:** 309\n**Tags:** `Array`, `Binary Search`\n## Problem\nGiven an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.\n\nYou must write an algorithm with O(log n) runtime complexity.\n\n&nbsp;\nExample 1:\n\nInput: nums = [-1,0,3,5,9,12], target = 9\nOutput: 4\nExplanation: 9 exists in nums and its index is 4\n\nExample 2:\n\nInput: nums = [-1,0,3,5,9,12], target = 2\nOutput: -1\nExplanation: 2 does not exist in nums so return -1\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 104\n\t-104 < nums[i], target < 104\n\tAll the integers in nums are unique.\n\tnums is sorted in ascending order.\n## My Submission\n\n- Runtime: 0 ms (beats 100.0%)\n- Memory: 13.3 MB (beats 37.7%)\n\n## Similar Problems\n\n- [Maximum Count of Positive Integer and Negative Integer](https://leetcode.com/problems/maximum-count-of-positive-integer-and-negative-integer/) — Easy\n",
+      "code": "class Solution(object):\n    def search(self, nums, target):\n        \"\"\"\n        :type nums: List[int]\n        :type target: int\n        :rtype: int\n        \"\"\"\n        left , right = 0, len(nums)-1\n        while left <= right:\n            mid = left + (right - left) // 2\n\n            if nums[mid] > target:\n                right = mid -1\n            elif nums[mid] < target:\n                left = mid + 1\n            else:\n                return mid\n        return -1",
+      "files": [
+        {
+          "path": "problems/binary-search/leetcode/lc-binary-search.py",
+          "content": "class Solution(object):\n    def search(self, nums, target):\n        \"\"\"\n        :type nums: List[int]\n        :type target: int\n        :rtype: int\n        \"\"\"\n        left , right = 0, len(nums)-1\n        while left <= right:\n            mid = left + (right - left) // 2\n\n            if nums[mid] > target:\n                right = mid -1\n            elif nums[mid] < target:\n                left = mid + 1\n            else:\n                return mid\n        return -1"
+        },
+        {
+          "path": "problems/binary-search/README.md",
+          "content": "# [704] Binary Search\n**Difficulty:** Easy  |  **Acceptance:** 61.4%  |  **Likes:** 13776 / **Dislikes:** 309\n**Tags:** `Array`, `Binary Search`\n## Problem\nGiven an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.\n\nYou must write an algorithm with O(log n) runtime complexity.\n\n&nbsp;\nExample 1:\n\nInput: nums = [-1,0,3,5,9,12], target = 9\nOutput: 4\nExplanation: 9 exists in nums and its index is 4\n\nExample 2:\n\nInput: nums = [-1,0,3,5,9,12], target = 2\nOutput: -1\nExplanation: 2 does not exist in nums so return -1\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 104\n\t-104 < nums[i], target < 104\n\tAll the integers in nums are unique.\n\tnums is sorted in ascending order.\n## My Submission\n\n- Runtime: 0 ms (beats 100.0%)\n- Memory: 13.3 MB (beats 37.7%)\n\n## Similar Problems\n\n- [Maximum Count of Positive Integer and Negative Integer](https://leetcode.com/problems/maximum-count-of-positive-integer-and-negative-integer/) — Easy\n"
+        }
+      ],
+      "lang": {
+        "name": "Python",
+        "ext": "py",
+        "slug": "python"
+      },
+      "runtime": "0 ms",
+      "memory": "13.3 MB",
+      "runtimePct": 100,
+      "memoryPct": 37.7005,
+      "timestamp": 1767650812000,
+      "acRate": 61.3733033734116,
+      "likes": 13776,
+      "dislikes": 309,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "maximum-count-of-positive-integer-and-negative-integer",
+          "title": "Maximum Count of Positive Integer and Negative Integer",
+          "isPaidOnly": false
+        }
+      ],
+      "problemStatement": "<p>Given an array of integers <code>nums</code> which is sorted in ascending order, and an integer <code>target</code>, write a function to search <code>target</code> in <code>nums</code>. If <code>target</code> exists, then return its index. Otherwise, return <code>-1</code>.</p>\n\n<p>You must write an algorithm with <code>O(log n)</code> runtime complexity.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [-1,0,3,5,9,12], target = 9\n<strong>Output:</strong> 4\n<strong>Explanation:</strong> 9 exists in nums and its index is 4\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [-1,0,3,5,9,12], target = 2\n<strong>Output:</strong> -1\n<strong>Explanation:</strong> 2 does not exist in nums so return -1\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>-10<sup>4</sup> &lt; nums[i], target &lt; 10<sup>4</sup></code></li>\n\t<li>All the integers in <code>nums</code> are <strong>unique</strong>.</li>\n\t<li><code>nums</code> is sorted in ascending order.</li>\n</ul>\n",
+      "elapsedSeconds": 0,
+      "hasSimilar": true,
+      "submissionsUrl": "https://leetcode.com/problems/binary-search/submissions/",
+      "notes": "",
+      "methodTitle": "",
+      "isDuplicate": true,
+      "duplicateOf": "lc-binary-search::1875796252",
+      "_requestAIReview": true,
+      "platform": "leetcode",
       "methods": [],
       "manuallyEdited": false
     },
