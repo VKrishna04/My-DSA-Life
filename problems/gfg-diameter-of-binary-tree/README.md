@@ -1,4 +1,4 @@
-# Diameter Of Binary Tree
+# Diameter of a Binary Tree
 
 | Field | Value |
 |-------|-------|
@@ -6,24 +6,47 @@
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-diameter-of-binary-tree` |
 | Topics | Tree |
-| Solved | 2026-06-24 |
+| Solved | 2026-04-08 |
 
 ## Problem Statement
 
-Given the **root** of a binary tree, your task is to find the **diameter** of the binary tree. The **diameter** of a binary tree is defined as the number of edges on the **longest path between any two nodes**. Note that this path may or may not pass through the root of the tree.
+My Submissions__Refresh
 
-**Examples:**
+ Time (IST)StatusMarksLangTest CasesCode2026-04-08 23:06:36Correct0python31111 / 1111View Sync2026-04-08 22:32:57Correct4python31111 / 1111View Sync2026-04-08 20:39:05Wrong0python32 / 1111View
 
-**Input: **root = [1, 2, N, 3, 4]
+## Solutions
 
-**Output: **2
-**Explanation: **The longest path has 2 edges (node 3 -> node 2 -> node 4).
+### Approach 1 (python3)
 
-**Input: **root = [5, 8, 6, 3, 7, 9, N]
+Synced from submissions table — 2026-04-08 22:32:57
 
-**Output: **4
-**Explanation: **The longest path has 4 edges (node 3 -> node 8 -> node 5 -> node 6 -> node 9).
+```Python3
+'''
+# Tree Node
+class Node:
+    def __init__(self, val):
+        self.data = val
+        self.right = None
+        self.left = None
+'''
 
-**Constraints:**
-1 &le; number of nodes &le; 103
-0 &le; node->data &le; 105
+class Solution:
+    
+    def height(self, root, maxi):
+        if not root:
+            return 0
+
+        lheight = self.height(root.left, maxi)
+        rheight = self.height(root.right, maxi)
+        
+        sum1 = lheight + rheight
+        maxi[0] = max(maxi[0], sum1)
+        
+        return 1 + max(lheight, rheight)
+    
+    
+    def diameter(self, root):
+        maxi = [0]
+        self.height(root, maxi)
+        return maxi[0]
+```

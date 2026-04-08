@@ -1,20 +1,20 @@
 {
-  "updatedAt": "2026-08-18T17:44:42.468Z",
+  "updatedAt": "2026-08-18T17:47:14.612Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 311,
+    "total": 310,
     "easy": 176,
-    "medium": 123,
+    "medium": 122,
     "hard": 10,
     "unknownDifficulty": 2,
     "byPlatform": {
-      "geeksforgeeks": 50,
+      "geeksforgeeks": 49,
       "leetcode": 261
     },
     "byLang": {
-      "python3": 16,
-      "Python3": 199,
-      "Unknown": 30,
+      "python3": 19,
+      "Python3": 200,
+      "Unknown": 25,
       "MySQL": 15,
       "Java": 12,
       "Python": 16,
@@ -31,7 +31,7 @@
       "Math": 26,
       "String": 25,
       "Sliding Window": 2,
-      "Untagged": 7,
+      "Untagged": 6,
       "Depth-First Search": 1,
       "Linked List": 8,
       "Tree": 10,
@@ -521,32 +521,53 @@
     {
       "id": "gfg-diameter-of-binary-tree",
       "platform": "geeksforgeeks",
-      "title": "Diameter Of Binary Tree",
+      "title": "Diameter of a Binary Tree",
       "titleSlug": "diameter-of-binary-tree",
       "difficulty": "Medium",
       "lang": {
-        "name": "Unknown",
-        "ext": "txt",
-        "slug": "unknown"
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
       },
       "tags": [
         "Tree"
       ],
       "topic": "Untagged",
-      "code": "",
-      "files": [],
-      "timestamp": 1782298700927,
+      "code": "''' Structure of binary tree Node \nclass Node:\n    def __init__(self, val):\n        self.data = val\n        self.right = None\n        self.left = None\n'''\n\nclass Solution:\n    def diameter(self, root):\n        # code here\n        \n        ",
+      "files": [
+        {
+          "path": "problems/gfg-diameter-of-binary-tree/gfg-diameter-of-binary-tree.py",
+          "content": "''' Structure of binary tree Node \nclass Node:\n    def __init__(self, val):\n        self.data = val\n        self.right = None\n        self.left = None\n'''\n\nclass Solution:\n    def diameter(self, root):\n        # code here\n        \n        "
+        },
+        {
+          "path": "problems/gfg-diameter-of-binary-tree/README.md",
+          "content": "# Diameter of a Binary Tree\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Medium\n\n**Tags:** `Tree`\n\n## Problem\n\nMy SubmissionsRefresh Time (IST)StatusMarksLangTest CasesCode2026-04-08 23:06:36Correct0python31111 / 1111View Sync2026-04-08 22:32:57Correct4python31111 / 1111View⏳...2026-04-08 20:39:05Wrong0python32 / 1111View\n\n**Source:** https://www.geeksforgeeks.org/problems/diameter-of-binary-tree/"
+        }
+      ],
+      "timestamp": 1775667777000,
       "runtime": null,
       "memory": null,
-      "problemStatement": "<p><span style=\"font-size: 14pt;\">Given the <strong>root</strong> of a binary tree, your task is to find the <strong>diameter</strong> of the binary tree.&nbsp;</span><span style=\"font-size: 14pt;\">The <strong data-start=\"279\" data-end=\"291\">diameter</strong>&nbsp;of a binary tree is defined as the number of edges on the <strong data-start=\"378\" data-end=\"421\">longest path between any two nodes</strong>. Note that this path may or may not pass through the root of the tree.</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>root = [1, 2, N, 3, 4]<br /><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/927804/Web/Other/blobid0_1777955703.png\" width=\"177\" height=\"213\" /><br /><strong>Output: </strong>2<br /><strong>Explanation: </strong>The longest path has 2 edges (node 3 -&gt; node 2 -&gt; node 4).<br /><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/927804/Web/Other/blobid1_1777955726.png\" width=\"173\" height=\"209\" /><br /></span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong><span class=\"hljs-string\">root</span> <span class=\"hljs-string\">=</span> [<span class=\"hljs-number\">5</span>, <span class=\"hljs-number\">8</span>, <span class=\"hljs-number\">6</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">7</span>, <span class=\"hljs-number\">9, N</span>]<br /><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/927804/Web/Other/blobid2_1777955758.png\" width=\"231\" height=\"204\" /><br /><strong>Output: </strong>4</span><br /><span style=\"font-size: 14pt;\"><strong style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">Explanation: </strong>The longest path has 4 edges (node 3 -&gt; node 8 -&gt; node 5 -&gt; node 6 -&gt; node 9).<br /><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/927804/Web/Other/blobid3_1777955783.png\" width=\"234\" height=\"207\" /><br /></span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:</strong><br />1 &le; number of nodes &le; 10<sup>3</sup><br />0 &le; node-&gt;data &le; 10<sup>5</sup></span></p>",
+      "problemStatement": "<div class=\"pusher\"><div class=\"editorialSubmission_submission_wrapper__E8CYd editorialSubmission_generic_styles__jhTne\"><div class=\"editorialSubmission_submission_container__gPDjP\"><div><div class=\"ui pointing secondary menu\"><a class=\"active item\">My Submissions</a></div><div class=\"ui segment active tab editorialSubmission_my_submission_pane__saAVi\"><div><p class=\"editorialSubmission_refresh_btn__JzuiQ\"><i aria-hidden=\"true\" class=\"refresh icon\"></i>Refresh</p><div class=\"editorialSubmission_table_wrapper__lTxj6\"> <table class=\"ui unstackable table\"><thead class=\"\"><tr class=\"\"><th class=\"\">Time (IST)</th><th class=\"\">Status</th><th class=\"\">Marks</th><th class=\"\">Lang</th><th class=\"\">Test Cases</th><th class=\"\">Code</th></tr></thead><tbody class=\"\"><tr class=\"\"><td class=\"\">2026-04-08 23:06:36</td><td class=\"editorialSubmission_right_submsn__sYd_m\">Correct</td><td class=\"\"><div class=\"editorialSubmission_marks__lhMP_\">0<img src=\"https://media.geeksforgeeks.org/img-practice/prod/problems/1/Web/Other/light_1708526115.svg\" alt=\"Info\" class=\"ui image editorialSubmission_info_icon__tJImd\"></div></td><td class=\"\">python3</td><td class=\"\">1111 / 1111</td><td class=\"\"><a style=\"cursor: pointer;\">View</a><button class=\"cl-gfg-row-sync-btn\" title=\"Sync this submission to CodeLedger\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 4px; padding: 2px 6px; font-size: 11px; font-weight: 600; font-family: inherit; color: rgb(34, 211, 238); background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.35); border-radius: 4px; cursor: pointer; margin-left: 8px; transition: background 0.15s, border-color 0.15s; vertical-align: middle; box-sizing: border-box; outline: none; white-space: nowrap;\"><svg width=\"10\" height=\"10\" viewBox=\"0 0 24 24\" fill=\"currentColor\" style=\"display:inline-block;vertical-align:middle;\"><path d=\"M4 12a8 8 0 018-8V2.5a.5.5 0 01.854-.354l3 3a.5.5 0 010 .708l-3 3A.5.5 0 0112 8.5V7a5 5 0 105 5h1.5a6.5 6.5 0 11-14.5 0z\"></path></svg> Sync</button></td></tr><tr class=\"\"><td class=\"\">2026-04-08 22:32:57</td><td class=\"editorialSubmission_right_submsn__sYd_m\">Correct</td><td class=\"\"><div class=\"editorialSubmission_marks__lhMP_\">4</div></td><td class=\"\">python3</td><td class=\"\">1111 / 1111</td><td class=\"\"><a style=\"cursor: pointer;\">View</a><button class=\"cl-gfg-row-sync-btn\" title=\"Sync this submission to CodeLedger\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 4px; padding: 2px 6px; font-size: 11px; font-weight: 600; font-family: inherit; color: rgb(34, 211, 238); background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.35); border-radius: 4px; cursor: pointer; margin-left: 8px; transition: background 0.15s, border-color 0.15s; vertical-align: middle; box-sizing: border-box; outline: none; white-space: nowrap;\"><svg width=\"10\" height=\"10\" viewBox=\"0 0 24 24\" fill=\"currentColor\" style=\"display:inline-block;vertical-align:middle;\"><path d=\"M4 12a8 8 0 018-8V2.5a.5.5 0 01.854-.354l3 3a.5.5 0 010 .708l-3 3A.5.5 0 0112 8.5V7a5 5 0 105 5h1.5a6.5 6.5 0 11-14.5 0z\"></path></svg> Sync</button></td></tr><tr class=\"\"><td class=\"\">2026-04-08 20:39:05</td><td class=\"editorialSubmission_wrong_submsn__BpRwZ\">Wrong</td><td class=\"\"><div class=\"editorialSubmission_marks__lhMP_\">0</div></td><td class=\"\">python3</td><td class=\"\">2 / 1111</td><td class=\"\"><a style=\"cursor: pointer;\">View</a></td></tr></tbody></table></div></div></div></div></div></div></div>",
       "_importedFromProfile": true,
       "_needsCodeFetch": true,
       "notes": "",
-      "methods": [],
+      "methods": [
+        {
+          "title": "Approach 1 (python3)",
+          "language": "python3",
+          "code": "'''\n# Tree Node\nclass Node:\n    def __init__(self, val):\n        self.data = val\n        self.right = None\n        self.left = None\n'''\n\nclass Solution:\n    \n    def height(self, root, maxi):\n        if not root:\n            return 0\n\n        lheight = self.height(root.left, maxi)\n        rheight = self.height(root.right, maxi)\n        \n        sum1 = lheight + rheight\n        maxi[0] = max(maxi[0], sum1)\n        \n        return 1 + max(lheight, rheight)\n    \n    \n    def diameter(self, root):\n        maxi = [0]\n        self.height(root, maxi)\n        return maxi[0]",
+          "description": "Synced from submissions table — 2026-04-08 22:32:57",
+          "timestamp": 1775667777000
+        }
+      ],
       "manuallyEdited": false,
       "_committedPaths": [
         "problems/gfg-diameter-of-binary-tree/README.md"
-      ]
+      ],
+      "forceCommit": true,
+      "readmeContent": "# Diameter of a Binary Tree\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Medium\n\n**Tags:** `Tree`\n\n## Problem\n\nMy SubmissionsRefresh Time (IST)StatusMarksLangTest CasesCode2026-04-08 23:06:36Correct0python31111 / 1111View Sync2026-04-08 22:32:57Correct4python31111 / 1111View⏳...2026-04-08 20:39:05Wrong0python32 / 1111View\n\n**Source:** https://www.geeksforgeeks.org/problems/diameter-of-binary-tree/",
+      "elapsedSeconds": 0,
+      "_requestAIReview": false
     },
     {
       "id": "gfg-find-unique-number",
@@ -555,15 +576,15 @@
       "titleSlug": "find-unique-number",
       "difficulty": "Easy",
       "lang": {
-        "name": "Unknown",
-        "ext": "txt",
-        "slug": "unknown"
+        "name": "python3",
+        "ext": "py",
+        "slug": "python3"
       },
       "tags": [
         "Bit Manipulation"
       ],
       "topic": "Untagged",
-      "code": "",
+      "code": "#User function Template for python3\nclass Solution:\n    def search(self, n, arr):\n        l, r = 0, n -1\n        while l < r:\n            mid = (l + r) // 2\n        \n            if mid % 2 == 1:\n                mid -= 1\n            \n            if arr[mid] == arr[mid+ 1]:\n                l = mid + 2\n            else:\n                r = mid\n                \n        return arr[l]",
       "files": [],
       "timestamp": 1782298700927,
       "runtime": null,
@@ -585,15 +606,15 @@
       "titleSlug": "height-of-binary-tree",
       "difficulty": "Easy",
       "lang": {
-        "name": "Unknown",
-        "ext": "txt",
-        "slug": "unknown"
+        "name": "python3",
+        "ext": "py",
+        "slug": "python3"
       },
       "tags": [
         "Tree"
       ],
       "topic": "Untagged",
-      "code": "",
+      "code": "'''\n# Node Class:\nclass Node:\n    def _init_(self, val):\n        self.data = val\n        self.left = None\n        self.right = None\n'''\n\nclass Solution:\n    def height(self, root):\n        if root is None:\n            return -1\n        \n        lheight = self.height(root.left)\n        rheight = self.height(root.right)\n        \n        return max(lheight, rheight) + 1",
       "files": [],
       "timestamp": 1782298700927,
       "runtime": null,
@@ -615,16 +636,16 @@
       "titleSlug": "implement-atoi",
       "difficulty": "Medium",
       "lang": {
-        "name": "Unknown",
-        "ext": "txt",
-        "slug": "unknown"
+        "name": "python3",
+        "ext": "py",
+        "slug": "python3"
       },
       "tags": [
         "String",
         "Design Pattern"
       ],
       "topic": "Untagged",
-      "code": "",
+      "code": "class Solution:\n    def myAtoi(self, s):\n        s = s.strip()\n        if not s:\n            return 0\n        \n        sign = 1\n        i = 0\n        \n        if s[i] in ['+', '-']:\n            sign = -1 if s[i] == '-' else 1\n            i += 1\n        \n        num = 0\n        INT_MAX = 2**31 - 1\n        INT_MIN = -2**31\n        \n        while i < len(s) and s[i].isdigit():\n            digit = int(s[i])\n            \n            if num > (INT_MAX - digit) // 10:\n                return INT_MAX if sign == 1 else INT_MIN\n            \n            num = num * 10 + digit\n            i += 1\n        \n        return sign * num",
       "files": [],
       "timestamp": 1782298700927,
       "runtime": null,
@@ -1040,6 +1061,7 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
+        "problems/gfg-merge-two-sorted-linked-lists/gfg-merge-two-sorted-linked-lists.py",
         "problems/gfg-merge-two-sorted-linked-lists/README.md"
       ]
     },
@@ -1073,6 +1095,7 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
+        "problems/gfg-minimum-element-in-a-sorted-and-rotated-array3611/gfg-minimum-element-in-a-sorted-and-rotated-array3611.py",
         "problems/gfg-minimum-element-in-a-sorted-and-rotated-array3611/README.md"
       ],
       "aiReview": "### Review\n**1. Complexity**\n*   **Time Complexity:** $O(\\log N)$, where $N$ is the number of elements. The search space is halved in each iteration.\n*   **Space Complexity:** $O(1)$, as it uses a constant amount of extra space.\n\n**2. Correctness**\nThe solution is correct for arrays with **unique elements**. It successfully handles:\n*   **Standard rotation:** (e.g., `[4, 5, 1, 2, 3]`).\n*   **No rotation:** (e.g., `[1, 2, 3, 4]`) where it correctly returns the first element.\n*   **Single element arrays.**\n\n**Edge Case:** If the array contains **duplicate elements** (e.g., `[10, 1, 10, 10, 10]`), the logic `arr[mid] > arr[r]` fails to distinguish which half to discard.\n\n**3. Optimization**\nTo make the algorithm robust against duplicates, add a check for equality:\n```python\nif arr[mid] > arr[r]:\n    l = mid + 1\nelif arr[mid] < arr[r]:\n    r = mid\nelse:\n    r -= 1 # Shrink search space linearly when values are equal\n```\n\n**4. Key Algorithmic Pattern**\n**Binary Search**: Specifically, modified binary search to find the \"inflection point\" or pivot in a rotated sorted array.",
@@ -1110,6 +1133,7 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
+        "problems/gfg-minimum-platforms-1587115620/gfg-minimum-platforms-1587115620.py",
         "problems/gfg-minimum-platforms-1587115620/README.md"
       ]
     },
@@ -1140,6 +1164,7 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
+        "problems/gfg-mirror-tree/gfg-mirror-tree.py",
         "problems/gfg-mirror-tree/README.md"
       ]
     },
@@ -1172,6 +1197,7 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
+        "problems/gfg-missing-number-in-array1416/gfg-missing-number-in-array1416.py",
         "problems/gfg-missing-number-in-array1416/README.md"
       ]
     },
@@ -1204,6 +1230,7 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
+        "problems/gfg-nearly-sorted-1587115620/gfg-nearly-sorted-1587115620.py",
         "problems/gfg-nearly-sorted-1587115620/README.md"
       ]
     },
@@ -1235,6 +1262,7 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
+        "problems/gfg-non-repeating-character-1587115620/gfg-non-repeating-character-1587115620.py",
         "problems/gfg-non-repeating-character-1587115620/README.md"
       ]
     },
@@ -1265,6 +1293,7 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
+        "problems/gfg-number-of-coins1824/gfg-number-of-coins1824.py",
         "problems/gfg-number-of-coins1824/README.md"
       ]
     },
@@ -1295,6 +1324,7 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
+        "problems/gfg-number-of-paths0926/gfg-number-of-paths0926.py",
         "problems/gfg-number-of-paths0926/README.md"
       ]
     },
@@ -1327,36 +1357,9 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
+        "problems/gfg-parenthesis-checker2744/gfg-parenthesis-checker2744.py",
         "problems/gfg-parenthesis-checker2744/README.md"
       ]
-    },
-    {
-      "id": "gfg-police-and-thieves102404",
-      "platform": "geeksforgeeks",
-      "title": "Police And Thieves",
-      "titleSlug": "police-and-thieves102404",
-      "difficulty": "Medium",
-      "lang": {
-        "name": "Unknown",
-        "ext": "txt",
-        "slug": "unknown"
-      },
-      "tags": [],
-      "topic": "Untagged",
-      "code": "",
-      "files": [],
-      "timestamp": 1782298700927,
-      "runtime": null,
-      "memory": null,
-      "problemStatement": null,
-      "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-police-and-thieves102404/README.md"
-      ],
-      "notes": "",
-      "methods": [],
-      "manuallyEdited": false
     },
     {
       "id": "gfg-product-array-puzzle4525",
@@ -1386,6 +1389,7 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
+        "problems/gfg-product-array-puzzle4525/gfg-product-array-puzzle4525.py",
         "problems/gfg-product-array-puzzle4525/README.md"
       ]
     },

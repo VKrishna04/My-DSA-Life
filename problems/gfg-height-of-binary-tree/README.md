@@ -27,3 +27,26 @@ Given the **root **of a binary tree, your task is to find the **maximum depth **
 **Constraints:**
 1 &le; number of nodes &le; 3*104
 0 &le; node->data &le; 105
+
+## Solutions
+
+```python3
+'''
+# Node Class:
+class Node:
+    def _init_(self, val):
+        self.data = val
+        self.left = None
+        self.right = None
+'''
+
+class Solution:
+    def height(self, root):
+        if root is None:
+            return -1
+        
+        lheight = self.height(root.left)
+        rheight = self.height(root.right)
+        
+        return max(lheight, rheight) + 1
+```
