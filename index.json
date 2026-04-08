@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-18T17:47:14.612Z",
+  "updatedAt": "2026-08-18T17:48:08.618Z",
   "layoutVersion": 3,
   "stats": {
     "total": 310,
@@ -519,38 +519,22 @@
       ]
     },
     {
-      "id": "gfg-diameter-of-binary-tree",
       "platform": "geeksforgeeks",
+      "id": "gfg-diameter-of-binary-tree",
       "title": "Diameter of a Binary Tree",
       "titleSlug": "diameter-of-binary-tree",
       "difficulty": "Medium",
+      "tags": [
+        "Tree"
+      ],
+      "code": "''' Structure of binary tree Node \nclass Node:\n    def __init__(self, val):\n        self.data = val\n        self.right = None\n        self.left = None\n'''\n\nclass Solution:\n    def diameter(self, root):\n        # code here\n        \n        ",
       "lang": {
         "name": "Python3",
         "ext": "py",
         "slug": "python3"
       },
-      "tags": [
-        "Tree"
-      ],
-      "topic": "Untagged",
-      "code": "''' Structure of binary tree Node \nclass Node:\n    def __init__(self, val):\n        self.data = val\n        self.right = None\n        self.left = None\n'''\n\nclass Solution:\n    def diameter(self, root):\n        # code here\n        \n        ",
-      "files": [
-        {
-          "path": "problems/gfg-diameter-of-binary-tree/gfg-diameter-of-binary-tree.py",
-          "content": "''' Structure of binary tree Node \nclass Node:\n    def __init__(self, val):\n        self.data = val\n        self.right = None\n        self.left = None\n'''\n\nclass Solution:\n    def diameter(self, root):\n        # code here\n        \n        "
-        },
-        {
-          "path": "problems/gfg-diameter-of-binary-tree/README.md",
-          "content": "# Diameter of a Binary Tree\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Medium\n\n**Tags:** `Tree`\n\n## Problem\n\nMy SubmissionsRefresh Time (IST)StatusMarksLangTest CasesCode2026-04-08 23:06:36Correct0python31111 / 1111View Sync2026-04-08 22:32:57Correct4python31111 / 1111View⏳...2026-04-08 20:39:05Wrong0python32 / 1111View\n\n**Source:** https://www.geeksforgeeks.org/problems/diameter-of-binary-tree/"
-        }
-      ],
-      "timestamp": 1775667777000,
-      "runtime": null,
-      "memory": null,
       "problemStatement": "<div class=\"pusher\"><div class=\"editorialSubmission_submission_wrapper__E8CYd editorialSubmission_generic_styles__jhTne\"><div class=\"editorialSubmission_submission_container__gPDjP\"><div><div class=\"ui pointing secondary menu\"><a class=\"active item\">My Submissions</a></div><div class=\"ui segment active tab editorialSubmission_my_submission_pane__saAVi\"><div><p class=\"editorialSubmission_refresh_btn__JzuiQ\"><i aria-hidden=\"true\" class=\"refresh icon\"></i>Refresh</p><div class=\"editorialSubmission_table_wrapper__lTxj6\"> <table class=\"ui unstackable table\"><thead class=\"\"><tr class=\"\"><th class=\"\">Time (IST)</th><th class=\"\">Status</th><th class=\"\">Marks</th><th class=\"\">Lang</th><th class=\"\">Test Cases</th><th class=\"\">Code</th></tr></thead><tbody class=\"\"><tr class=\"\"><td class=\"\">2026-04-08 23:06:36</td><td class=\"editorialSubmission_right_submsn__sYd_m\">Correct</td><td class=\"\"><div class=\"editorialSubmission_marks__lhMP_\">0<img src=\"https://media.geeksforgeeks.org/img-practice/prod/problems/1/Web/Other/light_1708526115.svg\" alt=\"Info\" class=\"ui image editorialSubmission_info_icon__tJImd\"></div></td><td class=\"\">python3</td><td class=\"\">1111 / 1111</td><td class=\"\"><a style=\"cursor: pointer;\">View</a><button class=\"cl-gfg-row-sync-btn\" title=\"Sync this submission to CodeLedger\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 4px; padding: 2px 6px; font-size: 11px; font-weight: 600; font-family: inherit; color: rgb(34, 211, 238); background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.35); border-radius: 4px; cursor: pointer; margin-left: 8px; transition: background 0.15s, border-color 0.15s; vertical-align: middle; box-sizing: border-box; outline: none; white-space: nowrap;\"><svg width=\"10\" height=\"10\" viewBox=\"0 0 24 24\" fill=\"currentColor\" style=\"display:inline-block;vertical-align:middle;\"><path d=\"M4 12a8 8 0 018-8V2.5a.5.5 0 01.854-.354l3 3a.5.5 0 010 .708l-3 3A.5.5 0 0112 8.5V7a5 5 0 105 5h1.5a6.5 6.5 0 11-14.5 0z\"></path></svg> Sync</button></td></tr><tr class=\"\"><td class=\"\">2026-04-08 22:32:57</td><td class=\"editorialSubmission_right_submsn__sYd_m\">Correct</td><td class=\"\"><div class=\"editorialSubmission_marks__lhMP_\">4</div></td><td class=\"\">python3</td><td class=\"\">1111 / 1111</td><td class=\"\"><a style=\"cursor: pointer;\">View</a><button class=\"cl-gfg-row-sync-btn\" title=\"Sync this submission to CodeLedger\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 4px; padding: 2px 6px; font-size: 11px; font-weight: 600; font-family: inherit; color: rgb(34, 211, 238); background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.35); border-radius: 4px; cursor: pointer; margin-left: 8px; transition: background 0.15s, border-color 0.15s; vertical-align: middle; box-sizing: border-box; outline: none; white-space: nowrap;\"><svg width=\"10\" height=\"10\" viewBox=\"0 0 24 24\" fill=\"currentColor\" style=\"display:inline-block;vertical-align:middle;\"><path d=\"M4 12a8 8 0 018-8V2.5a.5.5 0 01.854-.354l3 3a.5.5 0 010 .708l-3 3A.5.5 0 0112 8.5V7a5 5 0 105 5h1.5a6.5 6.5 0 11-14.5 0z\"></path></svg> Sync</button></td></tr><tr class=\"\"><td class=\"\">2026-04-08 20:39:05</td><td class=\"editorialSubmission_wrong_submsn__BpRwZ\">Wrong</td><td class=\"\"><div class=\"editorialSubmission_marks__lhMP_\">0</div></td><td class=\"\">python3</td><td class=\"\">2 / 1111</td><td class=\"\"><a style=\"cursor: pointer;\">View</a></td></tr></tbody></table></div></div></div></div></div></div></div>",
-      "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "notes": "",
+      "timestamp": 1775669796000,
       "methods": [
         {
           "title": "Approach 1 (python3)",
@@ -558,14 +542,29 @@
           "code": "'''\n# Tree Node\nclass Node:\n    def __init__(self, val):\n        self.data = val\n        self.right = None\n        self.left = None\n'''\n\nclass Solution:\n    \n    def height(self, root, maxi):\n        if not root:\n            return 0\n\n        lheight = self.height(root.left, maxi)\n        rheight = self.height(root.right, maxi)\n        \n        sum1 = lheight + rheight\n        maxi[0] = max(maxi[0], sum1)\n        \n        return 1 + max(lheight, rheight)\n    \n    \n    def diameter(self, root):\n        maxi = [0]\n        self.height(root, maxi)\n        return maxi[0]",
           "description": "Synced from submissions table — 2026-04-08 22:32:57",
           "timestamp": 1775667777000
+        },
+        {
+          "title": "Approach 2 (python3)",
+          "language": "python3",
+          "code": "'''\n# Tree Node\nclass Node:\n    def __init__(self, val):\n        self.data = val\n        self.right = None\n        self.left = None\n'''\n\nclass Solution:\n    \n    def height(self, root, maxi):\n        if not root:\n            return 0\n        sum1 = 0\n        lheight = self.height(root.left, maxi)\n        rheight = self.height(root.right, maxi)\n        \n        sum1 = lheight + rheight\n        maxi[0] = max(maxi[0], sum1)\n        \n        return 1 + max(lheight, rheight)\n    \n    \n    def diameter(self, root):\n        maxi = [0]\n        self.height(root, maxi)\n        return maxi[0]",
+          "description": "Synced from submissions table — 2026-04-08 23:06:36",
+          "timestamp": 1775669796000
         }
       ],
+      "notes": "",
       "manuallyEdited": false,
-      "_committedPaths": [
-        "problems/gfg-diameter-of-binary-tree/README.md"
-      ],
       "forceCommit": true,
-      "readmeContent": "# Diameter of a Binary Tree\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Medium\n\n**Tags:** `Tree`\n\n## Problem\n\nMy SubmissionsRefresh Time (IST)StatusMarksLangTest CasesCode2026-04-08 23:06:36Correct0python31111 / 1111View Sync2026-04-08 22:32:57Correct4python31111 / 1111View⏳...2026-04-08 20:39:05Wrong0python32 / 1111View\n\n**Source:** https://www.geeksforgeeks.org/problems/diameter-of-binary-tree/",
+      "readmeContent": "# Diameter of a Binary Tree\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Medium\n\n**Tags:** `Tree`\n\n## Problem\n\nMy SubmissionsRefresh Time (IST)StatusMarksLangTest CasesCode2026-04-08 23:06:36Correct0python31111 / 1111View⏳...2026-04-08 22:32:57Correct4python31111 / 1111View Sync2026-04-08 20:39:05Wrong0python32 / 1111View\n\n**Source:** https://www.geeksforgeeks.org/problems/diameter-of-binary-tree/",
+      "files": [
+        {
+          "path": "problems/gfg-diameter-of-binary-tree/gfg-diameter-of-binary-tree.py",
+          "content": "''' Structure of binary tree Node \nclass Node:\n    def __init__(self, val):\n        self.data = val\n        self.right = None\n        self.left = None\n'''\n\nclass Solution:\n    def diameter(self, root):\n        # code here\n        \n        "
+        },
+        {
+          "path": "problems/gfg-diameter-of-binary-tree/README.md",
+          "content": "# Diameter of a Binary Tree\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Medium\n\n**Tags:** `Tree`\n\n## Problem\n\nMy SubmissionsRefresh Time (IST)StatusMarksLangTest CasesCode2026-04-08 23:06:36Correct0python31111 / 1111View⏳...2026-04-08 22:32:57Correct4python31111 / 1111View Sync2026-04-08 20:39:05Wrong0python32 / 1111View\n\n**Source:** https://www.geeksforgeeks.org/problems/diameter-of-binary-tree/"
+        }
+      ],
       "elapsedSeconds": 0,
       "_requestAIReview": false
     },
@@ -596,6 +595,7 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
+        "problems/gfg-find-unique-number/gfg-find-unique-number.py",
         "problems/gfg-find-unique-number/README.md"
       ]
     },
@@ -626,6 +626,7 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
+        "problems/gfg-height-of-binary-tree/gfg-height-of-binary-tree.py",
         "problems/gfg-height-of-binary-tree/README.md"
       ]
     },
@@ -657,6 +658,7 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
+        "problems/gfg-implement-atoi/gfg-implement-atoi.py",
         "problems/gfg-implement-atoi/README.md"
       ]
     },
