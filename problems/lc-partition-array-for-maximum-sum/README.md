@@ -7,8 +7,9 @@
 | Problem ID | `lc-partition-array-for-maximum-sum` |
 | Topics | Array, Dynamic Programming |
 | Solved | 2026-05-06 |
-| Runtime | 151 ms (beats 60.3117000000001%) |
-| Memory | 19.1 MB (beats 97.4577%) |
+| Solve Time | 1m 49s |
+| Runtime | 151 ms (beats 64.1557000000001%) |
+| Memory | 19.1 MB (beats 97.4895%) |
 
 ## Problem Statement
 
@@ -44,22 +45,6 @@ Return _the largest sum of the given array after partitioning. Test cases are ge
 
 	- `1 <= k <= arr.length`
 
-## Hints
-
-<details>
-<summary>Hint 1</summary>
-
-Think dynamic programming:  dp[i] will be the answer for array A[0], ..., A[i-1].
-
-</details>
-
-<details>
-<summary>Hint 2</summary>
-
-For j = 1 .. k that keeps everything in bounds, dp[i] is the maximum of dp[i-j] + max(A[i-1], ..., A[i-j]) * j .
-
-</details>
-
 ## Solutions
 
 ```Python3
@@ -82,18 +67,20 @@ class Solution:
 
 ## AI Review
 
-### 1. Complexity
-*   **Time:** $O(n \cdot k)$, where $n$ is the length of the array. We iterate through the array once and, for each element, look back up to $k$ steps.
-*   **Space:** $O(n)$ to store the `dp` array.
+1.  **Time Complexity:** O(N\*K)
+    *   The outer loop runs `N` times.
+    *   The inner loop runs up to `K` times (or `i` times, whichever is smaller).
+    *   Operations inside the inner loop are O(1).
+    *   **Space Complexity:** O(N)
+    *   A DP array of size `N+1` is used.
 
-### 2. Correctness
-The code is **correct** and handles edge cases well:
-*   **$k=1$**: Correctly reduces to the sum of the array.
-*   **$k \ge n$**: Correctly identifies the global maximum multiplied by $n$.
-*   **Small arrays**: The `min(k, i)` bound prevents out-of-bounds errors.
+2.  **Correctness:** Correct.
+    *   The `dp[i]` state correctly stores the maximum sum for the prefix `arr[0...i-1]`.
+    *   The base case `dp[0]=0` is implicitly handled.
+    *   The transitions correctly iterate through all possible lengths `j` (from `1` to `k`) for the last partition ending at `i-1`, efficiently calculating its sum (`cur_max * j`) and combining it with the maximum sum of the preceding subarray (`dp[i-j]`).
+    *   Edge cases like `k=1`, `k>=n`, and small `n` are handled.
 
-### 3. Concrete Optimization
-**Space Complexity:** Since `dp[i]` only depends on the previous $k$ values (`dp[i-1]` through `dp[i-k]`), you can reduce space from $O(n)$ to **$O(k)$** using a circular buffer (array of size $k+1$ with modulo indexing `% (k + 1)`). This is beneficial if $n$ is very large and $k$ is small.
+3.  **One concrete optimisation:**
+    No significant asymptotic optimization (reducing O(N\*K)) is apparent for this problem. The current approach efficiently maintains `cur_max` within the inner loop, which is already optimal for the current DP structure.
 
-### 4. Key Algorithmic Pattern
-**Linear Dynamic Programming (Bottom-Up)**. It uses an optimal substructure where the solution for the first $i$ elements depends on the optimal solutions of smaller prefixes.
+4.  **Key algorithmic pattern used:** Dynamic Programming (bottom-up approach).

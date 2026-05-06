@@ -2515,6 +2515,21 @@
     "platform": "leetcode",
     "slug": "number-of-employees-who-met-the-target"
   },
+  "leetcode::partition-array-for-maximum-sum": {
+    "aiInsights": [
+      {
+        "summary": "1.  **Time Complexity:** O(N\\*K)\n    *   The outer loop runs `N` times.\n    *   The inner loop runs up to `K` times (or `i` times, whichever is smaller).\n    *   Operations inside the inner loop are O",
+        "ts": 1781883215131,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "partition-array-for-maximum-sum"
+  },
   "leetcode::pascals-triangle": {
     "aiInsights": [
       {
