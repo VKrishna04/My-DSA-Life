@@ -7,8 +7,8 @@
 | Problem ID | `lc-filling-bookcase-shelves` |
 | Topics | Array, Dynamic Programming |
 | Solved | 2026-05-07 |
-| Runtime | 3 ms (beats 54.1096%) |
-| Memory | 19.4 MB (beats 95.43379999999999%) |
+| Runtime | 3 ms (beats 57.3276%) |
+| Memory | 19.4 MB (beats 94.8276%) |
 
 ## Problem Statement
 
@@ -49,15 +49,6 @@ Notice that book number 2 does not have to be on the first shelf.
 
 	- `1 <= heighti <= 1000`
 
-## Hints
-
-<details>
-<summary>Hint 1</summary>
-
-Use dynamic programming:  dp(i) will be the answer to the problem for books[i:].
-
-</details>
-
 ## Solutions
 
 ```Python3
@@ -78,20 +69,3 @@ class Solution:
         
         return dp[n]
 ```
-
-## AI Review
-
-### 1. Complexity
-*   **Time Complexity:** $O(n^2)$, where $n$ is the number of books. The nested loops iterate through each book and potentially check all preceding books for the current shelf.
-*   **Space Complexity:** $O(n)$ to store the `dp` array of size $n+1$.
-
-### 2. Correctness
-The solution is correct and handles the problem's constraints well. 
-*   **Edge Cases:** It correctly handles a single book, books that exactly fit the `shelfWidth`, and the case where every book requires its own shelf. 
-*   **Constraint:** Since the problem guarantees $book\_width \le shelfWidth$, the inner loop will always execute at least once, preventing `dp[i]` from remaining `inf`.
-
-### 3. Optimization
-While $O(n^2)$ is optimal for $N=1000$, you could theoretically use a **Segment Tree** or a **Monotonic Queue** to optimize the range maximum height query if the shelf width were extremely large. However, a more practical Pythonic optimization is using `@cache` with a recursive top-down approach, which can sometimes be faster due to skipping unreachable states, though the Big-O remains the same.
-
-### 4. Key Algorithmic Pattern
-**Dynamic Programming (Linear/Partitioning DP):** The problem is solved by breaking it into subproblems where `dp[i]` represents the minimum height for the first `i` books by partitioning the array into contiguous subarrays (shelves).
