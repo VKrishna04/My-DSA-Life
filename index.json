@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-17T10:48:14.447Z",
+  "updatedAt": "2026-05-18T10:52:47.538Z",
   "layoutVersion": 3,
   "stats": {
     "total": 251,
@@ -11947,9 +11947,8 @@
       "duplicateOf": "lc-roman-to-integer::1353182041"
     },
     {
-      "platform": "leetcode",
       "id": "lc-rotting-oranges",
-      "forceCommit": true,
+      "forceCommit": false,
       "submissionId": null,
       "title": "Rotting Oranges",
       "titleSlug": "rotting-oranges",
@@ -11961,7 +11960,7 @@
         "Matrix"
       ],
       "canonical": null,
-      "readmeContent": "# [994] Rotting Oranges\n**Difficulty:** Medium  |  **Acceptance:** 58.6%  |  **Likes:** 15208 / **Dislikes:** 478\n**Tags:** `Array`, `Breadth-First Search`, `Matrix`\n## Problem\nYou are given an m x n grid where each cell can have one of three values:\n\n\t0 representing an empty cell,\n\t1 representing a fresh orange, or\n\t2 representing a rotten orange.\n\nEvery minute, any fresh orange that is 4-directionally adjacent to a rotten orange becomes rotten.\n\nReturn the minimum number of minutes that must elapse until no cell has a fresh orange. If this is impossible, return -1.\n\n&nbsp;\nExample 1:\n\nInput: grid = [[2,1,1],[1,1,0],[0,1,1]]\nOutput: 4\n\nExample 2:\n\nInput: grid = [[2,1,1],[0,1,1],[1,0,1]]\nOutput: -1\nExplanation: The orange in the bottom left corner (row 2, column 0) is never rotten, because rotting only happens 4-directionally.\n\nExample 3:\n\nInput: grid = [[0,2]]\nOutput: 0\nExplanation: Since there are already no fresh oranges at minute 0, the answer is just 0.\n\n&nbsp;\nConstraints:\n\n\tm == grid.length\n\tn == grid[i].length\n\t1 <= m, n <= 10\n\tgrid[i][j] is 0, 1, or 2.\n## My Submission\n\n- Runtime: 3 ms (beats 76.2%)\n- Memory: 19.2 MB (beats 96.0%)\n- Solve time: 19s\n\n## Similar Problems\n\n- [Battleships in a Board](https://leetcode.com/problems/battleships-in-a-board/) — Medium\n- [Detonate the Maximum Bombs](https://leetcode.com/problems/detonate-the-maximum-bombs/) — Medium\n- [Escape the Spreading Fire](https://leetcode.com/problems/escape-the-spreading-fire/) — Hard\n",
+      "readmeContent": "# [994] Rotting Oranges\n**Difficulty:** Medium  |  **Acceptance:** 58.6%  |  **Likes:** 15214 / **Dislikes:** 478\n**Tags:** `Array`, `Breadth-First Search`, `Matrix`\n## Problem\nYou are given an m x n grid where each cell can have one of three values:\n\n\t0 representing an empty cell,\n\t1 representing a fresh orange, or\n\t2 representing a rotten orange.\n\nEvery minute, any fresh orange that is 4-directionally adjacent to a rotten orange becomes rotten.\n\nReturn the minimum number of minutes that must elapse until no cell has a fresh orange. If this is impossible, return -1.\n\n&nbsp;\nExample 1:\n\nInput: grid = [[2,1,1],[1,1,0],[0,1,1]]\nOutput: 4\n\nExample 2:\n\nInput: grid = [[2,1,1],[0,1,1],[1,0,1]]\nOutput: -1\nExplanation: The orange in the bottom left corner (row 2, column 0) is never rotten, because rotting only happens 4-directionally.\n\nExample 3:\n\nInput: grid = [[0,2]]\nOutput: 0\nExplanation: Since there are already no fresh oranges at minute 0, the answer is just 0.\n\n&nbsp;\nConstraints:\n\n\tm == grid.length\n\tn == grid[i].length\n\t1 <= m, n <= 10\n\tgrid[i][j] is 0, 1, or 2.\n## My Submission\n\n- Runtime: 3 ms (beats 76.4%)\n- Memory: 19.2 MB (beats 96.1%)\n\n## Similar Problems\n\n- [Battleships in a Board](https://leetcode.com/problems/battleships-in-a-board/) — Medium\n- [Detonate the Maximum Bombs](https://leetcode.com/problems/detonate-the-maximum-bombs/) — Medium\n- [Escape the Spreading Fire](https://leetcode.com/problems/escape-the-spreading-fire/) — Hard\n",
       "code": "class Solution:\n    def orangesRotting(self, grid: List[List[int]]) -> int:\n        if not grid:\n            return 0\n        rows, cols = len(grid), len(grid[0])\n        q = collections.deque()\n        fresh = 0\n        time = 0\n        directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]\n\n        for r in range(rows):\n            for c in range(cols):\n                if grid[r][c] == 1:\n                    fresh += 1\n                if grid[r][c] == 2:\n                    q.append((r, c))\n        \n        while q and fresh:\n            time += 1\n            for _ in range(len(q)):\n                row, col = q.popleft()\n                \n                for dr, dc in directions:\n                    nr = row + dr\n                    nc = col + dc\n\n                    if nr < 0 or nr >= rows or nc < 0 or nc >= cols or grid[nr][nc] != 1:\n                        continue\n                    \n                    grid[nr][nc] = 2\n\n                    q.append((nr, nc))\n\n                    fresh -= 1\n                \n        return time if fresh == 0 else -1",
       "files": [
         {
@@ -11970,7 +11969,7 @@
         },
         {
           "path": "problems/lc-rotting-oranges/README.md",
-          "content": "# [994] Rotting Oranges\n**Difficulty:** Medium  |  **Acceptance:** 58.6%  |  **Likes:** 15208 / **Dislikes:** 478\n**Tags:** `Array`, `Breadth-First Search`, `Matrix`\n## Problem\nYou are given an m x n grid where each cell can have one of three values:\n\n\t0 representing an empty cell,\n\t1 representing a fresh orange, or\n\t2 representing a rotten orange.\n\nEvery minute, any fresh orange that is 4-directionally adjacent to a rotten orange becomes rotten.\n\nReturn the minimum number of minutes that must elapse until no cell has a fresh orange. If this is impossible, return -1.\n\n&nbsp;\nExample 1:\n\nInput: grid = [[2,1,1],[1,1,0],[0,1,1]]\nOutput: 4\n\nExample 2:\n\nInput: grid = [[2,1,1],[0,1,1],[1,0,1]]\nOutput: -1\nExplanation: The orange in the bottom left corner (row 2, column 0) is never rotten, because rotting only happens 4-directionally.\n\nExample 3:\n\nInput: grid = [[0,2]]\nOutput: 0\nExplanation: Since there are already no fresh oranges at minute 0, the answer is just 0.\n\n&nbsp;\nConstraints:\n\n\tm == grid.length\n\tn == grid[i].length\n\t1 <= m, n <= 10\n\tgrid[i][j] is 0, 1, or 2.\n## My Submission\n\n- Runtime: 3 ms (beats 76.2%)\n- Memory: 19.2 MB (beats 96.0%)\n- Solve time: 19s\n\n## Similar Problems\n\n- [Battleships in a Board](https://leetcode.com/problems/battleships-in-a-board/) — Medium\n- [Detonate the Maximum Bombs](https://leetcode.com/problems/detonate-the-maximum-bombs/) — Medium\n- [Escape the Spreading Fire](https://leetcode.com/problems/escape-the-spreading-fire/) — Hard\n"
+          "content": "# [994] Rotting Oranges\n**Difficulty:** Medium  |  **Acceptance:** 58.6%  |  **Likes:** 15214 / **Dislikes:** 478\n**Tags:** `Array`, `Breadth-First Search`, `Matrix`\n## Problem\nYou are given an m x n grid where each cell can have one of three values:\n\n\t0 representing an empty cell,\n\t1 representing a fresh orange, or\n\t2 representing a rotten orange.\n\nEvery minute, any fresh orange that is 4-directionally adjacent to a rotten orange becomes rotten.\n\nReturn the minimum number of minutes that must elapse until no cell has a fresh orange. If this is impossible, return -1.\n\n&nbsp;\nExample 1:\n\nInput: grid = [[2,1,1],[1,1,0],[0,1,1]]\nOutput: 4\n\nExample 2:\n\nInput: grid = [[2,1,1],[0,1,1],[1,0,1]]\nOutput: -1\nExplanation: The orange in the bottom left corner (row 2, column 0) is never rotten, because rotting only happens 4-directionally.\n\nExample 3:\n\nInput: grid = [[0,2]]\nOutput: 0\nExplanation: Since there are already no fresh oranges at minute 0, the answer is just 0.\n\n&nbsp;\nConstraints:\n\n\tm == grid.length\n\tn == grid[i].length\n\t1 <= m, n <= 10\n\tgrid[i][j] is 0, 1, or 2.\n## My Submission\n\n- Runtime: 3 ms (beats 76.4%)\n- Memory: 19.2 MB (beats 96.1%)\n\n## Similar Problems\n\n- [Battleships in a Board](https://leetcode.com/problems/battleships-in-a-board/) — Medium\n- [Detonate the Maximum Bombs](https://leetcode.com/problems/detonate-the-maximum-bombs/) — Medium\n- [Escape the Spreading Fire](https://leetcode.com/problems/escape-the-spreading-fire/) — Hard\n"
         }
       ],
       "lang": {
@@ -11980,11 +11979,11 @@
       },
       "runtime": "3 ms",
       "memory": "19.2 MB",
-      "runtimePct": 76.1709,
-      "memoryPct": 95.95950000000002,
+      "runtimePct": 76.3912,
+      "memoryPct": 96.1135,
       "timestamp": 1778444579000,
-      "acRate": 58.59897622240896,
-      "likes": 15208,
+      "acRate": 58.63195334140357,
+      "likes": 15214,
       "dislikes": 478,
       "similar": [
         {
@@ -12007,14 +12006,14 @@
         }
       ],
       "problemStatement": "<p>You are given an <code>m x n</code> <code>grid</code> where each cell can have one of three values:</p>\n\n<ul>\n\t<li><code>0</code> representing an empty cell,</li>\n\t<li><code>1</code> representing a fresh orange, or</li>\n\t<li><code>2</code> representing a rotten orange.</li>\n</ul>\n\n<p>Every minute, any fresh orange that is <strong>4-directionally adjacent</strong> to a rotten orange becomes rotten.</p>\n\n<p>Return <em>the minimum number of minutes that must elapse until no cell has a fresh orange</em>. If <em>this is impossible, return</em> <code>-1</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2019/02/16/oranges.png\" style=\"width: 650px; height: 137px;\" />\n<pre>\n<strong>Input:</strong> grid = [[2,1,1],[1,1,0],[0,1,1]]\n<strong>Output:</strong> 4\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> grid = [[2,1,1],[0,1,1],[1,0,1]]\n<strong>Output:</strong> -1\n<strong>Explanation:</strong> The orange in the bottom left corner (row 2, column 0) is never rotten, because rotting only happens 4-directionally.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> grid = [[0,2]]\n<strong>Output:</strong> 0\n<strong>Explanation:</strong> Since there are already no fresh oranges at minute 0, the answer is just 0.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>m == grid.length</code></li>\n\t<li><code>n == grid[i].length</code></li>\n\t<li><code>1 &lt;= m, n &lt;= 10</code></li>\n\t<li><code>grid[i][j]</code> is <code>0</code>, <code>1</code>, or <code>2</code>.</li>\n</ul>\n",
-      "elapsedSeconds": 19,
+      "elapsedSeconds": 0,
       "hasSimilar": true,
       "submissionsUrl": "https://leetcode.com/problems/rotting-oranges/submissions/",
       "notes": "",
       "methodTitle": "",
       "isDuplicate": false,
       "duplicateOf": null,
-      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(M \\times N)$, where $M$ and $N$ are grid dimensions. Every cell is visited during the initial scan and at most once during the BFS.\n*   **Space Complexity:** $O(M \\times N)$. In the worst case (e.g., all oranges are rotten), the queue stores all cells.\n\n### 2. Correctness\nThe solution is **correct** and handles key edge cases:\n*   **No fresh oranges:** Returns `0` immediately (the `while` loop condition `fresh` prevents execution).\n*   **Impossible to reach:** Returns `-1` correctly as `fresh` never reaches 0.\n*   **Empty grid:** Handled by the initial guard clause.\n*   **Disconnected components:** BFS naturally handles multiple sources simultaneously.\n\n### 3. Concrete Optimisation\nThe code is already highly efficient. A minor **performance optimization** would be to use a single loop with `divmod` or 1D indexing to represent coordinates (e.g., `index = r * cols + c`) to slightly reduce tuple creation overhead in the queue, though this sacrifices readability. \n\n### 4. Key Algorithmic Pattern\n**Multisource Breadth-First Search (BFS)**. This allows for the simultaneous expansion of the \"rot\" from all initial sources, ensuring the `time` variable accurately reflects the shortest path to all reachable fresh oranges."
+      "platform": "leetcode"
     },
     {
       "id": "lc-score-of-a-string",
