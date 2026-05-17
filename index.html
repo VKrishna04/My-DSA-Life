@@ -399,13 +399,18 @@
     }
 
     function repoFileUrl(problem) {
-      // Reconstruct path from the problem shape used by path-builder
+      // Reconstruct v3 path: problems/{canonicalId}/{platform}/README.md
+      //                   or: problems/{platformId}/README.md
       if (!ALL_REPO_URL) return '';
-      var slug = problem.titleSlug || problem.id || '';
-      var langName = (problem.lang && (problem.lang.verbose || problem.lang.name)) || 'Solution';
-      var ext = (problem.lang && problem.lang.ext) || 'txt';
-      var path = 'problems/' + slug + '/' + langName.replace(/s+/g, '_') + '.' + ext;
-      return ALL_REPO_URL + '/blob/main/' + path;
+      var PLAT_CODE = { leetcode: 'lc', geeksforgeeks: 'gfg', codeforces: 'cf' };
+      var plat = (problem.platform || '').toLowerCase();
+      var prefix = PLAT_CODE[plat] || plat.slice(0, 3) || 'xx';
+      var rawId = String(problem.id || problem.titleSlug || '').split('::')[0];
+      var pid = rawId.startsWith(prefix + '-') ? rawId : (prefix + '-' + rawId);
+      var dir = (problem.canonical && problem.canonical.canonicalId)
+        ? 'problems/' + problem.canonical.canonicalId + '/' + plat
+        : 'problems/' + pid;
+      return ALL_REPO_URL + '/blob/main/' + dir + '/README.md';
     }
 
     function filterProblems() {
