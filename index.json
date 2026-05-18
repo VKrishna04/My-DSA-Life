@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-05-18T10:52:47.538Z",
+  "updatedAt": "2026-05-18T16:43:39.074Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 251,
+    "total": 252,
     "easy": 156,
-    "medium": 86,
+    "medium": 87,
     "hard": 9,
     "byPlatform": {
-      "leetcode": 251
+      "leetcode": 252
     },
     "byLang": {
-      "Python3": 184,
+      "Python3": 185,
       "MySQL": 15,
       "Java": 12,
       "Python": 16,
@@ -22,7 +22,7 @@
       "Bash": 4
     },
     "byTopic": {
-      "Array": 120,
+      "Array": 121,
       "Math": 25,
       "Linked List": 3,
       "Database": 15,
@@ -44,6 +44,64 @@
     "commitsSinceLastSummary": 1
   },
   "problems": [
+    {
+      "id": "lc-01-matrix",
+      "forceCommit": true,
+      "submissionId": null,
+      "title": "01 Matrix",
+      "titleSlug": "01-matrix",
+      "difficulty": "Medium",
+      "topic": "Dynamic Programming",
+      "tags": [
+        "Array",
+        "Dynamic Programming",
+        "Breadth-First Search",
+        "Matrix"
+      ],
+      "canonical": null,
+      "readmeContent": "# [542] 01 Matrix\n**Difficulty:** Medium  |  **Acceptance:** 53.9%  |  **Likes:** 10779 / **Dislikes:** 451\n**Tags:** `Array`, `Dynamic Programming`, `Breadth-First Search`, `Matrix`\n## Problem\nGiven an m x n binary matrix mat, return the distance of the nearest 0 for each cell.\n\nThe distance between two cells sharing a common edge is 1.\n\n&nbsp;\nExample 1:\n\nInput: mat = [[0,0,0],[0,1,0],[0,0,0]]\nOutput: [[0,0,0],[0,1,0],[0,0,0]]\n\nExample 2:\n\nInput: mat = [[0,0,0],[0,1,0],[1,1,1]]\nOutput: [[0,0,0],[0,1,0],[1,2,1]]\n\n&nbsp;\nConstraints:\n\n\tm == mat.length\n\tn == mat[i].length\n\t1 <= m, n <= 104\n\t1 <= m * n <= 104\n\tmat[i][j] is either 0 or 1.\n\tThere is at least one 0 in mat.\n\n&nbsp;\nNote: This question is the same as 1765: https://leetcode.com/problems/map-of-highest-peak/\n## My Submission\n\n- Runtime: 98 ms (beats 88.9%)\n- Memory: 21.2 MB (beats 82.2%)\n- Solve time: 6m 30s\n\n## Similar Problems\n\n- [Difference Between Ones and Zeros in Row and Column](https://leetcode.com/problems/difference-between-ones-and-zeros-in-row-and-column/) — Medium\n",
+      "code": "from collections import deque\n\nclass Solution:\n    def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:\n        if not mat:\n            return\n        q = deque()\n        rows, cols = len(mat), len(mat[0])\n        for r in range(rows):\n            for c in range(cols):\n                if mat[r][c] == 0:\n                    q.append((r, c))\n                else:\n                    mat[r][c] = -1\n        \n        directions = [(0, -1), (0, 1), (1, 0), (-1, 0)]\n\n        while q:\n            r, c = q.popleft()\n\n            for dr, dc in directions:\n                nr, nc = r + dr, c + dc\n\n                if nr < 0 or nr >= rows or nc < 0 or nc >=cols or mat[nr][nc] != -1:\n                    continue\n                \n                mat[nr][nc] = mat[r][c]+1\n                q.append((nr, nc))\n        return mat",
+      "files": [
+        {
+          "path": "problems/lc-01-matrix/lc-01-matrix.py",
+          "content": "from collections import deque\n\nclass Solution:\n    def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:\n        if not mat:\n            return\n        q = deque()\n        rows, cols = len(mat), len(mat[0])\n        for r in range(rows):\n            for c in range(cols):\n                if mat[r][c] == 0:\n                    q.append((r, c))\n                else:\n                    mat[r][c] = -1\n        \n        directions = [(0, -1), (0, 1), (1, 0), (-1, 0)]\n\n        while q:\n            r, c = q.popleft()\n\n            for dr, dc in directions:\n                nr, nc = r + dr, c + dc\n\n                if nr < 0 or nr >= rows or nc < 0 or nc >=cols or mat[nr][nc] != -1:\n                    continue\n                \n                mat[nr][nc] = mat[r][c]+1\n                q.append((nr, nc))\n        return mat"
+        },
+        {
+          "path": "problems/lc-01-matrix/README.md",
+          "content": "# [542] 01 Matrix\n**Difficulty:** Medium  |  **Acceptance:** 53.9%  |  **Likes:** 10779 / **Dislikes:** 451\n**Tags:** `Array`, `Dynamic Programming`, `Breadth-First Search`, `Matrix`\n## Problem\nGiven an m x n binary matrix mat, return the distance of the nearest 0 for each cell.\n\nThe distance between two cells sharing a common edge is 1.\n\n&nbsp;\nExample 1:\n\nInput: mat = [[0,0,0],[0,1,0],[0,0,0]]\nOutput: [[0,0,0],[0,1,0],[0,0,0]]\n\nExample 2:\n\nInput: mat = [[0,0,0],[0,1,0],[1,1,1]]\nOutput: [[0,0,0],[0,1,0],[1,2,1]]\n\n&nbsp;\nConstraints:\n\n\tm == mat.length\n\tn == mat[i].length\n\t1 <= m, n <= 104\n\t1 <= m * n <= 104\n\tmat[i][j] is either 0 or 1.\n\tThere is at least one 0 in mat.\n\n&nbsp;\nNote: This question is the same as 1765: https://leetcode.com/problems/map-of-highest-peak/\n## My Submission\n\n- Runtime: 98 ms (beats 88.9%)\n- Memory: 21.2 MB (beats 82.2%)\n- Solve time: 6m 30s\n\n## Similar Problems\n\n- [Difference Between Ones and Zeros in Row and Column](https://leetcode.com/problems/difference-between-ones-and-zeros-in-row-and-column/) — Medium\n"
+        }
+      ],
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "runtime": "98 ms",
+      "memory": "21.2 MB",
+      "runtimePct": 88.91540000000003,
+      "memoryPct": 82.1553,
+      "timestamp": 1779101502000,
+      "acRate": 53.870357819823646,
+      "likes": 10779,
+      "dislikes": 451,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "difference-between-ones-and-zeros-in-row-and-column",
+          "title": "Difference Between Ones and Zeros in Row and Column",
+          "isPaidOnly": false
+        }
+      ],
+      "problemStatement": "<p>Given an <code>m x n</code> binary matrix <code>mat</code>, return <em>the distance of the nearest </em><code>0</code><em> for each cell</em>.</p>\n\n<p>The distance between two cells sharing a common edge is <code>1</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2021/04/24/01-1-grid.jpg\" style=\"width: 253px; height: 253px;\" />\n<pre>\n<strong>Input:</strong> mat = [[0,0,0],[0,1,0],[0,0,0]]\n<strong>Output:</strong> [[0,0,0],[0,1,0],[0,0,0]]\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2021/04/24/01-2-grid.jpg\" style=\"width: 253px; height: 253px;\" />\n<pre>\n<strong>Input:</strong> mat = [[0,0,0],[0,1,0],[1,1,1]]\n<strong>Output:</strong> [[0,0,0],[0,1,0],[1,2,1]]\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>m == mat.length</code></li>\n\t<li><code>n == mat[i].length</code></li>\n\t<li><code>1 &lt;= m, n &lt;= 10<sup>4</sup></code></li>\n\t<li><code>1 &lt;= m * n &lt;= 10<sup>4</sup></code></li>\n\t<li><code>mat[i][j]</code> is either <code>0</code> or <code>1</code>.</li>\n\t<li>There is at least one <code>0</code> in <code>mat</code>.</li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Note:</strong> This question is the same as 1765: <a href=\"https://leetcode.com/problems/map-of-highest-peak/description/\" target=\"_blank\">https://leetcode.com/problems/map-of-highest-peak/</a></p>\n",
+      "elapsedSeconds": 390,
+      "hasSimilar": true,
+      "submissionsUrl": "https://leetcode.com/problems/01-matrix/submissions/",
+      "notes": "",
+      "methodTitle": "",
+      "isDuplicate": false,
+      "duplicateOf": null,
+      "platform": "leetcode"
+    },
     {
       "id": "lc-3sum::1730412472",
       "submissionId": 1730412472,
