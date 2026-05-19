@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-05-18T16:51:44.498Z",
+  "updatedAt": "2026-05-19T16:15:49.744Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 252,
+    "total": 253,
     "easy": 156,
-    "medium": 87,
+    "medium": 88,
     "hard": 9,
     "byPlatform": {
-      "leetcode": 252
+      "leetcode": 253
     },
     "byLang": {
-      "Python3": 185,
+      "Python3": 186,
       "MySQL": 15,
       "Java": 12,
       "Python": 16,
@@ -32,6 +32,7 @@
       "Untagged": 31,
       "Hash Table": 13,
       "String": 20,
+      "Depth-First Search": 1,
       "Two Pointers": 7,
       "Binary Search": 1,
       "Divide and Conquer": 3,
@@ -54,8 +55,8 @@
       "topic": "Dynamic Programming",
       "tags": [
         "Array",
-        "Dynamic Programming",
         "Breadth-First Search",
+        "Dynamic Programming",
         "Matrix"
       ],
       "canonical": null,
@@ -100,7 +101,8 @@
       "methodTitle": "",
       "isDuplicate": false,
       "duplicateOf": null,
-      "platform": "leetcode"
+      "platform": "leetcode",
+      "aiReview": "### 1. Complexity\n*   **Time:** $O(M \\times N)$, where $M$ is the number of rows and $N$ is the number of columns. Each cell is visited and processed exactly once.\n*   **Space:** $O(M \\times N)$ in the worst case to store the `deque` (e.g., a grid where half the cells are zeros).\n\n### 2. Correctness\nThe code is **correct**. Initializing `1`s to `-1` acts as a \"visited\" set, and the multi-source BFS ensures that the first time a `-1` cell is reached, it is assigned its minimum distance from any `0`.\n*   **Edge Cases:** It handles matrices with only one `0` or all `0`s correctly. Note: LeetCode constraints guarantee at least one `0`.\n\n### 3. Concrete Optimization\nUse **Two-Pass Dynamic Programming** to achieve **$O(1)$ auxiliary space** (excluding the input/output matrix).\n*   **Pass 1 (Top-Left to Bottom-Right):** For each `mat[r][c] == 1`, set it to `min(top, left) + 1`.\n*   **Pass 2 (Bottom-Right to Top-Left):** Update `mat[r][c] = min(mat[r][c], bottom + 1, right + 1)`.\nThis removes the need for a queue entirely.\n\n### 4. Key Algorithmic Pattern\n**Multi-source Breadth-First Search (BFS)**. All \"source\" nodes (zeros) are added to the queue initially to explore the grid in concurrent radial waves."
     },
     {
       "id": "lc-3sum::1730412472",
@@ -2445,6 +2447,85 @@
         }
       ],
       "hasSimilar": true
+    },
+    {
+      "id": "lc-course-schedule",
+      "forceCommit": true,
+      "submissionId": null,
+      "title": "Course Schedule",
+      "titleSlug": "course-schedule",
+      "difficulty": "Medium",
+      "topic": "Depth-First Search",
+      "tags": [
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Graph Theory",
+        "Topological Sort"
+      ],
+      "canonical": {
+        "id": "course-schedule",
+        "title": "Course Schedule"
+      },
+      "readmeContent": "# [207] Course Schedule\n**Difficulty:** Medium  |  **Acceptance:** 51.4%  |  **Likes:** 18042 / **Dislikes:** 872\n**Tags:** `Depth-First Search`, `Breadth-First Search`, `Graph Theory`, `Topological Sort`\n## Problem\nThere are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai.\n\n\tFor example, the pair [0, 1], indicates that to take course 0 you have to first take course 1.\n\nReturn true if you can finish all courses. Otherwise, return false.\n\n&nbsp;\nExample 1:\n\nInput: numCourses = 2, prerequisites = [[1,0]]\nOutput: true\nExplanation: There are a total of 2 courses to take. \nTo take course 1 you should have finished course 0. So it is possible.\n\nExample 2:\n\nInput: numCourses = 2, prerequisites = [[1,0],[0,1]]\nOutput: false\nExplanation: There are a total of 2 courses to take. \nTo take course 1 you should have finished course 0, and to take course 0 you should also have finished course 1. So it is impossible.\n\n&nbsp;\nConstraints:\n\n\t1 <= numCourses <= 2000\n\t0 <= prerequisites.length <= 5000\n\tprerequisites[i].length == 2\n\t0 <= ai, bi < numCourses\n\tAll the pairs prerequisites[i] are unique.\n## My Submission\n\n- Runtime: 3 ms (beats 87.3%)\n- Memory: 21.5 MB (beats 15.1%)\n- Solve time: 50s\n\n## Similar Problems\n\n- [Course Schedule II](https://leetcode.com/problems/course-schedule-ii/) — Medium\n- [Minimum Height Trees](https://leetcode.com/problems/minimum-height-trees/) — Medium\n- [Course Schedule III](https://leetcode.com/problems/course-schedule-iii/) — Hard\n- [Build a Matrix With Conditions](https://leetcode.com/problems/build-a-matrix-with-conditions/) — Hard\n",
+      "code": "class Solution:\n    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:\n        adj = [[] for _ in range(numCourses)]\n        for courses, pre in prerequisites:\n            adj[pre].append(courses)\n        visited = set()\n        path = set()\n\n        def dfs(node):\n            if node in path:\n                return False\n            if node in visited:\n                return True\n            path.add(node)\n\n            for neighbor in adj[node]:\n                if not dfs(neighbor):\n                    return False\n            \n            path.remove(node)\n            visited.add(node)\n\n            return True\n        \n        for i in range(numCourses):\n            if not dfs(i):\n                return False\n        return True",
+      "files": [
+        {
+          "path": "problems/course-schedule/leetcode/lc-course-schedule.py",
+          "content": "class Solution:\n    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:\n        adj = [[] for _ in range(numCourses)]\n        for courses, pre in prerequisites:\n            adj[pre].append(courses)\n        visited = set()\n        path = set()\n\n        def dfs(node):\n            if node in path:\n                return False\n            if node in visited:\n                return True\n            path.add(node)\n\n            for neighbor in adj[node]:\n                if not dfs(neighbor):\n                    return False\n            \n            path.remove(node)\n            visited.add(node)\n\n            return True\n        \n        for i in range(numCourses):\n            if not dfs(i):\n                return False\n        return True"
+        },
+        {
+          "path": "problems/course-schedule/README.md",
+          "content": "# [207] Course Schedule\n**Difficulty:** Medium  |  **Acceptance:** 51.4%  |  **Likes:** 18042 / **Dislikes:** 872\n**Tags:** `Depth-First Search`, `Breadth-First Search`, `Graph Theory`, `Topological Sort`\n## Problem\nThere are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai.\n\n\tFor example, the pair [0, 1], indicates that to take course 0 you have to first take course 1.\n\nReturn true if you can finish all courses. Otherwise, return false.\n\n&nbsp;\nExample 1:\n\nInput: numCourses = 2, prerequisites = [[1,0]]\nOutput: true\nExplanation: There are a total of 2 courses to take. \nTo take course 1 you should have finished course 0. So it is possible.\n\nExample 2:\n\nInput: numCourses = 2, prerequisites = [[1,0],[0,1]]\nOutput: false\nExplanation: There are a total of 2 courses to take. \nTo take course 1 you should have finished course 0, and to take course 0 you should also have finished course 1. So it is impossible.\n\n&nbsp;\nConstraints:\n\n\t1 <= numCourses <= 2000\n\t0 <= prerequisites.length <= 5000\n\tprerequisites[i].length == 2\n\t0 <= ai, bi < numCourses\n\tAll the pairs prerequisites[i] are unique.\n## My Submission\n\n- Runtime: 3 ms (beats 87.3%)\n- Memory: 21.5 MB (beats 15.1%)\n- Solve time: 50s\n\n## Similar Problems\n\n- [Course Schedule II](https://leetcode.com/problems/course-schedule-ii/) — Medium\n- [Minimum Height Trees](https://leetcode.com/problems/minimum-height-trees/) — Medium\n- [Course Schedule III](https://leetcode.com/problems/course-schedule-iii/) — Hard\n- [Build a Matrix With Conditions](https://leetcode.com/problems/build-a-matrix-with-conditions/) — Hard\n"
+        }
+      ],
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "runtime": "3 ms",
+      "memory": "21.5 MB",
+      "runtimePct": 87.338,
+      "memoryPct": 15.1222,
+      "timestamp": 1779203182000,
+      "acRate": 51.40303549023687,
+      "likes": 18042,
+      "dislikes": 872,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "course-schedule-ii",
+          "title": "Course Schedule II",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "minimum-height-trees",
+          "title": "Minimum Height Trees",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "course-schedule-iii",
+          "title": "Course Schedule III",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "build-a-matrix-with-conditions",
+          "title": "Build a Matrix With Conditions",
+          "isPaidOnly": false
+        }
+      ],
+      "problemStatement": "<p>There are a total of <code>numCourses</code> courses you have to take, labeled from <code>0</code> to <code>numCourses - 1</code>. You are given an array <code>prerequisites</code> where <code>prerequisites[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> indicates that you <strong>must</strong> take course <code>b<sub>i</sub></code> first if you want to take course <code>a<sub>i</sub></code>.</p>\n\n<ul>\n\t<li>For example, the pair <code>[0, 1]</code>, indicates that to take course <code>0</code> you have to first take course <code>1</code>.</li>\n</ul>\n\n<p>Return <code>true</code> if you can finish all courses. Otherwise, return <code>false</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> numCourses = 2, prerequisites = [[1,0]]\n<strong>Output:</strong> true\n<strong>Explanation:</strong> There are a total of 2 courses to take. \nTo take course 1 you should have finished course 0. So it is possible.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> numCourses = 2, prerequisites = [[1,0],[0,1]]\n<strong>Output:</strong> false\n<strong>Explanation:</strong> There are a total of 2 courses to take. \nTo take course 1 you should have finished course 0, and to take course 0 you should also have finished course 1. So it is impossible.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= numCourses &lt;= 2000</code></li>\n\t<li><code>0 &lt;= prerequisites.length &lt;= 5000</code></li>\n\t<li><code>prerequisites[i].length == 2</code></li>\n\t<li><code>0 &lt;= a<sub>i</sub>, b<sub>i</sub> &lt; numCourses</code></li>\n\t<li>All the pairs prerequisites[i] are <strong>unique</strong>.</li>\n</ul>\n",
+      "elapsedSeconds": 50,
+      "hasSimilar": true,
+      "submissionsUrl": "https://leetcode.com/problems/course-schedule/submissions/",
+      "notes": "",
+      "methodTitle": "",
+      "isDuplicate": false,
+      "duplicateOf": null,
+      "platform": "leetcode"
     },
     {
       "id": "lc-create-a-dataframe-from-list",

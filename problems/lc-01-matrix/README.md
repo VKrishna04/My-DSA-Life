@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Leetcode |
 | Problem ID | `lc-01-matrix` |
-| Topics | Array, Dynamic Programming, Breadth-First Search, Matrix |
+| Topics | Array, Breadth-First Search, Dynamic Programming, Matrix |
 | Solved | 2026-05-18 |
 | Solve Time | 6m 30s |
 | Runtime | 98 ms (beats 88.91540000000003%) |
@@ -82,3 +82,22 @@ class Solution:
                 q.append((nr, nc))
         return mat
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time:** $O(M \times N)$, where $M$ is the number of rows and $N$ is the number of columns. Each cell is visited and processed exactly once.
+*   **Space:** $O(M \times N)$ in the worst case to store the `deque` (e.g., a grid where half the cells are zeros).
+
+### 2. Correctness
+The code is **correct**. Initializing `1`s to `-1` acts as a "visited" set, and the multi-source BFS ensures that the first time a `-1` cell is reached, it is assigned its minimum distance from any `0`.
+*   **Edge Cases:** It handles matrices with only one `0` or all `0`s correctly. Note: LeetCode constraints guarantee at least one `0`.
+
+### 3. Concrete Optimization
+Use **Two-Pass Dynamic Programming** to achieve **$O(1)$ auxiliary space** (excluding the input/output matrix).
+*   **Pass 1 (Top-Left to Bottom-Right):** For each `mat[r][c] == 1`, set it to `min(top, left) + 1`.
+*   **Pass 2 (Bottom-Right to Top-Left):** Update `mat[r][c] = min(mat[r][c], bottom + 1, right + 1)`.
+This removes the need for a queue entirely.
+
+### 4. Key Algorithmic Pattern
+**Multi-source Breadth-First Search (BFS)**. All "source" nodes (zeros) are added to the queue initially to explore the grid in concurrent radial waves.
