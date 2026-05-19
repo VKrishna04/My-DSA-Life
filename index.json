@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-05-22T07:28:42.672Z",
+  "updatedAt": "2026-05-22T07:30:12.221Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 255,
+    "total": 256,
     "easy": 156,
-    "medium": 90,
+    "medium": 91,
     "hard": 9,
     "byPlatform": {
-      "leetcode": 255
+      "leetcode": 256
     },
     "byLang": {
-      "Python3": 188,
+      "Python3": 189,
       "MySQL": 15,
       "Java": 12,
       "Python": 16,
@@ -32,7 +32,7 @@
       "Data Manipulation": 8,
       "Hash Table": 13,
       "String": 20,
-      "Depth-First Search": 2,
+      "Depth-First Search": 3,
       "Untagged": 20,
       "Two Pointers": 7,
       "Binary Search": 1,
@@ -2945,6 +2945,93 @@
       ]
     },
     {
+      "id": "lc-course-schedule-ii",
+      "forceCommit": false,
+      "submissionId": null,
+      "title": "Course Schedule II",
+      "titleSlug": "course-schedule-ii",
+      "difficulty": "Medium",
+      "topic": "Depth-First Search",
+      "tags": [
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Graph Theory",
+        "Topological Sort"
+      ],
+      "canonical": {
+        "id": "course-schedule-ii",
+        "title": "Course Schedule II"
+      },
+      "readmeContent": "# [210] Course Schedule II\n**Difficulty:** Medium  |  **Acceptance:** 55.5%  |  **Likes:** 11980 / **Dislikes:** 379\n**Tags:** `Depth-First Search`, `Breadth-First Search`, `Graph Theory`, `Topological Sort`\n## Problem\nThere are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai.\n\n\tFor example, the pair [0, 1], indicates that to take course 0 you have to first take course 1.\n\nReturn the ordering of courses you should take to finish all courses. If there are many valid answers, return any of them. If it is impossible to finish all courses, return an empty array.\n\n&nbsp;\nExample 1:\n\nInput: numCourses = 2, prerequisites = [[1,0]]\nOutput: [0,1]\nExplanation: There are a total of 2 courses to take. To take course 1 you should have finished course 0. So the correct course order is [0,1].\n\nExample 2:\n\nInput: numCourses = 4, prerequisites = [[1,0],[2,0],[3,1],[3,2]]\nOutput: [0,2,1,3]\nExplanation: There are a total of 4 courses to take. To take course 3 you should have finished both courses 1 and 2. Both courses 1 and 2 should be taken after you finished course 0.\nSo one correct course order is [0,1,2,3]. Another correct ordering is [0,2,1,3].\n\nExample 3:\n\nInput: numCourses = 1, prerequisites = []\nOutput: [0]\n\n&nbsp;\nConstraints:\n\n\t1 <= numCourses <= 2000\n\t0 <= prerequisites.length <= numCourses * (numCourses - 1)\n\tprerequisites[i].length == 2\n\t0 <= ai, bi < numCourses\n\tai != bi\n\tAll the pairs [ai, bi] are distinct.\n## My Submission\n\n- Runtime: 0 ms (beats 100.0%)\n- Memory: 21 MB (beats 30.6%)\n\n## Similar Problems\n\n- [Course Schedule](https://leetcode.com/problems/course-schedule/) — Medium\n- [Minimum Height Trees](https://leetcode.com/problems/minimum-height-trees/) — Medium\n- [Course Schedule III](https://leetcode.com/problems/course-schedule-iii/) — Hard\n- [Find All Possible Recipes from Given Supplies](https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/) — Medium\n- [Build a Matrix With Conditions](https://leetcode.com/problems/build-a-matrix-with-conditions/) — Hard\n",
+      "code": "class Solution:\n    def findOrder(self, numCourses: int, prerequisites: list[list[int]]) -> list[int]:\n        adj = [[] for _ in range(numCourses)]\n        for course, pre in prerequisites:\n            adj[pre].append(course) \n            \n        visited = set()\n        path = set()\n        order = []\n        \n        def dfs(node):\n            if node in path:\n                return False\n            if node in visited:\n                return True\n                \n            path.add(node)\n            for neighbor in adj[node]:\n                if not dfs(neighbor):\n                    return False\n                    \n            path.remove(node)\n            visited.add(node)\n            \n            order.append(node)\n            \n            return True\n            \n        for i in range(numCourses):\n            if not dfs(i):\n                return [] \n                \n        return order[::-1]",
+      "files": [
+        {
+          "path": "problems/course-schedule-ii/leetcode/lc-course-schedule-ii.py",
+          "content": "class Solution:\n    def findOrder(self, numCourses: int, prerequisites: list[list[int]]) -> list[int]:\n        adj = [[] for _ in range(numCourses)]\n        for course, pre in prerequisites:\n            adj[pre].append(course) \n            \n        visited = set()\n        path = set()\n        order = []\n        \n        def dfs(node):\n            if node in path:\n                return False\n            if node in visited:\n                return True\n                \n            path.add(node)\n            for neighbor in adj[node]:\n                if not dfs(neighbor):\n                    return False\n                    \n            path.remove(node)\n            visited.add(node)\n            \n            order.append(node)\n            \n            return True\n            \n        for i in range(numCourses):\n            if not dfs(i):\n                return [] \n                \n        return order[::-1]"
+        },
+        {
+          "path": "problems/course-schedule-ii/README.md",
+          "content": "# [210] Course Schedule II\n**Difficulty:** Medium  |  **Acceptance:** 55.5%  |  **Likes:** 11980 / **Dislikes:** 379\n**Tags:** `Depth-First Search`, `Breadth-First Search`, `Graph Theory`, `Topological Sort`\n## Problem\nThere are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai.\n\n\tFor example, the pair [0, 1], indicates that to take course 0 you have to first take course 1.\n\nReturn the ordering of courses you should take to finish all courses. If there are many valid answers, return any of them. If it is impossible to finish all courses, return an empty array.\n\n&nbsp;\nExample 1:\n\nInput: numCourses = 2, prerequisites = [[1,0]]\nOutput: [0,1]\nExplanation: There are a total of 2 courses to take. To take course 1 you should have finished course 0. So the correct course order is [0,1].\n\nExample 2:\n\nInput: numCourses = 4, prerequisites = [[1,0],[2,0],[3,1],[3,2]]\nOutput: [0,2,1,3]\nExplanation: There are a total of 4 courses to take. To take course 3 you should have finished both courses 1 and 2. Both courses 1 and 2 should be taken after you finished course 0.\nSo one correct course order is [0,1,2,3]. Another correct ordering is [0,2,1,3].\n\nExample 3:\n\nInput: numCourses = 1, prerequisites = []\nOutput: [0]\n\n&nbsp;\nConstraints:\n\n\t1 <= numCourses <= 2000\n\t0 <= prerequisites.length <= numCourses * (numCourses - 1)\n\tprerequisites[i].length == 2\n\t0 <= ai, bi < numCourses\n\tai != bi\n\tAll the pairs [ai, bi] are distinct.\n## My Submission\n\n- Runtime: 0 ms (beats 100.0%)\n- Memory: 21 MB (beats 30.6%)\n\n## Similar Problems\n\n- [Course Schedule](https://leetcode.com/problems/course-schedule/) — Medium\n- [Minimum Height Trees](https://leetcode.com/problems/minimum-height-trees/) — Medium\n- [Course Schedule III](https://leetcode.com/problems/course-schedule-iii/) — Hard\n- [Find All Possible Recipes from Given Supplies](https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/) — Medium\n- [Build a Matrix With Conditions](https://leetcode.com/problems/build-a-matrix-with-conditions/) — Hard\n"
+        }
+      ],
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "runtime": "0 ms",
+      "memory": "21 MB",
+      "runtimePct": 100,
+      "memoryPct": 30.63790000000003,
+      "timestamp": 1779208533000,
+      "acRate": 55.51297934532221,
+      "likes": 11980,
+      "dislikes": 379,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "course-schedule",
+          "title": "Course Schedule",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "minimum-height-trees",
+          "title": "Minimum Height Trees",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "course-schedule-iii",
+          "title": "Course Schedule III",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "find-all-possible-recipes-from-given-supplies",
+          "title": "Find All Possible Recipes from Given Supplies",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "build-a-matrix-with-conditions",
+          "title": "Build a Matrix With Conditions",
+          "isPaidOnly": false
+        }
+      ],
+      "problemStatement": "<p>There are a total of <code>numCourses</code> courses you have to take, labeled from <code>0</code> to <code>numCourses - 1</code>. You are given an array <code>prerequisites</code> where <code>prerequisites[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> indicates that you <strong>must</strong> take course <code>b<sub>i</sub></code> first if you want to take course <code>a<sub>i</sub></code>.</p>\n\n<ul>\n\t<li>For example, the pair <code>[0, 1]</code>, indicates that to take course <code>0</code> you have to first take course <code>1</code>.</li>\n</ul>\n\n<p>Return <em>the ordering of courses you should take to finish all courses</em>. If there are many valid answers, return <strong>any</strong> of them. If it is impossible to finish all courses, return <strong>an empty array</strong>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> numCourses = 2, prerequisites = [[1,0]]\n<strong>Output:</strong> [0,1]\n<strong>Explanation:</strong> There are a total of 2 courses to take. To take course 1 you should have finished course 0. So the correct course order is [0,1].\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> numCourses = 4, prerequisites = [[1,0],[2,0],[3,1],[3,2]]\n<strong>Output:</strong> [0,2,1,3]\n<strong>Explanation:</strong> There are a total of 4 courses to take. To take course 3 you should have finished both courses 1 and 2. Both courses 1 and 2 should be taken after you finished course 0.\nSo one correct course order is [0,1,2,3]. Another correct ordering is [0,2,1,3].\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> numCourses = 1, prerequisites = []\n<strong>Output:</strong> [0]\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= numCourses &lt;= 2000</code></li>\n\t<li><code>0 &lt;= prerequisites.length &lt;= numCourses * (numCourses - 1)</code></li>\n\t<li><code>prerequisites[i].length == 2</code></li>\n\t<li><code>0 &lt;= a<sub>i</sub>, b<sub>i</sub> &lt; numCourses</code></li>\n\t<li><code>a<sub>i</sub> != b<sub>i</sub></code></li>\n\t<li>All the pairs <code>[a<sub>i</sub>, b<sub>i</sub>]</code> are <strong>distinct</strong>.</li>\n</ul>\n",
+      "elapsedSeconds": 0,
+      "hasSimilar": true,
+      "submissionsUrl": "https://leetcode.com/problems/course-schedule-ii/submissions/",
+      "notes": "",
+      "methodTitle": "",
+      "isDuplicate": false,
+      "duplicateOf": null,
+      "_requestAIReview": true,
+      "platform": "leetcode",
+      "aiReview": "### Review of Course Schedule II Solution\n\n**1. Complexity**\n*   **Time:** $O(V + E)$ – Each course (vertex $V$) and prerequisite (edge $E$) is processed once.\n*   **Space:** $O(V + E)$ – To store the adjacency list ($O(V+E)$), recursion stack ($O(V)$), and tracking sets ($O(V)$).\n\n**2. Correctness**\nThe solution is **correct**. It properly handles:\n*   **Cycles:** Detected via the `path` set (returning `[]`).\n*   **Disconnected Components:** Handled by iterating through all `numCourses`.\n*   **Efficiency:** Uses a `visited` set to skip already processed nodes, preventing $O(2^V)$ behavior.\n\n**3. Optimization**\nReplace the two sets (`visited`, `path`) with a single **state array** (e.g., `states = [0] * numCourses`).\n*   `0`: Unvisited\n*   `1`: Visiting (current path)\n*   `2`: Visited (fully processed)\n\nThis reduces memory overhead and improves performance by replacing set hashing/lookups with direct array indexing.\n\n**4. Key Algorithmic Pattern**\n**Topological Sort** using **Depth-First Search (DFS)** and cycle detection (Backtracking). It builds the order by appending nodes post-recursion and reversing the result."
+    },
+    {
       "id": "lc-create-a-dataframe-from-list",
       "submissionId": 1431821352,
       "platform": "leetcode",
@@ -4118,6 +4205,7 @@
       "similar": null,
       "hasSimilar": null,
       "_committedPaths": [
+        "problems/lc-fill-missing-data/lc-fill-missing-data.py",
         "problems/lc-fill-missing-data/README.md"
       ],
       "aiReview": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must traverse the specified column once to identify and replace null values.\n*   **Space Complexity:** $O(1)$ auxiliary space. While the DataFrame itself occupies $O(N \\times M)$ space, `inplace=True` modifies the existing object without creating a full structural copy.\n\n**2. Correctness**\n*   The solution is correct for the problem constraints.\n*   **Edge Cases:** If the `quantity` column is missing from the input, it will raise a `KeyError`. If the column contains non-numeric data types that are incompatible with integer `0`, Pandas will generally cast the column to `object` type, which is functional but inefficient.\n\n**3. Optimization**\nModern Pandas (2.0+) is moving away from the `inplace` parameter. To future-proof the code and support **Copy-on-Write** optimizations, use assignment:\n```python\nproducts['quantity'] = products['quantity'].fillna(0)\n```\nAlternatively, for multiple columns, use:\n```python\nproducts.fillna({'quantity': 0}, inplace=True)\n```\n\n**4. Key Algorithmic Pattern**\nData Imputation (Handling missing values)."
@@ -9292,6 +9380,7 @@
       "similar": null,
       "hasSimilar": null,
       "_committedPaths": [
+        "problems/lc-method-chaining/lc-method-chaining.py",
         "problems/lc-method-chaining/README.md"
       ],
       "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(N \\log N)$, where $N$ is the number of rows in the DataFrame. Filtering takes $O(N)$, but sorting the filtered results dominates with $O(K \\log K)$, where $K \\le N$.\n*   **Space Complexity:** $O(N)$. Pandas creates intermediate copies during filtering and sorting, requiring memory proportional to the input size.\n\n**2. Correctness**\nThe code is correct and follows the problem requirements. It handles:\n*   **Empty DataFrames:** Returns an empty DataFrame with the column `name`.\n*   **No matches:** Returns an empty DataFrame if no weights > 100.\n*   **Ties:** `sort_values` handles identical weights by their original index order (stable sort).\n\n**3. Optimization**\nIf the input DataFrame contains many columns, select only the necessary columns (`name` and `weight`) **before** sorting. This reduces the memory footprint and the amount of data the sorting algorithm must shuffle.\n```python\nreturn animals.loc[animals['weight'] > 100, ['name', 'weight']].sort_values('weight', ascending=False)[['name']]\n```\n\n**4. Key Algorithmic Pattern**\n**Vectorized Operations / Method Chaining:** Utilizing high-level, column-wise operations that are implemented in C/Cython within Pandas rather than explicit Python loops."
@@ -10618,7 +10707,11 @@
       "duplicateOf": null,
       "_requestAIReview": true,
       "platform": "leetcode",
-      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time:** $O(E \\log E)$ (or $O(E \\log V)$), where $E$ is the number of edges and $V$ is the number of nodes. Each edge is processed once via the min-heap.\n*   **Space:** $O(V + E)$ to store the adjacency list, the `visited` set, and the heap.\n\n**2. Correctness**\nThe logic is correct. It successfully implements **Dijkstra’s Algorithm**.\n*   **Edge Cases:** It correctly handles disconnected graphs (returns `-1` via the `len(visited)` check) and cycles (via the `visited` set).\n*   **Small Note:** The code assumes node labels are $1$ to $n$ (consistent with the problem description).\n\n**3. Optimization**\nUse a **distance array** `dist = [float('inf')] * (n + 1)` instead of just a `visited` set. Before pushing to the heap, check if `t + weight < dist[neighbor]`. This prevents pushing redundant, longer paths into the heap, significantly reducing the number of heap operations in dense graphs.\n\n**4. Key Algorithmic Pattern**\n**Dijkstra's Algorithm** (Breadth-First Search using a Priority Queue for weighted graphs)."
+      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time:** $O(E \\log E)$ (or $O(E \\log V)$), where $E$ is the number of edges and $V$ is the number of nodes. Each edge is processed once via the min-heap.\n*   **Space:** $O(V + E)$ to store the adjacency list, the `visited` set, and the heap.\n\n**2. Correctness**\nThe logic is correct. It successfully implements **Dijkstra’s Algorithm**.\n*   **Edge Cases:** It correctly handles disconnected graphs (returns `-1` via the `len(visited)` check) and cycles (via the `visited` set).\n*   **Small Note:** The code assumes node labels are $1$ to $n$ (consistent with the problem description).\n\n**3. Optimization**\nUse a **distance array** `dist = [float('inf')] * (n + 1)` instead of just a `visited` set. Before pushing to the heap, check if `t + weight < dist[neighbor]`. This prevents pushing redundant, longer paths into the heap, significantly reducing the number of heap operations in dense graphs.\n\n**4. Key Algorithmic Pattern**\n**Dijkstra's Algorithm** (Breadth-First Search using a Priority Queue for weighted graphs).",
+      "_committedPaths": [
+        "problems/lc-network-delay-time/lc-network-delay-time.py",
+        "problems/lc-network-delay-time/README.md"
+      ]
     },
     {
       "id": "lc-next-greater-element-i::1650915399",
@@ -12726,6 +12819,7 @@
       "similar": null,
       "hasSimilar": null,
       "_committedPaths": [
+        "problems/lc-reshape-data-concatenate/lc-reshape-data-concatenate.py",
         "problems/lc-reshape-data-concatenate/README.md"
       ],
       "aiReview": "### Review\n1. **Complexity**:\n   - **Time**: $O(N + M)$, where $N$ and $M$ are the total number of elements in `df1` and `df2`. Pandas must traverse and copy all data to a new memory block.\n   - **Space**: $O(N + M)$ to allocate the resulting combined DataFrame.\n\n2. **Correctness**:\n   The solution is correct. However, if the dataframes have overlapping indices, the result will contain duplicate index labels. If columns do not align perfectly, Pandas will perform an outer join by default, introducing `NaN` values for missing columns.\n\n3. **Optimization**:\n   Add `ignore_index=True`. In most data reshaping tasks, the original row indices are not meaningful after concatenation. Using `ignore_index=True` ensures a clean, continuous integer index (0 to N+M-1) and can slightly improve downstream performance by avoiding index-related conflicts.\n   ```python\n   return pd.concat([df1, df2], axis=0, ignore_index=True)\n   ```\n\n4. **Key Pattern**:\n   **Vertical Concatenation (Row Stacking)**: The standard approach for merging datasets with identical or similar schema."
@@ -12817,6 +12911,7 @@
       "similar": null,
       "hasSimilar": null,
       "_committedPaths": [
+        "problems/lc-reshape-data-melt/lc-reshape-data-melt.py",
         "problems/lc-reshape-data-melt/README.md"
       ],
       "aiReview": "1. **Complexity**: \n   - **Time Complexity**: $O(N \\times M)$, where $N$ is the number of rows and $M$ is the number of columns being melted. Each element in the value columns must be visited once to populate the new long-format DataFrame.\n   - **Space Complexity**: $O(N \\times M)$ to store the resulting reshaped DataFrame.\n\n2. **Correctness**: The solution is correct and follows the standard Pandas API. It handles missing values (NaNs) and duplicate identifier values correctly.\n\n3. **Optimization**: Omit the `value_vars` parameter if all columns except the identifier are meant to be melted. Using `report.melt(id_vars='product', ...)` makes the code more robust to schema changes, such as adding extra quarters (e.g., `quarter_5`), without needing to update the column list manually.\n\n4. **Key Pattern**: **Wide-to-Long Reshaping** (Unpivoting). This pattern transforms attribute columns into row values to normalize data for easier analysis or plotting."
@@ -12907,6 +13002,7 @@
       "similar": null,
       "hasSimilar": null,
       "_committedPaths": [
+        "problems/lc-reshape-data-pivot/lc-reshape-data-pivot.py",
         "problems/lc-reshape-data-pivot/README.md"
       ],
       "aiReview": "### Analysis\n\n1.  **Complexity**:\n    *   **Time Complexity**: $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must scan the data once to map indices and columns to the new structure.\n    *   **Space Complexity**: $O(N)$, as the resulting pivoted DataFrame stores the same data points, though organized differently.\n\n2.  **Correctness**: \n    The solution is correct for the standard LeetCode constraints. However, `df.pivot()` will raise a `ValueError` if there are **duplicate entries** for the same `(month, city)` pair. If duplicates were possible, `df.pivot_table()` would be required.\n\n3.  **Optimization**: \n    To improve performance on massive datasets with many repeated strings, convert the `city` column to the `category` dtype before pivoting. This reduces memory usage and speeds up the internal grouping logic.\n    ```python\n    weather['city'] = weather['city'].astype('category')\n    ```\n\n4.  **Algorithmic Pattern**: \n    Data Reshaping (Long-to-Wide transformation)."

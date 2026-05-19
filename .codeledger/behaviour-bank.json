@@ -368,6 +368,19 @@
     "platform": "leetcode",
     "slug": "course-schedule"
   },
+  "leetcode::course-schedule-ii": {
+    "aiInsights": [
+      {
+        "summary": "### Review of Course Schedule II Solution\n\n**1. Complexity**\n*   **Time:** $O(V + E)$ – Each course (vertex $V$) and prerequisite (edge $E$) is processed once.\n*   **Space:** $O(V + E)$ – To store the",
+        "ts": 1779435012144,
+        "weakAreas": [
+          "space complexity"
+        ]
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "course-schedule-ii"
+  },
   "leetcode::delete-duplicate-emails": {
     "aiInsights": [
       {
