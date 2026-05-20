@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-19T16:15:49.744Z",
+  "updatedAt": "2026-05-20T14:28:24.070Z",
   "layoutVersion": 3,
   "stats": {
     "total": 253,
@@ -102,7 +102,7 @@
       "isDuplicate": false,
       "duplicateOf": null,
       "platform": "leetcode",
-      "aiReview": "### 1. Complexity\n*   **Time:** $O(M \\times N)$, where $M$ is the number of rows and $N$ is the number of columns. Each cell is visited and processed exactly once.\n*   **Space:** $O(M \\times N)$ in the worst case to store the `deque` (e.g., a grid where half the cells are zeros).\n\n### 2. Correctness\nThe code is **correct**. Initializing `1`s to `-1` acts as a \"visited\" set, and the multi-source BFS ensures that the first time a `-1` cell is reached, it is assigned its minimum distance from any `0`.\n*   **Edge Cases:** It handles matrices with only one `0` or all `0`s correctly. Note: LeetCode constraints guarantee at least one `0`.\n\n### 3. Concrete Optimization\nUse **Two-Pass Dynamic Programming** to achieve **$O(1)$ auxiliary space** (excluding the input/output matrix).\n*   **Pass 1 (Top-Left to Bottom-Right):** For each `mat[r][c] == 1`, set it to `min(top, left) + 1`.\n*   **Pass 2 (Bottom-Right to Top-Left):** Update `mat[r][c] = min(mat[r][c], bottom + 1, right + 1)`.\nThis removes the need for a queue entirely.\n\n### 4. Key Algorithmic Pattern\n**Multi-source Breadth-First Search (BFS)**. All \"source\" nodes (zeros) are added to the queue initially to explore the grid in concurrent radial waves."
+      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time:** $O(M \\times N)$, where $M$ is rows and $N$ is columns. Each cell is processed exactly once.\n*   **Space:** $O(M \\times N)$ to store the `deque` in the worst case (e.g., a matrix full of zeros).\n\n**2. Correctness**\nThe code is correct and handles edge cases well:\n*   **Empty Matrix:** Handled by the initial check.\n*   **All Zeros/Ones:** Works correctly. Per problem constraints, there is always at least one `0`.\n*   **In-place modification:** By using `-1` to track unvisited cells, it avoids a separate `visited` set, saving space.\n\n**3. Optimization**\n**Two-Pass Dynamic Programming:** You can reduce auxiliary space to $O(1)$ (excluding the result) by using DP. \n*   **Pass 1:** Iterate top-left to bottom-right, checking the top and left neighbors.\n*   **Pass 2:** Iterate bottom-right to top-left, checking the bottom and right neighbors.\nThis removes the need for a queue entirely.\n\n**4. Key Algorithmic Pattern**\n**Multi-Source Breadth-First Search (BFS).** By initializing the queue with all `0` coordinates simultaneously, the BFS level-order traversal ensures that the first time a `-1` cell is reached, it is via the shortest possible path from any `0`."
     },
     {
       "id": "lc-3sum::1730412472",
@@ -593,8 +593,8 @@
       "difficulty": "Easy",
       "lang": {
         "name": "Python3",
-        "ext": "py",
-        "slug": "python3"
+        "slug": "python3",
+        "ext": "py"
       },
       "tags": [
         "Array",
@@ -603,7 +603,7 @@
         "Sorting"
       ],
       "topic": "Greedy",
-      "code": "",
+      "code": "class Solution:\n    def findContentChildren(self, g: List[int], s: List[int]) -> int:\n        l = 0\n        r = 0\n        g.sort()\n        s.sort()\n\n        while l < len(s) and r < len(g):\n            if g[r] <= s[l]:\n                r += 1\n            l += 1\n        \n        return r",
       "readmeContent": "# Assign Cookies\n\n**Difficulty:** Easy  |  **Acceptance:** 54.9%\n\n**Tags:** `Array`, `Two Pointers`, `Greedy`, `Sorting`\n\n## Problem\n\nAssume you are an awesome parent and want to give your children some cookies. But, you should give each child at most one cookie.\n\nEach child i has a greed factor g[i], which is the minimum size of a cookie that the child will be content with; and each cookie j has a size s[j]. If s[j] >= g[i], we can assign the cookie j to the child i, and the child i will be content. Your goal is to maximize the number of your content children and output the maximum number.\n\n&nbsp;\nExample 1:\n\nInput: g = [1,2,3], s = [1,1]\nOutput: 1\nExplanation: You have 3 children and 2 cookies. The greed factors of 3 children are 1, 2, 3. \nAnd even though you have 2 cookies, since their size is both 1, you could only make the child whose greed factor is 1 content.\nYou need to output 1.\n\nExample 2:\n\nInput: g = [1,2], s = [1,2,3]\nOutput: 2\nExplanation: You have 2 children and 3 cookies. The greed factors of 2 children are 1, 2. \nYou have 3 cookies and their sizes are big enough to gratify all of the children, \nYou need to output 2.\n\n&nbsp;\nConstraints:\n\n\t1 <= g.length <= 3 * 104\n\t0 <= s.length <= 3 * 104\n\t1 <= g[i], s[j] <= 231 - 1\n\n&nbsp;\nNote: This question is the same as  2410: Maximum Matching of Players With Trainers.\n\n## My Submission\n\n- Runtime: 23 ms\n- Memory: 22.2 MB\n",
       "files": [
         {
@@ -614,13 +614,14 @@
       "timestamp": 1775539972000,
       "runtime": "23 ms",
       "memory": "22.2 MB",
-      "runtimePct": null,
-      "memoryPct": null,
+      "runtimePct": 58,
+      "memoryPct": 9,
       "problemStatement": "<p>Assume you are an awesome parent and want to give your children some cookies. But, you should give each child at most one cookie.</p>\n\n<p>Each child <code>i</code> has a greed factor <code>g[i]</code>, which is the minimum size of a cookie that the child will be content with; and each cookie <code>j</code> has a size <code>s[j]</code>. If <code>s[j] &gt;= g[i]</code>, we can assign the cookie <code>j</code> to the child <code>i</code>, and the child <code>i</code> will be content. Your goal is to maximize the number of your content children and output the maximum number.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> g = [1,2,3], s = [1,1]\n<strong>Output:</strong> 1\n<strong>Explanation:</strong> You have 3 children and 2 cookies. The greed factors of 3 children are 1, 2, 3. \nAnd even though you have 2 cookies, since their size is both 1, you could only make the child whose greed factor is 1 content.\nYou need to output 1.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> g = [1,2], s = [1,2,3]\n<strong>Output:</strong> 2\n<strong>Explanation:</strong> You have 2 children and 3 cookies. The greed factors of 2 children are 1, 2. \nYou have 3 cookies and their sizes are big enough to gratify all of the children, \nYou need to output 2.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= g.length &lt;= 3 * 10<sup>4</sup></code></li>\n\t<li><code>0 &lt;= s.length &lt;= 3 * 10<sup>4</sup></code></li>\n\t<li><code>1 &lt;= g[i], s[j] &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Note:</strong> This question is the same as <a href=\"https://leetcode.com/problems/maximum-matching-of-players-with-trainers/description/\" target=\"_blank\"> 2410: Maximum Matching of Players With Trainers.</a></p>\n",
       "hints": [],
       "acRate": 54.923178192205334,
       "similar": null,
-      "hasSimilar": null
+      "hasSimilar": null,
+      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(N \\log N + M \\log M)$, where $N$ is the number of children and $M$ is the number of cookies. Sorting both arrays dominates the $O(N + M)$ two-pointer traversal.\n*   **Space Complexity:** $O(N + M)$ in Python, as `list.sort()` (Timsort) requires auxiliary space proportional to the input size.\n\n**2. Correctness**\nThe solution is **correct**. It optimally pairs the smallest available cookie that meets the minimum greed factor of the current child.\n*   **Edge Cases:** If `s` is empty, it returns `0`. If all cookies are smaller than the smallest greed factor, it returns `0`. Both are handled correctly by the `while` loop condition.\n\n**3. Concrete Optimization**\nUse a `for` loop for the cookies to remove manual index management for `l`, making the code more \"Pythonic\" and slightly cleaner:\n```python\nfor cookie in s:\n    if r < len(g) and cookie >= g[r]:\n        r += 1\n```\nAdditionally, you could add an early exit if `r == len(g)` (all children satisfied).\n\n**4. Key Algorithmic Pattern**\n**Greedy Strategy** combined with **Two Pointers**. Sorting allows the greedy choice of using the smallest possible cookie to satisfy the least greedy child."
     },
     {
       "id": "lc-average-time-of-process-per-machine",
@@ -972,7 +973,8 @@
           "isPaidOnly": false
         }
       ],
-      "hasSimilar": true
+      "hasSimilar": true,
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(\\log n)$. The search space is halved in each iteration.\n*   **Space Complexity:** $O(1)$. It uses a constant amount of extra memory regardless of input size.\n\n### 2. Correctness\nThe implementation is correct and robust. \n*   **Empty list:** If `nums` is empty, `right` becomes `-1`, the `while` condition fails immediately, and it correctly returns `-1`.\n*   **Single element:** If `nums` has one element, `left` and `right` both equal `0`, the loop runs once, and it correctly identifies or misses the target.\n*   **Boundary targets:** It correctly finds the target if it is at the very first or very last index due to the `left <= right` condition.\n\n### 3. Optimization\nWhile this iterative approach is already optimal, you could use Python’s built-in **`bisect` module** (`bisect.bisect_left`) for a more concise and potentially faster solution (as it is implemented in C). \n\n### 4. Key Algorithmic Pattern\n**Binary Search** (a specific type of **Decrease and Conquer**). It relies on the input being sorted to eliminate half of the remaining elements at each step."
     },
     {
       "id": "lc-binary-tree-level-order-traversal::1707691360",
@@ -2525,7 +2527,8 @@
       "methodTitle": "",
       "isDuplicate": false,
       "duplicateOf": null,
-      "platform": "leetcode"
+      "platform": "leetcode",
+      "aiReview": "**1. Complexity**\n*   **Time:** $O(V + E)$, where $V$ is the number of courses and $E$ is the number of prerequisites. Each node and edge is traversed once.\n*   **Space:** $O(V + E)$ to store the adjacency list, plus $O(V)$ for the recursion stack and tracking sets.\n\n**2. Correctness**\nThe solution is **correct**. It properly implements DFS-based cycle detection in a directed graph.\n*   **`path`** (recursion stack) identifies back-edges (cycles).\n*   **`visited`** prevents redundant processing of previously verified subgraphs.\n*   **Edge cases:** Handles disconnected components, self-loops, and empty prerequisites correctly.\n\n**3. Concrete Optimization**\nReplace the two sets (`visited`, `path`) with a single **state array** (e.g., `states = [0] * numCourses`).\n*   `0`: Unvisited\n*   `1`: Visiting (currently in recursion stack)\n*   `2`: Visited (fully processed)\nThis avoids the overhead of hashing and multiple set lookups/modifications, improving cache locality and performance.\n\n**4. Key Algorithmic Pattern**\n**DFS Cycle Detection** (or the DFS-based approach to **Topological Sort**). The graph is a Directed Acyclic Graph (DAG) if and only if no back-edges exist."
     },
     {
       "id": "lc-create-a-dataframe-from-list",
@@ -3890,22 +3893,14 @@
       "acRate": 88.97454248031899,
       "similar": null,
       "hasSimilar": null,
-      "conflictPending": true,
-      "conflictCandidates": [
+      "conflictPending": false,
+      "methods": [
         {
-          "id": "lc-find-closest-person::1651390442",
+          "title": "Alt approach (Python3) — imported",
+          "language": "Python3",
           "code": "class Solution:\n    def findClosest(self, x: int, y: int, z: int) -> int:\n        a = abs(z - x) \n        b = abs(z - y)\n        # if b > a:\n        #     return 1\n        # elif a > b:\n        #     return 2\n        # else:\n        #     return 0\n\n        return 1 if a < b else 2 if a > b else 0",
-          "lang": {
-            "name": "Python3",
-            "ext": "py",
-            "slug": "python3"
-          },
-          "runtime": "4 ms",
-          "memory": "17.6 MB",
-          "runtimePct": 2.4753000000000025,
-          "memoryPct": 100,
-          "timestamp": 1748846155000,
-          "submissionId": 1651390442
+          "description": "Submission #1651390442",
+          "timestamp": 1748846155000
         }
       ]
     },
@@ -4079,7 +4074,8 @@
           "isPaidOnly": false
         }
       ],
-      "hasSimilar": true
+      "hasSimilar": true,
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n + \\log(\\min(s, l)))$, where $n$ is the length of `nums`. Finding the min and max takes $O(n)$, and the Euclidean algorithm takes logarithmic time relative to the magnitude of the numbers.\n*   **Space Complexity:** $O(1)$, as only two integer variables are stored regardless of input size.\n\n### 2. Correctness\nThe logic is **correct**. It successfully identifies the smallest and largest elements and applies the Euclidean algorithm. \n*   **Edge Cases:** The constraints for this problem ($2 \\le nums.length$ and $1 \\le nums[i]$) ensure the array is never empty and numbers are positive, preventing division-by-zero errors.\n\n### 3. Optimization\nWhile your manual implementation is correct, using the built-in **`math.gcd()`** function is the primary optimization. It is implemented in C, making it significantly faster than a Python `while` loop. Additionally, you can find `min` and `max` in a single pass to reduce constant time, though $O(n)$ remains the same.\n\n### 4. Key Algorithmic Pattern\n**Euclidean Algorithm:** An efficient method for computing the greatest common divisor of two integers by repeatedly replacing the larger number with the remainder of its division by the smaller number."
     },
     {
       "id": "lc-find-if-digit-game-can-be-won::1428167266",
@@ -4188,7 +4184,8 @@
           "isPaidOnly": false
         }
       ],
-      "hasSimilar": true
+      "hasSimilar": true,
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(N)$. In the worst case, the loop iterates through the entire list to find the pivot point.\n*   **Space Complexity:** $O(1)$. It uses a constant amount of extra space regardless of input size.\n\n### 2. Correctness\nThe solution is **correct** for the problem constraints (unique elements).\n*   **Edge Cases:** It correctly handles single-element arrays and already-sorted arrays via the initial `if nums[0] <= nums[-1]` check.\n*   **Failure:** While correct, it fails the typical LeetCode follow-up requirement for an $O(\\log N)$ solution.\n\n### 3. Optimization\nThe optimal approach is **Binary Search** to achieve **$O(\\log N)$** time. \n*   **Logic:** Compare `nums[mid]` with `nums[high]`. If `nums[mid] > nums[high]`, the minimum must be in the right half (`low = mid + 1`). Otherwise, it is in the left half including `mid` (`high = mid`).\n\n### 4. Key Algorithmic Pattern\nThe current solution uses **Linear Search**. The intended pattern for this \"Medium\" problem is **Binary Search on a rotated sorted property**."
     },
     {
       "id": "lc-find-numbers-with-even-number-of-digits",
@@ -4312,7 +4309,8 @@
           "isPaidOnly": false
         }
       ],
-      "hasSimilar": true
+      "hasSimilar": true,
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(\\log n)$ — The search space is halved in each iteration.\n*   **Space Complexity:** $O(1)$ — Only a constant amount of extra space is used for pointers.\n\n### 2. Correctness\nThe solution is **correct**. It properly handles:\n*   **Single-element arrays:** Handled by the `n == 1` check.\n*   **Boundary peaks:** Explicitly checks the first and last elements.\n*   **Strictly increasing/decreasing arrays:** Handled by the boundary checks and the binary search logic.\n\n### 3. Concrete Optimisation\nYou can simplify the code by removing the manual boundary checks and searching the full range $[0, n-1]$. This reduces \"boilerplate\" while maintaining $O(\\log n)$ logic:\n\n```python\nlow, high = 0, len(nums) - 1\nwhile low < high:\n    mid = (low + high) // 2\n    if nums[mid] < nums[mid + 1]:\n        low = mid + 1\n    else:\n        high = mid\nreturn low\n```\n\n### 4. Key Algorithmic Pattern\n**Binary Search on Answer (Slope Analysis):** Even though the array isn't sorted, we can use binary search because there is always a guaranteed peak in the direction of the \"uphill\" slope (where $nums[i] < nums[i+1]$)."
     },
     {
       "id": "lc-find-the-index-of-the-first-occurrence-in-a-string::1772724594",
@@ -5093,7 +5091,8 @@
           "isPaidOnly": false
         }
       ],
-      "hasSimilar": true
+      "hasSimilar": true,
+      "aiReview": "### 1. Complexity\n*   **Time:** $O(N + M)$, where $N$ and $M$ are the lengths of `str1` and `str2`. String concatenation and comparison both take linear time. The GCD calculation is $O(\\log(\\min(N, M)))$.\n*   **Space:** $O(N + M)$ to store the concatenated strings `str1 + str2` and `str2 + str1`.\n\n### 2. Correctness\nThe solution is **correct**. The condition `str1 + str2 == str2 + str1` is a known mathematical property: two strings $S$ and $T$ commute if and only if they are powers of the same base string. If they commute, the length of the greatest common divisor string must be `gcd(len(str1), len(str2))`.\n\n### 3. Optimization\nTo improve **space complexity** from $O(N+M)$ to $O(GCD)$, you can avoid full concatenation. Instead, verify if the prefix of length $g = \\gcd(len_1, len_2)$ can construct both strings:\n```python\ng = gcd(len(str1), len(str2))\npattern = str1[:g]\nif pattern * (len(str1) // g) == str1 and pattern * (len(str2) // g) == str2:\n    return pattern\n```\nWhile this still uses memory for multiplication, it avoids creating the $N+M$ strings.\n\n### 4. Key Algorithmic Pattern\n**Mathematical Property of Strings / Number Theory.** It leverages the relationship between string periodicity and the greatest common divisor of their lengths."
     },
     {
       "id": "lc-hamming-distance::1651663412",
@@ -5415,7 +5414,8 @@
           "isPaidOnly": false
         }
       ],
-      "hasSimilar": true
+      "hasSimilar": true,
+      "aiReview": "### Analysis of House Robber Solution\n\n**1. Complexity**\n*   **Time Complexity:** $O(n)$, where $n$ is the number of houses. We iterate through the list exactly once.\n*   **Space Complexity:** $O(1)$. By using only two variables (`prev`, `curr`) instead of a DP array, the space usage remains constant regardless of input size.\n\n**2. Correctness**\nThe logic is correct and follows the recurrence relation: $dp[i] = \\max(dp[i-1], dp[i-2] + \\text{nums}[i])$.\n*   **Edge Cases:** It correctly handles $n=1$ and $n=2$. It assumes $n \\geq 1$ (standard LeetCode constraint). If $n=0$ were possible, `nums[0]` would throw an `IndexError`.\n\n**3. Optimization**\nWhile the logic is optimal, the code can be **syntactically simplified** to remove conditional checks ($n=1, 2$). By initializing two pointers at zero, the loop naturally handles small arrays:\n\n```python\ndef rob(self, nums: List[int]) -> int:\n    rob1, rob2 = 0, 0\n    for n in nums:\n        # rob1 is dp[i-2], rob2 is dp[i-1]\n        rob1, rob2 = rob2, max(n + rob1, rob2)\n    return rob2\n```\n\n**4. Key Algorithmic Pattern**\n**Dynamic Programming** with **Space Optimization** (Iterative Bottom-Up). It reduces a potential $O(n)$ space complexity to $O(1)$ by only storing the results of the two most recent subproblems."
     },
     {
       "id": "lc-intersection-of-two-arrays::1873478355",
@@ -5495,7 +5495,8 @@
           "isPaidOnly": false
         }
       ],
-      "hasSimilar": true
+      "hasSimilar": true,
+      "aiReview": "**1. Complexity**\n*   **Time Complexity:** $O(n + m)$, where $n$ and $m$ are the lengths of `nums1` and `nums2`. Building the dictionary takes $O(n)$ and iterating through `nums2` takes $O(m)$.\n*   **Space Complexity:** $O(n)$ to store the unique elements of `nums1` in the dictionary.\n\n**2. Correctness**\nThe code is **correct**. It successfully handles duplicates in both arrays by using the dictionary as a frequency/existence tracker and immediately setting the value to `False` once an intersection is found, ensuring the output contains only unique elements. It handles empty inputs gracefully.\n\n**3. Concrete Optimization**\nUse Python’s built-in **set intersection**. It is more idiomatic and implemented in C, making it significantly faster for large inputs:\n```python\nreturn list(set(nums1) & set(nums2))\n```\nAlternatively, to save space, always convert the *smaller* array into a set.\n\n**4. Key Algorithmic Pattern**\n**Hashing (Hash Set/Hash Map)**. The solution uses a hash table to achieve $O(1)$ average-time lookups to determine if an element exists in the other array."
     },
     {
       "id": "lc-invalid-tweets",
@@ -5692,7 +5693,8 @@
           "isPaidOnly": false
         }
       ],
-      "hasSimilar": true
+      "hasSimilar": true,
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of `nums`. The list is traversed once.\n*   **Space Complexity:** $O(1)$, as it only uses a single integer variable (`max_reach`).\n\n### 2. Correctness\nThe solution is **correct** and robust. It effectively handles:\n*   **Single-element arrays:** Returns `True` correctly.\n*   **Arrays with zeros:** Correctly identifies if a zero blocks all progress (e.g., `[3, 2, 1, 0, 4]`).\n*   **Large jumps:** Correctly updates the horizon.\n\n### 3. Concrete Optimisation\n**Early Exit:** You can terminate the loop early if the `max_reach` already meets or exceeds the last index. This avoids redundant iterations when the goal is already guaranteed.\n```python3\nif max_reach >= len(nums) - 1:\n    return True\n```\nPlace this inside the loop after updating `max_reach`.\n\n### 4. Key Algorithmic Pattern\n**Greedy Algorithm:** At each step, you make the locally optimal choice (maximizing the reachable distance) to achieve the global goal (reaching the end)."
     },
     {
       "id": "lc-koko-eating-bananas::1871324972",
@@ -5757,7 +5759,8 @@
           "isPaidOnly": false
         }
       ],
-      "hasSimilar": true
+      "hasSimilar": true,
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(N \\log M)$, where $N$ is the number of piles and $M$ is the maximum number of bananas in a single pile (`max(piles)`). The binary search takes $\\log M$ steps, each requiring an $O(N)$ pass.\n*   **Space Complexity:** $O(1)$, as it uses a constant amount of extra space.\n\n### 2. Correctness\nThe code is **correct**.\n*   **Ceiling Math:** `(pile - 1) // speed + 1` correctly implements `ceil(pile / speed)` using integer division.\n*   **Bounds:** The range `[1, max(piles)]` is sufficient because eating faster than the largest pile does not reduce the total time (one pile per hour limit).\n*   **Edge Cases:** Handles $h = \\text{len(piles)}$ (returns `max(piles)`) and very large $h$ correctly.\n\n### 3. Concrete Optimization\n**Narrow the search range:**\nInstead of `left = 1`, use `left = (sum(piles) - 1) // h + 1`. \nThe theoretical minimum speed is the total bananas divided by total hours. This reduces the number of iterations in the binary search, especially when $h$ is much larger than the number of piles.\n\n### 4. Key Algorithmic Pattern\n**Binary Search on Answer:** Used when the solution space is monotonic (if speed $k$ works, any speed $> k$ also works)."
     },
     {
       "id": "lc-largest-number::1429608798",
@@ -5979,22 +5982,14 @@
       "acRate": 58.79397122925491,
       "similar": null,
       "hasSimilar": null,
-      "conflictPending": true,
-      "conflictCandidates": [
+      "conflictPending": false,
+      "methods": [
         {
-          "id": "lc-length-of-last-word::1627215692",
+          "title": "Alt approach (Python3) — imported",
+          "language": "Python3",
           "code": "class Solution:\n    def lengthOfLastWord(self, s: str) -> int:\n        return len(s.strip().split(\" \")[-1])\n",
-          "lang": {
-            "name": "Python3",
-            "ext": "py",
-            "slug": "python3"
-          },
-          "runtime": "0 ms",
-          "memory": "17.7 MB",
-          "runtimePct": 100,
-          "memoryPct": 100,
-          "timestamp": 1746553799000,
-          "submissionId": 1627215692
+          "description": "Submission #1627215692",
+          "timestamp": 1746553799000
         }
       ]
     },
@@ -6495,29 +6490,21 @@
         }
       ],
       "hasSimilar": true,
-      "conflictPending": true,
-      "conflictCandidates": [
-        {
-          "id": "lc-longest-increasing-subsequence::1996133259",
-          "code": "class Solution:\n    def lengthOfLIS(self, nums: List[int]) -> int:\n        sub = [] \n\n        for num in nums: \n            if not sub or num > sub[-1]:\n                sub.append(num)\n            else:\n                low = 0\n                high = len(sub) - 1\n                while low < high:\n                    mid = (low + high) // 2\n                    if sub[mid] >= num:\n                        high = mid\n                    else:\n                        low = mid + 1\n                \n                sub[low] = num\n                \n        return len(sub)",
-          "lang": {
-            "name": "Python3",
-            "ext": "py",
-            "slug": "python3"
-          },
-          "runtime": "7 ms",
-          "memory": "19.5 MB",
-          "runtimePct": 82.46050000000001,
-          "memoryPct": 59.8399,
-          "timestamp": 1778010498000,
-          "submissionId": 1996133259
-        }
-      ],
+      "conflictPending": false,
       "canonical": {
         "id": "longest-increasing-subsequence",
         "title": "Longest Increasing Subsequence"
       },
-      "aiReview": "### Review of LIS Solution\n\n**1. Complexity**\n*   **Time Complexity:** $O(N^2)$ due to the nested loops iterating over the input array.\n*   **Space Complexity:** $O(N)$ to store the `dp` array.\n\n**2. Correctness**\nThe logic is correct for standard cases. However:\n*   **Edge Case:** If `nums` is empty (e.g., `[]`), `max(dp)` will raise a `ValueError`. While LeetCode constraints often specify $n \\ge 1$, a `return max(dp) if dp else 0` is safer.\n\n**3. Optimization**\nYou can optimize the time complexity to **$O(N \\log N)$** using **Binary Search** (Patience Sorting). Instead of a DP table, maintain a list `tails` where `tails[i]` is the smallest ending element of all increasing subsequences of length `i+1`. For each number, use `bisect_left` to find its position in `tails` and update it.\n\n**4. Key Algorithmic Pattern**\n**Dynamic Programming (Bottom-Up):** It solves the problem by breaking it into overlapping subproblems (finding the LIS ending at each index `i`) and building the solution iteratively."
+      "aiReview": "### Review of LIS Solution\n\n**1. Complexity**\n*   **Time Complexity:** $O(N^2)$ due to the nested loops iterating over the input array.\n*   **Space Complexity:** $O(N)$ to store the `dp` array.\n\n**2. Correctness**\nThe logic is correct for standard cases. However:\n*   **Edge Case:** If `nums` is empty (e.g., `[]`), `max(dp)` will raise a `ValueError`. While LeetCode constraints often specify $n \\ge 1$, a `return max(dp) if dp else 0` is safer.\n\n**3. Optimization**\nYou can optimize the time complexity to **$O(N \\log N)$** using **Binary Search** (Patience Sorting). Instead of a DP table, maintain a list `tails` where `tails[i]` is the smallest ending element of all increasing subsequences of length `i+1`. For each number, use `bisect_left` to find its position in `tails` and update it.\n\n**4. Key Algorithmic Pattern**\n**Dynamic Programming (Bottom-Up):** It solves the problem by breaking it into overlapping subproblems (finding the LIS ending at each index `i`) and building the solution iteratively.",
+      "methods": [
+        {
+          "title": "Alt approach (Python3) — imported",
+          "language": "Python3",
+          "code": "class Solution:\n    def lengthOfLIS(self, nums: List[int]) -> int:\n        sub = [] \n\n        for num in nums: \n            if not sub or num > sub[-1]:\n                sub.append(num)\n            else:\n                low = 0\n                high = len(sub) - 1\n                while low < high:\n                    mid = (low + high) // 2\n                    if sub[mid] >= num:\n                        high = mid\n                    else:\n                        low = mid + 1\n                \n                sub[low] = num\n                \n        return len(sub)",
+          "description": "Submission #1996133259",
+          "timestamp": 1778010498000
+        }
+      ]
     },
     {
       "id": "lc-longest-increasing-subsequence::1996133259",
@@ -6913,22 +6900,14 @@
         }
       ],
       "hasSimilar": true,
-      "conflictPending": true,
-      "conflictCandidates": [
+      "conflictPending": false,
+      "methods": [
         {
-          "id": "lc-longest-substring-without-repeating-characters::1351984398",
+          "title": "Alt approach (Python3) — imported",
+          "language": "Python3",
           "code": "class Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        # max_length = 1\n        # if s is \"\":\n        #     return 0\n        # for i in range(len(s)):\n        #     st = \"\"\n        #     for ch in s[i:]:\n        #         if ch not in st:\n        #             st += ch\n        #             max_length=max(max_length,len(st))\n        #         else:\n        #             break\n        # print(max_length)\n        # return max_length\n\n        start = 0  \n        max_length = 0  \n        seen_chars = set()  \n\n        for end in range(len(s)):\n            while s[end] in seen_chars:\n                seen_chars.remove(s[start])\n                start += 1\n            \n            seen_chars.add(s[end])\n            \n            max_length = max(max_length, end - start + 1)\n\n        return max_length",
-          "lang": {
-            "name": "Python3",
-            "ext": "py",
-            "slug": "python3"
-          },
-          "runtime": "51 ms",
-          "memory": "16.5 MB",
-          "runtimePct": 11.762000000000004,
-          "memoryPct": 100,
-          "timestamp": 1723375530000,
-          "submissionId": 1351984398
+          "description": "Submission #1351984398",
+          "timestamp": 1723375530000
         }
       ]
     },
@@ -7266,22 +7245,14 @@
         }
       ],
       "hasSimilar": true,
-      "conflictPending": true,
-      "conflictCandidates": [
+      "conflictPending": false,
+      "methods": [
         {
-          "id": "lc-majority-element::1448986088",
+          "title": "Alt approach (Python3) — imported",
+          "language": "Python3",
           "code": "class Solution:\n    def majorityElement(self, nums: List[int]) -> int:\n        return [num for num, count in Counter(nums).items() if count > len(nums)/2][0]",
-          "lang": {
-            "name": "Python3",
-            "ext": "py",
-            "slug": "python3"
-          },
-          "runtime": "7 ms",
-          "memory": "18.5 MB",
-          "runtimePct": 57.99060000000001,
-          "memoryPct": 100,
-          "timestamp": 1731269111000,
-          "submissionId": 1448986088
+          "description": "Submission #1448986088",
+          "timestamp": 1731269111000
         }
       ]
     },
@@ -7902,7 +7873,8 @@
           "isPaidOnly": false
         }
       ],
-      "hasSimilar": true
+      "hasSimilar": true,
+      "aiReview": "**1. Complexity**\n*   **Time:** $O(n)$ — The algorithm performs a single pass through the array.\n*   **Space:** $O(1)$ — Only two scalar variables (`curr`, `ans`) are maintained regardless of input size.\n\n**2. Correctness**\nThe solution is **correct**. It properly handles:\n*   **All-negative numbers:** By initializing with `nums[0]` and comparing `x` vs `curr + x`, it correctly identifies the \"least negative\" single element as the maximum.\n*   **Single-element arrays:** The loop is skipped, and `nums[0]` is returned.\n*   **Note:** It assumes `len(nums) >= 1` (standard LeetCode constraint).\n\n**3. Concrete Optimization**\nWhile the Big-O is optimal, you can reduce constant-time overhead by replacing the `max()` function calls with an `if` statement. Function calls in Python are relatively expensive:\n```python\nfor x in nums[1:]:\n    curr = x if curr < 0 else curr + x\n    if curr > ans: ans = curr\n```\nThis avoids the overhead of the `max` built-in and is generally faster in Python performance benchmarks.\n\n**4. Key Algorithmic Pattern**\n**Kadane’s Algorithm** (a specialized form of Dynamic Programming/Greedy). It makes a local optimal choice at each step to determine the global maximum."
     },
     {
       "platform": "leetcode",
@@ -8047,22 +8019,14 @@
         }
       ],
       "hasSimilar": true,
-      "conflictPending": true,
-      "conflictCandidates": [
+      "conflictPending": false,
+      "methods": [
         {
-          "id": "lc-merge-strings-alternately::1957612804",
+          "title": "Alt approach (Python3) — imported",
+          "language": "Python3",
           "code": "class Solution:\n    def mergeAlternately(self, word1: str, word2: str) -> str:\n        result = \"\"\n        i = 0\n        while i < len(word1) or i < len(word2):\n            if i < len(word1):\n                result += word1[i]\n            if i < len(word2):\n                result += word2[i]\n            i += 1\n        return result",
-          "lang": {
-            "name": "Python3",
-            "ext": "py",
-            "slug": "python3"
-          },
-          "runtime": "56 ms",
-          "memory": "19.4 MB",
-          "runtimePct": 5.666599999999969,
-          "memoryPct": 17.745299999999993,
-          "timestamp": 1774344800000,
-          "submissionId": 1957612804
+          "description": "Submission #1957612804",
+          "timestamp": 1774344800000
         }
       ]
     },
@@ -8352,7 +8316,8 @@
           "isPaidOnly": false
         }
       ],
-      "hasSimilar": true
+      "hasSimilar": true,
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the `cost` array. The algorithm iterates through the list exactly once.\n*   **Space Complexity:** $O(1)$. It only maintains two scalar variables (`prev`, `curr`), regardless of the input size.\n\n### 2. Correctness\nThe code is **correct**. It accurately implements the state transition: \n$DP[i] = \\min(DP[i-1] + cost[i-1], DP[i-2] + cost[i-2])$.\n*   **Edge Cases:** The problem constraints usually specify $n \\ge 2$. If $n=2$, the loop runs once and correctly returns `min(cost[0], cost[1])`. It correctly treats the \"top of the floor\" as the index `len(cost)`.\n\n### 3. Concrete Optimization\nWhile the current space complexity is already optimal, you can improve **readability** and remove index offsets by iterating directly through the costs:\n\n```python\nfor c in cost:\n    prev, curr = curr, min(curr, prev) + c\nreturn min(prev, curr)\n```\nThis version avoids `i-1` and `i-2` calculations while maintaining $O(1)$ space.\n\n### 4. Key Algorithmic Pattern\n**Dynamic Programming** (specifically, Bottom-Up DP with state-space reduction/variable swapping)."
     },
     {
       "id": "lc-minimize-maximum-pair-sum-in-array::1730450212",
@@ -8398,22 +8363,14 @@
       "acRate": 83.2901099393876,
       "similar": null,
       "hasSimilar": null,
-      "conflictPending": true,
-      "conflictCandidates": [
+      "conflictPending": false,
+      "methods": [
         {
-          "id": "lc-minimize-maximum-pair-sum-in-array::1730457343",
+          "title": "Alt approach (Python3) — imported",
+          "language": "Python3",
           "code": "class Solution:\n    def minPairSum(self, nums: List[int]) -> int:\n        nums.sort()\n        i = 0\n        j = len(nums) - 1\n        res = 0\n\n        while i < j:\n            res = max(res, nums[i] + nums[j])\n            i += 1\n            j -= 1\n        \n        return res",
-          "lang": {
-            "name": "Python3",
-            "ext": "py",
-            "slug": "python3"
-          },
-          "runtime": "930 ms",
-          "memory": "31.4 MB",
-          "runtimePct": 5.055999999999983,
-          "memoryPct": 99.5872,
-          "timestamp": 1754850478000,
-          "submissionId": 1730457343
+          "description": "Submission #1730457343",
+          "timestamp": 1754850478000
         }
       ]
     },
@@ -8568,7 +8525,8 @@
         }
       ],
       "hasSimilar": true,
-      "notes": "[ Time taken: 22m 41s ]"
+      "notes": "[ Time taken: 22m 41s ]",
+      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time:** $O(W)$, where $W$ is the maximum value in `days` (up to 365). The loop runs from 1 to $W$.\n*   **Space:** $O(W)$ to store the `dp` array and the `day` set.\n\n**2. Correctness**\n*   The logic is **correct**. It correctly handles non-travel days by carrying over the previous minimum cost. The `max(0, i-k)` logic safely handles index out-of-bounds for early days in the calendar.\n*   **Edge Cases:** It handles single-day trips and large gaps between travel days effectively.\n\n**3. Optimization**\n**Space Optimization ($O(1)$ or $O(30)$):** Instead of an array sized by the calendar range, use a **sliding window** approach with two deques (for 7-day and 30-day tickets). Store `(day, cost_at_that_time)` pairs. This reduces space complexity to $O(1)$ (specifically max 30 elements) and time complexity to $O(D)$, where $D$ is the number of travel days, making it more efficient if $W \\gg D$.\n\n**4. Key Algorithmic Pattern**\n**Bottom-up Dynamic Programming.** The solution builds the optimal cost for each day based on previously computed optimal costs for $i-1$, $i-7$, and $i-30$."
     },
     {
       "id": "lc-minimum-cost-tree-from-leaf-values",
@@ -9085,25 +9043,9 @@
       "acRate": 65.21643643771087,
       "similar": null,
       "hasSimilar": null,
-      "conflictPending": true,
-      "conflictCandidates": [
-        {
-          "id": "lc-minimum-time-to-make-rope-colorful::1989791660",
-          "code": "class Solution:\n    def minCost(self, colors: str, neededTime: List[int]) -> int:\n        n, s = len(colors), 0\n        for i in range(1, n):\n            if colors[i] == colors[i - 1]:\n                s += min(neededTime[i], neededTime[i - 1])\n                neededTime[i] = max(neededTime[i], neededTime[i-1])\n        return s ",
-          "lang": {
-            "name": "Python3",
-            "ext": "py",
-            "slug": "python3"
-          },
-          "runtime": "88 ms",
-          "memory": "27.5 MB",
-          "runtimePct": 48.54849999999999,
-          "memoryPct": 99.8681,
-          "timestamp": 1777333492000,
-          "submissionId": 1989791660
-        }
-      ],
-      "notes": "[ Time taken: 13m 26s ]"
+      "conflictPending": false,
+      "notes": "[ Time taken: 13m 26s ]",
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the string. The algorithm performs a single pass.\n*   **Space Complexity:** $O(1)$, as it uses a constant amount of extra space (modifying the input array in-place).\n\n### 2. Correctness\nThe logic is **correct**. By updating `neededTime[i]` to the maximum of the duplicate pair, the code ensures that for any contiguous block of the same color, only the single largest `neededTime` is preserved, while all others are added to the sum `s`. It handles edge cases like single-balloon ropes or ropes with no repeating colors correctly.\n\n### 3. Concrete Optimization\n**Avoid Input Mutation:** Modifying the input `neededTime` is generally discouraged. You can optimize by tracking the `max_cost` of the current color group in a separate variable.\n\n```python3\n# Optimized loop logic\nmax_cost = neededTime[0]\nfor i in range(1, n):\n    if colors[i] == colors[i-1]:\n        s += min(max_cost, neededTime[i])\n        max_cost = max(max_cost, neededTime[i])\n    else:\n        max_cost = neededTime[i]\n```\n\n### 4. Key Algorithmic Pattern\n**Greedy:** For every group of identical adjacent balloons, we greedily keep the one that costs the most to remove and sum the costs of the others."
     },
     {
       "id": "lc-missing-number::1626720145",
@@ -10667,22 +10609,14 @@
         }
       ],
       "hasSimilar": true,
-      "conflictPending": true,
-      "conflictCandidates": [
+      "conflictPending": false,
+      "methods": [
         {
-          "id": "lc-power-of-three::1650981852",
+          "title": "Alt approach (Python3) — imported",
+          "language": "Python3",
           "code": "class Solution:\n    def isPowerOfThree(self, n: int) -> bool:\n        # while n >= 3:\n        #     # print(n)\n        #     n /= 3\n        # # print(n)\n        # if n != 1:\n        #     return False\n        # return True\n\n        return n>0 and 3**19%n==0",
-          "lang": {
-            "name": "Python3",
-            "ext": "py",
-            "slug": "python3"
-          },
-          "runtime": "4 ms",
-          "memory": "17.8 MB",
-          "runtimePct": 84.63830000000002,
-          "memoryPct": 100,
-          "timestamp": 1748801773000,
-          "submissionId": 1650981852
+          "description": "Submission #1650981852",
+          "timestamp": 1748801773000
         }
       ]
     },
@@ -10806,22 +10740,14 @@
         }
       ],
       "hasSimilar": true,
-      "conflictPending": true,
-      "conflictCandidates": [
+      "conflictPending": false,
+      "methods": [
         {
-          "id": "lc-power-of-two::1650968743",
+          "title": "Alt approach (Python3) — imported",
+          "language": "Python3",
           "code": "class Solution:\n    def isPowerOfTwo(self, n: int) -> bool:\n        # n = str(bin(n))[2:]\n        # print(n)\n    \n        # if n[0] != '1':\n        #     return False\n        \n        # for i in range(1,len(n)):\n        #     if n[i] != '0':\n        #         return False\n        # return True\n\n        return n > 0 and str(bin(n)).count('1') == 1",
-          "lang": {
-            "name": "Python3",
-            "ext": "py",
-            "slug": "python3"
-          },
-          "runtime": "0 ms",
-          "memory": "17.7 MB",
-          "runtimePct": 100,
-          "memoryPct": 100,
-          "timestamp": 1748800884000,
-          "submissionId": 1650968743
+          "description": "Submission #1650968743",
+          "timestamp": 1748800884000
         }
       ]
     },
@@ -12014,22 +11940,14 @@
         }
       ],
       "hasSimilar": true,
-      "conflictPending": true,
-      "conflictCandidates": [
+      "conflictPending": false,
+      "methods": [
         {
-          "id": "lc-roman-to-integer::1353183942",
+          "title": "Alt approach (Python3) — imported",
+          "language": "Python3",
           "code": "class Solution:\n    def romanToInt(self, s: str) -> int:\n        roman = {\n            'I': 1,\n            'V': 5,\n            'X': 10,\n            'L': 50,\n            'C': 100,\n            'D': 500,\n            'M': 1000\n        }\n\n        resp = 0\n        i = 0\n        for element in s:\n\n            current = roman[element]\n\n            if i + 1 == len(s):\n                resp = resp + current\n\n            elif element == 'C' and (s[i+1] == 'M' or  s[i+1] == 'D'):\n                resp = resp - 100\n\n            elif element == 'X' and (s[i+1] == 'L' or  s[i+1] == 'C'):\n                resp = resp - 10\n\n            elif element == 'I' and (s[i+1] == 'V' or  s[i+1] == 'X'):\n                resp = resp - 1\n\n            else:\n                resp = resp + current\n\n            i += 1\n\n        return resp",
-          "lang": {
-            "name": "Python3",
-            "ext": "py",
-            "slug": "python3"
-          },
-          "runtime": "56 ms",
-          "memory": "16.6 MB",
-          "runtimePct": 5.097099999999985,
-          "memoryPct": 100,
-          "timestamp": 1723471216000,
-          "submissionId": 1353183942
+          "description": "Submission #1353183942",
+          "timestamp": 1723471216000
         }
       ]
     },
@@ -12152,7 +12070,8 @@
       "methodTitle": "",
       "isDuplicate": false,
       "duplicateOf": null,
-      "platform": "leetcode"
+      "platform": "leetcode",
+      "aiReview": "**1. Complexity**\n*   **Time:** $O(M \\times N)$, where $M$ is rows and $N$ is columns. Every cell is visited at most twice (initial scan and once during BFS).\n*   **Space:** $O(M \\times N)$ in the worst case for the queue (e.g., all oranges are rotten).\n\n**2. Correctness**\nThe code is **correct** and robust. It correctly handles:\n*   **No fresh oranges:** Returns 0 immediately due to the `while q and fresh` condition.\n*   **Impossible scenarios:** Returns -1 if `fresh > 0` after BFS.\n*   **Multiple sources:** Uses multi-source BFS by initializing the queue with all rotten oranges.\n\n**3. Concrete Optimization**\nWhile the logic is optimal, you can slightly improve performance by using a **sentinel value** or tracking time via the queue elements (e.g., `q.append((r, c, current_time))`). However, a better Pythonic optimization is to use **`itertools.product`** for the initial nested loop to improve readability and slightly reduce overhead in large grids.\n\n**4. Key Algorithmic Pattern**\n**Multi-source Breadth-First Search (BFS)**. This pattern is ideal for finding the shortest time/distance from multiple starting points simultaneously."
     },
     {
       "id": "lc-score-of-a-string",
@@ -12236,22 +12155,14 @@
       "acRate": 91.34938506842197,
       "similar": null,
       "hasSimilar": null,
-      "conflictPending": true,
-      "conflictCandidates": [
+      "conflictPending": false,
+      "methods": [
         {
-          "id": "lc-score-of-a-string::1235776226",
+          "title": "Alt approach (Python3) — imported",
+          "language": "Python3",
           "code": "class Solution:\n    def scoreOfString(self, s: str) -> int:\n        score = 0\n        for i in range(len(s)-1):\n            score += abs(ord(s[i]) - ord(s[i+1]))\n        return score",
-          "lang": {
-            "name": "Python3",
-            "ext": "py",
-            "slug": "python3"
-          },
-          "runtime": "32 ms",
-          "memory": "16.5 MB",
-          "runtimePct": 1.3580000000000023,
-          "memoryPct": 100,
-          "timestamp": 1713449268000,
-          "submissionId": 1235776226
+          "description": "Submission #1235776226",
+          "timestamp": 1713449268000
         }
       ]
     },
@@ -13194,22 +13105,14 @@
         }
       ],
       "hasSimilar": true,
-      "conflictPending": true,
-      "conflictCandidates": [
+      "conflictPending": false,
+      "methods": [
         {
-          "id": "lc-sort-characters-by-frequency::1458513764",
+          "title": "Alt approach (Python3) — imported",
+          "language": "Python3",
           "code": "from collections import Counter\n\nclass Solution:\n    def frequencySort(self, s: str) -> str:\n        count = Counter(s)\n        \n        sorted_chars = sorted(count.items(), key=lambda x: x[1], reverse=True)\n        \n        result = ''.join([char * freq for char, freq in sorted_chars])\n\n        return result\n\n        # return ''.join([char * freq for char, freq in sorted(Counter(s).items(), key=lambda x: x[1], reverse=True)])",
-          "lang": {
-            "name": "Python3",
-            "ext": "py",
-            "slug": "python3"
-          },
-          "runtime": "6 ms",
-          "memory": "17.8 MB",
-          "runtimePct": 83.8008,
-          "memoryPct": 100,
-          "timestamp": 1732127378000,
-          "submissionId": 1458513764
+          "description": "Submission #1458513764",
+          "timestamp": 1732127378000
         }
       ]
     },
@@ -13350,22 +13253,14 @@
       "acRate": 61.24744972311279,
       "similar": null,
       "hasSimilar": null,
-      "conflictPending": true,
-      "conflictCandidates": [
+      "conflictPending": false,
+      "methods": [
         {
-          "id": "lc-split-the-array::1448744782",
+          "title": "Alt approach (Python3) — imported",
+          "language": "Python3",
           "code": "class Solution:\n    def isPossibleToSplit(self, nums: List[int]) -> bool:\n        return len(nums) % 2 == 0 and max(Counter(nums).values()) < 3\n",
-          "lang": {
-            "name": "Python3",
-            "ext": "py",
-            "slug": "python3"
-          },
-          "runtime": "0 ms",
-          "memory": "16.7 MB",
-          "runtimePct": 100,
-          "memoryPct": 100,
-          "timestamp": 1731250137000,
-          "submissionId": 1448744782
+          "description": "Submission #1448744782",
+          "timestamp": 1731250137000
         }
       ]
     },
@@ -14606,8 +14501,8 @@
       "difficulty": "Medium",
       "lang": {
         "name": "Python3",
-        "ext": "py",
-        "slug": "python3"
+        "slug": "python3",
+        "ext": "py"
       },
       "tags": [
         "Math",
@@ -14615,7 +14510,7 @@
         "Combinatorics"
       ],
       "topic": "Dynamic Programming",
-      "code": "",
+      "code": "class Solution:\n    def uniquePaths(self, m: int, n: int) -> int:\n        dp = []\n        for _ in range(m):\n            dp.append([1]*n)\n        \n        for i in range(1,m):\n            for j in range(1,n):\n                dp[i][j]=dp[i-1][j]+dp[i][j-1]\n        return dp[m-1][n-1]",
       "readmeContent": "# Unique Paths\n\n**Difficulty:** Medium  |  **Acceptance:** 66.8%\n\n**Tags:** `Math`, `Dynamic Programming`, `Combinatorics`\n\n## Problem\n\nThere is a robot on an m x n grid. The robot is initially located at the top-left corner (i.e., grid[0][0]). The robot tries to move to the bottom-right corner (i.e., grid[m - 1][n - 1]). The robot can only move either down or right at any point in time.\n\nGiven the two integers m and n, return the number of possible unique paths that the robot can take to reach the bottom-right corner.\n\nThe test cases are generated so that the answer will be less than or equal to 2 * 109.\n\n&nbsp;\nExample 1:\n\nInput: m = 3, n = 7\nOutput: 28\n\nExample 2:\n\nInput: m = 3, n = 2\nOutput: 3\nExplanation: From the top-left corner, there are a total of 3 ways to reach the bottom-right corner:\n1. Right -> Down -> Down\n2. Down -> Down -> Right\n3. Down -> Right -> Down\n\n&nbsp;\nConstraints:\n\n\t1 <= m, n <= 100\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 19.4 MB\n\n## Similar Problems\n\n- [Unique Paths II](https://leetcode.com/problems/unique-paths-ii/) — Medium\n- [Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/) — Medium\n- [Dungeon Game](https://leetcode.com/problems/dungeon-game/) — Hard\n- [Minimum Path Cost in a Grid](https://leetcode.com/problems/minimum-path-cost-in-a-grid/) — Medium\n- [Minimum Cost Homecoming of a Robot in a Grid](https://leetcode.com/problems/minimum-cost-homecoming-of-a-robot-in-a-grid/) — Medium\n",
       "files": [
         {
@@ -14626,8 +14521,8 @@
       "timestamp": 1775832660000,
       "runtime": "0 ms",
       "memory": "19.4 MB",
-      "runtimePct": null,
-      "memoryPct": null,
+      "runtimePct": 100,
+      "memoryPct": 22,
       "problemStatement": "<p>There is a robot on an <code>m x n</code> grid. The robot is initially located at the <strong>top-left corner</strong> (i.e., <code>grid[0][0]</code>). The robot tries to move to the <strong>bottom-right corner</strong> (i.e., <code>grid[m - 1][n - 1]</code>). The robot can only move either down or right at any point in time.</p>\n\n<p>Given the two integers <code>m</code> and <code>n</code>, return <em>the number of possible unique paths that the robot can take to reach the bottom-right corner</em>.</p>\n\n<p>The test cases are generated so that the answer will be less than or equal to <code>2 * 10<sup>9</sup></code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<img src=\"https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png\" style=\"width: 400px; height: 183px;\" />\n<pre>\n<strong>Input:</strong> m = 3, n = 7\n<strong>Output:</strong> 28\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> m = 3, n = 2\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> From the top-left corner, there are a total of 3 ways to reach the bottom-right corner:\n1. Right -&gt; Down -&gt; Down\n2. Down -&gt; Down -&gt; Right\n3. Down -&gt; Right -&gt; Down\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= m, n &lt;= 100</code></li>\n</ul>\n",
       "hints": [],
       "acRate": 66.81257426434613,
@@ -14675,7 +14570,9 @@
           "isPaidOnly": false
         }
       ],
-      "hasSimilar": true
+      "hasSimilar": true,
+      "notes": "[ Time taken: 1m 55s ]",
+      "aiReview": "### Review of Unique Paths Solution\n\n**1. Complexity**\n*   **Time Complexity:** $O(m \\times n)$ — Each cell in the grid is visited and computed exactly once.\n*   **Space Complexity:** $O(m \\times n)$ — A 2D list of size $m \\times n$ is allocated to store path counts.\n\n**2. Correctness**\nThe solution is **correct**. It properly handles the base cases: if $m=1$ or $n=1$, the nested loops do not execute, and the function correctly returns 1 (the only possible path is a straight line).\n\n**3. Concrete Optimization**\n**Space Optimization:** Since the current cell `dp[i][j]` only depends on the cell above it (`dp[i-1][j]`) and the cell to its left (`dp[i][j-1]`), you can reduce space to **$O(n)$** using a 1D array.\n\n*Optimized Snippet:*\n```python\ndp = [1] * n\nfor i in range(1, m):\n    for j in range(1, n):\n        dp[j] += dp[j-1]\nreturn dp[-1]\n```\n\n**4. Key Algorithmic Pattern**\n**Dynamic Programming (Bottom-Up):** The problem breaks down into overlapping subproblems where the number of ways to reach `(i, j)` is the sum of ways to reach its neighbors `(i-1, j)` and `(i, j-1)`."
     },
     {
       "id": "lc-unique-paths-ii",

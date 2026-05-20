@@ -1,1 +1,390 @@
-{}
+{
+  "leetcode::01-matrix": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time:** $O(M \\times N)$, where $M$ is the number of rows and $N$ is the number of columns. Each cell is visited and processed exactly once.\n*   **Space:** $O(M \\times N)$ in th",
+        "ts": 1779123155590,
+        "weakAreas": [
+          "edge cases"
+        ]
+      },
+      {
+        "summary": "### Review\n\n**1. Complexity**\n*   **Time:** $O(M \\times N)$, where $M$ is rows and $N$ is columns. Each cell is processed exactly once.\n*   **Space:** $O(M \\times N)$ to store the `deque` in the worst",
+        "ts": 1779285986056,
+        "weakAreas": [
+          "edge cases"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1211,
+        "providerId": "gemini",
+        "ts": 1779285986067
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "01-matrix"
+  },
+  "leetcode::assign-cookies": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(N \\log N + M \\log M)$, where $N$ is the number of children and $M$ is the number of cookies. Sorting both arrays dominates the $O(N + M)$ tw",
+        "ts": 1779286340847,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1213,
+        "providerId": "gemini",
+        "ts": 1779286340899
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "assign-cookies"
+  },
+  "leetcode::binary-search": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(\\log n)$. The search space is halved in each iteration.\n*   **Space Complexity:** $O(1)$. It uses a constant amount of extra memory regardless of input si",
+        "ts": 1779286490429,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1114,
+        "providerId": "gemini",
+        "ts": 1779286490461
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "binary-search"
+  },
+  "leetcode::course-schedule": {
+    "aiInsights": [
+      {
+        "summary": "**1. Complexity**\n*   **Time:** $O(V + E)$, where $V$ is the number of courses and $E$ is the number of prerequisites. Each node and edge is traversed once.\n*   **Space:** $O(V + E)$ to store the adja",
+        "ts": 1779285973431,
+        "weakAreas": [
+          "edge cases"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1180,
+        "providerId": "gemini",
+        "ts": 1779285973440
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "course-schedule"
+  },
+  "leetcode::find-greatest-common-divisor-of-array": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n + \\log(\\min(s, l)))$, where $n$ is the length of `nums`. Finding the min and max takes $O(n)$, and the Euclidean algorithm takes logarithmic time relati",
+        "ts": 1779286350005,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1245,
+        "providerId": "gemini",
+        "ts": 1779286350030
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "find-greatest-common-divisor-of-array"
+  },
+  "leetcode::find-minimum-in-rotated-sorted-array": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(N)$. In the worst case, the loop iterates through the entire list to find the pivot point.\n*   **Space Complexity:** $O(1)$. It uses a constant amount of ",
+        "ts": 1779287057585,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1060,
+        "providerId": "gemini",
+        "ts": 1779287057731
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "find-minimum-in-rotated-sorted-array"
+  },
+  "leetcode::find-peak-element": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(\\log n)$ — The search space is halved in each iteration.\n*   **Space Complexity:** $O(1)$ — Only a constant amount of extra space is used for pointers.\n\n#",
+        "ts": 1779286704921,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1144,
+        "providerId": "gemini",
+        "ts": 1779286704928
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "find-peak-element"
+  },
+  "leetcode::greatest-common-divisor-of-strings": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time:** $O(N + M)$, where $N$ and $M$ are the lengths of `str1` and `str2`. String concatenation and comparison both take linear time. The GCD calculation is $O(\\log(\\min(N, M)",
+        "ts": 1779286432096,
+        "weakAreas": [
+          "space complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1261,
+        "providerId": "gemini",
+        "ts": 1779286432112
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "greatest-common-divisor-of-strings"
+  },
+  "leetcode::house-robber": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis of House Robber Solution\n\n**1. Complexity**\n*   **Time Complexity:** $O(n)$, where $n$ is the number of houses. We iterate through the list exactly once.\n*   **Space Complexity:** $O(1)$.",
+        "ts": 1779286145138,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1274,
+        "providerId": "gemini",
+        "ts": 1779286145150
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "house-robber"
+  },
+  "leetcode::intersection-of-two-arrays": {
+    "aiInsights": [
+      {
+        "summary": "**1. Complexity**\n*   **Time Complexity:** $O(n + m)$, where $n$ and $m$ are the lengths of `nums1` and `nums2`. Building the dictionary takes $O(n)$ and iterating through `nums2` takes $O(m)$.\n*   **",
+        "ts": 1779286502796,
+        "weakAreas": [
+          "null/empty input",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1083,
+        "providerId": "gemini",
+        "ts": 1779286502893
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "intersection-of-two-arrays"
+  },
+  "leetcode::jump-game": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of `nums`. The list is traversed once.\n*   **Space Complexity:** $O(1)$, as it only uses a single integer variable (`max_reac",
+        "ts": 1779286557052,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1015,
+        "providerId": "gemini",
+        "ts": 1779286557084
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "jump-game"
+  },
+  "leetcode::koko-eating-bananas": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(N \\log M)$, where $N$ is the number of piles and $M$ is the maximum number of bananas in a single pile (`max(piles)`). The binary search takes $\\log M$ st",
+        "ts": 1779286611169,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1210,
+        "providerId": "gemini",
+        "ts": 1779286611694
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "koko-eating-bananas"
+  },
+  "leetcode::maximum-subarray": {
+    "aiInsights": [
+      {
+        "summary": "**1. Complexity**\n*   **Time:** $O(n)$ — The algorithm performs a single pass through the array.\n*   **Space:** $O(1)$ — Only two scalar variables (`curr`, `ans`) are maintained regardless of input si",
+        "ts": 1779286548711,
+        "weakAreas": []
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1199,
+        "providerId": "gemini",
+        "ts": 1779286548732
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "maximum-subarray"
+  },
+  "leetcode::min-cost-climbing-stairs": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the `cost` array. The algorithm iterates through the list exactly once.\n*   **Space Complexity:** $O(1)$. It only maintain",
+        "ts": 1779286187825,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1128,
+        "providerId": "gemini",
+        "ts": 1779286187846
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "min-cost-climbing-stairs"
+  },
+  "leetcode::minimum-cost-for-tickets": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n**1. Complexity**\n*   **Time:** $O(W)$, where $W$ is the maximum value in `days` (up to 365). The loop runs from 1 to $W$.\n*   **Space:** $O(W)$ to store the `dp` array and the `day` set",
+        "ts": 1779286007499,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1126,
+        "providerId": "gemini",
+        "ts": 1779286007530
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "minimum-cost-for-tickets"
+  },
+  "leetcode::minimum-time-to-make-rope-colorful": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the string. The algorithm performs a single pass.\n*   **Space Complexity:** $O(1)$, as it uses a constant amount of extra ",
+        "ts": 1779286135582,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1250,
+        "providerId": "gemini",
+        "ts": 1779286135627
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "minimum-time-to-make-rope-colorful"
+  },
+  "leetcode::rotting-oranges": {
+    "aiInsights": [
+      {
+        "summary": "**1. Complexity**\n*   **Time:** $O(M \\times N)$, where $M$ is rows and $N$ is columns. Every cell is visited at most twice (initial scan and once during BFS).\n*   **Space:** $O(M \\times N)$ in the wor",
+        "ts": 1779285998110,
+        "weakAreas": [
+          "O(n²) complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1148,
+        "providerId": "gemini",
+        "ts": 1779285998121
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "rotting-oranges"
+  },
+  "leetcode::unique-paths": {
+    "aiInsights": [
+      {
+        "summary": "### Review of Unique Paths Solution\n\n**1. Complexity**\n*   **Time Complexity:** $O(m \\times n)$ — Each cell in the grid is visited and computed exactly once.\n*   **Space Complexity:** $O(m \\times n)$ ",
+        "ts": 1779286225908,
+        "weakAreas": [
+          "O(n²) complexity",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1087,
+        "providerId": "gemini",
+        "ts": 1779286225916
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "unique-paths"
+  }
+}
