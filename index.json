@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-20T14:29:50.706Z",
+  "updatedAt": "2026-05-20T14:38:30.475Z",
   "layoutVersion": 3,
   "stats": {
     "total": 253,
@@ -4187,7 +4187,11 @@
       "isDuplicate": false,
       "duplicateOf": null,
       "_requestAIReview": true,
-      "platform": "leetcode"
+      "platform": "leetcode",
+      "_committedPaths": [
+        "problems/lc-filling-bookcase-shelves/lc-filling-bookcase-shelves.py",
+        "problems/lc-filling-bookcase-shelves/README.md"
+      ]
     },
     {
       "id": "lc-find-all-k-distant-indices-in-an-array::1762915066",
