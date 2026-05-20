@@ -83,3 +83,27 @@ class Solution:
             prev , curr = curr, min(prev + cost[i-2], curr + cost[i-1])
         return curr
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(n)$, where $n$ is the length of the `cost` array. The algorithm iterates through the list exactly once.
+*   **Space Complexity:** $O(1)$. It only maintains two scalar variables (`prev`, `curr`), regardless of the input size.
+
+### 2. Correctness
+The code is **correct**. It accurately implements the state transition: 
+$DP[i] = \min(DP[i-1] + cost[i-1], DP[i-2] + cost[i-2])$.
+*   **Edge Cases:** The problem constraints usually specify $n \ge 2$. If $n=2$, the loop runs once and correctly returns `min(cost[0], cost[1])`. It correctly treats the "top of the floor" as the index `len(cost)`.
+
+### 3. Concrete Optimization
+While the current space complexity is already optimal, you can improve **readability** and remove index offsets by iterating directly through the costs:
+
+```python
+for c in cost:
+    prev, curr = curr, min(curr, prev) + c
+return min(prev, curr)
+```
+This version avoids `i-1` and `i-2` calculations while maintaining $O(1)$ space.
+
+### 4. Key Algorithmic Pattern
+**Dynamic Programming** (specifically, Bottom-Up DP with state-space reduction/variable swapping).

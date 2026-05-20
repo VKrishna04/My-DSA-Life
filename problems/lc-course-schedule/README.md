@@ -81,3 +81,25 @@ class Solution:
                 return False
         return True
 ```
+
+## AI Review
+
+**1. Complexity**
+*   **Time:** $O(V + E)$, where $V$ is the number of courses and $E$ is the number of prerequisites. Each node and edge is traversed once.
+*   **Space:** $O(V + E)$ to store the adjacency list, plus $O(V)$ for the recursion stack and tracking sets.
+
+**2. Correctness**
+The solution is **correct**. It properly implements DFS-based cycle detection in a directed graph.
+*   **`path`** (recursion stack) identifies back-edges (cycles).
+*   **`visited`** prevents redundant processing of previously verified subgraphs.
+*   **Edge cases:** Handles disconnected components, self-loops, and empty prerequisites correctly.
+
+**3. Concrete Optimization**
+Replace the two sets (`visited`, `path`) with a single **state array** (e.g., `states = [0] * numCourses`).
+*   `0`: Unvisited
+*   `1`: Visiting (currently in recursion stack)
+*   `2`: Visited (fully processed)
+This avoids the overhead of hashing and multiple set lookups/modifications, improving cache locality and performance.
+
+**4. Key Algorithmic Pattern**
+**DFS Cycle Detection** (or the DFS-based approach to **Topological Sort**). The graph is a Directed Acyclic Graph (DAG) if and only if no back-edges exist.

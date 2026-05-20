@@ -95,3 +95,21 @@ class Solution:
                 
         return time if fresh == 0 else -1
 ```
+
+## AI Review
+
+**1. Complexity**
+*   **Time:** $O(M \times N)$, where $M$ is rows and $N$ is columns. Every cell is visited at most twice (initial scan and once during BFS).
+*   **Space:** $O(M \times N)$ in the worst case for the queue (e.g., all oranges are rotten).
+
+**2. Correctness**
+The code is **correct** and robust. It correctly handles:
+*   **No fresh oranges:** Returns 0 immediately due to the `while q and fresh` condition.
+*   **Impossible scenarios:** Returns -1 if `fresh > 0` after BFS.
+*   **Multiple sources:** Uses multi-source BFS by initializing the queue with all rotten oranges.
+
+**3. Concrete Optimization**
+While the logic is optimal, you can slightly improve performance by using a **sentinel value** or tracking time via the queue elements (e.g., `q.append((r, c, current_time))`). However, a better Pythonic optimization is to use **`itertools.product`** for the initial nested loop to improve readability and slightly reduce overhead in large grids.
+
+**4. Key Algorithmic Pattern**
+**Multi-source Breadth-First Search (BFS)**. This pattern is ideal for finding the shortest time/distance from multiple starting points simultaneously.

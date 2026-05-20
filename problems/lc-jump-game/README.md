@@ -51,3 +51,26 @@ class Solution:
             max_reach = max(max_reach, nums[i]+i)
         return True
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(n)$, where $n$ is the length of `nums`. The list is traversed once.
+*   **Space Complexity:** $O(1)$, as it only uses a single integer variable (`max_reach`).
+
+### 2. Correctness
+The solution is **correct** and robust. It effectively handles:
+*   **Single-element arrays:** Returns `True` correctly.
+*   **Arrays with zeros:** Correctly identifies if a zero blocks all progress (e.g., `[3, 2, 1, 0, 4]`).
+*   **Large jumps:** Correctly updates the horizon.
+
+### 3. Concrete Optimisation
+**Early Exit:** You can terminate the loop early if the `max_reach` already meets or exceeds the last index. This avoids redundant iterations when the goal is already guaranteed.
+```python3
+if max_reach >= len(nums) - 1:
+    return True
+```
+Place this inside the loop after updating `max_reach`.
+
+### 4. Key Algorithmic Pattern
+**Greedy Algorithm:** At each step, you make the locally optimal choice (maximizing the reachable distance) to achieve the global goal (reaching the end).

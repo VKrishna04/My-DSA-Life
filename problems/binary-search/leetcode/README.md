@@ -64,3 +64,21 @@ class Solution(object):
                 return mid
         return -1
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(\log n)$. The search space is halved in each iteration.
+*   **Space Complexity:** $O(1)$. It uses a constant amount of extra memory regardless of input size.
+
+### 2. Correctness
+The implementation is correct and robust. 
+*   **Empty list:** If `nums` is empty, `right` becomes `-1`, the `while` condition fails immediately, and it correctly returns `-1`.
+*   **Single element:** If `nums` has one element, `left` and `right` both equal `0`, the loop runs once, and it correctly identifies or misses the target.
+*   **Boundary targets:** It correctly finds the target if it is at the very first or very last index due to the `left <= right` condition.
+
+### 3. Optimization
+While this iterative approach is already optimal, you could use Python’s built-in **`bisect` module** (`bisect.bisect_left`) for a more concise and potentially faster solution (as it is implemented in C). 
+
+### 4. Key Algorithmic Pattern
+**Binary Search** (a specific type of **Decrease and Conquer**). It relies on the input being sorted to eliminate half of the remaining elements at each step.

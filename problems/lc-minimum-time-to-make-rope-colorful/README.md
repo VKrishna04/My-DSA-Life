@@ -75,6 +75,32 @@ class Solution:
         return s 
 ```
 
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(n)$, where $n$ is the length of the string. The algorithm performs a single pass.
+*   **Space Complexity:** $O(1)$, as it uses a constant amount of extra space (modifying the input array in-place).
+
+### 2. Correctness
+The logic is **correct**. By updating `neededTime[i]` to the maximum of the duplicate pair, the code ensures that for any contiguous block of the same color, only the single largest `neededTime` is preserved, while all others are added to the sum `s`. It handles edge cases like single-balloon ropes or ropes with no repeating colors correctly.
+
+### 3. Concrete Optimization
+**Avoid Input Mutation:** Modifying the input `neededTime` is generally discouraged. You can optimize by tracking the `max_cost` of the current color group in a separate variable.
+
+```python3
+# Optimized loop logic
+max_cost = neededTime[0]
+for i in range(1, n):
+    if colors[i] == colors[i-1]:
+        s += min(max_cost, neededTime[i])
+        max_cost = max(max_cost, neededTime[i])
+    else:
+        max_cost = neededTime[i]
+```
+
+### 4. Key Algorithmic Pattern
+**Greedy:** For every group of identical adjacent balloons, we greedily keep the one that costs the most to remove and sum the costs of the others.
+
 ## Notes
 
 [ Time taken: 13m 26s ]

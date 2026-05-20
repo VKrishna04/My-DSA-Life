@@ -51,3 +51,22 @@ class Solution:
                 out.append(n)
         return out
 ```
+
+## AI Review
+
+**1. Complexity**
+*   **Time Complexity:** $O(n + m)$, where $n$ and $m$ are the lengths of `nums1` and `nums2`. Building the dictionary takes $O(n)$ and iterating through `nums2` takes $O(m)$.
+*   **Space Complexity:** $O(n)$ to store the unique elements of `nums1` in the dictionary.
+
+**2. Correctness**
+The code is **correct**. It successfully handles duplicates in both arrays by using the dictionary as a frequency/existence tracker and immediately setting the value to `False` once an intersection is found, ensuring the output contains only unique elements. It handles empty inputs gracefully.
+
+**3. Concrete Optimization**
+Use Python’s built-in **set intersection**. It is more idiomatic and implemented in C, making it significantly faster for large inputs:
+```python
+return list(set(nums1) & set(nums2))
+```
+Alternatively, to save space, always convert the *smaller* array into a set.
+
+**4. Key Algorithmic Pattern**
+**Hashing (Hash Set/Hash Map)**. The solution uses a hash table to achieve $O(1)$ average-time lookups to determine if an element exists in the other array.

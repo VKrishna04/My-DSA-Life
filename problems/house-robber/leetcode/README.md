@@ -59,3 +59,30 @@ class Solution:
         return curr
 
 ```
+
+## AI Review
+
+### Analysis of House Robber Solution
+
+**1. Complexity**
+*   **Time Complexity:** $O(n)$, where $n$ is the number of houses. We iterate through the list exactly once.
+*   **Space Complexity:** $O(1)$. By using only two variables (`prev`, `curr`) instead of a DP array, the space usage remains constant regardless of input size.
+
+**2. Correctness**
+The logic is correct and follows the recurrence relation: $dp[i] = \max(dp[i-1], dp[i-2] + \text{nums}[i])$.
+*   **Edge Cases:** It correctly handles $n=1$ and $n=2$. It assumes $n \geq 1$ (standard LeetCode constraint). If $n=0$ were possible, `nums[0]` would throw an `IndexError`.
+
+**3. Optimization**
+While the logic is optimal, the code can be **syntactically simplified** to remove conditional checks ($n=1, 2$). By initializing two pointers at zero, the loop naturally handles small arrays:
+
+```python
+def rob(self, nums: List[int]) -> int:
+    rob1, rob2 = 0, 0
+    for n in nums:
+        # rob1 is dp[i-2], rob2 is dp[i-1]
+        rob1, rob2 = rob2, max(n + rob1, rob2)
+    return rob2
+```
+
+**4. Key Algorithmic Pattern**
+**Dynamic Programming** with **Space Optimization** (Iterative Bottom-Up). It reduces a potential $O(n)$ space complexity to $O(1)$ by only storing the results of the two most recent subproblems.

@@ -79,3 +79,32 @@ class Solution:
         
         
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(\log n)$ — The search space is halved in each iteration.
+*   **Space Complexity:** $O(1)$ — Only a constant amount of extra space is used for pointers.
+
+### 2. Correctness
+The solution is **correct**. It properly handles:
+*   **Single-element arrays:** Handled by the `n == 1` check.
+*   **Boundary peaks:** Explicitly checks the first and last elements.
+*   **Strictly increasing/decreasing arrays:** Handled by the boundary checks and the binary search logic.
+
+### 3. Concrete Optimisation
+You can simplify the code by removing the manual boundary checks and searching the full range $[0, n-1]$. This reduces "boilerplate" while maintaining $O(\log n)$ logic:
+
+```python
+low, high = 0, len(nums) - 1
+while low < high:
+    mid = (low + high) // 2
+    if nums[mid] < nums[mid + 1]:
+        low = mid + 1
+    else:
+        high = mid
+return low
+```
+
+### 4. Key Algorithmic Pattern
+**Binary Search on Answer (Slope Analysis):** Even though the array isn't sorted, we can use binary search because there is always a guaranteed peak in the direction of the "uphill" slope (where $nums[i] < nums[i+1]$).

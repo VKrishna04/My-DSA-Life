@@ -58,3 +58,27 @@ class Solution:
             ans = max(ans, curr)
         return ans
 ```
+
+## AI Review
+
+**1. Complexity**
+*   **Time:** $O(n)$ — The algorithm performs a single pass through the array.
+*   **Space:** $O(1)$ — Only two scalar variables (`curr`, `ans`) are maintained regardless of input size.
+
+**2. Correctness**
+The solution is **correct**. It properly handles:
+*   **All-negative numbers:** By initializing with `nums[0]` and comparing `x` vs `curr + x`, it correctly identifies the "least negative" single element as the maximum.
+*   **Single-element arrays:** The loop is skipped, and `nums[0]` is returned.
+*   **Note:** It assumes `len(nums) >= 1` (standard LeetCode constraint).
+
+**3. Concrete Optimization**
+While the Big-O is optimal, you can reduce constant-time overhead by replacing the `max()` function calls with an `if` statement. Function calls in Python are relatively expensive:
+```python
+for x in nums[1:]:
+    curr = x if curr < 0 else curr + x
+    if curr > ans: ans = curr
+```
+This avoids the overhead of the `max` built-in and is generally faster in Python performance benchmarks.
+
+**4. Key Algorithmic Pattern**
+**Kadane’s Algorithm** (a specialized form of Dynamic Programming/Greedy). It makes a local optimal choice at each step to determine the global maximum.

@@ -66,3 +66,23 @@ class Solution:
                 left = mid + 1
         return left
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(N \log M)$, where $N$ is the number of piles and $M$ is the maximum number of bananas in a single pile (`max(piles)`). The binary search takes $\log M$ steps, each requiring an $O(N)$ pass.
+*   **Space Complexity:** $O(1)$, as it uses a constant amount of extra space.
+
+### 2. Correctness
+The code is **correct**.
+*   **Ceiling Math:** `(pile - 1) // speed + 1` correctly implements `ceil(pile / speed)` using integer division.
+*   **Bounds:** The range `[1, max(piles)]` is sufficient because eating faster than the largest pile does not reduce the total time (one pile per hour limit).
+*   **Edge Cases:** Handles $h = \text{len(piles)}$ (returns `max(piles)`) and very large $h$ correctly.
+
+### 3. Concrete Optimization
+**Narrow the search range:**
+Instead of `left = 1`, use `left = (sum(piles) - 1) // h + 1`. 
+The theoretical minimum speed is the total bananas divided by total hours. This reduces the number of iterations in the binary search, especially when $h$ is much larger than the number of piles.
+
+### 4. Key Algorithmic Pattern
+**Binary Search on Answer:** Used when the solution space is monotonic (if speed $k$ works, any speed $> k$ also works).

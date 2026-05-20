@@ -86,3 +86,19 @@ class Solution:
         # return gcd(min(nums), max(nums))
 
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(n + \log(\min(s, l)))$, where $n$ is the length of `nums`. Finding the min and max takes $O(n)$, and the Euclidean algorithm takes logarithmic time relative to the magnitude of the numbers.
+*   **Space Complexity:** $O(1)$, as only two integer variables are stored regardless of input size.
+
+### 2. Correctness
+The logic is **correct**. It successfully identifies the smallest and largest elements and applies the Euclidean algorithm. 
+*   **Edge Cases:** The constraints for this problem ($2 \le nums.length$ and $1 \le nums[i]$) ensure the array is never empty and numbers are positive, preventing division-by-zero errors.
+
+### 3. Optimization
+While your manual implementation is correct, using the built-in **`math.gcd()`** function is the primary optimization. It is implemented in C, making it significantly faster than a Python `while` loop. Additionally, you can find `min` and `max` in a single pass to reduce constant time, though $O(n)$ remains the same.
+
+### 4. Key Algorithmic Pattern
+**Euclidean Algorithm:** An efficient method for computing the greatest common divisor of two integers by repeatedly replacing the larger number with the remainder of its division by the smaller number.

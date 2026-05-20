@@ -82,6 +82,24 @@ class Solution:
         return dp[-1]
 ```
 
+## AI Review
+
+### Analysis
+
+**1. Complexity**
+*   **Time:** $O(W)$, where $W$ is the maximum value in `days` (up to 365). The loop runs from 1 to $W$.
+*   **Space:** $O(W)$ to store the `dp` array and the `day` set.
+
+**2. Correctness**
+*   The logic is **correct**. It correctly handles non-travel days by carrying over the previous minimum cost. The `max(0, i-k)` logic safely handles index out-of-bounds for early days in the calendar.
+*   **Edge Cases:** It handles single-day trips and large gaps between travel days effectively.
+
+**3. Optimization**
+**Space Optimization ($O(1)$ or $O(30)$):** Instead of an array sized by the calendar range, use a **sliding window** approach with two deques (for 7-day and 30-day tickets). Store `(day, cost_at_that_time)` pairs. This reduces space complexity to $O(1)$ (specifically max 30 elements) and time complexity to $O(D)$, where $D$ is the number of travel days, making it more efficient if $W \gg D$.
+
+**4. Key Algorithmic Pattern**
+**Bottom-up Dynamic Programming.** The solution builds the optimal cost for each day based on previously computed optimal costs for $i-1$, $i-7$, and $i-30$.
+
 ## Notes
 
 [ Time taken: 22m 41s ]

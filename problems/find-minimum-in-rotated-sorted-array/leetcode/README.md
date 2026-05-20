@@ -97,3 +97,21 @@ class Solution:
                 return nums[i]
 
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(N)$. In the worst case, the loop iterates through the entire list to find the pivot point.
+*   **Space Complexity:** $O(1)$. It uses a constant amount of extra space regardless of input size.
+
+### 2. Correctness
+The solution is **correct** for the problem constraints (unique elements).
+*   **Edge Cases:** It correctly handles single-element arrays and already-sorted arrays via the initial `if nums[0] <= nums[-1]` check.
+*   **Failure:** While correct, it fails the typical LeetCode follow-up requirement for an $O(\log N)$ solution.
+
+### 3. Optimization
+The optimal approach is **Binary Search** to achieve **$O(\log N)$** time. 
+*   **Logic:** Compare `nums[mid]` with `nums[high]`. If `nums[mid] > nums[high]`, the minimum must be in the right half (`low = mid + 1`). Otherwise, it is in the left half including `mid` (`high = mid`).
+
+### 4. Key Algorithmic Pattern
+The current solution uses **Linear Search**. The intended pattern for this "Medium" problem is **Binary Search on a rotated sorted property**.

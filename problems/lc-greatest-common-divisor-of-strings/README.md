@@ -70,3 +70,25 @@ class Solution:
         else:
             return ""
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time:** $O(N + M)$, where $N$ and $M$ are the lengths of `str1` and `str2`. String concatenation and comparison both take linear time. The GCD calculation is $O(\log(\min(N, M)))$.
+*   **Space:** $O(N + M)$ to store the concatenated strings `str1 + str2` and `str2 + str1`.
+
+### 2. Correctness
+The solution is **correct**. The condition `str1 + str2 == str2 + str1` is a known mathematical property: two strings $S$ and $T$ commute if and only if they are powers of the same base string. If they commute, the length of the greatest common divisor string must be `gcd(len(str1), len(str2))`.
+
+### 3. Optimization
+To improve **space complexity** from $O(N+M)$ to $O(GCD)$, you can avoid full concatenation. Instead, verify if the prefix of length $g = \gcd(len_1, len_2)$ can construct both strings:
+```python
+g = gcd(len(str1), len(str2))
+pattern = str1[:g]
+if pattern * (len(str1) // g) == str1 and pattern * (len(str2) // g) == str2:
+    return pattern
+```
+While this still uses memory for multiplication, it avoids creating the $N+M$ strings.
+
+### 4. Key Algorithmic Pattern
+**Mathematical Property of Strings / Number Theory.** It leverages the relationship between string periodicity and the greatest common divisor of their lengths.
