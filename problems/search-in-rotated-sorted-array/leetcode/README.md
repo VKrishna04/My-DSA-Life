@@ -59,3 +59,23 @@ class Solution:
                 return i
         return -1
 ```
+
+## AI Review
+
+### Analysis
+
+1.  **Complexity**:
+    *   **Time**: $O(n)$ — The algorithm performs a linear scan through the array.
+    *   **Space**: $O(1)$ — Only a single loop index is stored.
+
+2.  **Correctness**: 
+    The logic is correct and will find the target if it exists. It handles edge cases like empty arrays or the target being at the rotation pivot. However, it fails the problem's specific requirement for an $O(\log n)$ runtime.
+
+3.  **Optimization**: 
+    Use **Binary Search** to achieve $O(\log n)$. In each step, determine which half is "sorted" by comparing `nums[low]` and `nums[mid]`. 
+    *   If `nums[low] <= nums[mid]`, the left side is sorted. Check if the target is within that range to decide which half to discard.
+    *   Otherwise, the right side must be sorted.
+    This exploits the property that at least one half of a rotated sorted array is always strictly increasing.
+
+4.  **Key Algorithmic Pattern**: 
+    **Modified Binary Search**. This pattern is essential for searching in $O(\log n)$ when the standard sorted property is partially disrupted (like rotation).
