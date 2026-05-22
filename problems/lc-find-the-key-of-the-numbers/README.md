@@ -7,8 +7,8 @@
 | Problem ID | `lc-find-the-key-of-the-numbers` |
 | Topics | Math |
 | Solved | 2024-10-21 |
-| Runtime | 0 ms (beats 100%) |
-| Memory | 16.6 MB (beats 100%) |
+| Runtime | 5 ms (beats 1%) |
+| Memory | 16.7 MB (beats 100%) |
 
 ## Problem Statement
 
@@ -67,34 +67,33 @@ Hence, the `key` is `"0000"`, i.e. 0.
 ```Python3
 class Solution:
     def generateKey(self, num1: int, num2: int, num3: int) -> str:
-        # nums = [str(num).zfill(4) for num in [num1, num2, num3]]
-        # key = ''.join(min(num[i] for num in nums) for i in range(4))
-        # return int(key)
-        return int(''.join(min(num[i] for num in [str(num).zfill(4) for num in [num1, num2, num3]]) for i in range(4)))
+        nums = [str(num).zfill(4) for num in [num1, num2, num3]]
+        key = ''.join(min(num[i] for num in nums) for i in range(4))
+        return int(key)
 
 ```
 
 ## AI Review
 
-### Analysis
+### Review of "Find the Key of the Numbers" Solution
 
-1.  **Complexity**:
-    *   **Time**: $O(1)$. The input numbers are at most 4 digits, leading to a constant number of operations regardless of the input magnitude.
-    *   **Space**: $O(1)$. It stores fixed-length strings (4 characters) and a small list of three elements.
+1. **Complexity**
+   * **Time Complexity:** $O(1)$. The inputs are constrained to 4 digits, and there are exactly 3 numbers. The operations (padding, iterating 4 times, and comparison) take constant time.
+   * **Space Complexity:** $O(1)$. The storage for strings and the result is fixed and does not scale with input size.
 
-2.  **Correctness**:
-    *   The solution is **correct**. It accurately implements the problem's rules: padding to four digits using `zfill(4)`, selecting the minimum digit per column, and converting the result back to an integer to remove leading zeros. No edge cases (like `0, 0, 0`) fail.
+2. **Correctness**
+   The solution is **correct**. It accurately implements the requirement to pad numbers to four digits using `zfill(4)` and selects the minimum digit at each position. The conversion to `int` at the end correctly handles the removal of any leading zeros.
 
-3.  **Optimization**:
-    *   Avoid string conversions and repeated list creation inside the loop. Use **modular arithmetic** to extract digits. This is faster and uses less memory:
-    ```python
-    res, power = 0, 1
-    for _ in range(4):
-        res += min(num1 % 10, num2 % 10, num3 % 10) * power
-        num1 //= 10; num2 //= 10; num3 //= 10
-        power *= 10
-    return res
-    ```
+3. **Optimization**
+   Avoid **string conversion overhead** by using modular arithmetic. String operations in Python involve object creation which is slower than integer math.
+   ```python
+   res, multiplier = 0, 1
+   for _ in range(4):
+       res += min(num1 % 10, num2 % 10, num3 % 10) * multiplier
+       num1 //= 10; num2 //= 10; num3 //= 10
+       multiplier *= 10
+   return res
+   ```
 
-4.  **Key Algorithmic Pattern**:
-    *   **Digit-by-digit processing** (Column-wise comparison).
+4. **Key Algorithmic Pattern**
+   **Digit-by-digit processing** (Simulation). The problem follows a "Parallel Iteration" approach where you compare corresponding elements across multiple sequences.

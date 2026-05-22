@@ -5,10 +5,10 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-reshape-data-concatenate` |
-| Topics | Data Manipulation, Pandas, Concatenation |
+| Topics | Data Manipulation, Pandas, Array Stacking |
 | Solved | 2024-10-25 |
-| Runtime | 443 ms (beats 5%) |
-| Memory | 69 MB (beats 6%) |
+| Runtime | 443 ms (beats 5.043599999999942%) |
+| Memory | 69 MB (beats 6.416300000000021%) |
 
 ## Problem Statement
 
@@ -80,7 +80,7 @@ Consider using a built-in function in pandas library with the appropriate axis a
 
 ## Solutions
 
-```Pandas
+```Python
 import pandas as pd
 
 def concatenateTables(df1: pd.DataFrame, df2: pd.DataFrame) -> pd.DataFrame:
@@ -89,19 +89,21 @@ def concatenateTables(df1: pd.DataFrame, df2: pd.DataFrame) -> pd.DataFrame:
 
 ## AI Review
 
-### Review
-1. **Complexity**:
-   - **Time**: $O(N + M)$, where $N$ and $M$ are the total number of elements in `df1` and `df2`. Pandas must traverse and copy all data to a new memory block.
-   - **Space**: $O(N + M)$ to allocate the resulting combined DataFrame.
+### Analysis
 
-2. **Correctness**:
-   The solution is correct. However, if the dataframes have overlapping indices, the result will contain duplicate index labels. If columns do not align perfectly, Pandas will perform an outer join by default, introducing `NaN` values for missing columns.
+**1. Complexity**
+*   **Time Complexity:** $O(C \times (R1 + R2))$, where $C$ is the number of columns and $R$ is the number of rows. Pandas must visit and copy every element into a new memory block.
+*   **Space Complexity:** $O(C \times (R1 + R2))$. `pd.concat` creates a completely new DataFrame; it does not perform the operation in-place.
 
-3. **Optimization**:
-   Add `ignore_index=True`. In most data reshaping tasks, the original row indices are not meaningful after concatenation. Using `ignore_index=True` ensures a clean, continuous integer index (0 to N+M-1) and can slightly improve downstream performance by avoiding index-related conflicts.
-   ```python
-   return pd.concat([df1, df2], axis=0, ignore_index=True)
-   ```
+**2. Correctness**
+The code is correct. It handles edge cases like empty DataFrames gracefully. Note that if `df1` and `df2` have different column names, Pandas will perform an "outer join" by default, filling missing columns with `NaN`.
 
-4. **Key Pattern**:
-   **Vertical Concatenation (Row Stacking)**: The standard approach for merging datasets with identical or similar schema.
+**3. Optimization**
+Use `ignore_index=True`:
+```python
+return pd.concat([df1, df2], axis=0, ignore_index=True)
+```
+This is a concrete optimization when the original index labels are not needed. It prevents Pandas from trying to preserve or align potentially conflicting indices, which reduces overhead and avoids duplicate index labels.
+
+**4. Key Algorithmic Pattern**
+Data Reshaping / Structural Transformation.

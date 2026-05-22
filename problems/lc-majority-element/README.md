@@ -8,7 +8,7 @@
 | Topics | Array, Hash Table, Divide and Conquer, Sorting, Counting |
 | Solved | 2024-11-10 |
 | Runtime | 7 ms (beats 57.99060000000001%) |
-| Memory | 18.4 MB (beats 100%) |
+| Memory | 18.5 MB (beats 100%) |
 
 ## Problem Statement
 
@@ -45,10 +45,6 @@ The majority element is the element that appears more than `&lfloor;n / 2&rfloor
 
 ## Solutions
 
-### Alt approach (Python3) — imported
-
-Submission #1448986088
-
 ```Python3
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
@@ -57,18 +53,18 @@ class Solution:
 
 ## AI Review
 
-### 1. Complexity
-*   **Time:** $O(n)$, where $n$ is the length of `nums`. Creating the `Counter` takes $O(n)$ and iterating over its items takes $O(n)$.
-*   **Space:** $O(n)$ to store the frequency map in the `Counter` object.
+### Review of Majority Element Solution
 
-### 2. Correctness
-The code is **correct** given the problem's guarantee that a majority element always exists. 
-*   **Edge Cases:** If the input list is empty, `max()` would receive an empty sequence and raise a `ValueError`. However, LeetCode constraints typically specify $n \ge 1$.
-*   **Note:** Using `max()` is redundant because there can only be one element that appears more than $n/2$ times; `next(...)` would be more idiomatic.
+**1. Complexity**
+*   **Time Complexity:** $O(n)$ — Requires one pass to build the frequency map and one pass to iterate through its keys.
+*   **Space Complexity:** $O(n)$ — In the worst case (no element occurs more than once except for the majority), the hash map stores approximately $n/2$ unique keys.
 
-### 3. Optimization
-**Boyer-Moore Voting Algorithm:** This optimizes space to **$O(1)$**. 
-Instead of a hash map, maintain a `candidate` and a `count`. Iterate through `nums`: if `count` is 0, pick the current number as `candidate`; increment `count` if the number matches `candidate`, otherwise decrement it.
+**2. Correctness**
+*   **Logic:** Correct. It strictly follows the definition of a majority element ($> n/2$).
+*   **Edge Cases:** Handles single-element arrays correctly ($1 > 0.5$). However, if the input list is empty or lacks a majority element, it will raise an `IndexError`. The problem constraints usually guarantee a majority element exists.
 
-### 4. Key Algorithmic Pattern
-**Frequency Counting (Hash Map):** Using a hash table to track occurrences of elements to identify those meeting a specific threshold.
+**3. Optimization**
+Use **Boyer-Moore Voting Algorithm** to reduce space complexity to **$O(1)$**. This algorithm tracks a candidate and a counter, incrementing for matches and decrementing for mismatches, avoiding the need for a hash map.
+
+**4. Key Algorithmic Pattern**
+*   **Frequency Counting / Hash Mapping:** Leveraging a hash table (`collections.Counter`) to track occurrences of elements.

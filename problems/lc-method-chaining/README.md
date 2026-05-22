@@ -5,10 +5,10 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-method-chaining` |
-| Topics | Sorting, Data Filtering, Vectorization |
+| Topics | Data Manipulation, Sorting, Pandas |
 | Solved | 2024-10-26 |
-| Runtime | 373 ms (beats 5%) |
-| Memory | 70.3 MB (beats 9%) |
+| Runtime | 373 ms (beats 5.073700000000015%) |
+| Memory | 70.3 MB (beats 8.823500000000028%) |
 
 ## Problem Statement
 
@@ -66,7 +66,7 @@ Can you complete this task in just **one line **of code using method chaining?
 
 ## Solutions
 
-```Pandas
+```Python
 import pandas as pd
 
 def findHeavyAnimals(animals: pd.DataFrame) -> pd.DataFrame:
@@ -75,23 +75,20 @@ def findHeavyAnimals(animals: pd.DataFrame) -> pd.DataFrame:
 
 ## AI Review
 
-### Analysis
-
+### Review
 **1. Complexity**
-*   **Time Complexity:** $O(N \log N)$, where $N$ is the number of rows in the DataFrame. Filtering takes $O(N)$, but sorting the filtered results dominates with $O(K \log K)$, where $K \le N$.
-*   **Space Complexity:** $O(N)$. Pandas creates intermediate copies during filtering and sorting, requiring memory proportional to the input size.
+*   **Time:** $O(N \log N)$, where $N$ is the number of rows. Filtering takes $O(N)$, but sorting the filtered results dominates the time complexity.
+*   **Space:** $O(N)$. Pandas creates intermediate copies of the DataFrame during filtering and sorting operations.
 
 **2. Correctness**
-The code is correct and follows the problem requirements. It handles:
-*   **Empty DataFrames:** Returns an empty DataFrame with the column `name`.
-*   **No matches:** Returns an empty DataFrame if no weights > 100.
-*   **Ties:** `sort_values` handles identical weights by their original index order (stable sort).
+The solution is correct. It filters rows first, sorts the subset, and finally projects only the required `'name'` column. It handles cases where no animals meet the criteria (returning an empty DataFrame) correctly.
 
 **3. Optimization**
-If the input DataFrame contains many columns, select only the necessary columns (`name` and `weight`) **before** sorting. This reduces the memory footprint and the amount of data the sorting algorithm must shuffle.
+While method chaining is readable, you can slightly improve memory efficiency by using `loc` to perform filtering and column selection in fewer steps, though `weight` must remain until after the sort:
 ```python
-return animals.loc[animals['weight'] > 100, ['name', 'weight']].sort_values('weight', ascending=False)[['name']]
+return animals.loc[animals['weight'] > 100].sort_values('weight', ascending=False)[['name']]
 ```
+For extremely large datasets, using `sort_values(inplace=False)` is standard, but the current approach is idiomatic for LeetCode's pandas track.
 
 **4. Key Algorithmic Pattern**
-**Vectorized Operations / Method Chaining:** Utilizing high-level, column-wise operations that are implemented in C/Cython within Pandas rather than explicit Python loops.
+**Vectorized Operations / Method Chaining:** Utilizing high-level library functions to perform bulk operations on data structures without explicit loops.

@@ -180,6 +180,26 @@
     "platform": "leetcode",
     "slug": "change-data-type"
   },
+  "leetcode::check-if-all-characters-have-equal-number-of-occurrences": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time:** $O(N)$, where $N$ is the length of the string $s$. We traverse the string once to build the dictionary and once through the unique values (max 26 for lowercase English ",
+        "ts": 1779442989162,
+        "weakAreas": [
+          "edge cases"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1122,
+        "providerId": "gemini",
+        "ts": 1779442989203
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "check-if-all-characters-have-equal-number-of-occurrences"
+  },
   "leetcode::climbing-stairs-ii": {
     "aiInsights": [
       {
@@ -242,6 +262,27 @@
     ],
     "platform": "leetcode",
     "slug": "consecutive-characters"
+  },
+  "leetcode::construct-smallest-number-from-di-string": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the pattern (max 8). The code iterates through the string once, and stack operations are $O(1)$.\n*   **Space Complexity:**",
+        "ts": 1779440900793,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1254,
+        "providerId": "gemini",
+        "ts": 1779440900811
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "construct-smallest-number-from-di-string"
   },
   "leetcode::contains-duplicate": {
     "aiInsights": [
@@ -381,6 +422,101 @@
     "platform": "leetcode",
     "slug": "course-schedule-ii"
   },
+  "leetcode::create-a-dataframe-from-list": {
+    "aiInsights": [
+      {
+        "summary": "### Review\n**1. Complexity**\n*   **Time:** $O(N \\times M)$, where $N$ is the number of students and $M$ is the number of columns (2). Pandas must iterate through the nested list to populate the underl",
+        "ts": 1779441774703,
+        "weakAreas": [
+          "edge cases",
+          "space complexity"
+        ]
+      },
+      {
+        "summary": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(N \\times M)$, where $N$ is the number of rows and $M$ is the number of columns (here $M=2$, so $O(N)$). Pandas must iterate through the nested",
+        "ts": 1779442060083,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1116,
+        "providerId": "gemini",
+        "ts": 1779441774722
+      },
+      {
+        "length": 1086,
+        "providerId": "gemini",
+        "ts": 1779442060108
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "create-a-dataframe-from-list"
+  },
+  "leetcode::create-a-new-column": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas performs a vectorized element-wise multiplication across the entire column.\n* ",
+        "ts": 1779441163973,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### Review of \"Create a New Column\" Solution\n\n**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows. Pandas performs a vectorized operation across the entire \"salary\" seri",
+        "ts": 1779441171348,
+        "weakAreas": [
+          "edge cases",
+          "null/empty input",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1263,
+        "providerId": "gemini",
+        "ts": 1779441164009
+      },
+      {
+        "length": 1352,
+        "providerId": "gemini",
+        "ts": 1779441171368
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "create-a-new-column"
+  },
+  "leetcode::create-hello-world-function": {
+    "aiInsights": [
+      {
+        "summary": "### Review\n\n1. **Complexity**: \n   - **Time Complexity**: $O(1)$. Both the creation of the function and its execution take constant time, regardless of the number or size of arguments passed.\n   - **S",
+        "ts": 1779442081364,
+        "weakAreas": [
+          "edge cases",
+          "null/empty input",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1123,
+        "providerId": "gemini",
+        "ts": 1779442081385
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "create-hello-world-function"
+  },
   "leetcode::delete-duplicate-emails": {
     "aiInsights": [
       {
@@ -403,6 +539,123 @@
     ],
     "platform": "leetcode",
     "slug": "delete-duplicate-emails"
+  },
+  "leetcode::di-string-match": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of string `s`. The algorithm performs a single pass over the string.\n*   **Space Complexity:** $O(n)$ to store the result lis",
+        "ts": 1779442666595,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1154,
+        "providerId": "gemini",
+        "ts": 1779442666617
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "di-string-match"
+  },
+  "leetcode::display-the-first-three-rows": {
+    "aiInsights": [
+      {
+        "summary": "### Review of \"Display the First Three Rows\"\n\n**1. Complexity**\n*   **Time Complexity:** $O(1)$ relative to the total number of rows $N$. Since the number of rows to retrieve is fixed at $k=3$, the op",
+        "ts": 1779441483170,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1075,
+        "providerId": "gemini",
+        "ts": 1779441483222
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "display-the-first-three-rows"
+  },
+  "leetcode::drop-duplicate-rows": {
+    "aiInsights": [
+      {
+        "summary": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows. Pandas uses a hash table to identify duplicates in a single pass.\n*   **Space Complexity:** $O(N)$ in th",
+        "ts": 1779440863284,
+        "weakAreas": [
+          "null/empty input",
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### Review\n\n**1. Time and Space Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows. Pandas uses a hash table internally to identify duplicates in a single pass.\n*   **Space ",
+        "ts": 1779440891412,
+        "weakAreas": [
+          "edge cases",
+          "null/empty input",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1159,
+        "providerId": "gemini",
+        "ts": 1779440863311
+      },
+      {
+        "length": 1264,
+        "providerId": "gemini",
+        "ts": 1779440891451
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "drop-duplicate-rows"
+  },
+  "leetcode::drop-missing-data": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(N \\times M)$, where $N$ is the number of rows and $M$ is the number of columns. Pandas must scan the 'name' column ($O(N)$) and then copy the valid rows i",
+        "ts": 1779440572743,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### Review\n**1. Complexity**\n*   **Time:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must iterate through the 'name' column once to identify null values.\n*   **Space:** $O(N \\ti",
+        "ts": 1779440588823,
+        "weakAreas": [
+          "edge cases",
+          "null/empty input",
+          "space complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1251,
+        "providerId": "gemini",
+        "ts": 1779440572773
+      },
+      {
+        "length": 1050,
+        "providerId": "gemini",
+        "ts": 1779440588855
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "drop-missing-data"
   },
   "leetcode::fill-missing-data": {
     "aiInsights": [
@@ -649,6 +902,27 @@
     "platform": "leetcode",
     "slug": "find-the-index-of-the-first-occurrence-in-a-string"
   },
+  "leetcode::find-the-key-of-the-numbers": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n1.  **Complexity**:\n    *   **Time**: $O(1)$. The input numbers are at most 4 digits, leading to a constant number of operations regardless of the input magnitude.\n    *   **Space**: $O(",
+        "ts": 1779442674944,
+        "weakAreas": [
+          "edge cases",
+          "space complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1068,
+        "providerId": "gemini",
+        "ts": 1779442674962
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "find-the-key-of-the-numbers"
+  },
   "leetcode::find-the-most-common-response": {
     "aiInsights": [
       {
@@ -709,6 +983,42 @@
     ],
     "platform": "leetcode",
     "slug": "finding-pairs-with-a-certain-sum"
+  },
+  "leetcode::get-the-size-of-a-dataframe": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(1)$. Accessing the `.shape` attribute is a constant time operation because Pandas stores these dimensions as metadata.\n*   **Space Complexit",
+        "ts": 1779441514833,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### Code Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(1)$. Accessing the `.shape` attribute is a constant-time operation in Pandas as it is stored as metadata.\n*   **Space Complexity:** $O(1)",
+        "ts": 1779441759235,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1030,
+        "providerId": "gemini",
+        "ts": 1779441514860
+      },
+      {
+        "length": 1120,
+        "providerId": "gemini",
+        "ts": 1779441759261
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "get-the-size-of-a-dataframe"
   },
   "leetcode::greatest-common-divisor-of-strings": {
     "aiInsights": [
@@ -839,6 +1149,28 @@
     "platform": "leetcode",
     "slug": "koko-eating-bananas"
   },
+  "leetcode::largest-number": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(N \\log N \\cdot K)$, where $N$ is the number of integers and $K$ is the average number of digits. String concatenation and comparison inside the sort both ",
+        "ts": 1779442684372,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1203,
+        "providerId": "gemini",
+        "ts": 1779442684408
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "largest-number"
+  },
   "leetcode::length-of-last-word": {
     "aiInsights": [
       {
@@ -956,6 +1288,49 @@
     "platform": "leetcode",
     "slug": "longest-continuous-increasing-subsequence"
   },
+  "leetcode::longest-palindromic-substring": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n1.  **Complexity**\n    *   **Time Complexity:** $O(n^2)$ — Two nested loops iterate through the string length $n$.\n    *   **Space Complexity:** $O(n^2)$ — A 2D table of size $n \\times n",
+        "ts": 1779442088795,
+        "weakAreas": [
+          "edge cases",
+          "O(n²) complexity",
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n^2)$, where $n$ is the length of the string. The nested loops iterate through all possible substrings.\n*   **Space Complexity:** $O(n^2)$ to store the 2D",
+        "ts": 1779442376150,
+        "weakAreas": [
+          "O(n²) complexity",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1127,
+        "providerId": "gemini",
+        "ts": 1779442088823
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "longest-palindromic-substring"
+  },
+  "leetcode::longest-palindromic-substring::method::0": {
+    "aiReviews": [
+      {
+        "length": 1211,
+        "providerId": "gemini",
+        "ts": 1779442376182
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "longest-palindromic-substring::method::0"
+  },
   "leetcode::majority-element": {
     "aiInsights": [
       {
@@ -1049,6 +1424,28 @@
     ],
     "platform": "leetcode",
     "slug": "make-array-zero-by-subtracting-equal-amounts"
+  },
+  "leetcode::maximum-count-of-positive-integer-and-negative-integer": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(N)$, where $N$ is the length of `nums`. The code performs two linear passes over the array.\n*   **Space Complexity:** $O(1)$, as it only uses a few intege",
+        "ts": 1779442391597,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1048,
+        "providerId": "gemini",
+        "ts": 1779442391638
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "maximum-count-of-positive-integer-and-negative-integer"
   },
   "leetcode::maximum-depth-of-binary-tree": {
     "aiInsights": [
@@ -1433,6 +1830,40 @@
     "platform": "leetcode",
     "slug": "missing-number"
   },
+  "leetcode::modify-columns": {
+    "aiInsights": [
+      {
+        "summary": "### Review\n\n**1. Complexity**\n*   **Time:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas performs a single pass over the 'salary' column.\n*   **Space:** $O(1)$ auxiliary space. The",
+        "ts": 1779440280876,
+        "weakAreas": [
+          "edge cases",
+          "space complexity"
+        ]
+      },
+      {
+        "summary": "### Review\n\n**1. Complexity**\n*   **Time:** $O(n)$, where $n$ is the number of rows. Pandas uses vectorized operations to iterate through the series.\n*   **Space:** $O(1)$ auxiliary space. The operati",
+        "ts": 1779440556833,
+        "weakAreas": [
+          "null/empty input",
+          "space complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1270,
+        "providerId": "gemini",
+        "ts": 1779440280896
+      },
+      {
+        "length": 1120,
+        "providerId": "gemini",
+        "ts": 1779440556852
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "modify-columns"
+  },
   "leetcode::most-frequent-even-element": {
     "aiInsights": [
       {
@@ -1726,6 +2157,40 @@
     "platform": "leetcode",
     "slug": "ransom-note"
   },
+  "leetcode::rename-columns": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n1. **Complexity**:\n    *   **Time Complexity**: $O(N \\times M)$, where $N$ is the number of rows and $M$ is the number of columns. While the rename mapping is $O(1)$ relative to rows, Pa",
+        "ts": 1779440258829,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### Review\n**1. Complexity**\n*   **Time Complexity:** $O(N \\times M)$, where $N$ is the number of rows and $M$ is the number of columns. While renaming the header is $O(M)$, Pandas creates a full copy",
+        "ts": 1779440272172,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1226,
+        "providerId": "gemini",
+        "ts": 1779440258850
+      },
+      {
+        "length": 1009,
+        "providerId": "gemini",
+        "ts": 1779440272188
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "rename-columns"
+  },
   "leetcode::reshape-data-concatenate": {
     "aiInsights": [
       {
@@ -1851,6 +2316,29 @@
     "platform": "leetcode",
     "slug": "reverse-bits"
   },
+  "leetcode::rings-and-rods": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the string. We iterate through the string once and then through a maximum of 10 rods.\n*   **Space Complexity:** $O(1)$. Al",
+        "ts": 1779443008848,
+        "weakAreas": [
+          "edge cases",
+          "null/empty input",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1170,
+        "providerId": "gemini",
+        "ts": 1779443008932
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "rings-and-rods"
+  },
   "leetcode::rotting-oranges": {
     "aiInsights": [
       {
@@ -1912,6 +2400,38 @@
     ],
     "platform": "leetcode",
     "slug": "search-in-rotated-sorted-array-ii"
+  },
+  "leetcode::select-data": {
+    "aiInsights": [
+      {
+        "summary": "### Evaluation\n\n1.  **Complexity**: \n    *   **Time: $O(N)$**, where $N$ is the number of rows. Pandas must perform a linear scan of the `student_id` column to evaluate the condition.\n    *   **Space:",
+        "ts": 1779441186803,
+        "weakAreas": [
+          "edge cases"
+        ]
+      },
+      {
+        "summary": "### Review\n\n**1. Complexity**\n*   **Time:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas performs a linear scan to evaluate the boolean condition.\n*   **Space:** $O(N)$ in the wors",
+        "ts": 1779441454986,
+        "weakAreas": [
+          "edge cases"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1001,
+        "providerId": "gemini",
+        "ts": 1779441186818
+      },
+      {
+        "length": 1174,
+        "providerId": "gemini",
+        "ts": 1779441455031
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "select-data"
   },
   "leetcode::shift-distance-between-two-strings": {
     "aiInsights": [
@@ -2206,6 +2726,26 @@
     "platform": "leetcode",
     "slug": "total-hamming-distance"
   },
+  "leetcode::two-sum": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n1.  **Complexity**:\n    *   **Time**: $O(n)$ – The list is traversed once; dictionary lookups and insertions are $O(1)$ on average.\n    *   **Space**: $O(n)$ – In the worst case, the dic",
+        "ts": 1779442384491,
+        "weakAreas": [
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1020,
+        "providerId": "gemini",
+        "ts": 1779442384537
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "two-sum"
+  },
   "leetcode::ugly-number": {
     "aiInsights": [
       {
@@ -2249,6 +2789,24 @@
     ],
     "platform": "leetcode",
     "slug": "unique-paths"
+  },
+  "leetcode::valid-parentheses": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n1. **Complexity**:\n   - **Time**: $O(N)$, where $N$ is the length of the string. We iterate through the string once, and dictionary/stack operations are $O(1)$.\n   - **Space**: $O(N)$ in",
+        "ts": 1779442971358,
+        "weakAreas": []
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1115,
+        "providerId": "gemini",
+        "ts": 1779442971386
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "valid-parentheses"
   },
   "leetcode::word-frequency": {
     "aiInsights": [

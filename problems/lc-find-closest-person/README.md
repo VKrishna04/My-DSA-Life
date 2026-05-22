@@ -7,7 +7,7 @@
 | Problem ID | `lc-find-closest-person` |
 | Topics | Math |
 | Solved | 2025-06-02 |
-| Runtime | 4 ms (beats 2%) |
+| Runtime | 4 ms (beats 2.4753000000000025%) |
 | Memory | 17.6 MB (beats 100%) |
 
 ## Problem Statement
@@ -110,25 +110,24 @@ class Solution:
 
 ## AI Review
 
-### Review
-
 **1. Complexity**
-*   **Time Complexity:** $O(1)$ — Basic arithmetic and comparisons take constant time.
-*   **Space Complexity:** $O(1)$ — Only a few integer variables are used.
+*   **Time Complexity:** $O(1)$ — Performs a constant number of arithmetic operations and comparisons.
+*   **Space Complexity:** $O(1)$ — Uses a fixed amount of extra space regardless of input size.
 
 **2. Correctness**
-The solution is **correct**. It properly handles:
-*   **Equidistance:** Returns `0` when $|z-x| = |z-y|$.
-*   **Negative Coordinates:** `abs()` correctly calculates distance regardless of sign.
-*   **Large Integers:** Python 3 handles arbitrary-precision integers, preventing the overflow issues common in languages like C++ or Java.
+The logic is **correct**. It accurately calculates the absolute 1D distance (Manhattan distance) and returns the specified mapping:
+*   $x$ is closer: returns 1
+*   $y$ is closer: returns 2
+*   Tie: returns 0
+*   **Edge Cases:** Handles $x = y$ and $z$ being exactly equidistant between $x$ and $y$ correctly by returning 0.
 
-**3. Optimization**
-While the code is already optimal in terms of complexity, you can simplify the logic by removing the intermediate variables `a` and `b` to reduce memory overhead slightly (though negligible):
-
+**3. Concrete Optimization**
+While the current code is efficient, you can slightly reduce the overhead of creating variables and improve readability using a sign-based approach if this logic were used in a tight loop:
 ```python
-return 1 if abs(z - x) < abs(z - y) else 2 if abs(z - x) > abs(z - y) else 0
+# Returns 1 if a < b, 2 if b < a, 0 if equal
+return (a > b) + (a >= b) if a != b else 0
 ```
-However, the current version is more readable.
+However, the most practical "optimization" for Pythonic code is using the **`cmp` logic** style if the return values were -1, 0, 1. For your specific mapping (1, 2, 0), the current ternary is already optimal.
 
 **4. Key Algorithmic Pattern**
-*   **Absolute Difference / Manhattan Distance (1D):** The problem relies on calculating the magnitude of the displacement between points on a number line.
+**Absolute Difference / Manhattan Distance (1D):** Calculating the distance between points on a line to determine proximity.

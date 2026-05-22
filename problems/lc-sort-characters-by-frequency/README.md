@@ -8,7 +8,7 @@
 | Topics | Hash Table, String, Sorting, Heap (Priority Queue), Bucket Sort, Counting |
 | Solved | 2024-11-20 |
 | Runtime | 6 ms (beats 83.8008%) |
-| Memory | 17.9 MB (beats 100%) |
+| Memory | 17.8 MB (beats 100%) |
 
 ## Problem Statement
 
@@ -49,10 +49,6 @@ Note that 'A' and 'a' are treated as two different characters.
 
 ## Solutions
 
-### Alt approach (Python3) — imported
-
-Submission #1458513764
-
 ```Python3
 from collections import Counter
 
@@ -71,19 +67,12 @@ class Solution:
 
 ## AI Review
 
-### 1. Complexity
-*   **Time**: $O(N + K \log K)$, where $N$ is the string length and $K$ is the number of unique characters. $O(N)$ to count, $O(K \log K)$ to sort unique characters.
-*   **Space**: $O(N + K)$ to store the frequency map and the final output string.
+1. **Complexity**:
+   - **Time**: $O(N + K \log K)$, where $N$ is the string length and $K$ is the number of unique characters. Counting takes $O(N)$; sorting the unique characters takes $O(K \log K)$.
+   - **Space**: $O(N + K)$ to store the frequency map and the final concatenated string.
 
-### 2. Correctness
-**Correct.** It successfully handles:
-*   **Case Sensitivity**: 'A' and 'a' are treated as distinct keys.
-*   **Tie-breaking**: Characters with the same frequency can appear in any order (as per LeetCode requirements).
-*   **Edge Cases**: Empty strings or strings with one character return correctly.
+2. **Correctness**: The solution is correct. It handles edge cases like empty strings, single characters, and characters with identical frequencies (where the relative order doesn't matter) correctly.
 
-### 3. Optimization: Bucket Sort
-Instead of sorting, use **Bucket Sort** to achieve **$O(N)$ time**.
-Create a list of lists where `buckets[i]` stores characters appearing `i` times. Iterate from the highest index down to build the string. This avoids the $O(K \log K)$ sorting overhead.
+3. **Optimization**: Use **Bucket Sort** to achieve strictly $O(N)$ time. Instead of sorting by frequency, create an array of lists (buckets) where the index represents the frequency. Since the maximum frequency is $N$, you can iterate through the buckets from $N$ down to 1 to build the result.
 
-### 4. Key Algorithmic Pattern
-**Frequency Counting** (using a Hash Map/Counter) followed by **Greedy Sorting**.
+4. **Pattern**: **Frequency Counting** followed by **Custom Sorting**.

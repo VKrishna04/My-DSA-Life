@@ -7,8 +7,8 @@
 | Problem ID | `lc-power-of-two` |
 | Topics | Math, Bit Manipulation, Recursion |
 | Solved | 2025-06-01 |
-| Runtime | 4 ms (beats 5.668899999999994%) |
-| Memory | 17.8 MB (beats 100%) |
+| Runtime | 0 ms (beats 100%) |
+| Memory | 17.7 MB (beats 100%) |
 
 ## Problem Statement
 
@@ -47,10 +47,6 @@ An integer `n` is a power of two, if there exists an integer `x` such that `n ==
 
 ## Solutions
 
-### Alt approach (Python3) — imported
-
-Submission #1650968743
-
 ```Python3
 class Solution:
     def isPowerOfTwo(self, n: int) -> bool:
@@ -70,22 +66,19 @@ class Solution:
 
 ## AI Review
 
+### Review of "Power of Two" Solution
+
 **1. Complexity**
-*   **Time:** $O(\log n)$ — converting an integer to a binary string and iterating through its bits requires logarithmic time relative to the value of $n$.
-*   **Space:** $O(\log n)$ — the string representation of the binary number is stored in memory.
+*   **Time:** $O(\log n)$. Converting an integer to a binary string and counting characters both scale with the number of bits in $n$.
+*   **Space:** $O(\log n)$. The `bin(n)` function creates a new string proportional to the number of bits.
 
 **2. Correctness**
-The logic is **correct**. It correctly identifies that a power of two in binary starts with '1' followed exclusively by '0's.
-*   **Edge cases:** 
-    *   `n = 0`: Returns `False` (Correct).
-    *   `n < 0`: `bin(-2)` is `'-0b10'`; the slice `[2:]` results in `'b10'`. Since `'b' != '1'`, it returns `False` (Correct).
+*   The logic is **correct**. It successfully handles $n \le 0$ via the `n > 0` check and correctly identifies that powers of two have exactly one set bit in binary. 
+*   **Minor Note:** `str(bin(n))` is redundant; `bin(n)` already returns a string.
 
 **3. Optimization**
-Use bitwise operators to achieve **$O(1)$ time and space** without string conversion:
-```python
-return n > 0 and (n & (n - 1)) == 0
-```
-This works because a power of two (e.g., `1000`) and its predecessor (e.g., `0111`) share no common set bits, so their bitwise AND is always zero.
+Use bitwise manipulation to achieve **$O(1)$ time and space**. A power of two has exactly one bit set. Subtracting 1 flips that bit and all bits to its right. Therefore, `n & (n - 1)` will equal `0`.
+*   **Optimized Code:** `return n > 0 and (n & (n - 1)) == 0`
 
 **4. Key Algorithmic Pattern**
-**Bit Manipulation** (specifically checking the Hamming weight or bit properties of an integer).
+**Bit Manipulation.** This problem relies on understanding the binary structure of integers, specifically how powers of two relate to bit counts and bitwise transitions.

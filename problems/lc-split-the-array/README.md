@@ -7,8 +7,8 @@
 | Problem ID | `lc-split-the-array` |
 | Topics | Array, Hash Table, Counting |
 | Solved | 2024-11-10 |
-| Runtime | 1 ms (beats 48.0769%) |
-| Memory | 16.5 MB (beats 100%) |
+| Runtime | 0 ms (beats 100%) |
+| Memory | 16.7 MB (beats 100%) |
 
 ## Problem Statement
 
@@ -57,10 +57,6 @@ It’s impossible if the same number occurs more than twice. So just check the f
 
 ## Solutions
 
-### Alt approach (Python3) — imported
-
-Submission #1448744782
-
 ```Python3
 class Solution:
     def isPossibleToSplit(self, nums: List[int]) -> bool:
@@ -70,24 +66,25 @@ class Solution:
 
 ## AI Review
 
-### 1. Complexity
-*   **Time Complexity:** $O(n)$, where $n$ is the length of `nums`. We iterate through the array once to count frequencies and once through the unique values.
-*   **Space Complexity:** $O(n)$ to store the frequency map (`Counter`).
+### Analysis
 
-### 2. Correctness
-The solution is **correct**. To split an array into two subarrays with distinct elements, no single value can appear more than twice. If a value appears three times, at least one subarray must contain a duplicate. Since the total length is $n$ (even), and no count exceeds 2, we can always distribute elements to fill two $n/2$ arrays.
+1.  **Complexity**:
+    *   **Time**: $O(n)$ where $n$ is the length of `nums`. Counting elements takes linear time, and finding the maximum value in the frequency map also takes $O(n)$ in the worst case.
+    *   **Space**: $O(n)$ to store the frequency counts in the `Counter` dictionary.
 
-### 3. Optimization
-Instead of building the entire `Counter` and then iterating, you can check the condition **inline** to potentially return `False` early:
-```python
-counts = {}
-for x in nums:
-    counts[x] = counts.get(x, 0) + 1
-    if counts[x] > 2:
-        return False
-return True
-```
-This saves time in cases where the condition is violated early in the input.
+2.  **Correctness**:
+    *   The logic is **correct**. To split an array into two sets of distinct elements, no single value can appear more than twice. If a value appears 3 times, it is impossible to distribute them without one set receiving at least two.
+    *   **Edge Case**: The problem constraints usually specify $n$ is even, but `len(nums) % 2 == 0` provides an extra layer of safety.
 
-### 4. Key Algorithmic Pattern
-**Frequency Counting / Hash Map:** Using a dictionary or hash table to track occurrences of elements to satisfy frequency-based constraints.
+3.  **Optimisation**:
+    *   **Early Exit**: Instead of counting the entire array and then checking the maximum, iterate through the numbers and return `False` immediately if any frequency reaches 3. This avoids processing the full list if a violation is found early.
+    ```python
+    counts = {}
+    for x in nums:
+        counts[x] = counts.get(x, 0) + 1
+        if counts[x] > 2: return False
+    return True
+    ```
+
+4.  **Key Pattern**:
+    *   **Frequency Counting / Hashing**: Using a hash map to track occurrences to satisfy distinctness constraints.

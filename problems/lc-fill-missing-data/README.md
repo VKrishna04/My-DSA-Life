@@ -5,10 +5,10 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-fill-missing-data` |
-| Topics | Data Manipulation, Data Imputation, Pandas API |
+| Topics | Data Manipulation, Pandas |
 | Solved | 2024-10-25 |
-| Runtime | 351 ms (beats 5%) |
-| Memory | 68.1 MB (beats 13%) |
+| Runtime | 379 ms (beats 5.124400000000005%) |
+| Memory | 69.1 MB (beats 13.329500000000003%) |
 
 ## Problem Statement
 
@@ -59,7 +59,7 @@ Consider using a build-in function in pandas library to fill the missing values 
 
 ## Solutions
 
-```Pandas
+```Python
 import pandas as pd
 
 def fillMissingValues(products: pd.DataFrame) -> pd.DataFrame:
@@ -69,25 +69,20 @@ def fillMissingValues(products: pd.DataFrame) -> pd.DataFrame:
 
 ## AI Review
 
-### Review
-
 **1. Complexity**
-*   **Time Complexity:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must traverse the specified column once to identify and replace null values.
-*   **Space Complexity:** $O(1)$ auxiliary space. While the DataFrame itself occupies $O(N \times M)$ space, `inplace=True` modifies the existing object without creating a full structural copy.
+*   **Time Complexity:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must iterate through the specific column once to identify and replace null values.
+*   **Space Complexity:** $O(1)$ auxiliary space. Because `inplace=True` is used, the operation modifies the existing memory block of the column rather than creating a full copy.
 
-**2. Correctness**
-*   The solution is correct for the problem constraints.
-*   **Edge Cases:** If the `quantity` column is missing from the input, it will raise a `KeyError`. If the column contains non-numeric data types that are incompatible with integer `0`, Pandas will generally cast the column to `object` type, which is functional but inefficient.
+**2. Correctness & Edge Cases**
+*   **Correctness:** The solution is functionally correct for the problem requirements.
+*   **Edge Cases:**
+    *   **Empty DataFrame:** Handles correctly (no-op).
+    *   **Data Types:** If `quantity` contains floats, `0` will be stored as `0.0`. If the column is an object type, the operation still succeeds.
+    *   **Missing Column:** Will raise a `KeyError` if the "quantity" column does not exist (though usually guaranteed in LeetCode).
 
-**3. Optimization**
-Modern Pandas (2.0+) is moving away from the `inplace` parameter. To future-proof the code and support **Copy-on-Write** optimizations, use assignment:
-```python
-products['quantity'] = products['quantity'].fillna(0)
-```
-Alternatively, for multiple columns, use:
-```python
-products.fillna({'quantity': 0}, inplace=True)
-```
+**3. Concrete Optimization**
+Avoid using `inplace=True`. Modern Pandas is deprecating the `inplace` parameter across most methods because it often doesn't actually improve performance and can cause "SettingWithCopy" warnings. Use direct assignment:
+`products['quantity'] = products['quantity'].fillna(0)`
 
 **4. Key Algorithmic Pattern**
-Data Imputation (Handling missing values).
+**Data Imputation** (Value substitution for missing data).

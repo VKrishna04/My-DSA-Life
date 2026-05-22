@@ -7,8 +7,8 @@
 | Problem ID | `lc-number-of-employees-who-met-the-target` |
 | Topics | Array |
 | Solved | 2024-11-10 |
-| Runtime | 0 ms (beats 100%) |
-| Memory | 16.8 MB (beats 100%) |
+| Runtime | 4 ms (beats 3%) |
+| Memory | 16.7 MB (beats 100%) |
 
 ## Problem Statement
 
@@ -63,29 +63,26 @@ Iterate over the elements of array hours and check if the value is greater than 
 ```Python3
 class Solution:
     def numberOfEmployeesWhoMetTarget(self, hours: List[int], target: int) -> int:
-        # return len(hours) % 2 == 0 and max(Counter(hours).values()) < target
         return len([i for i in range(len(hours)) if hours[i] >= target])
 ```
 
 ## AI Review
 
 ### 1. Complexity
-*   **Time Complexity:** $O(n)$, where $n$ is the number of employees. The list is traversed once.
-*   **Space Complexity:** $O(n)$. The list comprehension creates a new intermediate list in memory to store the indices before calculating the length.
+*   **Time Complexity:** $O(n)$, where $n$ is the length of the `hours` list. The code iterates through the list once.
+*   **Space Complexity:** $O(n)$. The list comprehension creates a new list in memory containing the indices of qualifying employees before calculating the length.
 
 ### 2. Correctness
-The logic is **correct**. It accurately implements the requirement to count elements where `hours[i] >= target`. 
-*   **Edge Cases:** Handles empty lists (returns 0) and cases where all or no employees meet the target correctly.
+The logic is **correct**. It accurately implements the condition `hours[i] >= target`. 
+*   **Edge Cases:** It correctly handles an empty input list (returns 0), cases where no employees meet the target, and cases where all employees meet the target.
 
-### 3. Optimization
-**Reduce Space Complexity to $O(1)$:**
-Instead of creating a new list, use a generator expression with the `sum()` function. This counts the occurrences without allocating extra memory.
+### 3. Concrete Optimization
+Replace the **list comprehension** with a **generator expression** and the `sum()` function. This reduces the space complexity from **$O(n)$ to $O(1)$** by avoiding the creation of an intermediate list.
 
+**Optimized Code:**
 ```python
 return sum(1 for h in hours if h >= target)
-# Or even more idiomatic:
-return sum(h >= target for h in hours)
 ```
 
 ### 4. Key Algorithmic Pattern
-*   **Linear Scan / Filtering:** Iterating through a collection once to count or extract elements that satisfy a specific condition.
+**Linear Scan (Filtering):** The algorithm performs a single pass over the dataset to filter elements based on a specific predicate.

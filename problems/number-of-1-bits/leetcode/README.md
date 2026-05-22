@@ -6,7 +6,7 @@
 | Platform | Leetcode |
 | Problem ID | `lc-number-of-1-bits` |
 | Topics | Divide and Conquer, Bit Manipulation |
-| Solved | 2025-06-01 |
+| Solved | 2025-06-02 |
 | Runtime | 0 ms (beats 100%) |
 | Memory | 17.8 MB (beats 100%) |
 
@@ -66,26 +66,24 @@ class Solution:
 
 ## AI Review
 
-### Review
-
-**1. Complexity**
-*   **Time Complexity:** $O(k)$, where $k$ is the number of bits in $n$ (for a 32-bit integer, this is effectively $O(1)$). Converting to a string and iterating through it both take linear time relative to the bit length.
+### 1. Complexity
+*   **Time Complexity:** $O(k)$, where $k$ is the number of bits in $n$ (for a 32-bit integer, this is effectively $O(1)$). Converting an integer to a string takes time proportional to the number of bits.
 *   **Space Complexity:** $O(k)$ to store the intermediate binary string representation.
 
-**2. Correctness**
-*   **Edge Cases:** The solution is correct for non-negative integers. If $n=0$, it returns `0`. 
-*   **Note:** In Python, `bin(-1)` returns `'-0b1'`. If the problem expects a 32-bit two's complement representation for negative numbers, this approach would fail. However, LeetCode defines $n$ as a positive integer for this problem.
+### 2. Correctness
+The code is **correct** for all valid inputs, including the edge case $n = 0$. Since Python integers have arbitrary precision, it handles values beyond 32 bits gracefully.
 
-**3. Optimization**
-Use **Brian Kernighan’s Algorithm** to avoid string conversion and improve performance when set bits are sparse:
+### 3. Concrete Optimisation
+Use **Brian Kernighan’s Algorithm**. Instead of converting to a string, use bitwise operations to clear the least significant set bit in each iteration. This performs exactly as many iterations as there are set bits ($h$):
+
 ```python
 count = 0
 while n:
-    n &= (n - 1)  # Flips the least significant set bit to 0
+    n &= (n - 1)  # Flips the least significant '1' to '0'
     count += 1
 return count
 ```
-This runs in $O(\text{set bits})$ time and $O(1)$ space.
+This is more memory-efficient as it avoids string allocation.
 
-**4. Key Algorithmic Pattern**
-*   **Bit Manipulation** (via built-in string formatting/parsing).
+### 4. Key Algorithmic Pattern
+**String Manipulation / Built-in Primitives.** This approach leverages Python's high-level abstractions to solve a low-level bit manipulation problem.
