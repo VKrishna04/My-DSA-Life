@@ -89,3 +89,22 @@ class Solution:
         return s[start:start + max_len]
 
 ```
+
+## AI Review
+
+### Analysis
+
+1.  **Complexity**
+    *   **Time Complexity:** $O(n^2)$ — Two nested loops iterate through the string length $n$.
+    *   **Space Complexity:** $O(n^2)$ — A 2D table of size $n \times n$ is maintained to store palindrome states.
+
+2.  **Correctness**
+    *   The solution is correct. It properly handles base cases (single characters) and transitions (checking matching boundaries and the inner substring state).
+    *   **Edge cases:** Single-character strings, two-character palindromes ("aa"), and empty strings are handled correctly.
+
+3.  **Concrete Optimization**
+    *   **Expand Around Center:** Instead of a DP table, iterate through each character (and each gap between characters) as a potential center. Expand outwards as long as characters match. 
+    *   **Benefit:** Reduces **space complexity to $O(1)$** while keeping time complexity at $O(n^2)$. (For $O(n)$ time, Manacher’s Algorithm could be used).
+
+4.  **Key Algorithmic Pattern**
+    *   **Dynamic Programming:** It breaks the problem into subproblems ($dp[j][i]$ depends on $dp[j+1][i-1]$) and stores results to avoid redundant computations.

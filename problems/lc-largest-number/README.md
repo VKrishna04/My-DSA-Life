@@ -60,3 +60,26 @@ class Solution:
         return '0' if result[0] == '0' else result
 
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(N \log N \cdot K)$, where $N$ is the number of integers and $K$ is the average number of digits. String concatenation and comparison inside the sort both take $O(K)$.
+*   **Space Complexity:** $O(N \cdot K)$ to store the list of string representations.
+
+### 2. Correctness
+The solution is **correct**. It handles the primary edge case where the input contains multiple zeros (e.g., `[0, 0]`). The final check `result[0] == '0'` ensures that instead of returning `"00"`, it returns `"0"`.
+
+### 3. Optimization
+In Python, **custom key classes** are often faster than `cmp_to_key`. You can wrap strings in a class that overrides the `__lt__` method:
+```python
+class LargerNum(str):
+    def __lt__(x, y):
+        return x + y > y + x  # Reversed for descending sort
+
+nums.sort(key=LargerNum)
+```
+This integrates more natively with Timsort and avoids the overhead of the comparison wrapper function.
+
+### 4. Key Algorithmic Pattern
+**Greedy Algorithm via Custom Sorting.** The problem relies on the transitive property of the concatenation comparison ($A+B > B+A$), ensuring that a local optimal choice (sorting strings by this rule) leads to the global maximum.

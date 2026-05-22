@@ -88,3 +88,20 @@ class Solution:
             num_to_index[num] = i
         return []
 ```
+
+## AI Review
+
+### Analysis
+
+1.  **Complexity**:
+    *   **Time**: $O(n)$ – The list is traversed once; dictionary lookups and insertions are $O(1)$ on average.
+    *   **Space**: $O(n)$ – In the worst case, the dictionary stores $n-1$ elements.
+
+2.  **Correctness**: 
+    The logic is correct and robust. By checking for the `complement` *before* adding the current element to the dictionary, it prevents using the same index twice. It correctly handles negative numbers, zeros, and duplicate values.
+
+3.  **Optimization**: 
+    This is the optimal one-pass approach for time complexity. To optimize **space** to $O(1)$, you could sort the array and use the **Two-Pointer technique**, but this would increase time complexity to $O(n \log n)$ due to sorting and is only applicable if you can return values instead of original indices (sorting loses index positions unless tracked).
+
+4.  **Key Algorithmic Pattern**: 
+    **Hash Map (One-Pass)** – Using a dictionary to trade space for a constant-time lookup of a previously seen value.

@@ -99,3 +99,22 @@ class Solution:
 
         return max(neg_count, pos_count)
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(N)$, where $N$ is the length of `nums`. The code performs two linear passes over the array.
+*   **Space Complexity:** $O(1)$, as it only uses a few integer counters (the generator expressions do not create intermediate lists).
+
+### 2. Correctness
+The solution is **correct**. It accurately counts strictly positive and strictly negative integers, ignoring zeros as required. It handles edge cases like all zeros, all negatives, or all positives correctly.
+
+### 3. Concrete Optimization
+The input `nums` is **sorted**. Instead of a linear scan, use **Binary Search** to find the transition points.
+*   Find the first index `i` where `nums[i] >= 0`. The count of negatives is `i`.
+*   Find the first index `j` where `nums[j] > 0`. The count of positives is `len(nums) - j`.
+This reduces the time complexity from **$O(N)$ to $O(\log N)$**.
+
+### 4. Key Algorithmic Pattern
+*   **Current Code:** Linear Scan / Iteration.
+*   **Optimal Approach:** Binary Search (leveraging the sorted property of the input).

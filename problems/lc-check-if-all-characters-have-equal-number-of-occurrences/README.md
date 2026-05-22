@@ -7,8 +7,8 @@
 | Problem ID | `lc-check-if-all-characters-have-equal-number-of-occurrences` |
 | Topics | Hash Table, String, Counting |
 | Solved | 2024-10-20 |
-| Runtime | 0 ms |
-| Memory | 16.5 MB |
+| Runtime | 0 ms (beats 100%) |
+| Memory | 16.5 MB (beats 100%) |
 
 ## Problem Statement
 
@@ -54,3 +54,43 @@ Build a dictionary containing the frequency of each character appearing in s
 Check if all values in the dictionary are the same.
 
 </details>
+
+## Solutions
+
+```Python3
+class Solution:
+    def areOccurrencesEqual(self, s: str) -> bool:
+        d = {}
+        for char in s:
+            if char not in d:
+                d[char] = 0
+            d[char] += 1
+        
+        val = d[s[0]]
+        for value in d.values():
+            if value != val:
+                return False
+        return True
+```
+
+## AI Review
+
+### 1. Complexity
+*   **Time:** $O(N)$, where $N$ is the length of the string $s$. We traverse the string once to build the dictionary and once through the unique values (max 26 for lowercase English letters).
+*   **Space:** $O(k)$, where $k$ is the number of unique characters. In the context of lowercase English letters, this is $O(1)$ as $k \le 26$.
+
+### 2. Correctness
+The code is correct for the problem constraints.
+*   **Edge Cases:** For a single-character string (e.g., "a"), it correctly returns `True`.
+*   **Potential Fail:** If the input string `s` is empty, `s[0]` will raise an `IndexError`. However, LeetCode constraints typically specify $1 \le s.length$.
+
+### 3. Concrete Optimization
+Use `collections.Counter` and a `set` to simplify the logic and improve readability:
+```python
+from collections import Counter
+return len(set(Counter(s).values())) == 1
+```
+This reduces the manual loop and conditional checks to a single line.
+
+### 4. Key Algorithmic Pattern
+**Frequency Map (Counting):** Using a hash map (dictionary) to store the occurrences of elements and then verifying a property of those counts.

@@ -110,3 +110,28 @@ class Solution:
             s+= str(i)
         return s
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(n)$, where $n$ is the length of the pattern (max 8). The code iterates through the string once, and stack operations are $O(1)$.
+*   **Space Complexity:** $O(n)$ to store the `dp` and `temp` stacks and the final string.
+
+### 2. Correctness
+The logic is **correct**. It greedily assigns the next available digit and uses a temporary stack to reverse sequences during "D" (decreasing) segments, ensuring the lexicographically smallest result. Since the pattern length is $\le 8$, the digits stay within the 1-9 range.
+
+### 3. Concrete Optimisation
+Replace the string concatenation loop with `"".join(map(str, dp))` to avoid $O(n^2)$ overhead from string immutability. Additionally, the logic can be simplified:
+```python
+res, stack = [], []
+for i in range(len(pattern) + 1):
+    stack.append(str(i + 1))
+    if i == len(pattern) or pattern[i] == 'I':
+        while stack:
+            res.append(stack.pop())
+return "".join(res)
+```
+This version removes the need for two separate stacks and complex `if/else` logic.
+
+### 4. Key Algorithmic Pattern
+**Greedy with a Stack.** The stack reverses the order of digits during decreasing sequences to satisfy the "D" condition while keeping digits as small as possible.

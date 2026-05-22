@@ -73,3 +73,28 @@ class Solution:
         return int(''.join(min(num[i] for num in [str(num).zfill(4) for num in [num1, num2, num3]]) for i in range(4)))
 
 ```
+
+## AI Review
+
+### Analysis
+
+1.  **Complexity**:
+    *   **Time**: $O(1)$. The input numbers are at most 4 digits, leading to a constant number of operations regardless of the input magnitude.
+    *   **Space**: $O(1)$. It stores fixed-length strings (4 characters) and a small list of three elements.
+
+2.  **Correctness**:
+    *   The solution is **correct**. It accurately implements the problem's rules: padding to four digits using `zfill(4)`, selecting the minimum digit per column, and converting the result back to an integer to remove leading zeros. No edge cases (like `0, 0, 0`) fail.
+
+3.  **Optimization**:
+    *   Avoid string conversions and repeated list creation inside the loop. Use **modular arithmetic** to extract digits. This is faster and uses less memory:
+    ```python
+    res, power = 0, 1
+    for _ in range(4):
+        res += min(num1 % 10, num2 % 10, num3 % 10) * power
+        num1 //= 10; num2 //= 10; num3 //= 10
+        power *= 10
+    return res
+    ```
+
+4.  **Key Algorithmic Pattern**:
+    *   **Digit-by-digit processing** (Column-wise comparison).
