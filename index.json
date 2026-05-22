@@ -1,21 +1,21 @@
 {
-  "updatedAt": "2026-05-21T18:44:30.837Z",
+  "updatedAt": "2026-05-22T07:28:42.672Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 254,
+    "total": 255,
     "easy": 156,
-    "medium": 89,
+    "medium": 90,
     "hard": 9,
     "byPlatform": {
-      "leetcode": 254
+      "leetcode": 255
     },
     "byLang": {
-      "Python3": 187,
+      "Python3": 188,
       "MySQL": 15,
       "Java": 12,
       "Python": 16,
-      "pythondata": 13,
-      "Pandas": 2,
+      "pythondata": 6,
+      "Pandas": 9,
       "JavaScript": 3,
       "C++": 1,
       "C": 1,
@@ -29,13 +29,16 @@
       "Bit Manipulation": 2,
       "Tree": 3,
       "Dynamic Programming": 4,
-      "Untagged": 31,
+      "Data Manipulation": 8,
       "Hash Table": 13,
       "String": 20,
-      "Depth-First Search": 1,
+      "Depth-First Search": 2,
+      "Untagged": 20,
       "Two Pointers": 7,
       "Binary Search": 1,
+      "Sorting": 1,
       "Divide and Conquer": 3,
+      "Data Reshaping": 2,
       "Shell": 4
     }
   },
@@ -1419,8 +1422,12 @@
         "ext": "py",
         "slug": "python"
       },
-      "tags": [],
-      "topic": "Untagged",
+      "tags": [
+        "Data Manipulation",
+        "Pandas",
+        "Schema Transformation"
+      ],
+      "topic": "Data Manipulation",
       "code": "import pandas as pd\n\ndef changeDatatype(students: pd.DataFrame) -> pd.DataFrame:\n    return students.astype({'grade':int})",
       "readmeContent": "# Change Data Type\n\n**Difficulty:** Easy  |  **Acceptance:** 87.3%\n\n**Tags:** —\n\n## Problem\n\nDataFrame students\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n| grade       | float  |\n+-------------+--------+\n\nWrite a solution to correct the errors:\n\nThe grade column is stored as floats,&nbsp;convert it to integers.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:\nDataFrame students:\n+------------+------+-----+-------+\n| student_id | name | age | grade |\n+------------+------+-----+-------+\n| 1          | Ava  | 6   | 73.0  |\n| 2          | Kate | 15  | 87.0  |\n+------------+------+-----+-------+\nOutput:\n+------------+------+-----+-------+\n| student_id | name | age | grade |\n+------------+------+-----+-------+\n| 1          | Ava  | 6   | 73    |\n| 2          | Kate | 15  | 87    |\n+------------+------+-----+-------+\nExplanation: \nThe data types of the column grade is converted to int.\n\n## My Submission\n\n- Runtime: 474 ms\n- Memory: 68.9 MB\n",
       "files": [
@@ -1448,7 +1455,8 @@
       "_committedPaths": [
         "problems/lc-change-data-type/lc-change-data-type.py",
         "problems/lc-change-data-type/README.md"
-      ]
+      ],
+      "aiReview": "**Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must iterate through the column to perform the type conversion.\n*   **Space Complexity:** $O(N)$ in the worst case, as `astype` creates a copy of the column/DataFrame by default.\n\n**Correctness**\nThe solution is correct for standard inputs. However, it will fail in these edge cases:\n*   **Missing Data:** If the `grade` column contains `NaN` or `None`, converting to `int` will raise a `ValueError` because standard Python integers in Pandas do not support NaNs.\n*   **Non-numeric Strings:** If a string cannot be parsed as an integer (e.g., \"A+\"), it will raise a `ValueError`.\n\n**Optimization**\nTo handle missing values without crashing, use the nullable integer type `Int64` (note the capital 'I'):\n```python\nstudents['grade'] = students['grade'].astype('Int64')\n```\nAlternatively, use `copy=False` within `astype` to minimize memory overhead if the transformation allows for a view, though this is rarely guaranteed for type casts.\n\n**Key Algorithmic Pattern**\n**Vectorized Data Transformation:** Leveraging Pandas' underlying NumPy arrays to apply operations across an entire column simultaneously rather than using manual loops."
     },
     {
       "id": "lc-check-if-all-characters-have-equal-number-of-occurrences",
@@ -4079,13 +4087,17 @@
       "titleSlug": "fill-missing-data",
       "difficulty": "Easy",
       "lang": {
-        "name": "pythondata",
-        "ext": "txt",
-        "slug": "pythondata"
+        "name": "Pandas",
+        "slug": "python",
+        "ext": "py"
       },
-      "tags": [],
-      "topic": "Untagged",
-      "code": "",
+      "tags": [
+        "Data Manipulation",
+        "Data Imputation",
+        "Pandas API"
+      ],
+      "topic": "Data Manipulation",
+      "code": "import pandas as pd\n\ndef fillMissingValues(products: pd.DataFrame) -> pd.DataFrame:\n    products['quantity'].fillna(value = 0, inplace = True)\n    return products",
       "readmeContent": "# Fill Missing Data\n\n**Difficulty:** Easy  |  **Acceptance:** 72.5%\n\n**Tags:** —\n\n## Problem\n\nDataFrame products\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| quantity    | int    |\n| price       | int    |\n+-------------+--------+\n\nWrite a solution to fill in the missing value as 0 in the quantity column.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:+-----------------+----------+-------+\n| name            | quantity | price |\n+-----------------+----------+-------+\n| Wristwatch      | None     | 135   |\n| WirelessEarbuds | None     | 821   |\n| GolfClubs       | 779      | 9319  |\n| Printer         | 849      | 3051  |\n+-----------------+----------+-------+\nOutput:\n+-----------------+----------+-------+\n| name            | quantity | price |\n+-----------------+----------+-------+\n| Wristwatch      | 0        | 135   |\n| WirelessEarbuds | 0        | 821   |\n| GolfClubs       | 779      | 9319  |\n| Printer         | 849      | 3051  |\n+-----------------+----------+-------+\nExplanation: \nThe quantity for Wristwatch and WirelessEarbuds are filled by 0.\n\n## My Submission\n\n- Runtime: 351 ms\n- Memory: 68.1 MB\n",
       "files": [
         {
@@ -4096,8 +4108,8 @@
       "timestamp": 1729838683000,
       "runtime": "351 ms",
       "memory": "68.1 MB",
-      "runtimePct": null,
-      "memoryPct": null,
+      "runtimePct": 5,
+      "memoryPct": 13,
       "problemStatement": "<pre>\nDataFrame <code>products</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| quantity    | int    |\n| price       | int    |\n+-------------+--------+\n</pre>\n\n<p>Write a solution to fill in the missing value as <code><strong>0</strong></code> in the <code>quantity</code> column.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<pre>\n<strong class=\"example\">Example 1:</strong>\n<strong>Input:</strong>+-----------------+----------+-------+\n| name            | quantity | price |\n+-----------------+----------+-------+\n| Wristwatch      | None     | 135   |\n| WirelessEarbuds | None     | 821   |\n| GolfClubs       | 779      | 9319  |\n| Printer         | 849      | 3051  |\n+-----------------+----------+-------+\n<strong>Output:\n</strong>+-----------------+----------+-------+\n| name            | quantity | price |\n+-----------------+----------+-------+\n| Wristwatch      | 0        | 135   |\n| WirelessEarbuds | 0        | 821   |\n| GolfClubs       | 779      | 9319  |\n| Printer         | 849      | 3051  |\n+-----------------+----------+-------+\n<strong>Explanation:</strong> \nThe quantity for Wristwatch and WirelessEarbuds are filled by 0.</pre>\n",
       "hints": [
         "Consider using a build-in function in pandas library to fill the missing values of specified columns."
@@ -4107,7 +4119,8 @@
       "hasSimilar": null,
       "_committedPaths": [
         "problems/lc-fill-missing-data/README.md"
-      ]
+      ],
+      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must traverse the specified column once to identify and replace null values.\n*   **Space Complexity:** $O(1)$ auxiliary space. While the DataFrame itself occupies $O(N \\times M)$ space, `inplace=True` modifies the existing object without creating a full structural copy.\n\n**2. Correctness**\n*   The solution is correct for the problem constraints.\n*   **Edge Cases:** If the `quantity` column is missing from the input, it will raise a `KeyError`. If the column contains non-numeric data types that are incompatible with integer `0`, Pandas will generally cast the column to `object` type, which is functional but inefficient.\n\n**3. Optimization**\nModern Pandas (2.0+) is moving away from the `inplace` parameter. To future-proof the code and support **Copy-on-Write** optimizations, use assignment:\n```python\nproducts['quantity'] = products['quantity'].fillna(0)\n```\nAlternatively, for multiple columns, use:\n```python\nproducts.fillna({'quantity': 0}, inplace=True)\n```\n\n**4. Key Algorithmic Pattern**\nData Imputation (Handling missing values)."
     },
     {
       "id": "lc-fill-missing-data::1433144665",
@@ -4121,8 +4134,11 @@
         "ext": "py",
         "slug": "python"
       },
-      "tags": [],
-      "topic": "Untagged",
+      "tags": [
+        "Data Manipulation",
+        "Pandas"
+      ],
+      "topic": "Data Manipulation",
       "code": "import pandas as pd\n\ndef fillMissingValues(products: pd.DataFrame) -> pd.DataFrame:\n    products['quantity'].fillna(value = 0, inplace = True)\n    return products",
       "readmeContent": "# Fill Missing Data\n\n**Difficulty:** Easy  |  **Acceptance:** 72.5%\n\n**Tags:** —\n\n## Problem\n\nDataFrame products\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| quantity    | int    |\n| price       | int    |\n+-------------+--------+\n\nWrite a solution to fill in the missing value as 0 in the quantity column.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:+-----------------+----------+-------+\n| name            | quantity | price |\n+-----------------+----------+-------+\n| Wristwatch      | None     | 135   |\n| WirelessEarbuds | None     | 821   |\n| GolfClubs       | 779      | 9319  |\n| Printer         | 849      | 3051  |\n+-----------------+----------+-------+\nOutput:\n+-----------------+----------+-------+\n| name            | quantity | price |\n+-----------------+----------+-------+\n| Wristwatch      | 0        | 135   |\n| WirelessEarbuds | 0        | 821   |\n| GolfClubs       | 779      | 9319  |\n| Printer         | 849      | 3051  |\n+-----------------+----------+-------+\nExplanation: \nThe quantity for Wristwatch and WirelessEarbuds are filled by 0.\n\n## My Submission\n\n- Runtime: 379 ms\n- Memory: 69.1 MB\n",
       "files": [
@@ -4150,7 +4166,8 @@
       "_committedPaths": [
         "problems/lc-fill-missing-data/lc-fill-missing-data.py",
         "problems/lc-fill-missing-data/README.md"
-      ]
+      ],
+      "aiReview": "**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must iterate through the specific column once to identify and replace null values.\n*   **Space Complexity:** $O(1)$ auxiliary space. Because `inplace=True` is used, the operation modifies the existing memory block of the column rather than creating a full copy.\n\n**2. Correctness & Edge Cases**\n*   **Correctness:** The solution is functionally correct for the problem requirements.\n*   **Edge Cases:**\n    *   **Empty DataFrame:** Handles correctly (no-op).\n    *   **Data Types:** If `quantity` contains floats, `0` will be stored as `0.0`. If the column is an object type, the operation still succeeds.\n    *   **Missing Column:** Will raise a `KeyError` if the \"quantity\" column does not exist (though usually guaranteed in LeetCode).\n\n**3. Concrete Optimization**\nAvoid using `inplace=True`. Modern Pandas is deprecating the `inplace` parameter across most methods because it often doesn't actually improve performance and can cause \"SettingWithCopy\" warnings. Use direct assignment:\n`products['quantity'] = products['quantity'].fillna(0)`\n\n**4. Key Algorithmic Pattern**\n**Data Imputation** (Value substitution for missing data)."
     },
     {
       "id": "lc-filling-bookcase-shelves",
@@ -4200,7 +4217,11 @@
       "isDuplicate": false,
       "duplicateOf": null,
       "_requestAIReview": true,
-      "platform": "leetcode"
+      "platform": "leetcode",
+      "_committedPaths": [
+        "problems/lc-filling-bookcase-shelves/lc-filling-bookcase-shelves.py",
+        "problems/lc-filling-bookcase-shelves/README.md"
+      ]
     },
     {
       "id": "lc-find-all-k-distant-indices-in-an-array::1762915066",
@@ -4409,6 +4430,7 @@
       "isDuplicate": true,
       "duplicateOf": "lc-find-closest-person::1651390442",
       "_committedPaths": [
+        "problems/lc-find-closest-person/lc-find-closest-person.py",
         "problems/lc-find-closest-person/README.md"
       ],
       "aiReview": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(1)$ — Basic arithmetic and comparisons take constant time.\n*   **Space Complexity:** $O(1)$ — Only a few integer variables are used.\n\n**2. Correctness**\nThe solution is **correct**. It properly handles:\n*   **Equidistance:** Returns `0` when $|z-x| = |z-y|$.\n*   **Negative Coordinates:** `abs()` correctly calculates distance regardless of sign.\n*   **Large Integers:** Python 3 handles arbitrary-precision integers, preventing the overflow issues common in languages like C++ or Java.\n\n**3. Optimization**\nWhile the code is already optimal in terms of complexity, you can simplify the logic by removing the intermediate variables `a` and `b` to reduce memory overhead slightly (though negligible):\n\n```python\nreturn 1 if abs(z - x) < abs(z - y) else 2 if abs(z - x) > abs(z - y) else 0\n```\nHowever, the current version is more readable.\n\n**4. Key Algorithmic Pattern**\n*   **Absolute Difference / Manhattan Distance (1D):** The problem relies on calculating the magnitude of the displacement between points on a number line."
@@ -5196,7 +5218,8 @@
       "_committedPaths": [
         "problems/lc-find-the-number-of-ways-to-place-people-i/lc-find-the-number-of-ways-to-place-people-i.py",
         "problems/lc-find-the-number-of-ways-to-place-people-i/README.md"
-      ]
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(N^2)$, where $N$ is the number of points. Sorting takes $O(N \\log N)$, and the nested loops iterate through all pairs once.\n*   **Space Complexity:** $O(N)$ or $O(\\log N)$ depending on the implementation of the sorting algorithm in Python.\n\n### 2. Correctness\nThe solution is **correct**. Sorting by $x$ ascending and $y$ descending ensures that for any pair $(i, j)$ where $j > i$:\n*   $x_i \\le x_j$ is guaranteed.\n*   The condition `points[j][1] <= points[i][1]` ensures $y_j$ is not above $y_i$.\n*   Tracking the running maximum `end` ensures no point $k$ exists between $i$ and $j$ such that $y_j \\le y_k \\le y_i$.\n\n### 3. Optimization\nWhile $O(N^2)$ is optimal for this problem's constraints ($N=50$ for Part I, $N=1000$ for Part II), you can slightly improve performance by using `end = -1e10` (or a known minimum bound) to avoid the overhead of `float(\"-inf\")`.\n\n### 4. Key Algorithmic Pattern\n**Sorting + Running Maximum:** By processing points in a specific sorted order, the 2D geometric constraint \"no point inside the rectangle\" is reduced to a 1D range check using a monotonic property."
     },
     {
       "id": "lc-find-the-student-that-will-replace-the-chalk",
@@ -9240,13 +9263,17 @@
       "titleSlug": "method-chaining",
       "difficulty": "Easy",
       "lang": {
-        "name": "pythondata",
-        "ext": "txt",
-        "slug": "pythondata"
+        "name": "Pandas",
+        "slug": "python",
+        "ext": "py"
       },
-      "tags": [],
-      "topic": "Untagged",
-      "code": "",
+      "tags": [
+        "Sorting",
+        "Data Filtering",
+        "Vectorization"
+      ],
+      "topic": "Sorting",
+      "code": "import pandas as pd\n\ndef findHeavyAnimals(animals: pd.DataFrame) -> pd.DataFrame:\n    return animals[animals['weight'] > 100].sort_values(by='weight', ascending=False)[['name']]",
       "readmeContent": "# Method Chaining\n\n**Difficulty:** Easy  |  **Acceptance:** 76.0%\n\n**Tags:** —\n\n## Problem\n\nDataFrame animals\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| species     | object |\n| age         | int    |\n| weight      | int    |\n+-------------+--------+\n\nWrite a solution to list the names of animals that weigh strictly more than 100 kilograms.\n\nReturn the&nbsp;animals sorted by weight in descending order.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput: \nDataFrame animals:\n+----------+---------+-----+--------+\n| name     | species | age | weight |\n+----------+---------+-----+--------+\n| Tatiana  | Snake   | 98  | 464    |\n| Khaled   | Giraffe | 50  | 41     |\n| Alex     | Leopard | 6   | 328    |\n| Jonathan | Monkey  | 45  | 463    |\n| Stefan   | Bear    | 100 | 50     |\n| Tommy    | Panda   | 26  | 349    |\n+----------+---------+-----+--------+\nOutput: \n+----------+\n| name     |\n+----------+\n| Tatiana  |\n| Jonathan |\n| Tommy    |\n| Alex     |\n+----------+\nExplanation: \nAll animals weighing more than 100 should be included in the results table.\nTatiana's weight is 464, Jonathan's weight is 463, Tommy's weight is 349, and Alex's weight is 328.\nThe results should be sorted in descending order of weight.\n\n&nbsp;\nIn Pandas, method chaining enables us to&nbsp;perform operations on a DataFrame without breaking up each operation into a separate line or creating multiple temporary variables.&nbsp;\n\nCan you complete this&nbsp;task in just one line of code using method chaining?\n\n## My Submission\n\n- Runtime: 373 ms\n- Memory: 70.3 MB\n",
       "files": [
         {
@@ -9257,8 +9284,8 @@
       "timestamp": 1729937534000,
       "runtime": "373 ms",
       "memory": "70.3 MB",
-      "runtimePct": null,
-      "memoryPct": null,
+      "runtimePct": 5,
+      "memoryPct": 9,
       "problemStatement": "<pre>\nDataFrame <code>animals</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| species     | object |\n| age         | int    |\n| weight      | int    |\n+-------------+--------+\n</pre>\n\n<p>Write a solution to list the names of animals that weigh <strong>strictly more than</strong> <code>100</code> kilograms.</p>\n\n<p>Return the&nbsp;animals sorted by weight in <strong>descending order</strong>.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<p><strong>Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> \nDataFrame animals:\n+----------+---------+-----+--------+\n| name     | species | age | weight |\n+----------+---------+-----+--------+\n| Tatiana  | Snake   | 98  | 464    |\n| Khaled   | Giraffe | 50  | 41     |\n| Alex     | Leopard | 6   | 328    |\n| Jonathan | Monkey  | 45  | 463    |\n| Stefan   | Bear    | 100 | 50     |\n| Tommy    | Panda   | 26  | 349    |\n+----------+---------+-----+--------+\n<strong>Output:</strong> \n+----------+\n| name     |\n+----------+\n| Tatiana  |\n| Jonathan |\n| Tommy    |\n| Alex     |\n+----------+\n<strong>Explanation:</strong> \nAll animals weighing more than 100 should be included in the results table.\nTatiana&#39;s weight is 464, Jonathan&#39;s weight is 463, Tommy&#39;s weight is 349, and Alex&#39;s weight is 328.\nThe results should be sorted in descending order of weight.</pre>\n\n<p>&nbsp;</p>\n<p>In Pandas, <strong>method chaining</strong> enables us to&nbsp;perform operations on a DataFrame without breaking up each operation into a separate line or creating multiple temporary variables.&nbsp;</p>\n\n<p>Can you complete this&nbsp;task in just <strong>one line </strong>of code using method chaining?</p>\n",
       "hints": null,
       "acRate": 76.04024735352688,
@@ -9266,7 +9293,8 @@
       "hasSimilar": null,
       "_committedPaths": [
         "problems/lc-method-chaining/README.md"
-      ]
+      ],
+      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(N \\log N)$, where $N$ is the number of rows in the DataFrame. Filtering takes $O(N)$, but sorting the filtered results dominates with $O(K \\log K)$, where $K \\le N$.\n*   **Space Complexity:** $O(N)$. Pandas creates intermediate copies during filtering and sorting, requiring memory proportional to the input size.\n\n**2. Correctness**\nThe code is correct and follows the problem requirements. It handles:\n*   **Empty DataFrames:** Returns an empty DataFrame with the column `name`.\n*   **No matches:** Returns an empty DataFrame if no weights > 100.\n*   **Ties:** `sort_values` handles identical weights by their original index order (stable sort).\n\n**3. Optimization**\nIf the input DataFrame contains many columns, select only the necessary columns (`name` and `weight`) **before** sorting. This reduces the memory footprint and the amount of data the sorting algorithm must shuffle.\n```python\nreturn animals.loc[animals['weight'] > 100, ['name', 'weight']].sort_values('weight', ascending=False)[['name']]\n```\n\n**4. Key Algorithmic Pattern**\n**Vectorized Operations / Method Chaining:** Utilizing high-level, column-wise operations that are implemented in C/Cython within Pandas rather than explicit Python loops."
     },
     {
       "id": "lc-method-chaining::1434101518",
@@ -9280,8 +9308,12 @@
         "ext": "py",
         "slug": "python"
       },
-      "tags": [],
-      "topic": "Untagged",
+      "tags": [
+        "Data Manipulation",
+        "Sorting",
+        "Pandas"
+      ],
+      "topic": "Data Manipulation",
       "code": "import pandas as pd\n\ndef findHeavyAnimals(animals: pd.DataFrame) -> pd.DataFrame:\n    return animals[animals['weight'] > 100].sort_values(by='weight', ascending=False)[['name']]",
       "readmeContent": "# Method Chaining\n\n**Difficulty:** Easy  |  **Acceptance:** 76.1%\n\n**Tags:** —\n\n## Problem\n\nDataFrame animals\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| species     | object |\n| age         | int    |\n| weight      | int    |\n+-------------+--------+\n\nWrite a solution to list the names of animals that weigh strictly more than 100 kilograms.\n\nReturn the&nbsp;animals sorted by weight in descending order.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput: \nDataFrame animals:\n+----------+---------+-----+--------+\n| name     | species | age | weight |\n+----------+---------+-----+--------+\n| Tatiana  | Snake   | 98  | 464    |\n| Khaled   | Giraffe | 50  | 41     |\n| Alex     | Leopard | 6   | 328    |\n| Jonathan | Monkey  | 45  | 463    |\n| Stefan   | Bear    | 100 | 50     |\n| Tommy    | Panda   | 26  | 349    |\n+----------+---------+-----+--------+\nOutput: \n+----------+\n| name     |\n+----------+\n| Tatiana  |\n| Jonathan |\n| Tommy    |\n| Alex     |\n+----------+\nExplanation: \nAll animals weighing more than 100 should be included in the results table.\nTatiana's weight is 464, Jonathan's weight is 463, Tommy's weight is 349, and Alex's weight is 328.\nThe results should be sorted in descending order of weight.\n\n&nbsp;\nIn Pandas, method chaining enables us to&nbsp;perform operations on a DataFrame without breaking up each operation into a separate line or creating multiple temporary variables.&nbsp;\n\nCan you complete this&nbsp;task in just one line of code using method chaining?\n\n## My Submission\n\n- Runtime: 373 ms\n- Memory: 70.3 MB\n",
       "files": [
@@ -9307,7 +9339,8 @@
       "_committedPaths": [
         "problems/lc-method-chaining/lc-method-chaining.py",
         "problems/lc-method-chaining/README.md"
-      ]
+      ],
+      "aiReview": "### Review\n**1. Complexity**\n*   **Time:** $O(N \\log N)$, where $N$ is the number of rows. Filtering takes $O(N)$, but sorting the filtered results dominates the time complexity.\n*   **Space:** $O(N)$. Pandas creates intermediate copies of the DataFrame during filtering and sorting operations.\n\n**2. Correctness**\nThe solution is correct. It filters rows first, sorts the subset, and finally projects only the required `'name'` column. It handles cases where no animals meet the criteria (returning an empty DataFrame) correctly.\n\n**3. Optimization**\nWhile method chaining is readable, you can slightly improve memory efficiency by using `loc` to perform filtering and column selection in fewer steps, though `weight` must remain until after the sort:\n```python\nreturn animals.loc[animals['weight'] > 100].sort_values('weight', ascending=False)[['name']]\n```\nFor extremely large datasets, using `sort_values(inplace=False)` is standard, but the current approach is idiomatic for LeetCode's pandas track.\n\n**4. Key Algorithmic Pattern**\n**Vectorized Operations / Method Chaining:** Utilizing high-level library functions to perform bulk operations on data structures without explicit loops."
     },
     {
       "id": "lc-min-cost-climbing-stairs::1974551678",
@@ -10046,7 +10079,8 @@
       "_committedPaths": [
         "problems/lc-minimum-sum-of-mountain-triplets-i/lc-minimum-sum-of-mountain-triplets-i.py",
         "problems/lc-minimum-sum-of-mountain-triplets-i/README.md"
-      ]
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n^3)$ due to the triple nested loops iterating through all possible triplets $(i, j, k)$.\n*   **Space Complexity:** $O(1)$ as only a few scalar variables are used.\n\n### 2. Correctness\nThe code is **correct**. It exhaustivey checks all indices where $i < j < k$ and verifies the mountain condition ($nums[i] < nums[j]$ and $nums[k] < nums[j]$). It correctly handles cases where no triplet exists by returning `-1`.\n\n### 3. Concrete Optimisation\nThe solution can be optimized to **$O(n)$ time** using **Prefix and Suffix Minimums**. \nInstead of searching for $i$ and $k$ repeatedly:\n1.  Create an array `left_min` where `left_min[j]` is the minimum value in `nums[0...j-1]`.\n2.  Create an array `right_min` where `right_min[j]` is the minimum value in `nums[j+1...n-1]`.\n3.  Iterate through each index $j$ as a potential peak. If `left_min[j] < nums[j] > right_min[j]`, calculate the sum and update the result.\n\n### 4. Key Algorithmic Pattern\n*   **Current:** Brute Force / Triple Loop.\n*   **Optimized:** Pre-computation (Prefix/Suffix Arrays)."
     },
     {
       "id": "lc-minimum-sum-of-mountain-triplets-ii::1435414883",
@@ -10105,7 +10139,8 @@
       "_committedPaths": [
         "problems/lc-minimum-sum-of-mountain-triplets-ii/lc-minimum-sum-of-mountain-triplets-ii.py",
         "problems/lc-minimum-sum-of-mountain-triplets-ii/README.md"
-      ]
+      ],
+      "aiReview": "**1. Complexity**\n*   **Time:** $O(n)$ — Three linear passes over the array.\n*   **Space:** $O(n)$ — Two auxiliary arrays (`left` and `right`) of size $n$.\n\n**2. Correctness**\nThe logic is correct. By checking `left[i] < nums[i]` and `right[i] < nums[i]`, you effectively verify that a smaller element exists both to the left (within `nums[0...i-1]`) and to the right (within `nums[i+1...n-1]`). The code handles edge cases like $n < 3$ or \"no mountain found\" correctly by returning `-1`.\n\n**3. Optimization**\n**Reduce Space:** You can eliminate the `left` array. Maintain a `prefix_min` variable and compute it on the fly during the final loop. This reduces space complexity to $O(n)$ for only the `right` (suffix) array.\n\n```python\n# Suffix array only\nright = [0] * n\nright[-1] = nums[-1]\nfor i in range(n - 2, -1, -1):\n    right[i] = min(right[i + 1], nums[i])\n\nprefix_min = nums[0]\nfor i in range(1, n - 1):\n    if prefix_min < nums[i] and right[i + 1] < nums[i]:\n        output = min(output, prefix_min + nums[i] + right[i + 1])\n    prefix_min = min(prefix_min, nums[i])\n```\n\n**4. Key Algorithmic Pattern**\n**Prefix/Suffix Precomputation:** Pre-calculating properties (like min, max, or sum) of subarrays ending or starting at each index to answer range queries in $O(1)$."
     },
     {
       "id": "lc-minimum-time-to-make-rope-colorful::1975252923",
@@ -10248,13 +10283,13 @@
       "titleSlug": "modify-columns",
       "difficulty": "Easy",
       "lang": {
-        "name": "pythondata",
-        "ext": "txt",
-        "slug": "pythondata"
+        "name": "Pandas",
+        "slug": "python",
+        "ext": "py"
       },
       "tags": [],
       "topic": "Untagged",
-      "code": "",
+      "code": "import pandas as pd\n\ndef modifySalaryColumn(employees: pd.DataFrame) -> pd.DataFrame:\n    employees['salary'] *= 2\n    return employees",
       "readmeContent": "# Modify Columns\n\n**Difficulty:** Easy  |  **Acceptance:** 92.3%\n\n**Tags:** —\n\n## Problem\n\nDataFrame employees\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| salary      | int    |\n+-------------+--------+\n\nA company intends to give its employees a pay rise.\n\nWrite a solution to modify the salary column by multiplying each salary by 2.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\nDataFrame employees\n+---------+--------+\n| name    | salary |\n+---------+--------+\n| Jack    | 19666  |\n| Piper   | 74754  |\n| Mia     | 62509  |\n| Ulysses | 54866  |\n+---------+--------+\nOutput:\n+---------+--------+\n| name    | salary |\n+---------+--------+\n| Jack    | 39332  |\n| Piper   | 149508 |\n| Mia     | 125018 |\n| Ulysses | 109732 |\n+---------+--------+\nExplanation:\nEvery salary has been doubled.\n\n## My Submission\n\n- Runtime: 377 ms\n- Memory: 69.2 MB\n",
       "files": [
         {
@@ -10265,8 +10300,8 @@
       "timestamp": 1729837816000,
       "runtime": "377 ms",
       "memory": "69.2 MB",
-      "runtimePct": null,
-      "memoryPct": null,
+      "runtimePct": 5,
+      "memoryPct": 6,
       "problemStatement": "<pre>\nDataFrame <code>employees</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| name        | object |\n| salary      | int    |\n+-------------+--------+\n</pre>\n\n<p>A company intends to give its employees a pay rise.</p>\n\n<p>Write a solution to <strong>modify</strong> the <code>salary</code> column by multiplying each salary by 2.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:\n</strong>DataFrame employees\n+---------+--------+\n| name    | salary |\n+---------+--------+\n| Jack    | 19666  |\n| Piper   | 74754  |\n| Mia     | 62509  |\n| Ulysses | 54866  |\n+---------+--------+\n<strong>Output:\n</strong>+---------+--------+\n| name    | salary |\n+---------+--------+\n| Jack    | 39332  |\n| Piper   | 149508 |\n| Mia     | 125018 |\n| Ulysses | 109732 |\n+---------+--------+\n<strong>Explanation:\n</strong>Every salary has been doubled.</pre>\n",
       "hints": [
         "Considering multiplying each salary value by 2, using a simple assignment operation. The calculation of the value is done column-wise."
@@ -10514,6 +10549,76 @@
         "problems/lc-n-th-tribonacci-number/lc-n-th-tribonacci-number.py",
         "problems/lc-n-th-tribonacci-number/README.md"
       ]
+    },
+    {
+      "id": "lc-network-delay-time",
+      "forceCommit": true,
+      "submissionId": null,
+      "title": "Network Delay Time",
+      "titleSlug": "network-delay-time",
+      "difficulty": "Medium",
+      "topic": "Heap (Priority Queue)",
+      "tags": [
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Graph Theory",
+        "Heap (Priority Queue)",
+        "Shortest Path"
+      ],
+      "canonical": {
+        "id": "network-delay-time",
+        "title": "Network Delay Time"
+      },
+      "readmeContent": "# [743] Network Delay Time\n**Difficulty:** Medium  |  **Acceptance:** 60.4%  |  **Likes:** 8429 / **Dislikes:** 392\n**Tags:** `Depth-First Search`, `Breadth-First Search`, `Graph Theory`, `Heap (Priority Queue)`, `Shortest Path`\n## Problem\nYou are given a network of n nodes, labeled from 1 to n. You are also given times, a list of travel times as directed edges times[i] = (ui, vi, wi), where ui is the source node, vi is the target node, and wi is the time it takes for a signal to travel from source to target.\n\nWe will send a signal from a given node k. Return the minimum time it takes for all the n nodes to receive the signal. If it is impossible for all the n nodes to receive the signal, return -1.\n\n&nbsp;\nExample 1:\n\nInput: times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2\nOutput: 2\n\nExample 2:\n\nInput: times = [[1,2,1]], n = 2, k = 1\nOutput: 1\n\nExample 3:\n\nInput: times = [[1,2,1]], n = 2, k = 2\nOutput: -1\n\n&nbsp;\nConstraints:\n\n\t1 <= k <= n <= 100\n\t1 <= times.length <= 6000\n\ttimes[i].length == 3\n\t1 <= ui, vi <= n\n\tui != vi\n\t0 <= wi <= 100\n\tAll the pairs (ui, vi) are unique. (i.e., no multiple edges.)\n## My Submission\n\n- Runtime: 329 ms (beats 87.1%)\n- Memory: 21.3 MB (beats 53.9%)\n\n## Similar Problems\n\n- [The Time When the Network Becomes Idle](https://leetcode.com/problems/the-time-when-the-network-becomes-idle/) — Medium\n- [Second Minimum Time to Reach Destination](https://leetcode.com/problems/second-minimum-time-to-reach-destination/) — Hard\n",
+      "code": "from collections import defaultdict\nfrom heapq import heappush, heappop\n\nclass Solution:\n    def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:\n        adj = defaultdict(list)\n\n        for u, v, w in times:\n            adj[u].append((v, w))\n        \n        t = 0\n        heap = [(t, k)]\n        visited = set()\n\n        while heap:\n            time_so_far, node = heappop(heap)\n            if node in visited:\n                continue\n            visited.add(node)\n            t = time_so_far\n            \n            for neighbor, weight in adj[node]:\n                if neighbor not in visited:\n                    heappush(heap, (t+weight, neighbor))\n\n        return t if len(visited) == n else -1",
+      "files": [
+        {
+          "path": "problems/network-delay-time/leetcode/lc-network-delay-time.py",
+          "content": "from collections import defaultdict\nfrom heapq import heappush, heappop\n\nclass Solution:\n    def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:\n        adj = defaultdict(list)\n\n        for u, v, w in times:\n            adj[u].append((v, w))\n        \n        t = 0\n        heap = [(t, k)]\n        visited = set()\n\n        while heap:\n            time_so_far, node = heappop(heap)\n            if node in visited:\n                continue\n            visited.add(node)\n            t = time_so_far\n            \n            for neighbor, weight in adj[node]:\n                if neighbor not in visited:\n                    heappush(heap, (t+weight, neighbor))\n\n        return t if len(visited) == n else -1"
+        },
+        {
+          "path": "problems/network-delay-time/README.md",
+          "content": "# [743] Network Delay Time\n**Difficulty:** Medium  |  **Acceptance:** 60.4%  |  **Likes:** 8429 / **Dislikes:** 392\n**Tags:** `Depth-First Search`, `Breadth-First Search`, `Graph Theory`, `Heap (Priority Queue)`, `Shortest Path`\n## Problem\nYou are given a network of n nodes, labeled from 1 to n. You are also given times, a list of travel times as directed edges times[i] = (ui, vi, wi), where ui is the source node, vi is the target node, and wi is the time it takes for a signal to travel from source to target.\n\nWe will send a signal from a given node k. Return the minimum time it takes for all the n nodes to receive the signal. If it is impossible for all the n nodes to receive the signal, return -1.\n\n&nbsp;\nExample 1:\n\nInput: times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2\nOutput: 2\n\nExample 2:\n\nInput: times = [[1,2,1]], n = 2, k = 1\nOutput: 1\n\nExample 3:\n\nInput: times = [[1,2,1]], n = 2, k = 2\nOutput: -1\n\n&nbsp;\nConstraints:\n\n\t1 <= k <= n <= 100\n\t1 <= times.length <= 6000\n\ttimes[i].length == 3\n\t1 <= ui, vi <= n\n\tui != vi\n\t0 <= wi <= 100\n\tAll the pairs (ui, vi) are unique. (i.e., no multiple edges.)\n## My Submission\n\n- Runtime: 329 ms (beats 87.1%)\n- Memory: 21.3 MB (beats 53.9%)\n\n## Similar Problems\n\n- [The Time When the Network Becomes Idle](https://leetcode.com/problems/the-time-when-the-network-becomes-idle/) — Medium\n- [Second Minimum Time to Reach Destination](https://leetcode.com/problems/second-minimum-time-to-reach-destination/) — Hard\n"
+        }
+      ],
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "runtime": "329 ms",
+      "memory": "21.3 MB",
+      "runtimePct": 87.1329,
+      "memoryPct": 53.87319999999997,
+      "timestamp": 1779434885000,
+      "acRate": 60.42216197484559,
+      "likes": 8429,
+      "dislikes": 392,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "the-time-when-the-network-becomes-idle",
+          "title": "The Time When the Network Becomes Idle",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "second-minimum-time-to-reach-destination",
+          "title": "Second Minimum Time to Reach Destination",
+          "isPaidOnly": false
+        }
+      ],
+      "problemStatement": "<p>You are given a network of <code>n</code> nodes, labeled from <code>1</code> to <code>n</code>. You are also given <code>times</code>, a list of travel times as directed edges <code>times[i] = (u<sub>i</sub>, v<sub>i</sub>, w<sub>i</sub>)</code>, where <code>u<sub>i</sub></code> is the source node, <code>v<sub>i</sub></code> is the target node, and <code>w<sub>i</sub></code> is the time it takes for a signal to travel from source to target.</p>\n\n<p>We will send a signal from a given node <code>k</code>. Return <em>the <strong>minimum</strong> time it takes for all the</em> <code>n</code> <em>nodes to receive the signal</em>. If it is impossible for all the <code>n</code> nodes to receive the signal, return <code>-1</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2019/05/23/931_example_1.png\" style=\"width: 217px; height: 239px;\" />\n<pre>\n<strong>Input:</strong> times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2\n<strong>Output:</strong> 2\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> times = [[1,2,1]], n = 2, k = 1\n<strong>Output:</strong> 1\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> times = [[1,2,1]], n = 2, k = 2\n<strong>Output:</strong> -1\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= k &lt;= n &lt;= 100</code></li>\n\t<li><code>1 &lt;= times.length &lt;= 6000</code></li>\n\t<li><code>times[i].length == 3</code></li>\n\t<li><code>1 &lt;= u<sub>i</sub>, v<sub>i</sub> &lt;= n</code></li>\n\t<li><code>u<sub>i</sub> != v<sub>i</sub></code></li>\n\t<li><code>0 &lt;= w<sub>i</sub> &lt;= 100</code></li>\n\t<li>All the pairs <code>(u<sub>i</sub>, v<sub>i</sub>)</code> are <strong>unique</strong>. (i.e., no multiple edges.)</li>\n</ul>\n",
+      "elapsedSeconds": 0,
+      "hasSimilar": true,
+      "submissionsUrl": "https://leetcode.com/problems/network-delay-time/submissions/",
+      "notes": "",
+      "methodTitle": "",
+      "isDuplicate": false,
+      "duplicateOf": null,
+      "_requestAIReview": true,
+      "platform": "leetcode",
+      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time:** $O(E \\log E)$ (or $O(E \\log V)$), where $E$ is the number of edges and $V$ is the number of nodes. Each edge is processed once via the min-heap.\n*   **Space:** $O(V + E)$ to store the adjacency list, the `visited` set, and the heap.\n\n**2. Correctness**\nThe logic is correct. It successfully implements **Dijkstra’s Algorithm**.\n*   **Edge Cases:** It correctly handles disconnected graphs (returns `-1` via the `len(visited)` check) and cycles (via the `visited` set).\n*   **Small Note:** The code assumes node labels are $1$ to $n$ (consistent with the problem description).\n\n**3. Optimization**\nUse a **distance array** `dist = [float('inf')] * (n + 1)` instead of just a `visited` set. Before pushing to the heap, check if `t + weight < dist[neighbor]`. This prevents pushing redundant, longer paths into the heap, significantly reducing the number of heap operations in dense graphs.\n\n**4. Key Algorithmic Pattern**\n**Dijkstra's Algorithm** (Breadth-First Search using a Priority Queue for weighted graphs)."
     },
     {
       "id": "lc-next-greater-element-i::1650915399",
@@ -11060,6 +11165,7 @@
       "isDuplicate": true,
       "duplicateOf": "lc-number-of-employees-who-met-the-target::1448978974",
       "_committedPaths": [
+        "problems/lc-number-of-employees-who-met-the-target/lc-number-of-employees-who-met-the-target.py",
         "problems/lc-number-of-employees-who-met-the-target/README.md"
       ],
       "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the `hours` list. The code iterates through the list once.\n*   **Space Complexity:** $O(n)$. The list comprehension creates a new list in memory containing the indices of qualifying employees before calculating the length.\n\n### 2. Correctness\nThe logic is **correct**. It accurately implements the condition `hours[i] >= target`. \n*   **Edge Cases:** It correctly handles an empty input list (returns 0), cases where no employees meet the target, and cases where all employees meet the target.\n\n### 3. Concrete Optimization\nReplace the **list comprehension** with a **generator expression** and the `sum()` function. This reduces the space complexity from **$O(n)$ to $O(1)$** by avoiding the creation of an intermediate list.\n\n**Optimized Code:**\n```python\nreturn sum(1 for h in hours if h >= target)\n```\n\n### 4. Key Algorithmic Pattern\n**Linear Scan (Filtering):** The algorithm performs a single pass over the dataset to filter elements based on a specific predicate."
@@ -12464,13 +12570,13 @@
       "titleSlug": "rename-columns",
       "difficulty": "Easy",
       "lang": {
-        "name": "pythondata",
-        "ext": "txt",
-        "slug": "pythondata"
+        "name": "Pandas",
+        "slug": "python",
+        "ext": "py"
       },
       "tags": [],
       "topic": "Untagged",
-      "code": "",
+      "code": "import pandas as pd\n\ndef renameColumns(students: pd.DataFrame) -> pd.DataFrame:\n    return students.rename(columns = {'id': 'student_id', 'first': 'first_name', 'last': 'last_name', 'age': 'age_in_years'})",
       "readmeContent": "# Rename Columns\n\n**Difficulty:** Easy  |  **Acceptance:** 85.2%\n\n**Tags:** —\n\n## Problem\n\nDataFrame students\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| id          | int    |\n| first       | object |\n| last        | object |\n| age         | int    |\n+-------------+--------+\n\nWrite a solution to rename the columns as follows:\n\n\tid to student_id\n\tfirst to first_name\n\tlast to last_name\n\tage to age_in_years\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:\n+----+---------+----------+-----+\n| id | first   | last     | age |\n+----+---------+----------+-----+\n| 1  | Mason   | King     | 6   |\n| 2  | Ava     | Wright   | 7   |\n| 3  | Taylor  | Hall     | 16  |\n| 4  | Georgia | Thompson | 18  |\n| 5  | Thomas  | Moore    | 10  |\n+----+---------+----------+-----+\nOutput:\n+------------+------------+-----------+--------------+\n| student_id | first_name | last_name | age_in_years |\n+------------+------------+-----------+--------------+\n| 1          | Mason      | King      | 6            |\n| 2          | Ava        | Wright    | 7            |\n| 3          | Taylor     | Hall      | 16           |\n| 4          | Georgia    | Thompson  | 18           |\n| 5          | Thomas     | Moore     | 10           |\n+------------+------------+-----------+--------------+\nExplanation: \nThe column names are changed accordingly.\n\n## My Submission\n\n- Runtime: 332 ms\n- Memory: 69.5 MB\n",
       "files": [
         {
@@ -12481,8 +12587,8 @@
       "timestamp": 1729838137000,
       "runtime": "332 ms",
       "memory": "69.5 MB",
-      "runtimePct": null,
-      "memoryPct": null,
+      "runtimePct": 5,
+      "memoryPct": 10,
       "problemStatement": "<pre>\nDataFrame <code>students</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| id          | int    |\n| first       | object |\n| last        | object |\n| age         | int    |\n+-------------+--------+\n</pre>\n\n<p>Write a solution to rename the columns as follows:</p>\n\n<ul>\n\t<li><code>id</code> to <code>student_id</code></li>\n\t<li><code>first</code> to <code>first_name</code></li>\n\t<li><code>last</code> to <code>last_name</code></li>\n\t<li><code>age</code> to <code>age_in_years</code></li>\n</ul>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<pre>\n<strong class=\"example\">Example 1:</strong>\n<strong>Input:\n</strong>+----+---------+----------+-----+\n| id | first   | last     | age |\n+----+---------+----------+-----+\n| 1  | Mason   | King     | 6   |\n| 2  | Ava     | Wright   | 7   |\n| 3  | Taylor  | Hall     | 16  |\n| 4  | Georgia | Thompson | 18  |\n| 5  | Thomas  | Moore    | 10  |\n+----+---------+----------+-----+\n<strong>Output:</strong>\n+------------+------------+-----------+--------------+\n| student_id | first_name | last_name | age_in_years |\n+------------+------------+-----------+--------------+\n| 1          | Mason      | King      | 6            |\n| 2          | Ava        | Wright    | 7            |\n| 3          | Taylor     | Hall      | 16           |\n| 4          | Georgia    | Thompson  | 18           |\n| 5          | Thomas     | Moore     | 10           |\n+------------+------------+-----------+--------------+\n<strong>Explanation:</strong> \nThe column names are changed accordingly.</pre>\n",
       "hints": [
         "Consider using a build-in function in pandas library with a dictionary to rename the columns as specified."
@@ -12589,13 +12695,17 @@
       "titleSlug": "reshape-data-concatenate",
       "difficulty": "Easy",
       "lang": {
-        "name": "pythondata",
-        "ext": "txt",
-        "slug": "pythondata"
+        "name": "Pandas",
+        "slug": "python",
+        "ext": "py"
       },
-      "tags": [],
-      "topic": "Untagged",
-      "code": "",
+      "tags": [
+        "Data Manipulation",
+        "Pandas",
+        "Concatenation"
+      ],
+      "topic": "Data Manipulation",
+      "code": "import pandas as pd\n\ndef concatenateTables(df1: pd.DataFrame, df2: pd.DataFrame) -> pd.DataFrame:\n    return pd.concat([df1, df2], axis=0)",
       "readmeContent": "# Reshape Data: Concatenate\n\n**Difficulty:** Easy  |  **Acceptance:** 90.4%\n\n**Tags:** —\n\n## Problem\n\nDataFrame df1\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nDataFrame df2\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nWrite a solution to concatenate these two DataFrames vertically into one DataFrame.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\ndf1\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 1          | Mason   | 8   |\n| 2          | Ava     | 6   |\n| 3          | Taylor  | 15  |\n| 4          | Georgia | 17  |\n+------------+---------+-----+\ndf2\n+------------+------+-----+\n| student_id | name | age |\n+------------+------+-----+\n| 5          | Leo  | 7   |\n| 6          | Alex | 7   |\n+------------+------+-----+\nOutput:\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 1          | Mason   | 8   |\n| 2          | Ava     | 6   |\n| 3          | Taylor  | 15  |\n| 4          | Georgia | 17  |\n| 5          | Leo     | 7   |\n| 6          | Alex    | 7   |\n+------------+---------+-----+\nExplanation:\nThe two DataFramess are stacked vertically, and their rows are combined.\n\n## My Submission\n\n- Runtime: 443 ms\n- Memory: 69 MB\n",
       "files": [
         {
@@ -12606,8 +12716,8 @@
       "timestamp": 1729838819000,
       "runtime": "443 ms",
       "memory": "69 MB",
-      "runtimePct": null,
-      "memoryPct": null,
+      "runtimePct": 5,
+      "memoryPct": 6,
       "problemStatement": "<pre>\nDataFrame <code>df1</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nDataFrame <code>df2</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\n</pre>\n\n<p>Write a solution to concatenate these two DataFrames <strong>vertically</strong> into one DataFrame.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:\ndf1</strong>\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 1          | Mason   | 8   |\n| 2          | Ava     | 6   |\n| 3          | Taylor  | 15  |\n| 4          | Georgia | 17  |\n+------------+---------+-----+\n<strong>df2\n</strong>+------------+------+-----+\n| student_id | name | age |\n+------------+------+-----+\n| 5          | Leo  | 7   |\n| 6          | Alex | 7   |\n+------------+------+-----+\n<strong>Output:</strong>\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 1          | Mason   | 8   |\n| 2          | Ava     | 6   |\n| 3          | Taylor  | 15  |\n| 4          | Georgia | 17  |\n| 5          | Leo     | 7   |\n| 6          | Alex    | 7   |\n+------------+---------+-----+\n<strong>Explanation:\n</strong>The two DataFramess are stacked vertically, and their rows are combined.</pre>\n",
       "hints": [
         "Consider using a built-in function in pandas library with the appropriate axis argument."
@@ -12617,7 +12727,8 @@
       "hasSimilar": null,
       "_committedPaths": [
         "problems/lc-reshape-data-concatenate/README.md"
-      ]
+      ],
+      "aiReview": "### Review\n1. **Complexity**:\n   - **Time**: $O(N + M)$, where $N$ and $M$ are the total number of elements in `df1` and `df2`. Pandas must traverse and copy all data to a new memory block.\n   - **Space**: $O(N + M)$ to allocate the resulting combined DataFrame.\n\n2. **Correctness**:\n   The solution is correct. However, if the dataframes have overlapping indices, the result will contain duplicate index labels. If columns do not align perfectly, Pandas will perform an outer join by default, introducing `NaN` values for missing columns.\n\n3. **Optimization**:\n   Add `ignore_index=True`. In most data reshaping tasks, the original row indices are not meaningful after concatenation. Using `ignore_index=True` ensures a clean, continuous integer index (0 to N+M-1) and can slightly improve downstream performance by avoiding index-related conflicts.\n   ```python\n   return pd.concat([df1, df2], axis=0, ignore_index=True)\n   ```\n\n4. **Key Pattern**:\n   **Vertical Concatenation (Row Stacking)**: The standard approach for merging datasets with identical or similar schema."
     },
     {
       "id": "lc-reshape-data-concatenate::1433146452",
@@ -12631,8 +12742,12 @@
         "ext": "py",
         "slug": "python"
       },
-      "tags": [],
-      "topic": "Untagged",
+      "tags": [
+        "Data Manipulation",
+        "Pandas",
+        "Array Stacking"
+      ],
+      "topic": "Data Manipulation",
       "code": "import pandas as pd\n\ndef concatenateTables(df1: pd.DataFrame, df2: pd.DataFrame) -> pd.DataFrame:\n    return pd.concat([df1, df2], axis=0)",
       "readmeContent": "# Reshape Data: Concatenate\n\n**Difficulty:** Easy  |  **Acceptance:** 90.4%\n\n**Tags:** —\n\n## Problem\n\nDataFrame df1\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nDataFrame df2\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| student_id  | int    |\n| name        | object |\n| age         | int    |\n+-------------+--------+\n\nWrite a solution to concatenate these two DataFrames vertically into one DataFrame.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\ndf1\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 1          | Mason   | 8   |\n| 2          | Ava     | 6   |\n| 3          | Taylor  | 15  |\n| 4          | Georgia | 17  |\n+------------+---------+-----+\ndf2\n+------------+------+-----+\n| student_id | name | age |\n+------------+------+-----+\n| 5          | Leo  | 7   |\n| 6          | Alex | 7   |\n+------------+------+-----+\nOutput:\n+------------+---------+-----+\n| student_id | name    | age |\n+------------+---------+-----+\n| 1          | Mason   | 8   |\n| 2          | Ava     | 6   |\n| 3          | Taylor  | 15  |\n| 4          | Georgia | 17  |\n| 5          | Leo     | 7   |\n| 6          | Alex    | 7   |\n+------------+---------+-----+\nExplanation:\nThe two DataFramess are stacked vertically, and their rows are combined.\n\n## My Submission\n\n- Runtime: 443 ms\n- Memory: 69 MB\n",
       "files": [
@@ -12660,7 +12775,8 @@
       "_committedPaths": [
         "problems/lc-reshape-data-concatenate/lc-reshape-data-concatenate.py",
         "problems/lc-reshape-data-concatenate/README.md"
-      ]
+      ],
+      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(C \\times (R1 + R2))$, where $C$ is the number of columns and $R$ is the number of rows. Pandas must visit and copy every element into a new memory block.\n*   **Space Complexity:** $O(C \\times (R1 + R2))$. `pd.concat` creates a completely new DataFrame; it does not perform the operation in-place.\n\n**2. Correctness**\nThe code is correct. It handles edge cases like empty DataFrames gracefully. Note that if `df1` and `df2` have different column names, Pandas will perform an \"outer join\" by default, filling missing columns with `NaN`.\n\n**3. Optimization**\nUse `ignore_index=True`:\n```python\nreturn pd.concat([df1, df2], axis=0, ignore_index=True)\n```\nThis is a concrete optimization when the original index labels are not needed. It prevents Pandas from trying to preserve or align potentially conflicting indices, which reduces overhead and avoids duplicate index labels.\n\n**4. Key Algorithmic Pattern**\nData Reshaping / Structural Transformation."
     },
     {
       "id": "lc-reshape-data-melt",
@@ -12670,13 +12786,17 @@
       "titleSlug": "reshape-data-melt",
       "difficulty": "Easy",
       "lang": {
-        "name": "pythondata",
-        "ext": "txt",
-        "slug": "pythondata"
+        "name": "Pandas",
+        "slug": "python",
+        "ext": "py"
       },
-      "tags": [],
-      "topic": "Untagged",
-      "code": "",
+      "tags": [
+        "Data Manipulation",
+        "Matrix Reshaping",
+        "Pandas"
+      ],
+      "topic": "Data Manipulation",
+      "code": "import pandas as pd\n\ndef meltTable(report: pd.DataFrame) -> pd.DataFrame:\n    return report.melt(id_vars = 'product', value_vars=['quarter_1', 'quarter_2', 'quarter_3', 'quarter_4'], var_name='quarter', value_name='sales')",
       "readmeContent": "# Reshape Data: Melt\n\n**Difficulty:** Easy  |  **Acceptance:** 85.9%\n\n**Tags:** —\n\n## Problem\n\nDataFrame report\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| product     | object |\n| quarter_1   | int    |\n| quarter_2   | int    |\n| quarter_3   | int    |\n| quarter_4   | int    |\n+-------------+--------+\n\nWrite a solution to reshape the data so that each row represents sales data for a product in a specific quarter.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\n+-------------+-----------+-----------+-----------+-----------+\n| product     | quarter_1 | quarter_2 | quarter_3 | quarter_4 |\n+-------------+-----------+-----------+-----------+-----------+\n| Umbrella    | 417       | 224       | 379       | 611       |\n| SleepingBag | 800       | 936       | 93        | 875       |\n+-------------+-----------+-----------+-----------+-----------+\nOutput:\n+-------------+-----------+-------+\n| product     | quarter   | sales |\n+-------------+-----------+-------+\n| Umbrella    | quarter_1 | 417   |\n| SleepingBag | quarter_1 | 800   |\n| Umbrella    | quarter_2 | 224   |\n| SleepingBag | quarter_2 | 936   |\n| Umbrella    | quarter_3 | 379   |\n| SleepingBag | quarter_3 | 93    |\n| Umbrella    | quarter_4 | 611   |\n| SleepingBag | quarter_4 | 875   |\n+-------------+-----------+-------+\nExplanation:\nThe DataFrame is reshaped from wide to long format. Each row represents the sales of a product in a quarter.\n\n## My Submission\n\n- Runtime: 375 ms\n- Memory: 69.6 MB\n",
       "files": [
         {
@@ -12687,8 +12807,8 @@
       "timestamp": 1729937409000,
       "runtime": "375 ms",
       "memory": "69.6 MB",
-      "runtimePct": null,
-      "memoryPct": null,
+      "runtimePct": 5,
+      "memoryPct": 5,
       "problemStatement": "<pre>\nDataFrame <code>report</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| product     | object |\n| quarter_1   | int    |\n| quarter_2   | int    |\n| quarter_3   | int    |\n| quarter_4   | int    |\n+-------------+--------+\n</pre>\n\n<p>Write a solution to <strong>reshape</strong> the data so that each row represents sales data for a product in a specific quarter.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:\n</strong>+-------------+-----------+-----------+-----------+-----------+\n| product     | quarter_1 | quarter_2 | quarter_3 | quarter_4 |\n+-------------+-----------+-----------+-----------+-----------+\n| Umbrella    | 417       | 224       | 379       | 611       |\n| SleepingBag | 800       | 936       | 93        | 875       |\n+-------------+-----------+-----------+-----------+-----------+\n<strong>Output:</strong>\n+-------------+-----------+-------+\n| product     | quarter   | sales |\n+-------------+-----------+-------+\n| Umbrella    | quarter_1 | 417   |\n| SleepingBag | quarter_1 | 800   |\n| Umbrella    | quarter_2 | 224   |\n| SleepingBag | quarter_2 | 936   |\n| Umbrella    | quarter_3 | 379   |\n| SleepingBag | quarter_3 | 93    |\n| Umbrella    | quarter_4 | 611   |\n| SleepingBag | quarter_4 | 875   |\n+-------------+-----------+-------+\n<strong>Explanation:</strong>\nThe DataFrame is reshaped from wide to long format. Each row represents the sales of a product in a quarter.\n</pre>\n",
       "hints": [
         "Consider using a built-in function in pandas library to transform the data"
@@ -12698,7 +12818,8 @@
       "hasSimilar": null,
       "_committedPaths": [
         "problems/lc-reshape-data-melt/README.md"
-      ]
+      ],
+      "aiReview": "1. **Complexity**: \n   - **Time Complexity**: $O(N \\times M)$, where $N$ is the number of rows and $M$ is the number of columns being melted. Each element in the value columns must be visited once to populate the new long-format DataFrame.\n   - **Space Complexity**: $O(N \\times M)$ to store the resulting reshaped DataFrame.\n\n2. **Correctness**: The solution is correct and follows the standard Pandas API. It handles missing values (NaNs) and duplicate identifier values correctly.\n\n3. **Optimization**: Omit the `value_vars` parameter if all columns except the identifier are meant to be melted. Using `report.melt(id_vars='product', ...)` makes the code more robust to schema changes, such as adding extra quarters (e.g., `quarter_5`), without needing to update the column list manually.\n\n4. **Key Pattern**: **Wide-to-Long Reshaping** (Unpivoting). This pattern transforms attribute columns into row values to normalize data for easier analysis or plotting."
     },
     {
       "id": "lc-reshape-data-melt::1434100437",
@@ -12712,8 +12833,12 @@
         "ext": "py",
         "slug": "python"
       },
-      "tags": [],
-      "topic": "Untagged",
+      "tags": [
+        "Data Manipulation",
+        "Pandas",
+        "Array Reshaping"
+      ],
+      "topic": "Data Manipulation",
       "code": "import pandas as pd\n\ndef meltTable(report: pd.DataFrame) -> pd.DataFrame:\n    return report.melt(id_vars = 'product', value_vars=['quarter_1', 'quarter_2', 'quarter_3', 'quarter_4'], var_name='quarter', value_name='sales')",
       "readmeContent": "# Reshape Data: Melt\n\n**Difficulty:** Easy  |  **Acceptance:** 85.9%\n\n**Tags:** —\n\n## Problem\n\nDataFrame report\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| product     | object |\n| quarter_1   | int    |\n| quarter_2   | int    |\n| quarter_3   | int    |\n| quarter_4   | int    |\n+-------------+--------+\n\nWrite a solution to reshape the data so that each row represents sales data for a product in a specific quarter.\n\nThe result format is in the following example.\n\n&nbsp;\nExample 1:\n\nInput:\n+-------------+-----------+-----------+-----------+-----------+\n| product     | quarter_1 | quarter_2 | quarter_3 | quarter_4 |\n+-------------+-----------+-----------+-----------+-----------+\n| Umbrella    | 417       | 224       | 379       | 611       |\n| SleepingBag | 800       | 936       | 93        | 875       |\n+-------------+-----------+-----------+-----------+-----------+\nOutput:\n+-------------+-----------+-------+\n| product     | quarter   | sales |\n+-------------+-----------+-------+\n| Umbrella    | quarter_1 | 417   |\n| SleepingBag | quarter_1 | 800   |\n| Umbrella    | quarter_2 | 224   |\n| SleepingBag | quarter_2 | 936   |\n| Umbrella    | quarter_3 | 379   |\n| SleepingBag | quarter_3 | 93    |\n| Umbrella    | quarter_4 | 611   |\n| SleepingBag | quarter_4 | 875   |\n+-------------+-----------+-------+\nExplanation:\nThe DataFrame is reshaped from wide to long format. Each row represents the sales of a product in a quarter.\n\n## My Submission\n\n- Runtime: 375 ms\n- Memory: 69.6 MB\n",
       "files": [
@@ -12741,7 +12866,8 @@
       "_committedPaths": [
         "problems/lc-reshape-data-melt/lc-reshape-data-melt.py",
         "problems/lc-reshape-data-melt/README.md"
-      ]
+      ],
+      "aiReview": "### Review\n**1. Complexity**\n*   **Time Complexity:** $O(N \\times K)$, where $N$ is the number of rows and $K$ is the number of `value_vars` (in this case, 4). The algorithm must iterate over every cell in the specified columns to transform them into rows.\n*   **Space Complexity:** $O(N \\times K)$. A new DataFrame is created to store the reshaped data, containing $N \\times K$ rows.\n\n**2. Correctness**\nThe solution is correct and follows the Pandas API precisely. It handles potential edge cases such as empty DataFrames or missing values (`NaN`) within the quarters correctly by preserving them in the long format.\n\n**3. Optimisation**\nIf the DataFrame only contains the `product` column and the four quarter columns, you can omit the `value_vars` parameter. Pandas will automatically treat all columns not listed in `id_vars` as `value_vars`. This simplifies the code without changing performance.\n\n**4. Key Algorithmic Pattern**\n**Data Reshaping (Unpivoting):** This pattern transforms data from a \"wide\" format (multiple columns per observation) to a \"long\" format (multiple rows per observation), facilitating easier aggregation and analysis."
     },
     {
       "id": "lc-reshape-data-pivot",
@@ -12751,13 +12877,16 @@
       "titleSlug": "reshape-data-pivot",
       "difficulty": "Easy",
       "lang": {
-        "name": "pythondata",
-        "ext": "txt",
-        "slug": "pythondata"
+        "name": "Pandas",
+        "slug": "python",
+        "ext": "py"
       },
-      "tags": [],
-      "topic": "Untagged",
-      "code": "",
+      "tags": [
+        "Data Reshaping",
+        "Pivot Table"
+      ],
+      "topic": "Data Reshaping",
+      "code": "import pandas as pd\n\ndef pivotTable(weather: pd.DataFrame) -> pd.DataFrame:\n    return weather.pivot(index = 'month', columns = 'city', values = 'temperature')",
       "readmeContent": "# Reshape Data: Pivot\n\n**Difficulty:** Easy  |  **Acceptance:** 83.0%\n\n**Tags:** —\n\n## Problem\n\nDataFrame weather\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| city        | object |\n| month       | object |\n| temperature | int    |\n+-------------+--------+\n\nWrite a solution to pivot the data so that each row represents temperatures for a specific month, and each city is a separate column.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:\n+--------------+----------+-------------+\n| city         | month    | temperature |\n+--------------+----------+-------------+\n| Jacksonville | January  | 13          |\n| Jacksonville | February | 23          |\n| Jacksonville | March    | 38          |\n| Jacksonville | April    | 5           |\n| Jacksonville | May      | 34          |\n| ElPaso       | January  | 20          |\n| ElPaso       | February | 6           |\n| ElPaso       | March    | 26          |\n| ElPaso       | April    | 2           |\n| ElPaso       | May      | 43          |\n+--------------+----------+-------------+\nOutput:\n+----------+--------+--------------+\n| month    | ElPaso | Jacksonville |\n+----------+--------+--------------+\n| April    | 2      | 5            |\n| February | 6      | 23           |\n| January  | 20     | 13           |\n| March    | 26     | 38           |\n| May      | 43     | 34           |\n+----------+--------+--------------+\nExplanation:\nThe table is pivoted, each column represents a city, and each row represents a specific month.\n\n## My Submission\n\n- Runtime: 464 ms\n- Memory: 70.1 MB\n",
       "files": [
         {
@@ -12768,8 +12897,8 @@
       "timestamp": 1729872212000,
       "runtime": "464 ms",
       "memory": "70.1 MB",
-      "runtimePct": null,
-      "memoryPct": null,
+      "runtimePct": 5,
+      "memoryPct": 6,
       "problemStatement": "<pre>\nDataFrame <code>weather</code>\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| city        | object |\n| month       | object |\n| temperature | int    |\n+-------------+--------+\n</pre>\n\n<p>Write a solution to <strong>pivot</strong> the data so that each row represents temperatures for a specific month, and each city is a separate column.</p>\n\n<p>The result format is in the following example.</p>\n\n<p>&nbsp;</p>\n<pre>\n<strong class=\"example\">Example 1:</strong>\n<strong>Input:</strong>\n+--------------+----------+-------------+\n| city         | month    | temperature |\n+--------------+----------+-------------+\n| Jacksonville | January  | 13          |\n| Jacksonville | February | 23          |\n| Jacksonville | March    | 38          |\n| Jacksonville | April    | 5           |\n| Jacksonville | May      | 34          |\n| ElPaso       | January  | 20          |\n| ElPaso       | February | 6           |\n| ElPaso       | March    | 26          |\n| ElPaso       | April    | 2           |\n| ElPaso       | May      | 43          |\n+--------------+----------+-------------+\n<strong>Output:</strong><code>\n+----------+--------+--------------+\n| month    | ElPaso | Jacksonville |\n+----------+--------+--------------+\n| April    | 2      | 5            |\n| February | 6      | 23           |\n| January  | 20     | 13           |\n| March    | 26     | 38           |\n| May      | 43     | 34           |\n+----------+--------+--------------+</code>\n<strong>Explanation:\n</strong>The table is pivoted, each column represents a city, and each row represents a specific month.</pre>\n",
       "hints": [
         "Consider using a built-in function in pandas library to transform the data"
@@ -12779,7 +12908,8 @@
       "hasSimilar": null,
       "_committedPaths": [
         "problems/lc-reshape-data-pivot/README.md"
-      ]
+      ],
+      "aiReview": "### Analysis\n\n1.  **Complexity**:\n    *   **Time Complexity**: $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must scan the data once to map indices and columns to the new structure.\n    *   **Space Complexity**: $O(N)$, as the resulting pivoted DataFrame stores the same data points, though organized differently.\n\n2.  **Correctness**: \n    The solution is correct for the standard LeetCode constraints. However, `df.pivot()` will raise a `ValueError` if there are **duplicate entries** for the same `(month, city)` pair. If duplicates were possible, `df.pivot_table()` would be required.\n\n3.  **Optimization**: \n    To improve performance on massive datasets with many repeated strings, convert the `city` column to the `category` dtype before pivoting. This reduces memory usage and speeds up the internal grouping logic.\n    ```python\n    weather['city'] = weather['city'].astype('category')\n    ```\n\n4.  **Algorithmic Pattern**: \n    Data Reshaping (Long-to-Wide transformation)."
     },
     {
       "id": "lc-reshape-data-pivot::1433500647",
@@ -12793,8 +12923,11 @@
         "ext": "py",
         "slug": "python"
       },
-      "tags": [],
-      "topic": "Untagged",
+      "tags": [
+        "Data Reshaping",
+        "Matrix Transformation"
+      ],
+      "topic": "Data Reshaping",
       "code": "import pandas as pd\n\ndef pivotTable(weather: pd.DataFrame) -> pd.DataFrame:\n    return weather.pivot(index = 'month', columns = 'city', values = 'temperature')",
       "readmeContent": "# Reshape Data: Pivot\n\n**Difficulty:** Easy  |  **Acceptance:** 83.0%\n\n**Tags:** —\n\n## Problem\n\nDataFrame weather\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| city        | object |\n| month       | object |\n| temperature | int    |\n+-------------+--------+\n\nWrite a solution to pivot the data so that each row represents temperatures for a specific month, and each city is a separate column.\n\nThe result format is in the following example.\n\n&nbsp;\n\nExample 1:\nInput:\n+--------------+----------+-------------+\n| city         | month    | temperature |\n+--------------+----------+-------------+\n| Jacksonville | January  | 13          |\n| Jacksonville | February | 23          |\n| Jacksonville | March    | 38          |\n| Jacksonville | April    | 5           |\n| Jacksonville | May      | 34          |\n| ElPaso       | January  | 20          |\n| ElPaso       | February | 6           |\n| ElPaso       | March    | 26          |\n| ElPaso       | April    | 2           |\n| ElPaso       | May      | 43          |\n+--------------+----------+-------------+\nOutput:\n+----------+--------+--------------+\n| month    | ElPaso | Jacksonville |\n+----------+--------+--------------+\n| April    | 2      | 5            |\n| February | 6      | 23           |\n| January  | 20     | 13           |\n| March    | 26     | 38           |\n| May      | 43     | 34           |\n+----------+--------+--------------+\nExplanation:\nThe table is pivoted, each column represents a city, and each row represents a specific month.\n\n## My Submission\n\n- Runtime: 464 ms\n- Memory: 70.1 MB\n",
       "files": [
@@ -12822,7 +12955,8 @@
       "_committedPaths": [
         "problems/lc-reshape-data-pivot/lc-reshape-data-pivot.py",
         "problems/lc-reshape-data-pivot/README.md"
-      ]
+      ],
+      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must iterate through the data to re-index and map values to the new shape.\n*   **Space Complexity:** $O(N)$, as the pivoted DataFrame stores the same number of data points in a different structure.\n\n**2. Correctness**\n*   **Duplicate Entries:** The `pivot` method will raise a `ValueError` if there are multiple entries for the same `month` and `city` combination. In LeetCode contexts, the input is usually guaranteed to be unique; otherwise, `pivot_table` (which aggregates) would be required.\n*   **Missing Data:** If a city is missing a temperature for a specific month, Pandas correctly fills that cell with `NaN`.\n\n**3. Optimization**\nIf memory usage is a concern for large datasets, convert the `city` and `month` columns to the `category` dtype before pivoting. This reduces the memory footprint of the index and column headers.\n\n**4. Key Algorithmic Pattern**\n**Data Reshaping:** This utilizes a long-to-wide transformation, reorganizing row-wise observations into a columnar matrix format."
     },
     {
       "id": "lc-return-length-of-arguments-passed",
@@ -15699,7 +15833,11 @@
       "isDuplicate": true,
       "duplicateOf": "lc-top-k-frequent-elements::1458507035",
       "_requestAIReview": true,
-      "platform": "leetcode"
+      "platform": "leetcode",
+      "_committedPaths": [
+        "problems/lc-top-k-frequent-elements/lc-top-k-frequent-elements.py",
+        "problems/lc-top-k-frequent-elements/README.md"
+      ]
     },
     {
       "id": "lc-top-k-frequent-elements::1458507035",

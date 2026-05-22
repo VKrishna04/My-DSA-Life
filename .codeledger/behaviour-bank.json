@@ -157,6 +157,29 @@
     "platform": "leetcode",
     "slug": "can-make-arithmetic-progression-from-sequence"
   },
+  "leetcode::change-data-type": {
+    "aiInsights": [
+      {
+        "summary": "**Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must iterate through the column to perform the type conversion.\n*   **Space Complexity:** $O(N)",
+        "ts": 1779432513730,
+        "weakAreas": [
+          "edge cases",
+          "null/empty input",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1240,
+        "providerId": "gemini",
+        "ts": 1779432514361
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "change-data-type"
+  },
   "leetcode::climbing-stairs-ii": {
     "aiInsights": [
       {
@@ -367,6 +390,44 @@
     ],
     "platform": "leetcode",
     "slug": "delete-duplicate-emails"
+  },
+  "leetcode::fill-missing-data": {
+    "aiInsights": [
+      {
+        "summary": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must traverse the specified column once to identify and replace null values.\n*  ",
+        "ts": 1779431918606,
+        "weakAreas": [
+          "edge cases",
+          "null/empty input",
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must iterate through the specific column once to identify and replace null values.\n*   **Spa",
+        "ts": 1779432212092,
+        "weakAreas": [
+          "edge cases",
+          "null/empty input",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1165,
+        "providerId": "gemini",
+        "ts": 1779431918642
+      },
+      {
+        "length": 1243,
+        "providerId": "gemini",
+        "ts": 1779432212110
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "fill-missing-data"
   },
   "leetcode::filling-bookcase-shelves": {
     "aiInsights": [
@@ -595,6 +656,28 @@
     ],
     "platform": "leetcode",
     "slug": "find-the-most-common-response"
+  },
+  "leetcode::find-the-number-of-ways-to-place-people-i": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(N^2)$, where $N$ is the number of points. Sorting takes $O(N \\log N)$, and the nested loops iterate through all pairs once.\n*   **Space Complexity:** $O(N",
+        "ts": 1779423592623,
+        "weakAreas": [
+          "O(n²) complexity",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1145,
+        "providerId": "gemini",
+        "ts": 1779423592672
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "find-the-number-of-ways-to-place-people-i"
   },
   "leetcode::finding-pairs-with-a-certain-sum": {
     "aiInsights": [
@@ -1036,6 +1119,40 @@
     "platform": "leetcode",
     "slug": "merge-two-sorted-lists"
   },
+  "leetcode::method-chaining": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(N \\log N)$, where $N$ is the number of rows in the DataFrame. Filtering takes $O(N)$, but sorting the filtered results dominates with $O(K \\",
+        "ts": 1779423608293,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### Review\n**1. Complexity**\n*   **Time:** $O(N \\log N)$, where $N$ is the number of rows. Filtering takes $O(N)$, but sorting the filtered results dominates the time complexity.\n*   **Space:** $O(N)$",
+        "ts": 1779423616037,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1274,
+        "providerId": "gemini",
+        "ts": 1779423608309
+      },
+      {
+        "length": 1190,
+        "providerId": "gemini",
+        "ts": 1779423616090
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "method-chaining"
+  },
   "leetcode::min-cost-climbing-stairs": {
     "aiInsights": [
       {
@@ -1217,6 +1334,49 @@
     "platform": "leetcode",
     "slug": "minimum-positive-sum-subarray"
   },
+  "leetcode::minimum-sum-of-mountain-triplets-i": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n^3)$ due to the triple nested loops iterating through all possible triplets $(i, j, k)$.\n*   **Space Complexity:** $O(1)$ as only a few scalar variables ",
+        "ts": 1779389225520,
+        "weakAreas": [
+          "O(n²) complexity",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1089,
+        "providerId": "gemini",
+        "ts": 1779389225545
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "minimum-sum-of-mountain-triplets-i"
+  },
+  "leetcode::minimum-sum-of-mountain-triplets-ii": {
+    "aiInsights": [
+      {
+        "summary": "**1. Complexity**\n*   **Time:** $O(n)$ — Three linear passes over the array.\n*   **Space:** $O(n)$ — Two auxiliary arrays (`left` and `right`) of size $n$.\n\n**2. Correctness**\nThe logic is correct. By",
+        "ts": 1779389216674,
+        "weakAreas": [
+          "edge cases",
+          "space complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1277,
+        "providerId": "gemini",
+        "ts": 1779389216707
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "minimum-sum-of-mountain-triplets-ii"
+  },
   "leetcode::minimum-time-to-make-rope-colorful": {
     "aiInsights": [
       {
@@ -1281,6 +1441,19 @@
     ],
     "platform": "leetcode",
     "slug": "most-frequent-even-element"
+  },
+  "leetcode::network-delay-time": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n**1. Complexity**\n*   **Time:** $O(E \\log E)$ (or $O(E \\log V)$), where $E$ is the number of edges and $V$ is the number of nodes. Each edge is processed once via the min-heap.\n*   **Spa",
+        "ts": 1779434922564,
+        "weakAreas": [
+          "edge cases"
+        ]
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "network-delay-time"
   },
   "leetcode::next-greater-element-i": {
     "aiInsights": [
@@ -1539,6 +1712,109 @@
     ],
     "platform": "leetcode",
     "slug": "ransom-note"
+  },
+  "leetcode::reshape-data-concatenate": {
+    "aiInsights": [
+      {
+        "summary": "### Review\n1. **Complexity**:\n   - **Time**: $O(N + M)$, where $N$ and $M$ are the total number of elements in `df1` and `df2`. Pandas must traverse and copy all data to a new memory block.\n   - **Spa",
+        "ts": 1779431614891,
+        "weakAreas": [
+          "space complexity"
+        ]
+      },
+      {
+        "summary": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(C \\times (R1 + R2))$, where $C$ is the number of columns and $R$ is the number of rows. Pandas must visit and copy every element into a new ",
+        "ts": 1779431623986,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1073,
+        "providerId": "gemini",
+        "ts": 1779431614909
+      },
+      {
+        "length": 1009,
+        "providerId": "gemini",
+        "ts": 1779431624002
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "reshape-data-concatenate"
+  },
+  "leetcode::reshape-data-melt": {
+    "aiInsights": [
+      {
+        "summary": "1. **Complexity**: \n   - **Time Complexity**: $O(N \\times M)$, where $N$ is the number of rows and $M$ is the number of columns being melted. Each element in the value columns must be visited once to ",
+        "ts": 1779423786660,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### Review\n**1. Complexity**\n*   **Time Complexity:** $O(N \\times K)$, where $N$ is the number of rows and $K$ is the number of `value_vars` (in this case, 4). The algorithm must iterate over every ce",
+        "ts": 1779423799948,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 962,
+        "providerId": "gemini",
+        "ts": 1779423786692
+      },
+      {
+        "length": 1150,
+        "providerId": "gemini",
+        "ts": 1779423799971
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "reshape-data-melt"
+  },
+  "leetcode::reshape-data-pivot": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n1.  **Complexity**:\n    *   **Time Complexity**: $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must scan the data once to map indices and columns to the new structure.",
+        "ts": 1779424108503,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must iterate through the data to re-index and map values to the new shape.\n*  ",
+        "ts": 1779431608630,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1002,
+        "providerId": "gemini",
+        "ts": 1779424108533
+      },
+      {
+        "length": 1121,
+        "providerId": "gemini",
+        "ts": 1779431608647
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "reshape-data-pivot"
   },
   "leetcode::reverse-bits": {
     "aiInsights": [

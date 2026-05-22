@@ -5,9 +5,10 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-method-chaining` |
+| Topics | Sorting, Data Filtering, Vectorization |
 | Solved | 2024-10-26 |
-| Runtime | 373 ms (beats 5.073700000000015%) |
-| Memory | 70.3 MB (beats 8.823500000000028%) |
+| Runtime | 373 ms (beats 5%) |
+| Memory | 70.3 MB (beats 9%) |
 
 ## Problem Statement
 
@@ -65,9 +66,32 @@ Can you complete this task in just **one line **of code using method chaining?
 
 ## Solutions
 
-```Python
+```Pandas
 import pandas as pd
 
 def findHeavyAnimals(animals: pd.DataFrame) -> pd.DataFrame:
     return animals[animals['weight'] > 100].sort_values(by='weight', ascending=False)[['name']]
 ```
+
+## AI Review
+
+### Analysis
+
+**1. Complexity**
+*   **Time Complexity:** $O(N \log N)$, where $N$ is the number of rows in the DataFrame. Filtering takes $O(N)$, but sorting the filtered results dominates with $O(K \log K)$, where $K \le N$.
+*   **Space Complexity:** $O(N)$. Pandas creates intermediate copies during filtering and sorting, requiring memory proportional to the input size.
+
+**2. Correctness**
+The code is correct and follows the problem requirements. It handles:
+*   **Empty DataFrames:** Returns an empty DataFrame with the column `name`.
+*   **No matches:** Returns an empty DataFrame if no weights > 100.
+*   **Ties:** `sort_values` handles identical weights by their original index order (stable sort).
+
+**3. Optimization**
+If the input DataFrame contains many columns, select only the necessary columns (`name` and `weight`) **before** sorting. This reduces the memory footprint and the amount of data the sorting algorithm must shuffle.
+```python
+return animals.loc[animals['weight'] > 100, ['name', 'weight']].sort_values('weight', ascending=False)[['name']]
+```
+
+**4. Key Algorithmic Pattern**
+**Vectorized Operations / Method Chaining:** Utilizing high-level, column-wise operations that are implemented in C/Cython within Pandas rather than explicit Python loops.

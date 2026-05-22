@@ -109,3 +109,21 @@ class Solution:
                     output += 1
         return output
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(N^2)$, where $N$ is the number of points. Sorting takes $O(N \log N)$, and the nested loops iterate through all pairs once.
+*   **Space Complexity:** $O(N)$ or $O(\log N)$ depending on the implementation of the sorting algorithm in Python.
+
+### 2. Correctness
+The solution is **correct**. Sorting by $x$ ascending and $y$ descending ensures that for any pair $(i, j)$ where $j > i$:
+*   $x_i \le x_j$ is guaranteed.
+*   The condition `points[j][1] <= points[i][1]` ensures $y_j$ is not above $y_i$.
+*   Tracking the running maximum `end` ensures no point $k$ exists between $i$ and $j$ such that $y_j \le y_k \le y_i$.
+
+### 3. Optimization
+While $O(N^2)$ is optimal for this problem's constraints ($N=50$ for Part I, $N=1000$ for Part II), you can slightly improve performance by using `end = -1e10` (or a known minimum bound) to avoid the overhead of `float("-inf")`.
+
+### 4. Key Algorithmic Pattern
+**Sorting + Running Maximum:** By processing points in a specific sorted order, the 2D geometric constraint "no point inside the rectangle" is reduced to a 1D range check using a monotonic property.

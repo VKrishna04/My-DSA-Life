@@ -96,3 +96,32 @@ class Solution:
         
         return output if output != float('inf') else -1
 ```
+
+## AI Review
+
+**1. Complexity**
+*   **Time:** $O(n)$ — Three linear passes over the array.
+*   **Space:** $O(n)$ — Two auxiliary arrays (`left` and `right`) of size $n$.
+
+**2. Correctness**
+The logic is correct. By checking `left[i] < nums[i]` and `right[i] < nums[i]`, you effectively verify that a smaller element exists both to the left (within `nums[0...i-1]`) and to the right (within `nums[i+1...n-1]`). The code handles edge cases like $n < 3$ or "no mountain found" correctly by returning `-1`.
+
+**3. Optimization**
+**Reduce Space:** You can eliminate the `left` array. Maintain a `prefix_min` variable and compute it on the fly during the final loop. This reduces space complexity to $O(n)$ for only the `right` (suffix) array.
+
+```python
+# Suffix array only
+right = [0] * n
+right[-1] = nums[-1]
+for i in range(n - 2, -1, -1):
+    right[i] = min(right[i + 1], nums[i])
+
+prefix_min = nums[0]
+for i in range(1, n - 1):
+    if prefix_min < nums[i] and right[i + 1] < nums[i]:
+        output = min(output, prefix_min + nums[i] + right[i + 1])
+    prefix_min = min(prefix_min, nums[i])
+```
+
+**4. Key Algorithmic Pattern**
+**Prefix/Suffix Precomputation:** Pre-calculating properties (like min, max, or sum) of subarrays ending or starting at each index to answer range queries in $O(1)$.

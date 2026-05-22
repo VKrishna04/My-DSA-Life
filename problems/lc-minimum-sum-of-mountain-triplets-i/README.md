@@ -80,3 +80,23 @@ class Solution:
                             output = min(output, nums[i]+nums[j]+nums[k])
         return output if output != float('inf') else -1
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(n^3)$ due to the triple nested loops iterating through all possible triplets $(i, j, k)$.
+*   **Space Complexity:** $O(1)$ as only a few scalar variables are used.
+
+### 2. Correctness
+The code is **correct**. It exhaustivey checks all indices where $i < j < k$ and verifies the mountain condition ($nums[i] < nums[j]$ and $nums[k] < nums[j]$). It correctly handles cases where no triplet exists by returning `-1`.
+
+### 3. Concrete Optimisation
+The solution can be optimized to **$O(n)$ time** using **Prefix and Suffix Minimums**. 
+Instead of searching for $i$ and $k$ repeatedly:
+1.  Create an array `left_min` where `left_min[j]` is the minimum value in `nums[0...j-1]`.
+2.  Create an array `right_min` where `right_min[j]` is the minimum value in `nums[j+1...n-1]`.
+3.  Iterate through each index $j$ as a potential peak. If `left_min[j] < nums[j] > right_min[j]`, calculate the sum and update the result.
+
+### 4. Key Algorithmic Pattern
+*   **Current:** Brute Force / Triple Loop.
+*   **Optimized:** Pre-computation (Prefix/Suffix Arrays).
