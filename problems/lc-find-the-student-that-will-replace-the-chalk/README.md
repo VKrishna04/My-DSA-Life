@@ -93,3 +93,22 @@ class Solution:
             k -= chalk[i]
         
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(N)$, where $N$ is the number of students. The `sum()` function takes $O(N)$ and the single pass loop takes $O(N)$.
+*   **Space Complexity:** $O(1)$, as no additional data structures are created (excluding the input list).
+
+### 2. Correctness
+The solution is **correct**. 
+*   It effectively handles large $k$ values using the modulo operator. 
+*   It correctly identifies the index where the remaining chalk $k$ is strictly less than the required amount.
+*   **Edge Cases:** Handles single-student arrays and cases where $k$ is an exact multiple of the sum correctly.
+
+### 3. Optimization
+**Binary Search:** While the current $O(N)$ approach is efficient, you can optimize the search phase to $O(\log N)$ by using **prefix sums** combined with `bisect_right`. 
+*   *Note:* This requires $O(N)$ space to store the prefix sums. It is most beneficial if the search is performed multiple times on the same chalk distribution.
+
+### 4. Key Algorithmic Pattern
+**Simulation with Modulo Reduction:** Instead of simulating every round (which would be $O(k/ \sum chalk)$), the problem uses the modulo operator to skip complete cycles and focus only on the final, incomplete round.

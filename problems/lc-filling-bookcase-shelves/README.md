@@ -70,3 +70,22 @@ class Solution:
         
         return dp[n]
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(n^2)$ in the worst case (where all books have width 1 and `shelfWidth` is $n$). More specifically, $O(n \cdot k)$ where $k$ is the maximum number of books that can fit on a single shelf.
+*   **Space Complexity:** $O(n)$ to store the `dp` array.
+
+### 2. Correctness
+The logic is **correct**. It explores all valid partitions of books into shelves while maintaining the required order.
+*   **Edge Cases:**
+    *   **Single Book:** Handled; the loops execute once, returning that book's height.
+    *   **Book width = `shelfWidth`:** Handled; the inner loop breaks correctly after processing the single book.
+    *   **All books on one shelf:** Handled if total width $\leq$ `shelfWidth`.
+
+### 3. Optimization
+While $O(n^2)$ is the standard approach, a micro-optimization is to initialize `dp[i]` with a tighter upper bound: `dp[i-1] + books[i-1][1]` (putting the current book on a new shelf by itself). This avoids unnecessary comparisons with `float('inf')` and provides a slightly better starting point for the `min()` function.
+
+### 4. Key Algorithmic Pattern
+**Linear Dynamic Programming (Partitioning):** The problem is solved by breaking the sequence into optimal contiguous sub-segments (shelves), where the state `dp[i]` depends on finding the best "cut point" $j$ for the last shelf.

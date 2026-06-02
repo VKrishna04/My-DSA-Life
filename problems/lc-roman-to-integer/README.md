@@ -114,3 +114,28 @@ class Solution:
 
         return resp
 ```
+
+## AI Review
+
+**1. Complexity**
+*   **Time Complexity:** $O(n)$, where $n$ is the length of the string. We traverse the string exactly once.
+*   **Space Complexity:** $O(1)$. The hash map size is constant (7 symbols), and we use a few integer variables.
+
+**2. Correctness**
+The logic is **correct**. It accurately handles the six subtraction instances (IV, IX, XL, XC, CD, CM) and the trailing character edge case. It assumes valid Roman numeral input per LeetCode constraints.
+
+**3. Concrete Optimization**
+Simplify the logic by using the general rule: **If a value is followed by a larger value, subtract it; otherwise, add it.** This replaces specific character checks (`element == 'C'`, etc.) with a single comparison.
+
+*Optimized Loop:*
+```python
+for i in range(len(s)):
+    if i + 1 < len(s) and roman[s[i]] < roman[s[i+1]]:
+        resp -= roman[s[i]]
+    else:
+        resp += roman[s[i]]
+```
+
+**4. Key Algorithmic Pattern**
+*   **Linear Scan with Look-ahead:** Iterating through a sequence while comparing the current element to the next one to determine the operation.
+*   **Hash Map Lookup:** Using a dictionary for $O(1)$ mapping of symbols to values.

@@ -84,19 +84,17 @@ class Solution:
 
 ## AI Review
 
-### Analysis
+### 1. Complexity
+*   **Time:** $O(E \log E)$ or $O(E \log V)$, where $E$ is the number of edges and $V$ is $n$. Each edge is processed and potentially pushed onto the heap.
+*   **Space:** $O(V + E)$ to store the adjacency list and the priority queue.
 
-**1. Complexity**
-*   **Time:** $O(E \log E)$ (or $O(E \log V)$), where $E$ is the number of edges and $V$ is the number of nodes. Each edge is processed once via the min-heap.
-*   **Space:** $O(V + E)$ to store the adjacency list, the `visited` set, and the heap.
+### 2. Correctness
+The code is correct. It effectively implements Dijkstra's algorithm.
+*   **Edge Cases:** It correctly handles disconnected graphs (returns `-1`) and cycles (via the `visited` set).
+*   **Note:** If $n=1$ and the signal starts at that node, it correctly returns $0$.
 
-**2. Correctness**
-The logic is correct. It successfully implements **Dijkstra’s Algorithm**.
-*   **Edge Cases:** It correctly handles disconnected graphs (returns `-1` via the `len(visited)` check) and cycles (via the `visited` set).
-*   **Small Note:** The code assumes node labels are $1$ to $n$ (consistent with the problem description).
+### 3. Concrete Optimization
+**Early Exit:** Instead of waiting for the heap to empty, return `time_so_far` as soon as `len(visited) == n`. This avoids unnecessary processing of remaining elements in the priority queue once all nodes have been reached via their shortest paths.
 
-**3. Optimization**
-Use a **distance array** `dist = [float('inf')] * (n + 1)` instead of just a `visited` set. Before pushing to the heap, check if `t + weight < dist[neighbor]`. This prevents pushing redundant, longer paths into the heap, significantly reducing the number of heap operations in dense graphs.
-
-**4. Key Algorithmic Pattern**
-**Dijkstra's Algorithm** (Breadth-First Search using a Priority Queue for weighted graphs).
+### 4. Key Algorithmic Pattern
+**Dijkstra’s Algorithm:** A greedy approach using a **Priority Queue (Min-Heap)** to find the shortest path from a single source to all other nodes in a weighted graph.

@@ -7,8 +7,8 @@
 | Problem ID | `lc-sum-of-digits-of-string-after-convert` |
 | Topics | String, Simulation |
 | Solved | 2024-10-20 |
-| Runtime | 3 ms |
-| Memory | 16.6 MB |
+| Runtime | 3 ms (beats 58%) |
+| Memory | 16.6 MB (beats 100%) |
 
 ## Problem Statement
 
@@ -97,3 +97,36 @@ First, let's note that after the first transform the value will be at most 100 *
 After The first transform, we can just do the rest of the transforms by brute force
 
 </details>
+
+## Solutions
+
+```Python3
+class Solution:
+    def getLucky(self, s: str, k: int) -> int:
+        num = int(''.join(str(ord(c) - ord('a') + 1) for c in s))
+        for i in range(k):
+            num = sum(int(digit) for digit in str(num))
+        return num
+```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(n + k \log n)$, where $n$ is the length of $s$. The first transformation takes $O(n)$. Each subsequent $k$ iteration processes $O(\log n)$ digits.
+*   **Space Complexity:** $O(n)$ to store the concatenated numeric string before the first summation.
+
+### 2. Correctness
+*   **Edge Cases:** The code is logically correct. However, for extremely long strings (length $> 4300$), Python's `int()` conversion would raise a `ValueError` due to the `sys.set_int_max_str_digits` limit. For LeetCode's constraints ($n \le 100$), it works fine.
+
+### 3. Optimization
+Instead of creating a massive integer in the first step, calculate the **initial sum of digits** directly. This avoids large integer overhead and potential conversion errors.
+
+```python
+# Direct sum for the first pass
+num = sum(int(d) for c in s for d in str(ord(c) - ord('a') + 1))
+for _ in range(k - 1): # k-1 because we already did the first sum
+    num = sum(int(digit) for digit in str(num))
+```
+
+### 4. Key Algorithmic Pattern
+**Simulation / Digit Manipulation:** The problem requires following a specific sequence of string-to-integer transformations and iterative digit processing.

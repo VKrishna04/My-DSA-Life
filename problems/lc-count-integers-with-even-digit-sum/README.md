@@ -7,8 +7,8 @@
 | Problem ID | `lc-count-integers-with-even-digit-sum` |
 | Topics | Math, Simulation |
 | Solved | 2024-10-20 |
-| Runtime | 11 ms |
-| Memory | 16.7 MB |
+| Runtime | 11 ms (beats 28%) |
+| Memory | 16.7 MB (beats 100%) |
 
 ## Problem Statement
 
@@ -54,3 +54,40 @@ Iterate through all integers from 1 to num.
 For any integer, extract the individual digits to compute their sum and check if it is even.
 
 </details>
+
+## Solutions
+
+```Python3
+class Solution:
+    def countEven(self, num: int) -> int:
+        output = 0
+        for i in range(1, num+1):
+            digits = list(map(int, str(i)))
+            if sum(digits) % 2 == 0:
+                output += 1
+
+        return output
+```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity**: $O(N \log N)$, where $N$ is `num`. The loop runs $N$ times, and for each number, converting it to a string and summing digits takes $O(\log N)$ time (proportional to the number of digits).
+*   **Space Complexity**: $O(\log N)$ to store the string and list representation of the digits.
+
+### 2. Correctness
+The code is **correct** for the given constraints ($1 \le num \le 1000$). It accurately iterates through the range and checks the parity of each digit sum. No specific edge cases (like $num=1$) fail.
+
+### 3. Concrete Optimization
+You can solve this in **$O(\log N)$ time** using a mathematical property: roughly half of the numbers up to $num$ have an even digit sum. Specifically:
+*   Calculate the digit sum of `num` itself.
+*   If the sum is **even**, the count is `num // 2`.
+*   If the sum is **odd**, the count is `(num - 1) // 2`.
+
+**Optimized Code:**
+```python
+return (num - sum(int(d) for d in str(num)) % 2) // 2
+```
+
+### 4. Key Algorithmic Pattern
+**Brute Force / Simulation**: The original code iterates through every element in the search space to verify a condition.

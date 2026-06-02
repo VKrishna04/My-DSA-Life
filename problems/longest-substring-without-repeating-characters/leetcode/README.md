@@ -86,3 +86,33 @@ class Solution:
 
         return max_length
 ```
+
+## AI Review
+
+### Review
+
+**1. Complexity**
+*   **Time Complexity:** $O(n)$, where $n$ is the length of the string. Each character is added to and removed from the set at most once.
+*   **Space Complexity:** $O(min(n, m))$, where $m$ is the size of the character set (e.g., ASCII).
+
+**2. Correctness**
+The solution is **correct** and handles all edge cases effectively:
+*   **Empty string:** Returns `0`.
+*   **Single character:** Returns `1`.
+*   **Identical characters ("bbbbb"):** Returns `1`.
+*   **All unique characters:** Returns `len(s)`.
+
+**3. Optimization**
+Use a **Hash Map (Dictionary)** to store the *last seen index* of each character instead of a set. This allows the `start` pointer to "jump" directly past the duplicate character instead of incrementing one by one:
+```python
+char_map = {}
+for end in range(len(s)):
+    if s[end] in char_map and char_map[s[end]] >= start:
+        start = char_map[s[end]] + 1
+    char_map[s[end]] = end
+    max_length = max(max_length, end - start + 1)
+```
+This reduces the number of operations inside the loop.
+
+**4. Key Algorithmic Pattern**
+**Sliding Window** (Dynamic size) using the **Two Pointers** technique.

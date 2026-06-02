@@ -73,3 +73,23 @@ class Solution:
         return len([i for i in range(len(heights)) if heights[i] != expected[i]])
 
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(n \log n)$ due to the `sorted()` function (Timsort). Iterating through the lists takes $O(n)$.
+*   **Space Complexity:** $O(n)$ to store the `expected` list and the temporary list created by the list comprehension.
+
+### 2. Correctness
+The logic is **correct**. It accurately implements the problem requirements by comparing the original array against its sorted version. It handles edge cases like already sorted arrays, arrays with duplicate heights, and minimum/maximum constraints effectively.
+
+### 3. Concrete Optimization
+**Use Counting Sort:** Since the problem constraints state heights are between 1 and 100, you can achieve **$O(n)$ time** and **$O(1)$ extra space** (excluding output) by using a frequency array.
+
+Alternatively, to optimize the current approach's space, use a **generator expression** with `sum` to avoid creating an intermediate list:
+```python
+return sum(h != e for h, e in zip(heights, expected))
+```
+
+### 4. Key Algorithmic Pattern
+**Sorting and Comparison:** The fundamental approach relies on generating a "target" state via sorting and performing a linear scan to count discrepancies.

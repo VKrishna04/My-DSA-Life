@@ -65,3 +65,25 @@ class Solution {
     }
 }
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(n)$, where $n$ is the length of the array. The algorithm performs a single pass through the input.
+*   **Space Complexity:** $O(1)$. Only two integer variables (`j`, `result`) are used, regardless of input size.
+
+### 2. Correctness
+The solution is **correct** and handles all standard edge cases:
+*   **All 0s:** `result` remains 0.
+*   **All 1s:** `result` updates every iteration to the full length.
+*   **Single Element:** Works correctly for both `[0]` and `[1]`.
+*   **Ends with 1:** Because `result` is updated *before* the next iteration/return, the final streak is captured.
+
+### 3. Concrete Optimization
+Currently, `Math.max` is called for every `1` in the array. You can reduce the number of comparisons by only updating `result` when a `0` is encountered or at the end of the array. Alternatively, replace `Math.max` with a manual `if` check to avoid the overhead of a method call:
+```java
+if (j > result) result = j;
+```
+
+### 4. Key Algorithmic Pattern
+**Linear Scan (Single Pass):** The problem is solved by iterating through the data once and maintaining a running state (the current streak) and a global maximum.

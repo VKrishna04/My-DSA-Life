@@ -98,3 +98,24 @@ class Solution:
             i += 1
         return result
 ```
+
+## AI Review
+
+1. **Complexity**: 
+   - **Time**: **$O((n+m)^2)$**, where $n$ and $m$ are the lengths of `word1` and `word2`. In Python, strings are immutable; using `+=` inside a loop creates a new copy of the string each time, leading to quadratic time.
+   - **Space**: **$O(n+m)$** to store the result.
+
+2. **Correctness**: 
+   - **Correct**. The logic successfully handles strings of different lengths and ensures all characters are appended in the correct order.
+
+3. **Optimisation**: 
+   - Use a **list** to collect characters and `"".join()` at the end. 
+   ```python
+   result = []
+   # ... result.append(word1[i]) ...
+   return "".join(result)
+   ```
+   This reduces time complexity to **$O(n+m)$** because list appending is $O(1)$ amortized, avoiding the expensive re-allocation of strings.
+
+4. **Key Algorithmic Pattern**: 
+   - **Two Pointers / Parallel Iteration**: You are traversing two sequences simultaneously using index pointers to merge them.

@@ -82,3 +82,21 @@ class Solution {
     }
 }
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(n)$, where $n$ is the number of customers. The array is traversed once.
+*   **Space Complexity:** $O(1)$, as it only uses two integer variables (`five`, `ten`) regardless of input size.
+
+### 2. Correctness
+The solution is **correct**. It handles all edge cases, including:
+*   Starting with a bill larger than $5 (returns `false` immediately).
+*   Running out of change for $10 or $20 bills.
+*   The greedy choice for $20 bills: it correctly prioritizes using a $10 and a $5 bill before falling back to three $5 bills. This is optimal because $5 bills are more "flexible" and can be used to make change for both $10 and $20.
+
+### 3. Concrete Optimisation
+While logically optimal, you can use a **`switch` statement** instead of `if-else` blocks. This can improve readability and, in some environments, allow the compiler to generate a more efficient jump table for branch prediction.
+
+### 4. Key Algorithmic Pattern
+**Greedy Algorithm:** At each step, the code makes the locally optimal choice (giving the $10 bill first when changing a $20) to ensure a globally optimal solution.

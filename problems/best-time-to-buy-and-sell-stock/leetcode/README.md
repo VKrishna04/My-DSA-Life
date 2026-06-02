@@ -62,3 +62,26 @@ class Solution {
 }
 
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(n)$, where $n$ is the length of the `prices` array. The algorithm performs a single pass.
+*   **Space Complexity:** $O(1)$. It uses only two scalar variables regardless of input size.
+
+### 2. Correctness
+The solution is **correct** and handles all standard edge cases:
+*   **Empty or single-element array:** The loop completes, returning the initial `maxProfit` of 0.
+*   **Strictly decreasing prices:** `minPrice` updates, but the `else if` never triggers, returning 0 (no profit possible).
+*   **Price volatility:** Correctly tracks the lowest price seen *so far* to calculate the potential profit at each step.
+
+### 3. Optimization
+The solution is already **optimally efficient** in terms of Big-O. For code readability, you could use `Math.min()` and `Math.max()`:
+```java
+minPrice = Math.min(minPrice, price);
+maxProfit = Math.max(maxProfit, price - minPrice);
+```
+However, your current `if-else` structure is slightly more performant as it avoids calculating `price - minPrice` when a new `minPrice` is found.
+
+### 4. Key Algorithmic Pattern
+**One Pass / Greedy:** It makes the locally optimal choice (tracking the minimum price found so far) to find the global maximum profit in a single traversal.

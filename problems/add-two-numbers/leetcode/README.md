@@ -91,3 +91,28 @@ class Solution:
         return dummy_head.next
 
 ```
+
+## AI Review
+
+### Review of "Add Two Numbers" Solution
+
+**1. Complexity**
+*   **Time:** $O(\max(M, N))$, where $M$ and $N$ are the lengths of the two linked lists. We traverse both lists exactly once.
+*   **Space:** $O(\max(M, N))$, as we generate a new linked list for the result.
+
+**2. Correctness**
+The solution is **correct** and robust. It effectively handles:
+*   **Different lengths:** The `if p1 else 0` logic prevents `NoneType` errors.
+*   **Final Carry:** The `while ... or carry` condition ensures that if the last addition results in a carry (e.g., $99 + 1$), an extra node is appended.
+*   **Empty lists:** Though the problem states lists are non-empty, the logic holds for single-node zeros.
+
+**3. Concrete Optimization**
+Use **`divmod()`** to calculate the carry and digit simultaneously, making the code more idiomatic and slightly faster:
+```python
+carry, new_digit = divmod(val1 + val2 + carry, 10)
+```
+Additionally, if memory is a strict constraint, you could perform the addition **in-place** by reusing nodes from the longer input list, reducing auxiliary space to $O(1)$.
+
+**4. Key Algorithmic Pattern**
+*   **Elementary Math (Schoolbook Addition):** Simulating column-addition with a carry variable.
+*   **Dummy Head Pointer:** Used to simplify the construction of the result linked list.

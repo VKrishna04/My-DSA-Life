@@ -68,3 +68,20 @@ class Solution {
     }
 }
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(N)$, where $N$ is the length of the string. The algorithm performs a single pass through the string.
+*   **Space Complexity:** $O(1)$, as it uses a constant amount of extra space regardless of input size.
+
+### 2. Correctness
+The code is **correct**. 
+*   **Edge Cases:** The problem constraints specify $2 \le s.length \le 100$, so the loop `i < s.length() - 1` will always execute at least once, avoiding index issues.
+*   **Overflow:** Since the maximum ASCII difference is 25 ('z' - 'a') and the max length is 100, the maximum score is $\approx 2,475$, which fits safely within a standard 32-bit `int`.
+
+### 3. Optimization
+While the current solution is efficient, you can slightly improve performance by converting the string to a character array using **`s.toCharArray()`** before the loop. This avoids the overhead of repeated `charAt()` method calls and the internal bounds checking performed by the `String` class.
+
+### 4. Key Algorithmic Pattern
+**Linear Scan (Adjacent Element Traversal):** The pattern involves iterating through a sequence once while comparing or calculating values between neighboring elements.

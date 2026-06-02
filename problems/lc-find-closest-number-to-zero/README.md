@@ -102,3 +102,28 @@ class Solution {
     }
 }
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity**: $O(N \log N)$ due to sorting the two lists.
+*   **Space Complexity**: $O(N)$ to store elements in `negative_list` and `positive_list`.
+
+### 2. Correctness
+The code is **correct** based on standard LeetCode requirements. It correctly handles the tie-break rule (if distances are equal, return the larger number) because the `else` branch returns `closestPositive` when `Math.abs(closestNegative) == closestPositive`.
+
+### 3. Optimization
+**Single-Pass Linear Scan**: You can achieve **$O(N)$ time** and **$O(1)$ space** by eliminating the lists and sorting. Iterate through the array once while maintaining a single variable for the closest number found so far.
+
+```java
+int closest = nums[0];
+for (int n : nums) {
+    if (Math.abs(n) < Math.abs(closest) || (Math.abs(n) == Math.abs(closest) && n > closest)) {
+        closest = n;
+    }
+}
+return closest;
+```
+
+### 4. Key Algorithmic Pattern
+**Linear Search / Greedy Update**: Tracking the optimal element based on a specific criteria (absolute difference) while traversing the data once.

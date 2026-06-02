@@ -7,8 +7,8 @@
 | Problem ID | `lc-median-of-two-sorted-arrays` |
 | Topics | Array, Binary Search, Divide and Conquer |
 | Solved | 2026-05-15 |
-| Runtime | 4 ms (beats 30.1667%) |
-| Memory | 19.5 MB (beats 42.92340000000001%) |
+| Runtime | 4 ms (beats 30.3379%) |
+| Memory | 19.5 MB (beats 42.427699999999994%) |
 
 ## Problem Statement
 
@@ -58,16 +58,19 @@ class Solution:
 
 ## AI Review
 
+### Review
+
 **1. Complexity**
-*   **Time Complexity:** $O((m+n) \log(m+n))$ due to the `sorted()` function on the concatenated list.
-*   **Space Complexity:** $O(m+n)$ to store the merged list `res`.
+*   **Time:** $O((m+n) \log (m+n))$ due to the `sorted()` call on the combined list of length $m+n$.
+*   **Space:** $O(m+n)$ to store the concatenated `res` list.
 
 **2. Correctness**
-The logic is functionally correct and handles all edge cases (empty arrays, single elements, even/odd total lengths) because it relies on Python’s robust built-in sorting. However, it fails the problem's specific constraint of **$O(\log(m+n))$** time complexity.
+*   **Logic:** Mathematically correct. Using `(res[n//2] + res[(n-1)//2]) / 2` elegantly handles both even and odd total lengths.
+*   **Edge Cases:** Handles empty arrays or arrays of size 1 correctly.
+*   **Constraint Violation:** While functionally correct, it fails the LeetCode requirement of $O(\log(m+n))$ time complexity.
 
 **3. Concrete Optimization**
-Replace sorting with a **Binary Search** approach on the partition index of the smaller array. Instead of merging, find a partition such that all elements on the left side are less than or equal to all elements on the right side. This reduces time complexity to **$O(\log(\min(m, n)))$** and space to **$O(1)$**.
+Implement **Binary Search on the partition index**. Instead of merging and sorting, partition the smaller array such that the left side of the partition contains half the total elements. Ensure that the maximum of the left elements is less than or equal to the minimum of the right elements. This reduces time complexity to $O(\log(\min(m, n)))$ and space to $O(1)$.
 
 **4. Key Algorithmic Pattern**
-*   **Current:** Sort and Index (Brute Force).
-*   **Optimal:** Binary Search / Dual Pointer Partitioning.
+The provided code uses **Sort and Index**. The optimal solution uses **Binary Search**.
