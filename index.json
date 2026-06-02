@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-05-22T10:53:17.929Z",
+  "updatedAt": "2026-06-02T14:57:28.980Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 256,
+    "total": 257,
     "easy": 156,
     "medium": 91,
-    "hard": 9,
+    "hard": 10,
     "byPlatform": {
-      "leetcode": 256
+      "leetcode": 257
     },
     "byLang": {
-      "Python3": 189,
+      "Python3": 190,
       "MySQL": 15,
       "Java": 12,
       "Python": 16,
@@ -21,7 +21,7 @@
       "Bash": 4
     },
     "byTopic": {
-      "Array": 123,
+      "Array": 124,
       "Math": 25,
       "Linked List": 3,
       "Database": 15,
@@ -303,8 +303,8 @@
       "difficulty": "Easy",
       "lang": {
         "name": "Python3",
-        "ext": "py",
-        "slug": "python3"
+        "slug": "python3",
+        "ext": "py"
       },
       "tags": [
         "Math",
@@ -312,7 +312,7 @@
         "Number Theory"
       ],
       "topic": "Math",
-      "code": "",
+      "code": "class Solution:\n    def addDigits(self, num: int) -> int:\n        while len(str(num)) != 1:\n            num = sum(int(_) for _ in str(num))\n\n        # while num > 9: num = sum(int(d) for d in str(num))\n        return num",
       "readmeContent": "# Add Digits\n\n**Difficulty:** Easy  |  **Acceptance:** 68.9%\n\n**Tags:** `Math`, `Simulation`, `Number Theory`\n\n## Problem\n\nGiven an integer num, repeatedly add all its digits until the result has only one digit, and return it.\n\n&nbsp;\nExample 1:\n\nInput: num = 38\nOutput: 2\nExplanation: The process is\n38 --> 3 + 8 --> 11\n11 --> 1 + 1 --> 2 \nSince 2 has only one digit, return it.\n\nExample 2:\n\nInput: num = 0\nOutput: 0\n\n&nbsp;\nConstraints:\n\n\t0 <= num <= 231 - 1\n\n&nbsp;\nFollow up: Could you do it without any loop/recursion in O(1) runtime?\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.6 MB\n\n## Similar Problems\n\n- [Happy Number](https://leetcode.com/problems/happy-number/) — Easy\n- [Sum of Digits of String After Convert](https://leetcode.com/problems/sum-of-digits-of-string-after-convert/) — Easy\n- [Minimum Sum of Four Digit Number After Splitting Digits](https://leetcode.com/problems/minimum-sum-of-four-digit-number-after-splitting-digits/) — Easy\n- [Calculate Digit Sum of a String](https://leetcode.com/problems/calculate-digit-sum-of-a-string/) — Easy\n- [Difference Between Element Sum and Digit Sum of an Array](https://leetcode.com/problems/difference-between-element-sum-and-digit-sum-of-an-array/) — Easy\n",
       "files": [
         {
@@ -323,8 +323,8 @@
       "timestamp": 1729416459000,
       "runtime": "0 ms",
       "memory": "16.6 MB",
-      "runtimePct": null,
-      "memoryPct": null,
+      "runtimePct": 100,
+      "memoryPct": 100,
       "problemStatement": "<p>Given an integer <code>num</code>, repeatedly add all its digits until the result has only one digit, and return it.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> num = 38\n<strong>Output:</strong> 2\n<strong>Explanation:</strong> The process is\n38 --&gt; 3 + 8 --&gt; 11\n11 --&gt; 1 + 1 --&gt; 2 \nSince 2 has only one digit, return it.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> num = 0\n<strong>Output:</strong> 0\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>0 &lt;= num &lt;= 2<sup>31</sup> - 1</code></li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Follow up:</strong> Could you do it without any loop/recursion in <code>O(1)</code> runtime?</p>\n",
       "hints": [
         "A naive implementation of the above process is trivial. Could you come up with other methods?",
@@ -374,7 +374,8 @@
       "hasSimilar": true,
       "_committedPaths": [
         "problems/lc-add-digits/README.md"
-      ]
+      ],
+      "aiReview": "### Analysis of \"Add Digits\" Solution\n\n**1. Complexity**\n*   **Time Complexity:** $O(\\log n)$. The number of digits in $n$ is $\\lfloor\\log_{10} n\\rfloor + 1$. While the outer loop runs very few times (the sum of digits drops drastically), the inner string conversion and summation scale with the number of digits.\n*   **Space Complexity:** $O(\\log n)$ to store the string representation of the number during iteration.\n\n**2. Correctness**\n*   The logic is **correct**. It handles the smallest input ($0$) correctly because `len(\"0\") == 1`, exiting the loop immediately. It correctly reduces any positive integer to a single digit.\n\n**3. Optimization**\nThe problem can be solved in **$O(1)$ time and space** using the **Digital Root** mathematical formula:\n```python\nreturn 1 + (num - 1) % 9 if num > 0 else 0\n```\nThis avoids string conversions and loops entirely by leveraging the property that a number is congruent to the sum of its digits modulo 9.\n\n**4. Key Algorithmic Pattern**\n*   **Simulation / Iterative Reduction:** The code repeatedly applies a transformation (summing digits) until a specific termination condition (single digit) is met."
     },
     {
       "id": "lc-add-strings",
@@ -617,7 +618,8 @@
       "_committedPaths": [
         "problems/add-two-numbers/leetcode/lc-add-two-numbers.py",
         "problems/add-two-numbers/leetcode/README.md"
-      ]
+      ],
+      "aiReview": "### Review of \"Add Two Numbers\" Solution\n\n**1. Complexity**\n*   **Time:** $O(\\max(M, N))$, where $M$ and $N$ are the lengths of the two linked lists. We traverse both lists exactly once.\n*   **Space:** $O(\\max(M, N))$, as we generate a new linked list for the result.\n\n**2. Correctness**\nThe solution is **correct** and robust. It effectively handles:\n*   **Different lengths:** The `if p1 else 0` logic prevents `NoneType` errors.\n*   **Final Carry:** The `while ... or carry` condition ensures that if the last addition results in a carry (e.g., $99 + 1$), an extra node is appended.\n*   **Empty lists:** Though the problem states lists are non-empty, the logic holds for single-node zeros.\n\n**3. Concrete Optimization**\nUse **`divmod()`** to calculate the carry and digit simultaneously, making the code more idiomatic and slightly faster:\n```python\ncarry, new_digit = divmod(val1 + val2 + carry, 10)\n```\nAdditionally, if memory is a strict constraint, you could perform the addition **in-place** by reusing nodes from the longer input list, reducing auxiliary space to $O(1)$.\n\n**4. Key Algorithmic Pattern**\n*   **Elementary Math (Schoolbook Addition):** Simulating column-addition with a carry variable.\n*   **Dummy Head Pointer:** Used to simplify the construction of the result linked list."
     },
     {
       "id": "lc-article-views-i",
@@ -975,7 +977,8 @@
       "_committedPaths": [
         "problems/best-time-to-buy-and-sell-stock/leetcode/lc-best-time-to-buy-and-sell-stock.java",
         "problems/best-time-to-buy-and-sell-stock/leetcode/README.md"
-      ]
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the `prices` array. The algorithm performs a single pass.\n*   **Space Complexity:** $O(1)$. It uses only two scalar variables regardless of input size.\n\n### 2. Correctness\nThe solution is **correct** and handles all standard edge cases:\n*   **Empty or single-element array:** The loop completes, returning the initial `maxProfit` of 0.\n*   **Strictly decreasing prices:** `minPrice` updates, but the `else if` never triggers, returning 0 (no profit possible).\n*   **Price volatility:** Correctly tracks the lowest price seen *so far* to calculate the potential profit at each step.\n\n### 3. Optimization\nThe solution is already **optimally efficient** in terms of Big-O. For code readability, you could use `Math.min()` and `Math.max()`:\n```java\nminPrice = Math.min(minPrice, price);\nmaxProfit = Math.max(maxProfit, price - minPrice);\n```\nHowever, your current `if-else` structure is slightly more performant as it avoids calculating `price - minPrice` when a new `minPrice` is found.\n\n### 4. Key Algorithmic Pattern\n**One Pass / Greedy:** It makes the locally optimal choice (tracking the minimum price found so far) to find the global maximum profit in a single traversal."
     },
     {
       "id": "lc-big-countries",
@@ -1515,6 +1518,7 @@
       ],
       "hasSimilar": true,
       "_committedPaths": [
+        "problems/lc-check-if-all-characters-have-equal-number-of-occurrences/lc-check-if-all-characters-have-equal-number-of-occurrences.py",
         "problems/lc-check-if-all-characters-have-equal-number-of-occurrences/README.md"
       ],
       "aiReview": "### 1. Complexity\n*   **Time:** $O(N)$, where $N$ is the length of the string $s$. We traverse the string once to build the dictionary and once through the unique values (max 26 for lowercase English letters).\n*   **Space:** $O(k)$, where $k$ is the number of unique characters. In the context of lowercase English letters, this is $O(1)$ as $k \\le 26$.\n\n### 2. Correctness\nThe code is correct for the problem constraints.\n*   **Edge Cases:** For a single-character string (e.g., \"a\"), it correctly returns `True`.\n*   **Potential Fail:** If the input string `s` is empty, `s[0]` will raise an `IndexError`. However, LeetCode constraints typically specify $1 \\le s.length$.\n\n### 3. Concrete Optimization\nUse `collections.Counter` and a `set` to simplify the logic and improve readability:\n```python\nfrom collections import Counter\nreturn len(set(Counter(s).values())) == 1\n```\nThis reduces the manual loop and conditional checks to a single line.\n\n### 4. Key Algorithmic Pattern\n**Frequency Map (Counting):** Using a hash map (dictionary) to store the occurrences of elements and then verifying a property of those counts."
@@ -2368,7 +2372,8 @@
       "_committedPaths": [
         "problems/lc-convert-1d-array-into-2d-array/lc-convert-1d-array-into-2d-array.java",
         "problems/lc-convert-1d-array-into-2d-array/README.md"
-      ]
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(m \\times n)$, as we iterate through every element exactly once.\n*   **Space Complexity:** $O(m \\times n)$ to store the result array. No significant extra auxiliary space is used.\n\n### 2. Correctness\n*   The logic is correct for all valid cases.\n*   **Edge Case/Risk:** The code allocates `new int[m][n]` **before** validating the length. If `m * n` is extremely large but `original.length` is small, the program may throw an `OutOfMemoryError` unnecessarily before reaching the `if` check.\n\n### 3. Optimization\nMove the validation check to the top and assign values directly to the result matrix to avoid redundant array allocations:\n```java\nif (original.length != m * n) return new int[0][0];\nint[][] arr = new int[m][n];\nfor (int i = 0; i < m; i++) {\n    for (int j = 0; j < n; j++) {\n        arr[i][j] = original[i * n + j];\n    }\n}\n```\n*Alternatively, use `System.arraycopy` for row-wise copying to improve performance.*\n\n### 4. Key Algorithmic Pattern\n**1D to 2D Coordinate Mapping:** Using the formula `index = (row * total_columns) + column` to map linear indices to matrix coordinates."
     },
     {
       "id": "lc-count-integers-with-even-digit-sum",
@@ -2379,15 +2384,15 @@
       "difficulty": "Easy",
       "lang": {
         "name": "Python3",
-        "ext": "py",
-        "slug": "python3"
+        "slug": "python3",
+        "ext": "py"
       },
       "tags": [
         "Math",
         "Simulation"
       ],
       "topic": "Math",
-      "code": "",
+      "code": "class Solution:\n    def countEven(self, num: int) -> int:\n        output = 0\n        for i in range(1, num+1):\n            digits = list(map(int, str(i)))\n            if sum(digits) % 2 == 0:\n                output += 1\n\n        return output",
       "readmeContent": "# Count Integers With Even Digit Sum\n\n**Difficulty:** Easy  |  **Acceptance:** 70.1%\n\n**Tags:** `Math`, `Simulation`\n\n## Problem\n\nGiven a positive integer num, return the number of positive integers less than or equal to num whose digit sums are even.\n\nThe digit sum of a positive integer is the sum of all its digits.\n\n&nbsp;\nExample 1:\n\nInput: num = 4\nOutput: 2\nExplanation:\nThe only integers less than or equal to 4 whose digit sums are even are 2 and 4.    \n\nExample 2:\n\nInput: num = 30\nOutput: 14\nExplanation:\nThe 14 integers less than or equal to 30 whose digit sums are even are\n2, 4, 6, 8, 11, 13, 15, 17, 19, 20, 22, 24, 26, and 28.\n\n&nbsp;\nConstraints:\n\n\t1 <= num <= 1000\n\n## My Submission\n\n- Runtime: 11 ms\n- Memory: 16.7 MB\n\n## Similar Problems\n\n- [Sum of Numbers With Units Digit K](https://leetcode.com/problems/sum-of-numbers-with-units-digit-k/) — Medium\n- [Sum of Digits of String After Convert](https://leetcode.com/problems/sum-of-digits-of-string-after-convert/) — Easy\n- [Number of Ways to Buy Pens and Pencils](https://leetcode.com/problems/number-of-ways-to-buy-pens-and-pencils/) — Medium\n- [Separate the Digits in an Array](https://leetcode.com/problems/separate-the-digits-in-an-array/) — Easy\n- [Find if Digit Game Can Be Won](https://leetcode.com/problems/find-if-digit-game-can-be-won/) — Easy\n",
       "files": [
         {
@@ -2398,8 +2403,8 @@
       "timestamp": 1729413509000,
       "runtime": "11 ms",
       "memory": "16.7 MB",
-      "runtimePct": null,
-      "memoryPct": null,
+      "runtimePct": 28,
+      "memoryPct": 100,
       "problemStatement": "<p>Given a positive integer <code>num</code>, return <em>the number of positive integers <strong>less than or equal to</strong></em> <code>num</code> <em>whose digit sums are <strong>even</strong></em>.</p>\n\n<p>The <strong>digit sum</strong> of a positive integer is the sum of all its digits.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> num = 4\n<strong>Output:</strong> 2\n<strong>Explanation:</strong>\nThe only integers less than or equal to 4 whose digit sums are even are 2 and 4.    \n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> num = 30\n<strong>Output:</strong> 14\n<strong>Explanation:</strong>\nThe 14 integers less than or equal to 30 whose digit sums are even are\n2, 4, 6, 8, 11, 13, 15, 17, 19, 20, 22, 24, 26, and 28.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= num &lt;= 1000</code></li>\n</ul>\n",
       "hints": [
         "Iterate through all integers from 1 to num.",
@@ -2441,7 +2446,8 @@
       "hasSimilar": true,
       "_committedPaths": [
         "problems/lc-count-integers-with-even-digit-sum/README.md"
-      ]
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time Complexity**: $O(N \\log N)$, where $N$ is `num`. The loop runs $N$ times, and for each number, converting it to a string and summing digits takes $O(\\log N)$ time (proportional to the number of digits).\n*   **Space Complexity**: $O(\\log N)$ to store the string and list representation of the digits.\n\n### 2. Correctness\nThe code is **correct** for the given constraints ($1 \\le num \\le 1000$). It accurately iterates through the range and checks the parity of each digit sum. No specific edge cases (like $num=1$) fail.\n\n### 3. Concrete Optimization\nYou can solve this in **$O(\\log N)$ time** using a mathematical property: roughly half of the numbers up to $num$ have an even digit sum. Specifically:\n*   Calculate the digit sum of `num` itself.\n*   If the sum is **even**, the count is `num // 2`.\n*   If the sum is **odd**, the count is `(num - 1) // 2`.\n\n**Optimized Code:**\n```python\nreturn (num - sum(int(d) for d in str(num)) % 2) // 2\n```\n\n### 4. Key Algorithmic Pattern\n**Brute Force / Simulation**: The original code iterates through every element in the search space to verify a condition."
     },
     {
       "id": "lc-count-number-of-pairs-with-absolute-difference-k::1765393180",
@@ -3080,6 +3086,7 @@
       "similar": null,
       "hasSimilar": null,
       "_committedPaths": [
+        "problems/lc-create-a-dataframe-from-list/lc-create-a-dataframe-from-list.py",
         "problems/lc-create-a-dataframe-from-list/README.md"
       ],
       "aiReview": "### Review\n**1. Complexity**\n*   **Time:** $O(N \\times M)$, where $N$ is the number of students and $M$ is the number of columns (2). Pandas must iterate through the nested list to populate the underlying NumPy arrays.\n*   **Space:** $O(N \\times M)$ to store the resulting DataFrame in memory.\n\n**2. Correctness**\nThe solution is correct and idiomatic for the problem description.\n*   **Edge Cases:** An empty list `[]` correctly produces an empty DataFrame with the specified column headers. If the inner lists vary in length, Pandas may introduce `None`/`NaN` or raise a `ValueError`, but per the LeetCode constraints, the input is a consistent 2D list.\n\n**3. Optimization**\nFor very large datasets, providing the `dtype` explicitly (e.g., `dtype=int`) can prevent Pandas from performing unnecessary type inference during construction, slightly improving performance.\n\n**4. Key Pattern**\n**Constructor Injection/Data Marshalling:** This pattern involves passing raw, structured data (list of lists) into a higher-level object constructor (`pd.DataFrame`) that handles internal memory allocation and schema mapping."
@@ -3166,6 +3173,7 @@
       "similar": null,
       "hasSimilar": null,
       "_committedPaths": [
+        "problems/lc-create-a-new-column/lc-create-a-new-column.py",
         "problems/lc-create-a-new-column/README.md"
       ],
       "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas performs a vectorized element-wise multiplication across the entire column.\n*   **Space Complexity:** $O(N)$ to store the additional data for the new \"bonus\" column.\n\n**2. Correctness**\nThe solution is correct and handles standard Pandas behavior well.\n*   **Edge Cases:** If the `salary` column contains `NaN` values, the result will correctly be `NaN`. If the DataFrame is empty, it returns an empty DataFrame with the new column header. \n*   **Potential Failure:** If the `salary` column contains non-numeric types (e.g., strings), the multiplication will either repeat the string or raise a `TypeError`.\n\n**3. Optimization**\nThe current solution is already optimal for Pandas as it uses **vectorization**. Avoid using `.apply()` or Python loops, as they are significantly slower. For very large datasets, you could ensure the column uses a memory-efficient subtype (e.g., `int32` instead of `int64`), but that is context-dependent.\n\n**4. Key Algorithmic Pattern**\n**Vectorization:** This pattern leverages low-level optimizations (C/SIMD) to perform operations on entire arrays simultaneously rather than iterating through rows manually."
@@ -3255,6 +3263,7 @@
       "similar": null,
       "hasSimilar": null,
       "_committedPaths": [
+        "problems/lc-create-hello-world-function/lc-create-hello-world-function.js",
         "problems/lc-create-hello-world-function/README.md"
       ],
       "aiReview": "### Review\n\n1. **Complexity**: \n   - **Time Complexity**: $O(1)$. Both the creation of the function and its execution take constant time, regardless of the number or size of arguments passed.\n   - **Space Complexity**: $O(1)$. No additional data structures are scaled with input; the returned string is constant.\n\n2. **Correctness**: \n   The solution is perfectly correct. By using the rest parameter (`...args`), it captures any number of arguments passed to the returned function and successfully ignores them to return the required string. It handles edge cases like zero arguments or null/undefined inputs implicitly.\n\n3. **Optimization**: \n   While the current solution is optimal, you can slightly reduce memory overhead by removing the `...args` parameter: `return function() { return \"Hello World\"; };`. In JavaScript, functions can be called with any number of arguments even if none are defined in the signature, avoiding the allocation of an arguments array.\n\n4. **Key Algorithmic Pattern**: \n   **Higher-Order Functions** and **Closures**. The outer function returns a new function that maintains its own scope."
@@ -3531,6 +3540,7 @@
       ],
       "hasSimilar": true,
       "_committedPaths": [
+        "problems/lc-di-string-match/lc-di-string-match.py",
         "problems/lc-di-string-match/README.md"
       ],
       "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of string `s`. The algorithm performs a single pass over the string.\n*   **Space Complexity:** $O(n)$ to store the result list. The auxiliary space is $O(1)$.\n\n### 2. Correctness\nThe solution is **correct**. It greedily picks the smallest available number for \"I\" and the largest for \"D,\" ensuring the next available number in the remaining range will always satisfy the condition. \n*   **Edge Cases:** Handles single-character strings and strings with only \"I\"s or \"D\"s correctly. The remaining `i` and `d` will always be equal at the end, satisfying the final $n+1$ element requirement.\n\n### 3. Optimization\n**Pre-allocation:** Instead of using `append()`, which involves dynamic resizing overhead, pre-allocate the list:\n```python\nres = [0] * (len(s) + 1)\n# Assign by index in the loop\n```\nAdditionally, the `continue` is redundant; an `else` block is cleaner.\n\n### 4. Key Algorithmic Pattern\n**Two Pointers / Greedy:** It maintains two boundaries (low and high) and greedily consumes the boundary that guarantees the current constraint is met regardless of future characters."
@@ -3798,6 +3808,7 @@
       "similar": null,
       "hasSimilar": null,
       "_committedPaths": [
+        "problems/lc-drop-duplicate-rows/lc-drop-duplicate-rows.py",
         "problems/lc-drop-duplicate-rows/README.md"
       ],
       "aiReview": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows. Pandas uses a hash table to identify duplicates in a single pass.\n*   **Space Complexity:** $O(N)$ in the worst case to store the hash set of unique values and the resulting DataFrame.\n\n**2. Correctness**\nThe solution is correct. `drop_duplicates` effectively handles:\n*   **Multiple duplicates:** Keeps the first occurrence by default.\n*   **Null values:** Treats `None`/`NaN` as a value and deduplicates them correctly.\n*   **Empty DataFrames:** Returns an empty DataFrame without error.\n\n**3. Optimization**\nTo improve memory efficiency, use the `inplace=True` parameter to modify the existing DataFrame rather than creating a full copy:\n```python\ncustomers.drop_duplicates(subset=\"email\", inplace=True)\nreturn customers\n```\nNote: In many competitive programming environments, creating a new object is preferred to avoid side effects, but `inplace` saves memory on large datasets.\n\n**4. Key Algorithmic Pattern**\n**Hashing:** The underlying implementation utilizes a hash set to track seen values in the specified subset column for $O(1)$ average-time lookups."
@@ -3888,6 +3899,7 @@
       "similar": null,
       "hasSimilar": null,
       "_committedPaths": [
+        "problems/lc-drop-missing-data/lc-drop-missing-data.py",
         "problems/lc-drop-missing-data/README.md"
       ],
       "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(N \\times M)$, where $N$ is the number of rows and $M$ is the number of columns. Pandas must scan the 'name' column ($O(N)$) and then copy the valid rows into a new DataFrame.\n*   **Space Complexity:** $O(N \\times M)$ in the worst case, as `dropna()` creates and returns a copy of the DataFrame.\n\n### 2. Correctness\nThe solution is correct. It effectively removes rows where the 'name' column contains `NaN` or `None`.\n*   **Edge Cases:** \n    *   **Empty DataFrame:** Returns an empty DataFrame correctly.\n    *   **No missing values:** Returns a copy of the original DataFrame.\n    *   **All missing values:** Returns an empty DataFrame with the original schema.\n\n### 3. Optimization\nTo reduce memory overhead on extremely large datasets, use the `inplace=True` parameter to modify the original DataFrame instead of creating a copy:\n```python\nstudents.dropna(subset=['name'], inplace=True)\nreturn students\n```\n*Note: In the context of LeetCode, the memory limit is usually generous enough for the default copy.*\n\n### 4. Key Algorithmic Pattern\n**Vectorized Data Filtering:** Utilizing internal C-optimized routines in Pandas to perform element-wise checks and row exclusion without explicit Python loops."
@@ -4368,7 +4380,8 @@
       "_committedPaths": [
         "problems/lc-filling-bookcase-shelves/lc-filling-bookcase-shelves.py",
         "problems/lc-filling-bookcase-shelves/README.md"
-      ]
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n^2)$ in the worst case (where all books have width 1 and `shelfWidth` is $n$). More specifically, $O(n \\cdot k)$ where $k$ is the maximum number of books that can fit on a single shelf.\n*   **Space Complexity:** $O(n)$ to store the `dp` array.\n\n### 2. Correctness\nThe logic is **correct**. It explores all valid partitions of books into shelves while maintaining the required order.\n*   **Edge Cases:**\n    *   **Single Book:** Handled; the loops execute once, returning that book's height.\n    *   **Book width = `shelfWidth`:** Handled; the inner loop breaks correctly after processing the single book.\n    *   **All books on one shelf:** Handled if total width $\\leq$ `shelfWidth`.\n\n### 3. Optimization\nWhile $O(n^2)$ is the standard approach, a micro-optimization is to initialize `dp[i]` with a tighter upper bound: `dp[i-1] + books[i-1][1]` (putting the current book on a new shelf by itself). This avoids unnecessary comparisons with `float('inf')` and provides a slightly better starting point for the `min()` function.\n\n### 4. Key Algorithmic Pattern\n**Linear Dynamic Programming (Partitioning):** The problem is solved by breaking the sequence into optimal contiguous sub-segments (shelves), where the state `dp[i]` depends on finding the best \"cut point\" $j$ for the last shelf."
     },
     {
       "id": "lc-find-all-k-distant-indices-in-an-array::1762915066",
@@ -4536,7 +4549,8 @@
       "_committedPaths": [
         "problems/lc-find-closest-number-to-zero/lc-find-closest-number-to-zero.java",
         "problems/lc-find-closest-number-to-zero/README.md"
-      ]
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time Complexity**: $O(N \\log N)$ due to sorting the two lists.\n*   **Space Complexity**: $O(N)$ to store elements in `negative_list` and `positive_list`.\n\n### 2. Correctness\nThe code is **correct** based on standard LeetCode requirements. It correctly handles the tie-break rule (if distances are equal, return the larger number) because the `else` branch returns `closestPositive` when `Math.abs(closestNegative) == closestPositive`.\n\n### 3. Optimization\n**Single-Pass Linear Scan**: You can achieve **$O(N)$ time** and **$O(1)$ space** by eliminating the lists and sorting. Iterate through the array once while maintaining a single variable for the closest number found so far.\n\n```java\nint closest = nums[0];\nfor (int n : nums) {\n    if (Math.abs(n) < Math.abs(closest) || (Math.abs(n) == Math.abs(closest) && n > closest)) {\n        closest = n;\n    }\n}\nreturn closest;\n```\n\n### 4. Key Algorithmic Pattern\n**Linear Search / Greedy Update**: Tracking the optimal element based on a specific criteria (absolute difference) while traversing the data once."
     },
     {
       "id": "lc-find-closest-person",
@@ -5480,7 +5494,8 @@
       "_committedPaths": [
         "problems/lc-find-the-student-that-will-replace-the-chalk/lc-find-the-student-that-will-replace-the-chalk.py",
         "problems/lc-find-the-student-that-will-replace-the-chalk/README.md"
-      ]
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(N)$, where $N$ is the number of students. The `sum()` function takes $O(N)$ and the single pass loop takes $O(N)$.\n*   **Space Complexity:** $O(1)$, as no additional data structures are created (excluding the input list).\n\n### 2. Correctness\nThe solution is **correct**. \n*   It effectively handles large $k$ values using the modulo operator. \n*   It correctly identifies the index where the remaining chalk $k$ is strictly less than the required amount.\n*   **Edge Cases:** Handles single-student arrays and cases where $k$ is an exact multiple of the sum correctly.\n\n### 3. Optimization\n**Binary Search:** While the current $O(N)$ approach is efficient, you can optimize the search phase to $O(\\log N)$ by using **prefix sums** combined with `bisect_right`. \n*   *Note:* This requires $O(N)$ space to store the prefix sums. It is most beneficial if the search is performed multiple times on the same chalk distribution.\n\n### 4. Key Algorithmic Pattern\n**Simulation with Modulo Reduction:** Instead of simulating every round (which would be $O(k/ \\sum chalk)$), the problem uses the modulo operator to skip complete cycles and focus only on the final, incomplete round."
     },
     {
       "id": "lc-find-the-xor-of-numbers-which-appear-twice",
@@ -5491,8 +5506,8 @@
       "difficulty": "Easy",
       "lang": {
         "name": "Python3",
-        "ext": "py",
-        "slug": "python3"
+        "slug": "python3",
+        "ext": "py"
       },
       "tags": [
         "Array",
@@ -5500,7 +5515,7 @@
         "Bit Manipulation"
       ],
       "topic": "Bit Manipulation",
-      "code": "",
+      "code": "from functools import reduce\nclass Solution:\n    def duplicateNumbersXOR(self, nums: List[int]) -> int:\n        frequency = {}\n        for num in nums:\n            if num in frequency:\n                frequency[num] += 1\n            else:\n                frequency[num] = 0\n        result = 0\n        for key, value in frequency.items():\n            if value == 1:\n                result = result ^ key\n        return result",
       "readmeContent": "# Find the XOR of Numbers Which Appear Twice\n\n**Difficulty:** Easy  |  **Acceptance:** 78.9%\n\n**Tags:** `Array`, `Hash Table`, `Bit Manipulation`\n\n## Problem\n\nYou are given an array nums, where each number in the array appears either once or twice.\n\nReturn the bitwise XOR of all the numbers that appear twice in the array, or 0 if no number appears twice.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,2,1,3]\n\nOutput: 1\n\nExplanation:\n\nThe only number that appears twice in&nbsp;nums&nbsp;is 1.\n\nExample 2:\n\nInput: nums = [1,2,3]\n\nOutput: 0\n\nExplanation:\n\nNo number appears twice in&nbsp;nums.\n\nExample 3:\n\nInput: nums = [1,2,2,1]\n\nOutput: 3\n\nExplanation:\n\nNumbers 1 and 2 appeared twice. 1 XOR 2 == 3.\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 50\n\t1 <= nums[i] <= 50\n\tEach number in nums appears either once or twice.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 16.5 MB\n\n## Similar Problems\n\n- [Single Number](https://leetcode.com/problems/single-number/) — Easy\n- [Single Number II](https://leetcode.com/problems/single-number-ii/) — Medium\n- [Single Number III](https://leetcode.com/problems/single-number-iii/) — Medium\n",
       "files": [
         {
@@ -5511,8 +5526,8 @@
       "timestamp": 1729373687000,
       "runtime": "0 ms",
       "memory": "16.5 MB",
-      "runtimePct": null,
-      "memoryPct": null,
+      "runtimePct": 100,
+      "memoryPct": 100,
       "problemStatement": "<p>You are given an array <code>nums</code>, where each number in the array appears <strong>either</strong><em> </em>once<em> </em>or<em> </em>twice.</p>\n\n<p>Return the bitwise<em> </em><code>XOR</code> of all the numbers that appear twice in the array, or 0 if no number appears twice.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1,2,1,3]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">1</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The only number that appears twice in&nbsp;<code>nums</code>&nbsp;is 1.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1,2,3]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">0</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>No number appears twice in&nbsp;<code>nums</code>.</p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1,2,2,1]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">3</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>Numbers 1 and 2 appeared twice. <code>1 XOR 2 == 3</code>.</p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 50</code></li>\n\t<li><code>1 &lt;= nums[i] &lt;= 50</code></li>\n\t<li>Each number in <code>nums</code> appears either once or twice.</li>\n</ul>\n",
       "hints": [
         "The constraints are small. Brute force checking each value in the array."
@@ -5541,7 +5556,8 @@
       "hasSimilar": true,
       "_committedPaths": [
         "problems/lc-find-the-xor-of-numbers-which-appear-twice/README.md"
-      ]
+      ],
+      "aiReview": "**Review of Easy Python3 solution for LeetCode 'Find the XOR of Numbers Which Appear Twice'**\n\n1.  **Time Complexity**: O(N), where N is the number of elements in `nums`. The first loop iterates through `nums` once, with average O(1) dictionary operations. The second loop iterates through unique elements (at most N).\n    **Space Complexity**: O(N). The `frequency` dictionary stores counts for up to N unique numbers.\n\n2.  **Correctness**: The solution is **correct**. The specific frequency counting logic (`frequency[num] = 0` for the first occurrence, then `+= 1` for subsequent ones) correctly maps numbers appearing *exactly twice* to a `value` of `1` in the dictionary. The `if value == 1` condition correctly identifies and XORs these numbers. No edge cases should fail.\n\n3.  **One Concrete Optimisation**: Use `collections.Counter` for cleaner and more Pythonic frequency counting:\n    ```python\n    from collections import Counter\n    class Solution:\n        def duplicateNumbersXOR(self, nums: List[int]) -> int:\n            counts = Counter(nums)\n            result = 0\n            for num, count in counts.items():\n                if count == 2: # Explicitly check for count == 2\n                    result ^= num\n            return result\n    ```\n    This maintains O(N) time/space complexity but improves code readability and reduces custom logic for frequency tracking.\n\n4.  **Key Algorithmic Pattern**:\n    *   **Frequency Counting**: Using a hash map (dictionary) to track element occurrences.\n    *   **Bitwise XOR**: Employing the XOR operator to combine the identified numbers, leveraging its properties for aggregation."
     },
     {
       "id": "lc-finding-pairs-with-a-certain-sum::1764184136",
@@ -5833,6 +5849,7 @@
       "similar": null,
       "hasSimilar": null,
       "_committedPaths": [
+        "problems/lc-get-the-size-of-a-dataframe/lc-get-the-size-of-a-dataframe.py",
         "problems/lc-get-the-size-of-a-dataframe/README.md"
       ],
       "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(1)$. Accessing the `.shape` attribute is a constant time operation because Pandas stores these dimensions as metadata.\n*   **Space Complexity:** $O(1)$. It only returns a fixed-size list of two integers regardless of the DataFrame size.\n\n**2. Correctness**\nThe solution is **correct** and handles all edge cases:\n*   **Empty DataFrame:** Correctly returns `[0, n]` or `[0, 0]`.\n*   **Single Row/Column:** Correctly returns the respective dimensions.\n*   **Large DataFrames:** Efficient as it doesn't iterate through data.\n\n**3. Optimisation**\nThe current solution is already optimal for readability and performance. Technically, `[players.shape[0], players.shape[1]]` avoids a tuple-to-list conversion cast, but `list(players.shape)` is idiomatic and the performance difference is negligible.\n\n**4. Key Algorithmic Pattern**\n**Metadata Access:** Instead of counting elements manually ($O(N \\times M)$), the solution retrieves pre-computed object properties (attributes)."
@@ -6090,7 +6107,8 @@
       "_committedPaths": [
         "problems/lc-happy-number/lc-happy-number.py",
         "problems/lc-happy-number/README.md"
-      ]
+      ],
+      "aiReview": "### Review of \"Happy Number\" Solution\n\n**1. Complexity**\n*   **Time Complexity:** $O(\\log n)$. For any number, the sum of the squares of its digits drops rapidly (e.g., $999 \\to 243$). The number of digits in $n$ is $\\lfloor \\log_{10} n \\rfloor + 1$.\n*   **Space Complexity:** $O(\\log n)$. In the worst case, the `seen` set stores all unique values encountered before a cycle or 1 is reached.\n\n**2. Correctness**\n*   **Correct.** The logic effectively handles the two possible outcomes: reaching 1 (Happy) or entering an infinite loop (Unhappy).\n*   **Edge Cases:** Handles $n=1$ immediately. It also works for very large integers as the sum of squares of digits shrinks them quickly into a manageable range.\n\n**3. Optimization**\n*   **Mathematical Extraction:** Replace `sum(int(_) ** 2 for _ in str(n))` with a `while` loop using `divmod(n, 10)`. String conversion is relatively expensive due to object allocation.\n*   **Space Optimization:** Use **Floyd’s Cycle-Finding Algorithm** (Tortoise and Hare) to detect the cycle with $O(1)$ auxiliary space instead of a hash set.\n\n**4. Key Algorithmic Pattern**\n*   **Cycle Detection** (using a Hash Set)."
     },
     {
       "id": "lc-height-checker",
@@ -6185,7 +6203,8 @@
       "_committedPaths": [
         "problems/lc-height-checker/lc-height-checker.py",
         "problems/lc-height-checker/README.md"
-      ]
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n \\log n)$ due to the `sorted()` function (Timsort). Iterating through the lists takes $O(n)$.\n*   **Space Complexity:** $O(n)$ to store the `expected` list and the temporary list created by the list comprehension.\n\n### 2. Correctness\nThe logic is **correct**. It accurately implements the problem requirements by comparing the original array against its sorted version. It handles edge cases like already sorted arrays, arrays with duplicate heights, and minimum/maximum constraints effectively.\n\n### 3. Concrete Optimization\n**Use Counting Sort:** Since the problem constraints state heights are between 1 and 100, you can achieve **$O(n)$ time** and **$O(1)$ extra space** (excluding output) by using a frequency array.\n\nAlternatively, to optimize the current approach's space, use a **generator expression** with `sum` to avoid creating an intermediate list:\n```python\nreturn sum(h != e for h, e in zip(heights, expected))\n```\n\n### 4. Key Algorithmic Pattern\n**Sorting and Comparison:** The fundamental approach relies on generating a \"target\" state via sorting and performing a linear scan to count discrepancies."
     },
     {
       "id": "lc-house-robber::1974558813",
@@ -6853,6 +6872,10 @@
       "_committedPaths": [
         "problems/lc-lemonade-change/lc-lemonade-change.py",
         "problems/lc-lemonade-change/README.md"
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the number of bills. We iterate through the list exactly once.\n*   **Space Complexity:** $O(1)$. We only store two integer variables (`five`, `ten`) regardless of the input size.\n\n### 2. Correctness\nThe logic is **correct**. It successfully handles the greedy requirement for the $20 bill: you must prioritize giving change as $10 + $5 over $5 + $5 + $5. This is because $5 bills are more versatile (they can also change a $10 bill), while $10 bills can only be used to change a $20. \n\n**Edge Cases:**\n*   Starting with a $10 or $20: Handled (returns `False`).\n*   Empty list: Handled (returns `True`).\n\n### 3. Optimization\n**Pythonic Refactoring:** Iterate directly over the list instead of using an index. This removes the need for `bills[i]` and simplifies the control flow by removing redundant `continue` statements.\n\n```python3\nfor bill in bills:\n    if bill == 5:\n        five += 1\n    elif bill == 10:\n        if not five: return False\n        five -= 1\n        ten += 1\n    else: # bill == 20\n        if ten and five:\n            ten -= 1\n            five -= 1\n        elif five >= 3:\n            five -= 3\n        else:\n            return False\n```\n\n### 4. Key Algorithmic Pattern\n**Greedy Algorithm:** At each step, you make the locally optimal choice (using the $10 bill for change whenever possible) to ensure you retain the more flexible $5 bills for future customers.",
+      "linkedSolutions": [
+        "lc-lemonade-change::1356200718"
       ]
     },
     {
@@ -6897,6 +6920,10 @@
       "_committedPaths": [
         "problems/lc-lemonade-change/lc-lemonade-change.java",
         "problems/lc-lemonade-change/README.md"
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the number of customers. The array is traversed once.\n*   **Space Complexity:** $O(1)$, as it only uses two integer variables (`five`, `ten`) regardless of input size.\n\n### 2. Correctness\nThe solution is **correct**. It handles all edge cases, including:\n*   Starting with a bill larger than $5 (returns `false` immediately).\n*   Running out of change for $10 or $20 bills.\n*   The greedy choice for $20 bills: it correctly prioritizes using a $10 and a $5 bill before falling back to three $5 bills. This is optimal because $5 bills are more \"flexible\" and can be used to make change for both $10 and $20.\n\n### 3. Concrete Optimisation\nWhile logically optimal, you can use a **`switch` statement** instead of `if-else` blocks. This can improve readability and, in some environments, allow the compiler to generate a more efficient jump table for branch prediction.\n\n### 4. Key Algorithmic Pattern\n**Greedy Algorithm:** At each step, the code makes the locally optimal choice (giving the $10 bill first when changing a $20) to ensure a globally optimal solution.",
+      "linkedSolutions": [
+        "lc-lemonade-change::1356197827"
       ]
     },
     {
@@ -7133,29 +7160,14 @@
       ],
       "hasSimilar": true,
       "canonical": {
-        "canonicalId": "linked-list-cycle",
-        "canonicalTitle": "Linked List Cycle",
-        "topic": "linked-list",
-        "difficulty": "easy",
-        "pattern": "fast-slow",
-        "tags": [
-          "linked-list"
-        ],
-        "aliases": [
-          {
-            "platform": "leetcode",
-            "slug": "linked-list-cycle",
-            "id": 141
-          }
-        ],
-        "voteCount": 96,
-        "confirmedBy": "system-init",
-        "addedAt": "2025-04-24"
+        "id": "linked-list-cycle",
+        "title": "Linked List Cycle"
       },
       "_committedPaths": [
         "problems/linked-list-cycle/leetcode/lc-linked-list-cycle.py",
         "problems/linked-list-cycle/leetcode/README.md"
-      ]
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the number of nodes. In the worst case (a cycle), the fast pointer catches the slow pointer in linear time.\n*   **Space Complexity:** $O(1)$. No additional data structures are used; only two pointers are maintained.\n\n### 2. Correctness\nThe implementation is correct and robust. \n*   **Empty list:** Handled (returns `False`).\n*   **Single node (no cycle):** Handled (loop doesn't execute, returns `False`).\n*   **Single node (cycle to itself):** Handled (pointers will meet).\n*   **Large cycles:** Handled by the mathematical certainty of the \"Tortoise and Hare\" logic.\n\n### 3. Optimization\n**Redundancy removal:** The initial `if head is None` check is redundant. The `while f and f.next` condition naturally handles a `None` head, as `f` would be `None` immediately, skipping the loop and returning `False`. Removing this simplifies the code without changing functionality.\n\n### 4. Key Algorithmic Pattern\n**Two Pointers (Floyd’s Cycle-Finding Algorithm / Tortoise and Hare).** By moving one pointer twice as fast as the other, they are guaranteed to meet if a cycle exists."
     },
     {
       "id": "lc-longest-common-prefix::1650472821",
@@ -7954,7 +7966,8 @@
           "language": "Python3",
           "code": "class Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        # max_length = 1\n        # if s is \"\":\n        #     return 0\n        # for i in range(len(s)):\n        #     st = \"\"\n        #     for ch in s[i:]:\n        #         if ch not in st:\n        #             st += ch\n        #             max_length=max(max_length,len(st))\n        #         else:\n        #             break\n        # print(max_length)\n        # return max_length\n\n        start = 0  \n        max_length = 0  \n        seen_chars = set()  \n\n        for end in range(len(s)):\n            while s[end] in seen_chars:\n                seen_chars.remove(s[start])\n                start += 1\n            \n            seen_chars.add(s[end])\n            \n            max_length = max(max_length, end - start + 1)\n\n        return max_length",
           "description": "Submission #1351984398",
-          "timestamp": 1723375530000
+          "timestamp": 1723375530000,
+          "aiReview": "### 1. Complexity\n*   **Time Complexity**: $O(n)$, where $n$ is the length of the string. Each character is visited at most twice: once by the `end` pointer and once by the `start` pointer.\n*   **Space Complexity**: $O(\\min(n, m))$, where $m$ is the size of the character set (e.g., 128 for ASCII). The set stores unique characters within the current window.\n\n### 2. Correctness\nThe solution is **correct**. It successfully handles:\n*   Empty strings (returns 0).\n*   Strings with all unique characters.\n*   Strings with all identical characters.\nThe sliding window logic ensures that every valid substring is considered.\n\n### 3. Optimization\nYou can optimize the \"jump\" of the `start` pointer. Instead of a `set` and a `while` loop, use a **Hash Map (Dictionary)** to store the **index** of each character. \n\nIf a character is repeated, you can move `start` immediately to `last_seen_index + 1` rather than incrementing it one by one.\n*Example:* `start = max(start, seen_chars[s[end]] + 1)`\n\n### 4. Key Algorithmic Pattern\n**Sliding Window (Dynamic)**: This pattern uses two pointers to maintain a window that expands to find a valid solution and shrinks to remain valid."
         }
       ],
       "canonical": {
@@ -7981,6 +7994,10 @@
       "_committedPaths": [
         "problems/longest-substring-without-repeating-characters/leetcode/lc-longest-substring-without-repeating-characters-alt-approach-python3-imported.py",
         "problems/longest-substring-without-repeating-characters/leetcode/README.md"
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time:** $O(N^3)$. The nested loops are $O(N^2)$, and within the inner loop, both the `ch not in st` check and string concatenation `st += ch` are $O(N)$ operations in Python.\n*   **Space:** $O(K)$, where $K$ is the size of the unique character set (the length of `st`).\n\n### 2. Correctness\n*   **Identity vs Equality:** `s is \"\"` is risky. In Python, `is` checks memory identity. Use `if not s:` or `if s == \"\":` for value comparison.\n*   **Performance:** While logically sound for small inputs, this will likely trigger a **Time Limit Exceeded (TLE)** error on LeetCode due to the cubic time complexity.\n\n### 3. Concrete Optimization\nUse a **Sliding Window** with a hash map (dictionary). Store the character as the key and its **index** as the value. As you iterate with a `right` pointer, if you hit a duplicate, move the `left` pointer directly to `max(left, last_seen_index + 1)`. This reduces the complexity to **$O(N)$**.\n\n### 4. Key Algorithmic Pattern\nThe current code uses **Brute Force**. The optimal pattern for this problem is the **Sliding Window**.",
+      "linkedSolutions": [
+        "lc-longest-substring-without-repeating-characters::1351984398"
       ]
     },
     {
@@ -8100,6 +8117,10 @@
       "_committedPaths": [
         "problems/longest-substring-without-repeating-characters/leetcode/lc-longest-substring-without-repeating-characters.py",
         "problems/longest-substring-without-repeating-characters/leetcode/README.md"
+      ],
+      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the string. Each character is added to and removed from the set at most once.\n*   **Space Complexity:** $O(min(n, m))$, where $m$ is the size of the character set (e.g., ASCII).\n\n**2. Correctness**\nThe solution is **correct** and handles all edge cases effectively:\n*   **Empty string:** Returns `0`.\n*   **Single character:** Returns `1`.\n*   **Identical characters (\"bbbbb\"):** Returns `1`.\n*   **All unique characters:** Returns `len(s)`.\n\n**3. Optimization**\nUse a **Hash Map (Dictionary)** to store the *last seen index* of each character instead of a set. This allows the `start` pointer to \"jump\" directly past the duplicate character instead of incrementing one by one:\n```python\nchar_map = {}\nfor end in range(len(s)):\n    if s[end] in char_map and char_map[s[end]] >= start:\n        start = char_map[s[end]] + 1\n    char_map[s[end]] = end\n    max_length = max(max_length, end - start + 1)\n```\nThis reduces the number of operations inside the loop.\n\n**4. Key Algorithmic Pattern**\n**Sliding Window** (Dynamic size) using the **Two Pointers** technique.",
+      "linkedSolutions": [
+        "lc-longest-substring-without-repeating-characters::1351982506"
       ]
     },
     {
@@ -8642,7 +8663,8 @@
       "_committedPaths": [
         "problems/lc-max-consecutive-ones/lc-max-consecutive-ones.java",
         "problems/lc-max-consecutive-ones/README.md"
-      ]
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the array. The algorithm performs a single pass through the input.\n*   **Space Complexity:** $O(1)$. Only two integer variables (`j`, `result`) are used, regardless of input size.\n\n### 2. Correctness\nThe solution is **correct** and handles all standard edge cases:\n*   **All 0s:** `result` remains 0.\n*   **All 1s:** `result` updates every iteration to the full length.\n*   **Single Element:** Works correctly for both `[0]` and `[1]`.\n*   **Ends with 1:** Because `result` is updated *before* the next iteration/return, the final streak is captured.\n\n### 3. Concrete Optimization\nCurrently, `Math.max` is called for every `1` in the array. You can reduce the number of comparisons by only updating `result` when a `0` is encountered or at the end of the array. Alternatively, replace `Math.max` with a manual `if` check to avoid the overhead of a method call:\n```java\nif (j > result) result = j;\n```\n\n### 4. Key Algorithmic Pattern\n**Linear Scan (Single Pass):** The problem is solved by iterating through the data once and maintaining a running state (the current streak) and a global maximum."
     },
     {
       "id": "lc-maximal-square::1984334387",
@@ -9054,8 +9076,63 @@
       ]
     },
     {
-      "platform": "leetcode",
       "id": "lc-median-of-two-sorted-arrays",
+      "forceCommit": false,
+      "submissionId": null,
+      "title": "Median of Two Sorted Arrays",
+      "titleSlug": "median-of-two-sorted-arrays",
+      "difficulty": "Hard",
+      "topic": "Divide and Conquer",
+      "tags": [
+        "Array",
+        "Binary Search",
+        "Divide and Conquer"
+      ],
+      "canonical": null,
+      "readmeContent": "# [4] Median of Two Sorted Arrays\n**Difficulty:** Hard  |  **Acceptance:** 46.6%  |  **Likes:** 32261 / **Dislikes:** 3585\n**Tags:** `Array`, `Binary Search`, `Divide and Conquer`\n## Problem\nGiven two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.\n\nThe overall run time complexity should be O(log (m+n)).\n\n&nbsp;\nExample 1:\n\nInput: nums1 = [1,3], nums2 = [2]\nOutput: 2.00000\nExplanation: merged array = [1,2,3] and median is 2.\n\nExample 2:\n\nInput: nums1 = [1,2], nums2 = [3,4]\nOutput: 2.50000\nExplanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.\n\n&nbsp;\nConstraints:\n\n\tnums1.length == m\n\tnums2.length == n\n\t0 <= m <= 1000\n\t0 <= n <= 1000\n\t1 <= m + n <= 2000\n\t-106 <= nums1[i], nums2[i] <= 106\n## My Submission\n\n- Runtime: 4 ms (beats 30.3%)\n- Memory: 19.5 MB (beats 42.4%)\n",
+      "code": "class Solution:\n    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:\n        res = sorted(nums1 + nums2)\n        n = len(res)\n        return (res[n//2] + res[(n-1)//2]) / 2",
+      "files": [
+        {
+          "path": "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays.py",
+          "content": "class Solution:\n    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:\n        res = sorted(nums1 + nums2)\n        n = len(res)\n        return (res[n//2] + res[(n-1)//2]) / 2"
+        },
+        {
+          "path": "problems/lc-median-of-two-sorted-arrays/README.md",
+          "content": "# [4] Median of Two Sorted Arrays\n**Difficulty:** Hard  |  **Acceptance:** 46.6%  |  **Likes:** 32261 / **Dislikes:** 3585\n**Tags:** `Array`, `Binary Search`, `Divide and Conquer`\n## Problem\nGiven two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.\n\nThe overall run time complexity should be O(log (m+n)).\n\n&nbsp;\nExample 1:\n\nInput: nums1 = [1,3], nums2 = [2]\nOutput: 2.00000\nExplanation: merged array = [1,2,3] and median is 2.\n\nExample 2:\n\nInput: nums1 = [1,2], nums2 = [3,4]\nOutput: 2.50000\nExplanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.\n\n&nbsp;\nConstraints:\n\n\tnums1.length == m\n\tnums2.length == n\n\t0 <= m <= 1000\n\t0 <= n <= 1000\n\t1 <= m + n <= 2000\n\t-106 <= nums1[i], nums2[i] <= 106\n## My Submission\n\n- Runtime: 4 ms (beats 30.3%)\n- Memory: 19.5 MB (beats 42.4%)\n"
+        }
+      ],
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "runtime": "4 ms",
+      "memory": "19.5 MB",
+      "runtimePct": 30.3379,
+      "memoryPct": 42.427699999999994,
+      "timestamp": 1778869326000,
+      "acRate": 46.612478765405676,
+      "likes": 32261,
+      "dislikes": 3585,
+      "similar": [],
+      "problemStatement": "<p>Given two sorted arrays <code>nums1</code> and <code>nums2</code> of size <code>m</code> and <code>n</code> respectively, return <strong>the median</strong> of the two sorted arrays.</p>\n\n<p>The overall run time complexity should be <code>O(log (m+n))</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums1 = [1,3], nums2 = [2]\n<strong>Output:</strong> 2.00000\n<strong>Explanation:</strong> merged array = [1,2,3] and median is 2.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums1 = [1,2], nums2 = [3,4]\n<strong>Output:</strong> 2.50000\n<strong>Explanation:</strong> merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>nums1.length == m</code></li>\n\t<li><code>nums2.length == n</code></li>\n\t<li><code>0 &lt;= m &lt;= 1000</code></li>\n\t<li><code>0 &lt;= n &lt;= 1000</code></li>\n\t<li><code>1 &lt;= m + n &lt;= 2000</code></li>\n\t<li><code>-10<sup>6</sup> &lt;= nums1[i], nums2[i] &lt;= 10<sup>6</sup></code></li>\n</ul>\n",
+      "elapsedSeconds": 0,
+      "hasSimilar": true,
+      "submissionsUrl": "https://leetcode.com/problems/median-of-two-sorted-arrays/submissions/",
+      "notes": "",
+      "methodTitle": "",
+      "isDuplicate": false,
+      "duplicateOf": null,
+      "_requestAIReview": true,
+      "platform": "leetcode",
+      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time:** $O((m+n) \\log (m+n))$ due to the `sorted()` call on the combined list of length $m+n$.\n*   **Space:** $O(m+n)$ to store the concatenated `res` list.\n\n**2. Correctness**\n*   **Logic:** Mathematically correct. Using `(res[n//2] + res[(n-1)//2]) / 2` elegantly handles both even and odd total lengths.\n*   **Edge Cases:** Handles empty arrays or arrays of size 1 correctly.\n*   **Constraint Violation:** While functionally correct, it fails the LeetCode requirement of $O(\\log(m+n))$ time complexity.\n\n**3. Concrete Optimization**\nImplement **Binary Search on the partition index**. Instead of merging and sorting, partition the smaller array such that the left side of the partition contains half the total elements. Ensure that the maximum of the left elements is less than or equal to the minimum of the right elements. This reduces time complexity to $O(\\log(\\min(m, n)))$ and space to $O(1)$.\n\n**4. Key Algorithmic Pattern**\nThe provided code uses **Sort and Index**. The optimal solution uses **Binary Search**.",
+      "linkedSolutions": [
+        "lc-median-of-two-sorted-arrays-alt-1780412246910-3"
+      ]
+    },
+    {
+      "platform": "leetcode",
+      "id": "lc-median-of-two-sorted-arrays-alt-1780412246910-3",
       "forceCommit": true,
       "submissionId": null,
       "title": "Median of Two Sorted Arrays",
@@ -9106,6 +9183,9 @@
       "_committedPaths": [
         "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays.py",
         "problems/lc-median-of-two-sorted-arrays/README.md"
+      ],
+      "linkedSolutions": [
+        "lc-median-of-two-sorted-arrays"
       ]
     },
     {
@@ -9211,12 +9291,18 @@
           "language": "Python3",
           "code": "class Solution:\n    def mergeAlternately(self, word1: str, word2: str) -> str:\n        result = \"\"\n        i = 0\n        while i < len(word1) or i < len(word2):\n            if i < len(word1):\n                result += word1[i]\n            if i < len(word2):\n                result += word2[i]\n            i += 1\n        return result",
           "description": "Submission #1957612804",
-          "timestamp": 1774344800000
+          "timestamp": 1774344800000,
+          "aiReview": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O((N+M)^2)$, where $N$ and $M$ are lengths of the strings. In Python, strings are immutable; `result += char` creates a new string copy each iteration, leading to quadratic time.\n*   **Space Complexity:** $O(N+M)$ to store the final merged string.\n\n**2. Correctness**\n*   The logic is **correct**. It successfully handles strings of different lengths by using the `or` condition and checking bounds inside the loop. No edge cases (like one string being significantly longer) will fail logically.\n\n**3. Concrete Optimization**\nTo achieve **$O(N+M)$ time complexity**, use a **list** to collect characters and join them at the end. Appending to a list is $O(1)$ amortized, whereas string concatenation is $O(K)$.\n\n```python\n# Optimized version\nresult = []\nfor i in range(max(len(word1), len(word2))):\n    if i < len(word1): result.append(word1[i])\n    if i < len(word2): result.append(word2[i])\nreturn \"\".join(result)\n```\n\n**4. Key Algorithmic Pattern**\n**Two Pointers / Linear Simulation**: The solution uses a single index (acting as two pointers) to traverse both input structures simultaneously in a single pass."
         }
       ],
       "_committedPaths": [
         "problems/lc-merge-strings-alternately/lc-merge-strings-alternately-alt-approach-python3-imported.py",
         "problems/lc-merge-strings-alternately/README.md"
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O((N + M)^2)$ strictly, where $N$ and $M$ are the lengths of the strings. While CPython sometimes optimizes `+=` for strings, in the worst-case/standard model, each concatenation creates a new string, leading to quadratic time.\n*   **Space Complexity:** $O(N + M)$ to store the resulting string.\n\n### 2. Correctness\n**Correct.** The logic successfully handles cases where strings are of equal or unequal lengths using `zip` and slicing for the remainder.\n\n### 3. Concrete Optimisation\nUse a **list** to collect characters and `\"\".join()` at the end.\n```python\nres = []\nfor char1, char2 in zip(word1, word2):\n    res.append(char1)\n    res.append(char2)\nres.append(word1[len(word2):] if len(word1) > len(word2) else word2[len(word1):])\nreturn \"\".join(res)\n```\n**Why?** Strings are immutable. Appending to a list is $O(1)$ amortized, ensuring the total time complexity is strictly $O(N + M)$.\n\n### 4. Key Algorithmic Pattern\n**Two-Pointer / Interleaving:** The logic conceptually moves two pointers through the strings simultaneously to interleave the elements.",
+      "linkedSolutions": [
+        "lc-merge-strings-alternately::1363827829",
+        "lc-merge-strings-alternately::1957612804"
       ]
     },
     {
@@ -9270,6 +9356,11 @@
       "_committedPaths": [
         "problems/lc-merge-strings-alternately/lc-merge-strings-alternately.java",
         "problems/lc-merge-strings-alternately/README.md"
+      ],
+      "aiReview": "### Review of Java Solution\n\n**1. Complexity**\n*   **Time Complexity:** $O(n + m)$, where $n$ and $m$ are the lengths of `word1` and `word2`. Each character is visited exactly once.\n*   **Space Complexity:** $O(n + m)$ to store the merged result in the `StringBuilder` and the final string.\n\n**2. Correctness**\nThe code is **correct**. It handles all scenarios effectively:\n*   Strings of equal length.\n*   `word1` longer than `word2`.\n*   `word2` longer than `word1`.\n*   The use of `StringBuilder` is appropriate for string concatenation in Java to avoid $O(N^2)$ overhead.\n\n**3. Optimization**\n**Pre-size the `StringBuilder`:** Initialize the builder with the total expected length:\n`StringBuilder new_word = new StringBuilder(word1.length() + word2.length());`\nThis prevents the internal char array from resizing and copying multiple times as it grows, saving memory allocations and minor CPU cycles.\n\n**4. Key Algorithmic Pattern**\n**Two-Pointer Technique:** The solution maintains two independent pointers (`i` and `j`) to traverse and process two sequences simultaneously.",
+      "linkedSolutions": [
+        "lc-merge-strings-alternately::1356177455",
+        "lc-merge-strings-alternately::1957612804"
       ]
     },
     {
@@ -9325,6 +9416,11 @@
       "_committedPaths": [
         "problems/lc-merge-strings-alternately/lc-merge-strings-alternately.py",
         "problems/lc-merge-strings-alternately/README.md"
+      ],
+      "aiReview": "1. **Complexity**: \n   - **Time**: **$O((n+m)^2)$**, where $n$ and $m$ are the lengths of `word1` and `word2`. In Python, strings are immutable; using `+=` inside a loop creates a new copy of the string each time, leading to quadratic time.\n   - **Space**: **$O(n+m)$** to store the result.\n\n2. **Correctness**: \n   - **Correct**. The logic successfully handles strings of different lengths and ensures all characters are appended in the correct order.\n\n3. **Optimisation**: \n   - Use a **list** to collect characters and `\"\".join()` at the end. \n   ```python\n   result = []\n   # ... result.append(word1[i]) ...\n   return \"\".join(result)\n   ```\n   This reduces time complexity to **$O(n+m)$** because list appending is $O(1)$ amortized, avoiding the expensive re-allocation of strings.\n\n4. **Key Algorithmic Pattern**: \n   - **Two Pointers / Parallel Iteration**: You are traversing two sequences simultaneously using index pointers to merge them.",
+      "linkedSolutions": [
+        "lc-merge-strings-alternately::1356177455",
+        "lc-merge-strings-alternately::1363827829"
       ]
     },
     {
@@ -10477,6 +10573,7 @@
       "similar": null,
       "hasSimilar": null,
       "_committedPaths": [
+        "problems/lc-modify-columns/lc-modify-columns.py",
         "problems/lc-modify-columns/README.md"
       ],
       "aiReview": "### Review\n\n**1. Complexity**\n*   **Time:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas performs a single pass over the 'salary' column.\n*   **Space:** $O(1)$ auxiliary space. The operation modifies the existing Series in-place without allocating a new column of size $N$ (though internal Pandas buffers may vary).\n\n**2. Correctness**\nThe solution is correct for standard inputs.\n*   **Edge Cases:**\n    *   **NaN values:** Correctly handled; `NaN * 2` remains `NaN`.\n    *   **Empty DataFrame:** Works correctly (returns empty).\n    *   **Missing Column:** Will raise a `KeyError` if 'salary' does not exist.\n    *   **Non-numeric Data:** Will raise a `TypeError` if the column contains strings or incompatible objects.\n\n**3. Optimization**\nThe current solution is already optimal using **Vectorization**. For massive datasets, ensuring the column is stored in a specific numeric dtype (e.g., `int32` instead of `int64`) before multiplication could reduce memory bandwidth usage, but for standard LeetCode constraints, this is unnecessary.\n\n**4. Key Algorithmic Pattern**\n**Vectorization:** Instead of iterating through rows with a loop, Pandas applies the operation across the entire column simultaneously using highly optimized C/Cython backends."
@@ -10791,7 +10888,7 @@
       "duplicateOf": null,
       "_requestAIReview": true,
       "platform": "leetcode",
-      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time:** $O(E \\log E)$ (or $O(E \\log V)$), where $E$ is the number of edges and $V$ is the number of nodes. Each edge is processed once via the min-heap.\n*   **Space:** $O(V + E)$ to store the adjacency list, the `visited` set, and the heap.\n\n**2. Correctness**\nThe logic is correct. It successfully implements **Dijkstra’s Algorithm**.\n*   **Edge Cases:** It correctly handles disconnected graphs (returns `-1` via the `len(visited)` check) and cycles (via the `visited` set).\n*   **Small Note:** The code assumes node labels are $1$ to $n$ (consistent with the problem description).\n\n**3. Optimization**\nUse a **distance array** `dist = [float('inf')] * (n + 1)` instead of just a `visited` set. Before pushing to the heap, check if `t + weight < dist[neighbor]`. This prevents pushing redundant, longer paths into the heap, significantly reducing the number of heap operations in dense graphs.\n\n**4. Key Algorithmic Pattern**\n**Dijkstra's Algorithm** (Breadth-First Search using a Priority Queue for weighted graphs).",
+      "aiReview": "### 1. Complexity\n*   **Time:** $O(E \\log E)$ or $O(E \\log V)$, where $E$ is the number of edges and $V$ is $n$. Each edge is processed and potentially pushed onto the heap.\n*   **Space:** $O(V + E)$ to store the adjacency list and the priority queue.\n\n### 2. Correctness\nThe code is correct. It effectively implements Dijkstra's algorithm.\n*   **Edge Cases:** It correctly handles disconnected graphs (returns `-1`) and cycles (via the `visited` set).\n*   **Note:** If $n=1$ and the signal starts at that node, it correctly returns $0$.\n\n### 3. Concrete Optimization\n**Early Exit:** Instead of waiting for the heap to empty, return `time_so_far` as soon as `len(visited) == n`. This avoids unnecessary processing of remaining elements in the priority queue once all nodes have been reached via their shortest paths.\n\n### 4. Key Algorithmic Pattern\n**Dijkstra’s Algorithm:** A greedy approach using a **Priority Queue (Min-Heap)** to find the shortest path from a single source to all other nodes in a weighted graph.",
       "_committedPaths": [
         "problems/lc-network-delay-time/lc-network-delay-time.py",
         "problems/lc-network-delay-time/README.md"
@@ -12778,6 +12875,7 @@
       "similar": null,
       "hasSimilar": null,
       "_committedPaths": [
+        "problems/lc-rename-columns/lc-rename-columns.py",
         "problems/lc-rename-columns/README.md"
       ],
       "aiReview": "### Analysis\n\n1. **Complexity**:\n    *   **Time Complexity**: $O(N \\times M)$, where $N$ is the number of rows and $M$ is the number of columns. While the rename mapping is $O(1)$ relative to rows, Pandas creates a new DataFrame copy by default, necessitating a full data scan.\n    *   **Space Complexity**: $O(N \\times M)$ to store the returned DataFrame copy.\n\n2. **Correctness**: \n    The solution is correct. Pandas’ `rename` method is robust; if a specified key (e.g., 'id') is missing from the DataFrame, it ignores that mapping without raising an error, preventing crashes on unexpected schemas.\n\n3. **Optimization**:\n    Use the `inplace=True` parameter to modify the existing DataFrame and return it, reducing memory overhead by avoiding the creation of an intermediate object:\n    ```python\n    students.rename(columns={...}, inplace=True)\n    return students\n    ```\n    Alternatively, for large datasets where you are certain of the column order, direct assignment `students.columns = [...]` is faster as it skips the dictionary lookup logic.\n\n4. **Pattern**: \n    **Data Transformation** (Schema Mapping). It utilizes a **Hash Map (Dictionary)** to define the translation layer between source and target metadata."
@@ -13531,6 +13629,7 @@
       ],
       "hasSimilar": true,
       "_committedPaths": [
+        "problems/lc-rings-and-rods/lc-rings-and-rods.py",
         "problems/lc-rings-and-rods/README.md"
       ],
       "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the string. We iterate through the string once and then through a maximum of 10 rods.\n*   **Space Complexity:** $O(1)$. Although we use a dictionary, there are at most 10 unique rods and 3 colors per rod, making the storage size constant regardless of input length.\n\n### 2. Correctness\nThe code is **correct**. It handles multiple rings of the same color on the same rod using a `set` and correctly identifies rods with all three colors. \n*   **Edge Cases:** The constraints guarantee an even length string (min 2), so empty inputs aren't an issue. The use of `issubset` (or simply checking `len(colour) == 3`) handles duplicate rings perfectly.\n\n### 3. Optimization\n**Use Bitmasks:** Instead of a dictionary of sets, use an array of 10 integers. Assign each color a bit (R=1, G=2, B=4). Perform a bitwise OR for each ring. A rod has all colors if its value is `7`. This avoids the overhead of object creation and hashing.\n\n### 4. Key Algorithmic Pattern\n**Hash Map (Frequency/Set Tracking):** Grouping attributes (colors) by a unique identifier (rod index) to evaluate a collection property."
@@ -13690,12 +13789,17 @@
           "language": "Python3",
           "code": "class Solution:\n    def romanToInt(self, s: str) -> int:\n        roman = {\n            'I': 1,\n            'V': 5,\n            'X': 10,\n            'L': 50,\n            'C': 100,\n            'D': 500,\n            'M': 1000\n        }\n\n        resp = 0\n        i = 0\n        for element in s:\n\n            current = roman[element]\n\n            if i + 1 == len(s):\n                resp = resp + current\n\n            elif element == 'C' and (s[i+1] == 'M' or  s[i+1] == 'D'):\n                resp = resp - 100\n\n            elif element == 'X' and (s[i+1] == 'L' or  s[i+1] == 'C'):\n                resp = resp - 10\n\n            elif element == 'I' and (s[i+1] == 'V' or  s[i+1] == 'X'):\n                resp = resp - 1\n\n            else:\n                resp = resp + current\n\n            i += 1\n\n        return resp",
           "description": "Submission #1353183942",
-          "timestamp": 1723471216000
+          "timestamp": 1723471216000,
+          "aiReview": "### 1. Complexity\n*   **Time Complexity:** **$O(n)$**, where $n$ is the length of the string. The algorithm performs a single linear scan through the input.\n*   **Space Complexity:** **$O(1)$**. The hash map size is fixed (7 symbols), and variables (`resp`, `i`) do not scale with input size.\n\n### 2. Correctness\nThe logic is **correct** for all valid Roman numerals. It properly handles the standard subtraction cases (IV, IX, XL, XC, CD, CM) and avoids index-out-of-bounds errors by checking `i + 1 == len(s)`.\n\n### 3. Concrete Optimization\nGeneralize the subtraction rule. Instead of hardcoding character pairs (e.g., 'C' before 'M'), compare the integer values directly. If the current value is less than the next value, subtract it; otherwise, add it.\n\n**Refined Logic:**\n```python\nif i + 1 < len(s) and roman[s[i]] < roman[s[i+1]]:\n    resp -= roman[s[i]]\nelse:\n    resp += roman[s[i]]\n```\nThis removes the bulky `elif` chain.\n\n### 4. Key Algorithmic Pattern\n*   **Hash Map (Dictionary):** Used for $O(1)$ lookup of symbol values.\n*   **Linear Scan with Lookahead:** Iterating through the sequence while checking the subsequent element to determine the operation (addition vs. subtraction)."
         }
       ],
       "_committedPaths": [
         "problems/lc-roman-to-integer/lc-roman-to-integer-alt-approach-python3-imported.py",
         "problems/lc-roman-to-integer/README.md"
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the string. We perform a single pass with $O(1)$ dictionary lookups.\n*   **Space Complexity:** $O(n)$. While the dictionary is constant size, the slice `s[1:]` creates a new string copy of length $n-1$ in Python.\n\n### 2. Correctness\nThe logic is **correct**. It accurately handles the \"subtraction rule\" (e.g., IV = 4) by comparing a character to its immediate successor. \n*   **Edge Cases:** It correctly handles single-character strings (the `zip` will be empty, returning just the last value) and the maximum length constraints defined by LeetCode.\n\n### 3. Optimization\n**Reduce Space to $O(1)$:** Replace `zip(s, s[1:])` with a loop using indices to avoid creating a string slice copy.\n```python\nfor i in range(len(s) - 1):\n    if roman[s[i]] < roman[s[i+1]]:\n        ans -= roman[s[i]]\n    else:\n        ans += roman[s[i]]\n```\n\n### 4. Key Algorithmic Pattern\n**Look-ahead / Neighbor Comparison:** Iterating through a sequence while comparing the current element to the next to determine the specific operation (addition vs. subtraction).",
+      "linkedSolutions": [
+        "lc-roman-to-integer::1353183942"
       ]
     },
     {
@@ -13752,6 +13856,10 @@
       "_committedPaths": [
         "problems/lc-roman-to-integer/lc-roman-to-integer.py",
         "problems/lc-roman-to-integer/README.md"
+      ],
+      "aiReview": "**1. Complexity**\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the string. We traverse the string exactly once.\n*   **Space Complexity:** $O(1)$. The hash map size is constant (7 symbols), and we use a few integer variables.\n\n**2. Correctness**\nThe logic is **correct**. It accurately handles the six subtraction instances (IV, IX, XL, XC, CD, CM) and the trailing character edge case. It assumes valid Roman numeral input per LeetCode constraints.\n\n**3. Concrete Optimization**\nSimplify the logic by using the general rule: **If a value is followed by a larger value, subtract it; otherwise, add it.** This replaces specific character checks (`element == 'C'`, etc.) with a single comparison.\n\n*Optimized Loop:*\n```python\nfor i in range(len(s)):\n    if i + 1 < len(s) and roman[s[i]] < roman[s[i+1]]:\n        resp -= roman[s[i]]\n    else:\n        resp += roman[s[i]]\n```\n\n**4. Key Algorithmic Pattern**\n*   **Linear Scan with Look-ahead:** Iterating through a sequence while comparing the current element to the next one to determine the operation.\n*   **Hash Map Lookup:** Using a dictionary for $O(1)$ mapping of symbols to values.",
+      "linkedSolutions": [
+        "lc-roman-to-integer::1353182041"
       ]
     },
     {
@@ -13927,6 +14035,11 @@
       "_committedPaths": [
         "problems/lc-score-of-a-string/lc-score-of-a-string-alt-approach-python3-imported.py",
         "problems/lc-score-of-a-string/README.md"
+      ],
+      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the string. We traverse the string once.\n*   **Space Complexity:** $O(1)$, as we only store a single integer variable regardless of input size.\n\n**2. Correctness**\nThe logic is correct. \n*   **Edge Cases:** If `len(s) < 2`, the loop will not execute and it returns `0`, which is correct for a string with no adjacent pairs. \n*   **Overflow:** Python 3 handles arbitrarily large integers, so there is no risk of integer overflow despite the summation.\n\n**3. Optimization**\nWhile the current solution is efficient, you can make it more \"Pythonic\" and potentially faster by using `zip()` to avoid manual indexing and `sum()` for internal C-level iteration:\n```python\nreturn sum(abs(ord(a) - ord(b)) for a, b in zip(s, s[1:]))\n```\n*Note: `s[1:]` creates a slice (copy). For memory efficiency on massive strings, use `itertools.islice(s, 1)`.*\n\n**4. Key Algorithmic Pattern**\n**Adjacent Element Iteration** (a specific case of a fixed-size **Sliding Window** where $k=2$).",
+      "linkedSolutions": [
+        "lc-score-of-a-string::1235776226",
+        "lc-score-of-a-string::1235831135"
       ]
     },
     {
@@ -13974,6 +14087,11 @@
       "_committedPaths": [
         "problems/lc-score-of-a-string/lc-score-of-a-string.py",
         "problems/lc-score-of-a-string/README.md"
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the string. We perform a single pass through the string.\n*   **Space Complexity:** $O(1)$, as we only use a single integer variable (`score`) regardless of input size.\n\n### 2. Correctness\nThe solution is **correct** for the problem constraints ($2 \\le s.length \\le 100$).\n*   **Edge Cases:** For a string of length 2, the loop runs once. If length $< 2$ (though restricted by constraints), it returns 0.\n*   **Integer Overflow:** In languages like C++, you might check for overflow, but in Python, integers have arbitrary precision. Regardless, the maximum possible score ($\\approx 100 \\times 128$) is very small.\n\n### 3. Concrete Optimization\nWhile the current code is efficient, you can make it more **Pythonic** by using a generator expression with `sum()`. This avoids manual indexing:\n```python\nreturn sum(abs(ord(a) - ord(b)) for a, b in zip(s, s[1:]))\n```\n*Note: In Python 3.10+, `itertools.pairwise(s)` is the most memory-efficient way to iterate over adjacent pairs.*\n\n### 4. Key Algorithmic Pattern\n**Linear Scan** using a **Fixed-size Sliding Window** (window size = 2).",
+      "linkedSolutions": [
+        "lc-score-of-a-string::1235774141",
+        "lc-score-of-a-string::1235831135"
       ]
     },
     {
@@ -14019,6 +14137,11 @@
       "_committedPaths": [
         "problems/lc-score-of-a-string/lc-score-of-a-string.java",
         "problems/lc-score-of-a-string/README.md"
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(N)$, where $N$ is the length of the string. The algorithm performs a single pass through the string.\n*   **Space Complexity:** $O(1)$, as it uses a constant amount of extra space regardless of input size.\n\n### 2. Correctness\nThe code is **correct**. \n*   **Edge Cases:** The problem constraints specify $2 \\le s.length \\le 100$, so the loop `i < s.length() - 1` will always execute at least once, avoiding index issues.\n*   **Overflow:** Since the maximum ASCII difference is 25 ('z' - 'a') and the max length is 100, the maximum score is $\\approx 2,475$, which fits safely within a standard 32-bit `int`.\n\n### 3. Optimization\nWhile the current solution is efficient, you can slightly improve performance by converting the string to a character array using **`s.toCharArray()`** before the loop. This avoids the overhead of repeated `charAt()` method calls and the internal bounds checking performed by the `String` class.\n\n### 4. Key Algorithmic Pattern\n**Linear Scan (Adjacent Element Traversal):** The pattern involves iterating through a sequence once while comparing or calculating values between neighboring elements.",
+      "linkedSolutions": [
+        "lc-score-of-a-string::1235774141",
+        "lc-score-of-a-string::1235776226"
       ]
     },
     {
@@ -14248,6 +14371,7 @@
       "similar": null,
       "hasSimilar": null,
       "_committedPaths": [
+        "problems/lc-select-data/lc-select-data.py",
         "problems/lc-select-data/README.md"
       ],
       "aiReview": "### Evaluation\n\n1.  **Complexity**: \n    *   **Time: $O(N)$**, where $N$ is the number of rows. Pandas must perform a linear scan of the `student_id` column to evaluate the condition.\n    *   **Space: $O(N)$**, required to generate the intermediate boolean mask and the resulting subset DataFrame.\n\n2.  **Correctness**: \n    *   **Correct.** The solution uses idiomatic Pandas indexing. \n    *   **Edge Cases**: It correctly returns an empty DataFrame if `student_id` 101 is missing and handles multiple occurrences if the ID is not unique.\n\n3.  **Optimisation**: \n    For a single execution, this is optimal. However, if this operation were performed frequently on a large dataset, setting `student_id` as the **index** (`students.set_index('student_id')`) would allow for $O(1)$ average-time lookups using label-based indexing.\n\n4.  **Key Algorithmic Pattern**: \n    **Boolean Indexing** (or Vectorized Filtering) — applying a logical condition across an entire column simultaneously to filter data."
@@ -14523,15 +14647,15 @@
       "difficulty": "Medium",
       "lang": {
         "name": "Python3",
-        "ext": "py",
-        "slug": "python3"
+        "slug": "python3",
+        "ext": "py"
       },
       "tags": [
         "Array",
         "Bit Manipulation"
       ],
       "topic": "Bit Manipulation",
-      "code": "",
+      "code": "class Solution:\n    def singleNumber(self, nums: List[int]) -> int:\n        frequency = {}\n        for num in nums:\n            if num in frequency:\n                frequency[num] += 1\n            else:\n                frequency[num] = 0\n        print(frequency)\n        for key, value in frequency.items():\n            if value == 0:\n                return key",
       "readmeContent": "# Single Number II\n\n**Difficulty:** Medium  |  **Acceptance:** 67.0%\n\n**Tags:** `Array`, `Bit Manipulation`\n\n## Problem\n\nGiven an integer array nums where&nbsp;every element appears three times except for one, which appears exactly once. Find the single element and return it.\n\nYou must&nbsp;implement a solution with a linear runtime complexity and use&nbsp;only constant&nbsp;extra space.\n\n&nbsp;\nExample 1:\nInput: nums = [2,2,3,2]\nOutput: 3\nExample 2:\nInput: nums = [0,1,0,1,0,1,99]\nOutput: 99\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 3 * 104\n\t-231 <= nums[i] <= 231 - 1\n\tEach element in nums appears exactly three times except for one element which appears once.\n\n## My Submission\n\n- Runtime: 0 ms\n- Memory: 18.7 MB\n\n## Similar Problems\n\n- [Single Number](https://leetcode.com/problems/single-number/) — Easy\n- [Single Number III](https://leetcode.com/problems/single-number-iii/) — Medium\n- [Find the XOR of Numbers Which Appear Twice](https://leetcode.com/problems/find-the-xor-of-numbers-which-appear-twice/) — Easy\n",
       "files": [
         {
@@ -14542,8 +14666,8 @@
       "timestamp": 1729373096000,
       "runtime": "0 ms",
       "memory": "18.7 MB",
-      "runtimePct": null,
-      "memoryPct": null,
+      "runtimePct": 100,
+      "memoryPct": 100,
       "problemStatement": "<p>Given an integer array <code>nums</code> where&nbsp;every element appears <strong>three times</strong> except for one, which appears <strong>exactly once</strong>. <em>Find the single element and return it</em>.</p>\n\n<p>You must&nbsp;implement a solution with a linear runtime complexity and use&nbsp;only constant&nbsp;extra space.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<pre><strong>Input:</strong> nums = [2,2,3,2]\n<strong>Output:</strong> 3\n</pre><p><strong class=\"example\">Example 2:</strong></p>\n<pre><strong>Input:</strong> nums = [0,1,0,1,0,1,99]\n<strong>Output:</strong> 99\n</pre>\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></code></li>\n\t<li><code>-2<sup>31</sup> &lt;= nums[i] &lt;= 2<sup>31</sup> - 1</code></li>\n\t<li>Each element in <code>nums</code> appears exactly <strong>three times</strong> except for one element which appears <strong>once</strong>.</li>\n</ul>\n",
       "hints": [],
       "acRate": 67.0462487648519,
@@ -14570,7 +14694,8 @@
       "hasSimilar": true,
       "_committedPaths": [
         "problems/lc-single-number-ii/README.md"
-      ]
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time:** $O(N)$ — You iterate through the list once and then through the dictionary keys.\n*   **Space:** $O(N)$ — In the worst case, you store $N/3 + 1$ unique elements in the dictionary.\n\n### 2. Correctness\n*   **Logic:** The code is logically correct for this specific constraint (exactly one element appears once, others appear thrice). By initializing at `0`, the unique element remains at `0` while others reach `2`. \n*   **Edge Cases:** It handles negative numbers and single-element arrays correctly. It would only fail if the constraints changed (e.g., if an element appeared twice instead of thrice).\n\n### 3. Optimization\nTo achieve the **$O(1)$ space complexity** usually required for this problem, use **Bit Manipulation**:\n```python\nones, twos = 0, 0\nfor num in nums:\n    ones = (ones ^ num) & ~twos\n    twos = (twos ^ num) & ~ones\nreturn ones\n```\nThis tracks bits that appear once and twice without storing every element.\n\n### 4. Key Algorithmic Pattern\n*   **Current Code:** Frequency Counting (Hash Map).\n*   **Optimal Approach:** Bit Manipulation (specifically, a Finite State Machine logic)."
     },
     {
       "id": "lc-single-number-iii",
@@ -14581,15 +14706,15 @@
       "difficulty": "Medium",
       "lang": {
         "name": "Python3",
-        "ext": "py",
-        "slug": "python3"
+        "slug": "python3",
+        "ext": "py"
       },
       "tags": [
         "Array",
         "Bit Manipulation"
       ],
       "topic": "Bit Manipulation",
-      "code": "",
+      "code": "class Solution:\n    def singleNumber(self, nums: List[int]) -> List[int]:\n        key_items = []\n        frequency = {}\n        for num in nums:\n            if num in frequency:\n                frequency[num] += 1\n            else:\n                frequency[num] = 0\n        print(frequency)\n        for key, value in frequency.items():\n            if value == 0:\n                key_items.append(key)\n        return key_items",
       "readmeContent": "# Single Number III\n\n**Difficulty:** Medium  |  **Acceptance:** 70.3%\n\n**Tags:** `Array`, `Bit Manipulation`\n\n## Problem\n\nGiven an integer array nums, in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once. You can return the answer in any order.\n\nYou must write an&nbsp;algorithm that runs in linear runtime complexity and uses&nbsp;only constant extra space.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,2,1,3,2,5]\nOutput: [3,5]\nExplanation:  [5, 3] is also a valid answer.\n\nExample 2:\n\nInput: nums = [-1,0]\nOutput: [-1,0]\n\nExample 3:\n\nInput: nums = [0,1]\nOutput: [1,0]\n\n&nbsp;\nConstraints:\n\n\t2 <= nums.length <= 3 * 104\n\t-231 <= nums[i] <= 231 - 1\n\tEach integer in nums will appear twice, only two integers will appear once.\n\n## My Submission\n\n- Runtime: 2 ms\n- Memory: 18.8 MB\n\n## Similar Problems\n\n- [Single Number](https://leetcode.com/problems/single-number/) — Easy\n- [Single Number II](https://leetcode.com/problems/single-number-ii/) — Medium\n- [Find The Original Array of Prefix Xor](https://leetcode.com/problems/find-the-original-array-of-prefix-xor/) — Medium\n- [Find the XOR of Numbers Which Appear Twice](https://leetcode.com/problems/find-the-xor-of-numbers-which-appear-twice/) — Easy\n",
       "files": [
         {
@@ -14600,8 +14725,8 @@
       "timestamp": 1729373179000,
       "runtime": "2 ms",
       "memory": "18.8 MB",
-      "runtimePct": null,
-      "memoryPct": null,
+      "runtimePct": 74,
+      "memoryPct": 100,
       "problemStatement": "<p>Given an integer array <code>nums</code>, in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once. You can return the answer in <strong>any order</strong>.</p>\n\n<p>You must write an&nbsp;algorithm that runs in linear runtime complexity and uses&nbsp;only constant extra space.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1,2,1,3,2,5]\n<strong>Output:</strong> [3,5]\n<strong>Explanation: </strong> [5, 3] is also a valid answer.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [-1,0]\n<strong>Output:</strong> [-1,0]\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [0,1]\n<strong>Output:</strong> [1,0]\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>2 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></code></li>\n\t<li><code>-2<sup>31</sup> &lt;= nums[i] &lt;= 2<sup>31</sup> - 1</code></li>\n\t<li>Each integer in <code>nums</code> will appear twice, only two integers will appear once.</li>\n</ul>\n",
       "hints": [],
       "acRate": 70.31204344157103,
@@ -14634,7 +14759,8 @@
       "hasSimilar": true,
       "_committedPaths": [
         "problems/lc-single-number-iii/README.md"
-      ]
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time Complexity**: $O(n)$ — The algorithm iterates through the input list once to build the map and once through the map to find the result.\n*   **Space Complexity**: $O(n)$ — In the worst case, the hash map stores approximately $n/2$ entries.\n\n### 2. Correctness\nThe code is **correct** given the problem's constraints (exactly two numbers appear once, all others appear twice). However, the initialization `frequency[num] = 0` is unconventional; if a number appeared three times, it would no longer have a value of `0` and would be excluded, which is fragile logic for general frequency counting.\n\n### 3. Optimization\nThe optimal approach uses **Bit Manipulation (XOR)** to achieve **$O(1)$ space**:\n1.  XOR all numbers to get `xor_sum = a ^ b`.\n2.  Find the rightmost set bit: `diff = xor_sum & -xor_sum`.\n3.  Partition all numbers into two groups based on whether they have this bit set and XOR each group separately.\n4.  The two results are the unique numbers.\n\n### 4. Key Algorithmic Pattern\n**Frequency Counting** (using a Hash Map/Dictionary)."
     },
     {
       "id": "lc-slowest-key::1627212876",
@@ -15712,15 +15838,15 @@
       "difficulty": "Easy",
       "lang": {
         "name": "Python3",
-        "ext": "py",
-        "slug": "python3"
+        "slug": "python3",
+        "ext": "py"
       },
       "tags": [
         "String",
         "Simulation"
       ],
       "topic": "String",
-      "code": "",
+      "code": "class Solution:\n    def getLucky(self, s: str, k: int) -> int:\n        num = int(''.join(str(ord(c) - ord('a') + 1) for c in s))\n        for i in range(k):\n            num = sum(int(digit) for digit in str(num))\n        return num",
       "readmeContent": "# Sum of Digits of String After Convert\n\n**Difficulty:** Easy  |  **Acceptance:** 74.8%\n\n**Tags:** `String`, `Simulation`\n\n## Problem\n\nYou are given a string s consisting of lowercase English letters, and an integer k. Your task is to convert the string into an integer by a special process, and then transform it by summing its digits repeatedly k times. More specifically, perform the following steps:\n\n\tConvert s into an integer by replacing each letter with its position in the alphabet (i.e.&nbsp;replace 'a' with 1, 'b' with 2, ..., 'z' with 26).\n\tTransform the integer by replacing it with the sum of its digits.\n\tRepeat the transform operation (step 2) k times in total.\n\nFor example, if s = \"zbax\" and k = 2, then the resulting integer would be 8 by the following operations:\n\n\tConvert: \"zbax\" ➝ \"(26)(2)(1)(24)\" ➝ \"262124\" ➝ 262124\n\tTransform #1: 262124 ➝ 2 + 6 + 2 + 1 + 2 + 4 ➝ 17\n\tTransform #2: 17 ➝ 1 + 7 ➝ 8\n\nReturn the resulting integer after performing the operations described above.\n\n&nbsp;\nExample 1:\n\nInput: s = \"iiii\", k = 1\n\nOutput: 36\n\nExplanation:\n\nThe operations are as follows:\n- Convert: \"iiii\" ➝ \"(9)(9)(9)(9)\" ➝ \"9999\" ➝ 9999\n- Transform #1: 9999 ➝ 9 + 9 + 9 + 9 ➝ 36\nThus the resulting integer is 36.\n\nExample 2:\n\nInput: s = \"leetcode\", k = 2\n\nOutput: 6\n\nExplanation:\n\nThe operations are as follows:\n- Convert: \"leetcode\" ➝ \"(12)(5)(5)(20)(3)(15)(4)(5)\" ➝ \"12552031545\" ➝ 12552031545\n- Transform #1: 12552031545 ➝ 1 + 2 + 5 + 5 + 2 + 0 + 3 + 1 + 5 + 4 + 5 ➝ 33\n- Transform #2: 33 ➝ 3 + 3 ➝ 6\nThus the resulting integer is 6.\n\nExample 3:\n\nInput: s = \"zbax\", k = 2\n\nOutput: 8\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 100\n\t1 <= k <= 10\n\ts consists of lowercase English letters.\n\n## My Submission\n\n- Runtime: 3 ms\n- Memory: 16.6 MB\n\n## Similar Problems\n\n- [Happy Number](https://leetcode.com/problems/happy-number/) — Easy\n- [Add Digits](https://leetcode.com/problems/add-digits/) — Easy\n- [Count Integers With Even Digit Sum](https://leetcode.com/problems/count-integers-with-even-digit-sum/) — Easy\n- [Minimum Element After Replacement With Digit Sum](https://leetcode.com/problems/minimum-element-after-replacement-with-digit-sum/) — Easy\n",
       "files": [
         {
@@ -15731,8 +15857,8 @@
       "timestamp": 1729415590000,
       "runtime": "3 ms",
       "memory": "16.6 MB",
-      "runtimePct": null,
-      "memoryPct": null,
+      "runtimePct": 58,
+      "memoryPct": 100,
       "problemStatement": "<p>You are given a string <code>s</code> consisting of lowercase English letters, and an integer <code>k</code>. Your task is to <em>convert</em> the string into an integer by a special process, and then <em>transform</em> it by summing its digits repeatedly <code>k</code> times. More specifically, perform the following steps:</p>\n\n<ol>\n\t<li><strong>Convert</strong> <code>s</code> into an integer by replacing each letter with its position in the alphabet (i.e.&nbsp;replace <code>&#39;a&#39;</code> with <code>1</code>, <code>&#39;b&#39;</code> with <code>2</code>, ..., <code>&#39;z&#39;</code> with <code>26</code>).</li>\n\t<li><strong>T</strong><strong>ransform</strong> the integer by replacing it with the <strong>sum of its digits</strong>.</li>\n\t<li>Repeat the <strong>transform</strong> operation (step 2) <code>k</code><strong> times</strong> in total.</li>\n</ol>\n\n<p>For example, if <code>s = &quot;zbax&quot;</code> and <code>k = 2</code>, then the resulting integer would be <code>8</code> by the following operations:</p>\n\n<ol>\n\t<li><strong>Convert</strong>: <code>&quot;zbax&quot; ➝ &quot;(26)(2)(1)(24)&quot; ➝ &quot;262124&quot; ➝ 262124</code></li>\n\t<li><strong>Transform #1</strong>: <code>262124 ➝ 2 + 6 + 2 + 1 + 2 + 4 ➝ 17</code></li>\n\t<li><strong>Transform #2</strong>: <code>17 ➝ 1 + 7 ➝ 8</code></li>\n</ol>\n\n<p>Return the <strong>resulting</strong> <strong>integer</strong> after performing the <strong>operations</strong> described above.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;iiii&quot;, k = 1</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">36</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The operations are as follows:<br />\n- Convert: &quot;iiii&quot; ➝ &quot;(9)(9)(9)(9)&quot; ➝ &quot;9999&quot; ➝ 9999<br />\n- Transform #1: 9999 ➝ 9 + 9 + 9 + 9 ➝ 36<br />\nThus the resulting integer is 36.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;leetcode&quot;, k = 2</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">6</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The operations are as follows:<br />\n- Convert: &quot;leetcode&quot; ➝ &quot;(12)(5)(5)(20)(3)(15)(4)(5)&quot; ➝ &quot;12552031545&quot; ➝ 12552031545<br />\n- Transform #1: 12552031545 ➝ 1 + 2 + 5 + 5 + 2 + 0 + 3 + 1 + 5 + 4 + 5 ➝ 33<br />\n- Transform #2: 33 ➝ 3 + 3 ➝ 6<br />\nThus the resulting integer is 6.</p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;zbax&quot;, k = 2</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">8</span></p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 100</code></li>\n\t<li><code>1 &lt;= k &lt;= 10</code></li>\n\t<li><code>s</code> consists of lowercase English letters.</li>\n</ul>\n",
       "hints": [
         "First, let's note that after the first transform the value will be at most 100 * 10 which is not much",
@@ -15768,7 +15894,8 @@
       "hasSimilar": true,
       "_committedPaths": [
         "problems/lc-sum-of-digits-of-string-after-convert/README.md"
-      ]
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n + k \\log n)$, where $n$ is the length of $s$. The first transformation takes $O(n)$. Each subsequent $k$ iteration processes $O(\\log n)$ digits.\n*   **Space Complexity:** $O(n)$ to store the concatenated numeric string before the first summation.\n\n### 2. Correctness\n*   **Edge Cases:** The code is logically correct. However, for extremely long strings (length $> 4300$), Python's `int()` conversion would raise a `ValueError` due to the `sys.set_int_max_str_digits` limit. For LeetCode's constraints ($n \\le 100$), it works fine.\n\n### 3. Optimization\nInstead of creating a massive integer in the first step, calculate the **initial sum of digits** directly. This avoids large integer overhead and potential conversion errors.\n\n```python\n# Direct sum for the first pass\nnum = sum(int(d) for c in s for d in str(ord(c) - ord('a') + 1))\nfor _ in range(k - 1): # k-1 because we already did the first sum\n    num = sum(int(digit) for digit in str(num))\n```\n\n### 4. Key Algorithmic Pattern\n**Simulation / Digit Manipulation:** The problem requires following a specific sequence of string-to-integer transformations and iterative digit processing."
     },
     {
       "id": "lc-surrounded-regions::2002901441",
@@ -15950,7 +16077,7 @@
         "id": "top-k-frequent-elements",
         "title": "Top K Frequent Elements"
       },
-      "readmeContent": "# [347] Top K Frequent Elements\n**Difficulty:** Medium  |  **Acceptance:** 66.4%  |  **Likes:** 19566 / **Dislikes:** 857\n**Tags:** `Array`, `Hash Table`, `Divide and Conquer`, `Sorting`, `Heap (Priority Queue)`, `Bucket Sort`, `Counting`, `Quickselect`\n## Problem\nGiven an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,1,1,2,2,3], k = 2\n\nOutput: [1,2]\n\nExample 2:\n\nInput: nums = [1], k = 1\n\nOutput: [1]\n\nExample 3:\n\nInput: nums = [1,2,1,2,1,2,3,1,3,2], k = 2\n\nOutput: [1,2]\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 105\n\t-104 <= nums[i] <= 104\n\tk is in the range [1, the number of unique elements in the array].\n\tIt is guaranteed that the answer is unique.\n\n&nbsp;\nFollow up: Your algorithm's time complexity must be better than O(n log n), where n is the array's size.\n## My Submission\n\n- Runtime: 3 ms (beats 89.0%)\n- Memory: 20.3 MB (beats 100.0%)\n- Solve time: 15m 37s\n\n## Similar Problems\n\n- [Word Frequency](https://leetcode.com/problems/word-frequency/) — Medium\n- [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) — Medium\n- [Sort Characters By Frequency](https://leetcode.com/problems/sort-characters-by-frequency/) — Medium\n- [Split Array into Consecutive Subsequences](https://leetcode.com/problems/split-array-into-consecutive-subsequences/) — Medium\n- [Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/) — Medium\n",
+      "readmeContent": "# [347] Top K Frequent Elements\n**Difficulty:** Medium  |  **Acceptance:** 66.5%  |  **Likes:** 19581 / **Dislikes:** 857\n**Tags:** `Array`, `Hash Table`, `Divide and Conquer`, `Sorting`, `Heap (Priority Queue)`, `Bucket Sort`, `Counting`, `Quickselect`\n## Problem\nGiven an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,1,1,2,2,3], k = 2\n\nOutput: [1,2]\n\nExample 2:\n\nInput: nums = [1], k = 1\n\nOutput: [1]\n\nExample 3:\n\nInput: nums = [1,2,1,2,1,2,3,1,3,2], k = 2\n\nOutput: [1,2]\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 105\n\t-104 <= nums[i] <= 104\n\tk is in the range [1, the number of unique elements in the array].\n\tIt is guaranteed that the answer is unique.\n\n&nbsp;\nFollow up: Your algorithm's time complexity must be better than O(n log n), where n is the array's size.\n## My Submission\n\n- Runtime: 3 ms (beats 89.2%)\n- Memory: 20.3 MB (beats 100.0%)\n\n## Similar Problems\n\n- [Word Frequency](https://leetcode.com/problems/word-frequency/) — Medium\n- [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) — Medium\n- [Sort Characters By Frequency](https://leetcode.com/problems/sort-characters-by-frequency/) — Medium\n- [Split Array into Consecutive Subsequences](https://leetcode.com/problems/split-array-into-consecutive-subsequences/) — Medium\n- [Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/) — Medium\n",
       "code": "from collections import Counter\nclass Solution:\n    def topKFrequent(self, nums: List[int], k: int) -> List[int]:\n        map = Counter(nums)\n        heap = [(-count,value) for value,count in map.items()]\n        \n        heapq.heapify(heap)\n        result = []\n        for i in range(k):\n            element = heapq.heappop(heap)\n            result.append(element[1])\n        return result\n        ",
       "files": [
         {
@@ -15959,7 +16086,7 @@
         },
         {
           "path": "problems/top-k-frequent-elements/README.md",
-          "content": "# [347] Top K Frequent Elements\n**Difficulty:** Medium  |  **Acceptance:** 66.4%  |  **Likes:** 19566 / **Dislikes:** 857\n**Tags:** `Array`, `Hash Table`, `Divide and Conquer`, `Sorting`, `Heap (Priority Queue)`, `Bucket Sort`, `Counting`, `Quickselect`\n## Problem\nGiven an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,1,1,2,2,3], k = 2\n\nOutput: [1,2]\n\nExample 2:\n\nInput: nums = [1], k = 1\n\nOutput: [1]\n\nExample 3:\n\nInput: nums = [1,2,1,2,1,2,3,1,3,2], k = 2\n\nOutput: [1,2]\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 105\n\t-104 <= nums[i] <= 104\n\tk is in the range [1, the number of unique elements in the array].\n\tIt is guaranteed that the answer is unique.\n\n&nbsp;\nFollow up: Your algorithm's time complexity must be better than O(n log n), where n is the array's size.\n## My Submission\n\n- Runtime: 3 ms (beats 89.0%)\n- Memory: 20.3 MB (beats 100.0%)\n- Solve time: 15m 37s\n\n## Similar Problems\n\n- [Word Frequency](https://leetcode.com/problems/word-frequency/) — Medium\n- [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) — Medium\n- [Sort Characters By Frequency](https://leetcode.com/problems/sort-characters-by-frequency/) — Medium\n- [Split Array into Consecutive Subsequences](https://leetcode.com/problems/split-array-into-consecutive-subsequences/) — Medium\n- [Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/) — Medium\n"
+          "content": "# [347] Top K Frequent Elements\n**Difficulty:** Medium  |  **Acceptance:** 66.5%  |  **Likes:** 19581 / **Dislikes:** 857\n**Tags:** `Array`, `Hash Table`, `Divide and Conquer`, `Sorting`, `Heap (Priority Queue)`, `Bucket Sort`, `Counting`, `Quickselect`\n## Problem\nGiven an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,1,1,2,2,3], k = 2\n\nOutput: [1,2]\n\nExample 2:\n\nInput: nums = [1], k = 1\n\nOutput: [1]\n\nExample 3:\n\nInput: nums = [1,2,1,2,1,2,3,1,3,2], k = 2\n\nOutput: [1,2]\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 105\n\t-104 <= nums[i] <= 104\n\tk is in the range [1, the number of unique elements in the array].\n\tIt is guaranteed that the answer is unique.\n\n&nbsp;\nFollow up: Your algorithm's time complexity must be better than O(n log n), where n is the array's size.\n## My Submission\n\n- Runtime: 3 ms (beats 89.2%)\n- Memory: 20.3 MB (beats 100.0%)\n\n## Similar Problems\n\n- [Word Frequency](https://leetcode.com/problems/word-frequency/) — Medium\n- [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) — Medium\n- [Sort Characters By Frequency](https://leetcode.com/problems/sort-characters-by-frequency/) — Medium\n- [Split Array into Consecutive Subsequences](https://leetcode.com/problems/split-array-into-consecutive-subsequences/) — Medium\n- [Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/) — Medium\n"
         }
       ],
       "lang": {
@@ -15969,11 +16096,11 @@
       },
       "runtime": "3 ms",
       "memory": "20.3 MB",
-      "runtimePct": 89.0244,
+      "runtimePct": 89.17739999999999,
       "memoryPct": 100,
       "timestamp": 1732126927000,
-      "acRate": 66.43656269679317,
-      "likes": 19566,
+      "acRate": 66.49047949576915,
+      "likes": 19581,
       "dislikes": 857,
       "similar": [
         {
@@ -16026,18 +16153,18 @@
         }
       ],
       "problemStatement": "<p>Given an integer array <code>nums</code> and an integer <code>k</code>, return <em>the</em> <code>k</code> <em>most frequent elements</em>. You may return the answer in <strong>any order</strong>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1,1,1,2,2,3], k = 2</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">[1,2]</span></p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1], k = 1</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">[1]</span></p>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1,2,1,2,1,2,3,1,3,2], k = 2</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">[1,2]</span></p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>\n\t<li><code>k</code> is in the range <code>[1, the number of unique elements in the array]</code>.</li>\n\t<li>It is <strong>guaranteed</strong> that the answer is <strong>unique</strong>.</li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Follow up:</strong> Your algorithm&#39;s time complexity must be better than <code>O(n log n)</code>, where n is the array&#39;s size.</p>\n",
-      "elapsedSeconds": 937,
+      "elapsedSeconds": 0,
       "hasSimilar": true,
       "submissionsUrl": "https://leetcode.com/problems/top-k-frequent-elements/submissions/",
       "notes": "",
       "methodTitle": "",
-      "isDuplicate": true,
-      "duplicateOf": "lc-top-k-frequent-elements::1458507035",
+      "isDuplicate": false,
+      "duplicateOf": null,
       "_requestAIReview": true,
       "platform": "leetcode",
-      "_committedPaths": [
-        "problems/lc-top-k-frequent-elements/lc-top-k-frequent-elements.py",
-        "problems/lc-top-k-frequent-elements/README.md"
+      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time:** $O(N + k \\log M)$, where $N$ is the number of elements and $M$ is the number of unique elements. `Counter` takes $O(N)$, `heapify` takes $O(M)$, and $k$ pops take $O(k \\log M)$.\n*   **Space:** $O(N)$ to store the frequency map and the heap.\n\n**2. Correctness**\n*   **Missing Import:** The code will raise a `NameError` because `import heapq` is missing.\n*   **Functionality:** Logic-wise, it correctly handles the \"max-heap\" behavior using negative counts. It handles duplicate frequencies and the case where $k$ equals the number of unique elements correctly.\n\n**3. Concrete Optimisation**\nUse **Bucket Sort** to achieve **$O(N)$ time complexity**. \nSince the maximum possible frequency is $N$, create an array of lists where `index` is the frequency and `value` is a list of elements with that frequency. Iterate backward from index $N$ to collect $k$ elements. This avoids the $O(\\log M)$ heap overhead.\n\n**4. Key Algorithmic Pattern**\n**Heap (Priority Queue)** / **Frequency Mapping**.",
+      "linkedSolutions": [
+        "lc-top-k-frequent-elements::1458507035"
       ]
     },
     {
@@ -16159,7 +16286,10 @@
         "problems/top-k-frequent-elements/leetcode/lc-top-k-frequent-elements.py",
         "problems/top-k-frequent-elements/leetcode/README.md"
       ],
-      "aiReview": "### Analysis\n\n1.  **Complexity**: \n    *   **Time**: $O(N + k \\log M)$, where $N$ is the number of elements and $M$ is the number of unique elements. Counting takes $O(N)$, heapifying takes $O(M)$, and $k$ pops take $O(k \\log M)$.\n    *   **Space**: $O(M)$ to store the frequency map and the heap.\n\n2.  **Correctness**:\n    *   **Missing Import**: The code will raise a `NameError` because `import heapq` is missing.\n    *   **Logic**: The use of negative counts to simulate a max-heap with Python’s min-heap is correct and handles all edge cases (e.g., $k=1$ or $k=len(nums)$) properly.\n\n3.  **Concrete Optimization**: \n    Use **Bucket Sort** to achieve **$O(N)$** time complexity. Create an array of lists where the index represents the frequency. Populate the buckets with elements, then iterate through the buckets from right to left (highest frequency to lowest) until $k$ elements are collected.\n\n4.  **Key Algorithmic Pattern**: \n    **Heap / Priority Queue** (specifically using a Max-Heap simulation)."
+      "aiReview": "### Analysis\n\n1.  **Complexity**: \n    *   **Time**: $O(N + k \\log M)$, where $N$ is the number of elements and $M$ is the number of unique elements. Counting takes $O(N)$, heapifying takes $O(M)$, and $k$ pops take $O(k \\log M)$.\n    *   **Space**: $O(M)$ to store the frequency map and the heap.\n\n2.  **Correctness**:\n    *   **Missing Import**: The code will raise a `NameError` because `import heapq` is missing.\n    *   **Logic**: The use of negative counts to simulate a max-heap with Python’s min-heap is correct and handles all edge cases (e.g., $k=1$ or $k=len(nums)$) properly.\n\n3.  **Concrete Optimization**: \n    Use **Bucket Sort** to achieve **$O(N)$** time complexity. Create an array of lists where the index represents the frequency. Populate the buckets with elements, then iterate through the buckets from right to left (highest frequency to lowest) until $k$ elements are collected.\n\n4.  **Key Algorithmic Pattern**: \n    **Heap / Priority Queue** (specifically using a Max-Heap simulation).",
+      "linkedSolutions": [
+        "lc-top-k-frequent-elements"
+      ]
     },
     {
       "id": "lc-total-hamming-distance::1651693230",
@@ -16892,6 +17022,7 @@
         "addedAt": "2025-04-24"
       },
       "_committedPaths": [
+        "problems/valid-parentheses/leetcode/lc-valid-parentheses.py",
         "problems/valid-parentheses/leetcode/README.md"
       ],
       "aiReview": "### Analysis\n\n1. **Complexity**:\n   - **Time**: $O(N)$, where $N$ is the length of the string. We iterate through the string once, and dictionary/stack operations are $O(1)$.\n   - **Space**: $O(N)$ in the worst case (e.g., a string of all opening brackets).\n\n2. **Correctness**:\n   The logic is robust. It correctly handles:\n   - **Empty strings**: Returns `True`.\n   - **Mismatched types**: E.g., `(]`.\n   - **Incorrect order**: E.g., `([)]`.\n   - **Unclosed brackets**: E.g., `((`.\n   - **Extra closing brackets**: E.g., `())`.\n\n3. **Concrete Optimisation**:\n   **Early Exit**: A valid string must have an even length. Add a check at the beginning:\n   ```python\n   if len(s) % 2 != 0: return False\n   ```\n   This provides an $O(1)$ rejection for many invalid inputs. Additionally, `matching_bracket.values()` creates a view; for maximum efficiency, map **opening** brackets to **closing** brackets to simplify the `if` logic.\n\n4. **Key Algorithmic Pattern**:\n   **Stack (LIFO)**: The stack ensures that the most recently opened bracket is the first one closed, which is the core requirement for nested structures."

@@ -7,8 +7,8 @@
 | Problem ID | `lc-height-checker` |
 | Topics | Array, Sorting, Counting Sort |
 | Solved | 2024-09-19 |
-| Runtime | 28 ms (beats 5.203599999999995%) |
-| Memory | 16.4 MB (beats 100%) |
+| Runtime | 2 ms (beats 87.05189999999999%) |
+| Memory | 41.5 MB (beats 100%) |
 
 ## Problem Statement
 
@@ -66,30 +66,56 @@ Build the correct order of heights by sorting another array, then compare the tw
 
 ## Solutions
 
-```Python3
-class Solution:
-    def heightChecker(self, heights: List[int]) -> int:
-        expected = sorted(heights.copy())        
-        return len([i for i in range(len(heights)) if heights[i] != expected[i]])
+```Java
+import java.util.Arrays;
 
+class Solution {
+    public int heightChecker(int[] heights) {
+        int j = 0;
+        int length = heights.length;
+        int[] results = new int[length];
+        int[] expected = Arrays.copyOf(heights, length);
+
+        Arrays.sort(expected);
+
+        for (int i = 0; i < length; i++) {
+            if (expected[i] != heights[i]) {
+                results[j++] = i;
+            }
+        }
+
+        // if(j==0){
+        // System.out.println("All indices do not match.");
+        // }else if (j==length){
+        // System.out.println("All indices match.");
+        // return 0;
+        // }else{
+        // System.out.print("Indices ");
+        // for(int i=0;i<j-1;i++){
+        // System.out.print(results[i]+", ");
+        // }
+        // System.out.print("and "+results[j-1]+ " do not match.");
+
+        return j;
+    }
+}
 ```
 
 ## AI Review
 
-### 1. Complexity
-*   **Time Complexity:** $O(n \log n)$ due to the `sorted()` function (Timsort). Iterating through the lists takes $O(n)$.
-*   **Space Complexity:** $O(n)$ to store the `expected` list and the temporary list created by the list comprehension.
+### Analysis
 
-### 2. Correctness
-The logic is **correct**. It accurately implements the problem requirements by comparing the original array against its sorted version. It handles edge cases like already sorted arrays, arrays with duplicate heights, and minimum/maximum constraints effectively.
+**1. Complexity**
+*   **Time:** $O(N \log N)$ due to `Arrays.sort()`, where $N$ is the length of the array. The final loop is $O(N)$.
+*   **Space:** $O(N)$ to store the `expected` and `results` arrays.
 
-### 3. Concrete Optimization
-**Use Counting Sort:** Since the problem constraints state heights are between 1 and 100, you can achieve **$O(n)$ time** and **$O(1)$ extra space** (excluding output) by using a frequency array.
+**2. Correctness**
+The logic is correct. It creates a sorted version of the input and counts the discrepancies.
+*   **Edge Cases:** Handles empty arrays (returns 0), already sorted arrays (returns 0), and all-identical elements correctly. 
+*   **Note:** The `results` array is allocated but only its counter `j` is used for the return value; this is redundant memory usage.
 
-Alternatively, to optimize the current approach's space, use a **generator expression** with `sum` to avoid creating an intermediate list:
-```python
-return sum(h != e for h, e in zip(heights, expected))
-```
+**3. Optimization**
+Since the problem constraints usually specify heights are between 1 and 100, you can use **Counting Sort** (Bucket Sort) to achieve **$O(N)$ time** and **$O(1)$ extra space** (excluding the frequency array of size 101). Simply count occurrences of each height and iterate through the counts to compare with the original array.
 
-### 4. Key Algorithmic Pattern
-**Sorting and Comparison:** The fundamental approach relies on generating a "target" state via sorting and performing a linear scan to count discrepancies.
+**4. Key Algorithmic Pattern**
+**Comparison via Sorting:** Creating a reference (sorted) state to identify elements out of their natural order.

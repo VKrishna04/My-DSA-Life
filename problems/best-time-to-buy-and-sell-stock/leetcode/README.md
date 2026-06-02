@@ -7,8 +7,8 @@
 | Problem ID | `lc-best-time-to-buy-and-sell-stock` |
 | Topics | Array, Dynamic Programming |
 | Solved | 2024-10-19 |
-| Runtime | 1 ms (beats 99.9206%) |
-| Memory | 61.6 MB (beats 99.90949999999998%) |
+| Runtime | 21 ms (beats 94.6538%) |
+| Memory | 26.1 MB (beats 99.9985%) |
 
 ## Problem Statement
 
@@ -43,45 +43,40 @@ Note that buying on day 2 and selling on day 1 is not allowed because you must b
 
 ## Solutions
 
-```Java
-class Solution {
-    public int maxProfit(int[] prices) {
-        int minPrice = Integer.MAX_VALUE;
-        int maxProfit = 0;
+```Python3
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        min_price = float('inf')
+        max_profit = 0
 
-        for (int price : prices) {
-            if (price < minPrice) {
-                minPrice = price;
-            } else if (price - minPrice > maxProfit) {
-                maxProfit = price - minPrice;
-            }
-        }
-
-        return maxProfit;
-    }
-}
-
+        for price in prices:
+            if price < min_price:
+                min_price = price
+            elif price - min_price > max_profit:
+                max_profit = price - min_price
+        return max_profit
 ```
 
 ## AI Review
 
-### 1. Complexity
-*   **Time Complexity:** $O(n)$, where $n$ is the length of the `prices` array. The algorithm performs a single pass.
-*   **Space Complexity:** $O(1)$. It uses only two scalar variables regardless of input size.
+**1. Complexity**
+*   **Time Complexity:** $O(N)$, where $N$ is the number of prices. We iterate through the list exactly once.
+*   **Space Complexity:** $O(1)$, as we only store two scalar variables (`min_price` and `max_profit`) regardless of input size.
 
-### 2. Correctness
+**2. Correctness**
 The solution is **correct** and handles all standard edge cases:
-*   **Empty or single-element array:** The loop completes, returning the initial `maxProfit` of 0.
-*   **Strictly decreasing prices:** `minPrice` updates, but the `else if` never triggers, returning 0 (no profit possible).
-*   **Price volatility:** Correctly tracks the lowest price seen *so far* to calculate the potential profit at each step.
+*   **Empty or single-element list:** Returns 0 (correct, as no profit can be made).
+*   **Descending prices:** `max_profit` remains 0 (correct, as you shouldn't buy/sell).
+*   **Large price gaps:** Correct buyers' logic by tracking the global minimum encountered so far.
 
-### 3. Optimization
-The solution is already **optimally efficient** in terms of Big-O. For code readability, you could use `Math.min()` and `Math.max()`:
-```java
-minPrice = Math.min(minPrice, price);
-maxProfit = Math.max(maxProfit, price - minPrice);
+**3. Optimization**
+While the logic is already $O(N)$, you can improve **readability** by using Python’s built-in `min` and `max` functions. This often translates to faster execution in CPython for larger datasets:
+```python
+for price in prices:
+    min_price = min(min_price, price)
+    max_profit = max(max_profit, price - min_price)
 ```
-However, your current `if-else` structure is slightly more performant as it avoids calculating `price - minPrice` when a new `minPrice` is found.
 
-### 4. Key Algorithmic Pattern
-**One Pass / Greedy:** It makes the locally optimal choice (tracking the minimum price found so far) to find the global maximum profit in a single traversal.
+**4. Key Algorithmic Pattern**
+*   **Greedy Algorithm:** At each step, we make the locally optimal choice (tracking the lowest price seen so far) to find the global maximum profit.
+*   It is also a simplified variation of **Kadane’s Algorithm**.
