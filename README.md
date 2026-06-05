@@ -6,16 +6,47 @@
 
 # VKrishna04's DSA Solutions
 
-[![Solutions](https://img.shields.io/badge/Solutions-0-06b6d4?style=flat-square&logo=github)](http://vkrishna04.me/My-DSA-Life/)  [![Easy](https://img.shields.io/badge/Easy-0-22c55e?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)  [![Medium](https://img.shields.io/badge/Medium-0-f59e0b?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)  [![Hard](https://img.shields.io/badge/Hard-0-ef4444?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)
+[![Solutions](https://img.shields.io/badge/Solutions-257-06b6d4?style=flat-square&logo=github)](http://vkrishna04.me/My-DSA-Life/)  [![Easy](https://img.shields.io/badge/Easy-156-22c55e?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)  [![Medium](https://img.shields.io/badge/Medium-91-f59e0b?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)  [![Hard](https://img.shields.io/badge/Hard-10-ef4444?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)
 
 > Automatically tracked by [CodeLedger](https://codeledger.vkrishna04.me) — every problem solved, committed to Git.
 
 **[View Live Dashboard →](http://vkrishna04.me/My-DSA-Life/)**
-
+*Last updated: Jun 5, 2026*
 
 [![CodeLedger](https://raw.githubusercontent.com/Life-Experimentalist/Code-Ledger/refs/heads/main/src/assets/images/social%20preview.png)](http://vkrishna04.me/My-DSA-Life/)
 
 </div>
+
+---
+
+## Stats
+
+| Total | Easy | Medium | Hard |
+|:-----:|:----:|:------:|:----:|
+| **257** | 156 | 91 | 10 |
+
+**By Platform:** leetcode (257)
+
+**Top Languages:** Python3 (190) · Python (16) · MySQL (15) · Pandas (15) · Java (12) · Bash (4) · JavaScript (3) · C++ (1)
+
+**Top Topics:** Array (124) · Math (25) · String (20) · Database (15) · Data Manipulation (15) · Hash Table (14) · Two Pointers (7) · Dynamic Programming (4) · Shell (4) · Linked List (3)
+
+---
+
+## Recent Solves
+
+| Problem | Difficulty | Language | Platform | Date |
+|---------|-----------|----------|----------|------|
+| [Network Delay Time](https://leetcode.com/problems/network-delay-time/) | Medium | Python3 | leetcode | May 22 |
+| [Course Schedule II](https://leetcode.com/problems/course-schedule-ii/) | Medium | Python3 | leetcode | May 19 |
+| [Course Schedule](https://leetcode.com/problems/course-schedule/) | Medium | Python3 | leetcode | May 19 |
+| [01 Matrix](https://leetcode.com/problems/01-matrix/) | Medium | Python3 | leetcode | May 18 |
+| [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) | Hard | Python3 | leetcode | May 15 |
+| [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) | Hard | Python3 | leetcode | May 15 |
+| [Surrounded Regions](https://leetcode.com/problems/surrounded-regions/) | Medium | Python3 | leetcode | May 14 |
+| [Rotting Oranges](https://leetcode.com/problems/rotting-oranges/) | Medium | Python3 | leetcode | May 11 |
+| [Jump Game II](https://leetcode.com/problems/jump-game-ii/) | Medium | Python3 | leetcode | May 10 |
+| [Number of Islands](https://leetcode.com/problems/number-of-islands/) | Medium | Python3 | leetcode | May 9 |
 
 ---
 
@@ -58,6 +89,7 @@ Built with [CodeLedger](https://codeledger.vkrishna04.me) · [⭐ Star the exten
 </div>
 
 <!-- CODELEDGER_AUTO_GENERATED_END -->
+
 
 
 

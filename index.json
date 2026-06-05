@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-02T14:57:28.980Z",
+  "updatedAt": "2026-06-05T12:05:56.817Z",
   "layoutVersion": 3,
   "stats": {
     "total": 257,
@@ -373,6 +373,7 @@
       ],
       "hasSimilar": true,
       "_committedPaths": [
+        "problems/lc-add-digits/lc-add-digits.py",
         "problems/lc-add-digits/README.md"
       ],
       "aiReview": "### Analysis of \"Add Digits\" Solution\n\n**1. Complexity**\n*   **Time Complexity:** $O(\\log n)$. The number of digits in $n$ is $\\lfloor\\log_{10} n\\rfloor + 1$. While the outer loop runs very few times (the sum of digits drops drastically), the inner string conversion and summation scale with the number of digits.\n*   **Space Complexity:** $O(\\log n)$ to store the string representation of the number during iteration.\n\n**2. Correctness**\n*   The logic is **correct**. It handles the smallest input ($0$) correctly because `len(\"0\") == 1`, exiting the loop immediately. It correctly reduces any positive integer to a single digit.\n\n**3. Optimization**\nThe problem can be solved in **$O(1)$ time and space** using the **Digital Root** mathematical formula:\n```python\nreturn 1 + (num - 1) % 9 if num > 0 else 0\n```\nThis avoids string conversions and loops entirely by leveraging the property that a number is congruent to the sum of its digits modulo 9.\n\n**4. Key Algorithmic Pattern**\n*   **Simulation / Iterative Reduction:** The code repeatedly applies a transformation (summing digits) until a specific termination condition (single digit) is met."
@@ -2445,6 +2446,7 @@
       ],
       "hasSimilar": true,
       "_committedPaths": [
+        "problems/lc-count-integers-with-even-digit-sum/lc-count-integers-with-even-digit-sum.py",
         "problems/lc-count-integers-with-even-digit-sum/README.md"
       ],
       "aiReview": "### 1. Complexity\n*   **Time Complexity**: $O(N \\log N)$, where $N$ is `num`. The loop runs $N$ times, and for each number, converting it to a string and summing digits takes $O(\\log N)$ time (proportional to the number of digits).\n*   **Space Complexity**: $O(\\log N)$ to store the string and list representation of the digits.\n\n### 2. Correctness\nThe code is **correct** for the given constraints ($1 \\le num \\le 1000$). It accurately iterates through the range and checks the parity of each digit sum. No specific edge cases (like $num=1$) fail.\n\n### 3. Concrete Optimization\nYou can solve this in **$O(\\log N)$ time** using a mathematical property: roughly half of the numbers up to $num$ have an even digit sum. Specifically:\n*   Calculate the digit sum of `num` itself.\n*   If the sum is **even**, the count is `num // 2`.\n*   If the sum is **odd**, the count is `(num - 1) // 2`.\n\n**Optimized Code:**\n```python\nreturn (num - sum(int(d) for d in str(num)) % 2) // 2\n```\n\n### 4. Key Algorithmic Pattern\n**Brute Force / Simulation**: The original code iterates through every element in the search space to verify a condition."
@@ -5555,6 +5557,7 @@
       ],
       "hasSimilar": true,
       "_committedPaths": [
+        "problems/lc-find-the-xor-of-numbers-which-appear-twice/lc-find-the-xor-of-numbers-which-appear-twice.py",
         "problems/lc-find-the-xor-of-numbers-which-appear-twice/README.md"
       ],
       "aiReview": "**Review of Easy Python3 solution for LeetCode 'Find the XOR of Numbers Which Appear Twice'**\n\n1.  **Time Complexity**: O(N), where N is the number of elements in `nums`. The first loop iterates through `nums` once, with average O(1) dictionary operations. The second loop iterates through unique elements (at most N).\n    **Space Complexity**: O(N). The `frequency` dictionary stores counts for up to N unique numbers.\n\n2.  **Correctness**: The solution is **correct**. The specific frequency counting logic (`frequency[num] = 0` for the first occurrence, then `+= 1` for subsequent ones) correctly maps numbers appearing *exactly twice* to a `value` of `1` in the dictionary. The `if value == 1` condition correctly identifies and XORs these numbers. No edge cases should fail.\n\n3.  **One Concrete Optimisation**: Use `collections.Counter` for cleaner and more Pythonic frequency counting:\n    ```python\n    from collections import Counter\n    class Solution:\n        def duplicateNumbersXOR(self, nums: List[int]) -> int:\n            counts = Counter(nums)\n            result = 0\n            for num, count in counts.items():\n                if count == 2: # Explicitly check for count == 2\n                    result ^= num\n            return result\n    ```\n    This maintains O(N) time/space complexity but improves code readability and reduces custom logic for frequency tracking.\n\n4.  **Key Algorithmic Pattern**:\n    *   **Frequency Counting**: Using a hash map (dictionary) to track element occurrences.\n    *   **Bitwise XOR**: Employing the XOR operator to combine the identified numbers, leveraging its properties for aggregation."
@@ -7164,8 +7167,8 @@
         "title": "Linked List Cycle"
       },
       "_committedPaths": [
-        "problems/linked-list-cycle/leetcode/lc-linked-list-cycle.py",
-        "problems/linked-list-cycle/leetcode/README.md"
+        "problems/lc-linked-list-cycle/lc-linked-list-cycle.py",
+        "problems/lc-linked-list-cycle/README.md"
       ],
       "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the number of nodes. In the worst case (a cycle), the fast pointer catches the slow pointer in linear time.\n*   **Space Complexity:** $O(1)$. No additional data structures are used; only two pointers are maintained.\n\n### 2. Correctness\nThe implementation is correct and robust. \n*   **Empty list:** Handled (returns `False`).\n*   **Single node (no cycle):** Handled (loop doesn't execute, returns `False`).\n*   **Single node (cycle to itself):** Handled (pointers will meet).\n*   **Large cycles:** Handled by the mathematical certainty of the \"Tortoise and Hare\" logic.\n\n### 3. Optimization\n**Redundancy removal:** The initial `if head is None` check is redundant. The `while f and f.next` condition naturally handles a `None` head, as `f` would be `None` immediately, skipping the loop and returning `False`. Removing this simplifies the code without changing functionality.\n\n### 4. Key Algorithmic Pattern\n**Two Pointers (Floyd’s Cycle-Finding Algorithm / Tortoise and Hare).** By moving one pointer twice as fast as the other, they are guaranteed to meet if a cycle exists."
     },
@@ -9128,6 +9131,47 @@
       "aiReview": "### Review\n\n**1. Complexity**\n*   **Time:** $O((m+n) \\log (m+n))$ due to the `sorted()` call on the combined list of length $m+n$.\n*   **Space:** $O(m+n)$ to store the concatenated `res` list.\n\n**2. Correctness**\n*   **Logic:** Mathematically correct. Using `(res[n//2] + res[(n-1)//2]) / 2` elegantly handles both even and odd total lengths.\n*   **Edge Cases:** Handles empty arrays or arrays of size 1 correctly.\n*   **Constraint Violation:** While functionally correct, it fails the LeetCode requirement of $O(\\log(m+n))$ time complexity.\n\n**3. Concrete Optimization**\nImplement **Binary Search on the partition index**. Instead of merging and sorting, partition the smaller array such that the left side of the partition contains half the total elements. Ensure that the maximum of the left elements is less than or equal to the minimum of the right elements. This reduces time complexity to $O(\\log(\\min(m, n)))$ and space to $O(1)$.\n\n**4. Key Algorithmic Pattern**\nThe provided code uses **Sort and Index**. The optimal solution uses **Binary Search**.",
       "linkedSolutions": [
         "lc-median-of-two-sorted-arrays-alt-1780412246910-3"
+      ],
+      "_committedPaths": [
+        "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays.py",
+        "problems/lc-median-of-two-sorted-arrays/README.md"
+      ],
+      "methods": [
+        {
+          "title": "Alt approach (Python3)",
+          "language": "Python3",
+          "code": "class Solution:\n    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:\n        return median(sorted(nums1 + nums2))\n        # p1 = nums1\n        # if num1 is not None or nums2 us not None:\n",
+          "description": "Duplicate resolved — 11 Aug 2024",
+          "timestamp": 1723381264000
+        },
+        {
+          "title": "Alt approach (Python3)",
+          "language": "Python3",
+          "code": "class Solution:\n    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:\n        return median(sorted(nums1 + nums2))\n        # p1 = nums1\n        # if num1 is not None or nums2 us not None:\n",
+          "description": "Duplicate resolved — 11 Aug 2024",
+          "timestamp": 1723381264000
+        },
+        {
+          "title": "Alt approach (Python3)",
+          "language": "Python3",
+          "code": "class Solution:\n    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:\n        return median(sorted(nums1 + nums2))\n        # p1 = nums1\n        # if num1 is not None or nums2 us not None:\n",
+          "description": "Duplicate resolved — 11 Aug 2024",
+          "timestamp": 1723381264000
+        },
+        {
+          "title": "Alt approach (Python3)",
+          "language": "Python3",
+          "code": "class Solution:\n    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:\n        return median(sorted(nums1 + nums2))\n        # p1 = nums1\n        # if num1 is not None or nums2 us not None:\n",
+          "description": "Duplicate resolved — 11 Aug 2024",
+          "timestamp": 1723381264000
+        },
+        {
+          "title": "Alt approach (Python3)",
+          "language": "Python3",
+          "code": "class Solution:\n    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:\n        return median(sorted(nums1 + nums2))\n        # p1 = nums1\n        # if num1 is not None or nums2 us not None:\n",
+          "description": "Duplicate resolved — 11 Aug 2024",
+          "timestamp": 1723381264000
+        }
       ]
     },
     {
@@ -14693,6 +14737,7 @@
       ],
       "hasSimilar": true,
       "_committedPaths": [
+        "problems/lc-single-number-ii/lc-single-number-ii.py",
         "problems/lc-single-number-ii/README.md"
       ],
       "aiReview": "### 1. Complexity\n*   **Time:** $O(N)$ — You iterate through the list once and then through the dictionary keys.\n*   **Space:** $O(N)$ — In the worst case, you store $N/3 + 1$ unique elements in the dictionary.\n\n### 2. Correctness\n*   **Logic:** The code is logically correct for this specific constraint (exactly one element appears once, others appear thrice). By initializing at `0`, the unique element remains at `0` while others reach `2`. \n*   **Edge Cases:** It handles negative numbers and single-element arrays correctly. It would only fail if the constraints changed (e.g., if an element appeared twice instead of thrice).\n\n### 3. Optimization\nTo achieve the **$O(1)$ space complexity** usually required for this problem, use **Bit Manipulation**:\n```python\nones, twos = 0, 0\nfor num in nums:\n    ones = (ones ^ num) & ~twos\n    twos = (twos ^ num) & ~ones\nreturn ones\n```\nThis tracks bits that appear once and twice without storing every element.\n\n### 4. Key Algorithmic Pattern\n*   **Current Code:** Frequency Counting (Hash Map).\n*   **Optimal Approach:** Bit Manipulation (specifically, a Finite State Machine logic)."
@@ -14758,6 +14803,7 @@
       ],
       "hasSimilar": true,
       "_committedPaths": [
+        "problems/lc-single-number-iii/lc-single-number-iii.py",
         "problems/lc-single-number-iii/README.md"
       ],
       "aiReview": "### 1. Complexity\n*   **Time Complexity**: $O(n)$ — The algorithm iterates through the input list once to build the map and once through the map to find the result.\n*   **Space Complexity**: $O(n)$ — In the worst case, the hash map stores approximately $n/2$ entries.\n\n### 2. Correctness\nThe code is **correct** given the problem's constraints (exactly two numbers appear once, all others appear twice). However, the initialization `frequency[num] = 0` is unconventional; if a number appeared three times, it would no longer have a value of `0` and would be excluded, which is fragile logic for general frequency counting.\n\n### 3. Optimization\nThe optimal approach uses **Bit Manipulation (XOR)** to achieve **$O(1)$ space**:\n1.  XOR all numbers to get `xor_sum = a ^ b`.\n2.  Find the rightmost set bit: `diff = xor_sum & -xor_sum`.\n3.  Partition all numbers into two groups based on whether they have this bit set and XOR each group separately.\n4.  The two results are the unique numbers.\n\n### 4. Key Algorithmic Pattern\n**Frequency Counting** (using a Hash Map/Dictionary)."
@@ -15893,6 +15939,7 @@
       ],
       "hasSimilar": true,
       "_committedPaths": [
+        "problems/lc-sum-of-digits-of-string-after-convert/lc-sum-of-digits-of-string-after-convert.py",
         "problems/lc-sum-of-digits-of-string-after-convert/README.md"
       ],
       "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n + k \\log n)$, where $n$ is the length of $s$. The first transformation takes $O(n)$. Each subsequent $k$ iteration processes $O(\\log n)$ digits.\n*   **Space Complexity:** $O(n)$ to store the concatenated numeric string before the first summation.\n\n### 2. Correctness\n*   **Edge Cases:** The code is logically correct. However, for extremely long strings (length $> 4300$), Python's `int()` conversion would raise a `ValueError` due to the `sys.set_int_max_str_digits` limit. For LeetCode's constraints ($n \\le 100$), it works fine.\n\n### 3. Optimization\nInstead of creating a massive integer in the first step, calculate the **initial sum of digits** directly. This avoids large integer overhead and potential conversion errors.\n\n```python\n# Direct sum for the first pass\nnum = sum(int(d) for c in s for d in str(ord(c) - ord('a') + 1))\nfor _ in range(k - 1): # k-1 because we already did the first sum\n    num = sum(int(digit) for digit in str(num))\n```\n\n### 4. Key Algorithmic Pattern\n**Simulation / Digit Manipulation:** The problem requires following a specific sequence of string-to-integer transformations and iterative digit processing."
@@ -16165,6 +16212,10 @@
       "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time:** $O(N + k \\log M)$, where $N$ is the number of elements and $M$ is the number of unique elements. `Counter` takes $O(N)$, `heapify` takes $O(M)$, and $k$ pops take $O(k \\log M)$.\n*   **Space:** $O(N)$ to store the frequency map and the heap.\n\n**2. Correctness**\n*   **Missing Import:** The code will raise a `NameError` because `import heapq` is missing.\n*   **Functionality:** Logic-wise, it correctly handles the \"max-heap\" behavior using negative counts. It handles duplicate frequencies and the case where $k$ equals the number of unique elements correctly.\n\n**3. Concrete Optimisation**\nUse **Bucket Sort** to achieve **$O(N)$ time complexity**. \nSince the maximum possible frequency is $N$, create an array of lists where `index` is the frequency and `value` is a list of elements with that frequency. Iterate backward from index $N$ to collect $k$ elements. This avoids the $O(\\log M)$ heap overhead.\n\n**4. Key Algorithmic Pattern**\n**Heap (Priority Queue)** / **Frequency Mapping**.",
       "linkedSolutions": [
         "lc-top-k-frequent-elements::1458507035"
+      ],
+      "_committedPaths": [
+        "problems/lc-top-k-frequent-elements/lc-top-k-frequent-elements.py",
+        "problems/lc-top-k-frequent-elements/README.md"
       ]
     },
     {
