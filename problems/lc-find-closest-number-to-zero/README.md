@@ -6,9 +6,9 @@
 | Platform | Leetcode |
 | Problem ID | `lc-find-closest-number-to-zero` |
 | Topics | Array |
-| Solved | 2024-08-14 |
-| Runtime | 123 ms (beats 5.2111000000000125%) |
-| Memory | 16.8 MB (beats 100%) |
+| Solved | 2024-08-23 |
+| Runtime | 21 ms (beats 5.960199999999995%) |
+| Memory | 44.7 MB (beats 100%) |
 
 ## Problem Statement
 
@@ -60,50 +60,70 @@ Ensure that if multiple numbers are closest to 0, you store the one with the lar
 
 ## Solutions
 
-```Python3
-class Solution:
-    def findClosestNumber(self, nums: List[int]) -> int:
-        negative_list = []
-        positive_list = []
+```Java
+import java.util.ArrayList;
+import java.util.Collections;
 
-        for num in nums:
-            if num < 0:
-                negative_list.append(num)
-            else:
-                positive_list.append(num)
+class Solution {
+    public int findClosestNumber(int[] nums) {
+        ArrayList<Integer> negative_list = new ArrayList<Integer>();
+        ArrayList<Integer> positive_list = new ArrayList<Integer>();
 
-        negative_list.sort(reverse = True)
-        positive_list.sort()
-        if not negative_list:
-            return positive_list[0]
-        if not positive_list:
-            return negative_list[0]
+        for (Integer integer : nums) {
+            if (integer < 0) {
+                negative_list.add(integer);
+            } else {
+                positive_list.add(integer);
+            }
+        }
 
-        if positive_list[0] == -negative_list[0]:
-            return positive_list[0]
-        return positive_list[0] if positive_list[0] < -negative_list[0] else negative_list[0]
+        Collections.sort(negative_list, Collections.reverseOrder());
+        Collections.sort(positive_list);
+
+        if (negative_list.isEmpty() && positive_list.isEmpty()) {
+            return 0;
+        }
+
+        if (negative_list.isEmpty()) {
+            return positive_list.get(0);
+        }
+        if (positive_list.isEmpty()) {
+            return negative_list.get(0);
+        }
+
+        int closestNegative = negative_list.get(0);
+        int closestPositive = positive_list.get(0);
+
+        if (Math.abs(closestNegative) < closestPositive) {
+            return closestNegative;
+        } else {
+            return closestPositive;
+        }
+    }
+}
 ```
 
 ## AI Review
 
-### Analysis
+### 1. Complexity
+*   **Time Complexity**: $O(N \log N)$ due to sorting the two lists.
+*   **Space Complexity**: $O(N)$ to store elements in `negative_list` and `positive_list`.
 
-1.  **Complexity**
-    *   **Time:** $O(n \log n)$ due to the sorting of two lists.
-    *   **Space:** $O(n)$ to store the partitioned `negative_list` and `positive_list`.
+### 2. Correctness
+The code is **correct** based on standard LeetCode requirements. It correctly handles the tie-break rule (if distances are equal, return the larger number) because the `else` branch returns `closestPositive` when `Math.abs(closestNegative) == closestPositive`.
 
-2.  **Correctness**
-    *   The logic is **correct**. It correctly handles ties (e.g., -1 and 1) by returning the positive value and manages cases where one list is empty. No major edge cases fail, though it is inefficient for the problem's constraints.
+### 3. Optimization
+**Single-Pass Linear Scan**: You can achieve **$O(N)$ time** and **$O(1)$ space** by eliminating the lists and sorting. Iterate through the array once while maintaining a single variable for the closest number found so far.
 
-3.  **Optimization**
-    *   **Single-Pass Search:** Avoid sorting and extra lists. Iterate through `nums` once while maintaining a `closest` variable. This reduces time to **$O(n)$** and space to **$O(1)$**.
-    ```python
-    closest = nums[0]
-    for n in nums:
-        if abs(n) < abs(closest) or (abs(n) == abs(closest) and n > closest):
-            closest = n
-    return closest
-    ```
+```java
+int closest = nums[0];
+for (int n : nums) {
+    if (Math.abs(n) < Math.abs(closest) || (Math.abs(n) == Math.abs(closest) && n > closest)) {
+        closest = n;
+    }
+}
+return closest;
+```
 
-4.  **Key Algorithmic Pattern**
-    *   **Iterative Comparison:** The problem fundamentally requires finding a minimum value based on a custom comparison rule (absolute distance from zero, then value magnitude for ties).
+### 4. Key Algorithmic Pattern
+**Linear Search / Greedy Update**: Tracking the optimal element based on a specific criteria (absolute difference) while traversing the data once.

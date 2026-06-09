@@ -7,8 +7,8 @@
 | Problem ID | `lc-convert-1d-array-into-2d-array` |
 | Topics | Array, Matrix, Simulation |
 | Solved | 2024-09-18 |
-| Runtime | 688 ms (beats 5.015699999999995%) |
-| Memory | 23.4 MB (beats 100%) |
+| Runtime | 5 ms (beats 20.341400000000007%) |
+| Memory | 56.4 MB (beats 100%) |
 
 ## Problem Statement
 
@@ -77,32 +77,48 @@ If it is possible to convert original to a 2D array, keep an index i such that o
 
 ## Solutions
 
-```Python3
-class Solution:
-    def construct2DArray(self, original: List[int], m: int, n: int) -> List[List[int]]:
-        arr = []
-        if len(original) != m*n:
-            return arr
-        for i in range(m):
-            arr.append(original[n * i:n * (i + 1)])
-        return arr
+```Java
+class Solution {
+    public int[][] construct2DArray(int[] original, int m, int n) {
+        int[][] arr = new int[m][n];
+        if (original.length != m*n){
+            return new int[0][0];
+        }
+        for(int i = 0; i < m; i++){
+            int[] row = new int[n];
+
+            for(int j = 0; j < n; j++){
+                row[j] = original[i*n+j];
+            }
+            arr[i] = row;
+        }
+        return arr;
+    }
+}
 ```
 
 ## AI Review
 
 ### 1. Complexity
-*   **Time:** $O(m \times n)$ or $O(L)$, where $L$ is the length of `original`. Each element is visited once during slicing.
-*   **Space:** $O(m \times n)$ to store the result. Excluding the output, the auxiliary space is $O(1)$ (ignoring temporary slice objects).
+*   **Time Complexity:** $O(m \times n)$, as we iterate through every element exactly once.
+*   **Space Complexity:** $O(m \times n)$ to store the result array. No significant extra auxiliary space is used.
 
 ### 2. Correctness
-The solution is **correct**. It handles the core constraint (`len(original) != m * n`) first and correctly uses Python's slicing bounds to partition the 1D array into rows.
-*   **Edge cases:** Correctly handles cases where $m=1$ or $n=1$, and cases where dimensions are incompatible with the input size.
+*   The logic is correct for all valid cases.
+*   **Edge Case/Risk:** The code allocates `new int[m][n]` **before** validating the length. If `m * n` is extremely large but `original.length` is small, the program may throw an `OutOfMemoryError` unnecessarily before reaching the `if` check.
 
-### 3. Concrete Optimisation
-Use **List Comprehension**. It is more idiomatic and generally faster in Python than repeated `.append()` calls because it is optimized at the C level:
-```python
-return [original[i * n : (i + 1) * n] for i in range(m)] if len(original) == m * n else []
+### 3. Optimization
+Move the validation check to the top and assign values directly to the result matrix to avoid redundant array allocations:
+```java
+if (original.length != m * n) return new int[0][0];
+int[][] arr = new int[m][n];
+for (int i = 0; i < m; i++) {
+    for (int j = 0; j < n; j++) {
+        arr[i][j] = original[i * n + j];
+    }
+}
 ```
+*Alternatively, use `System.arraycopy` for row-wise copying to improve performance.*
 
 ### 4. Key Algorithmic Pattern
-**Array Reshaping/Slicing**: Mapping a 1D index $i$ to 2D coordinates $(r, c)$ using the relationship `index = r * n + c`. In this specific Python implementation, it leverages **interval slicing**.
+**1D to 2D Coordinate Mapping:** Using the formula `index = (row * total_columns) + column` to map linear indices to matrix coordinates.

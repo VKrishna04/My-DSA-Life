@@ -7,8 +7,8 @@
 | Problem ID | `lc-score-of-a-string` |
 | Topics | String |
 | Solved | 2024-04-18 |
-| Runtime | 0 ms (beats 100%) |
-| Memory | 5.7 MB (beats 100%) |
+| Runtime | 1 ms (beats 99.8053%) |
+| Memory | 42.5 MB (beats 99.80510000000001%) |
 
 ## Problem Statement
 
@@ -57,43 +57,31 @@ Sum the difference between all the adjacent characters by just taking the absolu
 
 ## Solutions
 
-```C
-#include <stdlib.h>
-
-int scoreOfString(char* s) {
-    int len=strlen(s);
-    int score=0;
-    for (int i = 0; i< len-1; i++){
-        score+=abs((int)s[i]-(int)s[i+1]);
+```Java
+class Solution {
+    public int scoreOfString(String s) {
+        int score = 0;
+        for (int i = 0; i < s.length()-1; i++){
+            score += Math.abs((int)s.charAt(i)-(int)s.charAt(i+1));
+        }
+        return score;
     }
-    return score;
 }
 ```
 
 ## AI Review
 
 ### 1. Complexity
-*   **Time Complexity:** $O(N)$, where $N$ is the length of the string. `strlen` takes $O(N)$ and the loop runs $N-1$ times.
-*   **Space Complexity:** $O(1)$, as it uses a constant amount of extra space.
+*   **Time Complexity:** $O(N)$, where $N$ is the length of the string. The algorithm performs a single pass through the string.
+*   **Space Complexity:** $O(1)$, as it uses a constant amount of extra space regardless of input size.
 
 ### 2. Correctness
-The solution is **correct** and follows the problem requirements.
-*   **Edge Cases:**
-    *   **Length = 2:** Smallest valid input per constraints; handles one subtraction correctly.
-    *   **Length = 1:** If allowed, the loop condition (`i < len-1`) correctly skips execution and returns `0`.
-    *   **Character Values:** ASCII values are within `0-127`, so `s[i] - s[i+1]` will never overflow a standard `int`.
+The code is **correct**. 
+*   **Edge Cases:** The problem constraints specify $2 \le s.length \le 100$, so the loop `i < s.length() - 1` will always execute at least once, avoiding index issues.
+*   **Overflow:** Since the maximum ASCII difference is 25 ('z' - 'a') and the max length is 100, the maximum score is $\approx 2,475$, which fits safely within a standard 32-bit `int`.
 
 ### 3. Optimization
-**Avoid `strlen`:** You can calculate the score in a single pass without pre-calculating the length. This avoids traversing the string twice.
-```c
-int scoreOfString(char* s) {
-    int score = 0;
-    for (int i = 0; s[i] && s[i+1]; i++) {
-        score += abs(s[i] - s[i+1]);
-    }
-    return score;
-}
-```
+While the current solution is efficient, you can slightly improve performance by converting the string to a character array using **`s.toCharArray()`** before the loop. This avoids the overhead of repeated `charAt()` method calls and the internal bounds checking performed by the `String` class.
 
 ### 4. Key Algorithmic Pattern
-**Iterative Adjacent Traversal:** A variation of the **Sliding Window** (size 2), where you process pairs of neighboring elements sequentially.
+**Linear Scan (Adjacent Element Traversal):** The pattern involves iterating through a sequence once while comparing or calculating values between neighboring elements.

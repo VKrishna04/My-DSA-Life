@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-05T12:05:56.817Z",
+  "updatedAt": "2026-06-09T04:14:56.076Z",
   "layoutVersion": 3,
   "stats": {
     "total": 257,
@@ -9137,6 +9137,13 @@
         "problems/lc-median-of-two-sorted-arrays/README.md"
       ],
       "methods": [
+        {
+          "title": "Alt approach (Python3)",
+          "language": "Python3",
+          "code": "class Solution:\n    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:\n        return median(sorted(nums1 + nums2))\n        # p1 = nums1\n        # if num1 is not None or nums2 us not None:\n",
+          "description": "Duplicate resolved — 11 Aug 2024",
+          "timestamp": 1723381264000
+        },
         {
           "title": "Alt approach (Python3)",
           "language": "Python3",

@@ -1,0 +1,44 @@
+{
+  "problemSlug": "longest-substring-without-repeating-characters",
+  "problemURL": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+  "platform": "leetcode",
+  "messages": [
+    {
+      "role": "user",
+      "content": "```\nclass Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        # max_length = 1\n        # if s is \"\":\n        #     return 0\n        # for i in range(len(s)):\n        #     st = \"\"\n        #     for ch in s[i:]:\n        #         if ch not in st:\n        #             st += ch\n        #             max_length=max(max_length,len(st))\n        #         else:\n        #             break\n        # print(max_length)\n        # return max_length\n\n        start = 0  \n        max_length = 0  \n        seen_chars = set()  \n\n        for end in range(len(s)):\n            while s[end] in seen_chars:\n                seen_chars.remove(s[start])\n                start += 1\n            \n            seen_chars.add(s[end])\n            \n            max_length = max(max_length, end - start + 1)\n\n        return max_length\n``` expalin",
+      "ts": 1780653016249
+    },
+    {
+      "role": "assistant",
+      "content": "This solution uses the **Sliding Window** technique with **Two Pointers**. \n\nThink of it like a flexible \"window\" that moves across the string. The window expands to include new characters but shrinks whenever it encounters a duplicate.\n\n### How it works step-by-step:\n\n1.  **Initialization**:\n    *   `start`: The left boundary of your window.\n    *   `end`: The right boundary (controlled by the `for` loop).\n    *   `seen_chars`: A **Set** that tracks which characters are currently inside your window. Sets are used because checking for existence (`in`) takes constant time ($O(1)$).\n\n2.  **Expanding the Window (The `for` loop)**:\n    *   The `end` pointer moves forward character by character. \n\n3.  **Handling Duplicates (The `while` loop)**:\n    *   Before adding `s[end]` to the set, the code checks: *\"Is this character already in our window?\"*\n    *   If **Yes**: The window is no longer \"unique.\" To fix this, we shrink the window from the left by:\n        1.  Removing `s[start]` from the set.\n        2.  Moving the `start` pointer forward.\n    *   We repeat this until the duplicate character is gone.\n\n4.  **Updating the Result**:\n    *   `seen_chars.add(s[end])`: Now that we've cleared duplicates, we safely add the new character.\n    *   `max_length = max(max_length, end - start + 1)`: We calculate the current window size (`end - start + 1`) and update our record if it’s the longest we've seen so far.\n\n---\n\n### A Visual Example: `s = \"pwwkew\"`\n\n| `end` char | Action | `seen_chars` | Window | `max_length` |\n| :--- | :--- | :--- | :--- | :--- |\n| `p` | Add | `{p}` | \"p\" | 1 |\n| `w` | Add | `{p, w}` | \"pw\" | 2 |\n| `w` | **Duplicate!** Remove `p`, then `w`. | `{w}` | \"w\" | 2 |\n| `k` | Add | `{w, k}` | \"wk\" | 2 |\n| `e` | Add | `{w, k, e}` | \"wke\" | **3** |\n| `w` | **Duplicate!** Remove `w`. | `{k, e, w}` | \"kew\" | 3 |\n\n---\n\n### Why is this better than your commented-out code?\n\n*   **Your old code ($O(n^2)$):** For every single character, you started a brand new search. If the string was 50,000 characters long, this would be too slow.\n*   **This code ($O(n)$):** Each character is visited by the `end` pointer once and the `start` pointer once. Even though there is a `while` loop inside a `for` loop, the `start` pointer only ever moves forward, never backward. This makes it extremely efficient for large inputs.\n\n### Next Step Recommendation\nThe **Prior AI Review** mentioned an optimization using a **Dictionary (Hash Map)**. \n*   **Current version:** If you find a duplicate, you step `start` forward one by one.\n*   **Optimization:** If you store the **index** of each character in a dictionary, you can \"teleport\" the `start` pointer directly to the correct spot, skipping the `while` loop entirely. \n\nWould you like to see how to implement that \"jump\" logic?",
+      "ts": 1780653025956
+    }
+  ],
+  "problemTitle": "Longest Substring Without Repeating Characters",
+  "problemTags": [
+    "String",
+    "Hash Table",
+    "Sliding Window"
+  ],
+  "attachedProblemSlugs": [
+    "longest-substring-without-repeating-characters"
+  ],
+  "attachedProblems": [
+    {
+      "slug": "longest-substring-without-repeating-characters",
+      "title": "Longest Substring Without Repeating Characters",
+      "platform": "leetcode",
+      "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
+    }
+  ],
+  "surface": "problem-modal",
+  "requestType": "",
+  "usedCommands": [],
+  "requestTemplate": "```\nclass Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        # max_length = 1\n        # if s is \"\":\n        #     return 0\n        # for i in range(len(s)):\n        #     st = \"\"\n        #     for ch in s[i:]:\n        #         if ch not in st:\n        #             st += ch\n        #             max_length=max(max_length,len(st))\n        #         else:\n        #             break\n        # print(max_length)\n        # return max_length\n\n        start = 0  \n        max_length = 0  \n        seen_chars = set()  \n\n        for end in range(len(s)):\n            while s[end] in seen_chars:\n                seen_chars.remove(s[start])\n                start += 1\n            \n            seen_chars.add(s[end])\n            \n            max_length = max(max_length, end - start + 1)\n\n        return max_length\n``` expalin",
+  "summary": "```\nclass Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        # max_length = 1\n        # if s is \"\"",
+  "createdAt": 1780653025968,
+  "updatedAt": 1780653025968,
+  "_pendingSync": false,
+  "id": 2,
+  "_githubPath": "chats/2026-06-05T09-50-25-2.md"
+}

@@ -7,8 +7,8 @@
 | Problem ID | `lc-find-the-student-that-will-replace-the-chalk` |
 | Topics | Array, Binary Search, Simulation, Prefix Sum |
 | Solved | 2024-09-19 |
-| Runtime | 2 ms (beats 91.6031%) |
-| Memory | 56 MB (beats 100%) |
+| Runtime | 567 ms (beats 5.181699999999978%) |
+| Memory | 30.2 MB (beats 100%) |
 
 ## Problem Statement
 
@@ -79,43 +79,36 @@ Now iterate over the array. If chalk[i] is less than k, this is the answer. Othe
 
 ## Solutions
 
-```Java
-class Solution {
-    public int chalkReplacer(int[] chalk, int k) {
-        long totalChalk = 0;
-        for (int c : chalk) {
-            totalChalk += c;
-        }
+```Python3
+class Solution:
+    def chalkReplacer(self, chalk: List[int], k: int) -> int:
+        total_chalk = sum(chalk)
 
-        k = (int) (k % totalChalk);
+        k %= total_chalk
 
-        for (int i = 0; i < chalk.length; i++) {
-            if (k < chalk[i]) {
-                return i;
-            }
-            k -= chalk[i];
-        }
-
-        return -1;  // This line should never be reached
-    }
-}
-
+        for i in range(len(chalk)):
+            if k < chalk[i]:
+                return i
+            
+            k -= chalk[i]
+        
 ```
 
 ## AI Review
 
-### Review
+### 1. Complexity
+*   **Time Complexity:** $O(N)$, where $N$ is the number of students. The `sum()` function takes $O(N)$ and the single pass loop takes $O(N)$.
+*   **Space Complexity:** $O(1)$, as no additional data structures are created (excluding the input list).
 
-1. **Complexity**
-   * **Time Complexity:** $O(n)$, where $n$ is the length of the `chalk` array. You traverse the array twice: once to sum and once to find the index.
-   * **Space Complexity:** $O(1)$, as you only use a few extra variables regardless of input size.
+### 2. Correctness
+The solution is **correct**. 
+*   It effectively handles large $k$ values using the modulo operator. 
+*   It correctly identifies the index where the remaining chalk $k$ is strictly less than the required amount.
+*   **Edge Cases:** Handles single-student arrays and cases where $k$ is an exact multiple of the sum correctly.
 
-2. **Correctness**
-   * **Robust:** The code correctly uses `long` for `totalChalk` to prevent overflow, as the sum can exceed $2^{31}-1$ (up to $10^{10}$).
-   * **Logic:** The modulo operation effectively skips redundant full cycles. The final loop correctly identifies the first student whose requirement exceeds the remaining chalk.
+### 3. Optimization
+**Binary Search:** While the current $O(N)$ approach is efficient, you can optimize the search phase to $O(\log N)$ by using **prefix sums** combined with `bisect_right`. 
+*   *Note:* This requires $O(N)$ space to store the prefix sums. It is most beneficial if the search is performed multiple times on the same chalk distribution.
 
-3. **Optimization**
-   * **Binary Search:** After calculating the prefix sums of the `chalk` array ($O(n)$), you can replace the second loop with a binary search ($O(\log n)$) to find the index. While the overall complexity remains $O(n)$ due to the sum, this is faster if the function were modified for multiple queries on the same chalk distribution.
-
-4. **Key Algorithmic Pattern**
-   * **Prefix Sums & Modulo Arithmetic:** Reducing a large cyclic problem into a single pass by removing full cycles.
+### 4. Key Algorithmic Pattern
+**Simulation with Modulo Reduction:** Instead of simulating every round (which would be $O(k/ \sum chalk)$), the problem uses the modulo operator to skip complete cycles and focus only on the final, incomplete round.
