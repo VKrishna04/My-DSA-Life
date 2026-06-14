@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-09T04:14:56.076Z",
+  "updatedAt": "2026-06-14T05:19:19.809Z",
   "layoutVersion": 3,
   "stats": {
     "total": 257,
@@ -9133,7 +9133,12 @@
         "lc-median-of-two-sorted-arrays-alt-1780412246910-3"
       ],
       "_committedPaths": [
-        "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays.py",
+        "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays-alt-approach-python3.py",
+        "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays-alt-approach-python3.py",
+        "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays-alt-approach-python3.py",
+        "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays-alt-approach-python3.py",
+        "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays-alt-approach-python3.py",
+        "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays-alt-approach-python3.py",
         "problems/lc-median-of-two-sorted-arrays/README.md"
       ],
       "methods": [
@@ -9232,8 +9237,8 @@
       "duplicateOf": null,
       "aiReview": "### 1. Complexity\n*   **Time:** $O((m+n) \\log(m+n))$ due to the `sorted()` function.\n*   **Space:** $O(m+n)$ to create the concatenated list.\n\n### 2. Correctness & Edge Cases\n*   **Failed Requirements:** The problem explicitly requires $O(\\log(m+n))$ time; this solution fails that constraint.\n*   **NameError:** `median()` is not a built-in Python function. It requires `from statistics import median`.\n*   **Edge Cases:** If both lists are empty, `statistics.median` raises a `StatisticsError`.\n\n### 3. Concrete Optimization\nUse **Binary Search** on the partition indices of the smaller array. Instead of merging/sorting, find a partition point $i$ in `nums1` and $j$ in `nums2` such that all elements on the left are less than or equal to all elements on the right. This achieves the required **$O(\\log(\\min(m, n)))$** time complexity.\n\n### 4. Key Algorithmic Pattern\nThe provided code uses a **Brute Force (Sort and Find)** approach. The optimal solution uses **Binary Search** on the search space of the array indices.",
       "_committedPaths": [
-        "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays.py",
-        "problems/lc-median-of-two-sorted-arrays/README.md"
+        "problems/lc-median-of-two-sorted-arrays-alt-1780412246910-3/lc-median-of-two-sorted-arrays-alt-1780412246910-3.py",
+        "problems/lc-median-of-two-sorted-arrays-alt-1780412246910-3/README.md"
       ],
       "linkedSolutions": [
         "lc-median-of-two-sorted-arrays"
