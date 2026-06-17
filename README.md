@@ -6,7 +6,7 @@
 
 # VKrishna04's DSA Solutions
 
-[![Solutions](https://img.shields.io/badge/Solutions-254-06b6d4?style=flat-square&logo=github)](http://vkrishna04.me/My-DSA-Life/)  [![Easy](https://img.shields.io/badge/Easy-155-22c55e?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)  [![Medium](https://img.shields.io/badge/Medium-90-f59e0b?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)  [![Hard](https://img.shields.io/badge/Hard-9-ef4444?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)
+[![Solutions](https://img.shields.io/badge/Solutions-255-06b6d4?style=flat-square&logo=github)](http://vkrishna04.me/My-DSA-Life/)  [![Easy](https://img.shields.io/badge/Easy-155-22c55e?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)  [![Medium](https://img.shields.io/badge/Medium-90-f59e0b?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)  [![Hard](https://img.shields.io/badge/Hard-10-ef4444?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)
 
 > Automatically tracked by [CodeLedger](https://codeledger.vkrishna04.me) — every problem solved, committed to Git.
 
@@ -23,13 +23,13 @@
 
 | Total | Easy | Medium | Hard |
 |:-----:|:----:|:------:|:----:|
-| **254** | 155 | 90 | 9 |
+| **255** | 155 | 90 | 10 |
 
-**By Platform:** leetcode (254)
+**By Platform:** leetcode (255)
 
-**Top Languages:** Python3 (188) · Python (16) · MySQL (15) · Pandas (14) · Java (12) · Bash (4) · JavaScript (3) · C++ (1)
+**Top Languages:** Python3 (189) · Python (16) · MySQL (15) · Pandas (14) · Java (12) · Bash (4) · JavaScript (3) · C++ (1)
 
-**Top Topics:** Array (122) · Math (25) · String (20) · Database (15) · Data Manipulation (14) · Hash Table (14) · Two Pointers (7) · Dynamic Programming (4) · Shell (4) · Linked List (3)
+**Top Topics:** Array (123) · Math (25) · String (20) · Database (15) · Data Manipulation (14) · Hash Table (14) · Two Pointers (7) · Dynamic Programming (4) · Shell (4) · Linked List (3)
 
 ---
 
@@ -89,6 +89,7 @@ Built with [CodeLedger](https://codeledger.vkrishna04.me) · [⭐ Star the exten
 </div>
 
 <!-- CODELEDGER_AUTO_GENERATED_END -->
+
 
 
 
