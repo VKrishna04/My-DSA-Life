@@ -6,14 +6,14 @@
 
 # VKrishna04's DSA Solutions
 
-[![Solutions](https://img.shields.io/badge/Solutions-255-06b6d4?style=flat-square&logo=github)](http://vkrishna04.me/My-DSA-Life/)  [![Easy](https://img.shields.io/badge/Easy-155-22c55e?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)  [![Medium](https://img.shields.io/badge/Medium-90-f59e0b?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)  [![Hard](https://img.shields.io/badge/Hard-10-ef4444?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)
+[![Solutions](https://img.shields.io/badge/Solutions-254-06b6d4?style=flat-square&logo=github)](https://VKrishna04.github.io/My-DSA-Life/)  [![Easy](https://img.shields.io/badge/Easy-155-22c55e?style=flat-square)](https://VKrishna04.github.io/My-DSA-Life/)  [![Medium](https://img.shields.io/badge/Medium-90-f59e0b?style=flat-square)](https://VKrishna04.github.io/My-DSA-Life/)  [![Hard](https://img.shields.io/badge/Hard-9-ef4444?style=flat-square)](https://VKrishna04.github.io/My-DSA-Life/)
 
 > Automatically tracked by [CodeLedger](https://codeledger.vkrishna04.me) — every problem solved, committed to Git.
 
-**[View Live Dashboard →](http://vkrishna04.me/My-DSA-Life/)**
+**[View Live Dashboard →](https://VKrishna04.github.io/My-DSA-Life/)**
 *Last updated: Jun 17, 2026*
 
-[![CodeLedger](https://raw.githubusercontent.com/Life-Experimentalist/Code-Ledger/refs/heads/main/src/assets/images/social%20preview.png)](http://vkrishna04.me/My-DSA-Life/)
+[![CodeLedger](https://raw.githubusercontent.com/Life-Experimentalist/Code-Ledger/refs/heads/main/src/assets/images/social%20preview.png)](https://VKrishna04.github.io/My-DSA-Life/)
 
 </div>
 
@@ -23,13 +23,13 @@
 
 | Total | Easy | Medium | Hard |
 |:-----:|:----:|:------:|:----:|
-| **255** | 155 | 90 | 10 |
+| **254** | 155 | 90 | 9 |
 
-**By Platform:** leetcode (255)
+**By Platform:** leetcode (254)
 
-**Top Languages:** Python3 (189) · Python (16) · MySQL (15) · Pandas (14) · Java (12) · Bash (4) · JavaScript (3) · C++ (1)
+**Top Languages:** Python3 (188) · Python (16) · MySQL (15) · Pandas (14) · Java (12) · Bash (4) · JavaScript (3) · C++ (1)
 
-**Top Topics:** Array (123) · Math (25) · String (20) · Database (15) · Data Manipulation (14) · Hash Table (14) · Two Pointers (7) · Dynamic Programming (4) · Shell (4) · Linked List (3)
+**Top Topics:** Array (122) · Math (25) · String (20) · Database (15) · Data Manipulation (14) · Hash Table (14) · Two Pointers (7) · Dynamic Programming (4) · Shell (4) · Linked List (3)
 
 ---
 
@@ -74,7 +74,7 @@ This repository is managed by [CodeLedger](https://codeledger.vkrishna04.me), a 
 
 - Solutions committed automatically the instant they are accepted
 - AI code reviews (complexity analysis, hints, optimizations) committed alongside code
-- Live stats dashboard: http://vkrishna04.me/My-DSA-Life/
+- Live stats dashboard: https://VKrishna04.github.io/My-DSA-Life/
 - Cross-device sync — your history is always up to date on any machine
 - Fully owned by you — plain files, no lock-in, no third-party servers
 
@@ -89,6 +89,7 @@ Built with [CodeLedger](https://codeledger.vkrishna04.me) · [⭐ Star the exten
 </div>
 
 <!-- CODELEDGER_AUTO_GENERATED_END -->
+
 
 
 

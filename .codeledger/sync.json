@@ -1,23 +1,18 @@
 {
-  "aiCopyable": true,
-  "aiPrimaryModel": "gemini-3-flash-preview",
-  "aiSecondary": "gemini",
-  "aiSecondaryModel": "gemini-2.5-flash",
-  "autoReview": true,
-  "claude_enabled": false,
-  "debugMode": true,
-  "deepseek_enabled": false,
   "gemini_enabled": true,
-  "gitProvider": "github",
-  "github_owner": "VKrishna04",
-  "github_pages_url": "http://vkrishna04.me/My-DSA-Life/",
-  "github_repo": "My-DSA-Life",
-  "github_username": "VKrishna04",
-  "leetcode_submission_poll": true,
-  "ollama_enabled": false,
   "openai_enabled": false,
+  "claude_enabled": false,
+  "deepseek_enabled": false,
+  "ollama_enabled": false,
   "openrouter_enabled": false,
-  "remember_modal_tab": true,
+  "gitProvider": "github",
+  "autoReview": true,
+  "debugMode": true,
+  "aiCopyable": true,
+  "github_username": "VKrishna04",
+  "github_owner": "VKrishna04",
+  "github_repo": "My-DSA-Life",
+  "aiProvider": "openai",
   "__theme": {
     "accentPrimary": "#602e9e",
     "accentSecondary": "",
@@ -33,5 +28,5 @@
     "timeCustomEnd": "18:00",
     "timeCustomStart": "06:00"
   },
-  "__syncedAt": "2026-06-17T17:33:42.771Z"
+  "__syncedAt": "2026-06-17T17:42:00.574Z"
 }
