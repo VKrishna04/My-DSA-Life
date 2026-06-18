@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-06-18T06:41:06.365Z",
+  "updatedAt": "2026-06-18T07:09:17.837Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 255,
-    "easy": 156,
+    "total": 256,
+    "easy": 157,
     "medium": 90,
     "hard": 9,
     "byPlatform": {
-      "leetcode": 255
+      "leetcode": 256
     },
     "byLang": {
-      "Python3": 189,
+      "Python3": 190,
       "MySQL": 15,
       "Java": 12,
       "Python": 16,
@@ -21,7 +21,7 @@
       "Bash": 4
     },
     "byTopic": {
-      "Array": 123,
+      "Array": 124,
       "Math": 25,
       "Linked List": 3,
       "Database": 15,
@@ -1417,6 +1417,70 @@
         "problems/lc-can-make-arithmetic-progression-from-sequence/README.md"
       ],
       "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(N \\log N)$ due to the `arr.sort()` function. The subsequent linear scan is $O(N)$.\n*   **Space Complexity:** $O(1)$ or $O(N)$ depending on the Python version's `sort()` implementation (Timsort typically uses $O(N)$ auxiliary space).\n\n### 2. Correctness & Edge Cases\n*   **Logical Flaw:** The expression `a != b != diff` is evaluated as `(a != b) and (b != c)`. This does not correctly verify if the current difference matches the initial `diff`.\n*   **Index Error:** If `len(arr) < 2`, `arr[1]` will raise an `IndexError`.\n*   **Redundancy:** The loop checks the same differences multiple times. A simple check of `arr[i] - arr[i-1] == diff` for all $i > 0$ is sufficient.\n\n### 3. Optimization\nTo achieve **$O(N)$ time complexity**, use a Hash Set:\n1. Find `min_val` and `max_val`.\n2. Calculate the expected common difference: `d = (max_val - min_val) / (len(arr) - 1)`.\n3. If `d == 0`, all elements must be equal.\n4. If `d` is not an integer, return `False`.\n5. Iterate through the array and ensure every `min_val + k * d` exists in the set.\n\n### 4. Key Algorithmic Pattern\n**Sorting.** By ordering the elements, the arithmetic property becomes a simple local check between neighbors."
+    },
+    {
+      "id": "lc-can-place-flowers",
+      "forceCommit": false,
+      "submissionId": null,
+      "title": "Can Place Flowers",
+      "titleSlug": "can-place-flowers",
+      "difficulty": "Easy",
+      "topic": "Greedy",
+      "tags": [
+        "Array",
+        "Greedy"
+      ],
+      "canonical": null,
+      "readmeContent": "# [605] Can Place Flowers\n**Difficulty:** Easy  |  **Acceptance:** 29.2%  |  **Likes:** 7446 / **Dislikes:** 1328\n**Tags:** `Array`, `Greedy`\n## Problem\nYou have a long flowerbed in which some of the plots are planted, and some are not. However, flowers cannot be planted in adjacent plots.\n\nGiven an integer array flowerbed containing 0's and 1's, where 0 means empty and 1 means not empty, and an integer n, return true&nbsp;if n new flowers can be planted in the flowerbed without violating the no-adjacent-flowers rule and false otherwise.\n\n&nbsp;\nExample 1:\nInput: flowerbed = [1,0,0,0,1], n = 1\nOutput: true\nExample 2:\nInput: flowerbed = [1,0,0,0,1], n = 2\nOutput: false\n\n&nbsp;\nConstraints:\n\n\t1 <= flowerbed.length <= 2 * 104\n\tflowerbed[i] is 0 or 1.\n\tThere are no two adjacent flowers in flowerbed.\n\t0 <= n <= flowerbed.length\n## My Submission\n\n- Runtime: N/A\n- Memory: N/A\n\n## Similar Problems\n\n- [Teemo Attacking](https://leetcode.com/problems/teemo-attacking/) — Easy\n- [Asteroid Collision](https://leetcode.com/problems/asteroid-collision/) — Medium\n",
+      "code": "class Solution:\n    def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:\n        if n == 0:\n            return True\n        \n        if flowerbed == [0] and n == 1:\n            return True\n        i = 0\n        while i < len(flowerbed):\n            if flowerbed[i] == 1:\n                i += 2\n            elif flowerbed[i] == 0 and flowerbed[i+1] == 0:\n                n -= 1\n                if n == 0:\n                    return True\n                i += 2\n            elif flowerbed[i] == 0 and flowerbed[i+1] == 1:\n                i += 3\n        return n <= 0\n",
+      "files": [
+        {
+          "path": "problems/lc-can-place-flowers/lc-can-place-flowers.py",
+          "content": "class Solution:\n    def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:\n        if n == 0:\n            return True\n        \n        if flowerbed == [0] and n == 1:\n            return True\n        i = 0\n        while i < len(flowerbed):\n            if flowerbed[i] == 1:\n                i += 2\n            elif flowerbed[i] == 0 and flowerbed[i+1] == 0:\n                n -= 1\n                if n == 0:\n                    return True\n                i += 2\n            elif flowerbed[i] == 0 and flowerbed[i+1] == 1:\n                i += 3\n        return n <= 0\n"
+        },
+        {
+          "path": "problems/lc-can-place-flowers/README.md",
+          "content": "# [605] Can Place Flowers\n**Difficulty:** Easy  |  **Acceptance:** 29.2%  |  **Likes:** 7446 / **Dislikes:** 1328\n**Tags:** `Array`, `Greedy`\n## Problem\nYou have a long flowerbed in which some of the plots are planted, and some are not. However, flowers cannot be planted in adjacent plots.\n\nGiven an integer array flowerbed containing 0's and 1's, where 0 means empty and 1 means not empty, and an integer n, return true&nbsp;if n new flowers can be planted in the flowerbed without violating the no-adjacent-flowers rule and false otherwise.\n\n&nbsp;\nExample 1:\nInput: flowerbed = [1,0,0,0,1], n = 1\nOutput: true\nExample 2:\nInput: flowerbed = [1,0,0,0,1], n = 2\nOutput: false\n\n&nbsp;\nConstraints:\n\n\t1 <= flowerbed.length <= 2 * 104\n\tflowerbed[i] is 0 or 1.\n\tThere are no two adjacent flowers in flowerbed.\n\t0 <= n <= flowerbed.length\n## My Submission\n\n- Runtime: N/A\n- Memory: N/A\n\n## Similar Problems\n\n- [Teemo Attacking](https://leetcode.com/problems/teemo-attacking/) — Easy\n- [Asteroid Collision](https://leetcode.com/problems/asteroid-collision/) — Medium\n"
+        }
+      ],
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "runtime": "N/A",
+      "memory": "N/A",
+      "runtimePct": null,
+      "memoryPct": null,
+      "timestamp": 1781766535000,
+      "acRate": 29.16944211017261,
+      "likes": 7446,
+      "dislikes": 1328,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "teemo-attacking",
+          "title": "Teemo Attacking",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "asteroid-collision",
+          "title": "Asteroid Collision",
+          "isPaidOnly": false
+        }
+      ],
+      "problemStatement": "<p>You have a long flowerbed in which some of the plots are planted, and some are not. However, flowers cannot be planted in <strong>adjacent</strong> plots.</p>\n\n<p>Given an integer array <code>flowerbed</code> containing <code>0</code>&#39;s and <code>1</code>&#39;s, where <code>0</code> means empty and <code>1</code> means not empty, and an integer <code>n</code>, return <code>true</code>&nbsp;<em>if</em> <code>n</code> <em>new flowers can be planted in the</em> <code>flowerbed</code> <em>without violating the no-adjacent-flowers rule and</em> <code>false</code> <em>otherwise</em>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<pre><strong>Input:</strong> flowerbed = [1,0,0,0,1], n = 1\n<strong>Output:</strong> true\n</pre><p><strong class=\"example\">Example 2:</strong></p>\n<pre><strong>Input:</strong> flowerbed = [1,0,0,0,1], n = 2\n<strong>Output:</strong> false\n</pre>\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= flowerbed.length &lt;= 2 * 10<sup>4</sup></code></li>\n\t<li><code>flowerbed[i]</code> is <code>0</code> or <code>1</code>.</li>\n\t<li>There are no two adjacent flowers in <code>flowerbed</code>.</li>\n\t<li><code>0 &lt;= n &lt;= flowerbed.length</code></li>\n</ul>\n",
+      "elapsedSeconds": 0,
+      "hasSimilar": true,
+      "submissionsUrl": "https://leetcode.com/problems/can-place-flowers/submissions/",
+      "notes": "",
+      "methodTitle": "",
+      "isDuplicate": false,
+      "duplicateOf": null,
+      "_requestAIReview": true,
+      "platform": "leetcode",
+      "aiReview": "Here's a review of your solution:\n\n1.  **Time Complexity:** O(N), where N is the length of `flowerbed`, as it involves a single pass through the array.\n    **Space Complexity:** O(1), as only a few constant extra variables are used.\n\n2.  **Correctness:**\n    *   **Edge Case Failure (IndexError):** The primary flaw is accessing `flowerbed[i+1]` without checking if `i+1` is within bounds. This will cause an `IndexError` when `i` is `len(flowerbed) - 1`. For example, `flowerbed = [0]`, `n = 0` (after `if n == 0` check, the special case fails too), or `flowerbed = [1]`, `n = 0`.\n    *   **Logic Flaw:** `elif flowerbed[i] == 0 and flowerbed[i+1] == 1: i += 3` is problematic. If `flowerbed = [0, 1, 0]` and `n = 1`, it will skip the last `0` (where a flower *could* be placed) and return `False` instead of `True`. The logic for advancing `i` needs to be more precise based on local conditions.\n    *   The special case `if flowerbed == [0] and n == 1:` is technically correct for that specific input but is an ad-hoc fix.\n\n3.  **One Concrete Optimization:**\n    Pad the `flowerbed` array with zeros at both ends (e.g., `flowerbed = [0] + flowerbed + [0]`). This simplifies boundary checks significantly, allowing uniform `flowerbed[i-1]`, `flowerbed[i]`, `flowerbed[i+1]` access within the main loop without `IndexError` concerns.\n\n4.  **Key Algorithmic Pattern:**\n    Greedy Approach combined with a One-Pass Iteration."
     },
     {
       "id": "lc-change-data-type::1433139571",
@@ -6637,7 +6701,11 @@
       "duplicateOf": null,
       "_requestAIReview": true,
       "platform": "leetcode",
-      "aiReview": "Here's a review of your solution:\n\n1.  **Time Complexity:** O(N), where N is the number of kids. It takes one pass to find `max_candies` and another pass (via list comprehension) to generate the `results` list.\n    **Space Complexity:** O(N) to store the `results` boolean list.\n\n2.  **Correctness:** The solution is **correct**. It accurately implements the problem logic: first finding the greatest number of candies, then iterating to check if each kid *could* reach that maximum. Edge cases like a single kid, all kids having equal candies, or `extraCandies = 0` are handled correctly. LeetCode constraints typically guarantee non-empty input, preventing `max()` errors.\n\n3.  **Optimisation:** No significant algorithmic optimization is applicable. The current solution is already optimal, requiring O(N) time (to find the max and generate N results) and O(N) space (to store N boolean results).\n\n4.  **Key Algorithmic Pattern:** This solution primarily uses a **Max/Min finding** pattern (to determine the target value) followed by a **Map/Transform** operation (to apply a condition to each element and create a new list)."
+      "aiReview": "Here's a review of your solution:\n\n1.  **Time Complexity:** O(N), where N is the number of kids. It takes one pass to find `max_candies` and another pass (via list comprehension) to generate the `results` list.\n    **Space Complexity:** O(N) to store the `results` boolean list.\n\n2.  **Correctness:** The solution is **correct**. It accurately implements the problem logic: first finding the greatest number of candies, then iterating to check if each kid *could* reach that maximum. Edge cases like a single kid, all kids having equal candies, or `extraCandies = 0` are handled correctly. LeetCode constraints typically guarantee non-empty input, preventing `max()` errors.\n\n3.  **Optimisation:** No significant algorithmic optimization is applicable. The current solution is already optimal, requiring O(N) time (to find the max and generate N results) and O(N) space (to store N boolean results).\n\n4.  **Key Algorithmic Pattern:** This solution primarily uses a **Max/Min finding** pattern (to determine the target value) followed by a **Map/Transform** operation (to apply a condition to each element and create a new list).",
+      "_committedPaths": [
+        "problems/lc-kids-with-the-greatest-number-of-candies/lc-kids-with-the-greatest-number-of-candies.py",
+        "problems/lc-kids-with-the-greatest-number-of-candies/README.md"
+      ]
     },
     {
       "id": "lc-koko-eating-bananas::1871324972",
