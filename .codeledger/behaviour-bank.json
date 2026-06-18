@@ -2854,6 +2854,20 @@
     "platform": "leetcode",
     "slug": "reverse-vowels-of-a-string"
   },
+  "leetcode::reverse-words-in-a-string": {
+    "aiInsights": [
+      {
+        "summary": "1.  **Time Complexity**: O(N), where N is the length of the input string `s`. `strip()`, `split()`, list creation/manipulation, and `join()` all scale linearly with string length or total word length.",
+        "ts": 1781784293254,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "reverse-words-in-a-string"
+  },
   "leetcode::rings-and-rods": {
     "aiInsights": [
       {
