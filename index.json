@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-18T07:09:17.837Z",
+  "updatedAt": "2026-06-18T07:12:03.352Z",
   "layoutVersion": 3,
   "stats": {
     "total": 256,
@@ -1420,7 +1420,7 @@
     },
     {
       "id": "lc-can-place-flowers",
-      "forceCommit": false,
+      "forceCommit": true,
       "submissionId": null,
       "title": "Can Place Flowers",
       "titleSlug": "can-place-flowers",
@@ -1431,16 +1431,16 @@
         "Greedy"
       ],
       "canonical": null,
-      "readmeContent": "# [605] Can Place Flowers\n**Difficulty:** Easy  |  **Acceptance:** 29.2%  |  **Likes:** 7446 / **Dislikes:** 1328\n**Tags:** `Array`, `Greedy`\n## Problem\nYou have a long flowerbed in which some of the plots are planted, and some are not. However, flowers cannot be planted in adjacent plots.\n\nGiven an integer array flowerbed containing 0's and 1's, where 0 means empty and 1 means not empty, and an integer n, return true&nbsp;if n new flowers can be planted in the flowerbed without violating the no-adjacent-flowers rule and false otherwise.\n\n&nbsp;\nExample 1:\nInput: flowerbed = [1,0,0,0,1], n = 1\nOutput: true\nExample 2:\nInput: flowerbed = [1,0,0,0,1], n = 2\nOutput: false\n\n&nbsp;\nConstraints:\n\n\t1 <= flowerbed.length <= 2 * 104\n\tflowerbed[i] is 0 or 1.\n\tThere are no two adjacent flowers in flowerbed.\n\t0 <= n <= flowerbed.length\n## My Submission\n\n- Runtime: N/A\n- Memory: N/A\n\n## Similar Problems\n\n- [Teemo Attacking](https://leetcode.com/problems/teemo-attacking/) — Easy\n- [Asteroid Collision](https://leetcode.com/problems/asteroid-collision/) — Medium\n",
-      "code": "class Solution:\n    def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:\n        if n == 0:\n            return True\n        \n        if flowerbed == [0] and n == 1:\n            return True\n        i = 0\n        while i < len(flowerbed):\n            if flowerbed[i] == 1:\n                i += 2\n            elif flowerbed[i] == 0 and flowerbed[i+1] == 0:\n                n -= 1\n                if n == 0:\n                    return True\n                i += 2\n            elif flowerbed[i] == 0 and flowerbed[i+1] == 1:\n                i += 3\n        return n <= 0\n",
+      "readmeContent": "# [605] Can Place Flowers\n**Difficulty:** Easy  |  **Acceptance:** 29.2%  |  **Likes:** 7446 / **Dislikes:** 1328\n**Tags:** `Array`, `Greedy`\n## Problem\nYou have a long flowerbed in which some of the plots are planted, and some are not. However, flowers cannot be planted in adjacent plots.\n\nGiven an integer array flowerbed containing 0's and 1's, where 0 means empty and 1 means not empty, and an integer n, return true&nbsp;if n new flowers can be planted in the flowerbed without violating the no-adjacent-flowers rule and false otherwise.\n\n&nbsp;\nExample 1:\nInput: flowerbed = [1,0,0,0,1], n = 1\nOutput: true\nExample 2:\nInput: flowerbed = [1,0,0,0,1], n = 2\nOutput: false\n\n&nbsp;\nConstraints:\n\n\t1 <= flowerbed.length <= 2 * 104\n\tflowerbed[i] is 0 or 1.\n\tThere are no two adjacent flowers in flowerbed.\n\t0 <= n <= flowerbed.length\n## My Submission\n\n- Runtime: 0 ms (beats 100.0%)\n- Memory: 19.7 MB (beats 10.4%)\n\n## Similar Problems\n\n- [Teemo Attacking](https://leetcode.com/problems/teemo-attacking/) — Easy\n- [Asteroid Collision](https://leetcode.com/problems/asteroid-collision/) — Medium\n",
+      "code": "class Solution:\n    def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:\n        if n == 0:\n            return True\n        \n        if flowerbed == [0] and n == 1:\n            return True\n        i = 0\n        l = len(flowerbed)\n        while i < l:\n            if flowerbed[i] == 1:\n                i += 2\n            elif i == l - 1 or flowerbed[i+1] == 0:\n                n -= 1\n                if n == 0:\n                    return True\n                i += 2\n            else:\n                i += 3\n        return n <= 0\n",
       "files": [
         {
           "path": "problems/lc-can-place-flowers/lc-can-place-flowers.py",
-          "content": "class Solution:\n    def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:\n        if n == 0:\n            return True\n        \n        if flowerbed == [0] and n == 1:\n            return True\n        i = 0\n        while i < len(flowerbed):\n            if flowerbed[i] == 1:\n                i += 2\n            elif flowerbed[i] == 0 and flowerbed[i+1] == 0:\n                n -= 1\n                if n == 0:\n                    return True\n                i += 2\n            elif flowerbed[i] == 0 and flowerbed[i+1] == 1:\n                i += 3\n        return n <= 0\n"
+          "content": "class Solution:\n    def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:\n        if n == 0:\n            return True\n        \n        if flowerbed == [0] and n == 1:\n            return True\n        i = 0\n        l = len(flowerbed)\n        while i < l:\n            if flowerbed[i] == 1:\n                i += 2\n            elif i == l - 1 or flowerbed[i+1] == 0:\n                n -= 1\n                if n == 0:\n                    return True\n                i += 2\n            else:\n                i += 3\n        return n <= 0\n"
         },
         {
           "path": "problems/lc-can-place-flowers/README.md",
-          "content": "# [605] Can Place Flowers\n**Difficulty:** Easy  |  **Acceptance:** 29.2%  |  **Likes:** 7446 / **Dislikes:** 1328\n**Tags:** `Array`, `Greedy`\n## Problem\nYou have a long flowerbed in which some of the plots are planted, and some are not. However, flowers cannot be planted in adjacent plots.\n\nGiven an integer array flowerbed containing 0's and 1's, where 0 means empty and 1 means not empty, and an integer n, return true&nbsp;if n new flowers can be planted in the flowerbed without violating the no-adjacent-flowers rule and false otherwise.\n\n&nbsp;\nExample 1:\nInput: flowerbed = [1,0,0,0,1], n = 1\nOutput: true\nExample 2:\nInput: flowerbed = [1,0,0,0,1], n = 2\nOutput: false\n\n&nbsp;\nConstraints:\n\n\t1 <= flowerbed.length <= 2 * 104\n\tflowerbed[i] is 0 or 1.\n\tThere are no two adjacent flowers in flowerbed.\n\t0 <= n <= flowerbed.length\n## My Submission\n\n- Runtime: N/A\n- Memory: N/A\n\n## Similar Problems\n\n- [Teemo Attacking](https://leetcode.com/problems/teemo-attacking/) — Easy\n- [Asteroid Collision](https://leetcode.com/problems/asteroid-collision/) — Medium\n"
+          "content": "# [605] Can Place Flowers\n**Difficulty:** Easy  |  **Acceptance:** 29.2%  |  **Likes:** 7446 / **Dislikes:** 1328\n**Tags:** `Array`, `Greedy`\n## Problem\nYou have a long flowerbed in which some of the plots are planted, and some are not. However, flowers cannot be planted in adjacent plots.\n\nGiven an integer array flowerbed containing 0's and 1's, where 0 means empty and 1 means not empty, and an integer n, return true&nbsp;if n new flowers can be planted in the flowerbed without violating the no-adjacent-flowers rule and false otherwise.\n\n&nbsp;\nExample 1:\nInput: flowerbed = [1,0,0,0,1], n = 1\nOutput: true\nExample 2:\nInput: flowerbed = [1,0,0,0,1], n = 2\nOutput: false\n\n&nbsp;\nConstraints:\n\n\t1 <= flowerbed.length <= 2 * 104\n\tflowerbed[i] is 0 or 1.\n\tThere are no two adjacent flowers in flowerbed.\n\t0 <= n <= flowerbed.length\n## My Submission\n\n- Runtime: 0 ms (beats 100.0%)\n- Memory: 19.7 MB (beats 10.4%)\n\n## Similar Problems\n\n- [Teemo Attacking](https://leetcode.com/problems/teemo-attacking/) — Easy\n- [Asteroid Collision](https://leetcode.com/problems/asteroid-collision/) — Medium\n"
         }
       ],
       "lang": {
@@ -1448,12 +1448,12 @@
         "ext": "py",
         "slug": "python3"
       },
-      "runtime": "N/A",
-      "memory": "N/A",
-      "runtimePct": null,
-      "memoryPct": null,
-      "timestamp": 1781766535000,
-      "acRate": 29.16944211017261,
+      "runtime": "0 ms",
+      "memory": "19.7 MB",
+      "runtimePct": 100,
+      "memoryPct": 10.427999999999994,
+      "timestamp": 1781766691000,
+      "acRate": 29.1694412500922,
       "likes": 7446,
       "dislikes": 1328,
       "similar": [
@@ -1480,7 +1480,7 @@
       "duplicateOf": null,
       "_requestAIReview": true,
       "platform": "leetcode",
-      "aiReview": "Here's a review of your solution:\n\n1.  **Time Complexity:** O(N), where N is the length of `flowerbed`, as it involves a single pass through the array.\n    **Space Complexity:** O(1), as only a few constant extra variables are used.\n\n2.  **Correctness:**\n    *   **Edge Case Failure (IndexError):** The primary flaw is accessing `flowerbed[i+1]` without checking if `i+1` is within bounds. This will cause an `IndexError` when `i` is `len(flowerbed) - 1`. For example, `flowerbed = [0]`, `n = 0` (after `if n == 0` check, the special case fails too), or `flowerbed = [1]`, `n = 0`.\n    *   **Logic Flaw:** `elif flowerbed[i] == 0 and flowerbed[i+1] == 1: i += 3` is problematic. If `flowerbed = [0, 1, 0]` and `n = 1`, it will skip the last `0` (where a flower *could* be placed) and return `False` instead of `True`. The logic for advancing `i` needs to be more precise based on local conditions.\n    *   The special case `if flowerbed == [0] and n == 1:` is technically correct for that specific input but is an ad-hoc fix.\n\n3.  **One Concrete Optimization:**\n    Pad the `flowerbed` array with zeros at both ends (e.g., `flowerbed = [0] + flowerbed + [0]`). This simplifies boundary checks significantly, allowing uniform `flowerbed[i-1]`, `flowerbed[i]`, `flowerbed[i+1]` access within the main loop without `IndexError` concerns.\n\n4.  **Key Algorithmic Pattern:**\n    Greedy Approach combined with a One-Pass Iteration."
+      "aiReview": "Here's a review of your solution:\n\n1.  **Time Complexity**: O(L), where L is the length of `flowerbed`. The loop iterates through the array, and `i` increments by at least 2 in each step.\n    **Space Complexity**: O(1). Only a few constant-space variables are used.\n\n2.  **Correctness**: Correct. The logic skillfully uses `i` increments (`i += 2`, `i += 3`) to implicitly handle the left-neighbor condition (`flowerbed[i-1] == 0`) when considering planting at `i`. If `flowerbed[i-1]` contained a flower, `i` would have already skipped past `i`. The initial check for `flowerbed == [0] and n == 1` is redundant as the main loop covers it, but it doesn't cause failure.\n\n3.  **One concrete optimisation**: Remove the redundant check `if flowerbed == [0] and n == 1:`. The rest of the code already handles this case correctly.\n\n4.  **Key algorithmic pattern used**: Greedy approach. The solution iterates through the flowerbed, making the locally optimal choice (planting a flower whenever possible) which leads to a globally optimal solution (maximizing placed flowers)."
     },
     {
       "id": "lc-change-data-type::1433139571",

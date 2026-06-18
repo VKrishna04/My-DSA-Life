@@ -7,8 +7,8 @@
 | Problem ID | `lc-can-place-flowers` |
 | Topics | Array, Greedy |
 | Solved | 2026-06-18 |
-| Runtime | N/A |
-| Memory | N/A |
+| Runtime | 0 ms (beats 100%) |
+| Memory | 19.7 MB (beats 10.427999999999994%) |
 
 ## Problem Statement
 
@@ -50,15 +50,16 @@ class Solution:
         if flowerbed == [0] and n == 1:
             return True
         i = 0
-        while i < len(flowerbed):
+        l = len(flowerbed)
+        while i < l:
             if flowerbed[i] == 1:
                 i += 2
-            elif flowerbed[i] == 0 and flowerbed[i+1] == 0:
+            elif i == l - 1 or flowerbed[i+1] == 0:
                 n -= 1
                 if n == 0:
                     return True
                 i += 2
-            elif flowerbed[i] == 0 and flowerbed[i+1] == 1:
+            else:
                 i += 3
         return n <= 0
 
@@ -68,16 +69,11 @@ class Solution:
 
 Here's a review of your solution:
 
-1.  **Time Complexity:** O(N), where N is the length of `flowerbed`, as it involves a single pass through the array.
-    **Space Complexity:** O(1), as only a few constant extra variables are used.
+1.  **Time Complexity**: O(L), where L is the length of `flowerbed`. The loop iterates through the array, and `i` increments by at least 2 in each step.
+    **Space Complexity**: O(1). Only a few constant-space variables are used.
 
-2.  **Correctness:**
-    *   **Edge Case Failure (IndexError):** The primary flaw is accessing `flowerbed[i+1]` without checking if `i+1` is within bounds. This will cause an `IndexError` when `i` is `len(flowerbed) - 1`. For example, `flowerbed = [0]`, `n = 0` (after `if n == 0` check, the special case fails too), or `flowerbed = [1]`, `n = 0`.
-    *   **Logic Flaw:** `elif flowerbed[i] == 0 and flowerbed[i+1] == 1: i += 3` is problematic. If `flowerbed = [0, 1, 0]` and `n = 1`, it will skip the last `0` (where a flower *could* be placed) and return `False` instead of `True`. The logic for advancing `i` needs to be more precise based on local conditions.
-    *   The special case `if flowerbed == [0] and n == 1:` is technically correct for that specific input but is an ad-hoc fix.
+2.  **Correctness**: Correct. The logic skillfully uses `i` increments (`i += 2`, `i += 3`) to implicitly handle the left-neighbor condition (`flowerbed[i-1] == 0`) when considering planting at `i`. If `flowerbed[i-1]` contained a flower, `i` would have already skipped past `i`. The initial check for `flowerbed == [0] and n == 1` is redundant as the main loop covers it, but it doesn't cause failure.
 
-3.  **One Concrete Optimization:**
-    Pad the `flowerbed` array with zeros at both ends (e.g., `flowerbed = [0] + flowerbed + [0]`). This simplifies boundary checks significantly, allowing uniform `flowerbed[i-1]`, `flowerbed[i]`, `flowerbed[i+1]` access within the main loop without `IndexError` concerns.
+3.  **One concrete optimisation**: Remove the redundant check `if flowerbed == [0] and n == 1:`. The rest of the code already handles this case correctly.
 
-4.  **Key Algorithmic Pattern:**
-    Greedy Approach combined with a One-Pass Iteration.
+4.  **Key algorithmic pattern used**: Greedy approach. The solution iterates through the flowerbed, making the locally optimal choice (planting a flower whenever possible) which leads to a globally optimal solution (maximizing placed flowers).
