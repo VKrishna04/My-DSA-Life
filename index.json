@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-06-18T07:12:03.352Z",
+  "updatedAt": "2026-06-18T11:53:37.893Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 256,
-    "easy": 157,
+    "total": 257,
+    "easy": 158,
     "medium": 90,
     "hard": 9,
     "byPlatform": {
-      "leetcode": 256
+      "leetcode": 257
     },
     "byLang": {
-      "Python3": 190,
+      "Python3": 191,
       "MySQL": 15,
       "Java": 12,
       "Python": 16,
@@ -38,7 +38,7 @@
       "Higher-Order Functions": 1,
       "Untagged": 2,
       "Data Cleaning": 1,
-      "Two Pointers": 7,
+      "Two Pointers": 8,
       "Binary Search": 1,
       "Sorting": 1,
       "Divide and Conquer": 3,
@@ -1480,7 +1480,11 @@
       "duplicateOf": null,
       "_requestAIReview": true,
       "platform": "leetcode",
-      "aiReview": "Here's a review of your solution:\n\n1.  **Time Complexity**: O(L), where L is the length of `flowerbed`. The loop iterates through the array, and `i` increments by at least 2 in each step.\n    **Space Complexity**: O(1). Only a few constant-space variables are used.\n\n2.  **Correctness**: Correct. The logic skillfully uses `i` increments (`i += 2`, `i += 3`) to implicitly handle the left-neighbor condition (`flowerbed[i-1] == 0`) when considering planting at `i`. If `flowerbed[i-1]` contained a flower, `i` would have already skipped past `i`. The initial check for `flowerbed == [0] and n == 1` is redundant as the main loop covers it, but it doesn't cause failure.\n\n3.  **One concrete optimisation**: Remove the redundant check `if flowerbed == [0] and n == 1:`. The rest of the code already handles this case correctly.\n\n4.  **Key algorithmic pattern used**: Greedy approach. The solution iterates through the flowerbed, making the locally optimal choice (planting a flower whenever possible) which leads to a globally optimal solution (maximizing placed flowers)."
+      "aiReview": "Here's a review of your solution:\n\n1.  **Time Complexity**: O(L), where L is the length of `flowerbed`. The loop iterates through the array, and `i` increments by at least 2 in each step.\n    **Space Complexity**: O(1). Only a few constant-space variables are used.\n\n2.  **Correctness**: Correct. The logic skillfully uses `i` increments (`i += 2`, `i += 3`) to implicitly handle the left-neighbor condition (`flowerbed[i-1] == 0`) when considering planting at `i`. If `flowerbed[i-1]` contained a flower, `i` would have already skipped past `i`. The initial check for `flowerbed == [0] and n == 1` is redundant as the main loop covers it, but it doesn't cause failure.\n\n3.  **One concrete optimisation**: Remove the redundant check `if flowerbed == [0] and n == 1:`. The rest of the code already handles this case correctly.\n\n4.  **Key algorithmic pattern used**: Greedy approach. The solution iterates through the flowerbed, making the locally optimal choice (planting a flower whenever possible) which leads to a globally optimal solution (maximizing placed flowers).",
+      "_committedPaths": [
+        "problems/lc-can-place-flowers/lc-can-place-flowers.py",
+        "problems/lc-can-place-flowers/README.md"
+      ]
     },
     {
       "id": "lc-change-data-type::1433139571",
@@ -13624,6 +13628,76 @@
         "problems/lc-reverse-string/lc-reverse-string.cpp",
         "problems/lc-reverse-string/README.md"
       ]
+    },
+    {
+      "id": "lc-reverse-vowels-of-a-string",
+      "forceCommit": true,
+      "submissionId": null,
+      "title": "Reverse Vowels of a String",
+      "titleSlug": "reverse-vowels-of-a-string",
+      "difficulty": "Easy",
+      "topic": "Two Pointers",
+      "tags": [
+        "Two Pointers",
+        "String"
+      ],
+      "canonical": null,
+      "readmeContent": "# [345] Reverse Vowels of a String\n**Difficulty:** Easy  |  **Acceptance:** 61.5%  |  **Likes:** 5414 / **Dislikes:** 2862\n**Tags:** `Two Pointers`, `String`\n## Problem\nGiven a string s, reverse only all the vowels in the string and return it.\n\nThe vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lower and upper cases, more than once.\n\n&nbsp;\nExample 1:\n\nInput: s = \"IceCreAm\"\n\nOutput: \"AceCreIm\"\n\nExplanation:\n\nThe vowels in s are ['I', 'e', 'e', 'A']. On reversing the vowels, s becomes \"AceCreIm\".\n\nExample 2:\n\nInput: s = \"leetcode\"\n\nOutput: \"leotcede\"\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 3 * 105\n\ts consist of printable ASCII characters.\n## My Submission\n\n- Runtime: 7 ms (beats 88.6%)\n- Memory: 20.7 MB (beats 15.4%)\n\n## Similar Problems\n\n- [Reverse String](https://leetcode.com/problems/reverse-string/) — Easy\n- [Faulty Keyboard](https://leetcode.com/problems/faulty-keyboard/) — Easy\n- [Sort Vowels in a String](https://leetcode.com/problems/sort-vowels-in-a-string/) — Medium\n",
+      "code": "class Solution:\n    def reverseVowels(self, s: str) -> str:\n        letters = list(s)\n        l = 0\n        r = len(letters)-1\n        vow = set('aeiouAEIOU')\n\n        while l < r:\n            if not letters[l] in vow:\n                l += 1\n            elif not letters[r] in vow:\n                r -= 1\n            else:\n                letters[l], letters[r] = letters[r], letters[l]\n                l += 1\n                r -= 1\n                \n        return ''.join(letters)",
+      "files": [
+        {
+          "path": "problems/lc-reverse-vowels-of-a-string/lc-reverse-vowels-of-a-string.py",
+          "content": "class Solution:\n    def reverseVowels(self, s: str) -> str:\n        letters = list(s)\n        l = 0\n        r = len(letters)-1\n        vow = set('aeiouAEIOU')\n\n        while l < r:\n            if not letters[l] in vow:\n                l += 1\n            elif not letters[r] in vow:\n                r -= 1\n            else:\n                letters[l], letters[r] = letters[r], letters[l]\n                l += 1\n                r -= 1\n                \n        return ''.join(letters)"
+        },
+        {
+          "path": "problems/lc-reverse-vowels-of-a-string/README.md",
+          "content": "# [345] Reverse Vowels of a String\n**Difficulty:** Easy  |  **Acceptance:** 61.5%  |  **Likes:** 5414 / **Dislikes:** 2862\n**Tags:** `Two Pointers`, `String`\n## Problem\nGiven a string s, reverse only all the vowels in the string and return it.\n\nThe vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lower and upper cases, more than once.\n\n&nbsp;\nExample 1:\n\nInput: s = \"IceCreAm\"\n\nOutput: \"AceCreIm\"\n\nExplanation:\n\nThe vowels in s are ['I', 'e', 'e', 'A']. On reversing the vowels, s becomes \"AceCreIm\".\n\nExample 2:\n\nInput: s = \"leetcode\"\n\nOutput: \"leotcede\"\n\n&nbsp;\nConstraints:\n\n\t1 <= s.length <= 3 * 105\n\ts consist of printable ASCII characters.\n## My Submission\n\n- Runtime: 7 ms (beats 88.6%)\n- Memory: 20.7 MB (beats 15.4%)\n\n## Similar Problems\n\n- [Reverse String](https://leetcode.com/problems/reverse-string/) — Easy\n- [Faulty Keyboard](https://leetcode.com/problems/faulty-keyboard/) — Easy\n- [Sort Vowels in a String](https://leetcode.com/problems/sort-vowels-in-a-string/) — Medium\n"
+        }
+      ],
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "runtime": "7 ms",
+      "memory": "20.7 MB",
+      "runtimePct": 88.62,
+      "memoryPct": 15.378100000000009,
+      "timestamp": 1781783602000,
+      "acRate": 61.49848499175533,
+      "likes": 5414,
+      "dislikes": 2862,
+      "similar": [
+        {
+          "difficulty": "Easy",
+          "titleSlug": "reverse-string",
+          "title": "Reverse String",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Easy",
+          "titleSlug": "faulty-keyboard",
+          "title": "Faulty Keyboard",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "sort-vowels-in-a-string",
+          "title": "Sort Vowels in a String",
+          "isPaidOnly": false
+        }
+      ],
+      "problemStatement": "<p>Given a string <code>s</code>, reverse only all the vowels in the string and return it.</p>\n\n<p>The vowels are <code>&#39;a&#39;</code>, <code>&#39;e&#39;</code>, <code>&#39;i&#39;</code>, <code>&#39;o&#39;</code>, and <code>&#39;u&#39;</code>, and they can appear in both lower and upper cases, more than once.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;IceCreAm&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">&quot;AceCreIm&quot;</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<p>The vowels in <code>s</code> are <code>[&#39;I&#39;, &#39;e&#39;, &#39;e&#39;, &#39;A&#39;]</code>. On reversing the vowels, s becomes <code>&quot;AceCreIm&quot;</code>.</p>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">s = &quot;leetcode&quot;</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">&quot;leotcede&quot;</span></p>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 3 * 10<sup>5</sup></code></li>\n\t<li><code>s</code> consist of <strong>printable ASCII</strong> characters.</li>\n</ul>\n",
+      "elapsedSeconds": 0,
+      "hasSimilar": true,
+      "submissionsUrl": "https://leetcode.com/problems/reverse-vowels-of-a-string/submissions/",
+      "notes": "",
+      "methodTitle": "",
+      "isDuplicate": false,
+      "duplicateOf": null,
+      "_requestAIReview": true,
+      "platform": "leetcode",
+      "aiReview": "1.  **Time Complexity:** O(N), where N is the length of the string `s`. It involves one pass to convert to a list, one pass with two pointers, and one pass to join back.\n    **Space Complexity:** O(N) due to converting the string `s` into a mutable `list`.\n\n2.  **Correctness:** The solution is correct. It handles edge cases like empty strings, single-character strings, strings with no vowels, and strings consisting entirely of vowels. The two-pointer logic accurately finds and swaps the extreme vowels.\n\n3.  **Optimisation:** For repeated calls to `reverseVowels`, the `vow` set could be created once outside the function (e.g., as a class attribute) to avoid redundant O(1) set construction on each call.\n\n4.  **Key Algorithmic Pattern:** Two Pointers."
     },
     {
       "id": "lc-rings-and-rods",

@@ -2839,6 +2839,21 @@
     "platform": "leetcode",
     "slug": "reverse-bits"
   },
+  "leetcode::reverse-vowels-of-a-string": {
+    "aiInsights": [
+      {
+        "summary": "1.  **Time Complexity:** O(N), where N is the length of the string `s`. It involves one pass to convert to a list, one pass with two pointers, and one pass to join back.\n    **Space Complexity:** O(N)",
+        "ts": 1781783617799,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "reverse-vowels-of-a-string"
+  },
   "leetcode::rings-and-rods": {
     "aiInsights": [
       {
