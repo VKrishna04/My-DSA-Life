@@ -1357,6 +1357,22 @@
     "platform": "leetcode",
     "slug": "jump-game"
   },
+  "leetcode::kids-with-the-greatest-number-of-candies": {
+    "aiInsights": [
+      {
+        "summary": "Here's a review of your solution:\n\n1.  **Time Complexity:** O(N), where N is the number of kids. It takes one pass to find `max_candies` and another pass (via list comprehension) to generate the `resu",
+        "ts": 1781764866246,
+        "weakAreas": [
+          "edge cases",
+          "null/empty input",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "kids-with-the-greatest-number-of-candies"
+  },
   "leetcode::koko-eating-bananas": {
     "aiInsights": [
       {

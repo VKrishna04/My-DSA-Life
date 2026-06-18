@@ -1,0 +1,24 @@
+{
+  "debugMode": true,
+  "aiCopyable": true,
+  "autoReview": true,
+  "mcp.config": {
+    "autoInvokeThreshold": {
+      "queryProblems": 2,
+      "suggestions": 1
+    },
+    "cacheResults": true,
+    "enabled": {
+      "analyze-code-quality": true,
+      "find-similar-problems": true,
+      "get-next-suggestion": true,
+      "get-problem-stats": true,
+      "get-trend-analysis": true,
+      "get-user-profile": true,
+      "query-problems": true
+    },
+    "maxToolCallsPerRequest": 4,
+    "useInChat": true,
+    "useInReview": true
+  }
+}
