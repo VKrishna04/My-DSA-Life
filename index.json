@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-17T17:51:55.044Z",
+  "updatedAt": "2026-06-18T04:55:09.190Z",
   "layoutVersion": 3,
   "stats": {
     "total": 254,
@@ -47,9 +47,9 @@
     }
   },
   "meta": {
-    "summary": null,
-    "summaryUpdatedAt": null,
-    "commitsSinceLastSummary": 0
+    "summary": "## Complexity\n- **Time:** O(N) — Parsing the provided statistics string requires a linear scan of $N$ characters to identify keys and values.\n- **Space:** O(1) — The memory required for the narrative output is constant, as it is limited to a fixed length (2–3 sentences) regardless of the number of problems solved.\n\n## Correctness\n1. **Future Date Handling:** The input \"16/5/2026\" is in the future relative to typical system clocks. \n   - **Input:** `Last commit: 16/5/2026` \n   - **Expected vs Actual:** The system should flag the date as invalid or \"N/A,\" but it will likely interpret it as \"very recent activity,\" creating a false positive for user consistency.\n2. **Zero-Division Risk:** If `total problems` were zero, calculating the ratio of topics or difficulty levels would fail.\n   - **Input:** `0 total problems`\n   - **Expected vs Actual:** The summary should state \"No activity recorded,\" but the logic may crash during percentage calculations or result in empty topic strings.\n\n## Optimization\nCurrent approach is optimal for generating natural language insights. For a production-grade implementation, using a structured JSON input and a rule-based templating engine would ensure 100% consistency and eliminate the risk of text-parsing hallucinations. \n\n## Code Quality\nThe most impactful improvement would be decoupling the data (statistics) from the logic (narrative generation) by using a structured object or dictionary to store solve counts.",
+    "summaryUpdatedAt": "2026-05-16T17:03:34.057Z",
+    "commitsSinceLastSummary": 1
   },
   "problems": [
     {
@@ -865,9 +865,6 @@
       "_committedPaths": [
         "problems/best-time-to-buy-and-sell-stock/leetcode/lc-best-time-to-buy-and-sell-stock.py",
         "problems/best-time-to-buy-and-sell-stock/leetcode/README.md"
-      ],
-      "linkedSolutions": [
-        "lc-best-time-to-buy-and-sell-stock::1427680302"
       ]
     },
     {
@@ -982,10 +979,7 @@
         "problems/best-time-to-buy-and-sell-stock/leetcode/lc-best-time-to-buy-and-sell-stock.java",
         "problems/best-time-to-buy-and-sell-stock/leetcode/README.md"
       ],
-      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the `prices` array. The algorithm performs a single pass.\n*   **Space Complexity:** $O(1)$. It uses only two scalar variables regardless of input size.\n\n### 2. Correctness\nThe solution is **correct** and handles all standard edge cases:\n*   **Empty or single-element array:** The loop completes, returning the initial `maxProfit` of 0.\n*   **Strictly decreasing prices:** `minPrice` updates, but the `else if` never triggers, returning 0 (no profit possible).\n*   **Price volatility:** Correctly tracks the lowest price seen *so far* to calculate the potential profit at each step.\n\n### 3. Optimization\nThe solution is already **optimally efficient** in terms of Big-O. For code readability, you could use `Math.min()` and `Math.max()`:\n```java\nminPrice = Math.min(minPrice, price);\nmaxProfit = Math.max(maxProfit, price - minPrice);\n```\nHowever, your current `if-else` structure is slightly more performant as it avoids calculating `price - minPrice` when a new `minPrice` is found.\n\n### 4. Key Algorithmic Pattern\n**One Pass / Greedy:** It makes the locally optimal choice (tracking the minimum price found so far) to find the global maximum profit in a single traversal.",
-      "linkedSolutions": [
-        "lc-best-time-to-buy-and-sell-stock"
-      ]
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the `prices` array. The algorithm performs a single pass.\n*   **Space Complexity:** $O(1)$. It uses only two scalar variables regardless of input size.\n\n### 2. Correctness\nThe solution is **correct** and handles all standard edge cases:\n*   **Empty or single-element array:** The loop completes, returning the initial `maxProfit` of 0.\n*   **Strictly decreasing prices:** `minPrice` updates, but the `else if` never triggers, returning 0 (no profit possible).\n*   **Price volatility:** Correctly tracks the lowest price seen *so far* to calculate the potential profit at each step.\n\n### 3. Optimization\nThe solution is already **optimally efficient** in terms of Big-O. For code readability, you could use `Math.min()` and `Math.max()`:\n```java\nminPrice = Math.min(minPrice, price);\nmaxProfit = Math.max(maxProfit, price - minPrice);\n```\nHowever, your current `if-else` structure is slightly more performant as it avoids calculating `price - minPrice` when a new `minPrice` is found.\n\n### 4. Key Algorithmic Pattern\n**One Pass / Greedy:** It makes the locally optimal choice (tracking the minimum price found so far) to find the global maximum profit in a single traversal."
     },
     {
       "id": "lc-big-countries",
@@ -2323,9 +2317,6 @@
       "_committedPaths": [
         "problems/lc-convert-1d-array-into-2d-array/lc-convert-1d-array-into-2d-array.py",
         "problems/lc-convert-1d-array-into-2d-array/README.md"
-      ],
-      "linkedSolutions": [
-        "lc-convert-1d-array-into-2d-array::1394530944"
       ]
     },
     {
@@ -2383,10 +2374,7 @@
         "problems/lc-convert-1d-array-into-2d-array/lc-convert-1d-array-into-2d-array.java",
         "problems/lc-convert-1d-array-into-2d-array/README.md"
       ],
-      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(m \\times n)$, as we iterate through every element exactly once.\n*   **Space Complexity:** $O(m \\times n)$ to store the result array. No significant extra auxiliary space is used.\n\n### 2. Correctness\n*   The logic is correct for all valid cases.\n*   **Edge Case/Risk:** The code allocates `new int[m][n]` **before** validating the length. If `m * n` is extremely large but `original.length` is small, the program may throw an `OutOfMemoryError` unnecessarily before reaching the `if` check.\n\n### 3. Optimization\nMove the validation check to the top and assign values directly to the result matrix to avoid redundant array allocations:\n```java\nif (original.length != m * n) return new int[0][0];\nint[][] arr = new int[m][n];\nfor (int i = 0; i < m; i++) {\n    for (int j = 0; j < n; j++) {\n        arr[i][j] = original[i * n + j];\n    }\n}\n```\n*Alternatively, use `System.arraycopy` for row-wise copying to improve performance.*\n\n### 4. Key Algorithmic Pattern\n**1D to 2D Coordinate Mapping:** Using the formula `index = (row * total_columns) + column` to map linear indices to matrix coordinates.",
-      "linkedSolutions": [
-        "lc-convert-1d-array-into-2d-array"
-      ]
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(m \\times n)$, as we iterate through every element exactly once.\n*   **Space Complexity:** $O(m \\times n)$ to store the result array. No significant extra auxiliary space is used.\n\n### 2. Correctness\n*   The logic is correct for all valid cases.\n*   **Edge Case/Risk:** The code allocates `new int[m][n]` **before** validating the length. If `m * n` is extremely large but `original.length` is small, the program may throw an `OutOfMemoryError` unnecessarily before reaching the `if` check.\n\n### 3. Optimization\nMove the validation check to the top and assign values directly to the result matrix to avoid redundant array allocations:\n```java\nif (original.length != m * n) return new int[0][0];\nint[][] arr = new int[m][n];\nfor (int i = 0; i < m; i++) {\n    for (int j = 0; j < n; j++) {\n        arr[i][j] = original[i * n + j];\n    }\n}\n```\n*Alternatively, use `System.arraycopy` for row-wise copying to improve performance.*\n\n### 4. Key Algorithmic Pattern\n**1D to 2D Coordinate Mapping:** Using the formula `index = (row * total_columns) + column` to map linear indices to matrix coordinates."
     },
     {
       "id": "lc-count-integers-with-even-digit-sum",
@@ -3103,10 +3091,7 @@
         "problems/lc-create-a-dataframe-from-list/lc-create-a-dataframe-from-list.py",
         "problems/lc-create-a-dataframe-from-list/README.md"
       ],
-      "aiReview": "### Review\n**1. Complexity**\n*   **Time:** $O(N \\times M)$, where $N$ is the number of students and $M$ is the number of columns (2). Pandas must iterate through the nested list to populate the underlying NumPy arrays.\n*   **Space:** $O(N \\times M)$ to store the resulting DataFrame in memory.\n\n**2. Correctness**\nThe solution is correct and idiomatic for the problem description.\n*   **Edge Cases:** An empty list `[]` correctly produces an empty DataFrame with the specified column headers. If the inner lists vary in length, Pandas may introduce `None`/`NaN` or raise a `ValueError`, but per the LeetCode constraints, the input is a consistent 2D list.\n\n**3. Optimization**\nFor very large datasets, providing the `dtype` explicitly (e.g., `dtype=int`) can prevent Pandas from performing unnecessary type inference during construction, slightly improving performance.\n\n**4. Key Pattern**\n**Constructor Injection/Data Marshalling:** This pattern involves passing raw, structured data (list of lists) into a higher-level object constructor (`pd.DataFrame`) that handles internal memory allocation and schema mapping.",
-      "linkedSolutions": [
-        "lc-create-a-dataframe-from-list::1431821352"
-      ]
+      "aiReview": "### Review\n**1. Complexity**\n*   **Time:** $O(N \\times M)$, where $N$ is the number of students and $M$ is the number of columns (2). Pandas must iterate through the nested list to populate the underlying NumPy arrays.\n*   **Space:** $O(N \\times M)$ to store the resulting DataFrame in memory.\n\n**2. Correctness**\nThe solution is correct and idiomatic for the problem description.\n*   **Edge Cases:** An empty list `[]` correctly produces an empty DataFrame with the specified column headers. If the inner lists vary in length, Pandas may introduce `None`/`NaN` or raise a `ValueError`, but per the LeetCode constraints, the input is a consistent 2D list.\n\n**3. Optimization**\nFor very large datasets, providing the `dtype` explicitly (e.g., `dtype=int`) can prevent Pandas from performing unnecessary type inference during construction, slightly improving performance.\n\n**4. Key Pattern**\n**Constructor Injection/Data Marshalling:** This pattern involves passing raw, structured data (list of lists) into a higher-level object constructor (`pd.DataFrame`) that handles internal memory allocation and schema mapping."
     },
     {
       "id": "lc-create-a-new-column",
@@ -3150,10 +3135,7 @@
         "problems/lc-create-a-new-column/lc-create-a-new-column.py",
         "problems/lc-create-a-new-column/README.md"
       ],
-      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas performs a vectorized element-wise multiplication across the entire column.\n*   **Space Complexity:** $O(N)$ to store the additional data for the new \"bonus\" column.\n\n**2. Correctness**\nThe solution is correct and handles standard Pandas behavior well.\n*   **Edge Cases:** If the `salary` column contains `NaN` values, the result will correctly be `NaN`. If the DataFrame is empty, it returns an empty DataFrame with the new column header. \n*   **Potential Failure:** If the `salary` column contains non-numeric types (e.g., strings), the multiplication will either repeat the string or raise a `TypeError`.\n\n**3. Optimization**\nThe current solution is already optimal for Pandas as it uses **vectorization**. Avoid using `.apply()` or Python loops, as they are significantly slower. For very large datasets, you could ensure the column uses a memory-efficient subtype (e.g., `int32` instead of `int64`), but that is context-dependent.\n\n**4. Key Algorithmic Pattern**\n**Vectorization:** This pattern leverages low-level optimizations (C/SIMD) to perform operations on entire arrays simultaneously rather than iterating through rows manually.",
-      "linkedSolutions": [
-        "lc-create-a-new-column::1431827775"
-      ]
+      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas performs a vectorized element-wise multiplication across the entire column.\n*   **Space Complexity:** $O(N)$ to store the additional data for the new \"bonus\" column.\n\n**2. Correctness**\nThe solution is correct and handles standard Pandas behavior well.\n*   **Edge Cases:** If the `salary` column contains `NaN` values, the result will correctly be `NaN`. If the DataFrame is empty, it returns an empty DataFrame with the new column header. \n*   **Potential Failure:** If the `salary` column contains non-numeric types (e.g., strings), the multiplication will either repeat the string or raise a `TypeError`.\n\n**3. Optimization**\nThe current solution is already optimal for Pandas as it uses **vectorization**. Avoid using `.apply()` or Python loops, as they are significantly slower. For very large datasets, you could ensure the column uses a memory-efficient subtype (e.g., `int32` instead of `int64`), but that is context-dependent.\n\n**4. Key Algorithmic Pattern**\n**Vectorization:** This pattern leverages low-level optimizations (C/SIMD) to perform operations on entire arrays simultaneously rather than iterating through rows manually."
     },
     {
       "id": "lc-create-a-new-column::1431827775",
@@ -3201,10 +3183,7 @@
         "problems/lc-create-a-new-column/lc-create-a-new-column.py",
         "problems/lc-create-a-new-column/README.md"
       ],
-      "aiReview": "### Review of \"Create a New Column\" Solution\n\n**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows. Pandas performs a vectorized operation across the entire \"salary\" series.\n*   **Space Complexity:** $O(N)$ to store the additional \"bonus\" column in memory.\n\n**2. Correctness**\nThe solution is correct and idiomatic for Pandas.\n*   **Edge Cases:** \n    *   **Empty DataFrame:** Handles correctly (returns an empty column).\n    *   **Null Salaries:** If `salary` contains `NaN`, the `bonus` will also be `NaN`, which is standard behavior.\n    *   **Data Types:** If `salary` contains non-numeric types (e.g., strings), the multiplication will either replicate the string or raise a `TypeError`.\n\n**3. Optimization**\nThe current solution is already optimal due to **Vectorization**. For memory efficiency in very large datasets, you could use `employees['salary'].mul(2)` to ensure the operation stays within optimized C-level routines, though the syntax used is functionally identical. If memory is a concern, ensure the `salary` column is a smaller numeric subtype (e.g., `int32` instead of `int64`).\n\n**4. Key Algorithmic Pattern**\n**Vectorization (Broadcasting):** Instead of looping through rows manually, Pandas applies the scalar operation (`* 2`) across the entire Series simultaneously using low-level optimizations.",
-      "linkedSolutions": [
-        "lc-create-a-new-column"
-      ]
+      "aiReview": "### Review of \"Create a New Column\" Solution\n\n**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows. Pandas performs a vectorized operation across the entire \"salary\" series.\n*   **Space Complexity:** $O(N)$ to store the additional \"bonus\" column in memory.\n\n**2. Correctness**\nThe solution is correct and idiomatic for Pandas.\n*   **Edge Cases:** \n    *   **Empty DataFrame:** Handles correctly (returns an empty column).\n    *   **Null Salaries:** If `salary` contains `NaN`, the `bonus` will also be `NaN`, which is standard behavior.\n    *   **Data Types:** If `salary` contains non-numeric types (e.g., strings), the multiplication will either replicate the string or raise a `TypeError`.\n\n**3. Optimization**\nThe current solution is already optimal due to **Vectorization**. For memory efficiency in very large datasets, you could use `employees['salary'].mul(2)` to ensure the operation stays within optimized C-level routines, though the syntax used is functionally identical. If memory is a concern, ensure the `salary` column is a smaller numeric subtype (e.g., `int32` instead of `int64`).\n\n**4. Key Algorithmic Pattern**\n**Vectorization (Broadcasting):** Instead of looping through rows manually, Pandas applies the scalar operation (`* 2`) across the entire Series simultaneously using low-level optimizations."
     },
     {
       "id": "lc-create-hello-world-function",
@@ -3647,9 +3626,6 @@
       "_committedPaths": [
         "problems/lc-display-the-first-three-rows/lc-display-the-first-three-rows.txt",
         "problems/lc-display-the-first-three-rows/README.md"
-      ],
-      "linkedSolutions": [
-        "lc-display-the-first-three-rows::1431823293"
       ]
     },
     {
@@ -3698,10 +3674,7 @@
         "problems/lc-display-the-first-three-rows/lc-display-the-first-three-rows.py",
         "problems/lc-display-the-first-three-rows/README.md"
       ],
-      "aiReview": "### Review of \"Display the First Three Rows\"\n\n**1. Complexity**\n*   **Time Complexity:** $O(1)$ relative to the total number of rows $N$. Since the number of rows to retrieve is fixed at $k=3$, the operation takes constant time regardless of the size of the input DataFrame.\n*   **Space Complexity:** $O(1)$ auxiliary space. The returned object is a small view/copy of fixed size (3 rows).\n\n**2. Correctness**\nThe solution is correct and robust.\n*   **Edge Case (< 3 rows):** If the DataFrame contains 0, 1, or 2 rows, `head(3)` will return all available rows without throwing an error, which matches LeetCode's expected behavior.\n*   **Edge Case (Empty DF):** Returns an empty DataFrame with the same schema.\n\n**3. Optimization**\nThe solution is already optimal for readability and performance. An alternative is `employees.iloc[:3]`, which is functionally identical but `head()` is more idiomatic for this specific task.\n\n**4. Key Algorithmic Pattern**\n**Built-in API Utilization:** Leveraging high-level library functions (Pandas) for efficient data slicing and selection.",
-      "linkedSolutions": [
-        "lc-display-the-first-three-rows"
-      ]
+      "aiReview": "### Review of \"Display the First Three Rows\"\n\n**1. Complexity**\n*   **Time Complexity:** $O(1)$ relative to the total number of rows $N$. Since the number of rows to retrieve is fixed at $k=3$, the operation takes constant time regardless of the size of the input DataFrame.\n*   **Space Complexity:** $O(1)$ auxiliary space. The returned object is a small view/copy of fixed size (3 rows).\n\n**2. Correctness**\nThe solution is correct and robust.\n*   **Edge Case (< 3 rows):** If the DataFrame contains 0, 1, or 2 rows, `head(3)` will return all available rows without throwing an error, which matches LeetCode's expected behavior.\n*   **Edge Case (Empty DF):** Returns an empty DataFrame with the same schema.\n\n**3. Optimization**\nThe solution is already optimal for readability and performance. An alternative is `employees.iloc[:3]`, which is functionally identical but `head()` is more idiomatic for this specific task.\n\n**4. Key Algorithmic Pattern**\n**Built-in API Utilization:** Leveraging high-level library functions (Pandas) for efficient data slicing and selection."
     },
     {
       "id": "lc-distinct-subsequences",
@@ -3797,10 +3770,7 @@
         "problems/lc-drop-duplicate-rows/lc-drop-duplicate-rows.py",
         "problems/lc-drop-duplicate-rows/README.md"
       ],
-      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows. Pandas uses a hash table to identify duplicates in a single pass.\n*   **Space Complexity:** $O(N)$ in the worst case to store the hash set of unique values and the resulting DataFrame.\n\n**2. Correctness**\nThe solution is correct. `drop_duplicates` effectively handles:\n*   **Multiple duplicates:** Keeps the first occurrence by default.\n*   **Null values:** Treats `None`/`NaN` as a value and deduplicates them correctly.\n*   **Empty DataFrames:** Returns an empty DataFrame without error.\n\n**3. Optimization**\nTo improve memory efficiency, use the `inplace=True` parameter to modify the existing DataFrame rather than creating a full copy:\n```python\ncustomers.drop_duplicates(subset=\"email\", inplace=True)\nreturn customers\n```\nNote: In many competitive programming environments, creating a new object is preferred to avoid side effects, but `inplace` saves memory on large datasets.\n\n**4. Key Algorithmic Pattern**\n**Hashing:** The underlying implementation utilizes a hash set to track seen values in the specified subset column for $O(1)$ average-time lookups.",
-      "linkedSolutions": [
-        "lc-drop-duplicate-rows::1432734217"
-      ]
+      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows. Pandas uses a hash table to identify duplicates in a single pass.\n*   **Space Complexity:** $O(N)$ in the worst case to store the hash set of unique values and the resulting DataFrame.\n\n**2. Correctness**\nThe solution is correct. `drop_duplicates` effectively handles:\n*   **Multiple duplicates:** Keeps the first occurrence by default.\n*   **Null values:** Treats `None`/`NaN` as a value and deduplicates them correctly.\n*   **Empty DataFrames:** Returns an empty DataFrame without error.\n\n**3. Optimization**\nTo improve memory efficiency, use the `inplace=True` parameter to modify the existing DataFrame rather than creating a full copy:\n```python\ncustomers.drop_duplicates(subset=\"email\", inplace=True)\nreturn customers\n```\nNote: In many competitive programming environments, creating a new object is preferred to avoid side effects, but `inplace` saves memory on large datasets.\n\n**4. Key Algorithmic Pattern**\n**Hashing:** The underlying implementation utilizes a hash set to track seen values in the specified subset column for $O(1)$ average-time lookups."
     },
     {
       "id": "lc-drop-duplicate-rows::1432734217",
@@ -3847,10 +3817,7 @@
         "problems/lc-drop-duplicate-rows/lc-drop-duplicate-rows.py",
         "problems/lc-drop-duplicate-rows/README.md"
       ],
-      "aiReview": "### Review\n\n**1. Time and Space Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows. Pandas uses a hash table internally to identify duplicates in a single pass.\n*   **Space Complexity:** $O(N)$ in the worst case. By default, `drop_duplicates` creates a new DataFrame copy. The internal hash set also scales with the number of unique entries.\n\n**2. Correctness**\nThe solution is correct for standard inputs.\n*   **Edge Cases:**\n    *   **Empty DataFrame:** Correctly returns an empty result.\n    *   **Nulls:** Pandas treats `NaN` as a value; it will keep the first null email and drop subsequent ones.\n    *   **Case Sensitivity:** It treats `User@a.com` and `user@a.com` as different. If the problem implies case-insensitivity, a `.str.lower()` preprocessing step would be needed.\n    *   **Keep Logic:** It defaults to keeping the *first* occurrence.\n\n**3. Optimization**\nTo improve memory efficiency, use the `inplace=True` parameter to modify the existing DataFrame rather than creating a copy:\n`customers.drop_duplicates(subset=\"email\", inplace=True)`\n`return customers`\n\n**4. Key Algorithmic Pattern**\n**Hashing:** The underlying implementation relies on a hash table to track previously encountered values in the specified subset.",
-      "linkedSolutions": [
-        "lc-drop-duplicate-rows"
-      ]
+      "aiReview": "### Review\n\n**1. Time and Space Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows. Pandas uses a hash table internally to identify duplicates in a single pass.\n*   **Space Complexity:** $O(N)$ in the worst case. By default, `drop_duplicates` creates a new DataFrame copy. The internal hash set also scales with the number of unique entries.\n\n**2. Correctness**\nThe solution is correct for standard inputs.\n*   **Edge Cases:**\n    *   **Empty DataFrame:** Correctly returns an empty result.\n    *   **Nulls:** Pandas treats `NaN` as a value; it will keep the first null email and drop subsequent ones.\n    *   **Case Sensitivity:** It treats `User@a.com` and `user@a.com` as different. If the problem implies case-insensitivity, a `.str.lower()` preprocessing step would be needed.\n    *   **Keep Logic:** It defaults to keeping the *first* occurrence.\n\n**3. Optimization**\nTo improve memory efficiency, use the `inplace=True` parameter to modify the existing DataFrame rather than creating a copy:\n`customers.drop_duplicates(subset=\"email\", inplace=True)`\n`return customers`\n\n**4. Key Algorithmic Pattern**\n**Hashing:** The underlying implementation relies on a hash table to track previously encountered values in the specified subset."
     },
     {
       "id": "lc-drop-missing-data",
@@ -3894,10 +3861,7 @@
         "problems/lc-drop-missing-data/lc-drop-missing-data.py",
         "problems/lc-drop-missing-data/README.md"
       ],
-      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(N \\times M)$, where $N$ is the number of rows and $M$ is the number of columns. Pandas must scan the 'name' column ($O(N)$) and then copy the valid rows into a new DataFrame.\n*   **Space Complexity:** $O(N \\times M)$ in the worst case, as `dropna()` creates and returns a copy of the DataFrame.\n\n### 2. Correctness\nThe solution is correct. It effectively removes rows where the 'name' column contains `NaN` or `None`.\n*   **Edge Cases:** \n    *   **Empty DataFrame:** Returns an empty DataFrame correctly.\n    *   **No missing values:** Returns a copy of the original DataFrame.\n    *   **All missing values:** Returns an empty DataFrame with the original schema.\n\n### 3. Optimization\nTo reduce memory overhead on extremely large datasets, use the `inplace=True` parameter to modify the original DataFrame instead of creating a copy:\n```python\nstudents.dropna(subset=['name'], inplace=True)\nreturn students\n```\n*Note: In the context of LeetCode, the memory limit is usually generous enough for the default copy.*\n\n### 4. Key Algorithmic Pattern\n**Vectorized Data Filtering:** Utilizing internal C-optimized routines in Pandas to perform element-wise checks and row exclusion without explicit Python loops.",
-      "linkedSolutions": [
-        "lc-drop-missing-data::1433132289"
-      ]
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(N \\times M)$, where $N$ is the number of rows and $M$ is the number of columns. Pandas must scan the 'name' column ($O(N)$) and then copy the valid rows into a new DataFrame.\n*   **Space Complexity:** $O(N \\times M)$ in the worst case, as `dropna()` creates and returns a copy of the DataFrame.\n\n### 2. Correctness\nThe solution is correct. It effectively removes rows where the 'name' column contains `NaN` or `None`.\n*   **Edge Cases:** \n    *   **Empty DataFrame:** Returns an empty DataFrame correctly.\n    *   **No missing values:** Returns a copy of the original DataFrame.\n    *   **All missing values:** Returns an empty DataFrame with the original schema.\n\n### 3. Optimization\nTo reduce memory overhead on extremely large datasets, use the `inplace=True` parameter to modify the original DataFrame instead of creating a copy:\n```python\nstudents.dropna(subset=['name'], inplace=True)\nreturn students\n```\n*Note: In the context of LeetCode, the memory limit is usually generous enough for the default copy.*\n\n### 4. Key Algorithmic Pattern\n**Vectorized Data Filtering:** Utilizing internal C-optimized routines in Pandas to perform element-wise checks and row exclusion without explicit Python loops."
     },
     {
       "id": "lc-drop-missing-data::1433132289",
@@ -3945,10 +3909,7 @@
         "problems/lc-drop-missing-data/lc-drop-missing-data.py",
         "problems/lc-drop-missing-data/README.md"
       ],
-      "aiReview": "### Review\n**1. Complexity**\n*   **Time:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must iterate through the 'name' column once to identify null values.\n*   **Space:** $O(N \\times M)$, where $M$ is the number of columns. By default, `dropna` creates a new copy of the DataFrame containing the filtered results.\n\n**2. Correctness**\nThe solution is correct for the problem's scope.\n*   **Edge Case:** It only removes rows where 'name' is `None` or `NaN`. It will **not** remove rows where 'name' is an empty string (`\"\"`) or whitespace, as Pandas does not treat these as null by default.\n\n**3. Optimization**\nIf memory usage is a concern and the original DataFrame is no longer needed, use `inplace=True`:\n```python\nstudents.dropna(subset=['name'], inplace=True)\nreturn students\n```\nThis modifies the DataFrame in place rather than allocating memory for a full copy.\n\n**4. Key Algorithmic Pattern**\n**Data Filtering/Wrangling:** Using built-in library functions to perform vectorized row elimination based on schema constraints.",
-      "linkedSolutions": [
-        "lc-drop-missing-data"
-      ]
+      "aiReview": "### Review\n**1. Complexity**\n*   **Time:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must iterate through the 'name' column once to identify null values.\n*   **Space:** $O(N \\times M)$, where $M$ is the number of columns. By default, `dropna` creates a new copy of the DataFrame containing the filtered results.\n\n**2. Correctness**\nThe solution is correct for the problem's scope.\n*   **Edge Case:** It only removes rows where 'name' is `None` or `NaN`. It will **not** remove rows where 'name' is an empty string (`\"\"`) or whitespace, as Pandas does not treat these as null by default.\n\n**3. Optimization**\nIf memory usage is a concern and the original DataFrame is no longer needed, use `inplace=True`:\n```python\nstudents.dropna(subset=['name'], inplace=True)\nreturn students\n```\nThis modifies the DataFrame in place rather than allocating memory for a full copy.\n\n**4. Key Algorithmic Pattern**\n**Data Filtering/Wrangling:** Using built-in library functions to perform vectorized row elimination based on schema constraints."
     },
     {
       "id": "lc-dungeon-game",
@@ -4277,10 +4238,7 @@
         "problems/lc-fill-missing-data/lc-fill-missing-data.py",
         "problems/lc-fill-missing-data/README.md"
       ],
-      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must traverse the specified column once to identify and replace null values.\n*   **Space Complexity:** $O(1)$ auxiliary space. While the DataFrame itself occupies $O(N \\times M)$ space, `inplace=True` modifies the existing object without creating a full structural copy.\n\n**2. Correctness**\n*   The solution is correct for the problem constraints.\n*   **Edge Cases:** If the `quantity` column is missing from the input, it will raise a `KeyError`. If the column contains non-numeric data types that are incompatible with integer `0`, Pandas will generally cast the column to `object` type, which is functional but inefficient.\n\n**3. Optimization**\nModern Pandas (2.0+) is moving away from the `inplace` parameter. To future-proof the code and support **Copy-on-Write** optimizations, use assignment:\n```python\nproducts['quantity'] = products['quantity'].fillna(0)\n```\nAlternatively, for multiple columns, use:\n```python\nproducts.fillna({'quantity': 0}, inplace=True)\n```\n\n**4. Key Algorithmic Pattern**\nData Imputation (Handling missing values).",
-      "linkedSolutions": [
-        "lc-fill-missing-data::1433144665"
-      ]
+      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must traverse the specified column once to identify and replace null values.\n*   **Space Complexity:** $O(1)$ auxiliary space. While the DataFrame itself occupies $O(N \\times M)$ space, `inplace=True` modifies the existing object without creating a full structural copy.\n\n**2. Correctness**\n*   The solution is correct for the problem constraints.\n*   **Edge Cases:** If the `quantity` column is missing from the input, it will raise a `KeyError`. If the column contains non-numeric data types that are incompatible with integer `0`, Pandas will generally cast the column to `object` type, which is functional but inefficient.\n\n**3. Optimization**\nModern Pandas (2.0+) is moving away from the `inplace` parameter. To future-proof the code and support **Copy-on-Write** optimizations, use assignment:\n```python\nproducts['quantity'] = products['quantity'].fillna(0)\n```\nAlternatively, for multiple columns, use:\n```python\nproducts.fillna({'quantity': 0}, inplace=True)\n```\n\n**4. Key Algorithmic Pattern**\nData Imputation (Handling missing values)."
     },
     {
       "id": "lc-fill-missing-data::1433144665",
@@ -4327,10 +4285,7 @@
         "problems/lc-fill-missing-data/lc-fill-missing-data.py",
         "problems/lc-fill-missing-data/README.md"
       ],
-      "aiReview": "**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must iterate through the specific column once to identify and replace null values.\n*   **Space Complexity:** $O(1)$ auxiliary space. Because `inplace=True` is used, the operation modifies the existing memory block of the column rather than creating a full copy.\n\n**2. Correctness & Edge Cases**\n*   **Correctness:** The solution is functionally correct for the problem requirements.\n*   **Edge Cases:**\n    *   **Empty DataFrame:** Handles correctly (no-op).\n    *   **Data Types:** If `quantity` contains floats, `0` will be stored as `0.0`. If the column is an object type, the operation still succeeds.\n    *   **Missing Column:** Will raise a `KeyError` if the \"quantity\" column does not exist (though usually guaranteed in LeetCode).\n\n**3. Concrete Optimization**\nAvoid using `inplace=True`. Modern Pandas is deprecating the `inplace` parameter across most methods because it often doesn't actually improve performance and can cause \"SettingWithCopy\" warnings. Use direct assignment:\n`products['quantity'] = products['quantity'].fillna(0)`\n\n**4. Key Algorithmic Pattern**\n**Data Imputation** (Value substitution for missing data).",
-      "linkedSolutions": [
-        "lc-fill-missing-data"
-      ]
+      "aiReview": "**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must iterate through the specific column once to identify and replace null values.\n*   **Space Complexity:** $O(1)$ auxiliary space. Because `inplace=True` is used, the operation modifies the existing memory block of the column rather than creating a full copy.\n\n**2. Correctness & Edge Cases**\n*   **Correctness:** The solution is functionally correct for the problem requirements.\n*   **Edge Cases:**\n    *   **Empty DataFrame:** Handles correctly (no-op).\n    *   **Data Types:** If `quantity` contains floats, `0` will be stored as `0.0`. If the column is an object type, the operation still succeeds.\n    *   **Missing Column:** Will raise a `KeyError` if the \"quantity\" column does not exist (though usually guaranteed in LeetCode).\n\n**3. Concrete Optimization**\nAvoid using `inplace=True`. Modern Pandas is deprecating the `inplace` parameter across most methods because it often doesn't actually improve performance and can cause \"SettingWithCopy\" warnings. Use direct assignment:\n`products['quantity'] = products['quantity'].fillna(0)`\n\n**4. Key Algorithmic Pattern**\n**Data Imputation** (Value substitution for missing data)."
     },
     {
       "id": "lc-filling-bookcase-shelves",
@@ -4500,9 +4455,6 @@
       "_committedPaths": [
         "problems/lc-find-closest-number-to-zero/lc-find-closest-number-to-zero.py",
         "problems/lc-find-closest-number-to-zero/README.md"
-      ],
-      "linkedSolutions": [
-        "lc-find-closest-number-to-zero::1365719223"
       ]
     },
     {
@@ -4557,10 +4509,7 @@
         "problems/lc-find-closest-number-to-zero/lc-find-closest-number-to-zero.java",
         "problems/lc-find-closest-number-to-zero/README.md"
       ],
-      "aiReview": "### 1. Complexity\n*   **Time Complexity**: $O(N \\log N)$ due to sorting the two lists.\n*   **Space Complexity**: $O(N)$ to store elements in `negative_list` and `positive_list`.\n\n### 2. Correctness\nThe code is **correct** based on standard LeetCode requirements. It correctly handles the tie-break rule (if distances are equal, return the larger number) because the `else` branch returns `closestPositive` when `Math.abs(closestNegative) == closestPositive`.\n\n### 3. Optimization\n**Single-Pass Linear Scan**: You can achieve **$O(N)$ time** and **$O(1)$ space** by eliminating the lists and sorting. Iterate through the array once while maintaining a single variable for the closest number found so far.\n\n```java\nint closest = nums[0];\nfor (int n : nums) {\n    if (Math.abs(n) < Math.abs(closest) || (Math.abs(n) == Math.abs(closest) && n > closest)) {\n        closest = n;\n    }\n}\nreturn closest;\n```\n\n### 4. Key Algorithmic Pattern\n**Linear Search / Greedy Update**: Tracking the optimal element based on a specific criteria (absolute difference) while traversing the data once.",
-      "linkedSolutions": [
-        "lc-find-closest-number-to-zero"
-      ]
+      "aiReview": "### 1. Complexity\n*   **Time Complexity**: $O(N \\log N)$ due to sorting the two lists.\n*   **Space Complexity**: $O(N)$ to store elements in `negative_list` and `positive_list`.\n\n### 2. Correctness\nThe code is **correct** based on standard LeetCode requirements. It correctly handles the tie-break rule (if distances are equal, return the larger number) because the `else` branch returns `closestPositive` when `Math.abs(closestNegative) == closestPositive`.\n\n### 3. Optimization\n**Single-Pass Linear Scan**: You can achieve **$O(N)$ time** and **$O(1)$ space** by eliminating the lists and sorting. Iterate through the array once while maintaining a single variable for the closest number found so far.\n\n```java\nint closest = nums[0];\nfor (int n : nums) {\n    if (Math.abs(n) < Math.abs(closest) || (Math.abs(n) == Math.abs(closest) && n > closest)) {\n        closest = n;\n    }\n}\nreturn closest;\n```\n\n### 4. Key Algorithmic Pattern\n**Linear Search / Greedy Update**: Tracking the optimal element based on a specific criteria (absolute difference) while traversing the data once."
     },
     {
       "id": "lc-find-closest-person",
@@ -4604,11 +4553,7 @@
         "problems/lc-find-closest-person/lc-find-closest-person.py",
         "problems/lc-find-closest-person/README.md"
       ],
-      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(1)$ — Basic arithmetic and comparisons take constant time.\n*   **Space Complexity:** $O(1)$ — Only a few integer variables are used.\n\n**2. Correctness**\nThe solution is **correct**. It properly handles:\n*   **Equidistance:** Returns `0` when $|z-x| = |z-y|$.\n*   **Negative Coordinates:** `abs()` correctly calculates distance regardless of sign.\n*   **Large Integers:** Python 3 handles arbitrary-precision integers, preventing the overflow issues common in languages like C++ or Java.\n\n**3. Optimization**\nWhile the code is already optimal in terms of complexity, you can simplify the logic by removing the intermediate variables `a` and `b` to reduce memory overhead slightly (though negligible):\n\n```python\nreturn 1 if abs(z - x) < abs(z - y) else 2 if abs(z - x) > abs(z - y) else 0\n```\nHowever, the current version is more readable.\n\n**4. Key Algorithmic Pattern**\n*   **Absolute Difference / Manhattan Distance (1D):** The problem relies on calculating the magnitude of the displacement between points on a number line.",
-      "linkedSolutions": [
-        "lc-find-closest-person::1651389613",
-        "lc-find-closest-person::1651390442"
-      ]
+      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(1)$ — Basic arithmetic and comparisons take constant time.\n*   **Space Complexity:** $O(1)$ — Only a few integer variables are used.\n\n**2. Correctness**\nThe solution is **correct**. It properly handles:\n*   **Equidistance:** Returns `0` when $|z-x| = |z-y|$.\n*   **Negative Coordinates:** `abs()` correctly calculates distance regardless of sign.\n*   **Large Integers:** Python 3 handles arbitrary-precision integers, preventing the overflow issues common in languages like C++ or Java.\n\n**3. Optimization**\nWhile the code is already optimal in terms of complexity, you can simplify the logic by removing the intermediate variables `a` and `b` to reduce memory overhead slightly (though negligible):\n\n```python\nreturn 1 if abs(z - x) < abs(z - y) else 2 if abs(z - x) > abs(z - y) else 0\n```\nHowever, the current version is more readable.\n\n**4. Key Algorithmic Pattern**\n*   **Absolute Difference / Manhattan Distance (1D):** The problem relies on calculating the magnitude of the displacement between points on a number line."
     },
     {
       "id": "lc-find-closest-person::1651389613",
@@ -4665,11 +4610,7 @@
         "problems/lc-find-closest-person/lc-find-closest-person-alt-approach-python3-imported.py",
         "problems/lc-find-closest-person/README.md"
       ],
-      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(1)$ — Performs a constant number of arithmetic and comparison operations.\n*   **Space Complexity:** $O(1)$ — Uses a fixed amount of extra space regardless of input size.\n\n### 2. Correctness\nThe logic is correct for 1D distance comparison:\n*   Returns `1` if $x$ is closer.\n*   Returns `2` if $y$ is closer.\n*   Returns `0` for ties ($x$ and $y$ are equidistant or identical).\n*   **Edge Cases:** Correctly handles negative coordinates and cases where $x, y,$ or $z$ are the same value due to the use of `abs()`.\n\n### 3. Concrete Optimisation\nWhile the current code is efficient, you can improve readability and reduce variable overhead using a single conditional expression:\n```python\na, b = abs(z - x), abs(z - y)\nreturn 1 if a < b else (2 if b < a else 0)\n```\nAlternatively, if this were part of a larger system comparing many points, you would use a list and the `min()` function with a `key` lambda.\n\n### 4. Key Algorithmic Pattern\n**Distance Comparison:** Calculating the absolute difference to find the proximity of points on a 1D number line.",
-      "linkedSolutions": [
-        "lc-find-closest-person",
-        "lc-find-closest-person::1651390442"
-      ]
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(1)$ — Performs a constant number of arithmetic and comparison operations.\n*   **Space Complexity:** $O(1)$ — Uses a fixed amount of extra space regardless of input size.\n\n### 2. Correctness\nThe logic is correct for 1D distance comparison:\n*   Returns `1` if $x$ is closer.\n*   Returns `2` if $y$ is closer.\n*   Returns `0` for ties ($x$ and $y$ are equidistant or identical).\n*   **Edge Cases:** Correctly handles negative coordinates and cases where $x, y,$ or $z$ are the same value due to the use of `abs()`.\n\n### 3. Concrete Optimisation\nWhile the current code is efficient, you can improve readability and reduce variable overhead using a single conditional expression:\n```python\na, b = abs(z - x), abs(z - y)\nreturn 1 if a < b else (2 if b < a else 0)\n```\nAlternatively, if this were part of a larger system comparing many points, you would use a list and the `min()` function with a `key` lambda.\n\n### 4. Key Algorithmic Pattern\n**Distance Comparison:** Calculating the absolute difference to find the proximity of points on a 1D number line."
     },
     {
       "id": "lc-find-closest-person::1651390442",
@@ -4717,11 +4658,7 @@
         "problems/lc-find-closest-person/lc-find-closest-person.py",
         "problems/lc-find-closest-person/README.md"
       ],
-      "aiReview": "**1. Complexity**\n*   **Time Complexity:** $O(1)$ — Performs a constant number of arithmetic operations and comparisons.\n*   **Space Complexity:** $O(1)$ — Uses a fixed amount of extra space regardless of input size.\n\n**2. Correctness**\nThe logic is **correct**. It accurately calculates the absolute 1D distance (Manhattan distance) and returns the specified mapping:\n*   $x$ is closer: returns 1\n*   $y$ is closer: returns 2\n*   Tie: returns 0\n*   **Edge Cases:** Handles $x = y$ and $z$ being exactly equidistant between $x$ and $y$ correctly by returning 0.\n\n**3. Concrete Optimization**\nWhile the current code is efficient, you can slightly reduce the overhead of creating variables and improve readability using a sign-based approach if this logic were used in a tight loop:\n```python\n# Returns 1 if a < b, 2 if b < a, 0 if equal\nreturn (a > b) + (a >= b) if a != b else 0\n```\nHowever, the most practical \"optimization\" for Pythonic code is using the **`cmp` logic** style if the return values were -1, 0, 1. For your specific mapping (1, 2, 0), the current ternary is already optimal.\n\n**4. Key Algorithmic Pattern**\n**Absolute Difference / Manhattan Distance (1D):** Calculating the distance between points on a line to determine proximity.",
-      "linkedSolutions": [
-        "lc-find-closest-person",
-        "lc-find-closest-person::1651389613"
-      ]
+      "aiReview": "**1. Complexity**\n*   **Time Complexity:** $O(1)$ — Performs a constant number of arithmetic operations and comparisons.\n*   **Space Complexity:** $O(1)$ — Uses a fixed amount of extra space regardless of input size.\n\n**2. Correctness**\nThe logic is **correct**. It accurately calculates the absolute 1D distance (Manhattan distance) and returns the specified mapping:\n*   $x$ is closer: returns 1\n*   $y$ is closer: returns 2\n*   Tie: returns 0\n*   **Edge Cases:** Handles $x = y$ and $z$ being exactly equidistant between $x$ and $y$ correctly by returning 0.\n\n**3. Concrete Optimization**\nWhile the current code is efficient, you can slightly reduce the overhead of creating variables and improve readability using a sign-based approach if this logic were used in a tight loop:\n```python\n# Returns 1 if a < b, 2 if b < a, 0 if equal\nreturn (a > b) + (a >= b) if a != b else 0\n```\nHowever, the most practical \"optimization\" for Pythonic code is using the **`cmp` logic** style if the return values were -1, 0, 1. For your specific mapping (1, 2, 0), the current ternary is already optimal.\n\n**4. Key Algorithmic Pattern**\n**Absolute Difference / Manhattan Distance (1D):** Calculating the distance between points on a line to determine proximity."
     },
     {
       "id": "lc-find-customer-referee",
@@ -5236,9 +5173,6 @@
       "_committedPaths": [
         "problems/lc-find-the-key-of-the-numbers/lc-find-the-key-of-the-numbers.py",
         "problems/lc-find-the-key-of-the-numbers/README.md"
-      ],
-      "linkedSolutions": [
-        "lc-find-the-key-of-the-numbers::1429658026"
       ]
     },
     {
@@ -5292,10 +5226,7 @@
         "problems/lc-find-the-key-of-the-numbers/lc-find-the-key-of-the-numbers.py",
         "problems/lc-find-the-key-of-the-numbers/README.md"
       ],
-      "aiReview": "### Analysis\n\n1.  **Complexity**:\n    *   **Time**: $O(1)$. The input numbers are at most 4 digits, leading to a constant number of operations regardless of the input magnitude.\n    *   **Space**: $O(1)$. It stores fixed-length strings (4 characters) and a small list of three elements.\n\n2.  **Correctness**:\n    *   The solution is **correct**. It accurately implements the problem's rules: padding to four digits using `zfill(4)`, selecting the minimum digit per column, and converting the result back to an integer to remove leading zeros. No edge cases (like `0, 0, 0`) fail.\n\n3.  **Optimization**:\n    *   Avoid string conversions and repeated list creation inside the loop. Use **modular arithmetic** to extract digits. This is faster and uses less memory:\n    ```python\n    res, power = 0, 1\n    for _ in range(4):\n        res += min(num1 % 10, num2 % 10, num3 % 10) * power\n        num1 //= 10; num2 //= 10; num3 //= 10\n        power *= 10\n    return res\n    ```\n\n4.  **Key Algorithmic Pattern**:\n    *   **Digit-by-digit processing** (Column-wise comparison).",
-      "linkedSolutions": [
-        "lc-find-the-key-of-the-numbers::1429656572"
-      ]
+      "aiReview": "### Analysis\n\n1.  **Complexity**:\n    *   **Time**: $O(1)$. The input numbers are at most 4 digits, leading to a constant number of operations regardless of the input magnitude.\n    *   **Space**: $O(1)$. It stores fixed-length strings (4 characters) and a small list of three elements.\n\n2.  **Correctness**:\n    *   The solution is **correct**. It accurately implements the problem's rules: padding to four digits using `zfill(4)`, selecting the minimum digit per column, and converting the result back to an integer to remove leading zeros. No edge cases (like `0, 0, 0`) fail.\n\n3.  **Optimization**:\n    *   Avoid string conversions and repeated list creation inside the loop. Use **modular arithmetic** to extract digits. This is faster and uses less memory:\n    ```python\n    res, power = 0, 1\n    for _ in range(4):\n        res += min(num1 % 10, num2 % 10, num3 % 10) * power\n        num1 //= 10; num2 //= 10; num3 //= 10\n        power *= 10\n    return res\n    ```\n\n4.  **Key Algorithmic Pattern**:\n    *   **Digit-by-digit processing** (Column-wise comparison)."
     },
     {
       "id": "lc-find-the-most-common-response::1777708235",
@@ -5466,9 +5397,6 @@
       "_committedPaths": [
         "problems/lc-find-the-student-that-will-replace-the-chalk/lc-find-the-student-that-will-replace-the-chalk.java",
         "problems/lc-find-the-student-that-will-replace-the-chalk/README.md"
-      ],
-      "linkedSolutions": [
-        "lc-find-the-student-that-will-replace-the-chalk::1395835773"
       ]
     },
     {
@@ -5526,10 +5454,7 @@
         "problems/lc-find-the-student-that-will-replace-the-chalk/lc-find-the-student-that-will-replace-the-chalk.py",
         "problems/lc-find-the-student-that-will-replace-the-chalk/README.md"
       ],
-      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(N)$, where $N$ is the number of students. The `sum()` function takes $O(N)$ and the single pass loop takes $O(N)$.\n*   **Space Complexity:** $O(1)$, as no additional data structures are created (excluding the input list).\n\n### 2. Correctness\nThe solution is **correct**. \n*   It effectively handles large $k$ values using the modulo operator. \n*   It correctly identifies the index where the remaining chalk $k$ is strictly less than the required amount.\n*   **Edge Cases:** Handles single-student arrays and cases where $k$ is an exact multiple of the sum correctly.\n\n### 3. Optimization\n**Binary Search:** While the current $O(N)$ approach is efficient, you can optimize the search phase to $O(\\log N)$ by using **prefix sums** combined with `bisect_right`. \n*   *Note:* This requires $O(N)$ space to store the prefix sums. It is most beneficial if the search is performed multiple times on the same chalk distribution.\n\n### 4. Key Algorithmic Pattern\n**Simulation with Modulo Reduction:** Instead of simulating every round (which would be $O(k/ \\sum chalk)$), the problem uses the modulo operator to skip complete cycles and focus only on the final, incomplete round.",
-      "linkedSolutions": [
-        "lc-find-the-student-that-will-replace-the-chalk"
-      ]
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(N)$, where $N$ is the number of students. The `sum()` function takes $O(N)$ and the single pass loop takes $O(N)$.\n*   **Space Complexity:** $O(1)$, as no additional data structures are created (excluding the input list).\n\n### 2. Correctness\nThe solution is **correct**. \n*   It effectively handles large $k$ values using the modulo operator. \n*   It correctly identifies the index where the remaining chalk $k$ is strictly less than the required amount.\n*   **Edge Cases:** Handles single-student arrays and cases where $k$ is an exact multiple of the sum correctly.\n\n### 3. Optimization\n**Binary Search:** While the current $O(N)$ approach is efficient, you can optimize the search phase to $O(\\log N)$ by using **prefix sums** combined with `bisect_right`. \n*   *Note:* This requires $O(N)$ space to store the prefix sums. It is most beneficial if the search is performed multiple times on the same chalk distribution.\n\n### 4. Key Algorithmic Pattern\n**Simulation with Modulo Reduction:** Instead of simulating every round (which would be $O(k/ \\sum chalk)$), the problem uses the modulo operator to skip complete cycles and focus only on the final, incomplete round."
     },
     {
       "id": "lc-find-the-xor-of-numbers-which-appear-twice",
@@ -5887,10 +5812,7 @@
         "problems/lc-get-the-size-of-a-dataframe/lc-get-the-size-of-a-dataframe.py",
         "problems/lc-get-the-size-of-a-dataframe/README.md"
       ],
-      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(1)$. Accessing the `.shape` attribute is a constant time operation because Pandas stores these dimensions as metadata.\n*   **Space Complexity:** $O(1)$. It only returns a fixed-size list of two integers regardless of the DataFrame size.\n\n**2. Correctness**\nThe solution is **correct** and handles all edge cases:\n*   **Empty DataFrame:** Correctly returns `[0, n]` or `[0, 0]`.\n*   **Single Row/Column:** Correctly returns the respective dimensions.\n*   **Large DataFrames:** Efficient as it doesn't iterate through data.\n\n**3. Optimisation**\nThe current solution is already optimal for readability and performance. Technically, `[players.shape[0], players.shape[1]]` avoids a tuple-to-list conversion cast, but `list(players.shape)` is idiomatic and the performance difference is negligible.\n\n**4. Key Algorithmic Pattern**\n**Metadata Access:** Instead of counting elements manually ($O(N \\times M)$), the solution retrieves pre-computed object properties (attributes).",
-      "linkedSolutions": [
-        "lc-get-the-size-of-a-dataframe::1431822442"
-      ]
+      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(1)$. Accessing the `.shape` attribute is a constant time operation because Pandas stores these dimensions as metadata.\n*   **Space Complexity:** $O(1)$. It only returns a fixed-size list of two integers regardless of the DataFrame size.\n\n**2. Correctness**\nThe solution is **correct** and handles all edge cases:\n*   **Empty DataFrame:** Correctly returns `[0, n]` or `[0, 0]`.\n*   **Single Row/Column:** Correctly returns the respective dimensions.\n*   **Large DataFrames:** Efficient as it doesn't iterate through data.\n\n**3. Optimisation**\nThe current solution is already optimal for readability and performance. Technically, `[players.shape[0], players.shape[1]]` avoids a tuple-to-list conversion cast, but `list(players.shape)` is idiomatic and the performance difference is negligible.\n\n**4. Key Algorithmic Pattern**\n**Metadata Access:** Instead of counting elements manually ($O(N \\times M)$), the solution retrieves pre-computed object properties (attributes)."
     },
     {
       "id": "lc-get-the-size-of-a-dataframe::1431822442",
@@ -5938,10 +5860,7 @@
         "problems/lc-get-the-size-of-a-dataframe/lc-get-the-size-of-a-dataframe.py",
         "problems/lc-get-the-size-of-a-dataframe/README.md"
       ],
-      "aiReview": "### Code Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(1)$. Accessing the `.shape` attribute is a constant-time operation in Pandas as it is stored as metadata.\n*   **Space Complexity:** $O(1)$. The function only allocates a fixed-size list containing two integers, regardless of the DataFrame's size.\n\n**2. Correctness**\nThe solution is correct and idiomatic. \n*   **Edge Cases:** It correctly handles empty DataFrames (e.g., returning `[0, 0]` or `[0, n]`) and DataFrames with single rows or columns.\n*   **Note:** In some environments, you might need to import `List` from `typing`, though modern Python (3.9+) and LeetCode's environment usually handle `list` or pre-imported `List` automatically.\n\n**3. Optimization**\nThere are no performance optimizations possible as this is the most direct way to access DataFrame dimensions. Syntactically, using `list(players.shape)` is cleaner than manually indexing the tuple.\n\n**4. Key Algorithmic Pattern**\n**Metadata Retrieval**: This pattern involves accessing pre-calculated properties of a data structure rather than iterating through the elements to count them.",
-      "linkedSolutions": [
-        "lc-get-the-size-of-a-dataframe"
-      ]
+      "aiReview": "### Code Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(1)$. Accessing the `.shape` attribute is a constant-time operation in Pandas as it is stored as metadata.\n*   **Space Complexity:** $O(1)$. The function only allocates a fixed-size list containing two integers, regardless of the DataFrame's size.\n\n**2. Correctness**\nThe solution is correct and idiomatic. \n*   **Edge Cases:** It correctly handles empty DataFrames (e.g., returning `[0, 0]` or `[0, n]`) and DataFrames with single rows or columns.\n*   **Note:** In some environments, you might need to import `List` from `typing`, though modern Python (3.9+) and LeetCode's environment usually handle `list` or pre-imported `List` automatically.\n\n**3. Optimization**\nThere are no performance optimizations possible as this is the most direct way to access DataFrame dimensions. Syntactically, using `list(players.shape)` is cleaner than manually indexing the tuple.\n\n**4. Key Algorithmic Pattern**\n**Metadata Retrieval**: This pattern involves accessing pre-calculated properties of a data structure rather than iterating through the elements to count them."
     },
     {
       "id": "lc-greatest-common-divisor-of-strings::1967576641",
@@ -6197,9 +6116,6 @@
       "_committedPaths": [
         "problems/lc-height-checker/lc-height-checker.java",
         "problems/lc-height-checker/README.md"
-      ],
-      "linkedSolutions": [
-        "lc-height-checker::1395797265"
       ]
     },
     {
@@ -6248,10 +6164,7 @@
         "problems/lc-height-checker/lc-height-checker.py",
         "problems/lc-height-checker/README.md"
       ],
-      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n \\log n)$ due to the `sorted()` function (Timsort). Iterating through the lists takes $O(n)$.\n*   **Space Complexity:** $O(n)$ to store the `expected` list and the temporary list created by the list comprehension.\n\n### 2. Correctness\nThe logic is **correct**. It accurately implements the problem requirements by comparing the original array against its sorted version. It handles edge cases like already sorted arrays, arrays with duplicate heights, and minimum/maximum constraints effectively.\n\n### 3. Concrete Optimization\n**Use Counting Sort:** Since the problem constraints state heights are between 1 and 100, you can achieve **$O(n)$ time** and **$O(1)$ extra space** (excluding output) by using a frequency array.\n\nAlternatively, to optimize the current approach's space, use a **generator expression** with `sum` to avoid creating an intermediate list:\n```python\nreturn sum(h != e for h, e in zip(heights, expected))\n```\n\n### 4. Key Algorithmic Pattern\n**Sorting and Comparison:** The fundamental approach relies on generating a \"target\" state via sorting and performing a linear scan to count discrepancies.",
-      "linkedSolutions": [
-        "lc-height-checker"
-      ]
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n \\log n)$ due to the `sorted()` function (Timsort). Iterating through the lists takes $O(n)$.\n*   **Space Complexity:** $O(n)$ to store the `expected` list and the temporary list created by the list comprehension.\n\n### 2. Correctness\nThe logic is **correct**. It accurately implements the problem requirements by comparing the original array against its sorted version. It handles edge cases like already sorted arrays, arrays with duplicate heights, and minimum/maximum constraints effectively.\n\n### 3. Concrete Optimization\n**Use Counting Sort:** Since the problem constraints state heights are between 1 and 100, you can achieve **$O(n)$ time** and **$O(1)$ extra space** (excluding output) by using a frequency array.\n\nAlternatively, to optimize the current approach's space, use a **generator expression** with `sum` to avoid creating an intermediate list:\n```python\nreturn sum(h != e for h, e in zip(heights, expected))\n```\n\n### 4. Key Algorithmic Pattern\n**Sorting and Comparison:** The fundamental approach relies on generating a \"target\" state via sorting and performing a linear scan to count discrepancies."
     },
     {
       "id": "lc-house-robber::1974558813",
@@ -7026,10 +6939,7 @@
         "problems/lc-length-of-last-word/lc-length-of-last-word-alt-approach-python3-imported.py",
         "problems/lc-length-of-last-word/README.md"
       ],
-      "aiReview": "**1. Complexity**\n*   **Time:** $O(N)$, where $N$ is the length of the string. `strip()` and `split()` both traverse the string.\n*   **Space:** $O(N)$. `split()` creates a list of all words, and `strip()` creates a new string.\n\n**2. Correctness**\nThe logic is correct for the problem constraints. `strip()` handles trailing spaces, ensuring `s[-1]` is the actual last word. It handles single-word strings and strings with leading spaces correctly.\n\n**3. Optimization**\nTo improve space complexity from **$O(N)$ to $O(1)$**, avoid creating a list of all words. Instead, iterate backward from the end of the string:\n1. Skip trailing spaces.\n2. Count characters until the next space or the start of the string is reached.\n\n```python\n# O(1) Space Example\ncount = 0\nfor i in range(len(s) - 1, -1, -1):\n    if s[i] == ' ':\n        if count > 0: return count\n    else:\n        count += 1\nreturn count\n```\n\n**4. Key Algorithmic Pattern**\n**String Manipulation.** Specifically, using built-in high-level functions versus manual pointer traversal to handle whitespace delimiters.",
-      "linkedSolutions": [
-        "lc-length-of-last-word::1627215692"
-      ]
+      "aiReview": "**1. Complexity**\n*   **Time:** $O(N)$, where $N$ is the length of the string. `strip()` and `split()` both traverse the string.\n*   **Space:** $O(N)$. `split()` creates a list of all words, and `strip()` creates a new string.\n\n**2. Correctness**\nThe logic is correct for the problem constraints. `strip()` handles trailing spaces, ensuring `s[-1]` is the actual last word. It handles single-word strings and strings with leading spaces correctly.\n\n**3. Optimization**\nTo improve space complexity from **$O(N)$ to $O(1)$**, avoid creating a list of all words. Instead, iterate backward from the end of the string:\n1. Skip trailing spaces.\n2. Count characters until the next space or the start of the string is reached.\n\n```python\n# O(1) Space Example\ncount = 0\nfor i in range(len(s) - 1, -1, -1):\n    if s[i] == ' ':\n        if count > 0: return count\n    else:\n        count += 1\nreturn count\n```\n\n**4. Key Algorithmic Pattern**\n**String Manipulation.** Specifically, using built-in high-level functions versus manual pointer traversal to handle whitespace delimiters."
     },
     {
       "id": "lc-length-of-last-word::1627215692",
@@ -7075,10 +6985,7 @@
         "problems/lc-length-of-last-word/lc-length-of-last-word.py",
         "problems/lc-length-of-last-word/README.md"
       ],
-      "aiReview": "### 1. Complexity\n*   **Time:** $O(n)$, where $n$ is the length of the string. Both `strip()` and `split()` require a full pass over the input.\n*   **Space:** $O(n)$. `split()` creates a list of all words, which can occupy up to $O(n)$ space in memory.\n\n### 2. Correctness\nThe code is **correct**. \n*   `strip()` handles trailing spaces (e.g., `\"a \"`), ensuring the last element of the split isn't an empty string.\n*   It correctly returns `0` for empty strings or strings containing only spaces.\n*   *Note:* Using `split()` (without arguments) is generally more robust in Python as it handles any whitespace length automatically, but `strip().split(\" \")` works here.\n\n### 3. Optimization\n**Reduce space to $O(1)$:** Instead of creating a list, iterate through the string **backwards**. \n1.  Skip trailing spaces using a pointer.\n2.  Count characters until the next space or the start of the string is reached.\nThis avoids the memory overhead of storing intermediate substrings.\n\n### 4. Key Algorithmic Pattern\n**String Manipulation** using built-in high-level functions (alternatively, the **Two-Pointer** or **Backward Iteration** pattern for the optimized version).",
-      "linkedSolutions": [
-        "lc-length-of-last-word::1627215076"
-      ]
+      "aiReview": "### 1. Complexity\n*   **Time:** $O(n)$, where $n$ is the length of the string. Both `strip()` and `split()` require a full pass over the input.\n*   **Space:** $O(n)$. `split()` creates a list of all words, which can occupy up to $O(n)$ space in memory.\n\n### 2. Correctness\nThe code is **correct**. \n*   `strip()` handles trailing spaces (e.g., `\"a \"`), ensuring the last element of the split isn't an empty string.\n*   It correctly returns `0` for empty strings or strings containing only spaces.\n*   *Note:* Using `split()` (without arguments) is generally more robust in Python as it handles any whitespace length automatically, but `strip().split(\" \")` works here.\n\n### 3. Optimization\n**Reduce space to $O(1)$:** Instead of creating a list, iterate through the string **backwards**. \n1.  Skip trailing spaces using a pointer.\n2.  Count characters until the next space or the start of the string is reached.\nThis avoids the memory overhead of storing intermediate substrings.\n\n### 4. Key Algorithmic Pattern\n**String Manipulation** using built-in high-level functions (alternatively, the **Two-Pointer** or **Backward Iteration** pattern for the optimized version)."
     },
     {
       "id": "lc-letter-combinations-of-a-phone-number::1708822302",
@@ -7582,9 +7489,6 @@
       "_committedPaths": [
         "problems/lc-longest-increasing-subsequence/lc-longest-increasing-subsequence-alt-approach-python3-imported.py",
         "problems/lc-longest-increasing-subsequence/README.md"
-      ],
-      "linkedSolutions": [
-        "lc-longest-increasing-subsequence::1996133259"
       ]
     },
     {
@@ -7728,9 +7632,6 @@
       "_committedPaths": [
         "problems/lc-longest-increasing-subsequence/lc-longest-increasing-subsequence.py",
         "problems/lc-longest-increasing-subsequence/README.md"
-      ],
-      "linkedSolutions": [
-        "lc-longest-increasing-subsequence::1995267310"
       ]
     },
     {
@@ -8234,9 +8135,6 @@
       "_committedPaths": [
         "problems/lc-magic-squares-in-grid/lc-magic-squares-in-grid.py",
         "problems/lc-magic-squares-in-grid/README.md"
-      ],
-      "linkedSolutions": [
-        "lc-magic-squares-in-grid::1992056989"
       ]
     },
     {
@@ -8293,9 +8191,6 @@
       "_committedPaths": [
         "problems/lc-magic-squares-in-grid/lc-magic-squares-in-grid.py",
         "problems/lc-magic-squares-in-grid/README.md"
-      ],
-      "linkedSolutions": [
-        "lc-magic-squares-in-grid::1350291377"
       ]
     },
     {
@@ -8456,10 +8351,7 @@
         "problems/lc-majority-element/lc-majority-element-alt-approach-python3-imported.py",
         "problems/lc-majority-element/README.md"
       ],
-      "aiReview": "### 1. Complexity\n*   **Time:** $O(n)$, where $n$ is the length of `nums`. Creating the `Counter` takes $O(n)$ and iterating over its items takes $O(n)$.\n*   **Space:** $O(n)$ to store the frequency map in the `Counter` object.\n\n### 2. Correctness\nThe code is **correct** given the problem's guarantee that a majority element always exists. \n*   **Edge Cases:** If the input list is empty, `max()` would receive an empty sequence and raise a `ValueError`. However, LeetCode constraints typically specify $n \\ge 1$.\n*   **Note:** Using `max()` is redundant because there can only be one element that appears more than $n/2$ times; `next(...)` would be more idiomatic.\n\n### 3. Optimization\n**Boyer-Moore Voting Algorithm:** This optimizes space to **$O(1)$**. \nInstead of a hash map, maintain a `candidate` and a `count`. Iterate through `nums`: if `count` is 0, pick the current number as `candidate`; increment `count` if the number matches `candidate`, otherwise decrement it.\n\n### 4. Key Algorithmic Pattern\n**Frequency Counting (Hash Map):** Using a hash table to track occurrences of elements to identify those meeting a specific threshold.",
-      "linkedSolutions": [
-        "lc-majority-element::1448986088"
-      ]
+      "aiReview": "### 1. Complexity\n*   **Time:** $O(n)$, where $n$ is the length of `nums`. Creating the `Counter` takes $O(n)$ and iterating over its items takes $O(n)$.\n*   **Space:** $O(n)$ to store the frequency map in the `Counter` object.\n\n### 2. Correctness\nThe code is **correct** given the problem's guarantee that a majority element always exists. \n*   **Edge Cases:** If the input list is empty, `max()` would receive an empty sequence and raise a `ValueError`. However, LeetCode constraints typically specify $n \\ge 1$.\n*   **Note:** Using `max()` is redundant because there can only be one element that appears more than $n/2$ times; `next(...)` would be more idiomatic.\n\n### 3. Optimization\n**Boyer-Moore Voting Algorithm:** This optimizes space to **$O(1)$**. \nInstead of a hash map, maintain a `candidate` and a `count`. Iterate through `nums`: if `count` is 0, pick the current number as `candidate`; increment `count` if the number matches `candidate`, otherwise decrement it.\n\n### 4. Key Algorithmic Pattern\n**Frequency Counting (Hash Map):** Using a hash table to track occurrences of elements to identify those meeting a specific threshold."
     },
     {
       "id": "lc-majority-element::1448986088",
@@ -8546,10 +8438,7 @@
         "problems/lc-majority-element/lc-majority-element.py",
         "problems/lc-majority-element/README.md"
       ],
-      "aiReview": "### Review of Majority Element Solution\n\n**1. Complexity**\n*   **Time Complexity:** $O(n)$ — Requires one pass to build the frequency map and one pass to iterate through its keys.\n*   **Space Complexity:** $O(n)$ — In the worst case (no element occurs more than once except for the majority), the hash map stores approximately $n/2$ unique keys.\n\n**2. Correctness**\n*   **Logic:** Correct. It strictly follows the definition of a majority element ($> n/2$).\n*   **Edge Cases:** Handles single-element arrays correctly ($1 > 0.5$). However, if the input list is empty or lacks a majority element, it will raise an `IndexError`. The problem constraints usually guarantee a majority element exists.\n\n**3. Optimization**\nUse **Boyer-Moore Voting Algorithm** to reduce space complexity to **$O(1)$**. This algorithm tracks a candidate and a counter, incrementing for matches and decrementing for mismatches, avoiding the need for a hash map.\n\n**4. Key Algorithmic Pattern**\n*   **Frequency Counting / Hash Mapping:** Leveraging a hash table (`collections.Counter`) to track occurrences of elements.",
-      "linkedSolutions": [
-        "lc-majority-element::1448985394"
-      ]
+      "aiReview": "### Review of Majority Element Solution\n\n**1. Complexity**\n*   **Time Complexity:** $O(n)$ — Requires one pass to build the frequency map and one pass to iterate through its keys.\n*   **Space Complexity:** $O(n)$ — In the worst case (no element occurs more than once except for the majority), the hash map stores approximately $n/2$ unique keys.\n\n**2. Correctness**\n*   **Logic:** Correct. It strictly follows the definition of a majority element ($> n/2$).\n*   **Edge Cases:** Handles single-element arrays correctly ($1 > 0.5$). However, if the input list is empty or lacks a majority element, it will raise an `IndexError`. The problem constraints usually guarantee a majority element exists.\n\n**3. Optimization**\nUse **Boyer-Moore Voting Algorithm** to reduce space complexity to **$O(1)$**. This algorithm tracks a candidate and a counter, incrementing for matches and decrementing for mismatches, avoiding the need for a hash map.\n\n**4. Key Algorithmic Pattern**\n*   **Frequency Counting / Hash Mapping:** Leveraging a hash table (`collections.Counter`) to track occurrences of elements."
     },
     {
       "id": "lc-make-array-zero-by-subtracting-equal-amounts::1651723108",
@@ -9198,10 +9087,12 @@
       "platform": "leetcode",
       "aiReview": "### Review\n\n**1. Complexity**\n*   **Time:** $O((m+n) \\log (m+n))$ due to the `sorted()` call on the combined list of length $m+n$.\n*   **Space:** $O(m+n)$ to store the concatenated `res` list.\n\n**2. Correctness**\n*   **Logic:** Mathematically correct. Using `(res[n//2] + res[(n-1)//2]) / 2` elegantly handles both even and odd total lengths.\n*   **Edge Cases:** Handles empty arrays or arrays of size 1 correctly.\n*   **Constraint Violation:** While functionally correct, it fails the LeetCode requirement of $O(\\log(m+n))$ time complexity.\n\n**3. Concrete Optimization**\nImplement **Binary Search on the partition index**. Instead of merging and sorting, partition the smaller array such that the left side of the partition contains half the total elements. Ensure that the maximum of the left elements is less than or equal to the minimum of the right elements. This reduces time complexity to $O(\\log(\\min(m, n)))$ and space to $O(1)$.\n\n**4. Key Algorithmic Pattern**\nThe provided code uses **Sort and Index**. The optimal solution uses **Binary Search**.",
       "linkedSolutions": [
-        "lc-median-of-two-sorted-arrays-alt-1780412246910-3",
-        "lc-median-of-two-sorted-arrays::2004038057"
+        "lc-median-of-two-sorted-arrays-alt-1780412246910-3"
       ],
       "_committedPaths": [
+        "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays-alt-approach-python3.py",
+        "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays-alt-approach-python3.py",
+        "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays-alt-approach-python3.py",
         "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays-alt-approach-python3.py",
         "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays-alt-approach-python3.py",
         "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays-alt-approach-python3.py",
@@ -9212,6 +9103,34 @@
         "problems/lc-median-of-two-sorted-arrays/README.md"
       ],
       "methods": [
+        {
+          "title": "Alt approach (Python3)",
+          "language": "Python3",
+          "code": "class Solution:\n    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:\n        return median(sorted(nums1 + nums2))\n        # p1 = nums1\n        # if num1 is not None or nums2 us not None:\n",
+          "description": "Duplicate resolved — 11 Aug 2024",
+          "timestamp": 1723381264000
+        },
+        {
+          "title": "Alt approach (Python3)",
+          "language": "Python3",
+          "code": "class Solution:\n    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:\n        return median(sorted(nums1 + nums2))\n        # p1 = nums1\n        # if num1 is not None or nums2 us not None:\n",
+          "description": "Duplicate resolved — 11 Aug 2024",
+          "timestamp": 1723381264000
+        },
+        {
+          "title": "Alt approach (Python3)",
+          "language": "Python3",
+          "code": "class Solution:\n    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:\n        return median(sorted(nums1 + nums2))\n        # p1 = nums1\n        # if num1 is not None or nums2 us not None:\n",
+          "description": "Duplicate resolved — 11 Aug 2024",
+          "timestamp": 1723381264000
+        },
+        {
+          "title": "Alt approach (Python3)",
+          "language": "Python3",
+          "code": "class Solution:\n    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:\n        return median(sorted(nums1 + nums2))\n        # p1 = nums1\n        # if num1 is not None or nums2 us not None:\n",
+          "description": "Duplicate resolved — 11 Aug 2024",
+          "timestamp": 1723381264000
+        },
         {
           "title": "Alt approach (Python3)",
           "language": "Python3",
@@ -9309,10 +9228,6 @@
       "_committedPaths": [
         "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays.py",
         "problems/lc-median-of-two-sorted-arrays/README.md"
-      ],
-      "linkedSolutions": [
-        "lc-median-of-two-sorted-arrays",
-        "lc-median-of-two-sorted-arrays-alt-1780412246910-3"
       ]
     },
     {
@@ -9632,10 +9547,7 @@
         "problems/lc-method-chaining/lc-method-chaining.py",
         "problems/lc-method-chaining/README.md"
       ],
-      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(N \\log N)$, where $N$ is the number of rows in the DataFrame. Filtering takes $O(N)$, but sorting the filtered results dominates with $O(K \\log K)$, where $K \\le N$.\n*   **Space Complexity:** $O(N)$. Pandas creates intermediate copies during filtering and sorting, requiring memory proportional to the input size.\n\n**2. Correctness**\nThe code is correct and follows the problem requirements. It handles:\n*   **Empty DataFrames:** Returns an empty DataFrame with the column `name`.\n*   **No matches:** Returns an empty DataFrame if no weights > 100.\n*   **Ties:** `sort_values` handles identical weights by their original index order (stable sort).\n\n**3. Optimization**\nIf the input DataFrame contains many columns, select only the necessary columns (`name` and `weight`) **before** sorting. This reduces the memory footprint and the amount of data the sorting algorithm must shuffle.\n```python\nreturn animals.loc[animals['weight'] > 100, ['name', 'weight']].sort_values('weight', ascending=False)[['name']]\n```\n\n**4. Key Algorithmic Pattern**\n**Vectorized Operations / Method Chaining:** Utilizing high-level, column-wise operations that are implemented in C/Cython within Pandas rather than explicit Python loops.",
-      "linkedSolutions": [
-        "lc-method-chaining::1434101518"
-      ]
+      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(N \\log N)$, where $N$ is the number of rows in the DataFrame. Filtering takes $O(N)$, but sorting the filtered results dominates with $O(K \\log K)$, where $K \\le N$.\n*   **Space Complexity:** $O(N)$. Pandas creates intermediate copies during filtering and sorting, requiring memory proportional to the input size.\n\n**2. Correctness**\nThe code is correct and follows the problem requirements. It handles:\n*   **Empty DataFrames:** Returns an empty DataFrame with the column `name`.\n*   **No matches:** Returns an empty DataFrame if no weights > 100.\n*   **Ties:** `sort_values` handles identical weights by their original index order (stable sort).\n\n**3. Optimization**\nIf the input DataFrame contains many columns, select only the necessary columns (`name` and `weight`) **before** sorting. This reduces the memory footprint and the amount of data the sorting algorithm must shuffle.\n```python\nreturn animals.loc[animals['weight'] > 100, ['name', 'weight']].sort_values('weight', ascending=False)[['name']]\n```\n\n**4. Key Algorithmic Pattern**\n**Vectorized Operations / Method Chaining:** Utilizing high-level, column-wise operations that are implemented in C/Cython within Pandas rather than explicit Python loops."
     },
     {
       "id": "lc-method-chaining::1434101518",
@@ -9681,10 +9593,7 @@
         "problems/lc-method-chaining/lc-method-chaining.py",
         "problems/lc-method-chaining/README.md"
       ],
-      "aiReview": "### Review\n**1. Complexity**\n*   **Time:** $O(N \\log N)$, where $N$ is the number of rows. Filtering takes $O(N)$, but sorting the filtered results dominates the time complexity.\n*   **Space:** $O(N)$. Pandas creates intermediate copies of the DataFrame during filtering and sorting operations.\n\n**2. Correctness**\nThe solution is correct. It filters rows first, sorts the subset, and finally projects only the required `'name'` column. It handles cases where no animals meet the criteria (returning an empty DataFrame) correctly.\n\n**3. Optimization**\nWhile method chaining is readable, you can slightly improve memory efficiency by using `loc` to perform filtering and column selection in fewer steps, though `weight` must remain until after the sort:\n```python\nreturn animals.loc[animals['weight'] > 100].sort_values('weight', ascending=False)[['name']]\n```\nFor extremely large datasets, using `sort_values(inplace=False)` is standard, but the current approach is idiomatic for LeetCode's pandas track.\n\n**4. Key Algorithmic Pattern**\n**Vectorized Operations / Method Chaining:** Utilizing high-level library functions to perform bulk operations on data structures without explicit loops.",
-      "linkedSolutions": [
-        "lc-method-chaining"
-      ]
+      "aiReview": "### Review\n**1. Complexity**\n*   **Time:** $O(N \\log N)$, where $N$ is the number of rows. Filtering takes $O(N)$, but sorting the filtered results dominates the time complexity.\n*   **Space:** $O(N)$. Pandas creates intermediate copies of the DataFrame during filtering and sorting operations.\n\n**2. Correctness**\nThe solution is correct. It filters rows first, sorts the subset, and finally projects only the required `'name'` column. It handles cases where no animals meet the criteria (returning an empty DataFrame) correctly.\n\n**3. Optimization**\nWhile method chaining is readable, you can slightly improve memory efficiency by using `loc` to perform filtering and column selection in fewer steps, though `weight` must remain until after the sort:\n```python\nreturn animals.loc[animals['weight'] > 100].sort_values('weight', ascending=False)[['name']]\n```\nFor extremely large datasets, using `sort_values(inplace=False)` is standard, but the current approach is idiomatic for LeetCode's pandas track.\n\n**4. Key Algorithmic Pattern**\n**Vectorized Operations / Method Chaining:** Utilizing high-level library functions to perform bulk operations on data structures without explicit loops."
     },
     {
       "id": "lc-min-cost-climbing-stairs::1974551678",
@@ -9803,10 +9712,7 @@
         "problems/lc-minimize-maximum-pair-sum-in-array/lc-minimize-maximum-pair-sum-in-array-alt-approach-python3-imported.py",
         "problems/lc-minimize-maximum-pair-sum-in-array/README.md"
       ],
-      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time:** $O(N \\log N)$ due to the sorting step. The subsequent linear pass is $O(N)$.\n*   **Space:** $O(N)$ to store the `ans` list. (Note: Python's `sort()` also uses up to $O(N)$ auxiliary space).\n\n**2. Correctness**\nThe logic is correct. By pairing the smallest available number with the largest, you greedily minimize the potential growth of the maximum sum. \n*   **Edge Cases:** The code handles the minimum constraint (even length $\\ge 2$) correctly.\n*   **Note:** Remove `print(nums)` in production to avoid $O(N)$ I/O overhead.\n\n**3. Optimization**\n**Space Optimization:** Instead of storing all sums in a list `ans` ($O(N)$ space) and then calling `max()`, update a running maximum variable. This reduces auxiliary space to $O(1)$ (excluding sort space).\n\n```python\nmax_sum = 0\nfor i in range(len(nums) // 2):\n    max_sum = max(max_sum, nums[i] + nums[-i - 1])\nreturn max_sum\n```\n\n**4. Key Algorithmic Pattern**\n*   **Greedy Algorithm:** Making the locally optimal choice (smallest + largest) leads to the global optimum.\n*   **Two Pointers:** Implicitly used here via indices `i` and `len(nums)-1-i`.",
-      "linkedSolutions": [
-        "lc-minimize-maximum-pair-sum-in-array::1730457343"
-      ]
+      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time:** $O(N \\log N)$ due to the sorting step. The subsequent linear pass is $O(N)$.\n*   **Space:** $O(N)$ to store the `ans` list. (Note: Python's `sort()` also uses up to $O(N)$ auxiliary space).\n\n**2. Correctness**\nThe logic is correct. By pairing the smallest available number with the largest, you greedily minimize the potential growth of the maximum sum. \n*   **Edge Cases:** The code handles the minimum constraint (even length $\\ge 2$) correctly.\n*   **Note:** Remove `print(nums)` in production to avoid $O(N)$ I/O overhead.\n\n**3. Optimization**\n**Space Optimization:** Instead of storing all sums in a list `ans` ($O(N)$ space) and then calling `max()`, update a running maximum variable. This reduces auxiliary space to $O(1)$ (excluding sort space).\n\n```python\nmax_sum = 0\nfor i in range(len(nums) // 2):\n    max_sum = max(max_sum, nums[i] + nums[-i - 1])\nreturn max_sum\n```\n\n**4. Key Algorithmic Pattern**\n*   **Greedy Algorithm:** Making the locally optimal choice (smallest + largest) leads to the global optimum.\n*   **Two Pointers:** Implicitly used here via indices `i` and `len(nums)-1-i`."
     },
     {
       "id": "lc-minimize-maximum-pair-sum-in-array::1730457343",
@@ -9858,10 +9764,7 @@
         "problems/lc-minimize-maximum-pair-sum-in-array/lc-minimize-maximum-pair-sum-in-array.py",
         "problems/lc-minimize-maximum-pair-sum-in-array/README.md"
       ],
-      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n \\log n)$ due to the `nums.sort()` operation. The subsequent two-pointer traversal is $O(n)$.\n*   **Space Complexity:** $O(1)$ or $O(n)$ depending on the sorting implementation (Python's Timsort uses $O(n)$ auxiliary space in the worst case).\n\n### 2. Correctness\nThe solution is **correct**. To minimize the maximum pair sum, you must pair the smallest remaining element with the largest remaining element (Greedy strategy). \n*   **Edge Cases:** The code correctly handles the minimum array size ($n=2$), duplicate values, and already sorted inputs.\n\n### 3. Optimization\nIf the range of numbers is small (e.g., values $\\le 10^5$), you can use **Counting Sort** (Bucket Sort) to achieve **$O(n + \\text{max\\_val})$** time complexity, which is faster than $O(n \\log n)$ for large $n$.\n\n### 4. Key Algorithmic Pattern\n*   **Greedy Algorithm:** Making the locally optimal choice (pairing smallest with largest) to achieve a global optimum.\n*   **Two Pointers:** Converging from both ends of a sorted array to process pairs.",
-      "linkedSolutions": [
-        "lc-minimize-maximum-pair-sum-in-array::1730450212"
-      ]
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n \\log n)$ due to the `nums.sort()` operation. The subsequent two-pointer traversal is $O(n)$.\n*   **Space Complexity:** $O(1)$ or $O(n)$ depending on the sorting implementation (Python's Timsort uses $O(n)$ auxiliary space in the worst case).\n\n### 2. Correctness\nThe solution is **correct**. To minimize the maximum pair sum, you must pair the smallest remaining element with the largest remaining element (Greedy strategy). \n*   **Edge Cases:** The code correctly handles the minimum array size ($n=2$), duplicate values, and already sorted inputs.\n\n### 3. Optimization\nIf the range of numbers is small (e.g., values $\\le 10^5$), you can use **Counting Sort** (Bucket Sort) to achieve **$O(n + \\text{max\\_val})$** time complexity, which is faster than $O(n \\log n)$ for large $n$.\n\n### 4. Key Algorithmic Pattern\n*   **Greedy Algorithm:** Making the locally optimal choice (pairing smallest with largest) to achieve a global optimum.\n*   **Two Pointers:** Converging from both ends of a sorted array to process pairs."
     },
     {
       "id": "lc-minimum-ascii-delete-sum-for-two-strings::1985691602",
@@ -10667,10 +10570,7 @@
         "problems/lc-modify-columns/lc-modify-columns.py",
         "problems/lc-modify-columns/README.md"
       ],
-      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas performs a single pass over the 'salary' column.\n*   **Space:** $O(1)$ auxiliary space. The operation modifies the existing Series in-place without allocating a new column of size $N$ (though internal Pandas buffers may vary).\n\n**2. Correctness**\nThe solution is correct for standard inputs.\n*   **Edge Cases:**\n    *   **NaN values:** Correctly handled; `NaN * 2` remains `NaN`.\n    *   **Empty DataFrame:** Works correctly (returns empty).\n    *   **Missing Column:** Will raise a `KeyError` if 'salary' does not exist.\n    *   **Non-numeric Data:** Will raise a `TypeError` if the column contains strings or incompatible objects.\n\n**3. Optimization**\nThe current solution is already optimal using **Vectorization**. For massive datasets, ensuring the column is stored in a specific numeric dtype (e.g., `int32` instead of `int64`) before multiplication could reduce memory bandwidth usage, but for standard LeetCode constraints, this is unnecessary.\n\n**4. Key Algorithmic Pattern**\n**Vectorization:** Instead of iterating through rows with a loop, Pandas applies the operation across the entire column simultaneously using highly optimized C/Cython backends.",
-      "linkedSolutions": [
-        "lc-modify-columns::1433134107"
-      ]
+      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas performs a single pass over the 'salary' column.\n*   **Space:** $O(1)$ auxiliary space. The operation modifies the existing Series in-place without allocating a new column of size $N$ (though internal Pandas buffers may vary).\n\n**2. Correctness**\nThe solution is correct for standard inputs.\n*   **Edge Cases:**\n    *   **NaN values:** Correctly handled; `NaN * 2` remains `NaN`.\n    *   **Empty DataFrame:** Works correctly (returns empty).\n    *   **Missing Column:** Will raise a `KeyError` if 'salary' does not exist.\n    *   **Non-numeric Data:** Will raise a `TypeError` if the column contains strings or incompatible objects.\n\n**3. Optimization**\nThe current solution is already optimal using **Vectorization**. For massive datasets, ensuring the column is stored in a specific numeric dtype (e.g., `int32` instead of `int64`) before multiplication could reduce memory bandwidth usage, but for standard LeetCode constraints, this is unnecessary.\n\n**4. Key Algorithmic Pattern**\n**Vectorization:** Instead of iterating through rows with a loop, Pandas applies the operation across the entire column simultaneously using highly optimized C/Cython backends."
     },
     {
       "id": "lc-modify-columns::1433134107",
@@ -10718,10 +10618,7 @@
         "problems/lc-modify-columns/lc-modify-columns.py",
         "problems/lc-modify-columns/README.md"
       ],
-      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time:** $O(n)$, where $n$ is the number of rows. Pandas uses vectorized operations to iterate through the series.\n*   **Space:** $O(1)$ auxiliary space. The operation modifies the existing column in-place without creating a new DataFrame structure.\n\n**2. Correctness**\n*   **Empty DataFrame:** Handles correctly (no rows to process).\n*   **Data Types:** If the `salary` column contains strings, `* 2` will result in string replication (e.g., \"500\" becomes \"500500\"). It assumes the column is numeric.\n*   **Nulls:** `NaN` values remain `NaN` after multiplication, which is standard behavior for salary updates.\n\n**3. Optimization**\nThe current code is already highly efficient due to vectorization. For extremely large datasets, you could ensure the `salary` column is stored as a specific numeric subtype (e.g., `float32` instead of `float64`) to reduce the memory footprint before processing.\n\n**4. Key Algorithmic Pattern**\n**Vectorization:** Applying a single operation across an entire array/series at once, leveraging optimized C-level loops instead of Python-level `for` loops.",
-      "linkedSolutions": [
-        "lc-modify-columns"
-      ]
+      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time:** $O(n)$, where $n$ is the number of rows. Pandas uses vectorized operations to iterate through the series.\n*   **Space:** $O(1)$ auxiliary space. The operation modifies the existing column in-place without creating a new DataFrame structure.\n\n**2. Correctness**\n*   **Empty DataFrame:** Handles correctly (no rows to process).\n*   **Data Types:** If the `salary` column contains strings, `* 2` will result in string replication (e.g., \"500\" becomes \"500500\"). It assumes the column is numeric.\n*   **Nulls:** `NaN` values remain `NaN` after multiplication, which is standard behavior for salary updates.\n\n**3. Optimization**\nThe current code is already highly efficient due to vectorization. For extremely large datasets, you could ensure the `salary` column is stored as a specific numeric subtype (e.g., `float32` instead of `float64`) to reduce the memory footprint before processing.\n\n**4. Key Algorithmic Pattern**\n**Vectorization:** Applying a single operation across an entire array/series at once, leveraging optimized C-level loops instead of Python-level `for` loops."
     },
     {
       "id": "lc-most-frequent-even-element::1448999875",
@@ -11199,10 +11096,7 @@
         "problems/number-of-1-bits/leetcode/lc-number-of-1-bits.py",
         "problems/number-of-1-bits/leetcode/README.md"
       ],
-      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(k)$, where $k$ is the number of bits in $n$ (for a 32-bit integer, this is effectively $O(1)$). Converting to a string and iterating through it both take linear time relative to the bit length.\n*   **Space Complexity:** $O(k)$ to store the intermediate binary string representation.\n\n**2. Correctness**\n*   **Edge Cases:** The solution is correct for non-negative integers. If $n=0$, it returns `0`. \n*   **Note:** In Python, `bin(-1)` returns `'-0b1'`. If the problem expects a 32-bit two's complement representation for negative numbers, this approach would fail. However, LeetCode defines $n$ as a positive integer for this problem.\n\n**3. Optimization**\nUse **Brian Kernighan’s Algorithm** to avoid string conversion and improve performance when set bits are sparse:\n```python\ncount = 0\nwhile n:\n    n &= (n - 1)  # Flips the least significant set bit to 0\n    count += 1\nreturn count\n```\nThis runs in $O(\\text{set bits})$ time and $O(1)$ space.\n\n**4. Key Algorithmic Pattern**\n*   **Bit Manipulation** (via built-in string formatting/parsing).",
-      "linkedSolutions": [
-        "lc-number-of-1-bits::1651630536"
-      ]
+      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(k)$, where $k$ is the number of bits in $n$ (for a 32-bit integer, this is effectively $O(1)$). Converting to a string and iterating through it both take linear time relative to the bit length.\n*   **Space Complexity:** $O(k)$ to store the intermediate binary string representation.\n\n**2. Correctness**\n*   **Edge Cases:** The solution is correct for non-negative integers. If $n=0$, it returns `0`. \n*   **Note:** In Python, `bin(-1)` returns `'-0b1'`. If the problem expects a 32-bit two's complement representation for negative numbers, this approach would fail. However, LeetCode defines $n$ as a positive integer for this problem.\n\n**3. Optimization**\nUse **Brian Kernighan’s Algorithm** to avoid string conversion and improve performance when set bits are sparse:\n```python\ncount = 0\nwhile n:\n    n &= (n - 1)  # Flips the least significant set bit to 0\n    count += 1\nreturn count\n```\nThis runs in $O(\\text{set bits})$ time and $O(1)$ space.\n\n**4. Key Algorithmic Pattern**\n*   **Bit Manipulation** (via built-in string formatting/parsing)."
     },
     {
       "id": "lc-number-of-1-bits::1651630536",
@@ -11314,10 +11208,7 @@
         "problems/number-of-1-bits/leetcode/lc-number-of-1-bits.py",
         "problems/number-of-1-bits/leetcode/README.md"
       ],
-      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(k)$, where $k$ is the number of bits in $n$ (for a 32-bit integer, this is effectively $O(1)$). Converting an integer to a string takes time proportional to the number of bits.\n*   **Space Complexity:** $O(k)$ to store the intermediate binary string representation.\n\n### 2. Correctness\nThe code is **correct** for all valid inputs, including the edge case $n = 0$. Since Python integers have arbitrary precision, it handles values beyond 32 bits gracefully.\n\n### 3. Concrete Optimisation\nUse **Brian Kernighan’s Algorithm**. Instead of converting to a string, use bitwise operations to clear the least significant set bit in each iteration. This performs exactly as many iterations as there are set bits ($h$):\n\n```python\ncount = 0\nwhile n:\n    n &= (n - 1)  # Flips the least significant '1' to '0'\n    count += 1\nreturn count\n```\nThis is more memory-efficient as it avoids string allocation.\n\n### 4. Key Algorithmic Pattern\n**String Manipulation / Built-in Primitives.** This approach leverages Python's high-level abstractions to solve a low-level bit manipulation problem.",
-      "linkedSolutions": [
-        "lc-number-of-1-bits::1650943714"
-      ]
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(k)$, where $k$ is the number of bits in $n$ (for a 32-bit integer, this is effectively $O(1)$). Converting an integer to a string takes time proportional to the number of bits.\n*   **Space Complexity:** $O(k)$ to store the intermediate binary string representation.\n\n### 2. Correctness\nThe code is **correct** for all valid inputs, including the edge case $n = 0$. Since Python integers have arbitrary precision, it handles values beyond 32 bits gracefully.\n\n### 3. Concrete Optimisation\nUse **Brian Kernighan’s Algorithm**. Instead of converting to a string, use bitwise operations to clear the least significant set bit in each iteration. This performs exactly as many iterations as there are set bits ($h$):\n\n```python\ncount = 0\nwhile n:\n    n &= (n - 1)  # Flips the least significant '1' to '0'\n    count += 1\nreturn count\n```\nThis is more memory-efficient as it avoids string allocation.\n\n### 4. Key Algorithmic Pattern\n**String Manipulation / Built-in Primitives.** This approach leverages Python's high-level abstractions to solve a low-level bit manipulation problem."
     },
     {
       "id": "lc-number-of-dice-rolls-with-target-sum",
@@ -11382,9 +11273,6 @@
       "_committedPaths": [
         "problems/lc-number-of-dice-rolls-with-target-sum/lc-number-of-dice-rolls-with-target-sum.js",
         "problems/lc-number-of-dice-rolls-with-target-sum/README.md"
-      ],
-      "linkedSolutions": [
-        "lc-number-of-dice-rolls-with-target-sum::1992314832"
       ]
     },
     {
@@ -11444,9 +11332,6 @@
       "_committedPaths": [
         "problems/lc-number-of-dice-rolls-with-target-sum/lc-number-of-dice-rolls-with-target-sum.py",
         "problems/lc-number-of-dice-rolls-with-target-sum/README.md"
-      ],
-      "linkedSolutions": [
-        "lc-number-of-dice-rolls-with-target-sum"
       ]
     },
     {
@@ -11500,10 +11385,7 @@
         "problems/lc-number-of-employees-who-met-the-target/lc-number-of-employees-who-met-the-target.py",
         "problems/lc-number-of-employees-who-met-the-target/README.md"
       ],
-      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the number of employees. The list is traversed once.\n*   **Space Complexity:** $O(n)$. The list comprehension creates a new intermediate list in memory to store the indices before calculating the length.\n\n### 2. Correctness\nThe logic is **correct**. It accurately implements the requirement to count elements where `hours[i] >= target`. \n*   **Edge Cases:** Handles empty lists (returns 0) and cases where all or no employees meet the target correctly.\n\n### 3. Optimization\n**Reduce Space Complexity to $O(1)$:**\nInstead of creating a new list, use a generator expression with the `sum()` function. This counts the occurrences without allocating extra memory.\n\n```python\nreturn sum(1 for h in hours if h >= target)\n# Or even more idiomatic:\nreturn sum(h >= target for h in hours)\n```\n\n### 4. Key Algorithmic Pattern\n*   **Linear Scan / Filtering:** Iterating through a collection once to count or extract elements that satisfy a specific condition.",
-      "linkedSolutions": [
-        "lc-number-of-employees-who-met-the-target::1448974557"
-      ]
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the number of employees. The list is traversed once.\n*   **Space Complexity:** $O(n)$. The list comprehension creates a new intermediate list in memory to store the indices before calculating the length.\n\n### 2. Correctness\nThe logic is **correct**. It accurately implements the requirement to count elements where `hours[i] >= target`. \n*   **Edge Cases:** Handles empty lists (returns 0) and cases where all or no employees meet the target correctly.\n\n### 3. Optimization\n**Reduce Space Complexity to $O(1)$:**\nInstead of creating a new list, use a generator expression with the `sum()` function. This counts the occurrences without allocating extra memory.\n\n```python\nreturn sum(1 for h in hours if h >= target)\n# Or even more idiomatic:\nreturn sum(h >= target for h in hours)\n```\n\n### 4. Key Algorithmic Pattern\n*   **Linear Scan / Filtering:** Iterating through a collection once to count or extract elements that satisfy a specific condition."
     },
     {
       "id": "lc-number-of-employees-who-met-the-target::1448974557",
@@ -11554,10 +11436,7 @@
         "problems/lc-number-of-employees-who-met-the-target/lc-number-of-employees-who-met-the-target.py",
         "problems/lc-number-of-employees-who-met-the-target/README.md"
       ],
-      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the `hours` list. The code iterates through the list once.\n*   **Space Complexity:** $O(n)$. The list comprehension creates a new list in memory containing the indices of qualifying employees before calculating the length.\n\n### 2. Correctness\nThe logic is **correct**. It accurately implements the condition `hours[i] >= target`. \n*   **Edge Cases:** It correctly handles an empty input list (returns 0), cases where no employees meet the target, and cases where all employees meet the target.\n\n### 3. Concrete Optimization\nReplace the **list comprehension** with a **generator expression** and the `sum()` function. This reduces the space complexity from **$O(n)$ to $O(1)$** by avoiding the creation of an intermediate list.\n\n**Optimized Code:**\n```python\nreturn sum(1 for h in hours if h >= target)\n```\n\n### 4. Key Algorithmic Pattern\n**Linear Scan (Filtering):** The algorithm performs a single pass over the dataset to filter elements based on a specific predicate.",
-      "linkedSolutions": [
-        "lc-number-of-employees-who-met-the-target::1448974448"
-      ]
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the `hours` list. The code iterates through the list once.\n*   **Space Complexity:** $O(n)$. The list comprehension creates a new list in memory containing the indices of qualifying employees before calculating the length.\n\n### 2. Correctness\nThe logic is **correct**. It accurately implements the condition `hours[i] >= target`. \n*   **Edge Cases:** It correctly handles an empty input list (returns 0), cases where no employees meet the target, and cases where all employees meet the target.\n\n### 3. Concrete Optimization\nReplace the **list comprehension** with a **generator expression** and the `sum()` function. This reduces the space complexity from **$O(n)$ to $O(1)$** by avoiding the creation of an intermediate list.\n\n**Optimized Code:**\n```python\nreturn sum(1 for h in hours if h >= target)\n```\n\n### 4. Key Algorithmic Pattern\n**Linear Scan (Filtering):** The algorithm performs a single pass over the dataset to filter elements based on a specific predicate."
     },
     {
       "id": "lc-number-of-islands",
@@ -12406,10 +12285,7 @@
         "problems/lc-power-of-three/lc-power-of-three-alt-approach-python3-imported.py",
         "problems/lc-power-of-three/README.md"
       ],
-      "aiReview": "**1. Complexity**\n*   **Time:** $O(\\log_3 n)$ — The input $n$ is divided by 3 in each iteration.\n*   **Space:** $O(1)$ — Only a constant amount of extra space is used.\n\n**2. Correctness**\n*   **Edge Cases:** Handles $n \\le 0$ and $n = 1$ correctly.\n*   **Precision Risk:** Using float division (`n /= 3`) is dangerous for very large integers due to potential floating-point precision errors. It is safer to use integer division (`n //= 3`) and the modulo operator (`n % 3 == 0`).\n*   **Efficiency:** The current loop continues even if $n$ is clearly not a power of three (e.g., $n=10$), only stopping when $n < 3$.\n\n**3. Optimisation**\nSince 3 is a prime number, the largest power of 3 that fits in a 32-bit signed integer is $3^{19} = 1,162,261,467$. You can achieve **$O(1)$ time** complexity by checking if this maximum value is divisible by $n$:\n```python\nreturn n > 0 and 1162261467 % n == 0\n```\n\n**4. Key Algorithmic Pattern**\n**Iterative Reduction** (specifically, repeated division to reach a base case).",
-      "linkedSolutions": [
-        "lc-power-of-three::1650981852"
-      ]
+      "aiReview": "**1. Complexity**\n*   **Time:** $O(\\log_3 n)$ — The input $n$ is divided by 3 in each iteration.\n*   **Space:** $O(1)$ — Only a constant amount of extra space is used.\n\n**2. Correctness**\n*   **Edge Cases:** Handles $n \\le 0$ and $n = 1$ correctly.\n*   **Precision Risk:** Using float division (`n /= 3`) is dangerous for very large integers due to potential floating-point precision errors. It is safer to use integer division (`n //= 3`) and the modulo operator (`n % 3 == 0`).\n*   **Efficiency:** The current loop continues even if $n$ is clearly not a power of three (e.g., $n=10$), only stopping when $n < 3$.\n\n**3. Optimisation**\nSince 3 is a prime number, the largest power of 3 that fits in a 32-bit signed integer is $3^{19} = 1,162,261,467$. You can achieve **$O(1)$ time** complexity by checking if this maximum value is divisible by $n$:\n```python\nreturn n > 0 and 1162261467 % n == 0\n```\n\n**4. Key Algorithmic Pattern**\n**Iterative Reduction** (specifically, repeated division to reach a base case)."
     },
     {
       "id": "lc-power-of-three::1650981852",
@@ -12475,10 +12351,7 @@
         "problems/lc-power-of-three/lc-power-of-three.py",
         "problems/lc-power-of-three/README.md"
       ],
-      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(1)$. The exponentiation and modulo operations take constant time for fixed-width integers.\n*   **Space Complexity:** $O(1)$. No additional memory is allocated.\n\n### 2. Correctness\nThe solution is **correct** for the range of a 32-bit signed integer. \n*   **Edge Cases:** $n \\le 0$ is handled by `n > 0`.\n*   **Logic:** Since 3 is a prime number, the only divisors of $3^{19}$ are $3^0, 3^1, \\dots, 3^{19}$. $3^{19}$ ($1,162,261,467$) is the largest power of three that fits in a 32-bit signed integer. Therefore, any $n > 0$ that divides $3^{19}$ must be a power of three.\n\n### 3. Optimization\nReplace the expression `3**19` with the literal integer value `1162261467`. This avoids recalculating the power at runtime, though Python's interpreter may already optimize this.\n\n```python\nreturn n > 0 and 1162261467 % n == 0\n```\n\n### 4. Key Algorithmic Pattern\n**Mathematical Property of Prime Bases:** Using the constraints of the data type (32-bit integer) and the properties of prime numbers to solve in constant time without iteration or recursion.",
-      "linkedSolutions": [
-        "lc-power-of-three::1650980140"
-      ]
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(1)$. The exponentiation and modulo operations take constant time for fixed-width integers.\n*   **Space Complexity:** $O(1)$. No additional memory is allocated.\n\n### 2. Correctness\nThe solution is **correct** for the range of a 32-bit signed integer. \n*   **Edge Cases:** $n \\le 0$ is handled by `n > 0`.\n*   **Logic:** Since 3 is a prime number, the only divisors of $3^{19}$ are $3^0, 3^1, \\dots, 3^{19}$. $3^{19}$ ($1,162,261,467$) is the largest power of three that fits in a 32-bit signed integer. Therefore, any $n > 0$ that divides $3^{19}$ must be a power of three.\n\n### 3. Optimization\nReplace the expression `3**19` with the literal integer value `1162261467`. This avoids recalculating the power at runtime, though Python's interpreter may already optimize this.\n\n```python\nreturn n > 0 and 1162261467 % n == 0\n```\n\n### 4. Key Algorithmic Pattern\n**Mathematical Property of Prime Bases:** Using the constraints of the data type (32-bit integer) and the properties of prime numbers to solve in constant time without iteration or recursion."
     },
     {
       "id": "lc-power-of-two::1650965939",
@@ -12554,10 +12427,7 @@
         "problems/lc-power-of-two/lc-power-of-two-alt-approach-python3-imported.py",
         "problems/lc-power-of-two/README.md"
       ],
-      "aiReview": "**1. Complexity**\n*   **Time:** $O(\\log n)$ — converting an integer to a binary string and iterating through its bits requires logarithmic time relative to the value of $n$.\n*   **Space:** $O(\\log n)$ — the string representation of the binary number is stored in memory.\n\n**2. Correctness**\nThe logic is **correct**. It correctly identifies that a power of two in binary starts with '1' followed exclusively by '0's.\n*   **Edge cases:** \n    *   `n = 0`: Returns `False` (Correct).\n    *   `n < 0`: `bin(-2)` is `'-0b10'`; the slice `[2:]` results in `'b10'`. Since `'b' != '1'`, it returns `False` (Correct).\n\n**3. Optimization**\nUse bitwise operators to achieve **$O(1)$ time and space** without string conversion:\n```python\nreturn n > 0 and (n & (n - 1)) == 0\n```\nThis works because a power of two (e.g., `1000`) and its predecessor (e.g., `0111`) share no common set bits, so their bitwise AND is always zero.\n\n**4. Key Algorithmic Pattern**\n**Bit Manipulation** (specifically checking the Hamming weight or bit properties of an integer).",
-      "linkedSolutions": [
-        "lc-power-of-two::1650968743"
-      ]
+      "aiReview": "**1. Complexity**\n*   **Time:** $O(\\log n)$ — converting an integer to a binary string and iterating through its bits requires logarithmic time relative to the value of $n$.\n*   **Space:** $O(\\log n)$ — the string representation of the binary number is stored in memory.\n\n**2. Correctness**\nThe logic is **correct**. It correctly identifies that a power of two in binary starts with '1' followed exclusively by '0's.\n*   **Edge cases:** \n    *   `n = 0`: Returns `False` (Correct).\n    *   `n < 0`: `bin(-2)` is `'-0b10'`; the slice `[2:]` results in `'b10'`. Since `'b' != '1'`, it returns `False` (Correct).\n\n**3. Optimization**\nUse bitwise operators to achieve **$O(1)$ time and space** without string conversion:\n```python\nreturn n > 0 and (n & (n - 1)) == 0\n```\nThis works because a power of two (e.g., `1000`) and its predecessor (e.g., `0111`) share no common set bits, so their bitwise AND is always zero.\n\n**4. Key Algorithmic Pattern**\n**Bit Manipulation** (specifically checking the Hamming weight or bit properties of an integer)."
     },
     {
       "id": "lc-power-of-two::1650968743",
@@ -12624,10 +12494,7 @@
         "problems/lc-power-of-two/lc-power-of-two.py",
         "problems/lc-power-of-two/README.md"
       ],
-      "aiReview": "### Review of \"Power of Two\" Solution\n\n**1. Complexity**\n*   **Time:** $O(\\log n)$. Converting an integer to a binary string and counting characters both scale with the number of bits in $n$.\n*   **Space:** $O(\\log n)$. The `bin(n)` function creates a new string proportional to the number of bits.\n\n**2. Correctness**\n*   The logic is **correct**. It successfully handles $n \\le 0$ via the `n > 0` check and correctly identifies that powers of two have exactly one set bit in binary. \n*   **Minor Note:** `str(bin(n))` is redundant; `bin(n)` already returns a string.\n\n**3. Optimization**\nUse bitwise manipulation to achieve **$O(1)$ time and space**. A power of two has exactly one bit set. Subtracting 1 flips that bit and all bits to its right. Therefore, `n & (n - 1)` will equal `0`.\n*   **Optimized Code:** `return n > 0 and (n & (n - 1)) == 0`\n\n**4. Key Algorithmic Pattern**\n**Bit Manipulation.** This problem relies on understanding the binary structure of integers, specifically how powers of two relate to bit counts and bitwise transitions.",
-      "linkedSolutions": [
-        "lc-power-of-two::1650965939"
-      ]
+      "aiReview": "### Review of \"Power of Two\" Solution\n\n**1. Complexity**\n*   **Time:** $O(\\log n)$. Converting an integer to a binary string and counting characters both scale with the number of bits in $n$.\n*   **Space:** $O(\\log n)$. The `bin(n)` function creates a new string proportional to the number of bits.\n\n**2. Correctness**\n*   The logic is **correct**. It successfully handles $n \\le 0$ via the `n > 0` check and correctly identifies that powers of two have exactly one set bit in binary. \n*   **Minor Note:** `str(bin(n))` is redundant; `bin(n)` already returns a string.\n\n**3. Optimization**\nUse bitwise manipulation to achieve **$O(1)$ time and space**. A power of two has exactly one bit set. Subtracting 1 flips that bit and all bits to its right. Therefore, `n & (n - 1)` will equal `0`.\n*   **Optimized Code:** `return n > 0 and (n & (n - 1)) == 0`\n\n**4. Key Algorithmic Pattern**\n**Bit Manipulation.** This problem relies on understanding the binary structure of integers, specifically how powers of two relate to bit counts and bitwise transitions."
     },
     {
       "id": "lc-product-sales-analysis-i",
@@ -13005,10 +12872,7 @@
         "problems/lc-rename-columns/lc-rename-columns.py",
         "problems/lc-rename-columns/README.md"
       ],
-      "aiReview": "### Analysis\n\n1. **Complexity**:\n    *   **Time Complexity**: $O(N \\times M)$, where $N$ is the number of rows and $M$ is the number of columns. While the rename mapping is $O(1)$ relative to rows, Pandas creates a new DataFrame copy by default, necessitating a full data scan.\n    *   **Space Complexity**: $O(N \\times M)$ to store the returned DataFrame copy.\n\n2. **Correctness**: \n    The solution is correct. Pandas’ `rename` method is robust; if a specified key (e.g., 'id') is missing from the DataFrame, it ignores that mapping without raising an error, preventing crashes on unexpected schemas.\n\n3. **Optimization**:\n    Use the `inplace=True` parameter to modify the existing DataFrame and return it, reducing memory overhead by avoiding the creation of an intermediate object:\n    ```python\n    students.rename(columns={...}, inplace=True)\n    return students\n    ```\n    Alternatively, for large datasets where you are certain of the column order, direct assignment `students.columns = [...]` is faster as it skips the dictionary lookup logic.\n\n4. **Pattern**: \n    **Data Transformation** (Schema Mapping). It utilizes a **Hash Map (Dictionary)** to define the translation layer between source and target metadata.",
-      "linkedSolutions": [
-        "lc-rename-columns::1433138106"
-      ]
+      "aiReview": "### Analysis\n\n1. **Complexity**:\n    *   **Time Complexity**: $O(N \\times M)$, where $N$ is the number of rows and $M$ is the number of columns. While the rename mapping is $O(1)$ relative to rows, Pandas creates a new DataFrame copy by default, necessitating a full data scan.\n    *   **Space Complexity**: $O(N \\times M)$ to store the returned DataFrame copy.\n\n2. **Correctness**: \n    The solution is correct. Pandas’ `rename` method is robust; if a specified key (e.g., 'id') is missing from the DataFrame, it ignores that mapping without raising an error, preventing crashes on unexpected schemas.\n\n3. **Optimization**:\n    Use the `inplace=True` parameter to modify the existing DataFrame and return it, reducing memory overhead by avoiding the creation of an intermediate object:\n    ```python\n    students.rename(columns={...}, inplace=True)\n    return students\n    ```\n    Alternatively, for large datasets where you are certain of the column order, direct assignment `students.columns = [...]` is faster as it skips the dictionary lookup logic.\n\n4. **Pattern**: \n    **Data Transformation** (Schema Mapping). It utilizes a **Hash Map (Dictionary)** to define the translation layer between source and target metadata."
     },
     {
       "id": "lc-rename-columns::1433138106",
@@ -13056,10 +12920,7 @@
         "problems/lc-rename-columns/lc-rename-columns.py",
         "problems/lc-rename-columns/README.md"
       ],
-      "aiReview": "### Review\n**1. Complexity**\n*   **Time Complexity:** $O(N \\times M)$, where $N$ is the number of rows and $M$ is the number of columns. While renaming the header is $O(M)$, Pandas creates a full copy of the underlying data by default.\n*   **Space Complexity:** $O(N \\times M)$ because a new DataFrame is allocated to store the copied data.\n\n**2. Correctness**\nThe solution is correct. The `rename` method is robust; if a key in the dictionary doesn't exist in the DataFrame, Pandas ignores it rather than raising an error. It handles empty DataFrames correctly.\n\n**3. Optimization**\nUse the `inplace=True` parameter:\n```python\nstudents.rename(columns={...}, inplace=True)\nreturn students\n```\nThis modifies the DataFrame directly, reducing auxiliary space complexity to $O(1)$ by avoiding a full data copy (though internal metadata updates still occur).\n\n**4. Key Algorithmic Pattern**\n**Schema Mapping:** Using a Hash Map (dictionary) to define a transformation between existing metadata keys and new labels.",
-      "linkedSolutions": [
-        "lc-rename-columns"
-      ]
+      "aiReview": "### Review\n**1. Complexity**\n*   **Time Complexity:** $O(N \\times M)$, where $N$ is the number of rows and $M$ is the number of columns. While renaming the header is $O(M)$, Pandas creates a full copy of the underlying data by default.\n*   **Space Complexity:** $O(N \\times M)$ because a new DataFrame is allocated to store the copied data.\n\n**2. Correctness**\nThe solution is correct. The `rename` method is robust; if a key in the dictionary doesn't exist in the DataFrame, Pandas ignores it rather than raising an error. It handles empty DataFrames correctly.\n\n**3. Optimization**\nUse the `inplace=True` parameter:\n```python\nstudents.rename(columns={...}, inplace=True)\nreturn students\n```\nThis modifies the DataFrame directly, reducing auxiliary space complexity to $O(1)$ by avoiding a full data copy (though internal metadata updates still occur).\n\n**4. Key Algorithmic Pattern**\n**Schema Mapping:** Using a Hash Map (dictionary) to define a transformation between existing metadata keys and new labels."
     },
     {
       "id": "lc-replace-employee-id-with-the-unique-identifier",
@@ -13147,10 +13008,7 @@
         "problems/lc-reshape-data-concatenate/lc-reshape-data-concatenate.py",
         "problems/lc-reshape-data-concatenate/README.md"
       ],
-      "aiReview": "### Review\n1. **Complexity**:\n   - **Time**: $O(N + M)$, where $N$ and $M$ are the total number of elements in `df1` and `df2`. Pandas must traverse and copy all data to a new memory block.\n   - **Space**: $O(N + M)$ to allocate the resulting combined DataFrame.\n\n2. **Correctness**:\n   The solution is correct. However, if the dataframes have overlapping indices, the result will contain duplicate index labels. If columns do not align perfectly, Pandas will perform an outer join by default, introducing `NaN` values for missing columns.\n\n3. **Optimization**:\n   Add `ignore_index=True`. In most data reshaping tasks, the original row indices are not meaningful after concatenation. Using `ignore_index=True` ensures a clean, continuous integer index (0 to N+M-1) and can slightly improve downstream performance by avoiding index-related conflicts.\n   ```python\n   return pd.concat([df1, df2], axis=0, ignore_index=True)\n   ```\n\n4. **Key Pattern**:\n   **Vertical Concatenation (Row Stacking)**: The standard approach for merging datasets with identical or similar schema.",
-      "linkedSolutions": [
-        "lc-reshape-data-concatenate::1433146452"
-      ]
+      "aiReview": "### Review\n1. **Complexity**:\n   - **Time**: $O(N + M)$, where $N$ and $M$ are the total number of elements in `df1` and `df2`. Pandas must traverse and copy all data to a new memory block.\n   - **Space**: $O(N + M)$ to allocate the resulting combined DataFrame.\n\n2. **Correctness**:\n   The solution is correct. However, if the dataframes have overlapping indices, the result will contain duplicate index labels. If columns do not align perfectly, Pandas will perform an outer join by default, introducing `NaN` values for missing columns.\n\n3. **Optimization**:\n   Add `ignore_index=True`. In most data reshaping tasks, the original row indices are not meaningful after concatenation. Using `ignore_index=True` ensures a clean, continuous integer index (0 to N+M-1) and can slightly improve downstream performance by avoiding index-related conflicts.\n   ```python\n   return pd.concat([df1, df2], axis=0, ignore_index=True)\n   ```\n\n4. **Key Pattern**:\n   **Vertical Concatenation (Row Stacking)**: The standard approach for merging datasets with identical or similar schema."
     },
     {
       "id": "lc-reshape-data-concatenate::1433146452",
@@ -13198,10 +13056,7 @@
         "problems/lc-reshape-data-concatenate/lc-reshape-data-concatenate.py",
         "problems/lc-reshape-data-concatenate/README.md"
       ],
-      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(C \\times (R1 + R2))$, where $C$ is the number of columns and $R$ is the number of rows. Pandas must visit and copy every element into a new memory block.\n*   **Space Complexity:** $O(C \\times (R1 + R2))$. `pd.concat` creates a completely new DataFrame; it does not perform the operation in-place.\n\n**2. Correctness**\nThe code is correct. It handles edge cases like empty DataFrames gracefully. Note that if `df1` and `df2` have different column names, Pandas will perform an \"outer join\" by default, filling missing columns with `NaN`.\n\n**3. Optimization**\nUse `ignore_index=True`:\n```python\nreturn pd.concat([df1, df2], axis=0, ignore_index=True)\n```\nThis is a concrete optimization when the original index labels are not needed. It prevents Pandas from trying to preserve or align potentially conflicting indices, which reduces overhead and avoids duplicate index labels.\n\n**4. Key Algorithmic Pattern**\nData Reshaping / Structural Transformation.",
-      "linkedSolutions": [
-        "lc-reshape-data-concatenate"
-      ]
+      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(C \\times (R1 + R2))$, where $C$ is the number of columns and $R$ is the number of rows. Pandas must visit and copy every element into a new memory block.\n*   **Space Complexity:** $O(C \\times (R1 + R2))$. `pd.concat` creates a completely new DataFrame; it does not perform the operation in-place.\n\n**2. Correctness**\nThe code is correct. It handles edge cases like empty DataFrames gracefully. Note that if `df1` and `df2` have different column names, Pandas will perform an \"outer join\" by default, filling missing columns with `NaN`.\n\n**3. Optimization**\nUse `ignore_index=True`:\n```python\nreturn pd.concat([df1, df2], axis=0, ignore_index=True)\n```\nThis is a concrete optimization when the original index labels are not needed. It prevents Pandas from trying to preserve or align potentially conflicting indices, which reduces overhead and avoids duplicate index labels.\n\n**4. Key Algorithmic Pattern**\nData Reshaping / Structural Transformation."
     },
     {
       "id": "lc-reshape-data-melt",
@@ -13245,10 +13100,7 @@
         "problems/lc-reshape-data-melt/lc-reshape-data-melt.py",
         "problems/lc-reshape-data-melt/README.md"
       ],
-      "aiReview": "1. **Complexity**: \n   - **Time Complexity**: $O(N \\times M)$, where $N$ is the number of rows and $M$ is the number of columns being melted. Each element in the value columns must be visited once to populate the new long-format DataFrame.\n   - **Space Complexity**: $O(N \\times M)$ to store the resulting reshaped DataFrame.\n\n2. **Correctness**: The solution is correct and follows the standard Pandas API. It handles missing values (NaNs) and duplicate identifier values correctly.\n\n3. **Optimization**: Omit the `value_vars` parameter if all columns except the identifier are meant to be melted. Using `report.melt(id_vars='product', ...)` makes the code more robust to schema changes, such as adding extra quarters (e.g., `quarter_5`), without needing to update the column list manually.\n\n4. **Key Pattern**: **Wide-to-Long Reshaping** (Unpivoting). This pattern transforms attribute columns into row values to normalize data for easier analysis or plotting.",
-      "linkedSolutions": [
-        "lc-reshape-data-melt::1434100437"
-      ]
+      "aiReview": "1. **Complexity**: \n   - **Time Complexity**: $O(N \\times M)$, where $N$ is the number of rows and $M$ is the number of columns being melted. Each element in the value columns must be visited once to populate the new long-format DataFrame.\n   - **Space Complexity**: $O(N \\times M)$ to store the resulting reshaped DataFrame.\n\n2. **Correctness**: The solution is correct and follows the standard Pandas API. It handles missing values (NaNs) and duplicate identifier values correctly.\n\n3. **Optimization**: Omit the `value_vars` parameter if all columns except the identifier are meant to be melted. Using `report.melt(id_vars='product', ...)` makes the code more robust to schema changes, such as adding extra quarters (e.g., `quarter_5`), without needing to update the column list manually.\n\n4. **Key Pattern**: **Wide-to-Long Reshaping** (Unpivoting). This pattern transforms attribute columns into row values to normalize data for easier analysis or plotting."
     },
     {
       "id": "lc-reshape-data-melt::1434100437",
@@ -13296,10 +13148,7 @@
         "problems/lc-reshape-data-melt/lc-reshape-data-melt.py",
         "problems/lc-reshape-data-melt/README.md"
       ],
-      "aiReview": "### Review\n**1. Complexity**\n*   **Time Complexity:** $O(N \\times K)$, where $N$ is the number of rows and $K$ is the number of `value_vars` (in this case, 4). The algorithm must iterate over every cell in the specified columns to transform them into rows.\n*   **Space Complexity:** $O(N \\times K)$. A new DataFrame is created to store the reshaped data, containing $N \\times K$ rows.\n\n**2. Correctness**\nThe solution is correct and follows the Pandas API precisely. It handles potential edge cases such as empty DataFrames or missing values (`NaN`) within the quarters correctly by preserving them in the long format.\n\n**3. Optimisation**\nIf the DataFrame only contains the `product` column and the four quarter columns, you can omit the `value_vars` parameter. Pandas will automatically treat all columns not listed in `id_vars` as `value_vars`. This simplifies the code without changing performance.\n\n**4. Key Algorithmic Pattern**\n**Data Reshaping (Unpivoting):** This pattern transforms data from a \"wide\" format (multiple columns per observation) to a \"long\" format (multiple rows per observation), facilitating easier aggregation and analysis.",
-      "linkedSolutions": [
-        "lc-reshape-data-melt"
-      ]
+      "aiReview": "### Review\n**1. Complexity**\n*   **Time Complexity:** $O(N \\times K)$, where $N$ is the number of rows and $K$ is the number of `value_vars` (in this case, 4). The algorithm must iterate over every cell in the specified columns to transform them into rows.\n*   **Space Complexity:** $O(N \\times K)$. A new DataFrame is created to store the reshaped data, containing $N \\times K$ rows.\n\n**2. Correctness**\nThe solution is correct and follows the Pandas API precisely. It handles potential edge cases such as empty DataFrames or missing values (`NaN`) within the quarters correctly by preserving them in the long format.\n\n**3. Optimisation**\nIf the DataFrame only contains the `product` column and the four quarter columns, you can omit the `value_vars` parameter. Pandas will automatically treat all columns not listed in `id_vars` as `value_vars`. This simplifies the code without changing performance.\n\n**4. Key Algorithmic Pattern**\n**Data Reshaping (Unpivoting):** This pattern transforms data from a \"wide\" format (multiple columns per observation) to a \"long\" format (multiple rows per observation), facilitating easier aggregation and analysis."
     },
     {
       "id": "lc-reshape-data-pivot",
@@ -13342,10 +13191,7 @@
         "problems/lc-reshape-data-pivot/lc-reshape-data-pivot.py",
         "problems/lc-reshape-data-pivot/README.md"
       ],
-      "aiReview": "### Analysis\n\n1.  **Complexity**:\n    *   **Time Complexity**: $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must scan the data once to map indices and columns to the new structure.\n    *   **Space Complexity**: $O(N)$, as the resulting pivoted DataFrame stores the same data points, though organized differently.\n\n2.  **Correctness**: \n    The solution is correct for the standard LeetCode constraints. However, `df.pivot()` will raise a `ValueError` if there are **duplicate entries** for the same `(month, city)` pair. If duplicates were possible, `df.pivot_table()` would be required.\n\n3.  **Optimization**: \n    To improve performance on massive datasets with many repeated strings, convert the `city` column to the `category` dtype before pivoting. This reduces memory usage and speeds up the internal grouping logic.\n    ```python\n    weather['city'] = weather['city'].astype('category')\n    ```\n\n4.  **Algorithmic Pattern**: \n    Data Reshaping (Long-to-Wide transformation).",
-      "linkedSolutions": [
-        "lc-reshape-data-pivot::1433500647"
-      ]
+      "aiReview": "### Analysis\n\n1.  **Complexity**:\n    *   **Time Complexity**: $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must scan the data once to map indices and columns to the new structure.\n    *   **Space Complexity**: $O(N)$, as the resulting pivoted DataFrame stores the same data points, though organized differently.\n\n2.  **Correctness**: \n    The solution is correct for the standard LeetCode constraints. However, `df.pivot()` will raise a `ValueError` if there are **duplicate entries** for the same `(month, city)` pair. If duplicates were possible, `df.pivot_table()` would be required.\n\n3.  **Optimization**: \n    To improve performance on massive datasets with many repeated strings, convert the `city` column to the `category` dtype before pivoting. This reduces memory usage and speeds up the internal grouping logic.\n    ```python\n    weather['city'] = weather['city'].astype('category')\n    ```\n\n4.  **Algorithmic Pattern**: \n    Data Reshaping (Long-to-Wide transformation)."
     },
     {
       "id": "lc-reshape-data-pivot::1433500647",
@@ -13392,10 +13238,7 @@
         "problems/lc-reshape-data-pivot/lc-reshape-data-pivot.py",
         "problems/lc-reshape-data-pivot/README.md"
       ],
-      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must iterate through the data to re-index and map values to the new shape.\n*   **Space Complexity:** $O(N)$, as the pivoted DataFrame stores the same number of data points in a different structure.\n\n**2. Correctness**\n*   **Duplicate Entries:** The `pivot` method will raise a `ValueError` if there are multiple entries for the same `month` and `city` combination. In LeetCode contexts, the input is usually guaranteed to be unique; otherwise, `pivot_table` (which aggregates) would be required.\n*   **Missing Data:** If a city is missing a temperature for a specific month, Pandas correctly fills that cell with `NaN`.\n\n**3. Optimization**\nIf memory usage is a concern for large datasets, convert the `city` and `month` columns to the `category` dtype before pivoting. This reduces the memory footprint of the index and column headers.\n\n**4. Key Algorithmic Pattern**\n**Data Reshaping:** This utilizes a long-to-wide transformation, reorganizing row-wise observations into a columnar matrix format.",
-      "linkedSolutions": [
-        "lc-reshape-data-pivot"
-      ]
+      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas must iterate through the data to re-index and map values to the new shape.\n*   **Space Complexity:** $O(N)$, as the pivoted DataFrame stores the same number of data points in a different structure.\n\n**2. Correctness**\n*   **Duplicate Entries:** The `pivot` method will raise a `ValueError` if there are multiple entries for the same `month` and `city` combination. In LeetCode contexts, the input is usually guaranteed to be unique; otherwise, `pivot_table` (which aggregates) would be required.\n*   **Missing Data:** If a city is missing a temperature for a specific month, Pandas correctly fills that cell with `NaN`.\n\n**3. Optimization**\nIf memory usage is a concern for large datasets, convert the `city` and `month` columns to the `category` dtype before pivoting. This reduces the memory footprint of the index and column headers.\n\n**4. Key Algorithmic Pattern**\n**Data Reshaping:** This utilizes a long-to-wide transformation, reorganizing row-wise observations into a columnar matrix format."
     },
     {
       "id": "lc-return-length-of-arguments-passed",
@@ -13836,9 +13679,6 @@
       "_committedPaths": [
         "problems/lc-rising-temperature/lc-rising-temperature-alt-approach-mysql.sql",
         "problems/lc-rising-temperature/README.md"
-      ],
-      "linkedSolutions": [
-        "lc-rising-temperature::1987589875"
       ]
     },
     {
@@ -13885,9 +13725,6 @@
       "_committedPaths": [
         "problems/lc-rising-temperature/lc-rising-temperature.sql",
         "problems/lc-rising-temperature/README.md"
-      ],
-      "linkedSolutions": [
-        "lc-rising-temperature"
       ]
     },
     {
@@ -14137,11 +13974,6 @@
       "_committedPaths": [
         "problems/lc-score-of-a-string/lc-score-of-a-string.c",
         "problems/lc-score-of-a-string/README.md"
-      ],
-      "linkedSolutions": [
-        "lc-score-of-a-string::1235774141",
-        "lc-score-of-a-string::1235776226",
-        "lc-score-of-a-string::1235831135"
       ]
     },
     {
@@ -14200,7 +14032,6 @@
       ],
       "aiReview": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the string. We traverse the string once.\n*   **Space Complexity:** $O(1)$, as we only store a single integer variable regardless of input size.\n\n**2. Correctness**\nThe logic is correct. \n*   **Edge Cases:** If `len(s) < 2`, the loop will not execute and it returns `0`, which is correct for a string with no adjacent pairs. \n*   **Overflow:** Python 3 handles arbitrarily large integers, so there is no risk of integer overflow despite the summation.\n\n**3. Optimization**\nWhile the current solution is efficient, you can make it more \"Pythonic\" and potentially faster by using `zip()` to avoid manual indexing and `sum()` for internal C-level iteration:\n```python\nreturn sum(abs(ord(a) - ord(b)) for a, b in zip(s, s[1:]))\n```\n*Note: `s[1:]` creates a slice (copy). For memory efficiency on massive strings, use `itertools.islice(s, 1)`.*\n\n**4. Key Algorithmic Pattern**\n**Adjacent Element Iteration** (a specific case of a fixed-size **Sliding Window** where $k=2$).",
       "linkedSolutions": [
-        "lc-score-of-a-string",
         "lc-score-of-a-string::1235776226",
         "lc-score-of-a-string::1235831135"
       ]
@@ -14253,7 +14084,6 @@
       ],
       "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the string. We perform a single pass through the string.\n*   **Space Complexity:** $O(1)$, as we only use a single integer variable (`score`) regardless of input size.\n\n### 2. Correctness\nThe solution is **correct** for the problem constraints ($2 \\le s.length \\le 100$).\n*   **Edge Cases:** For a string of length 2, the loop runs once. If length $< 2$ (though restricted by constraints), it returns 0.\n*   **Integer Overflow:** In languages like C++, you might check for overflow, but in Python, integers have arbitrary precision. Regardless, the maximum possible score ($\\approx 100 \\times 128$) is very small.\n\n### 3. Concrete Optimization\nWhile the current code is efficient, you can make it more **Pythonic** by using a generator expression with `sum()`. This avoids manual indexing:\n```python\nreturn sum(abs(ord(a) - ord(b)) for a, b in zip(s, s[1:]))\n```\n*Note: In Python 3.10+, `itertools.pairwise(s)` is the most memory-efficient way to iterate over adjacent pairs.*\n\n### 4. Key Algorithmic Pattern\n**Linear Scan** using a **Fixed-size Sliding Window** (window size = 2).",
       "linkedSolutions": [
-        "lc-score-of-a-string",
         "lc-score-of-a-string::1235774141",
         "lc-score-of-a-string::1235831135"
       ]
@@ -14304,7 +14134,6 @@
       ],
       "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(N)$, where $N$ is the length of the string. The algorithm performs a single pass through the string.\n*   **Space Complexity:** $O(1)$, as it uses a constant amount of extra space regardless of input size.\n\n### 2. Correctness\nThe code is **correct**. \n*   **Edge Cases:** The problem constraints specify $2 \\le s.length \\le 100$, so the loop `i < s.length() - 1` will always execute at least once, avoiding index issues.\n*   **Overflow:** Since the maximum ASCII difference is 25 ('z' - 'a') and the max length is 100, the maximum score is $\\approx 2,475$, which fits safely within a standard 32-bit `int`.\n\n### 3. Optimization\nWhile the current solution is efficient, you can slightly improve performance by converting the string to a character array using **`s.toCharArray()`** before the loop. This avoids the overhead of repeated `charAt()` method calls and the internal bounds checking performed by the `String` class.\n\n### 4. Key Algorithmic Pattern\n**Linear Scan (Adjacent Element Traversal):** The pattern involves iterating through a sequence once while comparing or calculating values between neighboring elements.",
       "linkedSolutions": [
-        "lc-score-of-a-string",
         "lc-score-of-a-string::1235774141",
         "lc-score-of-a-string::1235776226"
       ]
@@ -14539,10 +14368,7 @@
         "problems/lc-select-data/lc-select-data.py",
         "problems/lc-select-data/README.md"
       ],
-      "aiReview": "### Evaluation\n\n1.  **Complexity**: \n    *   **Time: $O(N)$**, where $N$ is the number of rows. Pandas must perform a linear scan of the `student_id` column to evaluate the condition.\n    *   **Space: $O(N)$**, required to generate the intermediate boolean mask and the resulting subset DataFrame.\n\n2.  **Correctness**: \n    *   **Correct.** The solution uses idiomatic Pandas indexing. \n    *   **Edge Cases**: It correctly returns an empty DataFrame if `student_id` 101 is missing and handles multiple occurrences if the ID is not unique.\n\n3.  **Optimisation**: \n    For a single execution, this is optimal. However, if this operation were performed frequently on a large dataset, setting `student_id` as the **index** (`students.set_index('student_id')`) would allow for $O(1)$ average-time lookups using label-based indexing.\n\n4.  **Key Algorithmic Pattern**: \n    **Boolean Indexing** (or Vectorized Filtering) — applying a logical condition across an entire column simultaneously to filter data.",
-      "linkedSolutions": [
-        "lc-select-data::1431824819"
-      ]
+      "aiReview": "### Evaluation\n\n1.  **Complexity**: \n    *   **Time: $O(N)$**, where $N$ is the number of rows. Pandas must perform a linear scan of the `student_id` column to evaluate the condition.\n    *   **Space: $O(N)$**, required to generate the intermediate boolean mask and the resulting subset DataFrame.\n\n2.  **Correctness**: \n    *   **Correct.** The solution uses idiomatic Pandas indexing. \n    *   **Edge Cases**: It correctly returns an empty DataFrame if `student_id` 101 is missing and handles multiple occurrences if the ID is not unique.\n\n3.  **Optimisation**: \n    For a single execution, this is optimal. However, if this operation were performed frequently on a large dataset, setting `student_id` as the **index** (`students.set_index('student_id')`) would allow for $O(1)$ average-time lookups using label-based indexing.\n\n4.  **Key Algorithmic Pattern**: \n    **Boolean Indexing** (or Vectorized Filtering) — applying a logical condition across an entire column simultaneously to filter data."
     },
     {
       "id": "lc-select-data::1431824819",
@@ -14590,10 +14416,7 @@
         "problems/lc-select-data/lc-select-data.py",
         "problems/lc-select-data/README.md"
       ],
-      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas performs a linear scan to evaluate the boolean condition.\n*   **Space:** $O(N)$ in the worst case to store the result if all rows match the criteria (though typically $O(K)$ where $K$ is the number of matches).\n\n**2. Correctness**\nThe solution is correct and follows idiomatic Pandas patterns.\n*   **Edge Cases:** \n    *   **Empty DataFrame:** Correctly returns an empty DataFrame with the specified columns.\n    *   **No matches:** Correctly returns an empty DataFrame.\n    *   **Multiple matches:** Correctly returns all rows where the ID is 101.\n    *   **Data Types:** If `student_id` contains `NaN` or is stored as a string, the comparison might fail, though LeetCode's schema usually prevents this.\n\n**3. Optimization**\nThe current `.loc` implementation is highly efficient. For massive datasets, ensuring `student_id` is set as an **index** would allow $O(1)$ or $O(\\log N)$ lookup using `students.loc[101, [\"name\", \"age\"]]`. However, for standard filtering, no further optimization is needed.\n\n**4. Key Pattern**\n**Boolean Indexing** (Vectorized filtering).",
-      "linkedSolutions": [
-        "lc-select-data"
-      ]
+      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time:** $O(N)$, where $N$ is the number of rows in the DataFrame. Pandas performs a linear scan to evaluate the boolean condition.\n*   **Space:** $O(N)$ in the worst case to store the result if all rows match the criteria (though typically $O(K)$ where $K$ is the number of matches).\n\n**2. Correctness**\nThe solution is correct and follows idiomatic Pandas patterns.\n*   **Edge Cases:** \n    *   **Empty DataFrame:** Correctly returns an empty DataFrame with the specified columns.\n    *   **No matches:** Correctly returns an empty DataFrame.\n    *   **Multiple matches:** Correctly returns all rows where the ID is 101.\n    *   **Data Types:** If `student_id` contains `NaN` or is stored as a string, the comparison might fail, though LeetCode's schema usually prevents this.\n\n**3. Optimization**\nThe current `.loc` implementation is highly efficient. For massive datasets, ensuring `student_id` is set as an **index** would allow $O(1)$ or $O(\\log N)$ lookup using `students.loc[101, [\"name\", \"age\"]]`. However, for standard filtering, no further optimization is needed.\n\n**4. Key Pattern**\n**Boolean Indexing** (Vectorized filtering)."
     },
     {
       "id": "lc-shift-distance-between-two-strings::1460841171",
@@ -15279,10 +15102,7 @@
         "problems/lc-sort-characters-by-frequency/lc-sort-characters-by-frequency-alt-approach-python3-imported.py",
         "problems/lc-sort-characters-by-frequency/README.md"
       ],
-      "aiReview": "### 1. Complexity\n*   **Time**: $O(N + K \\log K)$, where $N$ is the string length and $K$ is the number of unique characters. $O(N)$ to count, $O(K \\log K)$ to sort unique characters.\n*   **Space**: $O(N + K)$ to store the frequency map and the final output string.\n\n### 2. Correctness\n**Correct.** It successfully handles:\n*   **Case Sensitivity**: 'A' and 'a' are treated as distinct keys.\n*   **Tie-breaking**: Characters with the same frequency can appear in any order (as per LeetCode requirements).\n*   **Edge Cases**: Empty strings or strings with one character return correctly.\n\n### 3. Optimization: Bucket Sort\nInstead of sorting, use **Bucket Sort** to achieve **$O(N)$ time**.\nCreate a list of lists where `buckets[i]` stores characters appearing `i` times. Iterate from the highest index down to build the string. This avoids the $O(K \\log K)$ sorting overhead.\n\n### 4. Key Algorithmic Pattern\n**Frequency Counting** (using a Hash Map/Counter) followed by **Greedy Sorting**.",
-      "linkedSolutions": [
-        "lc-sort-characters-by-frequency::1458513764"
-      ]
+      "aiReview": "### 1. Complexity\n*   **Time**: $O(N + K \\log K)$, where $N$ is the string length and $K$ is the number of unique characters. $O(N)$ to count, $O(K \\log K)$ to sort unique characters.\n*   **Space**: $O(N + K)$ to store the frequency map and the final output string.\n\n### 2. Correctness\n**Correct.** It successfully handles:\n*   **Case Sensitivity**: 'A' and 'a' are treated as distinct keys.\n*   **Tie-breaking**: Characters with the same frequency can appear in any order (as per LeetCode requirements).\n*   **Edge Cases**: Empty strings or strings with one character return correctly.\n\n### 3. Optimization: Bucket Sort\nInstead of sorting, use **Bucket Sort** to achieve **$O(N)$ time**.\nCreate a list of lists where `buckets[i]` stores characters appearing `i` times. Iterate from the highest index down to build the string. This avoids the $O(K \\log K)$ sorting overhead.\n\n### 4. Key Algorithmic Pattern\n**Frequency Counting** (using a Hash Map/Counter) followed by **Greedy Sorting**."
     },
     {
       "id": "lc-sort-characters-by-frequency::1458513764",
@@ -15382,10 +15202,7 @@
         "problems/lc-sort-characters-by-frequency/lc-sort-characters-by-frequency.py",
         "problems/lc-sort-characters-by-frequency/README.md"
       ],
-      "aiReview": "1. **Complexity**:\n   - **Time**: $O(N + K \\log K)$, where $N$ is the string length and $K$ is the number of unique characters. Counting takes $O(N)$; sorting the unique characters takes $O(K \\log K)$.\n   - **Space**: $O(N + K)$ to store the frequency map and the final concatenated string.\n\n2. **Correctness**: The solution is correct. It handles edge cases like empty strings, single characters, and characters with identical frequencies (where the relative order doesn't matter) correctly.\n\n3. **Optimization**: Use **Bucket Sort** to achieve strictly $O(N)$ time. Instead of sorting by frequency, create an array of lists (buckets) where the index represents the frequency. Since the maximum frequency is $N$, you can iterate through the buckets from $N$ down to 1 to build the result.\n\n4. **Pattern**: **Frequency Counting** followed by **Custom Sorting**.",
-      "linkedSolutions": [
-        "lc-sort-characters-by-frequency::1458513295"
-      ]
+      "aiReview": "1. **Complexity**:\n   - **Time**: $O(N + K \\log K)$, where $N$ is the string length and $K$ is the number of unique characters. Counting takes $O(N)$; sorting the unique characters takes $O(K \\log K)$.\n   - **Space**: $O(N + K)$ to store the frequency map and the final concatenated string.\n\n2. **Correctness**: The solution is correct. It handles edge cases like empty strings, single characters, and characters with identical frequencies (where the relative order doesn't matter) correctly.\n\n3. **Optimization**: Use **Bucket Sort** to achieve strictly $O(N)$ time. Instead of sorting by frequency, create an array of lists (buckets) where the index represents the frequency. Since the maximum frequency is $N$, you can iterate through the buckets from $N$ down to 1 to build the result.\n\n4. **Pattern**: **Frequency Counting** followed by **Custom Sorting**."
     },
     {
       "id": "lc-split-the-array::1448736927",
@@ -15444,12 +15261,7 @@
         "problems/lc-split-the-array/lc-split-the-array-alt-approach-python3-imported.py",
         "problems/lc-split-the-array/README.md"
       ],
-      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of `nums`. We iterate through the array once to count frequencies and once through the unique values.\n*   **Space Complexity:** $O(n)$ to store the frequency map (`Counter`).\n\n### 2. Correctness\nThe solution is **correct**. To split an array into two subarrays with distinct elements, no single value can appear more than twice. If a value appears three times, at least one subarray must contain a duplicate. Since the total length is $n$ (even), and no count exceeds 2, we can always distribute elements to fill two $n/2$ arrays.\n\n### 3. Optimization\nInstead of building the entire `Counter` and then iterating, you can check the condition **inline** to potentially return `False` early:\n```python\ncounts = {}\nfor x in nums:\n    counts[x] = counts.get(x, 0) + 1\n    if counts[x] > 2:\n        return False\nreturn True\n```\nThis saves time in cases where the condition is violated early in the input.\n\n### 4. Key Algorithmic Pattern\n**Frequency Counting / Hash Map:** Using a dictionary or hash table to track occurrences of elements to satisfy frequency-based constraints.",
-      "linkedSolutions": [
-        "lc-split-the-array::1448742291",
-        "lc-split-the-array::1448744519",
-        "lc-split-the-array::1448744782"
-      ]
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of `nums`. We iterate through the array once to count frequencies and once through the unique values.\n*   **Space Complexity:** $O(n)$ to store the frequency map (`Counter`).\n\n### 2. Correctness\nThe solution is **correct**. To split an array into two subarrays with distinct elements, no single value can appear more than twice. If a value appears three times, at least one subarray must contain a duplicate. Since the total length is $n$ (even), and no count exceeds 2, we can always distribute elements to fill two $n/2$ arrays.\n\n### 3. Optimization\nInstead of building the entire `Counter` and then iterating, you can check the condition **inline** to potentially return `False` early:\n```python\ncounts = {}\nfor x in nums:\n    counts[x] = counts.get(x, 0) + 1\n    if counts[x] > 2:\n        return False\nreturn True\n```\nThis saves time in cases where the condition is violated early in the input.\n\n### 4. Key Algorithmic Pattern\n**Frequency Counting / Hash Map:** Using a dictionary or hash table to track occurrences of elements to satisfy frequency-based constraints."
     },
     {
       "id": "lc-split-the-array::1448742291",
@@ -15497,12 +15309,7 @@
         "problems/lc-split-the-array/lc-split-the-array.java",
         "problems/lc-split-the-array/README.md"
       ],
-      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of `nums`. We iterate through the array once and the map values once.\n*   **Space Complexity:** $O(n)$ to store the frequencies in the `HashMap`.\n\n### 2. Correctness\nThe logic is **correct**. To split an array into two parts with distinct elements, no single value can appear more than twice (once for each part).\n*   **Edge Cases:** The code handles minimum array size ($n=2$), all identical elements, and all unique elements correctly.\n\n### 3. Optimization\n**Use a Frequency Array:**\nGiven the LeetCode constraints for this problem ($1 \\le nums[i] \\le 100$), use a fixed-size array `int[101]` instead of a `HashMap`. This avoids object overhead and hashing costs. Additionally, you can return `false` **immediately** inside the first loop if any count exceeds 2.\n\n```java\nint[] counts = new int[101];\nfor (int num : nums) {\n    if (++counts[num] > 2) return false;\n}\nreturn true;\n```\n\n### 4. Key Algorithmic Pattern\n**Frequency Counting (Hashing):** Using a hash-based structure (or bucket array) to track occurrences of elements to validate constraints.",
-      "linkedSolutions": [
-        "lc-split-the-array::1448736927",
-        "lc-split-the-array::1448744519",
-        "lc-split-the-array::1448744782"
-      ]
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the length of `nums`. We iterate through the array once and the map values once.\n*   **Space Complexity:** $O(n)$ to store the frequencies in the `HashMap`.\n\n### 2. Correctness\nThe logic is **correct**. To split an array into two parts with distinct elements, no single value can appear more than twice (once for each part).\n*   **Edge Cases:** The code handles minimum array size ($n=2$), all identical elements, and all unique elements correctly.\n\n### 3. Optimization\n**Use a Frequency Array:**\nGiven the LeetCode constraints for this problem ($1 \\le nums[i] \\le 100$), use a fixed-size array `int[101]` instead of a `HashMap`. This avoids object overhead and hashing costs. Additionally, you can return `false` **immediately** inside the first loop if any count exceeds 2.\n\n```java\nint[] counts = new int[101];\nfor (int num : nums) {\n    if (++counts[num] > 2) return false;\n}\nreturn true;\n```\n\n### 4. Key Algorithmic Pattern\n**Frequency Counting (Hashing):** Using a hash-based structure (or bucket array) to track occurrences of elements to validate constraints."
     },
     {
       "id": "lc-split-the-array::1448744519",
@@ -15550,12 +15357,7 @@
         "problems/lc-split-the-array/lc-split-the-array.py",
         "problems/lc-split-the-array/README.md"
       ],
-      "aiReview": "### 1. Complexity\n*   **Time:** $O(n)$ – The code performs one pass to build the frequency map and another to find the maximum value.\n*   **Space:** $O(n)$ – In the worst case, all elements are unique, requiring $O(n)$ space in the `Counter`.\n\n### 2. Correctness\nThe logic is **correct**. To split an array into two sets of distinct elements, no single number can appear more than twice (once for each set). \n*   **Edge Cases:** The problem constraints usually specify $n$ is even, making `len(nums) % 2 == 0` redundant but safe. Empty arrays or arrays with all unique elements are handled correctly.\n\n### 3. Optimization\n**Early Exit:** Instead of building the entire frequency map and then finding the maximum, iterate through the array and return `False` immediately if any count reaches 3. This saves time on large arrays with early duplicates.\n\n```python\ncounts = {}\nfor x in nums:\n    counts[x] = counts.get(x, 0) + 1\n    if counts[x] > 2: return False\nreturn True\n```\n\n### 4. Key Algorithmic Pattern\n**Frequency Counting (Hashing):** Using a hash map to track occurrences of elements to verify constraints.",
-      "linkedSolutions": [
-        "lc-split-the-array::1448736927",
-        "lc-split-the-array::1448742291",
-        "lc-split-the-array::1448744782"
-      ]
+      "aiReview": "### 1. Complexity\n*   **Time:** $O(n)$ – The code performs one pass to build the frequency map and another to find the maximum value.\n*   **Space:** $O(n)$ – In the worst case, all elements are unique, requiring $O(n)$ space in the `Counter`.\n\n### 2. Correctness\nThe logic is **correct**. To split an array into two sets of distinct elements, no single number can appear more than twice (once for each set). \n*   **Edge Cases:** The problem constraints usually specify $n$ is even, making `len(nums) % 2 == 0` redundant but safe. Empty arrays or arrays with all unique elements are handled correctly.\n\n### 3. Optimization\n**Early Exit:** Instead of building the entire frequency map and then finding the maximum, iterate through the array and return `False` immediately if any count reaches 3. This saves time on large arrays with early duplicates.\n\n```python\ncounts = {}\nfor x in nums:\n    counts[x] = counts.get(x, 0) + 1\n    if counts[x] > 2: return False\nreturn True\n```\n\n### 4. Key Algorithmic Pattern\n**Frequency Counting (Hashing):** Using a hash map to track occurrences of elements to verify constraints."
     },
     {
       "id": "lc-split-the-array::1448744782",
@@ -15605,12 +15407,7 @@
         "problems/lc-split-the-array/lc-split-the-array.py",
         "problems/lc-split-the-array/README.md"
       ],
-      "aiReview": "### Analysis\n\n1.  **Complexity**:\n    *   **Time**: $O(n)$ where $n$ is the length of `nums`. Counting elements takes linear time, and finding the maximum value in the frequency map also takes $O(n)$ in the worst case.\n    *   **Space**: $O(n)$ to store the frequency counts in the `Counter` dictionary.\n\n2.  **Correctness**:\n    *   The logic is **correct**. To split an array into two sets of distinct elements, no single value can appear more than twice. If a value appears 3 times, it is impossible to distribute them without one set receiving at least two.\n    *   **Edge Case**: The problem constraints usually specify $n$ is even, but `len(nums) % 2 == 0` provides an extra layer of safety.\n\n3.  **Optimisation**:\n    *   **Early Exit**: Instead of counting the entire array and then checking the maximum, iterate through the numbers and return `False` immediately if any frequency reaches 3. This avoids processing the full list if a violation is found early.\n    ```python\n    counts = {}\n    for x in nums:\n        counts[x] = counts.get(x, 0) + 1\n        if counts[x] > 2: return False\n    return True\n    ```\n\n4.  **Key Pattern**:\n    *   **Frequency Counting / Hashing**: Using a hash map to track occurrences to satisfy distinctness constraints.",
-      "linkedSolutions": [
-        "lc-split-the-array::1448736927",
-        "lc-split-the-array::1448742291",
-        "lc-split-the-array::1448744519"
-      ]
+      "aiReview": "### Analysis\n\n1.  **Complexity**:\n    *   **Time**: $O(n)$ where $n$ is the length of `nums`. Counting elements takes linear time, and finding the maximum value in the frequency map also takes $O(n)$ in the worst case.\n    *   **Space**: $O(n)$ to store the frequency counts in the `Counter` dictionary.\n\n2.  **Correctness**:\n    *   The logic is **correct**. To split an array into two sets of distinct elements, no single value can appear more than twice. If a value appears 3 times, it is impossible to distribute them without one set receiving at least two.\n    *   **Edge Case**: The problem constraints usually specify $n$ is even, but `len(nums) % 2 == 0` provides an extra layer of safety.\n\n3.  **Optimisation**:\n    *   **Early Exit**: Instead of counting the entire array and then checking the maximum, iterate through the numbers and return `False` immediately if any frequency reaches 3. This avoids processing the full list if a violation is found early.\n    ```python\n    counts = {}\n    for x in nums:\n        counts[x] = counts.get(x, 0) + 1\n        if counts[x] > 2: return False\n    return True\n    ```\n\n4.  **Key Pattern**:\n    *   **Frequency Counting / Hashing**: Using a hash map to track occurrences to satisfy distinctness constraints."
     },
     {
       "id": "lc-sqrtx::1733769228",

@@ -6,14 +6,14 @@
 
 # VKrishna04's DSA Solutions
 
-[![Solutions](https://img.shields.io/badge/Solutions-254-06b6d4?style=flat-square&logo=github)](https://VKrishna04.github.io/My-DSA-Life/)  [![Easy](https://img.shields.io/badge/Easy-155-22c55e?style=flat-square)](https://VKrishna04.github.io/My-DSA-Life/)  [![Medium](https://img.shields.io/badge/Medium-90-f59e0b?style=flat-square)](https://VKrishna04.github.io/My-DSA-Life/)  [![Hard](https://img.shields.io/badge/Hard-9-ef4444?style=flat-square)](https://VKrishna04.github.io/My-DSA-Life/)
+[![Solutions](https://img.shields.io/badge/Solutions-254-06b6d4?style=flat-square&logo=github)](http://vkrishna04.me/My-DSA-Life/)  [![Easy](https://img.shields.io/badge/Easy-155-22c55e?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)  [![Medium](https://img.shields.io/badge/Medium-90-f59e0b?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)  [![Hard](https://img.shields.io/badge/Hard-9-ef4444?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)
 
 > Automatically tracked by [CodeLedger](https://codeledger.vkrishna04.me) — every problem solved, committed to Git.
 
-**[View Live Dashboard →](https://VKrishna04.github.io/My-DSA-Life/)**
-*Last updated: Jun 17, 2026*
+**[View Live Dashboard →](http://vkrishna04.me/My-DSA-Life/)**
+*Last updated: Jun 18, 2026*
 
-[![CodeLedger](https://raw.githubusercontent.com/Life-Experimentalist/Code-Ledger/refs/heads/main/src/assets/images/social%20preview.png)](https://VKrishna04.github.io/My-DSA-Life/)
+[![CodeLedger](https://raw.githubusercontent.com/Life-Experimentalist/Code-Ledger/refs/heads/main/src/assets/images/social%20preview.png)](http://vkrishna04.me/My-DSA-Life/)
 
 </div>
 
@@ -74,7 +74,7 @@ This repository is managed by [CodeLedger](https://codeledger.vkrishna04.me), a 
 
 - Solutions committed automatically the instant they are accepted
 - AI code reviews (complexity analysis, hints, optimizations) committed alongside code
-- Live stats dashboard: https://VKrishna04.github.io/My-DSA-Life/
+- Live stats dashboard: http://vkrishna04.me/My-DSA-Life/
 - Cross-device sync — your history is always up to date on any machine
 - Fully owned by you — plain files, no lock-in, no third-party servers
 
@@ -89,6 +89,7 @@ Built with [CodeLedger](https://codeledger.vkrishna04.me) · [⭐ Star the exten
 </div>
 
 <!-- CODELEDGER_AUTO_GENERATED_END -->
+
 
 
 
