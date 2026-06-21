@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-19T15:33:35.245Z",
+  "updatedAt": "2026-06-21T11:15:26.762Z",
   "layoutVersion": 3,
   "stats": {
     "total": 258,
@@ -11916,7 +11916,11 @@
       "duplicateOf": null,
       "_requestAIReview": true,
       "platform": "leetcode",
-      "aiReview": "1.  **Time Complexity:** O(N\\*K)\n    *   The outer loop runs `N` times.\n    *   The inner loop runs up to `K` times (or `i` times, whichever is smaller).\n    *   Operations inside the inner loop are O(1).\n    *   **Space Complexity:** O(N)\n    *   A DP array of size `N+1` is used.\n\n2.  **Correctness:** Correct.\n    *   The `dp[i]` state correctly stores the maximum sum for the prefix `arr[0...i-1]`.\n    *   The base case `dp[0]=0` is implicitly handled.\n    *   The transitions correctly iterate through all possible lengths `j` (from `1` to `k`) for the last partition ending at `i-1`, efficiently calculating its sum (`cur_max * j`) and combining it with the maximum sum of the preceding subarray (`dp[i-j]`).\n    *   Edge cases like `k=1`, `k>=n`, and small `n` are handled.\n\n3.  **One concrete optimisation:**\n    No significant asymptotic optimization (reducing O(N\\*K)) is apparent for this problem. The current approach efficiently maintains `cur_max` within the inner loop, which is already optimal for the current DP structure.\n\n4.  **Key algorithmic pattern used:** Dynamic Programming (bottom-up approach)."
+      "aiReview": "1.  **Time Complexity:** O(N\\*K)\n    *   The outer loop runs `N` times.\n    *   The inner loop runs up to `K` times (or `i` times, whichever is smaller).\n    *   Operations inside the inner loop are O(1).\n    *   **Space Complexity:** O(N)\n    *   A DP array of size `N+1` is used.\n\n2.  **Correctness:** Correct.\n    *   The `dp[i]` state correctly stores the maximum sum for the prefix `arr[0...i-1]`.\n    *   The base case `dp[0]=0` is implicitly handled.\n    *   The transitions correctly iterate through all possible lengths `j` (from `1` to `k`) for the last partition ending at `i-1`, efficiently calculating its sum (`cur_max * j`) and combining it with the maximum sum of the preceding subarray (`dp[i-j]`).\n    *   Edge cases like `k=1`, `k>=n`, and small `n` are handled.\n\n3.  **One concrete optimisation:**\n    No significant asymptotic optimization (reducing O(N\\*K)) is apparent for this problem. The current approach efficiently maintains `cur_max` within the inner loop, which is already optimal for the current DP structure.\n\n4.  **Key algorithmic pattern used:** Dynamic Programming (bottom-up approach).",
+      "_committedPaths": [
+        "problems/lc-partition-array-for-maximum-sum/lc-partition-array-for-maximum-sum.py",
+        "problems/lc-partition-array-for-maximum-sum/README.md"
+      ]
     },
     {
       "id": "lc-partition-equal-subset-sum",
