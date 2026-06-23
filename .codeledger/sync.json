@@ -1,7 +1,7 @@
 {
   "aiCopyable": true,
   "aiPrimaryModel": "gemini-3-flash-preview",
-  "aiProvider": "openai",
+  "aiProvider": "gemini",
   "aiSecondary": "gemini",
   "aiSecondaryModel": "gemini-2.5-flash",
   "autoReview": true,
@@ -34,5 +34,5 @@
     "timeCustomEnd": "18:00",
     "timeCustomStart": "06:00"
   },
-  "__syncedAt": "2026-06-23T19:34:45.830Z"
+  "__syncedAt": "2026-06-23T19:44:45.535Z"
 }
