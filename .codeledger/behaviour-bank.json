@@ -3527,6 +3527,20 @@
     "platform": "leetcode",
     "slug": "ugly-number"
   },
+  "leetcode::uncommon-words-from-two-sentences": {
+    "aiInsights": [
+      {
+        "summary": "Here's a review of your solution:\n\n1.  **Time Complexity**: O(L1 + L2), where L1 and L2 are the lengths of `s1` and `s2` respectively. This accounts for splitting strings and populating the `Counter`.",
+        "ts": 1782231369937,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "uncommon-words-from-two-sentences"
+  },
   "leetcode::unique-paths": {
     "aiInsights": [
       {
