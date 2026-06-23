@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T16:59:49.078Z",
+  "updatedAt": "2026-06-23T18:02:30.453Z",
   "layoutVersion": 3,
   "stats": {
     "total": 261,
@@ -82,7 +82,11 @@
       "memory": null,
       "timestamp": 1782233988848,
       "elapsedSeconds": null,
-      "platform": "geeksforgeeks"
+      "platform": "geeksforgeeks",
+      "_committedPaths": [
+        "problems/gfg-compare-two-fractions4438/gfg-compare-two-fractions4438.py",
+        "problems/gfg-compare-two-fractions4438/README.md"
+      ]
     },
     {
       "id": "lc-01-matrix",
