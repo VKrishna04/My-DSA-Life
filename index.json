@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T18:22:29.951Z",
+  "updatedAt": "2026-06-23T18:32:29.844Z",
   "layoutVersion": 3,
   "stats": {
     "total": 312,
@@ -74,7 +74,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-2-sum-find-a-pair-with-given-sum/README.md"
+      ]
     },
     {
       "id": "gfg-aggressive-cows--102404",
@@ -96,7 +99,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-aggressive-cows--102404/README.md"
+      ]
     },
     {
       "id": "gfg-assign-cookies",
@@ -118,7 +124,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-assign-cookies/README.md"
+      ]
     },
     {
       "id": "gfg-attend-all-meetings",
@@ -140,7 +149,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-attend-all-meetings/README.md"
+      ]
     },
     {
       "id": "gfg-bheem-wants-ladoos--102404",
@@ -162,7 +174,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-bheem-wants-ladoos--102404/README.md"
+      ]
     },
     {
       "id": "gfg-burger-shop--102404",
@@ -184,7 +199,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-burger-shop--102404/README.md"
+      ]
     },
     {
       "id": "gfg-buy-stock-2",
@@ -206,7 +224,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-buy-stock-2/README.md"
+      ]
     },
     {
       "id": "gfg-c-matrix-rotation-by-180-degree0745",
@@ -228,7 +249,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-c-matrix-rotation-by-180-degree0745/README.md"
+      ]
     },
     {
       "id": "gfg-camelcase-pattern-matching2259",
@@ -250,7 +274,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-camelcase-pattern-matching2259/README.md"
+      ]
     },
     {
       "id": "gfg-compare-two-fractions4438",
@@ -307,7 +334,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-count-number-of-substrings4528--102404/README.md"
+      ]
     },
     {
       "id": "gfg-count-ways-to-partition-a-string-such-that-both-parts-have-equal-distinct-characters--102404",
@@ -329,7 +359,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-count-ways-to-partition-a-string-such-that-both-parts-have-equal-distinct-characters--102404/README.md"
+      ]
     },
     {
       "id": "gfg-count-ways-to-reach-the-nth-stair-1587115620",
@@ -351,7 +384,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-count-ways-to-reach-the-nth-stair-1587115620/README.md"
+      ]
     },
     {
       "id": "gfg-detect-cycle-in-an-undirected-graph",
@@ -373,7 +409,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-detect-cycle-in-an-undirected-graph/README.md"
+      ]
     },
     {
       "id": "gfg-detect-loop-in-linked-list",
@@ -395,7 +434,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-detect-loop-in-linked-list/README.md"
+      ]
     },
     {
       "id": "gfg-diameter-of-binary-tree",
@@ -417,7 +459,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-diameter-of-binary-tree/README.md"
+      ]
     },
     {
       "id": "gfg-find-unique-number",
@@ -439,7 +484,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-find-unique-number/README.md"
+      ]
     },
     {
       "id": "gfg-height-of-binary-tree",
@@ -461,7 +509,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-height-of-binary-tree/README.md"
+      ]
     },
     {
       "id": "gfg-implement-atoi",
@@ -483,7 +534,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-implement-atoi/README.md"
+      ]
     },
     {
       "id": "gfg-intersection-point-in-y-shapped-linked-lists",
@@ -505,7 +559,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-intersection-point-in-y-shapped-linked-lists/README.md"
+      ]
     },
     {
       "id": "gfg-is-array-sorted--122153",
@@ -527,7 +584,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-is-array-sorted--122153/README.md"
+      ]
     },
     {
       "id": "gfg-k-largest-elements4206",
@@ -549,7 +609,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-k-largest-elements4206/README.md"
+      ]
     },
     {
       "id": "gfg-kadanes-algorithm-1587115620",
@@ -571,7 +634,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-kadanes-algorithm-1587115620/README.md"
+      ]
     },
     {
       "id": "gfg-learn-to-comment-python",
@@ -593,7 +659,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-learn-to-comment-python/README.md"
+      ]
     },
     {
       "id": "gfg-level-order-traversal",
@@ -615,7 +684,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-level-order-traversal/README.md"
+      ]
     },
     {
       "id": "gfg-longest-increasing-subsequence-1587115620",
@@ -637,7 +709,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-longest-increasing-subsequence-1587115620/README.md"
+      ]
     },
     {
       "id": "gfg-maximum-index-1587115620",
@@ -659,7 +734,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-maximum-index-1587115620/README.md"
+      ]
     },
     {
       "id": "gfg-maximum-path-sum-from-any-node",
@@ -681,7 +759,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-maximum-path-sum-from-any-node/README.md"
+      ]
     },
     {
       "id": "gfg-merge-two-sorted-linked-lists",
@@ -703,7 +784,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-merge-two-sorted-linked-lists/README.md"
+      ]
     },
     {
       "id": "gfg-minimum-element-in-a-sorted-and-rotated-array3611",
@@ -725,7 +809,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-minimum-element-in-a-sorted-and-rotated-array3611/README.md"
+      ]
     },
     {
       "id": "gfg-minimum-platforms-1587115620",
@@ -747,7 +834,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-minimum-platforms-1587115620/README.md"
+      ]
     },
     {
       "id": "gfg-mirror-tree",
@@ -769,7 +859,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-mirror-tree/README.md"
+      ]
     },
     {
       "id": "gfg-missing-number-in-array1416",
@@ -791,7 +884,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-missing-number-in-array1416/README.md"
+      ]
     },
     {
       "id": "gfg-nearly-sorted-1587115620",
@@ -813,7 +909,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-nearly-sorted-1587115620/README.md"
+      ]
     },
     {
       "id": "gfg-non-repeating-character-1587115620",
@@ -835,7 +934,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-non-repeating-character-1587115620/README.md"
+      ]
     },
     {
       "id": "gfg-number-of-coins1824",
@@ -857,7 +959,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-number-of-coins1824/README.md"
+      ]
     },
     {
       "id": "gfg-number-of-paths0926",
@@ -879,7 +984,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-number-of-paths0926/README.md"
+      ]
     },
     {
       "id": "gfg-number-of-students-unable-to-eat-lunch--102404",
@@ -901,7 +1009,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-number-of-students-unable-to-eat-lunch--102404/README.md"
+      ]
     },
     {
       "id": "gfg-overlapping-intervals--170633",
@@ -923,7 +1034,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-overlapping-intervals--170633/README.md"
+      ]
     },
     {
       "id": "gfg-parenthesis-checker2744",
@@ -945,7 +1059,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-parenthesis-checker2744/README.md"
+      ]
     },
     {
       "id": "gfg-police-and-thieves--102404",
@@ -967,7 +1084,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-police-and-thieves--102404/README.md"
+      ]
     },
     {
       "id": "gfg-product-array-puzzle4525",
@@ -989,7 +1109,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-product-array-puzzle4525/README.md"
+      ]
     },
     {
       "id": "gfg-rearrange-characters5322--102404",
@@ -1011,7 +1134,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-rearrange-characters5322--102404/README.md"
+      ]
     },
     {
       "id": "gfg-repetitive-addition-of-digits2221",
@@ -1033,7 +1159,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-repetitive-addition-of-digits2221/README.md"
+      ]
     },
     {
       "id": "gfg-rotate-a-linked-list",
@@ -1055,7 +1184,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-rotate-a-linked-list/README.md"
+      ]
     },
     {
       "id": "gfg-serialize-and-deserialize-a-binary-tree",
@@ -1077,7 +1209,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-serialize-and-deserialize-a-binary-tree/README.md"
+      ]
     },
     {
       "id": "gfg-start-coding-python--093158",
@@ -1099,7 +1234,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-start-coding-python--093158/README.md"
+      ]
     },
     {
       "id": "gfg-stickler-theif-1587115621",
@@ -1121,7 +1259,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-stickler-theif-1587115621/README.md"
+      ]
     },
     {
       "id": "gfg-string-palindromic-ignoring-spaces4723",
@@ -1143,7 +1284,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-string-palindromic-ignoring-spaces4723/README.md"
+      ]
     },
     {
       "id": "gfg-total-decoding-messages1235",
@@ -1165,7 +1309,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-total-decoding-messages1235/README.md"
+      ]
     },
     {
       "id": "gfg-total-decoding-messages1235--102404",
@@ -1187,7 +1334,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-total-decoding-messages1235--102404/README.md"
+      ]
     },
     {
       "id": "gfg-water-flow--102404",
@@ -1209,7 +1359,10 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-water-flow--102404/README.md"
+      ]
     },
     {
       "id": "lc-01-matrix",
