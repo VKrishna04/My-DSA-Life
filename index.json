@@ -1,16 +1,17 @@
 {
-  "updatedAt": "2026-06-23T16:42:37.252Z",
+  "updatedAt": "2026-06-23T16:59:49.078Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 260,
-    "easy": 159,
+    "total": 261,
+    "easy": 160,
     "medium": 92,
     "hard": 9,
     "byPlatform": {
+      "geeksforgeeks": 1,
       "leetcode": 260
     },
     "byLang": {
-      "Python3": 194,
+      "Python3": 195,
       "MySQL": 15,
       "Java": 12,
       "Python": 16,
@@ -21,6 +22,7 @@
       "Bash": 4
     },
     "byTopic": {
+      "Untagged": 3,
       "Array": 125,
       "Math": 25,
       "Linked List": 3,
@@ -36,7 +38,6 @@
       "Vectorization": 2,
       "Pandas": 3,
       "Higher-Order Functions": 1,
-      "Untagged": 2,
       "Data Cleaning": 1,
       "Two Pointers": 9,
       "Binary Search": 1,
@@ -52,6 +53,37 @@
     "commitsSinceLastSummary": 1
   },
   "problems": [
+    {
+      "id": "gfg-compare-two-fractions4438",
+      "title": "Compare two fractions",
+      "titleSlug": "compare-two-fractions4438",
+      "difficulty": "Easy",
+      "topic": "Untagged",
+      "tags": [],
+      "canonical": null,
+      "readmeContent": "# Compare two fractions\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Easy\n\n## Problem\n\nYou are given a string s containing two fractions a/b and c/d, compare them and return the greater fraction. If they are equal, then return string \"equal\".\nNote: The string s contains \"a/b, c/d\"(fractions are separated by comma(,) & space( )).&nbsp;\nExamples :\nInput: s = \"5/6, 11/45\"\nOutput:&nbsp;5/6\nExplanation: 5/6 = 0.8333 and 11/45 = 0.2444, So 5/6 is greater fraction.\nInput: s = \"8/1, 8/1\"\nOutput: equal\nExplanation: We can see that both the fractions are same, so we'll return a string \"equal\".\nInput: s = \"10/17, 9/10\"\nOutput: 9/10\nExplanation: 10/17 = 0.588 & 9/10 = 0.9, so the greater fraction is \"9/10\".\nConstraints:0 ≤ a,c ≤ 1031 ≤ b,d ≤ 103\n\n**Source:** https://www.geeksforgeeks.org/problems/compare-two-fractions4438/",
+      "code": "class Solution:\n    def compareFrac(self, str_val):\n        fracs = str_val.split(\", \")\n        f1_num, f1_den = map(int, fracs[0].split(\"/\"))\n        f2_num, f2_den = map(int, fracs[1].split(\"/\"))\n        \n        val1 = f1_num / f1_den\n        val2 = f2_num / f2_den\n        \n        if val1 > val2:\n            return fracs[0]\n        elif val2 > val1:\n            return fracs[1]\n        else:\n            return \"equal\"",
+      "files": [
+        {
+          "path": "problems/gfg-compare-two-fractions4438/gfg-compare-two-fractions4438.py",
+          "content": "class Solution:\n    def compareFrac(self, str_val):\n        fracs = str_val.split(\", \")\n        f1_num, f1_den = map(int, fracs[0].split(\"/\"))\n        f2_num, f2_den = map(int, fracs[1].split(\"/\"))\n        \n        val1 = f1_num / f1_den\n        val2 = f2_num / f2_den\n        \n        if val1 > val2:\n            return fracs[0]\n        elif val2 > val1:\n            return fracs[1]\n        else:\n            return \"equal\""
+        },
+        {
+          "path": "problems/gfg-compare-two-fractions4438/README.md",
+          "content": "# Compare two fractions\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Easy\n\n## Problem\n\nYou are given a string s containing two fractions a/b and c/d, compare them and return the greater fraction. If they are equal, then return string \"equal\".\nNote: The string s contains \"a/b, c/d\"(fractions are separated by comma(,) & space( )).&nbsp;\nExamples :\nInput: s = \"5/6, 11/45\"\nOutput:&nbsp;5/6\nExplanation: 5/6 = 0.8333 and 11/45 = 0.2444, So 5/6 is greater fraction.\nInput: s = \"8/1, 8/1\"\nOutput: equal\nExplanation: We can see that both the fractions are same, so we'll return a string \"equal\".\nInput: s = \"10/17, 9/10\"\nOutput: 9/10\nExplanation: 10/17 = 0.588 & 9/10 = 0.9, so the greater fraction is \"9/10\".\nConstraints:0 ≤ a,c ≤ 1031 ≤ b,d ≤ 103\n\n**Source:** https://www.geeksforgeeks.org/problems/compare-two-fractions4438/"
+        }
+      ],
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "runtime": null,
+      "memory": null,
+      "timestamp": 1782233988848,
+      "elapsedSeconds": null,
+      "platform": "geeksforgeeks"
+    },
     {
       "id": "lc-01-matrix",
       "forceCommit": true,
@@ -5260,6 +5292,10 @@
           "description": "Duplicate resolved — 22 Oct 2024",
           "timestamp": 1729536708000
         }
+      ],
+      "_committedPaths": [
+        "problems/lc-find-the-key-of-the-numbers/lc-find-the-key-of-the-numbers-alt-approach-python3.py",
+        "problems/lc-find-the-key-of-the-numbers/README.md"
       ]
     },
     {
@@ -15470,7 +15506,11 @@
       "isDuplicate": false,
       "duplicateOf": null,
       "_requestAIReview": true,
-      "platform": "leetcode"
+      "platform": "leetcode",
+      "_committedPaths": [
+        "problems/lc-spiral-matrix-iii/lc-spiral-matrix-iii.py",
+        "problems/lc-spiral-matrix-iii/README.md"
+      ]
     },
     {
       "id": "lc-split-the-array::1448736927",
@@ -16892,7 +16932,11 @@
       "isDuplicate": false,
       "duplicateOf": null,
       "_requestAIReview": true,
-      "platform": "leetcode"
+      "platform": "leetcode",
+      "_committedPaths": [
+        "problems/lc-uncommon-words-from-two-sentences/lc-uncommon-words-from-two-sentences.py",
+        "problems/lc-uncommon-words-from-two-sentences/README.md"
+      ]
     },
     {
       "id": "lc-uncrossed-lines",
