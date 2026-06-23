@@ -1,18 +1,18 @@
 {
-  "updatedAt": "2026-06-24T11:07:57.393Z",
+  "updatedAt": "2026-06-24T11:58:11.986Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 315,
+    "total": 316,
     "easy": 176,
-    "medium": 126,
+    "medium": 127,
     "hard": 11,
     "byPlatform": {
-      "geeksforgeeks": 55,
+      "geeksforgeeks": 56,
       "leetcode": 260
     },
     "byLang": {
       "Unknown": 49,
-      "Python3": 200,
+      "Python3": 201,
       "MySQL": 15,
       "Java": 12,
       "Python": 16,
@@ -24,7 +24,7 @@
     },
     "byTopic": {
       "Sorting": 4,
-      "Binary Search": 2,
+      "Binary Search": 3,
       "Arrays": 10,
       "Untagged": 12,
       "Greedy": 1,
@@ -96,7 +96,53 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-2-sum-find-a-pair-with-given-sum/README.md"
+      ]
+    },
+    {
+      "id": "gfg-aggressive-cows",
+      "forceCommit": false,
+      "title": "Aggressive Cows",
+      "titleSlug": "aggressive-cows",
+      "difficulty": "Medium",
+      "topic": "Binary Search",
+      "tags": [
+        "Binary Search",
+        "Algorithms"
+      ],
+      "canonical": null,
+      "readmeContent": "# Aggressive Cows\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Medium\n\n**Tags:** `Binary Search`, `Algorithms`\n\n## Problem\n\nYou are given an array with unique elements of stalls[], which denote the positions of stalls. You are also given an integer k which denotes the number of aggressive cows.&nbsp;The task is to assign stalls to k cows such that the minimum distance between any two of them is the maximum possible.\nExamples:\nInput: stalls[] = [1, 2, 4, 8, 9], k = 3\nOutput: 3\nExplanation: The first cow can be placed at stalls[0], the second cow can be placed at stalls[2] and \nthe third cow can be placed at stalls[3]. \nThe minimum distance between cows in this case is 3, which is the largest among all possible ways.\n\nInput: stalls[] = [10, 1, 2, 7, 5], k = 3\nOutput: 4\nExplanation: The first cow can be placed at stalls[0],\nthe second cow can be placed at stalls[1] and\nthe third cow can be placed at stalls[4].\nThe minimum distance between cows in this case is 4, which is the largest among all possible ways.\nInput: stalls[] = [2, 12, 11, 3, 26, 7], k = 5\nOutput: 1\nExplanation: There are 6 stalls and only 5 cows, we try to place the cows such that the minimum distance between any two cows is as large as possible.\nThe minimum distance between cows in this case is 1, which is the largest among all possible ways.\nConstraints:2 ≤ stalls.size() ≤ 1060 ≤ stalls[i] ≤ 1082 ≤ k ≤ stalls.size()\n\n**Source:** https://www.geeksforgeeks.org/problems/aggressive-cows/",
+      "code": "class Solution:\n    def aggressiveCows(self, stalls, k):\n        stalls.sort()\n        n = len(stalls)\n        \n        # Helper function to check if we can place k cows with 'dist' distance\n        def canPlace(dist):\n            count = 1  # Place the first cow in the first stall\n            last_pos = stalls[0]\n            \n            for i in range(1, n):\n                if stalls[i] - last_pos >= dist:\n                    count += 1\n                    last_pos = stalls[i]\n                if count >= k:\n                    return True\n            return False\n\n        low = 1\n        high = stalls[-1] - stalls[0]\n        ans = 0\n        \n        while low <= high:\n            mid = (low + high) // 2\n            if canPlace(mid):\n                ans = mid  # This distance is possible, try for a larger one\n                low = mid + 1\n            else:\n                high = mid - 1\n                \n        return ans",
+      "files": [
+        {
+          "path": "problems/gfg-aggressive-cows/gfg-aggressive-cows.py",
+          "content": "class Solution:\n    def aggressiveCows(self, stalls, k):\n        stalls.sort()\n        n = len(stalls)\n        \n        # Helper function to check if we can place k cows with 'dist' distance\n        def canPlace(dist):\n            count = 1  # Place the first cow in the first stall\n            last_pos = stalls[0]\n            \n            for i in range(1, n):\n                if stalls[i] - last_pos >= dist:\n                    count += 1\n                    last_pos = stalls[i]\n                if count >= k:\n                    return True\n            return False\n\n        low = 1\n        high = stalls[-1] - stalls[0]\n        ans = 0\n        \n        while low <= high:\n            mid = (low + high) // 2\n            if canPlace(mid):\n                ans = mid  # This distance is possible, try for a larger one\n                low = mid + 1\n            else:\n                high = mid - 1\n                \n        return ans"
+        },
+        {
+          "path": "problems/gfg-aggressive-cows/README.md",
+          "content": "# Aggressive Cows\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Medium\n\n**Tags:** `Binary Search`, `Algorithms`\n\n## Problem\n\nYou are given an array with unique elements of stalls[], which denote the positions of stalls. You are also given an integer k which denotes the number of aggressive cows.&nbsp;The task is to assign stalls to k cows such that the minimum distance between any two of them is the maximum possible.\nExamples:\nInput: stalls[] = [1, 2, 4, 8, 9], k = 3\nOutput: 3\nExplanation: The first cow can be placed at stalls[0], the second cow can be placed at stalls[2] and \nthe third cow can be placed at stalls[3]. \nThe minimum distance between cows in this case is 3, which is the largest among all possible ways.\n\nInput: stalls[] = [10, 1, 2, 7, 5], k = 3\nOutput: 4\nExplanation: The first cow can be placed at stalls[0],\nthe second cow can be placed at stalls[1] and\nthe third cow can be placed at stalls[4].\nThe minimum distance between cows in this case is 4, which is the largest among all possible ways.\nInput: stalls[] = [2, 12, 11, 3, 26, 7], k = 5\nOutput: 1\nExplanation: There are 6 stalls and only 5 cows, we try to place the cows such that the minimum distance between any two cows is as large as possible.\nThe minimum distance between cows in this case is 1, which is the largest among all possible ways.\nConstraints:2 ≤ stalls.size() ≤ 1060 ≤ stalls[i] ≤ 1082 ≤ k ≤ stalls.size()\n\n**Source:** https://www.geeksforgeeks.org/problems/aggressive-cows/"
+        }
+      ],
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "runtime": null,
+      "memory": null,
+      "timestamp": 1782299296475,
+      "elapsedSeconds": null,
+      "_requestAIReview": true,
+      "platform": "geeksforgeeks",
+      "aiReview": "**1. Complexity**\n*   **Time:** $O(N \\log N + N \\log D)$, where $N$ is the number of stalls and $D$ is the distance range (`stalls[-1] - stalls[0]`). Sorting takes $O(N \\log N)$ and the binary search performs $\\log D$ checks of $O(N)$ each.\n*   **Space:** $O(1)$ (or $O(N)$ if considering the space used by Python's Timsort).\n\n**2. Correctness**\nThe solution is correct. It uses a greedy approach to verify distance feasibility and binary search to find the maximum possible minimum distance. It handles the basic constraints well.\n\n**3. Optimization**\n*   **Refine Search Space:** Instead of `low = 1`, initialize `low` to `min(stalls[i+1] - stalls[i] for i in range(n-1))`. This provides a tighter lower bound for the binary search.\n*   **Early Exit:** In `canPlace`, if the remaining stalls are fewer than the remaining cows needed, you can return `False` immediately.\n\n**4. Key Algorithmic Pattern**\n**Binary Search on Answer:** This pattern is used when the search space is monotonic (if a distance $d$ is possible, any distance $< d$ is also possible) and you need to find an optimal boundary value.",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview",
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false,
+      "problemStatement": "<p><span style=\"font-size: 14pt;\">You are given an array with unique elements of <strong>stalls[]</strong>,<strong> </strong>which denote the positions of <strong>stalls</strong>. You are also given an integer <strong>k</strong> which denotes the number of aggressive cows.&nbsp;</span><span style=\"font-size: 18.6667px;\">The task is to assign <strong>stalls </strong>to <strong>k</strong> cows such that the <strong>minimum distance</strong> between any two of them is the <strong>maximum</strong> possible.</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>stalls[] = [1, 2, 4, 8, 9], k = 3\n<strong>Output: </strong>3\n<strong>Explanation: </strong>The first cow can be placed at stalls[0], <br />the second cow can be placed at stalls[2] and \nthe third cow can be placed at stalls[3]. \nThe minimum distance between cows in this case is 3, which is the largest among all possible ways.\n</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>stalls[] = [10, 1, 2, 7, 5], k = 3\n<strong>Output: </strong>4\n<strong>Explanation: </strong>The first cow can be placed at stalls[0],\nthe second cow can be placed at stalls[1] and\nthe third cow can be placed at stalls[4].\nThe minimum distance between cows in this case is 4, which is the largest among all possible ways.</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>stalls[] = [2, 12, 11, 3, 26, 7], k = 5\n<strong>Output: </strong>1\n<strong>Explanation: </strong>There are 6 stalls and only 5 cows, we try to place the cows such that the minimum distance between any two cows is as large as possible.\nThe minimum distance between cows in this case is 1, which is the largest among all possible ways.</span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:</strong></span><br /><span style=\"font-size: 14pt;\">2 &le; stalls.size() &le; 10<sup>6</sup><br /></span><span style=\"font-size: 18.6667px;\">0 &le; stalls[i] &le; 10<sup>8</sup></span><br /><span style=\"font-size: 14pt;\">2 &le; k &le; </span><span style=\"font-size: 18.6667px;\">stalls.size()</span></p>"
     },
     {
       "id": "gfg-aggressive-cows102404",
@@ -154,7 +200,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-assign-cookies/README.md"
+      ]
     },
     {
       "id": "gfg-attend-all-meetings",
@@ -183,7 +232,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-attend-all-meetings/README.md"
+      ]
     },
     {
       "id": "gfg-bheem-wants-ladoos102404",
@@ -205,7 +257,13 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-bheem-wants-ladoos102404/README.md"
+      ],
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
     },
     {
       "id": "gfg-burger-shop102404",
@@ -227,7 +285,13 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-burger-shop102404/README.md"
+      ],
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
     },
     {
       "id": "gfg-buy-stock-2",
@@ -255,7 +319,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-buy-stock-2/README.md"
+      ]
     },
     {
       "id": "gfg-c-matrix-rotation-by-180-degree0745",
@@ -285,7 +352,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-c-matrix-rotation-by-180-degree0745/README.md"
+      ]
     },
     {
       "id": "gfg-camelcase-pattern-matching2259",
@@ -315,7 +385,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-camelcase-pattern-matching2259/README.md"
+      ]
     },
     {
       "id": "gfg-compare-two-fractions4438",
@@ -393,7 +466,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-count-number-of-substrings4528/README.md"
+      ]
     },
     {
       "id": "gfg-count-ways-to-partition-a-string-such-that-both-parts-have-equal-distinct-characters102404",
@@ -415,7 +491,13 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-count-ways-to-partition-a-string-such-that-both-parts-have-equal-distinct-characters102404/README.md"
+      ],
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
     },
     {
       "id": "gfg-count-ways-to-reach-the-nth-stair-1587115620",
@@ -445,7 +527,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-count-ways-to-reach-the-nth-stair-1587115620/README.md"
+      ]
     },
     {
       "id": "gfg-detect-cycle-in-an-undirected-graph",
@@ -476,7 +561,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-detect-cycle-in-an-undirected-graph/README.md"
+      ]
     },
     {
       "id": "gfg-detect-loop-in-linked-list",
@@ -506,7 +594,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-detect-loop-in-linked-list/README.md"
+      ]
     },
     {
       "id": "gfg-diameter-of-binary-tree",
@@ -534,7 +625,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-diameter-of-binary-tree/README.md"
+      ]
     },
     {
       "id": "gfg-find-unique-number",
@@ -561,7 +655,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-find-unique-number/README.md"
+      ]
     },
     {
       "id": "gfg-height-of-binary-tree",
@@ -589,7 +686,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-height-of-binary-tree/README.md"
+      ]
     },
     {
       "id": "gfg-implement-atoi",
@@ -618,7 +718,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-implement-atoi/README.md"
+      ]
     },
     {
       "id": "gfg-intersection-point-in-y-shapped-linked-lists",
@@ -646,7 +749,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-intersection-point-in-y-shapped-linked-lists/README.md"
+      ]
     },
     {
       "id": "gfg-is-array-sorted122153",
@@ -668,7 +774,13 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-is-array-sorted122153/README.md"
+      ],
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
     },
     {
       "id": "gfg-k-largest-elements4206",
@@ -699,7 +811,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-k-largest-elements4206/README.md"
+      ]
     },
     {
       "id": "gfg-kadanes-algorithm-1587115620",
@@ -729,7 +844,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-kadanes-algorithm-1587115620/README.md"
+      ]
     },
     {
       "id": "gfg-kth-smallest-element5635",
@@ -852,7 +970,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-learn-to-comment-python/README.md"
+      ]
     },
     {
       "id": "gfg-level-order-traversal",
@@ -880,7 +1001,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-level-order-traversal/README.md"
+      ]
     },
     {
       "id": "gfg-longest-increasing-subsequence-1587115620",
@@ -909,7 +1033,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-longest-increasing-subsequence-1587115620/README.md"
+      ]
     },
     {
       "id": "gfg-maximum-index-1587115620",
@@ -938,7 +1065,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-maximum-index-1587115620/README.md"
+      ]
     },
     {
       "id": "gfg-maximum-path-sum-from-any-node",
@@ -966,7 +1096,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-maximum-path-sum-from-any-node/README.md"
+      ]
     },
     {
       "id": "gfg-merge-two-sorted-linked-lists",
@@ -994,7 +1127,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-merge-two-sorted-linked-lists/README.md"
+      ]
     },
     {
       "id": "gfg-minimum-element-in-a-sorted-and-rotated-array3611",
@@ -1022,7 +1158,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-minimum-element-in-a-sorted-and-rotated-array3611/README.md"
+      ]
     },
     {
       "id": "gfg-minimum-platforms-1587115620",
@@ -1054,7 +1193,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-minimum-platforms-1587115620/README.md"
+      ]
     },
     {
       "id": "gfg-mirror-tree",
@@ -1082,7 +1224,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-mirror-tree/README.md"
+      ]
     },
     {
       "id": "gfg-missing-number-in-array1416",
@@ -1113,7 +1258,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-missing-number-in-array1416/README.md"
+      ]
     },
     {
       "id": "gfg-nearly-sorted-1587115620",
@@ -1142,7 +1290,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-nearly-sorted-1587115620/README.md"
+      ]
     },
     {
       "id": "gfg-non-repeating-character-1587115620",
@@ -1171,7 +1322,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-non-repeating-character-1587115620/README.md"
+      ]
     },
     {
       "id": "gfg-number-of-coins1824",
@@ -1199,7 +1353,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-number-of-coins1824/README.md"
+      ]
     },
     {
       "id": "gfg-number-of-paths0926",
@@ -1227,7 +1384,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-number-of-paths0926/README.md"
+      ]
     },
     {
       "id": "gfg-number-of-students-unable-to-eat-lunch102404",
@@ -1249,7 +1409,13 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-number-of-students-unable-to-eat-lunch102404/README.md"
+      ],
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
     },
     {
       "id": "gfg-overlapping-intervals170633",
@@ -1271,7 +1437,13 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-overlapping-intervals170633/README.md"
+      ],
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
     },
     {
       "id": "gfg-pacific-atlantic-water-flow",
@@ -1358,7 +1530,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-parenthesis-checker2744/README.md"
+      ]
     },
     {
       "id": "gfg-police-and-thieves102404",
@@ -1380,7 +1555,13 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-police-and-thieves102404/README.md"
+      ],
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
     },
     {
       "id": "gfg-product-array-puzzle4525",
@@ -1410,7 +1591,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-product-array-puzzle4525/README.md"
+      ]
     },
     {
       "id": "gfg-rearrange-characters5322",
@@ -1432,7 +1616,13 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-rearrange-characters5322/README.md"
+      ],
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
     },
     {
       "id": "gfg-repetitive-addition-of-digits2221",
@@ -1460,7 +1650,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-repetitive-addition-of-digits2221/README.md"
+      ]
     },
     {
       "id": "gfg-rotate-a-linked-list",
@@ -1488,7 +1681,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-rotate-a-linked-list/README.md"
+      ]
     },
     {
       "id": "gfg-serialize-and-deserialize-a-binary-tree",
@@ -1516,7 +1712,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-serialize-and-deserialize-a-binary-tree/README.md"
+      ]
     },
     {
       "id": "gfg-sort-an-array-of-0s-1s-and-2s4231",
@@ -1586,7 +1785,13 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-start-coding-python093158/README.md"
+      ],
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
     },
     {
       "id": "gfg-stickler-theif-1587115621",
@@ -1616,7 +1821,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-stickler-theif-1587115621/README.md"
+      ]
     },
     {
       "id": "gfg-string-palindromic-ignoring-spaces4723",
@@ -1647,7 +1855,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-string-palindromic-ignoring-spaces4723/README.md"
+      ]
     },
     {
       "id": "gfg-total-decoding-messages1235",
@@ -1675,7 +1886,10 @@
       "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-total-decoding-messages1235/README.md"
+      ]
     },
     {
       "id": "gfg-water-flow102404",
@@ -1697,7 +1911,13 @@
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true
+      "_needsCodeFetch": true,
+      "_committedPaths": [
+        "problems/gfg-water-flow102404/README.md"
+      ],
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
     },
     {
       "id": "lc-01-matrix",
@@ -17737,7 +17957,7 @@
         "Simulation"
       ],
       "canonical": null,
-      "readmeContent": "# [885] Spiral Matrix III\n**Difficulty:** Medium  |  **Acceptance:** 84.6%  |  **Likes:** 1674 / **Dislikes:** 1051\n**Tags:** `Array`, `Matrix`, `Simulation`\n## Problem\nYou start at the cell (rStart, cStart) of an rows x cols grid facing east. The northwest corner is at the first row and column in the grid, and the southeast corner is at the last row and column.\n\nYou will walk in a clockwise spiral shape to visit every position in this grid. Whenever you move outside the grid's boundary, we continue our walk outside the grid (but may return to the grid boundary later.). Eventually, we reach all rows * cols spaces of the grid.\n\nReturn an array of coordinates representing the positions of the grid in the order you visited them.\n\n&nbsp;\nExample 1:\n\nInput: rows = 1, cols = 4, rStart = 0, cStart = 0\nOutput: [[0,0],[0,1],[0,2],[0,3]]\n\nExample 2:\n\nInput: rows = 5, cols = 6, rStart = 1, cStart = 4\nOutput: [[1,4],[1,5],[2,5],[2,4],[2,3],[1,3],[0,3],[0,4],[0,5],[3,5],[3,4],[3,3],[3,2],[2,2],[1,2],[0,2],[4,5],[4,4],[4,3],[4,2],[4,1],[3,1],[2,1],[1,1],[0,1],[4,0],[3,0],[2,0],[1,0],[0,0]]\n\n&nbsp;\nConstraints:\n\n\t1 <= rows, cols <= 100\n\t0 <= rStart < rows\n\t0 <= cStart < cols\n## My Submission\n\n- Runtime: 15 ms (beats 26.9%)\n- Memory: 20.6 MB (beats 7.8%)\n\n## Similar Problems\n\n- [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/) — Medium\n- [Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii/) — Medium\n- [Spiral Matrix IV](https://leetcode.com/problems/spiral-matrix-iv/) — Medium\n",
+      "readmeContent": "# [885] Spiral Matrix III\n**Difficulty:** Medium  |  **Acceptance:** 84.6%  |  **Likes:** 1674 / **Dislikes:** 1051\n**Tags:** `Array`, `Matrix`, `Simulation`\n## Problem\nYou start at the cell (rStart, cStart) of an rows x cols grid facing east. The northwest corner is at the first row and column in the grid, and the southeast corner is at the last row and column.\n\nYou will walk in a clockwise spiral shape to visit every position in this grid. Whenever you move outside the grid's boundary, we continue our walk outside the grid (but may return to the grid boundary later.). Eventually, we reach all rows * cols spaces of the grid.\n\nReturn an array of coordinates representing the positions of the grid in the order you visited them.\n\n&nbsp;\nExample 1:\n\nInput: rows = 1, cols = 4, rStart = 0, cStart = 0\nOutput: [[0,0],[0,1],[0,2],[0,3]]\n\nExample 2:\n\nInput: rows = 5, cols = 6, rStart = 1, cStart = 4\nOutput: [[1,4],[1,5],[2,5],[2,4],[2,3],[1,3],[0,3],[0,4],[0,5],[3,5],[3,4],[3,3],[3,2],[2,2],[1,2],[0,2],[4,5],[4,4],[4,3],[4,2],[4,1],[3,1],[2,1],[1,1],[0,1],[4,0],[3,0],[2,0],[1,0],[0,0]]\n\n&nbsp;\nConstraints:\n\n\t1 <= rows, cols <= 100\n\t0 <= rStart < rows\n\t0 <= cStart < cols\n## My Submission\n\n- Runtime: 15 ms (beats 26.7%)\n- Memory: 20.6 MB (beats 7.5%)\n\n## Similar Problems\n\n- [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/) — Medium\n- [Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii/) — Medium\n- [Spiral Matrix IV](https://leetcode.com/problems/spiral-matrix-iv/) — Medium\n",
       "code": "class Solution:\n    def spiralMatrixIII(self, rows: int, cols: int, rStart: int, cStart: int) -> List[List[int]]:\n        i,j = rStart, cStart\n\n        diri, dirj = 0, 1 # directions to move\n        twice = 2\n        res = []\n        moves = 1\n        next_moves = 2\n\n        while len(res) < (rows * cols):\n            if (-1 < i < rows) and ( -1 < j < cols):\n                res.append([i,j])\n            \n            i += diri\n            j += dirj\n            moves -= 1\n            if moves == 0:\n                diri, dirj = dirj, -diri # 90 deg Clockwise\n                twice -= 1\n                if twice == 0:\n                    twice = 2\n                    moves = next_moves\n                    next_moves += 1\n                else:\n                    moves = next_moves - 1\n        return res",
       "files": [
         {
@@ -17746,7 +17966,7 @@
         },
         {
           "path": "problems/lc-spiral-matrix-iii/README.md",
-          "content": "# [885] Spiral Matrix III\n**Difficulty:** Medium  |  **Acceptance:** 84.6%  |  **Likes:** 1674 / **Dislikes:** 1051\n**Tags:** `Array`, `Matrix`, `Simulation`\n## Problem\nYou start at the cell (rStart, cStart) of an rows x cols grid facing east. The northwest corner is at the first row and column in the grid, and the southeast corner is at the last row and column.\n\nYou will walk in a clockwise spiral shape to visit every position in this grid. Whenever you move outside the grid's boundary, we continue our walk outside the grid (but may return to the grid boundary later.). Eventually, we reach all rows * cols spaces of the grid.\n\nReturn an array of coordinates representing the positions of the grid in the order you visited them.\n\n&nbsp;\nExample 1:\n\nInput: rows = 1, cols = 4, rStart = 0, cStart = 0\nOutput: [[0,0],[0,1],[0,2],[0,3]]\n\nExample 2:\n\nInput: rows = 5, cols = 6, rStart = 1, cStart = 4\nOutput: [[1,4],[1,5],[2,5],[2,4],[2,3],[1,3],[0,3],[0,4],[0,5],[3,5],[3,4],[3,3],[3,2],[2,2],[1,2],[0,2],[4,5],[4,4],[4,3],[4,2],[4,1],[3,1],[2,1],[1,1],[0,1],[4,0],[3,0],[2,0],[1,0],[0,0]]\n\n&nbsp;\nConstraints:\n\n\t1 <= rows, cols <= 100\n\t0 <= rStart < rows\n\t0 <= cStart < cols\n## My Submission\n\n- Runtime: 15 ms (beats 26.9%)\n- Memory: 20.6 MB (beats 7.8%)\n\n## Similar Problems\n\n- [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/) — Medium\n- [Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii/) — Medium\n- [Spiral Matrix IV](https://leetcode.com/problems/spiral-matrix-iv/) — Medium\n"
+          "content": "# [885] Spiral Matrix III\n**Difficulty:** Medium  |  **Acceptance:** 84.6%  |  **Likes:** 1674 / **Dislikes:** 1051\n**Tags:** `Array`, `Matrix`, `Simulation`\n## Problem\nYou start at the cell (rStart, cStart) of an rows x cols grid facing east. The northwest corner is at the first row and column in the grid, and the southeast corner is at the last row and column.\n\nYou will walk in a clockwise spiral shape to visit every position in this grid. Whenever you move outside the grid's boundary, we continue our walk outside the grid (but may return to the grid boundary later.). Eventually, we reach all rows * cols spaces of the grid.\n\nReturn an array of coordinates representing the positions of the grid in the order you visited them.\n\n&nbsp;\nExample 1:\n\nInput: rows = 1, cols = 4, rStart = 0, cStart = 0\nOutput: [[0,0],[0,1],[0,2],[0,3]]\n\nExample 2:\n\nInput: rows = 5, cols = 6, rStart = 1, cStart = 4\nOutput: [[1,4],[1,5],[2,5],[2,4],[2,3],[1,3],[0,3],[0,4],[0,5],[3,5],[3,4],[3,3],[3,2],[2,2],[1,2],[0,2],[4,5],[4,4],[4,3],[4,2],[4,1],[3,1],[2,1],[1,1],[0,1],[4,0],[3,0],[2,0],[1,0],[0,0]]\n\n&nbsp;\nConstraints:\n\n\t1 <= rows, cols <= 100\n\t0 <= rStart < rows\n\t0 <= cStart < cols\n## My Submission\n\n- Runtime: 15 ms (beats 26.7%)\n- Memory: 20.6 MB (beats 7.5%)\n\n## Similar Problems\n\n- [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/) — Medium\n- [Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii/) — Medium\n- [Spiral Matrix IV](https://leetcode.com/problems/spiral-matrix-iv/) — Medium\n"
         }
       ],
       "lang": {
@@ -17756,10 +17976,10 @@
       },
       "runtime": "15 ms",
       "memory": "20.6 MB",
-      "runtimePct": 26.939500000000002,
-      "memoryPct": 7.7586999999999975,
+      "runtimePct": 26.724000000000004,
+      "memoryPct": 7.543199999999995,
       "timestamp": 1782232937000,
-      "acRate": 84.59267639914243,
+      "acRate": 84.59129062615854,
       "likes": 1674,
       "dislikes": 1051,
       "similar": [
@@ -17796,7 +18016,7 @@
         "problems/lc-spiral-matrix-iii/lc-spiral-matrix-iii.py",
         "problems/lc-spiral-matrix-iii/README.md"
       ],
-      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(\\max(R, C)^2)$. The spiral continues expanding until all cells are visited. In the worst case, the spiral's side length grows proportional to the largest dimension of the grid.\n*   **Space Complexity:** $O(R \\times C)$ to store the resulting coordinates.\n\n### 2. Correctness\nThe logic is **correct**. It accurately simulates the spiral pattern (Right $\\to$ Down $\\to$ Left $\\to$ Up) where the step length increases every two turns ($1, 1, 2, 2, 3, 3, \\dots$). \n*   **Edge Cases:** The code handles $1 \\times 1$ grids and starting positions at boundaries correctly because it checks bounds *before* moving and terminates immediately once the result list is full.\n\n### 3. Optimization\n**Skip out-of-bounds segments:** Currently, the code iterates one step at a time even when far outside the grid. You can mathematically check if a side of the spiral (from `step_start` to `step_end`) intersects the rectangle $[0, rows-1] \\times [0, cols-1]$. If it doesn't, you can update `i, j` and `moves` in a single addition/jump rather than a loop.\n\n### 4. Key Algorithmic Pattern\n**Simulation:** The problem is solved by directly simulating the movement rules (traversal with changing directions and incremental step sizes).",
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(\\max(\\text{rows, cols})^2)$. The spiral expands until it covers all cells. Even though we only store $R \\times C$ points, the loop iterates through the entire bounding square of the spiral.\n*   **Space Complexity:** $O(R \\times C)$ to store the resulting coordinates.\n\n### 2. Correctness\nThe logic is **correct**. It accurately simulates the spiral pattern where step length increases every two turns ($1, 1, 2, 2, 3, 3...$).\n*   **Edge Cases:** Handles $1 \\times 1$ grids and starting positions at boundaries correctly due to the `len(res)` condition and the immediate bounds check.\n\n### 3. Concrete Optimization\n**Segment Skipping:** When the entire current \"arm\" of the spiral is outside the grid's bounding box, you can mathematically calculate the next position instead of incrementing $i, j$ one by one. While this doesn't change the Big-O for small grids, it significantly reduces iterations for large spirals starting far from the grid.\n\n### 4. Key Algorithmic Pattern\n**Simulation with Directional State Machine:** Using a direction vector and a counter to manage periodic state changes (increasing step size every two turns).",
       "_aiProvider": "gemini",
       "_aiModel": "gemini-3-flash-preview",
       "methods": [],

@@ -7,8 +7,8 @@
 | Problem ID | `lc-spiral-matrix-iii` |
 | Topics | Array, Matrix, Simulation |
 | Solved | 2026-06-23 |
-| Runtime | 15 ms (beats 26.939500000000002%) |
-| Memory | 20.6 MB (beats 7.7586999999999975%) |
+| Runtime | 15 ms (beats 26.724000000000004%) |
+| Memory | 20.6 MB (beats 7.543199999999995%) |
 
 ## Problem Statement
 
@@ -75,15 +75,15 @@ class Solution:
 ## AI Review
 
 ### 1. Complexity
-*   **Time Complexity:** $O(\max(R, C)^2)$. The spiral continues expanding until all cells are visited. In the worst case, the spiral's side length grows proportional to the largest dimension of the grid.
+*   **Time Complexity:** $O(\max(\text{rows, cols})^2)$. The spiral expands until it covers all cells. Even though we only store $R \times C$ points, the loop iterates through the entire bounding square of the spiral.
 *   **Space Complexity:** $O(R \times C)$ to store the resulting coordinates.
 
 ### 2. Correctness
-The logic is **correct**. It accurately simulates the spiral pattern (Right $\to$ Down $\to$ Left $\to$ Up) where the step length increases every two turns ($1, 1, 2, 2, 3, 3, \dots$). 
-*   **Edge Cases:** The code handles $1 \times 1$ grids and starting positions at boundaries correctly because it checks bounds *before* moving and terminates immediately once the result list is full.
+The logic is **correct**. It accurately simulates the spiral pattern where step length increases every two turns ($1, 1, 2, 2, 3, 3...$).
+*   **Edge Cases:** Handles $1 \times 1$ grids and starting positions at boundaries correctly due to the `len(res)` condition and the immediate bounds check.
 
-### 3. Optimization
-**Skip out-of-bounds segments:** Currently, the code iterates one step at a time even when far outside the grid. You can mathematically check if a side of the spiral (from `step_start` to `step_end`) intersects the rectangle $[0, rows-1] \times [0, cols-1]$. If it doesn't, you can update `i, j` and `moves` in a single addition/jump rather than a loop.
+### 3. Concrete Optimization
+**Segment Skipping:** When the entire current "arm" of the spiral is outside the grid's bounding box, you can mathematically calculate the next position instead of incrementing $i, j$ one by one. While this doesn't change the Big-O for small grids, it significantly reduces iterations for large spirals starting far from the grid.
 
 ### 4. Key Algorithmic Pattern
-**Simulation:** The problem is solved by directly simulating the movement rules (traversal with changing directions and incremental step sizes).
+**Simulation with Directional State Machine:** Using a direction vector and a counter to manage periodic state changes (increasing step size every two turns).

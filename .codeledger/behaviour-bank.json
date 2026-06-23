@@ -1,4 +1,15 @@
 {
+  "geeksforgeeks::aggressive-cows": {
+    "aiInsights": [
+      {
+        "summary": "**1. Complexity**\n*   **Time:** $O(N \\log N + N \\log D)$, where $N$ is the number of stalls and $D$ is the distance range (`stalls[-1] - stalls[0]`). Sorting takes $O(N \\log N)$ and the binary search ",
+        "ts": 1782299305881,
+        "weakAreas": []
+      }
+    ],
+    "platform": "geeksforgeeks",
+    "slug": "aggressive-cows"
+  },
   "geeksforgeeks::compare-two-fractions4438": {
     "aiInsights": [
       {
@@ -3519,6 +3530,15 @@
       {
         "summary": "### 1. Complexity\n*   **Time Complexity:** $O(\\max(R, C)^2)$. The spiral continues expanding until all cells are visited. In the worst case, the spiral's side length grows proportional to the largest ",
         "ts": 1782268705875,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(\\max(\\text{rows, cols})^2)$. The spiral expands until it covers all cells. Even though we only store $R \\times C$ points, the loop iterates through the en",
+        "ts": 1782302291646,
         "weakAreas": [
           "edge cases",
           "space complexity",
