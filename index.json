@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-21T11:15:26.762Z",
+  "updatedAt": "2026-06-23T13:48:26.578Z",
   "layoutVersion": 3,
   "stats": {
     "total": 258,
@@ -9212,15 +9212,6 @@
         "lc-median-of-two-sorted-arrays-alt-1780412246910-3"
       ],
       "_committedPaths": [
-        "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays-alt-approach-python3.py",
-        "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays-alt-approach-python3.py",
-        "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays-alt-approach-python3.py",
-        "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays-alt-approach-python3.py",
-        "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays-alt-approach-python3.py",
-        "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays-alt-approach-python3.py",
-        "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays-alt-approach-python3.py",
-        "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays-alt-approach-python3.py",
-        "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays-alt-approach-python3.py",
         "problems/lc-median-of-two-sorted-arrays/lc-median-of-two-sorted-arrays-alt-approach-python3.py",
         "problems/lc-median-of-two-sorted-arrays/README.md"
       ],
