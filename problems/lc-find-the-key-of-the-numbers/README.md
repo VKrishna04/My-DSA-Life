@@ -64,33 +64,37 @@ Hence, the `key` is `"0000"`, i.e. 0.
 
 ## Solutions
 
-### Alt approach (Python3)
-
-Duplicate resolved — 22 Oct 2024
-
 ```Python3
 class Solution:
     def generateKey(self, num1: int, num2: int, num3: int) -> str:
-        nums = [str(num).zfill(4) for num in [num1, num2, num3]]
-        key = ''.join(min(num[i] for num in nums) for i in range(4))
-        return int(key)
+        # nums = [str(num).zfill(4) for num in [num1, num2, num3]]
+        # key = ''.join(min(num[i] for num in nums) for i in range(4))
+        # return int(key)
+        return int(''.join(min(num[i] for num in [str(num).zfill(4) for num in [num1, num2, num3]]) for i in range(4)))
 
 ```
 
 ## AI Review
 
-Here's a review of your solution:
+### Analysis
 
-1.  **Time complexity:** O(1). All operations (string conversions, zfill, min comparisons for 3 items, join for 4 characters, int conversion) are fixed in size and execution time, independent of the input *values* themselves (assuming fixed number of digits).
-    **Space complexity:** O(1). A fixed number of strings and characters are created in memory, not growing with input values.
+1.  **Complexity**:
+    *   **Time**: $O(1)$. The input numbers are at most 4 digits, leading to a constant number of operations regardless of the input magnitude.
+    *   **Space**: $O(1)$. It stores fixed-length strings (4 characters) and a small list of three elements.
 
-2.  **Correctness:** The code correctly implements the logic of taking the minimum digit at each position across three 4-digit, zero-padded numbers. It's correct for inputs within the assumed range (e.g., 0-9999) implied by `zfill(4)`. Edge cases: If input numbers can be negative or exceed 4 digits (e.g., 12345), `zfill(4)` behavior might be unexpected (`-012` for -12, or `12345` for 12345), potentially failing the `int()` conversion or the "4-digit key" premise.
+2.  **Correctness**:
+    *   The solution is **correct**. It accurately implements the problem's rules: padding to four digits using `zfill(4)`, selecting the minimum digit per column, and converting the result back to an integer to remove leading zeros. No edge cases (like `0, 0, 0`) fail.
 
-3.  **Optimisation:** The current solution is already O(1), so no asymptotic improvements are possible. For micro-optimization and readability, instantiate the list of padded strings once, as in your commented-out code:
+3.  **Optimization**:
+    *   Avoid string conversions and repeated list creation inside the loop. Use **modular arithmetic** to extract digits. This is faster and uses less memory:
     ```python
-    nums = [str(num).zfill(4) for num in [num1, num2, num3]]
-    key = ''.join(min(num[i] for num in nums) for i in range(4))
-    return int(key)
+    res, power = 0, 1
+    for _ in range(4):
+        res += min(num1 % 10, num2 % 10, num3 % 10) * power
+        num1 //= 10; num2 //= 10; num3 //= 10
+        power *= 10
+    return res
     ```
 
-4.  **Key algorithmic pattern:** Digit-by-digit (or character-by-character) processing with positional aggregation (finding minimums).
+4.  **Key Algorithmic Pattern**:
+    *   **Digit-by-digit processing** (Column-wise comparison).
