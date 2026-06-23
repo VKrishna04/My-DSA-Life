@@ -1,8 +1,8 @@
-# Total Decoding MessagesMediumSolved 2 months ago›
+# Total Decoding Messages1235
 
 | Field | Value |
 |-------|-------|
-| Difficulty | Unknown |
+| Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-total-decoding-messages1235` |
 | Solved | 2026-06-23 |

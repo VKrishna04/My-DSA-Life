@@ -1,8 +1,8 @@
-# Intersection in Y Shaped ListsMediumSolved 3 months ago›
+# Intersection Point In Y Shapped Linked Lists
 
 | Field | Value |
 |-------|-------|
-| Difficulty | Unknown |
+| Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-intersection-point-in-y-shapped-linked-lists` |
 | Solved | 2026-06-23 |

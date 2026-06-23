@@ -1,8 +1,8 @@
-# Sorted and Rotated MinimumEasySolved 3 months ago›
+# Minimum Element In A Sorted And Rotated Array3611
 
 | Field | Value |
 |-------|-------|
-| Difficulty | Unknown |
+| Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-minimum-element-in-a-sorted-and-rotated-array3611` |
 | Solved | 2026-06-23 |

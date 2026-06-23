@@ -1,8 +1,8 @@
-# Minimum PlatformsMediumSolved 3 months ago›
+# Minimum Platforms 1587115620
 
 | Field | Value |
 |-------|-------|
-| Difficulty | Unknown |
+| Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-minimum-platforms-1587115620` |
 | Solved | 2026-06-23 |

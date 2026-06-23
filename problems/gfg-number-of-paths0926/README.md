@@ -1,8 +1,8 @@
-# Count Paths from Top Left to Bottom RightMediumSolved 2 months ago›
+# Number Of Paths0926
 
 | Field | Value |
 |-------|-------|
-| Difficulty | Unknown |
+| Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-number-of-paths0926` |
 | Solved | 2026-06-23 |

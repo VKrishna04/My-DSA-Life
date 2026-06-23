@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-06-23T19:22:30.104Z",
+  "updatedAt": "2026-06-23T19:34:45.767Z",
   "layoutVersion": 3,
   "stats": {
     "total": 312,
-    "easy": 160,
-    "medium": 92,
-    "hard": 9,
+    "easy": 175,
+    "medium": 125,
+    "hard": 10,
     "byPlatform": {
       "geeksforgeeks": 52,
       "leetcode": 260
@@ -57,9 +57,9 @@
     {
       "id": "gfg-2-sum-find-a-pair-with-given-sum",
       "platform": "geeksforgeeks",
-      "title": "2 Sum - Find a pair with given sumEasySolved 3 months ago›",
+      "title": "2 Sum Find A Pair With Given Sum",
       "titleSlug": "2-sum-find-a-pair-with-given-sum",
-      "difficulty": "Unknown",
+      "difficulty": "Easy",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -69,22 +69,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-2-sum-find-a-pair-with-given-sum/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-aggressive-cows--102404",
       "platform": "geeksforgeeks",
-      "title": "Aggressive CowsMediumSolved 10 months ago›",
+      "title": "Aggressive Cows  102404",
       "titleSlug": "aggressive-cows--102404",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -94,22 +91,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-aggressive-cows--102404/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-assign-cookies",
       "platform": "geeksforgeeks",
-      "title": "Assign CookiesEasySolved 3 months ago›",
+      "title": "Assign Cookies",
       "titleSlug": "assign-cookies",
-      "difficulty": "Unknown",
+      "difficulty": "Easy",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -119,22 +113,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-assign-cookies/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-attend-all-meetings",
       "platform": "geeksforgeeks",
-      "title": "Meeting RoomsEasySolved 3 months ago›",
+      "title": "Attend All Meetings",
       "titleSlug": "attend-all-meetings",
-      "difficulty": "Unknown",
+      "difficulty": "Easy",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -144,22 +135,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-attend-all-meetings/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-bheem-wants-ladoos--102404",
       "platform": "geeksforgeeks",
-      "title": "Sum of nodes within k distance from targetMediumSolved 10 months ago›",
+      "title": "Bheem Wants Ladoos  102404",
       "titleSlug": "bheem-wants-ladoos--102404",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -169,22 +157,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-bheem-wants-ladoos--102404/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-burger-shop--102404",
       "platform": "geeksforgeeks",
-      "title": "Burger ShopMediumSolved 10 months ago›",
+      "title": "Burger Shop  102404",
       "titleSlug": "burger-shop--102404",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -194,22 +179,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-burger-shop--102404/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-buy-stock-2",
       "platform": "geeksforgeeks",
-      "title": "Stock Buy and Sell – Max one Transaction AllowedEasySolved 3 months ago›",
+      "title": "Buy Stock 2",
       "titleSlug": "buy-stock-2",
-      "difficulty": "Unknown",
+      "difficulty": "Easy",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -219,22 +201,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-buy-stock-2/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-c-matrix-rotation-by-180-degree0745",
       "platform": "geeksforgeeks",
-      "title": "Rotate a Matrix by 180 CounterclockwiseMediumSolved 3 months ago›",
+      "title": "C Matrix Rotation By 180 Degree0745",
       "titleSlug": "c-matrix-rotation-by-180-degree0745",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -244,22 +223,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-c-matrix-rotation-by-180-degree0745/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-camelcase-pattern-matching2259",
       "platform": "geeksforgeeks",
-      "title": "PascalCase Pattern MatchingMediumSolved 2 months ago›",
+      "title": "Camelcase Pattern Matching2259",
       "titleSlug": "camelcase-pattern-matching2259",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -269,15 +245,12 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801850,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-camelcase-pattern-matching2259/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-compare-two-fractions4438",
@@ -317,9 +290,9 @@
     {
       "id": "gfg-count-number-of-substrings4528--102404",
       "platform": "geeksforgeeks",
-      "title": "Substrings with K DistinctMediumSolved 10 months ago›",
+      "title": "Count Number Of Substrings4528  102404",
       "titleSlug": "count-number-of-substrings4528--102404",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -329,22 +302,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-count-number-of-substrings4528--102404/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-count-ways-to-partition-a-string-such-that-both-parts-have-equal-distinct-characters--102404",
       "platform": "geeksforgeeks",
-      "title": "count ways to partition a string such that both parts have equal distinct characters  102404",
+      "title": "Count Ways To Partition A String Such That Both Parts Have Equal Distinct Characters  102404",
       "titleSlug": "count-ways-to-partition-a-string-such-that-both-parts-have-equal-distinct-characters--102404",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -354,22 +324,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-count-ways-to-partition-a-string-such-that-both-parts-have-equal-distinct-characters--102404/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-count-ways-to-reach-the-nth-stair-1587115620",
       "platform": "geeksforgeeks",
-      "title": "Ways to Reach the n'th StairMediumSolved 2 months ago›",
+      "title": "Count Ways To Reach The Nth Stair 1587115620",
       "titleSlug": "count-ways-to-reach-the-nth-stair-1587115620",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -379,22 +346,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-count-ways-to-reach-the-nth-stair-1587115620/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-detect-cycle-in-an-undirected-graph",
       "platform": "geeksforgeeks",
-      "title": "Undirected Graph CycleMediumSolved a month ago›",
+      "title": "Detect Cycle In An Undirected Graph",
       "titleSlug": "detect-cycle-in-an-undirected-graph",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -404,22 +368,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801850,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-detect-cycle-in-an-undirected-graph/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-detect-loop-in-linked-list",
       "platform": "geeksforgeeks",
-      "title": "Detect Loop in linked listMediumSolved 3 months ago›",
+      "title": "Detect Loop In Linked List",
       "titleSlug": "detect-loop-in-linked-list",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -429,22 +390,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-detect-loop-in-linked-list/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-diameter-of-binary-tree",
       "platform": "geeksforgeeks",
-      "title": "Diameter of a Binary TreeMediumSolved 2 months ago›",
+      "title": "Diameter Of Binary Tree",
       "titleSlug": "diameter-of-binary-tree",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -454,22 +412,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-diameter-of-binary-tree/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-find-unique-number",
       "platform": "geeksforgeeks",
-      "title": "Unique Number IEasySolved 3 months ago›",
+      "title": "Find Unique Number",
       "titleSlug": "find-unique-number",
-      "difficulty": "Unknown",
+      "difficulty": "Easy",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -479,22 +434,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-find-unique-number/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-height-of-binary-tree",
       "platform": "geeksforgeeks",
-      "title": "Height of Binary TreeEasySolved 2 months ago›",
+      "title": "Height Of Binary Tree",
       "titleSlug": "height-of-binary-tree",
-      "difficulty": "Unknown",
+      "difficulty": "Easy",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -504,22 +456,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-height-of-binary-tree/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-implement-atoi",
       "platform": "geeksforgeeks",
-      "title": "Implement AtoiMediumSolved 3 months ago›",
+      "title": "Implement Atoi",
       "titleSlug": "implement-atoi",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -529,22 +478,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-implement-atoi/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-intersection-point-in-y-shapped-linked-lists",
       "platform": "geeksforgeeks",
-      "title": "Intersection in Y Shaped ListsMediumSolved 3 months ago›",
+      "title": "Intersection Point In Y Shapped Linked Lists",
       "titleSlug": "intersection-point-in-y-shapped-linked-lists",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -554,22 +500,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-intersection-point-in-y-shapped-linked-lists/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-is-array-sorted--122153",
       "platform": "geeksforgeeks",
-      "title": "Is Array SortedEasySolved 8 months ago›",
+      "title": "Is Array Sorted  122153",
       "titleSlug": "is-array-sorted--122153",
-      "difficulty": "Unknown",
+      "difficulty": "Easy",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -579,22 +522,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-is-array-sorted--122153/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-k-largest-elements4206",
       "platform": "geeksforgeeks",
-      "title": "k largest elementsMediumSolved 3 months ago›",
+      "title": "K Largest Elements4206",
       "titleSlug": "k-largest-elements4206",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -604,22 +544,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-k-largest-elements4206/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-kadanes-algorithm-1587115620",
       "platform": "geeksforgeeks",
-      "title": "Kadane's AlgorithmMediumSolved 3 months ago›",
+      "title": "Kadanes Algorithm 1587115620",
       "titleSlug": "kadanes-algorithm-1587115620",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -629,22 +566,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-kadanes-algorithm-1587115620/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-learn-to-comment-python",
       "platform": "geeksforgeeks",
-      "title": "Learn to CommentEasySolved 10 months ago›",
+      "title": "Learn To Comment Python",
       "titleSlug": "learn-to-comment-python",
-      "difficulty": "Unknown",
+      "difficulty": "Easy",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -654,22 +588,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-learn-to-comment-python/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-level-order-traversal",
       "platform": "geeksforgeeks",
-      "title": "Level order traversalMediumSolved 2 months ago›",
+      "title": "Level Order Traversal",
       "titleSlug": "level-order-traversal",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -679,22 +610,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-level-order-traversal/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-longest-increasing-subsequence-1587115620",
       "platform": "geeksforgeeks",
-      "title": "Longest Increasing SubsequenceMediumSolved 2 months ago›",
+      "title": "Longest Increasing Subsequence 1587115620",
       "titleSlug": "longest-increasing-subsequence-1587115620",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -704,22 +632,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801850,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-longest-increasing-subsequence-1587115620/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-maximum-index-1587115620",
       "platform": "geeksforgeeks",
-      "title": "Maximum IndexMediumSolved 3 months ago›",
+      "title": "Maximum Index 1587115620",
       "titleSlug": "maximum-index-1587115620",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -729,22 +654,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-maximum-index-1587115620/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-maximum-path-sum-from-any-node",
       "platform": "geeksforgeeks",
-      "title": "Maximum path sumMediumSolved 2 months ago›",
+      "title": "Maximum Path Sum From Any Node",
       "titleSlug": "maximum-path-sum-from-any-node",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -754,22 +676,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-maximum-path-sum-from-any-node/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-merge-two-sorted-linked-lists",
       "platform": "geeksforgeeks",
-      "title": "Merge two sorted linked listsMediumSolved 3 months ago›",
+      "title": "Merge Two Sorted Linked Lists",
       "titleSlug": "merge-two-sorted-linked-lists",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -779,22 +698,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-merge-two-sorted-linked-lists/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-minimum-element-in-a-sorted-and-rotated-array3611",
       "platform": "geeksforgeeks",
-      "title": "Sorted and Rotated MinimumEasySolved 3 months ago›",
+      "title": "Minimum Element In A Sorted And Rotated Array3611",
       "titleSlug": "minimum-element-in-a-sorted-and-rotated-array3611",
-      "difficulty": "Unknown",
+      "difficulty": "Easy",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -804,22 +720,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-minimum-element-in-a-sorted-and-rotated-array3611/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-minimum-platforms-1587115620",
       "platform": "geeksforgeeks",
-      "title": "Minimum PlatformsMediumSolved 3 months ago›",
+      "title": "Minimum Platforms 1587115620",
       "titleSlug": "minimum-platforms-1587115620",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -829,22 +742,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-minimum-platforms-1587115620/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-mirror-tree",
       "platform": "geeksforgeeks",
-      "title": "Mirror TreeEasySolved 2 months ago›",
+      "title": "Mirror Tree",
       "titleSlug": "mirror-tree",
-      "difficulty": "Unknown",
+      "difficulty": "Easy",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -854,22 +764,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-mirror-tree/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-missing-number-in-array1416",
       "platform": "geeksforgeeks",
-      "title": "Missing in ArrayEasySolved 2 years ago›",
+      "title": "Missing Number In Array1416",
       "titleSlug": "missing-number-in-array1416",
-      "difficulty": "Unknown",
+      "difficulty": "Easy",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -879,22 +786,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-missing-number-in-array1416/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-nearly-sorted-1587115620",
       "platform": "geeksforgeeks",
-      "title": "Nearly sortedMediumSolved 3 months ago›",
+      "title": "Nearly Sorted 1587115620",
       "titleSlug": "nearly-sorted-1587115620",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -904,22 +808,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-nearly-sorted-1587115620/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-non-repeating-character-1587115620",
       "platform": "geeksforgeeks",
-      "title": "Non Repeating CharacterEasySolved 3 months ago›",
+      "title": "Non Repeating Character 1587115620",
       "titleSlug": "non-repeating-character-1587115620",
-      "difficulty": "Unknown",
+      "difficulty": "Easy",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -929,22 +830,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-non-repeating-character-1587115620/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-number-of-coins1824",
       "platform": "geeksforgeeks",
-      "title": "Coin Change (Minimum Coins)MediumSolved 2 months ago›",
+      "title": "Number Of Coins1824",
       "titleSlug": "number-of-coins1824",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -954,22 +852,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801850,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-number-of-coins1824/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-number-of-paths0926",
       "platform": "geeksforgeeks",
-      "title": "Count Paths from Top Left to Bottom RightMediumSolved 2 months ago›",
+      "title": "Number Of Paths0926",
       "titleSlug": "number-of-paths0926",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -979,22 +874,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801850,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-number-of-paths0926/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-number-of-students-unable-to-eat-lunch--102404",
       "platform": "geeksforgeeks",
-      "title": "Number of Students Unable to Eat LunchMediumSolved 10 months ago›",
+      "title": "Number Of Students Unable To Eat Lunch  102404",
       "titleSlug": "number-of-students-unable-to-eat-lunch--102404",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -1004,22 +896,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-number-of-students-unable-to-eat-lunch--102404/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-overlapping-intervals--170633",
       "platform": "geeksforgeeks",
-      "title": "Overlapping IntervalsMediumSolved 2 months ago›",
+      "title": "Overlapping Intervals  170633",
       "titleSlug": "overlapping-intervals--170633",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -1029,22 +918,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-overlapping-intervals--170633/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-parenthesis-checker2744",
       "platform": "geeksforgeeks",
-      "title": "Parenthesis CheckerEasySolved 3 months ago›",
+      "title": "Parenthesis Checker2744",
       "titleSlug": "parenthesis-checker2744",
-      "difficulty": "Unknown",
+      "difficulty": "Easy",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -1054,22 +940,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-parenthesis-checker2744/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-police-and-thieves--102404",
       "platform": "geeksforgeeks",
-      "title": "Police and ThievesMediumSolved 10 months ago›",
+      "title": "Police And Thieves  102404",
       "titleSlug": "police-and-thieves--102404",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -1079,22 +962,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-police-and-thieves--102404/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-product-array-puzzle4525",
       "platform": "geeksforgeeks",
-      "title": "Product array puzzleEasySolved 3 months ago›",
+      "title": "Product Array Puzzle4525",
       "titleSlug": "product-array-puzzle4525",
-      "difficulty": "Unknown",
+      "difficulty": "Easy",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -1104,22 +984,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-product-array-puzzle4525/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-rearrange-characters5322--102404",
       "platform": "geeksforgeeks",
-      "title": "Rearrange charactersMediumSolved 10 months ago›",
+      "title": "Rearrange Characters5322  102404",
       "titleSlug": "rearrange-characters5322--102404",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -1129,20 +1006,17 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-rearrange-characters5322--102404/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-repetitive-addition-of-digits2221",
       "platform": "geeksforgeeks",
-      "title": "Repetitive Addition Of DigitsBasicSolved 3 months ago›",
+      "title": "Repetitive Addition Of Digits2221",
       "titleSlug": "repetitive-addition-of-digits2221",
       "difficulty": "Unknown",
       "lang": {
@@ -1154,22 +1028,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-repetitive-addition-of-digits2221/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-rotate-a-linked-list",
       "platform": "geeksforgeeks",
-      "title": "Rotate a Linked ListMediumSolved 3 months ago›",
+      "title": "Rotate A Linked List",
       "titleSlug": "rotate-a-linked-list",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -1179,22 +1050,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-rotate-a-linked-list/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-serialize-and-deserialize-a-binary-tree",
       "platform": "geeksforgeeks",
-      "title": "Serialize and deserialize a binary treeHardSolved 2 months ago›",
+      "title": "Serialize And Deserialize A Binary Tree",
       "titleSlug": "serialize-and-deserialize-a-binary-tree",
-      "difficulty": "Unknown",
+      "difficulty": "Hard",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -1204,20 +1072,17 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-serialize-and-deserialize-a-binary-tree/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-start-coding-python--093158",
       "platform": "geeksforgeeks",
-      "title": "Start CodingBasicSolved 10 months ago›",
+      "title": "Start Coding Python  093158",
       "titleSlug": "start-coding-python--093158",
       "difficulty": "Unknown",
       "lang": {
@@ -1229,22 +1094,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-start-coding-python--093158/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-stickler-theif-1587115621",
       "platform": "geeksforgeeks",
-      "title": "Stickler ThiefMediumSolved 2 months ago›",
+      "title": "Stickler Theif 1587115621",
       "titleSlug": "stickler-theif-1587115621",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -1254,22 +1116,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801850,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-stickler-theif-1587115621/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-string-palindromic-ignoring-spaces4723",
       "platform": "geeksforgeeks",
-      "title": "Palindrome SentenceEasySolved 3 months ago›",
+      "title": "String Palindromic Ignoring Spaces4723",
       "titleSlug": "string-palindromic-ignoring-spaces4723",
-      "difficulty": "Unknown",
+      "difficulty": "Easy",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -1279,22 +1138,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-string-palindromic-ignoring-spaces4723/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-total-decoding-messages1235",
       "platform": "geeksforgeeks",
-      "title": "Total Decoding MessagesMediumSolved 2 months ago›",
+      "title": "Total Decoding Messages1235",
       "titleSlug": "total-decoding-messages1235",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -1304,22 +1160,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801850,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-total-decoding-messages1235/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-total-decoding-messages1235--102404",
       "platform": "geeksforgeeks",
-      "title": "Total Decoding MessagesMediumSolved 10 months ago›",
+      "title": "Total Decoding Messages1235  102404",
       "titleSlug": "total-decoding-messages1235--102404",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -1329,22 +1182,19 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-total-decoding-messages1235--102404/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-water-flow--102404",
       "platform": "geeksforgeeks",
-      "title": "Water FlowMediumSolved 10 months ago›",
+      "title": "Water Flow  102404",
       "titleSlug": "water-flow--102404",
-      "difficulty": "Unknown",
+      "difficulty": "Medium",
       "lang": {
         "name": "Unknown",
         "ext": "txt",
@@ -1354,15 +1204,12 @@
       "topic": "Untagged",
       "code": "",
       "files": [],
-      "timestamp": 1782237801851,
+      "timestamp": 1782242710713,
       "runtime": null,
       "memory": null,
       "problemStatement": null,
       "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-water-flow--102404/README.md"
-      ]
+      "_needsCodeFetch": true
     },
     {
       "id": "lc-01-matrix",

@@ -1,8 +1,8 @@
-# Undirected Graph CycleMediumSolved a month ago›
+# Detect Cycle In An Undirected Graph
 
 | Field | Value |
 |-------|-------|
-| Difficulty | Unknown |
+| Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-detect-cycle-in-an-undirected-graph` |
 | Solved | 2026-06-23 |

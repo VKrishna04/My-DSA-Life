@@ -6,7 +6,7 @@
 
 # VKrishna04's DSA Solutions
 
-[![Solutions](https://img.shields.io/badge/Solutions-312-06b6d4?style=flat-square&logo=github)](http://vkrishna04.me/My-DSA-Life/)  [![Easy](https://img.shields.io/badge/Easy-160-22c55e?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)  [![Medium](https://img.shields.io/badge/Medium-92-f59e0b?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)  [![Hard](https://img.shields.io/badge/Hard-9-ef4444?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)
+[![Solutions](https://img.shields.io/badge/Solutions-312-06b6d4?style=flat-square&logo=github)](http://vkrishna04.me/My-DSA-Life/)  [![Easy](https://img.shields.io/badge/Easy-175-22c55e?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)  [![Medium](https://img.shields.io/badge/Medium-125-f59e0b?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)  [![Hard](https://img.shields.io/badge/Hard-10-ef4444?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)
 
 > Automatically tracked by [CodeLedger](https://codeledger.vkrishna04.me) — every problem solved, committed to Git.
 
@@ -23,7 +23,7 @@
 
 | Total | Easy | Medium | Hard |
 |:-----:|:----:|:------:|:----:|
-| **312** | 160 | 92 | 9 |
+| **312** | 175 | 125 | 10 |
 
 **By Platform:** leetcode (260) · geeksforgeeks (52)
 
@@ -37,16 +37,16 @@
 
 | Problem | Difficulty | Language | Platform | Date |
 |---------|-----------|----------|----------|------|
-| [2 Sum - Find a pair with given sumEasySolved 3 months ago›](https://www.geeksforgeeks.org/problems/2-sum-find-a-pair-with-given-sum/) | Unknown | Unknown | geeksforgeeks | Jun 23 |
-| [Aggressive CowsMediumSolved 10 months ago›](https://www.geeksforgeeks.org/problems/aggressive-cows--102404/) | Unknown | Unknown | geeksforgeeks | Jun 23 |
-| [Assign CookiesEasySolved 3 months ago›](https://www.geeksforgeeks.org/problems/assign-cookies/) | Unknown | Unknown | geeksforgeeks | Jun 23 |
-| [Meeting RoomsEasySolved 3 months ago›](https://www.geeksforgeeks.org/problems/attend-all-meetings/) | Unknown | Unknown | geeksforgeeks | Jun 23 |
-| [Sum of nodes within k distance from targetMediumSolved 10 months ago›](https://www.geeksforgeeks.org/problems/bheem-wants-ladoos--102404/) | Unknown | Unknown | geeksforgeeks | Jun 23 |
-| [Burger ShopMediumSolved 10 months ago›](https://www.geeksforgeeks.org/problems/burger-shop--102404/) | Unknown | Unknown | geeksforgeeks | Jun 23 |
-| [Stock Buy and Sell – Max one Transaction AllowedEasySolved 3 months ago›](https://www.geeksforgeeks.org/problems/buy-stock-2/) | Unknown | Unknown | geeksforgeeks | Jun 23 |
-| [Rotate a Matrix by 180 CounterclockwiseMediumSolved 3 months ago›](https://www.geeksforgeeks.org/problems/c-matrix-rotation-by-180-degree0745/) | Unknown | Unknown | geeksforgeeks | Jun 23 |
-| [Substrings with K DistinctMediumSolved 10 months ago›](https://www.geeksforgeeks.org/problems/count-number-of-substrings4528--102404/) | Unknown | Unknown | geeksforgeeks | Jun 23 |
-| [count ways to partition a string such that both parts have equal distinct characters  102404](https://www.geeksforgeeks.org/problems/count-ways-to-partition-a-string-such-that-both-parts-have-equal-distinct-characters--102404/) | Unknown | Unknown | geeksforgeeks | Jun 23 |
+| [2 Sum Find A Pair With Given Sum](https://www.geeksforgeeks.org/problems/2-sum-find-a-pair-with-given-sum/) | Easy | Unknown | geeksforgeeks | Jun 24 |
+| [Aggressive Cows  102404](https://www.geeksforgeeks.org/problems/aggressive-cows--102404/) | Medium | Unknown | geeksforgeeks | Jun 24 |
+| [Assign Cookies](https://www.geeksforgeeks.org/problems/assign-cookies/) | Easy | Unknown | geeksforgeeks | Jun 24 |
+| [Attend All Meetings](https://www.geeksforgeeks.org/problems/attend-all-meetings/) | Easy | Unknown | geeksforgeeks | Jun 24 |
+| [Bheem Wants Ladoos  102404](https://www.geeksforgeeks.org/problems/bheem-wants-ladoos--102404/) | Medium | Unknown | geeksforgeeks | Jun 24 |
+| [Burger Shop  102404](https://www.geeksforgeeks.org/problems/burger-shop--102404/) | Medium | Unknown | geeksforgeeks | Jun 24 |
+| [Buy Stock 2](https://www.geeksforgeeks.org/problems/buy-stock-2/) | Easy | Unknown | geeksforgeeks | Jun 24 |
+| [C Matrix Rotation By 180 Degree0745](https://www.geeksforgeeks.org/problems/c-matrix-rotation-by-180-degree0745/) | Medium | Unknown | geeksforgeeks | Jun 24 |
+| [Camelcase Pattern Matching2259](https://www.geeksforgeeks.org/problems/camelcase-pattern-matching2259/) | Medium | Unknown | geeksforgeeks | Jun 24 |
+| [Count Number Of Substrings4528  102404](https://www.geeksforgeeks.org/problems/count-number-of-substrings4528--102404/) | Medium | Unknown | geeksforgeeks | Jun 24 |
 
 ---
 
@@ -89,6 +89,7 @@ Built with [CodeLedger](https://codeledger.vkrishna04.me) · [⭐ Star the exten
 </div>
 
 <!-- CODELEDGER_AUTO_GENERATED_END -->
+
 
 
 

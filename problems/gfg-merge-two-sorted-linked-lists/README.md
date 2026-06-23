@@ -1,8 +1,8 @@
-# Merge two sorted linked listsMediumSolved 3 months ago›
+# Merge Two Sorted Linked Lists
 
 | Field | Value |
 |-------|-------|
-| Difficulty | Unknown |
+| Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-merge-two-sorted-linked-lists` |
 | Solved | 2026-06-23 |

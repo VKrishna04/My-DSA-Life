@@ -1,8 +1,8 @@
-# Parenthesis CheckerEasySolved 3 months ago›
+# Parenthesis Checker2744
 
 | Field | Value |
 |-------|-------|
-| Difficulty | Unknown |
+| Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-parenthesis-checker2744` |
 | Solved | 2026-06-23 |

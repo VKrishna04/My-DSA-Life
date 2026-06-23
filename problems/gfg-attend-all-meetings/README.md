@@ -1,8 +1,8 @@
-# Meeting RoomsEasySolved 3 months ago›
+# Attend All Meetings
 
 | Field | Value |
 |-------|-------|
-| Difficulty | Unknown |
+| Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-attend-all-meetings` |
 | Solved | 2026-06-23 |

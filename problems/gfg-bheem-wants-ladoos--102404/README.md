@@ -1,8 +1,8 @@
-# Sum of nodes within k distance from targetMediumSolved 10 months ago›
+# Bheem Wants Ladoos  102404
 
 | Field | Value |
 |-------|-------|
-| Difficulty | Unknown |
+| Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-bheem-wants-ladoos--102404` |
 | Solved | 2026-06-23 |

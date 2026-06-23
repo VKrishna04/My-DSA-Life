@@ -1,8 +1,8 @@
-# Police and ThievesMediumSolved 10 months ago›
+# Police And Thieves  102404
 
 | Field | Value |
 |-------|-------|
-| Difficulty | Unknown |
+| Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-police-and-thieves--102404` |
 | Solved | 2026-06-23 |

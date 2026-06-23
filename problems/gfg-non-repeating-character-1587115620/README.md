@@ -1,8 +1,8 @@
-# Non Repeating CharacterEasySolved 3 months ago›
+# Non Repeating Character 1587115620
 
 | Field | Value |
 |-------|-------|
-| Difficulty | Unknown |
+| Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-non-repeating-character-1587115620` |
 | Solved | 2026-06-23 |

@@ -1,8 +1,8 @@
-# k largest elementsMediumSolved 3 months ago›
+# K Largest Elements4206
 
 | Field | Value |
 |-------|-------|
-| Difficulty | Unknown |
+| Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-k-largest-elements4206` |
 | Solved | 2026-06-23 |

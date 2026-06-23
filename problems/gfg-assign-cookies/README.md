@@ -1,8 +1,8 @@
-# Assign CookiesEasySolved 3 months ago›
+# Assign Cookies
 
 | Field | Value |
 |-------|-------|
-| Difficulty | Unknown |
+| Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-assign-cookies` |
 | Solved | 2026-06-23 |

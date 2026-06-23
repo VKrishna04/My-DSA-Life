@@ -1,8 +1,8 @@
-# Level order traversalMediumSolved 2 months ago›
+# Level Order Traversal
 
 | Field | Value |
 |-------|-------|
-| Difficulty | Unknown |
+| Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-level-order-traversal` |
 | Solved | 2026-06-23 |

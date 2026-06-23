@@ -1,8 +1,8 @@
-# Ways to Reach the n'th StairMediumSolved 2 months ago›
+# Count Ways To Reach The Nth Stair 1587115620
 
 | Field | Value |
 |-------|-------|
-| Difficulty | Unknown |
+| Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-count-ways-to-reach-the-nth-stair-1587115620` |
 | Solved | 2026-06-23 |

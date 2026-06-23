@@ -1,8 +1,8 @@
-# Implement AtoiMediumSolved 3 months ago›
+# Implement Atoi
 
 | Field | Value |
 |-------|-------|
-| Difficulty | Unknown |
+| Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-implement-atoi` |
 | Solved | 2026-06-23 |

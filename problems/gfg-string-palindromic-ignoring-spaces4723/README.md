@@ -1,8 +1,8 @@
-# Palindrome SentenceEasySolved 3 months ago›
+# String Palindromic Ignoring Spaces4723
 
 | Field | Value |
 |-------|-------|
-| Difficulty | Unknown |
+| Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-string-palindromic-ignoring-spaces4723` |
 | Solved | 2026-06-23 |

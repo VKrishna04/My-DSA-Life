@@ -1,8 +1,8 @@
-# Mirror TreeEasySolved 2 months ago›
+# Mirror Tree
 
 | Field | Value |
 |-------|-------|
-| Difficulty | Unknown |
+| Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-mirror-tree` |
 | Solved | 2026-06-23 |

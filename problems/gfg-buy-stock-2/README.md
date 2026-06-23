@@ -1,8 +1,8 @@
-# Stock Buy and Sell – Max one Transaction AllowedEasySolved 3 months ago›
+# Buy Stock 2
 
 | Field | Value |
 |-------|-------|
-| Difficulty | Unknown |
+| Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-buy-stock-2` |
 | Solved | 2026-06-23 |

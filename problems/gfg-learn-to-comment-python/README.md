@@ -1,8 +1,8 @@
-# Learn to CommentEasySolved 10 months ago›
+# Learn To Comment Python
 
 | Field | Value |
 |-------|-------|
-| Difficulty | Unknown |
+| Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-learn-to-comment-python` |
 | Solved | 2026-06-23 |

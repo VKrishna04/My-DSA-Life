@@ -1,8 +1,8 @@
-# PascalCase Pattern MatchingMediumSolved 2 months ago›
+# Camelcase Pattern Matching2259
 
 | Field | Value |
 |-------|-------|
-| Difficulty | Unknown |
+| Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-camelcase-pattern-matching2259` |
 | Solved | 2026-06-23 |
