@@ -6,7 +6,7 @@
 
 # VKrishna04's DSA Solutions
 
-[![Solutions](https://img.shields.io/badge/Solutions-261-06b6d4?style=flat-square&logo=github)](http://vkrishna04.me/My-DSA-Life/)  [![Easy](https://img.shields.io/badge/Easy-160-22c55e?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)  [![Medium](https://img.shields.io/badge/Medium-92-f59e0b?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)  [![Hard](https://img.shields.io/badge/Hard-9-ef4444?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)
+[![Solutions](https://img.shields.io/badge/Solutions-312-06b6d4?style=flat-square&logo=github)](http://vkrishna04.me/My-DSA-Life/)  [![Easy](https://img.shields.io/badge/Easy-160-22c55e?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)  [![Medium](https://img.shields.io/badge/Medium-92-f59e0b?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)  [![Hard](https://img.shields.io/badge/Hard-9-ef4444?style=flat-square)](http://vkrishna04.me/My-DSA-Life/)
 
 > Automatically tracked by [CodeLedger](https://codeledger.vkrishna04.me) — every problem solved, committed to Git.
 
@@ -23,13 +23,13 @@
 
 | Total | Easy | Medium | Hard |
 |:-----:|:----:|:------:|:----:|
-| **261** | 160 | 92 | 9 |
+| **312** | 160 | 92 | 9 |
 
-**By Platform:** leetcode (260) · geeksforgeeks (1)
+**By Platform:** leetcode (260) · geeksforgeeks (52)
 
-**Top Languages:** Python3 (195) · Python (16) · MySQL (15) · Pandas (14) · Java (12) · Bash (4) · JavaScript (3) · C++ (1)
+**Top Languages:** Python3 (195) · Unknown (51) · Python (16) · MySQL (15) · Pandas (14) · Java (12) · Bash (4) · JavaScript (3)
 
-**Top Topics:** Array (125) · Math (25) · String (20) · Database (15) · Hash Table (15) · Data Manipulation (14) · Two Pointers (9) · Dynamic Programming (4) · Shell (4) · Untagged (3)
+**Top Topics:** Array (125) · Untagged (54) · Math (25) · String (20) · Database (15) · Hash Table (15) · Data Manipulation (14) · Two Pointers (9) · Dynamic Programming (4) · Shell (4)
 
 ---
 
@@ -37,16 +37,16 @@
 
 | Problem | Difficulty | Language | Platform | Date |
 |---------|-----------|----------|----------|------|
-| [Compare two fractions](https://www.geeksforgeeks.org/problems/compare-two-fractions4438/) | Easy | Python3 | geeksforgeeks | Jun 23 |
-| [Spiral Matrix III](https://leetcode.com/problems/spiral-matrix-iii/) | Medium | Python3 | leetcode | Jun 23 |
-| [Uncommon Words from Two Sentences](https://leetcode.com/problems/uncommon-words-from-two-sentences/) | Easy | Python3 | leetcode | Jun 23 |
-| [Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/) | Medium | Python3 | leetcode | Jun 18 |
-| [Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/) | Easy | Python3 | leetcode | Jun 18 |
-| [Can Place Flowers](https://leetcode.com/problems/can-place-flowers/) | Easy | Python3 | leetcode | Jun 18 |
-| [Kids With the Greatest Number of Candies](https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/) | Easy | Python3 | leetcode | Jun 18 |
-| [Network Delay Time](https://leetcode.com/problems/network-delay-time/) | Medium | Python3 | leetcode | May 22 |
-| [Course Schedule II](https://leetcode.com/problems/course-schedule-ii/) | Medium | Python3 | leetcode | May 19 |
-| [Course Schedule](https://leetcode.com/problems/course-schedule/) | Medium | Python3 | leetcode | May 19 |
+| [2 Sum - Find a pair with given sumEasySolved 3 months ago›](https://www.geeksforgeeks.org/problems/2-sum-find-a-pair-with-given-sum/) | Unknown | Unknown | geeksforgeeks | Jun 23 |
+| [Aggressive CowsMediumSolved 10 months ago›](https://www.geeksforgeeks.org/problems/aggressive-cows--102404/) | Unknown | Unknown | geeksforgeeks | Jun 23 |
+| [Assign CookiesEasySolved 3 months ago›](https://www.geeksforgeeks.org/problems/assign-cookies/) | Unknown | Unknown | geeksforgeeks | Jun 23 |
+| [Meeting RoomsEasySolved 3 months ago›](https://www.geeksforgeeks.org/problems/attend-all-meetings/) | Unknown | Unknown | geeksforgeeks | Jun 23 |
+| [Sum of nodes within k distance from targetMediumSolved 10 months ago›](https://www.geeksforgeeks.org/problems/bheem-wants-ladoos--102404/) | Unknown | Unknown | geeksforgeeks | Jun 23 |
+| [Burger ShopMediumSolved 10 months ago›](https://www.geeksforgeeks.org/problems/burger-shop--102404/) | Unknown | Unknown | geeksforgeeks | Jun 23 |
+| [Stock Buy and Sell – Max one Transaction AllowedEasySolved 3 months ago›](https://www.geeksforgeeks.org/problems/buy-stock-2/) | Unknown | Unknown | geeksforgeeks | Jun 23 |
+| [Rotate a Matrix by 180 CounterclockwiseMediumSolved 3 months ago›](https://www.geeksforgeeks.org/problems/c-matrix-rotation-by-180-degree0745/) | Unknown | Unknown | geeksforgeeks | Jun 23 |
+| [Substrings with K DistinctMediumSolved 10 months ago›](https://www.geeksforgeeks.org/problems/count-number-of-substrings4528--102404/) | Unknown | Unknown | geeksforgeeks | Jun 23 |
+| [count ways to partition a string such that both parts have equal distinct characters  102404](https://www.geeksforgeeks.org/problems/count-ways-to-partition-a-string-such-that-both-parts-have-equal-distinct-characters--102404/) | Unknown | Unknown | geeksforgeeks | Jun 23 |
 
 ---
 
@@ -89,6 +89,7 @@ Built with [CodeLedger](https://codeledger.vkrishna04.me) · [⭐ Star the exten
 </div>
 
 <!-- CODELEDGER_AUTO_GENERATED_END -->
+
 
 
 
