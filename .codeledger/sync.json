@@ -1,20 +1,58 @@
 {
+  "aiCopyable": true,
   "aiPrimaryModel": "gemini-3.5-flash",
+  "aiProvider": "gemini",
   "aiSecondary": "gemini",
   "aiSecondaryModel": "gemini-3.5-flash-lite",
   "autoReview": false,
   "claude_enabled": false,
   "dailyTargetPoints": 25,
+  "debugMode": true,
   "deepseek_enabled": false,
   "freezeEarnMultiplier": 1,
+  "gamificationActionsHour": 5,
+  "gamificationBadgePicks": [
+    "streak",
+    "points",
+    "level",
+    "solved",
+    "difficulty",
+    "freezes"
+  ],
   "gamificationEnabled": true,
   "gemini_enabled": true,
   "gitProvider": "github",
-  "github_owner": "",
+  "github_owner": "VKrishna04",
   "github_pages_url": "http://dsa.vkrishna04.me/",
   "github_repo": "My-DSA-Life",
+  "github_username": "VKrishna04",
   "iceBreakerDays": 7,
+  "leetcode_submission_poll": true,
   "maxFreezes": 70,
+  "mcp.config": {
+    "autoInvokeThreshold": {
+      "queryProblems": 2,
+      "suggestions": 1
+    },
+    "cacheResults": true,
+    "enabled": {
+      "analyze-code-quality": true,
+      "find-similar-problems": true,
+      "get-next-suggestion": true,
+      "get-problem-stats": true,
+      "get-roadmap-progress": true,
+      "get-trend-analysis": true,
+      "get-user-profile": true,
+      "open-problem": true,
+      "query-problems": true,
+      "recall": true,
+      "remember": true,
+      "set-roadmap": true
+    },
+    "maxToolCallsPerRequest": 4,
+    "useInChat": true,
+    "useInReview": true
+  },
   "ollama_enabled": false,
   "openai_enabled": false,
   "openrouter_enabled": false,
@@ -22,7 +60,7 @@
   "remember_modal_tab": true,
   "telemetryOptIn": true,
   "__theme": {
-    "accentPrimary": "#2fc1a4",
+    "accentPrimary": "#602e9e",
     "accentSecondary": "",
     "autoBehavior": "system",
     "basePreset": "",
@@ -30,11 +68,11 @@
     "bgSecondary": "",
     "bgTertiary": "",
     "customPresets": {},
-    "mode": "dark",
+    "mode": "auto",
     "preset": "github-light",
     "textColor": "",
     "timeCustomEnd": "18:00",
     "timeCustomStart": "06:00"
   },
-  "__syncedAt": "2026-09-25T06:15:31.906Z"
+  "__syncedAt": "2026-10-01T18:13:46.835Z"
 }

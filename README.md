@@ -4,9 +4,9 @@
   <img src="http://dsa.vkrishna04.me/badges/card.svg?v=5640-0-322-2026-10-01" alt="Streak card" width="420">
 </picture>
 
-![Streak](http://dsa.vkrishna04.me/badges/streak.svg?v=5640-0-322-2026-10-01) ![Points](http://dsa.vkrishna04.me/badges/points.svg?v=5640-0-322-2026-10-01) ![Level](http://dsa.vkrishna04.me/badges/level.svg?v=5640-0-322-2026-10-01) ![Solved by difficulty](http://dsa.vkrishna04.me/badges/difficulty.svg?v=5640-0-322-2026-10-01) ![Freezes](http://dsa.vkrishna04.me/badges/freezes.svg?v=5640-0-322-2026-10-01)
+![Streak](http://dsa.vkrishna04.me/badges/streak.svg?v=5640-0-322-2026-10-01) ![Points](http://dsa.vkrishna04.me/badges/points.svg?v=5640-0-322-2026-10-01) ![Level](http://dsa.vkrishna04.me/badges/level.svg?v=5640-0-322-2026-10-01) ![Solved](http://dsa.vkrishna04.me/badges/solved.svg?v=5640-0-322-2026-10-01) ![Solved by difficulty](http://dsa.vkrishna04.me/badges/difficulty.svg?v=5640-0-322-2026-10-01) ![Freezes](http://dsa.vkrishna04.me/badges/freezes.svg?v=5640-0-322-2026-10-01)
 
-🩸 First Blood · 🔟 Ten Down · 💯 Century · 🔥 Week On Fire · 🗣️ Polyglot · 🎯 Well Rounded · ⚡ Double Day · ⭐ Engineer · 🔍 Second Opinion · 📝 Peer Reviewed
+🩸 First Blood · 🔟 Ten Down · 💯 Century · 🔥 Week On Fire · 🌋 Month On Fire · 🗣️ Polyglot · 🎯 Well Rounded · ⚡ Double Day · 🪃 Comeback · ⭐ Engineer · 🔍 Second Opinion · 📝 Peer Reviewed
 <!-- codeledger:gamification:end -->
 
 <!-- CODELEDGER_AUTO_GENERATED_START -->
@@ -22,7 +22,7 @@
 > Automatically tracked by [CodeLedger](https://codeledger.vkrishna04.me) — every problem solved, committed to Git.
 
 **[View Live Dashboard →](http://dsa.vkrishna04.me/)**
-*Last updated: Sep 25, 2026*
+*Last updated: Oct 1, 2026*
 
 [![CodeLedger](https://raw.githubusercontent.com/Life-Experimentalist/Code-Ledger/refs/heads/main/src/assets/images/social%20preview.png)](http://dsa.vkrishna04.me/)
 
@@ -38,7 +38,7 @@
 
 **By Platform:** leetcode (267) · geeksforgeeks (55)
 
-**Top Languages:** Python3 (206) · Unknown (45) · Python (16) · MySQL (15) · Pandas (14) · Java (12) · python3 (5) · Bash (4)
+**Top Languages:** Python3 (206) · Unknown (45) · Python (16) · MySQL (15) · Pandas (14) · Java (12) · python3 (4) · Bash (4)
 
 **Top Topics:** Array (140) · Math (26) · String (26) · Database (15) · Data Manipulation (15) · Hash Table (14) · Dynamic Programming (12) · Tree (11) · Linked List (8) · Two Pointers (8)
 
@@ -48,16 +48,16 @@
 
 | Problem | Difficulty | Language | Platform | Date |
 |---------|-----------|----------|----------|------|
-| [Maximum Earnings From Taxi](https://leetcode.com/problems/maximum-earnings-from-taxi/) | Medium | Python3 | leetcode | Sep 19 |
-| [First Day Where You Have Been in All the Rooms](https://leetcode.com/problems/first-day-where-you-have-been-in-all-the-rooms/) | Medium | Python3 | leetcode | Sep 17 |
-| [3Sum Closest](https://leetcode.com/problems/3sum-closest/) | Medium | Python3 | leetcode | Sep 16 |
-| [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/) | Medium | Python3 | leetcode | Sep 15 |
-| [Binary Search](https://leetcode.com/problems/binary-search/) | Easy | Python3 | leetcode | Sep 15 |
-| [House Robber V](https://leetcode.com/problems/house-robber-v/) | Medium | Python3 | leetcode | Aug 18 |
 | [Aggressive Cows](https://www.geeksforgeeks.org/problems/aggressive-cows/1) | Medium | Python3 | geeksforgeeks | Jun 24 |
-| [2 Sum Find A Pair With Given Sum](https://www.geeksforgeeks.org/problems/2-sum-find-a-pair-with-given-sum/1) | Easy | Python3 | geeksforgeeks | Jun 24 |
+| [2 Sum Find A Pair With Given Sum](https://www.geeksforgeeks.org/problems/2-sum-find-a-pair-with-given-sum/1) | Easy | C++ | geeksforgeeks | Jun 24 |
 | [Assign Cookies](https://www.geeksforgeeks.org/problems/assign-cookies/1) | Easy | Python3 | geeksforgeeks | Jun 24 |
 | [Attend All Meetings](https://www.geeksforgeeks.org/problems/attend-all-meetings/1) | Easy | Python3 | geeksforgeeks | Jun 24 |
+| [Bheem Wants Ladoos](https://www.geeksforgeeks.org/problems/bheem-wants-ladoos102404/1) | Medium | Unknown | geeksforgeeks | Jun 24 |
+| [Burger Shop](https://www.geeksforgeeks.org/problems/burger-shop102404/1) | Medium | Unknown | geeksforgeeks | Jun 24 |
+| [Buy Stock](https://www.geeksforgeeks.org/problems/buy-stock-2/1) | Easy | Unknown | geeksforgeeks | Jun 24 |
+| [C Matrix Rotation By 180 Degree](https://www.geeksforgeeks.org/problems/c-matrix-rotation-by-180-degree0745/1) | Medium | Unknown | geeksforgeeks | Jun 24 |
+| [Camelcase Pattern Matching](https://www.geeksforgeeks.org/problems/camelcase-pattern-matching2259/1) | Medium | Unknown | geeksforgeeks | Jun 24 |
+| [Compare two fractions](https://www.geeksforgeeks.org/problems/compare-two-fractions4438/1) | Easy | Python3 | geeksforgeeks | Jun 23 |
 
 ---
 
@@ -100,6 +100,7 @@ Built with [CodeLedger](https://codeledger.vkrishna04.me) · [⭐ Star the exten
 </div>
 
 <!-- CODELEDGER_AUTO_GENERATED_END -->
+
 
 
 

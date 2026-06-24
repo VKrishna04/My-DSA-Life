@@ -147,31 +147,6 @@ function isVacationDay(key, vacations) {
   }
   return false;
 }
-var AWAY_GAP_MIN_DAYS = 3;
-function detectAwayGap(days, vacations, todayKey, floorDay) {
-  const yesterday = addDays(todayKey, -1);
-  let key = yesterday;
-  let start = null;
-  let length = 0;
-  while (length < 120) {
-    if (floorDay && key < floorDay) break;
-    if (isVacationDay(key, vacations)) break;
-    if ((days.get(key)?.points || 0) > 0) break;
-    start = key;
-    length += 1;
-    key = addDays(key, -1);
-  }
-  if (!start || length < AWAY_GAP_MIN_DAYS) return null;
-  let hadActivityBefore = false;
-  for (const [k, d] of days) {
-    if (k < start && (d?.points || 0) > 0) {
-      hadActivityBefore = true;
-      break;
-    }
-  }
-  if (!hadActivityBefore) return null;
-  return { start, end: yesterday, days: length };
-}
 function computeStreak(days, config, vacations, todayKey, floorDay) {
   const cfg = { ...DEFAULT_CONFIG, ...config };
   const target = Math.max(1, Math.round(cfg.dailyTargetPoints));
@@ -205,7 +180,7 @@ function computeStreak(days, config, vacations, todayKey, floorDay) {
     const points = bucket?.points || 0;
     const vacation = isVacationDay(key, vacations);
     let status;
-    if (vacation && points < target) {
+    if (vacation) {
       status = "vacation";
     } else if (points >= target) {
       current += 1;
@@ -365,22 +340,6 @@ var ACHIEVEMENTS = Object.freeze([
     test: (s) => s.penaltyDays.length >= 1
   },
   {
-    id: "back-in-action",
-    emoji: "\u{1F3C3}",
-    name: "Back In Action",
-    hint: "Hit the daily target while on vacation",
-    test: (s) => s.timeline.some((t) => t.vacation && t.status !== "vacation")
-  },
-  {
-    id: "weekend-warrior",
-    emoji: "\u{1F6E1}\uFE0F",
-    name: "Weekend Warrior",
-    hint: "Solve on 10 weekend days",
-    // getUTCDay is safe here: day keys are calendar days already shifted into
-    // the user's timezone, so midnight UTC of the key IS that local day.
-    test: (s) => s.timeline.filter((t) => t.points > 0 && [0, 6].includes(new Date(t.day).getUTCDay())).length >= 10
-  },
-  {
     id: "level-five",
     emoji: "\u2B50",
     name: "Engineer",
@@ -487,11 +446,6 @@ function computeSnapshot(problems, options = {}) {
     level: levelFor(totalPoints),
     vacationActive: isVacationDay(today, vacations),
     iceBreaker,
-    /**
-     * A trailing run of missed days that looks like an undeclared break, or
-     * null. Surfaces as a one-click "mark those days as a break" offer.
-     */
-    awayGap: detectAwayGap(days, vacations, today, options.streakFloorDay),
     /**
      * What it would cost to save the streak right now: null when nothing is at
      * risk, otherwise the points needed today and how they would be paid.
