@@ -67,11 +67,31 @@ class Solution:
 
 ## AI Review
 
-1.  **Time Complexity:** O(N), where N is the length of the string `s`. It involves one pass to convert to a list, one pass with two pointers, and one pass to join back.
-    **Space Complexity:** O(N) due to converting the string `s` into a mutable `list`.
+### Review
 
-2.  **Correctness:** The solution is correct. It handles edge cases like empty strings, single-character strings, strings with no vowels, and strings consisting entirely of vowels. The two-pointer logic accurately finds and swaps the extreme vowels.
+**1. Complexity**
+*   **Time Complexity:** $O(n)$, where $n$ is the length of the string. Each character is visited at most once.
+*   **Space Complexity:** $O(n)$ to store the list of characters, as Python strings are immutable.
 
-3.  **Optimisation:** For repeated calls to `reverseVowels`, the `vow` set could be created once outside the function (e.g., as a class attribute) to avoid redundant O(1) set construction on each call.
+**2. Correctness**
+The solution is **correct**. It properly handles:
+*   **Mixed Case:** Using a set with both `'aeiouAEIOU'` ensures $O(1)$ lookups for all vowels.
+*   **No/Single Vowels:** The `l < r` condition correctly terminates without unnecessary swaps.
+*   **Non-alphabetic characters:** They are skipped by the `if/elif` logic.
 
-4.  **Key Algorithmic Pattern:** Two Pointers.
+**3. Optimization**
+While the current logic is efficient, you can slightly improve readability and performance by using inner `while` loops to skip non-vowels. This avoids re-evaluating the outer `l < r` condition repeatedly:
+
+```python
+while l < r:
+    while l < r and letters[l] not in vow:
+        l += 1
+    while l < r and letters[r] not in vow:
+        r -= 1
+    letters[l], letters[r] = letters[r], letters[l]
+    l += 1
+    r -= 1
+```
+
+**4. Key Algorithmic Pattern**
+**Two Pointers:** Using two indices starting at opposite ends moving toward the center to perform in-place swaps (on the mutable list representation).

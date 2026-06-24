@@ -71,3 +71,19 @@ class Solution:
                     moves = next_moves - 1
         return res
 ```
+
+## AI Review
+
+### 1. Complexity
+*   **Time Complexity:** $O(\max(R, C)^2)$. The spiral continues expanding until all cells are visited. In the worst case, the spiral's side length grows proportional to the largest dimension of the grid.
+*   **Space Complexity:** $O(R \times C)$ to store the resulting coordinates.
+
+### 2. Correctness
+The logic is **correct**. It accurately simulates the spiral pattern (Right $\to$ Down $\to$ Left $\to$ Up) where the step length increases every two turns ($1, 1, 2, 2, 3, 3, \dots$). 
+*   **Edge Cases:** The code handles $1 \times 1$ grids and starting positions at boundaries correctly because it checks bounds *before* moving and terminates immediately once the result list is full.
+
+### 3. Optimization
+**Skip out-of-bounds segments:** Currently, the code iterates one step at a time even when far outside the grid. You can mathematically check if a side of the spiral (from `step_start` to `step_end`) intersects the rectangle $[0, rows-1] \times [0, cols-1]$. If it doesn't, you can update `i, j` and `moves` in a single addition/jump rather than a loop.
+
+### 4. Key Algorithmic Pattern
+**Simulation:** The problem is solved by directly simulating the movement rules (traversal with changing directions and incremental step sizes).

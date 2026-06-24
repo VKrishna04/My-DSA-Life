@@ -67,13 +67,22 @@ class Solution:
 
 ## AI Review
 
-Here's a review of your solution:
+### 1. Complexity
+*   **Time Complexity:** $O(n)$, where $n$ is the number of kids. We traverse the list once to find the maximum and once more to build the result.
+*   **Space Complexity:** $O(n)$ for the output list. If excluding the output, it is $O(1)$ auxiliary space.
 
-1.  **Time Complexity:** O(N), where N is the number of kids. It takes one pass to find `max_candies` and another pass (via list comprehension) to generate the `results` list.
-    **Space Complexity:** O(N) to store the `results` boolean list.
+### 2. Correctness
+The logic is **correct**. It accurately identifies if a kid can reach or exceed the current maximum.
+*   **Edge Cases:** The code handles cases where all kids have the same amount or `extraCandies` is 0. 
+*   **Empty Input:** If `candies` were empty, `max()` would raise a `ValueError`. However, LeetCode constraints guarantee $n \ge 2$.
 
-2.  **Correctness:** The solution is **correct**. It accurately implements the problem logic: first finding the greatest number of candies, then iterating to check if each kid *could* reach that maximum. Edge cases like a single kid, all kids having equal candies, or `extraCandies = 0` are handled correctly. LeetCode constraints typically guarantee non-empty input, preventing `max()` errors.
+### 3. Optimization
+While $O(n)$ is optimal, you can slightly improve performance by calculating a **threshold** once:
+```python
+threshold = max_candies - extraCandies
+results = [i >= threshold for i in candies]
+```
+This replaces $n$ additions with $n$ comparisons, which is marginally faster in some environments.
 
-3.  **Optimisation:** No significant algorithmic optimization is applicable. The current solution is already optimal, requiring O(N) time (to find the max and generate N results) and O(N) space (to store N boolean results).
-
-4.  **Key Algorithmic Pattern:** This solution primarily uses a **Max/Min finding** pattern (to determine the target value) followed by a **Map/Transform** operation (to apply a condition to each element and create a new list).
+### 4. Key Algorithmic Pattern
+**Greedy / Linear Scan:** You find a global property (the maximum) in one pass and then use it to make local decisions for each element in a second pass.

@@ -84,17 +84,17 @@ class Solution:
 
 ## AI Review
 
-### 1. Complexity
-*   **Time:** $O(E \log E)$ or $O(E \log V)$, where $E$ is the number of edges and $V$ is $n$. Each edge is processed and potentially pushed onto the heap.
-*   **Space:** $O(V + E)$ to store the adjacency list and the priority queue.
+Here's a review of your solution:
 
-### 2. Correctness
-The code is correct. It effectively implements Dijkstra's algorithm.
-*   **Edge Cases:** It correctly handles disconnected graphs (returns `-1`) and cycles (via the `visited` set).
-*   **Note:** If $n=1$ and the signal starts at that node, it correctly returns $0$.
+1.  **Time & Space Complexity:**
+    *   **Time:** O(E log V), where V is the number of nodes (n) and E is the number of edges (`len(times)`). This accounts for building the adjacency list (O(E)) and Dijkstra's algorithm with a min-heap (V pops, E pushes, each O(log V) for heap operations).
+    *   **Space:** O(V + E) for the adjacency list, `visited` set, and the priority queue (heap).
 
-### 3. Concrete Optimization
-**Early Exit:** Instead of waiting for the heap to empty, return `time_so_far` as soon as `len(visited) == n`. This avoids unnecessary processing of remaining elements in the priority queue once all nodes have been reached via their shortest paths.
+2.  **Correctness:**
+    The solution correctly implements Dijkstra's algorithm, suitable for graphs with non-negative edge weights. It accurately finds the maximum shortest path time to all reachable nodes from `k` and correctly returns -1 if not all `n` nodes are reachable. It handles edge cases like `n=1` or disconnected graphs well.
 
-### 4. Key Algorithmic Pattern
-**Dijkstra’s Algorithm:** A greedy approach using a **Priority Queue (Min-Heap)** to find the shortest path from a single source to all other nodes in a weighted graph.
+3.  **Concrete Optimisation:**
+    Instead of just using `visited`, maintain a `dist` array (e.g., `dist = [float('inf')] * (n + 1)`) initialized to infinity, with `dist[k] = 0`. When iterating neighbors, only `heappush((new_time, neighbor))` if `new_time < dist[neighbor]`, and then update `dist[neighbor] = new_time`. This prevents redundant, longer paths from being added to the heap, potentially reducing heap size and operations.
+
+4.  **Key Algorithmic Pattern:**
+    Dijkstra's Algorithm (a priority queue-based variant of Breadth-First Search for finding shortest paths in weighted graphs with non-negative edges).

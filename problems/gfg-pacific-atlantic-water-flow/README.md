@@ -5,6 +5,7 @@
 | Difficulty | Hard |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-pacific-atlantic-water-flow` |
+| Topics | Breadth-First Search, Graph Traversal, Set, Grid |
 | Solved | 2026-06-24 |
 
 ## Solutions
@@ -34,3 +35,19 @@ class Solution:
                     a.add((nr, nc)); aq.append((nr, nc))
         return len(p & a)
 ```
+
+## AI Review
+
+1.  **Time complexity (Big-O) and space complexity**
+    Time complexity: O(N*M), where N is the number of rows and M is the number of columns. Two BFS traversals each visit every cell and edge at most once. Set intersection is also O(N*M).
+    Space complexity: O(N*M) for storing the `p` and `a` sets and the `pq`, `aq` deques, which can hold up to all grid coordinates.
+
+2.  **Correctness — any edge cases that could fail?**
+    The core approach of performing two reverse BFS traversals from the Pacific and Atlantic borders is correct for identifying cells that can reach each ocean. The flow condition `mat[nr][nc] >= mat[r][c]` for reverse traversal is also correct.
+    **However, the solution fails to meet the problem's output requirement.** It returns `len(p & a)` (an integer count) instead of `list(p & a)` (a list of coordinates `[r, c]`). This is a critical error.
+
+3.  **One concrete optimisation if applicable**
+    The primary "optimization" is correcting the return type from `len(p & a)` to `list(p & a)` to match the problem's expected output. The two-BFS approach is already optimal for this problem.
+
+4.  **Key algorithmic pattern used**
+    Breadth-First Search (BFS), Graph Traversal.

@@ -5,6 +5,7 @@
 | Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-ladoo-problem2929` |
+| Topics | Hashing, Data Structures, Set |
 | Solved | 2026-06-24 |
 
 ## Solutions
@@ -18,17 +19,18 @@ class Solution:
 
 ## AI Review
 
-### 1. Complexity
-*   **Time Complexity:** $O(N)$, where $N$ is the size of the array $A$. Converting the list to a set requires a single pass over the elements.
-*   **Space Complexity:** $O(N)$ in the worst case, as the set may store up to $N$ unique elements.
+### Review
 
-### 2. Correctness
-The code correctly identifies the number of unique types of ladoos. 
-*   **Edge Cases:** If $N=0$ or $A$ is empty, it returns `0`, which is correct. 
-*   **Potential Issue:** In some variations of "Ladoo/Candy" problems, there is a constraint where one can only pick $N/2$ items. If such a constraint exists, this code will fail by returning a count higher than allowed. However, as a standalone unique-element counter, it is correct.
+**Complexity:**
+*   **Time Complexity:** $O(N)$, where $N$ is the number of elements in array $A$. Converting a list to a set requires a single pass to hash each element.
+*   **Space Complexity:** $O(N)$ in the worst case (where all elements are unique) to store the set in memory.
 
-### 3. Optimization
-If memory is a constraint and the input array $A$ is already sorted, you can achieve **$O(1)$ auxiliary space** by iterating through the list and counting transitions between different values (e.g., `if A[i] != A[i-1]`).
+**Correctness:**
+The logic is correct for finding the number of distinct elements.
+*   **Edge Cases:** It correctly handles an empty list (returns 0) and a list where all elements are the same (returns 1). 
 
-### 4. Key Algorithmic Pattern
-**Hashing:** Using a Hash Set to track seen elements and eliminate duplicates efficiently.
+**Optimization:**
+The solution is already time-optimal ($O(N)$). If memory is a critical constraint and the input list can be modified, you could sort the array in-place ($O(N \log N)$ time) and iterate through it to count unique adjacent elements, reducing auxiliary space to $O(1)$. However, in Python, the current `set()` approach is the most idiomatic and fastest for general use.
+
+**Key Algorithmic Pattern:**
+Hashing (using a Set data structure to filter duplicates).

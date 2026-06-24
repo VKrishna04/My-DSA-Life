@@ -65,11 +65,24 @@ class Solution:
 
 ## AI Review
 
-1.  **Time Complexity**: O(N), where N is the length of the input string `s`. `strip()`, `split()`, list creation/manipulation, and `join()` all scale linearly with string length or total word length.
-    **Space Complexity**: O(N), as several intermediate lists and strings are created (stripped string, list of words, modified list of words, reversed list of words, final joined string).
+### Review
 
-2.  **Correctness**: The solution is surprisingly correct for the standard "Reverse Words in a String" problem. The quirky `words = [words[0]]+[word+' ' for word in words[1:]]` logic effectively adds a trailing space to all words *except* the first (which becomes the last in the reversed output). When these are joined by an empty string `''`, these trailing spaces act as separators. The final word (original first) has no trailing space, preventing an unwanted trailing space in the result. It correctly handles multiple spaces, leading/trailing spaces, and single/empty string inputs.
+**1. Complexity**
+*   **Time:** $O(N)$, where $N$ is the length of the string. `split()`, list comprehension, and `join()` each traverse the data linearly.
+*   **Space:** $O(N)$ to store the list of words and the final joined string.
 
-3.  **One concrete optimisation**: The most idiomatic and often more efficient way to join reversed words is `return ' '.join(words[::-1])`. This avoids the complex and less readable intermediate step of modifying individual words to include spaces.
+**2. Correctness**
+*   **Critical Bug:** The code fails on empty or whitespace-only strings (e.g., `s = " "`). `s.strip().split()` returns an empty list, causing `words[0]` to raise an `IndexError`.
+*   **Logic:** The manual addition of spaces (`word + ' '`) is brittle and creates an extra trailing space logic that is hard to maintain.
 
-4.  **Key Algorithmic Pattern**: String Tokenization (splitting into words), List Manipulation (reversing the order of elements), and String Reconstruction (joining elements with a separator).
+**3. Optimization**
+Replace the manual space concatenation and slicing with Python’s idiomatic `join()` on the reversed list. This is cleaner and handles edge cases automatically:
+```python
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        words = s.split() # split() handles strip and multiple spaces automatically
+        return " ".join(reversed(words))
+```
+
+**4. Key Algorithmic Pattern**
+**Two-Pointer / String Manipulation:** While this solution uses high-level built-ins, the underlying problem tests your ability to parse substrings and reorder them (often solved in-place in languages with mutable strings using a "reverse the whole string, then reverse each word" strategy).

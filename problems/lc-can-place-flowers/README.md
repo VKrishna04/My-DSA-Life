@@ -67,13 +67,20 @@ class Solution:
 
 ## AI Review
 
-Here's a review of your solution:
+### 1. Complexity
+*   **Time Complexity**: $O(N)$, where $N$ is the length of the flowerbed. The algorithm traverses the list at most once.
+*   **Space Complexity**: $O(1)$. No additional data structures are used; the input is processed in place.
 
-1.  **Time Complexity**: O(L), where L is the length of `flowerbed`. The loop iterates through the array, and `i` increments by at least 2 in each step.
-    **Space Complexity**: O(1). Only a few constant-space variables are used.
+### 2. Correctness
+The logic is correct. The "jump" strategy (`i += 2` or `i += 3`) correctly maintains the non-adjacency rule by skipping indices that are guaranteed to be invalid for planting. 
+*   **Edge Cases**: The code handles single-element lists, boundary conditions (start/end of list), and `n=0` correctly. The `if flowerbed == [0]` check is actually redundant as the `while` loop handles it naturally, but it doesn't break correctness.
 
-2.  **Correctness**: Correct. The logic skillfully uses `i` increments (`i += 2`, `i += 3`) to implicitly handle the left-neighbor condition (`flowerbed[i-1] == 0`) when considering planting at `i`. If `flowerbed[i-1]` contained a flower, `i` would have already skipped past `i`. The initial check for `flowerbed == [0] and n == 1` is redundant as the main loop covers it, but it doesn't cause failure.
+### 3. Optimization
+**Simplify the logic**: You can remove the special `if` for `[0]` and unify the boundary checks. Use a "virtual" zero at the boundaries to handle `i-1` and `i+1` without special `if` branches:
+```python
+# Check: (i==0 or f[i-1]==0) and (f[i]==0) and (i==l-1 or f[i+1]==0)
+```
+This reduces the number of conditional branches inside the loop.
 
-3.  **One concrete optimisation**: Remove the redundant check `if flowerbed == [0] and n == 1:`. The rest of the code already handles this case correctly.
-
-4.  **Key algorithmic pattern used**: Greedy approach. The solution iterates through the flowerbed, making the locally optimal choice (planting a flower whenever possible) which leads to a globally optimal solution (maximizing placed flowers).
+### 4. Key Algorithmic Pattern
+**Greedy Algorithm**: The solution makes the locally optimal choice of planting a flower at the first available valid spot, which leads to the global maximum number of flowers.

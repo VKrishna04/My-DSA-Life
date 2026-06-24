@@ -94,25 +94,23 @@ class Solution:
 
 ## AI Review
 
-### Review of Course Schedule II Solution
+### 1. Complexity
+*   **Time:** $O(V + E)$, where $V$ is the number of courses and $E$ is the number of prerequisites. Every node and edge is processed exactly once.
+*   **Space:** $O(V + E)$. The adjacency list consumes $O(V + E)$, while the recursion stack and sets (`visited`, `path`) consume $O(V)$.
 
-**1. Complexity**
-*   **Time:** $O(V + E)$ – Each course (vertex $V$) and prerequisite (edge $E$) is processed once.
-*   **Space:** $O(V + E)$ – To store the adjacency list ($O(V+E)$), recursion stack ($O(V)$), and tracking sets ($O(V)$).
+### 2. Correctness
+The logic is **correct**. 
+*   It successfully detects cycles using the `path` set (back-edges).
+*   It handles disconnected components by iterating through all nodes in the main loop.
+*   **Edge Cases:** Handles $E=0$ (no prerequisites), self-loops, and large $V$ correctly.
 
-**2. Correctness**
-The solution is **correct**. It properly handles:
-*   **Cycles:** Detected via the `path` set (returning `[]`).
-*   **Disconnected Components:** Handled by iterating through all `numCourses`.
-*   **Efficiency:** Uses a `visited` set to skip already processed nodes, preventing $O(2^V)$ behavior.
-
-**3. Optimization**
-Replace the two sets (`visited`, `path`) with a single **state array** (e.g., `states = [0] * numCourses`).
+### 3. Optimization
+Replace the two sets (`visited`, `path`) with a single **state array** (e.g., `state = [0] * numCourses`). 
 *   `0`: Unvisited
-*   `1`: Visiting (current path)
+*   `1`: Visiting (currently in recursion stack)
 *   `2`: Visited (fully processed)
 
-This reduces memory overhead and improves performance by replacing set hashing/lookups with direct array indexing.
+This reduces hashing overhead and improves constant-time performance by using direct index access instead of set lookups.
 
-**4. Key Algorithmic Pattern**
-**Topological Sort** using **Depth-First Search (DFS)** and cycle detection (Backtracking). It builds the order by appending nodes post-recursion and reversing the result.
+### 4. Key Algorithmic Pattern
+**Topological Sort** using **DFS (Post-order Traversal)** and **Cycle Detection**.

@@ -59,3 +59,29 @@ class Solution:
         count = Counter(words)
         return [word for word in count if count[word] == 1]
 ```
+
+## AI Review
+
+### Review
+
+**1. Complexity**
+*   **Time Complexity:** $O(N + M)$, where $N$ and $M$ are the lengths of `s1` and `s2`. Splitting the strings and iterating through the words to populate the hash map are linear operations.
+*   **Space Complexity:** $O(N + M)$. The `words` list and the `Counter` dictionary store all unique words from both strings.
+
+**2. Correctness**
+*   **Logic:** The solution correctly implements the problem definition: a word is uncommon if it appears exactly once across both sentences.
+*   **Edge Cases:**
+    *   **Multiple occurrences in one sentence:** Handled correctly (e.g., `s1="apple apple", s2=""` returns `[]`).
+    *   **Single word sentences:** Handled correctly.
+    *   **Empty inputs:** Per LeetCode constraints, strings contain at least one word.
+
+**3. Optimization**
+To improve **memory efficiency**, avoid creating the intermediate `words` list (concatenation). Instead, update the counter in place:
+```python
+count = Counter(s1.split())
+count.update(s2.split())
+```
+This reduces peak memory usage by avoiding the creation of a third, combined list of all words.
+
+**4. Key Algorithmic Pattern**
+**Frequency Counting** using a Hash Map (Hash Table).
