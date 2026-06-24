@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-19T13:58:10.799Z",
+  "updatedAt": "2026-08-19T14:03:11.791Z",
   "layoutVersion": 3,
   "stats": {
     "total": 305,
@@ -57,7 +57,7 @@
   "meta": {
     "summary": "This solution is a prompt describing a text generation task, rather than executable code for a competitive programming problem. Therefore, the review interprets the prompt as a specification for an algorithm that would parse the provided statistics and generate a narrative.\n\n## Complexity\n- **Time:** O(L_input + L_output) — for parsing the input statistics and constructing the output summary string.\n- **Space:** O(L_input + L_output) — to store the input statistics string and the generated output summary string.\n\n## Correctness\nYour solution template outlines a task that involves parsing specific data from a string. This kind of problem often exposes issues with handling **edge cases** and **null/empty input**, which has been a recurring flag in your previous reviews.\n1.  **Missing `Stats:` or `Last commit:` field:**\n    *   **Input:** `You are an insightful DSA coach... Stats: ... Top topics: Array(132)...` (missing `Last commit:`)\n    *   **Expected:** The generated summary should adapt by omitting mentions of recent activity, or clearly state that recent activity could not be determined.\n    *   **Actual:** The solution's logic (as described in the prompt) doesn't explicitly define behavior for missing data, which could lead to an incomplete or incorrect summary, or even an error during parsing.\n2.  **Zero problems solved / Empty topic list:**\n    *   **Input:** `Stats: 0 total problems — Easy: 0, Medium: 0, Hard: 0. Top topics: . Last commit: 19/8/2026.`\n    *   **Expected:** A narrative acknowledging no problems solved yet, perhaps focusing on future potential, and stating no strong topics.\n    *   **Actual:** The prompt doesn't guide the narrative generation for extreme lows, potentially leading to an unhelpful or generic summary instead of a specifically tailored one.\n\n## Optimization\nCurrent approach is optimal. The prompt concisely describes the desired output and criteria, which is effective for a text generation task.\n\n## Code Quality\nTo improve clarity for implementers, explicitly state the expected output format (e.g., maximum sentence length, tone guidelines).",
     "summaryUpdatedAt": "2026-08-18T19:30:39.650Z",
-    "commitsSinceLastSummary": 3
+    "commitsSinceLastSummary": 4
   },
   "problems": [
     {
