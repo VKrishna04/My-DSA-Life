@@ -1,4 +1,19 @@
 {
+  "geeksforgeeks::ladoo-problem2929": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(N)$, where $N$ is the size of the array $A$. Converting the list to a set requires a single pass over the elements.\n*   **Space Complexity:** $O(N)$ in th",
+        "ts": 1782266028957,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "platform": "geeksforgeeks",
+    "slug": "ladoo-problem2929"
+  },
   "leetcode::01-matrix": {
     "aiInsights": [
       {
