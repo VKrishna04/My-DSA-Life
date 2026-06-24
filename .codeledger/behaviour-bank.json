@@ -16,6 +16,15 @@
           "edge cases",
           "null/empty input"
         ]
+      },
+      {
+        "hasTakeaway": true,
+        "summary": "The \"code\" is a prompt for text generation, requiring careful parsing of input statistics and synthesizing a narrative from structured data.",
+        "ts": 1787372968050,
+        "weakAreas": [
+          "edge cases",
+          "null/empty input"
+        ]
       }
     ],
     "platform": "",
