@@ -1,18 +1,18 @@
 {
-  "updatedAt": "2026-08-18T16:14:20.175Z",
+  "updatedAt": "2026-08-18T16:15:32.755Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 313,
+    "total": 312,
     "easy": 176,
     "medium": 124,
-    "hard": 11,
+    "hard": 10,
     "byPlatform": {
-      "geeksforgeeks": 52,
+      "geeksforgeeks": 51,
       "leetcode": 261
     },
     "byLang": {
       "python3": 17,
-      "Python3": 200,
+      "Python3": 199,
       "Unknown": 30,
       "MySQL": 15,
       "Java": 12,
@@ -40,11 +40,11 @@
       "Hash Table": 14,
       "Java": 1,
       "Dynamic Programming": 12,
-      "Graph": 5,
       "Two Pointers": 8,
       "Database": 15,
       "Data Manipulation": 15,
       "Bit": 3,
+      "Graph": 4,
       "Vectorization": 2,
       "Pandas": 3,
       "Higher Order Functions": 1,
@@ -621,7 +621,11 @@
       "pattern": "Multi-source BFS",
       "notes": "",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/gfg-geeks-island-170646/gfg-geeks-island-170646.py",
+        "problems/gfg-geeks-island-170646/README.md"
+      ]
     },
     {
       "id": "gfg-height-of-binary-tree",
@@ -1335,62 +1339,6 @@
       "_committedPaths": [
         "problems/gfg-number-of-paths0926/README.md"
       ]
-    },
-    {
-      "id": "gfg-pacific-atlantic-water-flow",
-      "forceCommit": true,
-      "title": "Pacific Atlantic Water Flow",
-      "titleSlug": "pacific-atlantic-water-flow",
-      "difficulty": "Hard",
-      "topic": "Graph",
-      "tags": [
-        "Graph",
-        "Breadth-First Search",
-        "Depth-First Search"
-      ],
-      "canonical": null,
-      "readmeContent": "# Pacific Atlantic Water Flow\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Hard\n\n**Tags:** `Graph`, `DFS`, `BFS`, `Algorithms`\n\n## Problem\n\n\n\n**Source:** https://www.geeksforgeeks.org/problems/pacific-atlantic-water-flow/",
-      "code": "from collections import deque\nclass Solution:\n    def countCoordinates(self, mat):\n        # code here\n        ",
-      "files": [
-        {
-          "path": "problems/gfg-pacific-atlantic-water-flow/gfg-pacific-atlantic-water-flow.py",
-          "content": "from collections import deque\nclass Solution:\n    def countCoordinates(self, mat):\n        # code here\n        "
-        },
-        {
-          "path": "problems/gfg-pacific-atlantic-water-flow/README.md",
-          "content": "# Pacific Atlantic Water Flow\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Hard\n\n**Tags:** `Graph`, `DFS`, `BFS`, `Algorithms`\n\n## Problem\n\n\n\n**Source:** https://www.geeksforgeeks.org/problems/pacific-atlantic-water-flow/"
-        }
-      ],
-      "lang": {
-        "name": "Python3",
-        "ext": "py",
-        "slug": "python3"
-      },
-      "runtime": null,
-      "memory": null,
-      "timestamp": 1782267680000,
-      "elapsedSeconds": 0,
-      "platform": "geeksforgeeks",
-      "_committedPaths": [
-        "problems/gfg-pacific-atlantic-water-flow/gfg-pacific-atlantic-water-flow-approach-1-python3.py",
-        "problems/gfg-pacific-atlantic-water-flow/README.md"
-      ],
-      "aiReview": "1.  **Time complexity (Big-O) and space complexity**\n    Time complexity: O(N*M), where N is the number of rows and M is the number of columns. Two BFS traversals each visit every cell and edge at most once. Set intersection is also O(N*M).\n    Space complexity: O(N*M) for storing the `p` and `a` sets and the `pq`, `aq` deques, which can hold up to all grid coordinates.\n\n2.  **Correctness — any edge cases that could fail?**\n    The core approach of performing two reverse BFS traversals from the Pacific and Atlantic borders is correct for identifying cells that can reach each ocean. The flow condition `mat[nr][nc] >= mat[r][c]` for reverse traversal is also correct.\n    **However, the solution fails to meet the problem's output requirement.** It returns `len(p & a)` (an integer count) instead of `list(p & a)` (a list of coordinates `[r, c]`). This is a critical error.\n\n3.  **One concrete optimisation if applicable**\n    The primary \"optimization\" is correcting the return type from `len(p & a)` to `list(p & a)` to match the problem's expected output. The two-BFS approach is already optimal for this problem.\n\n4.  **Key algorithmic pattern used**\n    Breadth-First Search (BFS), Graph Traversal.",
-      "_aiProvider": "gemini",
-      "_aiModel": "gemini-2.5-flash",
-      "notes": "",
-      "methods": [
-        {
-          "title": "Approach 1 (python3)",
-          "language": "python3",
-          "code": "from collections import deque\nclass Solution:\n    def countCoordinates(self, mat):\n        n, m = len(mat), len(mat[0])\n        p, a = set(), set()\n        pq, aq = deque(), deque()\n        for r in range(n):\n            pq.append((r, 0)); p.add((r, 0))\n            aq.append((r, m-1)); a.add((r, m-1))\n        for c in range(m):\n            pq.append((0, c)); p.add((0, c))\n            aq.append((n-1, c)); a.add((n-1, c))\n        while pq:\n            r, c = pq.popleft()\n            for nr, nc in [(r-1, c), (r+1, c), (r, c-1), (r, c+1)]:\n                if 0 <= nr < n and 0 <= nc < m and (nr, nc) not in p and mat[nr][nc] >= mat[r][c]:\n                    p.add((nr, nc)); pq.append((nr, nc))\n        while aq:\n            r, c = aq.popleft()\n            for nr, nc in [(r-1, c), (r+1, c), (r, c-1), (r, c+1)]:\n                if 0 <= nr < n and 0 <= nc < m and (nr, nc) not in a and mat[nr][nc] >= mat[r][c]:\n                    a.add((nr, nc)); aq.append((nr, nc))\n        return len(p & a)",
-          "description": "Synced from submissions table — 2026-06-24 07:51:20",
-          "timestamp": 1782267680000
-        }
-      ],
-      "manuallyEdited": true,
-      "problemStatement": "<p><span style=\"font-size: 18px;\">You are given a matrix <strong>mat[][]</strong> of dimensions <strong>n x m</strong>, where mat[i][j] represents the <strong>height of a cell</strong> in a rectangular grid island. The <strong>Pacific Ocean</strong> touches the island's <strong>left and top</strong> borders, and the <strong>Atlantic Ocean</strong> touches the island's <strong>right and bottom</strong> borders. Rainwater can flow from a cell to its neighbouring cells in the directions North, South, East, and West, but only if the <strong>neighbouring cell has a height less than or equal to the current cell's height</strong>.</span></p>\n<p><span style=\"font-size: 18px;\">The task is to determine <strong>all coordinates (x, y)</strong> such that water can flow from the cell (x, y) to <strong>both</strong> the Pacific Ocean and the Atlantic Ocean. Water can flow from any adjacent cell directly into an ocean.</span></p>\n<p><span style=\"font-size: 18px;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>mat[][] = [[1, 2, 2, 3, 5],<br>                [3, 2, 3, 4, 4],<br>                [2, 4, 5, 3, 1],<br>                [6, 7, 1, 4, 5],<br>                [5, 1, 1, 2, 4]]\n<strong>Output:</strong> 7\n<strong>Explanation:</strong> </span><span style=\"font-size: 18px;\">In the given matrix, there are 7 coordinates through which the water can flow to both the Oceans</span>. They are  (0, 4), (1, 3), (1, 4), (2, 2), (3, 0), (3, 1), and (4, 0).</pre>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>arr[][] = [[2, 2], <br>               [2, 2]]\n<strong>Output:</strong> 4\n<strong>Explanation:</strong> </span><span style=\"font-size: 18px;\">In the following example, all cells allow water to flow to both the Oceans.</span></pre>\n<p><span style=\"font-size: 18px;\"><strong>Constraints:</strong><br>1 ≤ number of rows,&nbsp;</span><span style=\"font-size: 18px;\">number of columns</span><span style=\"font-size: 18px;\">&nbsp;≤ 10</span><sup>3<br></sup><span style=\"font-size: 18px;\">1 ≤ arr[i][j] ≤ 10<sup>3</sup>&nbsp;</span></p>",
-      "_requestAIReview": false
     },
     {
       "id": "gfg-parenthesis-checker2744",
