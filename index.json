@@ -1,18 +1,18 @@
 {
-  "updatedAt": "2026-06-24T11:58:11.986Z",
+  "updatedAt": "2026-06-24T12:01:29.648Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 316,
+    "total": 315,
     "easy": 176,
-    "medium": 127,
+    "medium": 126,
     "hard": 11,
     "byPlatform": {
-      "geeksforgeeks": 56,
+      "geeksforgeeks": 55,
       "leetcode": 260
     },
     "byLang": {
       "Unknown": 49,
-      "Python3": 201,
+      "Python3": 200,
       "MySQL": 15,
       "Java": 12,
       "Python": 16,
@@ -24,7 +24,7 @@
     },
     "byTopic": {
       "Sorting": 4,
-      "Binary Search": 3,
+      "Binary Search": 2,
       "Arrays": 10,
       "Untagged": 12,
       "Greedy": 1,
@@ -142,35 +142,11 @@
       "notes": "",
       "methods": [],
       "manuallyEdited": false,
-      "problemStatement": "<p><span style=\"font-size: 14pt;\">You are given an array with unique elements of <strong>stalls[]</strong>,<strong> </strong>which denote the positions of <strong>stalls</strong>. You are also given an integer <strong>k</strong> which denotes the number of aggressive cows.&nbsp;</span><span style=\"font-size: 18.6667px;\">The task is to assign <strong>stalls </strong>to <strong>k</strong> cows such that the <strong>minimum distance</strong> between any two of them is the <strong>maximum</strong> possible.</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>stalls[] = [1, 2, 4, 8, 9], k = 3\n<strong>Output: </strong>3\n<strong>Explanation: </strong>The first cow can be placed at stalls[0], <br />the second cow can be placed at stalls[2] and \nthe third cow can be placed at stalls[3]. \nThe minimum distance between cows in this case is 3, which is the largest among all possible ways.\n</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>stalls[] = [10, 1, 2, 7, 5], k = 3\n<strong>Output: </strong>4\n<strong>Explanation: </strong>The first cow can be placed at stalls[0],\nthe second cow can be placed at stalls[1] and\nthe third cow can be placed at stalls[4].\nThe minimum distance between cows in this case is 4, which is the largest among all possible ways.</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>stalls[] = [2, 12, 11, 3, 26, 7], k = 5\n<strong>Output: </strong>1\n<strong>Explanation: </strong>There are 6 stalls and only 5 cows, we try to place the cows such that the minimum distance between any two cows is as large as possible.\nThe minimum distance between cows in this case is 1, which is the largest among all possible ways.</span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:</strong></span><br /><span style=\"font-size: 14pt;\">2 &le; stalls.size() &le; 10<sup>6</sup><br /></span><span style=\"font-size: 18.6667px;\">0 &le; stalls[i] &le; 10<sup>8</sup></span><br /><span style=\"font-size: 14pt;\">2 &le; k &le; </span><span style=\"font-size: 18.6667px;\">stalls.size()</span></p>"
-    },
-    {
-      "id": "gfg-aggressive-cows102404",
-      "platform": "geeksforgeeks",
-      "title": "Aggressive Cows",
-      "titleSlug": "aggressive-cows102404",
-      "difficulty": "Medium",
-      "lang": {
-        "name": "Python3",
-        "ext": "py",
-        "slug": "python3"
-      },
-      "tags": [
-        "Binary Search",
-        "Algorithms"
-      ],
-      "topic": "Binary Search",
-      "code": "class Solution:\n    def aggressiveCows(self, stalls, k):\n        # code here\n        ",
-      "files": [],
-      "timestamp": 1782298700927,
-      "runtime": null,
-      "memory": null,
-      "problemStatement": null,
-      "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "notes": "",
-      "methods": [],
-      "manuallyEdited": false
+      "problemStatement": "<p><span style=\"font-size: 14pt;\">You are given an array with unique elements of <strong>stalls[]</strong>,<strong> </strong>which denote the positions of <strong>stalls</strong>. You are also given an integer <strong>k</strong> which denotes the number of aggressive cows.&nbsp;</span><span style=\"font-size: 18.6667px;\">The task is to assign <strong>stalls </strong>to <strong>k</strong> cows such that the <strong>minimum distance</strong> between any two of them is the <strong>maximum</strong> possible.</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>stalls[] = [1, 2, 4, 8, 9], k = 3\n<strong>Output: </strong>3\n<strong>Explanation: </strong>The first cow can be placed at stalls[0], <br />the second cow can be placed at stalls[2] and \nthe third cow can be placed at stalls[3]. \nThe minimum distance between cows in this case is 3, which is the largest among all possible ways.\n</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>stalls[] = [10, 1, 2, 7, 5], k = 3\n<strong>Output: </strong>4\n<strong>Explanation: </strong>The first cow can be placed at stalls[0],\nthe second cow can be placed at stalls[1] and\nthe third cow can be placed at stalls[4].\nThe minimum distance between cows in this case is 4, which is the largest among all possible ways.</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>stalls[] = [2, 12, 11, 3, 26, 7], k = 5\n<strong>Output: </strong>1\n<strong>Explanation: </strong>There are 6 stalls and only 5 cows, we try to place the cows such that the minimum distance between any two cows is as large as possible.\nThe minimum distance between cows in this case is 1, which is the largest among all possible ways.</span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:</strong></span><br /><span style=\"font-size: 14pt;\">2 &le; stalls.size() &le; 10<sup>6</sup><br /></span><span style=\"font-size: 18.6667px;\">0 &le; stalls[i] &le; 10<sup>8</sup></span><br /><span style=\"font-size: 14pt;\">2 &le; k &le; </span><span style=\"font-size: 18.6667px;\">stalls.size()</span></p>",
+      "_committedPaths": [
+        "problems/gfg-aggressive-cows/gfg-aggressive-cows.py",
+        "problems/gfg-aggressive-cows/README.md"
+      ]
     },
     {
       "id": "gfg-assign-cookies",
