@@ -36,9 +36,14 @@
       "find-similar-problems": true,
       "get-next-suggestion": true,
       "get-problem-stats": true,
+      "get-roadmap-progress": true,
       "get-trend-analysis": true,
       "get-user-profile": true,
-      "query-problems": true
+      "open-problem": true,
+      "query-problems": true,
+      "recall": true,
+      "remember": true,
+      "set-roadmap": true
     },
     "maxToolCallsPerRequest": 4,
     "useInChat": true,
@@ -64,5 +69,5 @@
     "timeCustomEnd": "18:00",
     "timeCustomStart": "06:00"
   },
-  "__syncedAt": "2026-08-19T03:10:47.532Z"
+  "__syncedAt": "2026-08-19T13:53:10.789Z"
 }

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-19T03:10:47.517Z",
+  "updatedAt": "2026-08-19T13:53:10.779Z",
   "layoutVersion": 3,
   "stats": {
     "total": 305,
@@ -235,7 +235,7 @@
         "Greedy",
         "Array"
       ],
-      "topic": "Untagged",
+      "topic": "Array",
       "code": "class Solution:\n    def maxProfit(self, prices):\n        minp = prices[0]\n        ans = 0\n        \n        for i in range(len(prices)):\n            minp = min(minp, prices[i])\n            ans = max(ans, prices[i]-minp)\n            \n        return ans",
       "files": [],
       "timestamp": 1782298700927,
@@ -248,8 +248,13 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
+        "problems/gfg-buy-stock-2/gfg-buy-stock-2.py",
         "problems/gfg-buy-stock-2/README.md"
-      ]
+      ],
+      "aiReview": "### Analysis\n\n*   **Time Complexity**: **$O(n)$**, where $n$ is the length of the `prices` array. We iterate through the list exactly once.\n*   **Space Complexity**: **$O(1)$**. We only maintain two scalar variables (`minp` and `ans`) regardless of input size. \n*   **Correctness**: This code will **crash** on an empty list input (`prices = []`) with an `IndexError` at `prices[0]`. This is a recurring flag for you; always validate if the input exists before accessing indices. It correctly handles cases with no profit (returns 0).\n*   **Concrete Optimization**: Add a guard clause for empty inputs and start the loop from the second element to skip the redundant first comparison:\n    ```python3\n    if not prices: return 0\n    minp = prices[0]\n    for i in range(1, len(prices)): # Start at index 1\n        # ... logic ...\n    ```\n*   **Key Algorithmic Pattern**: **Greedy**. At each step, you make the locally optimal choice (updating the lowest buy price seen so far) to calculate the potential maximum global profit.",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview",
+      "pattern": "Greedy"
     },
     {
       "id": "gfg-c-matrix-rotation-by-180-degree0745",
@@ -264,9 +269,10 @@
       },
       "tags": [
         "Math",
-        "Matrix"
+        "Matrix",
+        "Array"
       ],
-      "topic": "Untagged",
+      "topic": "Matrix",
       "code": "class Solution:\n    def rotateMatrix(self, mat):\n        mat[:] = mat[::-1]\n\n        for row in mat:\n            row[:] = row[::-1]\n\n        return mat\n        ",
       "files": [],
       "timestamp": 1782298700927,
@@ -279,8 +285,13 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
+        "problems/gfg-c-matrix-rotation-by-180-degree0745/gfg-c-matrix-rotation-by-180-degree0745.py",
         "problems/gfg-c-matrix-rotation-by-180-degree0745/README.md"
-      ]
+      ],
+      "aiReview": "1. **Complexity**:\n* **Time**: $O(N \\times M)$ where $N$ is rows and $M$ is columns. Every element is visited twice.\n* **Space**: $O(N + M)$ auxiliary space. Although you are using slice assignment (`mat[:] = ...`), the expression `mat[::-1]` and `row[::-1]` creates a temporary shallow copy of the list before the assignment.\n\n2. **Correctness**:\nThe logic is sound. Rotating $180^\\circ$ is mathematically equivalent to a vertical flip (reverse rows) followed by a horizontal flip (reverse elements within rows). It handles rectangular matrices and empty inputs correctly.\n\n3. **Optimization**:\nTo achieve true **$O(1)$ auxiliary space** (addressing your recurring space complexity flag), avoid slicing. Instead, use a single loop to swap elements from the start and end of the matrix:\n```python3\ntotal = rows * cols\nfor i in range(total // 2):\n    r1, c1 = divmod(i, cols)\n    r2, c2 = divmod(total - 1 - i, cols)\n    mat[r1][c1], mat[r2][c2] = mat[r2][c2], mat[r1][c1]\n```\n\n4. **Key Algorithmic Pattern**:\n**Matrix Transformation** via Row/Column reversal.",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview",
+      "pattern": "Matrix Manipulation"
     },
     {
       "id": "gfg-camelcase-pattern-matching2259",
@@ -298,7 +309,7 @@
         "Trie",
         "Advanced Data Structure"
       ],
-      "topic": "Untagged",
+      "topic": "String Filtering",
       "code": "#User function Template for python3\n\nclass Solution:\n    def pascalCase(self,arr,pat):\n        output = []\n        for word in arr:\n            curr = ''\n            for char in word:\n                if char in 'QWERTYUIOPASDFGHJKLZXCVBNM':\n                    curr += char\n            if pat in curr[:len(pat)]:\n                output.append(word)\n        return output",
       "files": [],
       "timestamp": 1782298700927,
@@ -311,8 +322,13 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
+        "problems/gfg-camelcase-pattern-matching2259/gfg-camelcase-pattern-matching2259.py",
         "problems/gfg-camelcase-pattern-matching2259/README.md"
-      ]
+      ],
+      "aiReview": "1. **Complexity**: Time complexity is $O(N \\times L)$, where $N$ is the number of words and $L$ is the maximum length of a word. Space complexity is $O(N \\times L)$ to store the output list, with $O(L)$ auxiliary space for the temporary string `curr`.\n\n2. **Correctness**: The solution is logically correct but inefficient. Using `pat in curr[:len(pat)]` is an indirect way of checking `curr.startswith(pat)`. It correctly handles the \"pascalCase\" logic by filtering for uppercase characters first.\n\n3. **Optimisation**: **Early Exit**. Instead of extracting every uppercase character into a new string (which hits your recurring space complexity flag), compare the word's uppercase letters against `pat` character-by-character. If an uppercase letter doesn't match the current index of `pat`, or if you finish the word before matching `pat`, you can immediately skip to the next word. This reduces auxiliary space to $O(1)$.\n\n4. **Pattern**: String Filtering / Prefix Matching. While a **Trie** is the optimal structure for multiple pattern queries, a linear scan with early exit is sufficient for a single pattern.",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview",
+      "pattern": "Prefix Matching"
     },
     {
       "id": "gfg-compare-two-fractions4438",
@@ -501,9 +517,11 @@
         "slug": "python3"
       },
       "tags": [
-        "Bit Manipulation"
+        "Bit Manipulation",
+        "Binary Search",
+        "Array"
       ],
-      "topic": "Untagged",
+      "topic": "Array",
       "code": "#User function Template for python3\nclass Solution:\n    def search(self, n, arr):\n        l, r = 0, n -1\n        while l < r:\n            mid = (l + r) // 2\n        \n            if mid % 2 == 1:\n                mid -= 1\n            \n            if arr[mid] == arr[mid+ 1]:\n                l = mid + 2\n            else:\n                r = mid\n                \n        return arr[l]",
       "files": [],
       "timestamp": 1782298700927,
@@ -518,7 +536,11 @@
       "_committedPaths": [
         "problems/gfg-find-unique-number/gfg-find-unique-number.py",
         "problems/gfg-find-unique-number/README.md"
-      ]
+      ],
+      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(\\log n)$ as the search space is halved in each iteration. This is optimal for a sorted input.\n*   **Space Complexity:** $O(1)$ since only a few variables are used. You avoided the $O(n)$ space pitfall common in frequency-counting approaches.\n\n**2. Correctness**\nThe solution assumes the array is **sorted** and all duplicates occur in pairs. \n*   **Edge Cases:** It correctly handles a single-element array ($n=1$) because the `while` loop condition fails immediately and returns `arr[0]`.\n*   **Potential Fail:** If $n=0$, the code will raise an `IndexError`. Always verify if the input can be empty.\n\n**3. Concrete Optimisation**\nInstead of the `if mid % 2 == 1` block, you can use bitwise XOR to find the \"partner\" index. Comparing `arr[mid]` with `arr[mid ^ 1]` automatically checks the correct neighbor regardless of whether `mid` is even or odd, simplifying the branching logic.\n\n**4. Key Algorithmic Pattern**\n**Binary Search on Parity:** The logic exploits the fact that before the unique element, pairs start at even indices $(i, i+1)$, but after the unique element, they start at odd indices.",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview",
+      "pattern": "Binary Search"
     },
     {
       "id": "gfg-height-of-binary-tree",
@@ -532,9 +554,11 @@
         "slug": "python3"
       },
       "tags": [
-        "Tree"
+        "Tree",
+        "Depth-First Search",
+        "Recursion"
       ],
-      "topic": "Untagged",
+      "topic": "Tree",
       "code": "'''\n# Node Class:\nclass Node:\n    def _init_(self, val):\n        self.data = val\n        self.left = None\n        self.right = None\n'''\n\nclass Solution:\n    def height(self, root):\n        if root is None:\n            return -1\n        \n        lheight = self.height(root.left)\n        rheight = self.height(root.right)\n        \n        return max(lheight, rheight) + 1",
       "files": [],
       "timestamp": 1782298700927,
@@ -549,7 +573,11 @@
       "_committedPaths": [
         "problems/gfg-height-of-binary-tree/gfg-height-of-binary-tree.py",
         "problems/gfg-height-of-binary-tree/README.md"
-      ]
+      ],
+      "aiReview": "1.  **Time complexity**: O(N), where N is the number of nodes. Each node is visited exactly once.\n2.  **Space complexity**: O(H), where H is the height of the tree. This is due to the recursion stack. In the worst case (a skewed tree), H can be N, leading to O(N) space. (This addresses your recurring flag regarding space complexity).\n3.  **Correctness**: The core logic is a standard recursive approach for tree height. However, the solution returns a height that is off by one from typical definitions. For an empty tree, it returns -1. For a single-node tree, it returns 0 (e.g., `max(-1,-1)+1`). GeeksForGeeks generally defines the height of a single node tree as 1 and an empty tree as 0. To align with this common definition, the base case `if root is None: return -1` should be `return 0`. This is a common \"edge cases\" issue related to differing problem definitions.\n4.  **Optimization**: This recursive Depth-First Search (DFS) approach is optimal in terms of time complexity (O(N)). No significant algorithmic optimization is applicable.\n5.  **Key algorithmic pattern**: Depth-First Search (DFS) using recursion.",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-2.5-flash",
+      "pattern": "None"
     },
     {
       "id": "gfg-implement-atoi",
@@ -564,9 +592,10 @@
       },
       "tags": [
         "String",
-        "Design Pattern"
+        "Design Pattern",
+        "Math"
       ],
-      "topic": "Untagged",
+      "topic": "String Manipulation",
       "code": "class Solution:\n    def myAtoi(self, s):\n        s = s.strip()\n        if not s:\n            return 0\n        \n        sign = 1\n        i = 0\n        \n        if s[i] in ['+', '-']:\n            sign = -1 if s[i] == '-' else 1\n            i += 1\n        \n        num = 0\n        INT_MAX = 2**31 - 1\n        INT_MIN = -2**31\n        \n        while i < len(s) and s[i].isdigit():\n            digit = int(s[i])\n            \n            if num > (INT_MAX - digit) // 10:\n                return INT_MAX if sign == 1 else INT_MIN\n            \n            num = num * 10 + digit\n            i += 1\n        \n        return sign * num",
       "files": [],
       "timestamp": 1782298700927,
@@ -581,7 +610,11 @@
       "_committedPaths": [
         "problems/gfg-implement-atoi/gfg-implement-atoi.py",
         "problems/gfg-implement-atoi/README.md"
-      ]
+      ],
+      "aiReview": "### Analysis\n\n1.  **Complexity**:\n    *   **Time**: $O(N)$, where $N$ is the length of the string. We traverse the string once.\n    *   **Space**: $O(N)$. Note your recurring **space complexity** flag: `s.strip()` creates a new string copy in Python. For a truly $O(1)$ extra space solution, you should manually skip whitespace using a pointer.\n\n2.  **Correctness**: The logic is robust. It correctly handles leading whitespace, signs, non-digit characters, and 32-bit signed integer overflow. Python handles arbitrarily large integers, but your check `num > (INT_MAX - digit) // 10` correctly simulates the constraints of fixed-width integer environments.\n\n3.  **Optimization**: Replace `s = s.strip()` with a pointer-based approach:\n    ```python\n    while i < len(s) and s[i] == ' ':\n        i += 1\n    ```\n    This avoids the $O(N)$ memory allocation of a new string, bringing auxiliary space to $O(1)$.\n\n4.  **Key Pattern**: **String Parsing/Simulation**. The problem requires careful handling of state transitions (whitespace → sign → digits → termination).",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview",
+      "pattern": "Simulation"
     },
     {
       "id": "gfg-intersection-point-in-y-shapped-linked-lists",
@@ -665,9 +698,10 @@
       },
       "tags": [
         "Array",
-        "Dynamic Programming"
+        "Dynamic Programming",
+        "Greedy"
       ],
-      "topic": "Untagged",
+      "topic": "Array",
       "code": "class Solution:\n    def maxSubarraySum(self, arr):\n        max_sum = float('-inf')\n        curr = 0\n        \n        for num in arr:\n            curr += num\n            max_sum = max(max_sum, curr)\n            \n            if curr < 0: curr =  0\n        return max_sum",
       "files": [],
       "timestamp": 1782298700927,
@@ -680,8 +714,13 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
+        "problems/gfg-kadanes-algorithm-1587115620/gfg-kadanes-algorithm-1587115620.py",
         "problems/gfg-kadanes-algorithm-1587115620/README.md"
-      ]
+      ],
+      "aiReview": "This implementation successfully avoids your recurring flags regarding **space complexity** ($O(1)$) and **time complexity** ($O(n)$).\n\n1.  **Complexity**: Time **$O(n)$** for a single pass through the array. Space **$O(1)$** as only two scalar variables are maintained.\n2.  **Correctness**: The logic handles \"all-negative\" arrays (e.g., `[-5, -2, -10]`) correctly because `max_sum` is updated *before* the negative prefix is reset. However, if the input `arr` is empty, the function returns `float('-inf')`; adding a guard clause for **null/empty input** would improve robustness.\n3.  **One Concrete Optimisation**: Replace the manual `if` reset and `max` call with the standard Kadane’s transition: `curr = max(num, curr + num)`. In Python, using an `if` statement to update `max_sum` is also slightly faster than the `max()` function as it avoids the overhead of a function call in a tight loop.\n4.  **Key Algorithmic Pattern**: Greedy / Dynamic Programming (Kadane's Algorithm).",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview",
+      "pattern": "Kadane's Algorithm"
     },
     {
       "id": "gfg-kth-smallest-element5635",
@@ -1348,7 +1387,8 @@
       "manuallyEdited": false,
       "_committedPaths": [
         "problems/gfg-repetitive-addition-of-digits2221/README.md"
-      ]
+      ],
+      "elapsedSeconds": 0
     },
     {
       "id": "gfg-rotate-a-linked-list",
@@ -1627,7 +1667,6 @@
         "slug": "python3"
       },
       "tags": [
-        "Array",
         "Array",
         "Two Pointers",
         "Sorting"
@@ -2042,7 +2081,6 @@
       },
       "tags": [
         "Linked List",
-        "Linked List",
         "Math",
         "Recursion"
       ],
@@ -2295,7 +2333,6 @@
       },
       "tags": [
         "Array",
-        "Array",
         "Dynamic Programming"
       ],
       "topic": "Sliding Window",
@@ -2412,7 +2449,6 @@
         "slug": "java"
       },
       "tags": [
-        "Array",
         "Array",
         "Dynamic Programming"
       ],
@@ -2632,7 +2668,6 @@
       },
       "tags": [
         "Array",
-        "Array",
         "Binary Search"
       ],
       "topic": "Binary Search",
@@ -2707,7 +2742,6 @@
         "slug": "python3"
       },
       "tags": [
-        "Tree",
         "Tree",
         "Breadth-First Search",
         "Binary Tree"
@@ -2828,7 +2862,6 @@
         "slug": "python3"
       },
       "tags": [
-        "Tree",
         "Tree",
         "Dynamic Programming",
         "Depth-First Search",
@@ -3173,7 +3206,6 @@
       },
       "tags": [
         "Dynamic Programming",
-        "Dynamic Programming",
         "Math",
         "Memoization"
       ],
@@ -3431,7 +3463,6 @@
         "slug": "python3"
       },
       "tags": [
-        "Dynamic Programming",
         "Dynamic Programming",
         "Array",
         "Breadth-First Search"
@@ -3753,7 +3784,6 @@
       },
       "tags": [
         "Array",
-        "Array",
         "Two Pointers",
         "Greedy"
       ],
@@ -3845,8 +3875,6 @@
         "slug": "python3"
       },
       "tags": [
-        "Array",
-        "Hash Table",
         "Array",
         "Hash Table",
         "Sorting"
@@ -4491,7 +4519,6 @@
       },
       "tags": [
         "Bit",
-        "Bit",
         "Dynamic Programming",
         "Bit Manipulation"
       ],
@@ -4579,7 +4606,6 @@
       "difficulty": "Medium",
       "topic": "Graph",
       "tags": [
-        "Graph",
         "Graph",
         "Depth-First Search",
         "Breadth-First Search",
@@ -4683,7 +4709,6 @@
       "difficulty": "Medium",
       "topic": "Graph",
       "tags": [
-        "Graph",
         "Graph",
         "Depth-First Search",
         "Breadth-First Search",
@@ -5037,7 +5062,6 @@
       },
       "tags": [
         "Dynamic Programming",
-        "Dynamic Programming",
         "String"
       ],
       "topic": "Dynamic Programming",
@@ -5282,7 +5306,6 @@
         "slug": "python3"
       },
       "tags": [
-        "Tree",
         "Tree",
         "Depth-First Search",
         "Binary Tree"
@@ -6706,7 +6729,6 @@
         "slug": "python3"
       },
       "tags": [
-        "Array",
         "Array",
         "Binary Search"
       ],
@@ -8174,7 +8196,6 @@
       },
       "tags": [
         "Dynamic Programming",
-        "Dynamic Programming",
         "Array"
       ],
       "topic": "Dynamic Programming",
@@ -8670,7 +8691,6 @@
         "slug": "python3"
       },
       "tags": [
-        "Array",
         "Array",
         "Binary Search"
       ],
@@ -9176,7 +9196,6 @@
       },
       "tags": [
         "Linked List",
-        "Linked List",
         "Hash Table",
         "Two Pointers"
       ],
@@ -9322,7 +9341,6 @@
         "slug": "python3"
       },
       "tags": [
-        "Dynamic Programming",
         "Dynamic Programming",
         "String"
       ],
@@ -9492,7 +9510,6 @@
       },
       "tags": [
         "Array",
-        "Array",
         "Binary Search",
         "Dynamic Programming"
       ],
@@ -9661,7 +9678,6 @@
         "slug": "python3"
       },
       "tags": [
-        "Array",
         "Array",
         "Binary Search",
         "Dynamic Programming"
@@ -9910,7 +9926,6 @@
       },
       "tags": [
         "String",
-        "String",
         "Two Pointers",
         "Dynamic Programming"
       ],
@@ -10024,8 +10039,6 @@
         "slug": "python3"
       },
       "tags": [
-        "String",
-        "Hash Table",
         "String",
         "Hash Table",
         "Sliding Window"
@@ -10160,8 +10173,6 @@
         "slug": "python3"
       },
       "tags": [
-        "String",
-        "Hash Table",
         "String",
         "Hash Table",
         "Sliding Window"
@@ -10996,7 +11007,6 @@
       },
       "tags": [
         "Tree",
-        "Tree",
         "Depth-First Search",
         "Breadth-First Search",
         "Binary Tree"
@@ -11596,7 +11606,6 @@
         "slug": "python3"
       },
       "tags": [
-        "Linked List",
         "Linked List",
         "Recursion"
       ],
@@ -13056,7 +13065,6 @@
       "topic": "Graph",
       "tags": [
         "Graph",
-        "Graph",
         "Depth-First Search",
         "Breadth-First Search",
         "Graph Theory",
@@ -13254,7 +13262,6 @@
       },
       "tags": [
         "Bit",
-        "Bit",
         "Divide and Conquer",
         "Bit Manipulation"
       ],
@@ -13372,7 +13379,6 @@
         "ext": "py"
       },
       "tags": [
-        "Bit",
         "Bit",
         "Divide and Conquer",
         "Bit Manipulation"
@@ -13730,7 +13736,6 @@
       },
       "tags": [
         "Graph",
-        "Graph",
         "Array",
         "Depth-First Search",
         "Breadth-First Search",
@@ -13999,7 +14004,6 @@
         "slug": "python3"
       },
       "tags": [
-        "String",
         "String",
         "Two Pointers",
         "Dynamic Programming"
@@ -15816,7 +15820,6 @@
       },
       "tags": [
         "Linked List",
-        "Linked List",
         "Recursion"
       ],
       "topic": "Linked List",
@@ -16763,7 +16766,6 @@
         "slug": "python3"
       },
       "tags": [
-        "Array",
         "Array",
         "Binary Search"
       ],
@@ -18787,8 +18789,6 @@
       "tags": [
         "Array",
         "Heap (Priority Queue)",
-        "Array",
-        "Heap (Priority Queue)",
         "Hash Table",
         "Divide and Conquer",
         "Sorting",
@@ -19083,8 +19083,6 @@
         "slug": "python3"
       },
       "tags": [
-        "Array",
-        "Hash Table",
         "Array",
         "Hash Table"
       ],
@@ -19468,7 +19466,6 @@
       },
       "tags": [
         "Dynamic Programming",
-        "Dynamic Programming",
         "Math",
         "Combinatorics"
       ],
@@ -19653,7 +19650,6 @@
         "ext": "py"
       },
       "tags": [
-        "String",
         "String",
         "Stack"
       ],

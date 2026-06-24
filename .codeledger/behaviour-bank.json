@@ -228,6 +228,13 @@
           "pattern"
         ],
         "ts": 1787075626238
+      },
+      {
+        "fields": [
+          "topic",
+          "pattern"
+        ],
+        "ts": 1787109077014
       }
     ],
     "aiReviews": [
@@ -235,6 +242,11 @@
         "length": 988,
         "providerId": "gemini",
         "ts": 1787075626443
+      },
+      {
+        "length": 1024,
+        "providerId": "gemini",
+        "ts": 1787109077099
       }
     ],
     "difficulty": "Easy",
@@ -270,6 +282,14 @@
           "pattern"
         ],
         "ts": 1787075637679
+      },
+      {
+        "fields": [
+          "tags",
+          "topic",
+          "pattern"
+        ],
+        "ts": 1787109090053
       }
     ],
     "aiReviews": [
@@ -277,6 +297,11 @@
         "length": 878,
         "providerId": "gemini",
         "ts": 1787075637903
+      },
+      {
+        "length": 1059,
+        "providerId": "gemini",
+        "ts": 1787109090123
       }
     ],
     "difficulty": "Medium",
@@ -311,6 +336,13 @@
           "pattern"
         ],
         "ts": 1787075649356
+      },
+      {
+        "fields": [
+          "topic",
+          "pattern"
+        ],
+        "ts": 1787109100635
       }
     ],
     "aiReviews": [
@@ -318,6 +350,11 @@
         "length": 1264,
         "providerId": "gemini",
         "ts": 1787075649547
+      },
+      {
+        "length": 1116,
+        "providerId": "gemini",
+        "ts": 1787109100819
       }
     ],
     "difficulty": "Medium",
@@ -550,6 +587,23 @@
     ]
   },
   "geeksforgeeks::find-unique-number": {
+    "aiMetadataEdits": [
+      {
+        "fields": [
+          "tags",
+          "topic",
+          "pattern"
+        ],
+        "ts": 1787138181739
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1160,
+        "providerId": "gemini",
+        "ts": 1787138181906
+      }
+    ],
     "difficulty": "Easy",
     "lang": {
       "ext": "txt",
@@ -602,6 +656,23 @@
     ]
   },
   "geeksforgeeks::height-of-binary-tree": {
+    "aiMetadataEdits": [
+      {
+        "fields": [
+          "tags",
+          "topic",
+          "pattern"
+        ],
+        "ts": 1787138245476
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1123,
+        "providerId": "gemini",
+        "ts": 1787138245640
+      }
+    ],
     "difficulty": "Easy",
     "lang": {
       "ext": "txt",
@@ -626,6 +697,23 @@
     ]
   },
   "geeksforgeeks::implement-atoi": {
+    "aiMetadataEdits": [
+      {
+        "fields": [
+          "tags",
+          "topic",
+          "pattern"
+        ],
+        "ts": 1787138300168
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1063,
+        "providerId": "gemini",
+        "ts": 1787138300334
+      }
+    ],
     "difficulty": "Medium",
     "lang": {
       "ext": "txt",
@@ -741,6 +829,23 @@
     ]
   },
   "geeksforgeeks::kadanes-algorithm-1587115620": {
+    "aiMetadataEdits": [
+      {
+        "fields": [
+          "tags",
+          "topic",
+          "pattern"
+        ],
+        "ts": 1787138369063
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 983,
+        "providerId": "gemini",
+        "ts": 1787138369207
+      }
+    ],
     "difficulty": "Medium",
     "lang": {
       "ext": "txt",
