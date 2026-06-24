@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-09T18:36:51.177Z",
+  "updatedAt": "2026-11-18T17:35:44.720Z",
   "layoutVersion": 3,
   "stats": {
     "total": 323,
@@ -12,8 +12,7 @@
       "leetcode": 268
     },
     "byLang": {
-      "C++": 2,
-      "Python3": 207,
+      "Python3": 208,
       "python3": 4,
       "Unknown": 45,
       "MySQL": 15,
@@ -21,6 +20,7 @@
       "Python": 16,
       "Pandas": 14,
       "JavaScript": 3,
+      "C++": 1,
       "C": 1,
       "Bash": 4
     },
@@ -68,9 +68,9 @@
       "titleSlug": "2-sum-find-a-pair-with-given-sum",
       "difficulty": "Easy",
       "lang": {
-        "name": "C++",
-        "ext": "c",
-        "slug": "c"
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
       },
       "tags": [
         "Sorting",
@@ -79,7 +79,7 @@
         "Hash Table"
       ],
       "topic": "Array",
-      "code": "class Solution {\n  public:\n    vector<int> twoSum(vector<int> &arr, int target) {\n        // code here\n        \n    }\n};",
+      "code": "class Solution:\n    # Complete the below function\n    def twoSum(self,arr, target):\n        # Your code here\n        ",
       "files": [],
       "timestamp": 1782298700927,
       "runtime": null,
@@ -91,14 +91,14 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
-        "problems/gfg-2-sum-find-a-pair-with-given-sum/gfg-2-sum-find-a-pair-with-given-sum.py",
+        "problems/gfg-2-sum-find-a-pair-with-given-sum/gfg-2-sum-find-a-pair-with-given-sum.c",
         "problems/gfg-2-sum-find-a-pair-with-given-sum/README.md"
       ],
       "aiReview": "### Analysis\n\n1.  **Complexity**:\n    *   **Time Complexity**: $O(n)$, where $n$ is the number of elements in the array. We perform a single pass, and hash map lookups/insertions are $O(1)$ on average.\n    *   **Space Complexity**: $O(n)$ to store elements in the dictionary in the worst case (when no pair is found).\n\n2.  **Correctness**: \n    The solution is correct. By checking for the complement (`target - x`) *before* adding the current element `x` to the dictionary, it gracefully handles the edge case where `target` is exactly double an element (e.g., `target = 6, arr = [3]`), ensuring the same index isn't used twice.\n\n3.  **Optimization**:\n    Use a **set** instead of a dictionary. The current code stores indices (`seen[x] = i`) but never utilizes them. A `set` reduces memory overhead by only storing the keys.\n\n4.  **Key Algorithmic Pattern**:\n    **Hash Table / Complement Lookup**: Using a hash-based structure to transform a potential $O(n^2)$ nested search into an $O(1)$ lookup.",
       "_aiProvider": "gemini",
       "_aiModel": "gemini-3-flash-preview",
       "pattern": "Hashing",
-      "_failedCodeFetch": 17
+      "_failedCodeFetch": 18
     },
     {
       "id": "gfg-aggressive-cows",
@@ -2118,7 +2118,11 @@
       "_requestAIReview": true,
       "platform": "leetcode",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/3sum/leetcode/lc-3sum.py",
+        "problems/3sum/leetcode/README.md"
+      ]
     },
     {
       "id": "lc-3sum-closest",
@@ -2176,7 +2180,13 @@
       "isDuplicate": false,
       "duplicateOf": null,
       "_requestAIReview": true,
-      "platform": "leetcode"
+      "platform": "leetcode",
+      "_committedPaths": [
+        "problems/lc-3sum-closest/lc-3sum-closest.py",
+        "problems/lc-3sum-closest/README.md"
+      ],
+      "methods": [],
+      "manuallyEdited": false
     },
     {
       "id": "lc-3sum::1730412472",
@@ -8227,7 +8237,13 @@
       "isDuplicate": false,
       "duplicateOf": null,
       "_requestAIReview": true,
-      "platform": "leetcode"
+      "platform": "leetcode",
+      "_committedPaths": [
+        "problems/lc-first-day-where-you-have-been-in-all-the-rooms/lc-first-day-where-you-have-been-in-all-the-rooms.py",
+        "problems/lc-first-day-where-you-have-been-in-all-the-rooms/README.md"
+      ],
+      "methods": [],
+      "manuallyEdited": false
     },
     {
       "id": "lc-frog-jump",
@@ -11826,7 +11842,13 @@
       "isDuplicate": false,
       "duplicateOf": null,
       "_requestAIReview": true,
-      "platform": "leetcode"
+      "platform": "leetcode",
+      "_committedPaths": [
+        "problems/lc-maximum-earnings-from-taxi/lc-maximum-earnings-from-taxi.py",
+        "problems/lc-maximum-earnings-from-taxi/README.md"
+      ],
+      "methods": [],
+      "manuallyEdited": false
     },
     {
       "id": "lc-maximum-number-of-operations-with-the-same-score-i::1730434235",

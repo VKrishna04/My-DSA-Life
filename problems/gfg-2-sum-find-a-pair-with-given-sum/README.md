@@ -32,14 +32,12 @@ Explanation: **Pair with sum equal to 2 is (1, 1).
 
 ## Solutions
 
-```C++
-class Solution {
-  public:
-    vector<int> twoSum(vector<int> &arr, int target) {
-        // code here
+```Python3
+class Solution:
+    # Complete the below function
+    def twoSum(self,arr, target):
+        # Your code here
         
-    }
-};
 ```
 
 ## AI Review
