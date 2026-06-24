@@ -1,4 +1,25 @@
 {
+  "geeksforgeeks::compare-two-fractions4438": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n1. **Complexity**\n   * **Time Complexity:** $O(N)$, where $N$ is the length of the input string. Splitting the string and parsing integers both take linear time.\n   * **Space Complexity:",
+        "ts": 1782268694107,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1018,
+        "providerId": "gemini",
+        "ts": 1782268694144
+      }
+    ],
+    "platform": "geeksforgeeks",
+    "slug": "compare-two-fractions4438"
+  },
   "geeksforgeeks::ladoo-problem2929": {
     "aiInsights": [
       {
@@ -9,10 +30,70 @@
           "space complexity",
           "time complexity"
         ]
+      },
+      {
+        "summary": "### Review\n\n**Complexity:**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of elements in array $A$. Converting a list to a set requires a single pass to hash each element.\n*   **Space Compl",
+        "ts": 1782268482001,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 976,
+        "providerId": "gemini",
+        "ts": 1782268482029
       }
     ],
     "platform": "geeksforgeeks",
     "slug": "ladoo-problem2929"
+  },
+  "geeksforgeeks::pacific-atlantic-water-flow": {
+    "aiInsights": [
+      {
+        "summary": "1.  **Time complexity (Big-O) and space complexity**\n    Time complexity: O(N*M), where N is the number of rows and M is the number of columns. Two BFS traversals each visit every cell and edge at mos",
+        "ts": 1782268471872,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1209,
+        "providerId": "gemini",
+        "ts": 1782268471915
+      }
+    ],
+    "platform": "geeksforgeeks",
+    "slug": "pacific-atlantic-water-flow"
+  },
+  "geeksforgeeks::sort-an-array-of-0s-1s-and-2s4231": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(n)$ – The array is traversed exactly once.\n*   **Space Complexity:** $O(1)$ – Sorting is performed in-place with no extra data structures.\n\n",
+        "ts": 1782268430581,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1111,
+        "providerId": "gemini",
+        "ts": 1782268430599
+      }
+    ],
+    "platform": "geeksforgeeks",
+    "slug": "sort-an-array-of-0s-1s-and-2s4231"
   },
   "leetcode::01-matrix": {
     "aiInsights": [
@@ -253,6 +334,22 @@
           "space complexity",
           "time complexity"
         ]
+      },
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity**: $O(N)$, where $N$ is the length of the flowerbed. The algorithm traverses the list at most once.\n*   **Space Complexity**: $O(1)$. No additional data structu",
+        "ts": 1782268838595,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1265,
+        "providerId": "gemini",
+        "ts": 1782268838634
       }
     ],
     "platform": "leetcode",
@@ -562,6 +659,20 @@
         "weakAreas": [
           "space complexity"
         ]
+      },
+      {
+        "summary": "### 1. Complexity\n*   **Time:** $O(V + E)$, where $V$ is the number of courses and $E$ is the number of prerequisites. Every node and edge is processed exactly once.\n*   **Space:** $O(V + E)$. The adj",
+        "ts": 1782268988501,
+        "weakAreas": [
+          "edge cases"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1069,
+        "providerId": "gemini",
+        "ts": 1782268988533
       }
     ],
     "platform": "leetcode",
@@ -1424,6 +1535,23 @@
           "space complexity",
           "time complexity"
         ]
+      },
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the number of kids. We traverse the list once to find the maximum and once more to build the result.\n*   **Space Complexity:** $O(n)$ fo",
+        "ts": 1782268934339,
+        "weakAreas": [
+          "edge cases",
+          "null/empty input",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1133,
+        "providerId": "gemini",
+        "ts": 1782268934410
       }
     ],
     "platform": "leetcode",
@@ -2443,6 +2571,14 @@
         "weakAreas": [
           "edge cases"
         ]
+      },
+      {
+        "summary": "Here's a review of your solution:\n\n1.  **Time & Space Complexity:**\n    *   **Time:** O(E log V), where V is the number of nodes (n) and E is the number of edges (`len(times)`). This accounts for buil",
+        "ts": 1782268978727,
+        "weakAreas": [
+          "edge cases",
+          "space complexity"
+        ]
       }
     ],
     "aiReviews": [
@@ -2450,6 +2586,11 @@
         "length": 1017,
         "providerId": "gemini",
         "ts": 1779699256575
+      },
+      {
+        "length": 1387,
+        "providerId": "gemini",
+        "ts": 1782268978773
       }
     ],
     "platform": "leetcode",
@@ -2897,6 +3038,21 @@
           "space complexity",
           "time complexity"
         ]
+      },
+      {
+        "summary": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the string. Each character is visited at most once.\n*   **Space Complexity:** $O(n)$ to store the list of char",
+        "ts": 1782268823438,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1206,
+        "providerId": "gemini",
+        "ts": 1782268823555
       }
     ],
     "platform": "leetcode",
@@ -2911,6 +3067,20 @@
           "space complexity",
           "time complexity"
         ]
+      },
+      {
+        "summary": "### Review\n\n**1. Complexity**\n*   **Time:** $O(N)$, where $N$ is the length of the string. `split()`, list comprehension, and `join()` each traverse the data linearly.\n*   **Space:** $O(N)$ to store t",
+        "ts": 1782268814542,
+        "weakAreas": [
+          "edge cases"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1287,
+        "providerId": "gemini",
+        "ts": 1782268814582
       }
     ],
     "platform": "leetcode",
@@ -3329,6 +3499,28 @@
     "platform": "leetcode",
     "slug": "sort-characters-by-frequency::method::0"
   },
+  "leetcode::spiral-matrix-iii": {
+    "aiInsights": [
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(\\max(R, C)^2)$. The spiral continues expanding until all cells are visited. In the worst case, the spiral's side length grows proportional to the largest ",
+        "ts": 1782268705875,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1259,
+        "providerId": "gemini",
+        "ts": 1782268705908
+      }
+    ],
+    "platform": "leetcode",
+    "slug": "spiral-matrix-iii"
+  },
   "leetcode::split-the-array": {
     "aiInsights": [
       {
@@ -3569,6 +3761,23 @@
           "space complexity",
           "time complexity"
         ]
+      },
+      {
+        "summary": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(N + M)$, where $N$ and $M$ are the lengths of `s1` and `s2`. Splitting the strings and iterating through the words to populate the hash map ar",
+        "ts": 1782268712833,
+        "weakAreas": [
+          "edge cases",
+          "null/empty input",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1189,
+        "providerId": "gemini",
+        "ts": 1782268712865
       }
     ],
     "platform": "leetcode",

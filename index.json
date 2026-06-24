@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24T02:33:28.754Z",
+  "updatedAt": "2026-06-24T02:52:10.523Z",
   "layoutVersion": 3,
   "stats": {
     "total": 264,
@@ -22,7 +22,9 @@
       "Bash": 4
     },
     "byTopic": {
-      "Untagged": 5,
+      "String Parsing": 1,
+      "Hashing": 1,
+      "Breadth-First Search": 1,
       "Arrays": 1,
       "Array": 125,
       "Math": 25,
@@ -39,6 +41,7 @@
       "Vectorization": 2,
       "Pandas": 3,
       "Higher-Order Functions": 1,
+      "Untagged": 2,
       "Data Cleaning": 1,
       "Two Pointers": 9,
       "Binary Search": 1,
@@ -59,8 +62,12 @@
       "title": "Compare two fractions",
       "titleSlug": "compare-two-fractions4438",
       "difficulty": "Easy",
-      "topic": "Untagged",
-      "tags": [],
+      "topic": "String Parsing",
+      "tags": [
+        "String Parsing",
+        "Mathematics",
+        "Cross Multiplication"
+      ],
       "canonical": null,
       "readmeContent": "# Compare two fractions\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Easy\n\n## Problem\n\nYou are given a string s containing two fractions a/b and c/d, compare them and return the greater fraction. If they are equal, then return string \"equal\".\nNote: The string s contains \"a/b, c/d\"(fractions are separated by comma(,) & space( )).&nbsp;\nExamples :\nInput: s = \"5/6, 11/45\"\nOutput:&nbsp;5/6\nExplanation: 5/6 = 0.8333 and 11/45 = 0.2444, So 5/6 is greater fraction.\nInput: s = \"8/1, 8/1\"\nOutput: equal\nExplanation: We can see that both the fractions are same, so we'll return a string \"equal\".\nInput: s = \"10/17, 9/10\"\nOutput: 9/10\nExplanation: 10/17 = 0.588 & 9/10 = 0.9, so the greater fraction is \"9/10\".\nConstraints:0 ≤ a,c ≤ 1031 ≤ b,d ≤ 103\n\n**Source:** https://www.geeksforgeeks.org/problems/compare-two-fractions4438/",
       "code": "class Solution:\n    def compareFrac(self, str_val):\n        fracs = str_val.split(\", \")\n        f1_num, f1_den = map(int, fracs[0].split(\"/\"))\n        f2_num, f2_den = map(int, fracs[1].split(\"/\"))\n        \n        val1 = f1_num / f1_den\n        val2 = f2_num / f2_den\n        \n        if val1 > val2:\n            return fracs[0]\n        elif val2 > val1:\n            return fracs[1]\n        else:\n            return \"equal\"",
@@ -87,7 +94,10 @@
       "_committedPaths": [
         "problems/gfg-compare-two-fractions4438/gfg-compare-two-fractions4438.py",
         "problems/gfg-compare-two-fractions4438/README.md"
-      ]
+      ],
+      "aiReview": "### Analysis\n\n1. **Complexity**\n   * **Time Complexity:** $O(N)$, where $N$ is the length of the input string. Splitting the string and parsing integers both take linear time.\n   * **Space Complexity:** $O(N)$ to store the split substrings and integer values.\n\n2. **Correctness**\n   The solution uses **floating-point division**, which is risky. For very large numerators/denominators or fractions that are nearly identical (e.g., differing at the 16th decimal place), precision errors can lead to incorrect comparisons. \n\n3. **Optimization**\n   Use **cross-multiplication** to compare fractions using integers only, avoiding precision issues. \n   Instead of `f1_num / f1_den > f2_num / f2_den`, compare `f1_num * f2_den > f2_num * f1_den`. This is mathematically equivalent ($a/b > c/d \\iff ad > bc$) and 100% accurate for integers.\n\n4. **Key Algorithmic Pattern**\n   **String Parsing** and **Basic Arithmetic**. The problem focuses on extracting numerical data from a formatted string and applying comparative logic.",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview"
     },
     {
       "id": "gfg-ladoo-problem2929",
@@ -95,8 +105,12 @@
       "title": "Ladoo problem",
       "titleSlug": "ladoo-problem2929",
       "difficulty": "Easy",
-      "topic": "Untagged",
-      "tags": [],
+      "topic": "Hashing",
+      "tags": [
+        "Hashing",
+        "Data Structures",
+        "Set"
+      ],
       "canonical": null,
       "readmeContent": "# Ladoo problem\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Easy\n\n## Problem\n\nBheem has N friends. And he has a ladoo for each day. Given an Array A[] denoting on which day ith friend wants a ladoo. If Bheem is unable to give a ladoo to a friend, he loses his friendship with them. Find out the maximum number of Friends he can have at the end.\n\n&nbsp;\n\nExample 1:\n\nInput:\nN = 5\nA[] = {3, 3, 1, 2, 4}\nOutput:\n4 \nExplanation:\nHe will lose either his 1st or 2nd\nfriend and therefore will be left\nwith 4 friends.\n\nExample 2:\n\nInput:\nN = 2\nA[] = {1, 2}\nOutput:\n2\nExplanation:\nHe can give a ladoo to each of his friends,\nand will have 2 friends by the end.\n\n&nbsp;\n\nYour Task:\nYou don't need to read input or print anything. Your task is to complete the function divideLadoo() which takes an Integer N and an Array A as input and returns the answer.\n\n&nbsp;\n\nExpected Time Complexity: O(N)\nExpected Auxiliary Space: O(N)\n\n&nbsp;\n\nConstraints:\n1 <= N <= 105\n1 <= A[i] <= 105\n\n**Source:** https://www.geeksforgeeks.org/problems/ladoo-problem2929/",
       "code": "class Solution:\n    def divideLadoo(self, N, A):\n        return len(set(A))\n        ",
@@ -124,7 +138,7 @@
         "problems/gfg-ladoo-problem2929/gfg-ladoo-problem2929.py",
         "problems/gfg-ladoo-problem2929/README.md"
       ],
-      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(N)$, where $N$ is the size of the array $A$. Converting the list to a set requires a single pass over the elements.\n*   **Space Complexity:** $O(N)$ in the worst case, as the set may store up to $N$ unique elements.\n\n### 2. Correctness\nThe code correctly identifies the number of unique types of ladoos. \n*   **Edge Cases:** If $N=0$ or $A$ is empty, it returns `0`, which is correct. \n*   **Potential Issue:** In some variations of \"Ladoo/Candy\" problems, there is a constraint where one can only pick $N/2$ items. If such a constraint exists, this code will fail by returning a count higher than allowed. However, as a standalone unique-element counter, it is correct.\n\n### 3. Optimization\nIf memory is a constraint and the input array $A$ is already sorted, you can achieve **$O(1)$ auxiliary space** by iterating through the list and counting transitions between different values (e.g., `if A[i] != A[i-1]`).\n\n### 4. Key Algorithmic Pattern\n**Hashing:** Using a Hash Set to track seen elements and eliminate duplicates efficiently.",
+      "aiReview": "### Review\n\n**Complexity:**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of elements in array $A$. Converting a list to a set requires a single pass to hash each element.\n*   **Space Complexity:** $O(N)$ in the worst case (where all elements are unique) to store the set in memory.\n\n**Correctness:**\nThe logic is correct for finding the number of distinct elements.\n*   **Edge Cases:** It correctly handles an empty list (returns 0) and a list where all elements are the same (returns 1). \n\n**Optimization:**\nThe solution is already time-optimal ($O(N)$). If memory is a critical constraint and the input list can be modified, you could sort the array in-place ($O(N \\log N)$ time) and iterate through it to count unique adjacent elements, reducing auxiliary space to $O(1)$. However, in Python, the current `set()` approach is the most idiomatic and fastest for general use.\n\n**Key Algorithmic Pattern:**\nHashing (using a Set data structure to filter duplicates).",
       "_aiProvider": "gemini",
       "_aiModel": "gemini-3-flash-preview"
     },
@@ -134,8 +148,13 @@
       "title": "Pacific Atlantic Water Flow",
       "titleSlug": "pacific-atlantic-water-flow",
       "difficulty": "Hard",
-      "topic": "Untagged",
-      "tags": [],
+      "topic": "Breadth-First Search",
+      "tags": [
+        "Breadth-First Search",
+        "Graph Traversal",
+        "Set",
+        "Grid"
+      ],
       "canonical": null,
       "readmeContent": "# Pacific Atlantic Water Flow\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Hard\n\n## Problem\n\nYou are given a matrix mat[][] of dimensions n x m, where mat[i][j] represents the height of a cell in a rectangular grid island. The Pacific Ocean touches the island's left and top borders, and the Atlantic Ocean touches the island's right and bottom borders. Rainwater can flow from a cell to its neighbouring cells in the directions North, South, East, and West, but only if the neighbouring cell has a height less than or equal to the current cell's height.\nThe task is to determine all coordinates (x, y) such that water can flow from the cell (x, y) to both the Pacific Ocean and the Atlantic Ocean. Water can flow from any adjacent cell directly into an ocean.\nExamples:\nInput: mat[][] = [[1, 2, 2, 3, 5],                [3, 2, 3, 4, 4],                [2, 4, 5, 3, 1],                [6, 7, 1, 4, 5],                [5, 1, 1, 2, 4]]\nOutput: 7\nExplanation: In the given matrix, there are 7 coordinates through which the water can flow to both the Oceans. They are  (0, 4), (1, 3), (1, 4), (2, 2), (3, 0), (3, 1), and (4, 0).\nInput: arr[][] = [[2, 2],                [2, 2]]\nOutput: 4\nExplanation: In the following example, all cells allow water to flow to both the Oceans.\nConstraints:1 ≤ number of rows,&nbsp;number of columns&nbsp;≤ 1031 ≤ arr[i][j] ≤ 103&nbsp;\n\n**Source:** https://www.geeksforgeeks.org/problems/pacific-atlantic-water-flow/",
       "code": "from collections import deque\nclass Solution:\n    def countCoordinates(self, mat):\n        n, m = len(mat), len(mat[0])\n        p, a = set(), set()\n        pq, aq = deque(), deque()\n        for r in range(n):\n            pq.append((r, 0)); p.add((r, 0))\n            aq.append((r, m-1)); a.add((r, m-1))\n        for c in range(m):\n            pq.append((0, c)); p.add((0, c))\n            aq.append((n-1, c)); a.add((n-1, c))\n        while pq:\n            r, c = pq.popleft()\n            for nr, nc in [(r-1, c), (r+1, c), (r, c-1), (r, c+1)]:\n                if 0 <= nr < n and 0 <= nc < m and (nr, nc) not in p and mat[nr][nc] >= mat[r][c]:\n                    p.add((nr, nc)); pq.append((nr, nc))\n        while aq:\n            r, c = aq.popleft()\n            for nr, nc in [(r-1, c), (r+1, c), (r, c-1), (r, c+1)]:\n                if 0 <= nr < n and 0 <= nc < m and (nr, nc) not in a and mat[nr][nc] >= mat[r][c]:\n                    a.add((nr, nc)); aq.append((nr, nc))\n        return len(p & a)",
@@ -162,7 +181,10 @@
       "_committedPaths": [
         "problems/gfg-pacific-atlantic-water-flow/gfg-pacific-atlantic-water-flow.py",
         "problems/gfg-pacific-atlantic-water-flow/README.md"
-      ]
+      ],
+      "aiReview": "1.  **Time complexity (Big-O) and space complexity**\n    Time complexity: O(N*M), where N is the number of rows and M is the number of columns. Two BFS traversals each visit every cell and edge at most once. Set intersection is also O(N*M).\n    Space complexity: O(N*M) for storing the `p` and `a` sets and the `pq`, `aq` deques, which can hold up to all grid coordinates.\n\n2.  **Correctness — any edge cases that could fail?**\n    The core approach of performing two reverse BFS traversals from the Pacific and Atlantic borders is correct for identifying cells that can reach each ocean. The flow condition `mat[nr][nc] >= mat[r][c]` for reverse traversal is also correct.\n    **However, the solution fails to meet the problem's output requirement.** It returns `len(p & a)` (an integer count) instead of `list(p & a)` (a list of coordinates `[r, c]`). This is a critical error.\n\n3.  **One concrete optimisation if applicable**\n    The primary \"optimization\" is correcting the return type from `len(p & a)` to `list(p & a)` to match the problem's expected output. The two-BFS approach is already optimal for this problem.\n\n4.  **Key algorithmic pattern used**\n    Breadth-First Search (BFS), Graph Traversal.",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-2.5-flash"
     },
     {
       "id": "gfg-sort-an-array-of-0s-1s-and-2s4231",
@@ -199,7 +221,14 @@
       "memory": null,
       "timestamp": 1782268408408,
       "elapsedSeconds": null,
-      "platform": "geeksforgeeks"
+      "platform": "geeksforgeeks",
+      "_committedPaths": [
+        "problems/gfg-sort-an-array-of-0s-1s-and-2s4231/gfg-sort-an-array-of-0s-1s-and-2s4231.py",
+        "problems/gfg-sort-an-array-of-0s-1s-and-2s4231/README.md"
+      ],
+      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(n)$ – The array is traversed exactly once.\n*   **Space Complexity:** $O(1)$ – Sorting is performed in-place with no extra data structures.\n\n**2. Correctness**\nThe implementation is correct. It handles all standard edge cases, including:\n*   Empty arrays or single-element arrays.\n*   Arrays containing only one of the three digits (e.g., all 0s).\n*   Already sorted or reverse-sorted arrays.\nNote: It correctly avoids incrementing `m` after swapping with `h` because the new `arr[m]` value is unexamined.\n\n**3. Optimization**\nWhile the algorithm is asymptotically optimal, a minor **micro-optimization** can reduce unnecessary operations:\n*   **Avoid Self-Swaps:** In the `arr[m] == 0` case, only perform the swap if `l != m`. When the array starts with zeros, `l` and `m` move together, making `arr[l], arr[m] = arr[m], arr[l]` redundant.\n\n**4. Key Algorithmic Pattern**\n**Dutch National Flag Algorithm** (Three-way partitioning). It uses three pointers to maintain invariant regions: `[0...l-1]` for 0s, `[l...m-1]` for 1s, and `[h+1...n-1]` for 2s.",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview"
     },
     {
       "id": "lc-01-matrix",
@@ -1629,11 +1658,13 @@
       "duplicateOf": null,
       "_requestAIReview": true,
       "platform": "leetcode",
-      "aiReview": "Here's a review of your solution:\n\n1.  **Time Complexity**: O(L), where L is the length of `flowerbed`. The loop iterates through the array, and `i` increments by at least 2 in each step.\n    **Space Complexity**: O(1). Only a few constant-space variables are used.\n\n2.  **Correctness**: Correct. The logic skillfully uses `i` increments (`i += 2`, `i += 3`) to implicitly handle the left-neighbor condition (`flowerbed[i-1] == 0`) when considering planting at `i`. If `flowerbed[i-1]` contained a flower, `i` would have already skipped past `i`. The initial check for `flowerbed == [0] and n == 1` is redundant as the main loop covers it, but it doesn't cause failure.\n\n3.  **One concrete optimisation**: Remove the redundant check `if flowerbed == [0] and n == 1:`. The rest of the code already handles this case correctly.\n\n4.  **Key algorithmic pattern used**: Greedy approach. The solution iterates through the flowerbed, making the locally optimal choice (planting a flower whenever possible) which leads to a globally optimal solution (maximizing placed flowers).",
+      "aiReview": "### 1. Complexity\n*   **Time Complexity**: $O(N)$, where $N$ is the length of the flowerbed. The algorithm traverses the list at most once.\n*   **Space Complexity**: $O(1)$. No additional data structures are used; the input is processed in place.\n\n### 2. Correctness\nThe logic is correct. The \"jump\" strategy (`i += 2` or `i += 3`) correctly maintains the non-adjacency rule by skipping indices that are guaranteed to be invalid for planting. \n*   **Edge Cases**: The code handles single-element lists, boundary conditions (start/end of list), and `n=0` correctly. The `if flowerbed == [0]` check is actually redundant as the `while` loop handles it naturally, but it doesn't break correctness.\n\n### 3. Optimization\n**Simplify the logic**: You can remove the special `if` for `[0]` and unify the boundary checks. Use a \"virtual\" zero at the boundaries to handle `i-1` and `i+1` without special `if` branches:\n```python\n# Check: (i==0 or f[i-1]==0) and (f[i]==0) and (i==l-1 or f[i+1]==0)\n```\nThis reduces the number of conditional branches inside the loop.\n\n### 4. Key Algorithmic Pattern\n**Greedy Algorithm**: The solution makes the locally optimal choice of planting a flower at the first available valid spot, which leads to the global maximum number of flowers.",
       "_committedPaths": [
         "problems/lc-can-place-flowers/lc-can-place-flowers.py",
         "problems/lc-can-place-flowers/README.md"
-      ]
+      ],
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview"
     },
     {
       "id": "lc-change-data-type::1433139571",
@@ -3260,11 +3291,13 @@
       "duplicateOf": null,
       "_requestAIReview": true,
       "platform": "leetcode",
-      "aiReview": "### Review of Course Schedule II Solution\n\n**1. Complexity**\n*   **Time:** $O(V + E)$ – Each course (vertex $V$) and prerequisite (edge $E$) is processed once.\n*   **Space:** $O(V + E)$ – To store the adjacency list ($O(V+E)$), recursion stack ($O(V)$), and tracking sets ($O(V)$).\n\n**2. Correctness**\nThe solution is **correct**. It properly handles:\n*   **Cycles:** Detected via the `path` set (returning `[]`).\n*   **Disconnected Components:** Handled by iterating through all `numCourses`.\n*   **Efficiency:** Uses a `visited` set to skip already processed nodes, preventing $O(2^V)$ behavior.\n\n**3. Optimization**\nReplace the two sets (`visited`, `path`) with a single **state array** (e.g., `states = [0] * numCourses`).\n*   `0`: Unvisited\n*   `1`: Visiting (current path)\n*   `2`: Visited (fully processed)\n\nThis reduces memory overhead and improves performance by replacing set hashing/lookups with direct array indexing.\n\n**4. Key Algorithmic Pattern**\n**Topological Sort** using **Depth-First Search (DFS)** and cycle detection (Backtracking). It builds the order by appending nodes post-recursion and reversing the result.",
+      "aiReview": "### 1. Complexity\n*   **Time:** $O(V + E)$, where $V$ is the number of courses and $E$ is the number of prerequisites. Every node and edge is processed exactly once.\n*   **Space:** $O(V + E)$. The adjacency list consumes $O(V + E)$, while the recursion stack and sets (`visited`, `path`) consume $O(V)$.\n\n### 2. Correctness\nThe logic is **correct**. \n*   It successfully detects cycles using the `path` set (back-edges).\n*   It handles disconnected components by iterating through all nodes in the main loop.\n*   **Edge Cases:** Handles $E=0$ (no prerequisites), self-loops, and large $V$ correctly.\n\n### 3. Optimization\nReplace the two sets (`visited`, `path`) with a single **state array** (e.g., `state = [0] * numCourses`). \n*   `0`: Unvisited\n*   `1`: Visiting (currently in recursion stack)\n*   `2`: Visited (fully processed)\n\nThis reduces hashing overhead and improves constant-time performance by using direct index access instead of set lookups.\n\n### 4. Key Algorithmic Pattern\n**Topological Sort** using **DFS (Post-order Traversal)** and **Cycle Detection**.",
       "_committedPaths": [
         "problems/lc-course-schedule-ii/lc-course-schedule-ii.py",
         "problems/lc-course-schedule-ii/README.md"
-      ]
+      ],
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview"
     },
     {
       "id": "lc-create-a-dataframe-from-list",
@@ -6877,11 +6910,13 @@
       "duplicateOf": null,
       "_requestAIReview": true,
       "platform": "leetcode",
-      "aiReview": "Here's a review of your solution:\n\n1.  **Time Complexity:** O(N), where N is the number of kids. It takes one pass to find `max_candies` and another pass (via list comprehension) to generate the `results` list.\n    **Space Complexity:** O(N) to store the `results` boolean list.\n\n2.  **Correctness:** The solution is **correct**. It accurately implements the problem logic: first finding the greatest number of candies, then iterating to check if each kid *could* reach that maximum. Edge cases like a single kid, all kids having equal candies, or `extraCandies = 0` are handled correctly. LeetCode constraints typically guarantee non-empty input, preventing `max()` errors.\n\n3.  **Optimisation:** No significant algorithmic optimization is applicable. The current solution is already optimal, requiring O(N) time (to find the max and generate N results) and O(N) space (to store N boolean results).\n\n4.  **Key Algorithmic Pattern:** This solution primarily uses a **Max/Min finding** pattern (to determine the target value) followed by a **Map/Transform** operation (to apply a condition to each element and create a new list).",
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n)$, where $n$ is the number of kids. We traverse the list once to find the maximum and once more to build the result.\n*   **Space Complexity:** $O(n)$ for the output list. If excluding the output, it is $O(1)$ auxiliary space.\n\n### 2. Correctness\nThe logic is **correct**. It accurately identifies if a kid can reach or exceed the current maximum.\n*   **Edge Cases:** The code handles cases where all kids have the same amount or `extraCandies` is 0. \n*   **Empty Input:** If `candies` were empty, `max()` would raise a `ValueError`. However, LeetCode constraints guarantee $n \\ge 2$.\n\n### 3. Optimization\nWhile $O(n)$ is optimal, you can slightly improve performance by calculating a **threshold** once:\n```python\nthreshold = max_candies - extraCandies\nresults = [i >= threshold for i in candies]\n```\nThis replaces $n$ additions with $n$ comparisons, which is marginally faster in some environments.\n\n### 4. Key Algorithmic Pattern\n**Greedy / Linear Scan:** You find a global property (the maximum) in one pass and then use it to make local decisions for each element in a second pass.",
       "_committedPaths": [
         "problems/lc-kids-with-the-greatest-number-of-candies/lc-kids-with-the-greatest-number-of-candies.py",
         "problems/lc-kids-with-the-greatest-number-of-candies/README.md"
-      ]
+      ],
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview"
     },
     {
       "id": "lc-koko-eating-bananas::1871324972",
@@ -11097,11 +11132,13 @@
       "duplicateOf": null,
       "_requestAIReview": true,
       "platform": "leetcode",
-      "aiReview": "### 1. Complexity\n*   **Time:** $O(E \\log E)$ or $O(E \\log V)$, where $E$ is the number of edges and $V$ is $n$. Each edge is processed and potentially pushed onto the heap.\n*   **Space:** $O(V + E)$ to store the adjacency list and the priority queue.\n\n### 2. Correctness\nThe code is correct. It effectively implements Dijkstra's algorithm.\n*   **Edge Cases:** It correctly handles disconnected graphs (returns `-1`) and cycles (via the `visited` set).\n*   **Note:** If $n=1$ and the signal starts at that node, it correctly returns $0$.\n\n### 3. Concrete Optimization\n**Early Exit:** Instead of waiting for the heap to empty, return `time_so_far` as soon as `len(visited) == n`. This avoids unnecessary processing of remaining elements in the priority queue once all nodes have been reached via their shortest paths.\n\n### 4. Key Algorithmic Pattern\n**Dijkstra’s Algorithm:** A greedy approach using a **Priority Queue (Min-Heap)** to find the shortest path from a single source to all other nodes in a weighted graph.",
+      "aiReview": "Here's a review of your solution:\n\n1.  **Time & Space Complexity:**\n    *   **Time:** O(E log V), where V is the number of nodes (n) and E is the number of edges (`len(times)`). This accounts for building the adjacency list (O(E)) and Dijkstra's algorithm with a min-heap (V pops, E pushes, each O(log V) for heap operations).\n    *   **Space:** O(V + E) for the adjacency list, `visited` set, and the priority queue (heap).\n\n2.  **Correctness:**\n    The solution correctly implements Dijkstra's algorithm, suitable for graphs with non-negative edge weights. It accurately finds the maximum shortest path time to all reachable nodes from `k` and correctly returns -1 if not all `n` nodes are reachable. It handles edge cases like `n=1` or disconnected graphs well.\n\n3.  **Concrete Optimisation:**\n    Instead of just using `visited`, maintain a `dist` array (e.g., `dist = [float('inf')] * (n + 1)`) initialized to infinity, with `dist[k] = 0`. When iterating neighbors, only `heappush((new_time, neighbor))` if `new_time < dist[neighbor]`, and then update `dist[neighbor] = new_time`. This prevents redundant, longer paths from being added to the heap, potentially reducing heap size and operations.\n\n4.  **Key Algorithmic Pattern:**\n    Dijkstra's Algorithm (a priority queue-based variant of Breadth-First Search for finding shortest paths in weighted graphs with non-negative edges).",
       "_committedPaths": [
         "problems/lc-network-delay-time/lc-network-delay-time.py",
         "problems/lc-network-delay-time/README.md"
-      ]
+      ],
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-2.5-flash"
     },
     {
       "id": "lc-next-greater-element-i::1650915399",
@@ -13867,11 +13904,13 @@
       "duplicateOf": null,
       "_requestAIReview": true,
       "platform": "leetcode",
-      "aiReview": "1.  **Time Complexity:** O(N), where N is the length of the string `s`. It involves one pass to convert to a list, one pass with two pointers, and one pass to join back.\n    **Space Complexity:** O(N) due to converting the string `s` into a mutable `list`.\n\n2.  **Correctness:** The solution is correct. It handles edge cases like empty strings, single-character strings, strings with no vowels, and strings consisting entirely of vowels. The two-pointer logic accurately finds and swaps the extreme vowels.\n\n3.  **Optimisation:** For repeated calls to `reverseVowels`, the `vow` set could be created once outside the function (e.g., as a class attribute) to avoid redundant O(1) set construction on each call.\n\n4.  **Key Algorithmic Pattern:** Two Pointers.",
+      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(n)$, where $n$ is the length of the string. Each character is visited at most once.\n*   **Space Complexity:** $O(n)$ to store the list of characters, as Python strings are immutable.\n\n**2. Correctness**\nThe solution is **correct**. It properly handles:\n*   **Mixed Case:** Using a set with both `'aeiouAEIOU'` ensures $O(1)$ lookups for all vowels.\n*   **No/Single Vowels:** The `l < r` condition correctly terminates without unnecessary swaps.\n*   **Non-alphabetic characters:** They are skipped by the `if/elif` logic.\n\n**3. Optimization**\nWhile the current logic is efficient, you can slightly improve readability and performance by using inner `while` loops to skip non-vowels. This avoids re-evaluating the outer `l < r` condition repeatedly:\n\n```python\nwhile l < r:\n    while l < r and letters[l] not in vow:\n        l += 1\n    while l < r and letters[r] not in vow:\n        r -= 1\n    letters[l], letters[r] = letters[r], letters[l]\n    l += 1\n    r -= 1\n```\n\n**4. Key Algorithmic Pattern**\n**Two Pointers:** Using two indices starting at opposite ends moving toward the center to perform in-place swaps (on the mutable list representation).",
       "_committedPaths": [
         "problems/lc-reverse-vowels-of-a-string/lc-reverse-vowels-of-a-string.py",
         "problems/lc-reverse-vowels-of-a-string/README.md"
-      ]
+      ],
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview"
     },
     {
       "id": "lc-reverse-words-in-a-string",
@@ -13922,11 +13961,13 @@
       "duplicateOf": null,
       "_requestAIReview": true,
       "platform": "leetcode",
-      "aiReview": "1.  **Time Complexity**: O(N), where N is the length of the input string `s`. `strip()`, `split()`, list creation/manipulation, and `join()` all scale linearly with string length or total word length.\n    **Space Complexity**: O(N), as several intermediate lists and strings are created (stripped string, list of words, modified list of words, reversed list of words, final joined string).\n\n2.  **Correctness**: The solution is surprisingly correct for the standard \"Reverse Words in a String\" problem. The quirky `words = [words[0]]+[word+' ' for word in words[1:]]` logic effectively adds a trailing space to all words *except* the first (which becomes the last in the reversed output). When these are joined by an empty string `''`, these trailing spaces act as separators. The final word (original first) has no trailing space, preventing an unwanted trailing space in the result. It correctly handles multiple spaces, leading/trailing spaces, and single/empty string inputs.\n\n3.  **One concrete optimisation**: The most idiomatic and often more efficient way to join reversed words is `return ' '.join(words[::-1])`. This avoids the complex and less readable intermediate step of modifying individual words to include spaces.\n\n4.  **Key Algorithmic Pattern**: String Tokenization (splitting into words), List Manipulation (reversing the order of elements), and String Reconstruction (joining elements with a separator).",
+      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time:** $O(N)$, where $N$ is the length of the string. `split()`, list comprehension, and `join()` each traverse the data linearly.\n*   **Space:** $O(N)$ to store the list of words and the final joined string.\n\n**2. Correctness**\n*   **Critical Bug:** The code fails on empty or whitespace-only strings (e.g., `s = \" \"`). `s.strip().split()` returns an empty list, causing `words[0]` to raise an `IndexError`.\n*   **Logic:** The manual addition of spaces (`word + ' '`) is brittle and creates an extra trailing space logic that is hard to maintain.\n\n**3. Optimization**\nReplace the manual space concatenation and slicing with Python’s idiomatic `join()` on the reversed list. This is cleaner and handles edge cases automatically:\n```python\nclass Solution:\n    def reverseWords(self, s: str) -> str:\n        words = s.split() # split() handles strip and multiple spaces automatically\n        return \" \".join(reversed(words))\n```\n\n**4. Key Algorithmic Pattern**\n**Two-Pointer / String Manipulation:** While this solution uses high-level built-ins, the underlying problem tests your ability to parse substrings and reorder them (often solved in-place in languages with mutable strings using a \"reverse the whole string, then reverse each word\" strategy).",
       "_committedPaths": [
         "problems/lc-reverse-words-in-a-string/lc-reverse-words-in-a-string.py",
         "problems/lc-reverse-words-in-a-string/README.md"
-      ]
+      ],
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview"
     },
     {
       "id": "lc-rings-and-rods",
@@ -15627,7 +15668,10 @@
       "_committedPaths": [
         "problems/lc-spiral-matrix-iii/lc-spiral-matrix-iii.py",
         "problems/lc-spiral-matrix-iii/README.md"
-      ]
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(\\max(R, C)^2)$. The spiral continues expanding until all cells are visited. In the worst case, the spiral's side length grows proportional to the largest dimension of the grid.\n*   **Space Complexity:** $O(R \\times C)$ to store the resulting coordinates.\n\n### 2. Correctness\nThe logic is **correct**. It accurately simulates the spiral pattern (Right $\\to$ Down $\\to$ Left $\\to$ Up) where the step length increases every two turns ($1, 1, 2, 2, 3, 3, \\dots$). \n*   **Edge Cases:** The code handles $1 \\times 1$ grids and starting positions at boundaries correctly because it checks bounds *before* moving and terminates immediately once the result list is full.\n\n### 3. Optimization\n**Skip out-of-bounds segments:** Currently, the code iterates one step at a time even when far outside the grid. You can mathematically check if a side of the spiral (from `step_start` to `step_end`) intersects the rectangle $[0, rows-1] \\times [0, cols-1]$. If it doesn't, you can update `i, j` and `moves` in a single addition/jump rather than a loop.\n\n### 4. Key Algorithmic Pattern\n**Simulation:** The problem is solved by directly simulating the movement rules (traversal with changing directions and incremental step sizes).",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview"
     },
     {
       "id": "lc-split-the-array::1448736927",
@@ -17053,7 +17097,10 @@
       "_committedPaths": [
         "problems/lc-uncommon-words-from-two-sentences/lc-uncommon-words-from-two-sentences.py",
         "problems/lc-uncommon-words-from-two-sentences/README.md"
-      ]
+      ],
+      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(N + M)$, where $N$ and $M$ are the lengths of `s1` and `s2`. Splitting the strings and iterating through the words to populate the hash map are linear operations.\n*   **Space Complexity:** $O(N + M)$. The `words` list and the `Counter` dictionary store all unique words from both strings.\n\n**2. Correctness**\n*   **Logic:** The solution correctly implements the problem definition: a word is uncommon if it appears exactly once across both sentences.\n*   **Edge Cases:**\n    *   **Multiple occurrences in one sentence:** Handled correctly (e.g., `s1=\"apple apple\", s2=\"\"` returns `[]`).\n    *   **Single word sentences:** Handled correctly.\n    *   **Empty inputs:** Per LeetCode constraints, strings contain at least one word.\n\n**3. Optimization**\nTo improve **memory efficiency**, avoid creating the intermediate `words` list (concatenation). Instead, update the counter in place:\n```python\ncount = Counter(s1.split())\ncount.update(s2.split())\n```\nThis reduces peak memory usage by avoiding the creation of a third, combined list of all words.\n\n**4. Key Algorithmic Pattern**\n**Frequency Counting** using a Hash Map (Hash Table).",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview"
     },
     {
       "id": "lc-uncrossed-lines",
