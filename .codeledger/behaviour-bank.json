@@ -941,6 +941,24 @@
     ]
   },
   "geeksforgeeks::minimum-element-in-a-sorted-and-rotated-array3611": {
+    "aiInsights": [
+      {
+        "summary": "### Review\n**1. Complexity**\n*   **Time Complexity:** $O(\\log N)$, where $N$ is the number of elements. The search space is halved in each iteration.\n*   **Space Complexity:** $O(1)$, as it uses a con",
+        "ts": 1787070868971,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1084,
+        "providerId": "gemini",
+        "ts": 1787070869070
+      }
+    ],
     "difficulty": "Easy",
     "lang": {
       "ext": "txt",
