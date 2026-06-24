@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-2-sum-find-a-pair-with-given-sum` |
-| Topics | Sorting, two-pointer-algorithm, Arrays, Hash |
+| Topics | Sorting, Two Pointers, Array, Hash Table |
 | Solved | 2026-06-24 |
 
 ## Problem Statement
@@ -29,3 +29,19 @@ Explanation: **Pair with sum equal to 2 is (1, 1).
 **1 &le; arr.size() &le; 105**
 **0 &le; arr[i] &le; 104
 1 &le; target &le; 104
+
+## Solutions
+
+```python3
+#User function Template for python3
+class Solution:
+    # Complete the below function
+    def twoSum(self,arr, target):
+        seen = {}
+        
+        for i , x in enumerate(arr):
+            if target - x in seen:
+                return [x, target - x]
+            seen[x] = i
+        return []
+```
