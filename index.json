@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24T12:01:29.648Z",
+  "updatedAt": "2026-06-24T14:21:59.614Z",
   "layoutVersion": 3,
   "stats": {
     "total": 315,
@@ -12,7 +12,8 @@
     },
     "byLang": {
       "Unknown": 49,
-      "Python3": 200,
+      "Python3": 199,
+      "python3": 1,
       "MySQL": 15,
       "Java": 12,
       "Python": 16,
@@ -881,13 +882,13 @@
       "title": "Ladoo problem",
       "titleSlug": "ladoo-problem2929",
       "difficulty": "Easy",
-      "topic": "Hashing",
+      "topic": "Hash",
       "tags": [
         "Hash",
         "Data Structures"
       ],
       "canonical": null,
-      "readmeContent": "# Ladoo problem\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Easy\n\n## Problem\n\nBheem has N friends. And he has a ladoo for each day. Given an Array A[] denoting on which day ith friend wants a ladoo. If Bheem is unable to give a ladoo to a friend, he loses his friendship with them. Find out the maximum number of Friends he can have at the end.\n\n&nbsp;\n\nExample 1:\n\nInput:\nN = 5\nA[] = {3, 3, 1, 2, 4}\nOutput:\n4 \nExplanation:\nHe will lose either his 1st or 2nd\nfriend and therefore will be left\nwith 4 friends.\n\nExample 2:\n\nInput:\nN = 2\nA[] = {1, 2}\nOutput:\n2\nExplanation:\nHe can give a ladoo to each of his friends,\nand will have 2 friends by the end.\n\n&nbsp;\n\nYour Task:\nYou don't need to read input or print anything. Your task is to complete the function divideLadoo() which takes an Integer N and an Array A as input and returns the answer.\n\n&nbsp;\n\nExpected Time Complexity: O(N)\nExpected Auxiliary Space: O(N)\n\n&nbsp;\n\nConstraints:\n1 <= N <= 105\n1 <= A[i] <= 105\n\n**Source:** https://www.geeksforgeeks.org/problems/ladoo-problem2929/",
+      "readmeContent": "# Ladoo problem\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Easy\n\n**Tags:** `Hash`, `Data Structures`\n\n## Problem\n\nMy SubmissionsRefresh Time (IST)StatusMarksLangTest CasesCode2026-06-24 07:23:11Correct1python3102 / 102View⏳...\n\n**Source:** https://www.geeksforgeeks.org/problems/ladoo-problem2929/",
       "code": "class Solution:\n    def divideLadoo(self, N, A):\n        return len(set(A))\n        ",
       "files": [
         {
@@ -896,30 +897,31 @@
         },
         {
           "path": "problems/gfg-ladoo-problem2929/README.md",
-          "content": "# Ladoo problem\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Easy\n\n## Problem\n\nBheem has N friends. And he has a ladoo for each day. Given an Array A[] denoting on which day ith friend wants a ladoo. If Bheem is unable to give a ladoo to a friend, he loses his friendship with them. Find out the maximum number of Friends he can have at the end.\n\n&nbsp;\n\nExample 1:\n\nInput:\nN = 5\nA[] = {3, 3, 1, 2, 4}\nOutput:\n4 \nExplanation:\nHe will lose either his 1st or 2nd\nfriend and therefore will be left\nwith 4 friends.\n\nExample 2:\n\nInput:\nN = 2\nA[] = {1, 2}\nOutput:\n2\nExplanation:\nHe can give a ladoo to each of his friends,\nand will have 2 friends by the end.\n\n&nbsp;\n\nYour Task:\nYou don't need to read input or print anything. Your task is to complete the function divideLadoo() which takes an Integer N and an Array A as input and returns the answer.\n\n&nbsp;\n\nExpected Time Complexity: O(N)\nExpected Auxiliary Space: O(N)\n\n&nbsp;\n\nConstraints:\n1 <= N <= 105\n1 <= A[i] <= 105\n\n**Source:** https://www.geeksforgeeks.org/problems/ladoo-problem2929/"
+          "content": "# Ladoo problem\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Easy\n\n**Tags:** `Hash`, `Data Structures`\n\n## Problem\n\nMy SubmissionsRefresh Time (IST)StatusMarksLangTest CasesCode2026-06-24 07:23:11Correct1python3102 / 102View⏳...\n\n**Source:** https://www.geeksforgeeks.org/problems/ladoo-problem2929/"
         }
       ],
       "lang": {
-        "name": "Python3",
+        "name": "python3",
         "ext": "py",
         "slug": "python3"
       },
       "runtime": null,
       "memory": null,
-      "timestamp": 1782265995803,
-      "elapsedSeconds": null,
+      "timestamp": 1782265991000,
+      "elapsedSeconds": 0,
       "platform": "geeksforgeeks",
       "_committedPaths": [
         "problems/gfg-ladoo-problem2929/gfg-ladoo-problem2929.py",
         "problems/gfg-ladoo-problem2929/README.md"
       ],
-      "aiReview": "### Review\n\n**Complexity:**\n*   **Time Complexity:** $O(N)$, where $N$ is the number of elements in array $A$. Converting a list to a set requires a single pass to hash each element.\n*   **Space Complexity:** $O(N)$ in the worst case (where all elements are unique) to store the set in memory.\n\n**Correctness:**\nThe logic is correct for finding the number of distinct elements.\n*   **Edge Cases:** It correctly handles an empty list (returns 0) and a list where all elements are the same (returns 1). \n\n**Optimization:**\nThe solution is already time-optimal ($O(N)$). If memory is a critical constraint and the input list can be modified, you could sort the array in-place ($O(N \\log N)$ time) and iterate through it to count unique adjacent elements, reducing auxiliary space to $O(1)$. However, in Python, the current `set()` approach is the most idiomatic and fastest for general use.\n\n**Key Algorithmic Pattern:**\nHashing (using a Set data structure to filter duplicates).",
+      "aiReview": "Here's a review of your solution:\n\n1.  **Time Complexity:** O(N) on average, where N is the number of ladoos. Building a set from a list of N elements involves iterating through the list and hashing each element.\n    **Space Complexity:** O(K), where K is the number of unique ladoo types (K ≤ N). The set stores each unique element.\n\n2.  **Correctness:** This solution is **correct** for the \"Ladoo problem\" as found on GeeksForGeeks, which asks for the number of distinct sweetness values. It handles empty lists (returns 0), lists with all unique elements, and lists with duplicates correctly. There are no edge cases that would fail this specific problem's requirements.\n\n3.  **Optimisation:** No significant concrete optimization is applicable. Using `set()` is the most Pythonic and efficient way to count unique elements in Python.\n\n4.  **Key Algorithmic Pattern:** Hashing / Hash Set (or Hash Table). The `set` data structure internally uses hashing to efficiently store and check for unique elements.",
       "_aiProvider": "gemini",
-      "_aiModel": "gemini-3-flash-preview",
+      "_aiModel": "gemini-2.5-flash",
       "notes": "",
       "methods": [],
       "manuallyEdited": false,
-      "problemStatement": "<p><span style=\"font-size:18px\">Bheem has <strong>N </strong>friends. And he has a ladoo for each day. Given an Array <strong>A</strong>[] denoting on which day ith friend wants a ladoo. If Bheem is unable to give a ladoo to a friend, he loses his friendship with them. Find out the maximum number of Friends he can have at the end.</span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-size:18px\"><strong>Example 1:</strong></span></p>\r\n\r\n<pre>\r\n<span style=\"font-size:18px\"><strong>Input:</strong></span>\r\n<span style=\"font-size:18px\"><strong>N = </strong>5</span>\r\n<span style=\"font-size:18px\"><strong>A[] =</strong> {3, 3, 1, 2, 4}</span>\r\n<span style=\"font-size:18px\"><strong>Output:</strong></span>\r\n<span style=\"font-size:18px\">4 </span>\r\n<span style=\"font-size:18px\"><strong>Explanation:\r\n</strong>He will lose either his 1st or 2nd\r\nfriend and therefore will be left\r\nwith 4 friends.</span></pre>\r\n\r\n<p><span style=\"font-size:18px\"><strong>Example 2:</strong></span></p>\r\n\r\n<pre>\r\n<span style=\"font-size:18px\"><strong>Input:</strong></span>\r\n<span style=\"font-size:18px\"><strong>N = </strong>2</span>\r\n<span style=\"font-size:18px\"><strong>A[] =</strong> {1, 2}</span>\r\n<span style=\"font-size:18px\"><strong>Output:</strong></span>\r\n<span style=\"font-size:18px\">2</span>\r\n<span style=\"font-size:18px\"><strong>Explanation:\r\n</strong>He can give a ladoo to each of his friends,\r\nand will have 2 friends by the end.</span></pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-size:18px\"><strong>Your Task:</strong><br />\r\nYou don&#39;t need to read input or print anything. Your task is to complete the function <strong>divideLadoo()</strong> which takes an Integer N and an Array A as input and returns the answer.</span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-size:18px\"><strong>Expected Time Complexity:</strong> O(N)<br />\r\n<strong>Expected Auxiliary Space:</strong> O(N)</span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-size:18px\"><strong>Constraints:</strong></span><br />\r\n<span style=\"font-size:18px\">1 &lt;= N &lt;= 10<sup>5</sup><br />\r\n1 &lt;= A[i] &lt;= 10<sup>5</sup></span></p>\r\n"
+      "problemStatement": "<p><span style=\"font-size:18px\">Bheem has <strong>N </strong>friends. And he has a ladoo for each day. Given an Array <strong>A</strong>[] denoting on which day ith friend wants a ladoo. If Bheem is unable to give a ladoo to a friend, he loses his friendship with them. Find out the maximum number of Friends he can have at the end.</span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-size:18px\"><strong>Example 1:</strong></span></p>\r\n\r\n<pre>\r\n<span style=\"font-size:18px\"><strong>Input:</strong></span>\r\n<span style=\"font-size:18px\"><strong>N = </strong>5</span>\r\n<span style=\"font-size:18px\"><strong>A[] =</strong> {3, 3, 1, 2, 4}</span>\r\n<span style=\"font-size:18px\"><strong>Output:</strong></span>\r\n<span style=\"font-size:18px\">4 </span>\r\n<span style=\"font-size:18px\"><strong>Explanation:\r\n</strong>He will lose either his 1st or 2nd\r\nfriend and therefore will be left\r\nwith 4 friends.</span></pre>\r\n\r\n<p><span style=\"font-size:18px\"><strong>Example 2:</strong></span></p>\r\n\r\n<pre>\r\n<span style=\"font-size:18px\"><strong>Input:</strong></span>\r\n<span style=\"font-size:18px\"><strong>N = </strong>2</span>\r\n<span style=\"font-size:18px\"><strong>A[] =</strong> {1, 2}</span>\r\n<span style=\"font-size:18px\"><strong>Output:</strong></span>\r\n<span style=\"font-size:18px\">2</span>\r\n<span style=\"font-size:18px\"><strong>Explanation:\r\n</strong>He can give a ladoo to each of his friends,\r\nand will have 2 friends by the end.</span></pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-size:18px\"><strong>Your Task:</strong><br />\r\nYou don&#39;t need to read input or print anything. Your task is to complete the function <strong>divideLadoo()</strong> which takes an Integer N and an Array A as input and returns the answer.</span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-size:18px\"><strong>Expected Time Complexity:</strong> O(N)<br />\r\n<strong>Expected Auxiliary Space:</strong> O(N)</span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-size:18px\"><strong>Constraints:</strong></span><br />\r\n<span style=\"font-size:18px\">1 &lt;= N &lt;= 10<sup>5</sup><br />\r\n1 &lt;= A[i] &lt;= 10<sup>5</sup></span></p>\r\n",
+      "_requestAIReview": true
     },
     {
       "id": "gfg-learn-to-comment-python",

@@ -65,6 +65,15 @@
           "space complexity",
           "time complexity"
         ]
+      },
+      {
+        "summary": "Here's a review of your solution:\n\n1.  **Time Complexity:** O(N) on average, where N is the number of ladoos. Building a set from a list of N elements involves iterating through the list and hashing e",
+        "ts": 1782310919517,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
       }
     ],
     "aiReviews": [

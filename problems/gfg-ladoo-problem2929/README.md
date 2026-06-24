@@ -79,7 +79,7 @@ You don't need to read input or print anything. Your task is to complete the fun
 
 ## Solutions
 
-```Python3
+```python3
 class Solution:
     def divideLadoo(self, N, A):
         return len(set(A))
@@ -88,18 +88,13 @@ class Solution:
 
 ## AI Review
 
-### Review
+Here's a review of your solution:
 
-**Complexity:**
-*   **Time Complexity:** $O(N)$, where $N$ is the number of elements in array $A$. Converting a list to a set requires a single pass to hash each element.
-*   **Space Complexity:** $O(N)$ in the worst case (where all elements are unique) to store the set in memory.
+1.  **Time Complexity:** O(N) on average, where N is the number of ladoos. Building a set from a list of N elements involves iterating through the list and hashing each element.
+    **Space Complexity:** O(K), where K is the number of unique ladoo types (K ≤ N). The set stores each unique element.
 
-**Correctness:**
-The logic is correct for finding the number of distinct elements.
-*   **Edge Cases:** It correctly handles an empty list (returns 0) and a list where all elements are the same (returns 1). 
+2.  **Correctness:** This solution is **correct** for the "Ladoo problem" as found on GeeksForGeeks, which asks for the number of distinct sweetness values. It handles empty lists (returns 0), lists with all unique elements, and lists with duplicates correctly. There are no edge cases that would fail this specific problem's requirements.
 
-**Optimization:**
-The solution is already time-optimal ($O(N)$). If memory is a critical constraint and the input list can be modified, you could sort the array in-place ($O(N \log N)$ time) and iterate through it to count unique adjacent elements, reducing auxiliary space to $O(1)$. However, in Python, the current `set()` approach is the most idiomatic and fastest for general use.
+3.  **Optimisation:** No significant concrete optimization is applicable. Using `set()` is the most Pythonic and efficient way to count unique elements in Python.
 
-**Key Algorithmic Pattern:**
-Hashing (using a Set data structure to filter duplicates).
+4.  **Key Algorithmic Pattern:** Hashing / Hash Set (or Hash Table). The `set` data structure internally uses hashing to efficiently store and check for unique elements.
