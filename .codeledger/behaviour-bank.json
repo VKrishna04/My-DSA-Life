@@ -13,6 +13,24 @@
     "slug": "_summary"
   },
   "geeksforgeeks::2-sum-find-a-pair-with-given-sum": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n1.  **Complexity**:\n    *   **Time Complexity**: $O(n)$, where $n$ is the number of elements in the array. We perform a single pass, and hash map lookups/insertions are $O(1)$ on average",
+        "ts": 1786467751423,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1000,
+        "providerId": "gemini",
+        "ts": 1786467751635
+      }
+    ],
     "difficulty": "Easy",
     "lang": {
       "ext": "txt",
@@ -71,6 +89,18 @@
     ]
   },
   "geeksforgeeks::assign-cookies": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n1.  **Complexity:**\n    *   **Time Complexity:** $O(G \\log G + C \\log C)$, where $G$ is the length of the `greed` array and $C$ is the length of the `cookie` array. This is dominated by ",
+        "ts": 1786469628009,
+        "weakAreas": [
+          "edge cases",
+          "null/empty input",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
     "difficulty": "Easy",
     "lang": {
       "ext": "txt",

@@ -45,3 +45,20 @@ class Solution:
             seen[x] = i
         return []
 ```
+
+## AI Review
+
+### Analysis
+
+1.  **Complexity**:
+    *   **Time Complexity**: $O(n)$, where $n$ is the number of elements in the array. We perform a single pass, and hash map lookups/insertions are $O(1)$ on average.
+    *   **Space Complexity**: $O(n)$ to store elements in the dictionary in the worst case (when no pair is found).
+
+2.  **Correctness**: 
+    The solution is correct. By checking for the complement (`target - x`) *before* adding the current element `x` to the dictionary, it gracefully handles the edge case where `target` is exactly double an element (e.g., `target = 6, arr = [3]`), ensuring the same index isn't used twice.
+
+3.  **Optimization**:
+    Use a **set** instead of a dictionary. The current code stores indices (`seen[x] = i`) but never utilizes them. A `set` reduces memory overhead by only storing the keys.
+
+4.  **Key Algorithmic Pattern**:
+    **Hash Table / Complement Lookup**: Using a hash-based structure to transform a potential $O(n^2)$ nested search into an $O(1)$ lookup.
