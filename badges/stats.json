@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "asOf": "2026-08-31",
+  "asOf": "2026-09-01",
   "currentStreak": 0,
-  "longestStreak": 0,
+  "longestStreak": 36,
   "freezes": 0,
   "totalPoints": 5505,
   "totalSolves": 316,
@@ -21,9 +21,12 @@
     "first-blood",
     "ten-down",
     "century",
+    "week-streak",
+    "month-streak",
     "polyglot",
     "well-rounded",
     "double-day",
+    "comeback",
     "level-five",
     "second-opinion",
     "peer-reviewed"
