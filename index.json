@@ -1,19 +1,19 @@
 {
-  "updatedAt": "2026-08-18T16:07:15.719Z",
+  "updatedAt": "2026-08-18T16:14:20.175Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 316,
+    "total": 313,
     "easy": 176,
-    "medium": 127,
+    "medium": 124,
     "hard": 11,
     "byPlatform": {
-      "geeksforgeeks": 55,
+      "geeksforgeeks": 52,
       "leetcode": 261
     },
     "byLang": {
-      "python3": 5,
+      "python3": 17,
       "Python3": 200,
-      "Unknown": 45,
+      "Unknown": 30,
       "MySQL": 15,
       "Java": 12,
       "Python": 16,
@@ -26,14 +26,14 @@
     "byTopic": {
       "Sorting": 6,
       "Binary Search": 2,
-      "Tree": 11,
-      "Untagged": 10,
       "Greedy": 1,
       "Math": 26,
       "String": 25,
       "Sliding Window": 2,
-      "Depth-First Search": 1,
+      "Untagged": 7,
+      "Depth-First Search": 2,
       "Linked List": 8,
+      "Tree": 10,
       "Bit Manipulation": 3,
       "Array": 132,
       "Searching": 2,
@@ -96,7 +96,8 @@
       "aiReview": "### Analysis\n\n1.  **Complexity**:\n    *   **Time Complexity**: $O(n)$, where $n$ is the number of elements in the array. We perform a single pass, and hash map lookups/insertions are $O(1)$ on average.\n    *   **Space Complexity**: $O(n)$ to store elements in the dictionary in the worst case (when no pair is found).\n\n2.  **Correctness**: \n    The solution is correct. By checking for the complement (`target - x`) *before* adding the current element `x` to the dictionary, it gracefully handles the edge case where `target` is exactly double an element (e.g., `target = 6, arr = [3]`), ensuring the same index isn't used twice.\n\n3.  **Optimization**:\n    Use a **set** instead of a dictionary. The current code stores indices (`seen[x] = i`) but never utilizes them. A `set` reduces memory overhead by only storing the keys.\n\n4.  **Key Algorithmic Pattern**:\n    **Hash Table / Complement Lookup**: Using a hash-based structure to transform a potential $O(n^2)$ nested search into an $O(1)$ lookup.",
       "_aiProvider": "gemini",
       "_aiModel": "gemini-3-flash-preview",
-      "pattern": "Hashing"
+      "pattern": "Hashing",
+      "_failedCodeFetch": 1
     },
     {
       "id": "gfg-aggressive-cows",
@@ -174,6 +175,7 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
+        "problems/gfg-assign-cookies/gfg-assign-cookies.py",
         "problems/gfg-assign-cookies/README.md"
       ],
       "aiReview": "### Analysis\n\n1.  **Complexity:**\n    *   **Time Complexity:** $O(G \\log G + C \\log C)$, where $G$ is the length of the `greed` array and $C$ is the length of the `cookie` array. This is dominated by the sorting step. The two-pointer traversal is $O(G + C)$.\n    *   **Space Complexity:** $O(1)$ or $O(G + C)$ depending on the implementation of the sorting algorithm (Python's Timsort uses $O(N)$ auxiliary space).\n\n2.  **Correctness:**\n    The solution is correct. It successfully handles edge cases such as empty input arrays, more cookies than children, and scenarios where no cookie is large enough to satisfy any child.\n\n3.  **Optimization:**\n    While the algorithmic complexity is optimal, you can slightly improve readability and performance in Python by iterating directly over the `cookie` array using a `for` loop. This avoids manual index management for the cookie pointer.\n\n4.  **Key Algorithmic Pattern:**\n    **Greedy Algorithm** combined with **Two Pointers**. By sorting, we ensure that we satisfy the least greedy children with the smallest possible effective cookies, maximizing the total count.",
@@ -217,64 +219,6 @@
       "_aiProvider": "gemini",
       "_aiModel": "gemini-3-flash-preview",
       "pattern": "Interval Overlap"
-    },
-    {
-      "id": "gfg-bheem-wants-ladoos102404",
-      "platform": "geeksforgeeks",
-      "title": "Bheem Wants Ladoos",
-      "titleSlug": "bheem-wants-ladoos102404",
-      "difficulty": "Medium",
-      "lang": {
-        "name": "Unknown",
-        "ext": "txt",
-        "slug": "unknown"
-      },
-      "tags": [
-        "Tree"
-      ],
-      "topic": "Untagged",
-      "code": "",
-      "files": [],
-      "timestamp": 1782298700927,
-      "runtime": null,
-      "memory": null,
-      "problemStatement": "<p><span>Given the root of a binary tree, a <strong>target </strong>node value, and an integer <strong>k</strong>, return the <strong>sum </strong>of all nodes that are within a distance of <strong>k</strong> from the target node.</span></p>\n<p><span>The distance between two nodes is defined as the number of edges in the shortest path connecting them.</span></p>\n<p><span>The target node itself should also be included in the sum.</span></p>\n<p><strong><span>Examples:</span></strong></p>\n<pre><strong><span>Input:</span> </strong><span><span>K = 1,</span> </span><span>target = 3, root[] = [1, 2, 3, 4, N, 5, 7, 8, 19, N, N, 20, 11, 30, N, 40, 50]\n\n           <br />          <img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/928012/Web/Other/blobid1_1778239612.png\" width=\"300\" height=\"250\" /></span>\n<span><strong>Output: </strong>16</span>\n<span><strong>Explanation: </strong>Nodes within distance 1 from 3 are : 1, 5, 7, and 3 itself. So, 1 + 5 + 7 + 3 = 16.</span></pre>\n<pre><strong><span>Input:</span></strong><span> k = 2, target = 40, root[] = [1, 2, 3, 4, N, 5, 7, 8, 19, N, N, 20, 11, 30, N, 40, 50]<br />           <br />          <img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/928012/Web/Other/blobid2_1778239853.png\" width=\"300\" height=\"250\" /></span><span>\n<strong>Output: </strong>113</span>\n<span><strong>Explanation: </strong>Nodes within distance 2 from 40 are: 4, 19, 50, and 40 itself. So, 4 + 19 + 50 + 40 = 113\n</span></pre>\n<p><span><strong>Constraints:</strong><br />1 &le; n &le; 10<sup>3</sup>, where n is the number of nodes.<br />1 &le; data in nodes, target &le; 10<sup>5</sup><br />1 &le; k &le; 20<br /></span><span>All the values in the tree are unique.<br /></span><span>target is the value of a node that exists in the tree.</span></p>",
-      "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-bheem-wants-ladoos102404/README.md"
-      ],
-      "notes": "",
-      "methods": [],
-      "manuallyEdited": false
-    },
-    {
-      "id": "gfg-burger-shop102404",
-      "platform": "geeksforgeeks",
-      "title": "Burger Shop",
-      "titleSlug": "burger-shop102404",
-      "difficulty": "Medium",
-      "lang": {
-        "name": "Unknown",
-        "ext": "txt",
-        "slug": "unknown"
-      },
-      "tags": [],
-      "topic": "Untagged",
-      "code": "",
-      "files": [],
-      "timestamp": 1782298700927,
-      "runtime": null,
-      "memory": null,
-      "problemStatement": null,
-      "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-burger-shop102404/README.md"
-      ],
-      "notes": "",
-      "methods": [],
-      "manuallyEdited": false
     },
     {
       "id": "gfg-buy-stock-2",
@@ -634,6 +578,52 @@
       ]
     },
     {
+      "platform": "geeksforgeeks",
+      "id": "gfg-geeks-island--170646",
+      "title": "Towers Reaching Both Stations",
+      "titleSlug": "geeks-island--170646",
+      "difficulty": "Medium",
+      "topic": "Breadth-First Search",
+      "tags": [
+        "Depth-First Search",
+        "Matrix",
+        "Breadth-First Search",
+        "Array",
+        "Graph",
+        "Hash Table"
+      ],
+      "canonical": null,
+      "readmeContent": "# Towers Reaching Both Stations\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Medium\n\n**Tags:** `DFS`, `Matrix`\n\n## Problem\n\nMy SubmissionsRefresh Time (IST)StatusMarksLangTest CasesCode2026-06-24 07:51:20Correct8python31112 / 1112View⏳...\n\n**Source:** https://www.geeksforgeeks.org/problems/geeks-island--170646/",
+      "code": "from collections import deque\nclass Solution:\n    def countCoordinates(self, mat):\n        n, m = len(mat), len(mat[0])\n        p, a = set(), set()\n        pq, aq = deque(), deque()\n        for r in range(n):\n            pq.append((r, 0)); p.add((r, 0))\n            aq.append((r, m-1)); a.add((r, m-1))\n        for c in range(m):\n            pq.append((0, c)); p.add((0, c))\n            aq.append((n-1, c)); a.add((n-1, c))\n        while pq:\n            r, c = pq.popleft()\n            for nr, nc in [(r-1, c), (r+1, c), (r, c-1), (r, c+1)]:\n                if 0 <= nr < n and 0 <= nc < m and (nr, nc) not in p and mat[nr][nc] >= mat[r][c]:\n                    p.add((nr, nc)); pq.append((nr, nc))\n        while aq:\n            r, c = aq.popleft()\n            for nr, nc in [(r-1, c), (r+1, c), (r, c-1), (r, c+1)]:\n                if 0 <= nr < n and 0 <= nc < m and (nr, nc) not in a and mat[nr][nc] >= mat[r][c]:\n                    a.add((nr, nc)); aq.append((nr, nc))\n        return len(p & a)",
+      "files": [
+        {
+          "path": "problems/gfg-geeks-island-170646/gfg-geeks-island-170646.py",
+          "content": "from collections import deque\nclass Solution:\n    def countCoordinates(self, mat):\n        n, m = len(mat), len(mat[0])\n        p, a = set(), set()\n        pq, aq = deque(), deque()\n        for r in range(n):\n            pq.append((r, 0)); p.add((r, 0))\n            aq.append((r, m-1)); a.add((r, m-1))\n        for c in range(m):\n            pq.append((0, c)); p.add((0, c))\n            aq.append((n-1, c)); a.add((n-1, c))\n        while pq:\n            r, c = pq.popleft()\n            for nr, nc in [(r-1, c), (r+1, c), (r, c-1), (r, c+1)]:\n                if 0 <= nr < n and 0 <= nc < m and (nr, nc) not in p and mat[nr][nc] >= mat[r][c]:\n                    p.add((nr, nc)); pq.append((nr, nc))\n        while aq:\n            r, c = aq.popleft()\n            for nr, nc in [(r-1, c), (r+1, c), (r, c-1), (r, c+1)]:\n                if 0 <= nr < n and 0 <= nc < m and (nr, nc) not in a and mat[nr][nc] >= mat[r][c]:\n                    a.add((nr, nc)); aq.append((nr, nc))\n        return len(p & a)"
+        },
+        {
+          "path": "problems/gfg-geeks-island-170646/README.md",
+          "content": "# Towers Reaching Both Stations\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Medium\n\n**Tags:** `DFS`, `Matrix`\n\n## Problem\n\nMy SubmissionsRefresh Time (IST)StatusMarksLangTest CasesCode2026-06-24 07:51:20Correct8python31112 / 1112View⏳...\n\n**Source:** https://www.geeksforgeeks.org/problems/geeks-island--170646/"
+        }
+      ],
+      "lang": {
+        "name": "python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "runtime": null,
+      "memory": null,
+      "timestamp": 1782267680000,
+      "elapsedSeconds": 0,
+      "_requestAIReview": true,
+      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(N \\times M)$, where $N$ and $M$ are matrix dimensions. Each cell is visited at most once per BFS traversal.\n*   **Space Complexity:** $O(N \\times M)$ to store the sets (`p`, `a`) and the BFS queues.\n\n**2. Correctness**\nThe solution is correct. It successfully implements the logic for finding cells that can \"flow\" to two different boundaries (Top/Left and Bottom/Right) by reversing the problem: starting from the boundaries and moving to cells of equal or greater height. It correctly handles edge cases like $1 \\times 1$ or $1 \\times N$ matrices.\n\n**3. Concrete Optimisation**\nReplace the `set` of tuples with a **2D boolean array** (e.g., `visited = [[False]*m for _ in range(n)]`). Hashing tuples and managing set resizing is significantly slower than direct indexing in a pre-allocated list of lists. Additionally, refactor the BFS logic into a helper function to reduce code duplication.\n\n**4. Key Algorithmic Pattern**\n**Multi-source Breadth-First Search (BFS)** starting from the boundaries.",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview",
+      "pattern": "Multi-source BFS",
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
       "id": "gfg-height-of-binary-tree",
       "platform": "geeksforgeeks",
       "title": "Height Of Binary Tree",
@@ -722,6 +712,7 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
+        "problems/gfg-intersection-point-in-y-shapped-linked-lists/gfg-intersection-point-in-y-shapped-linked-lists.py",
         "problems/gfg-intersection-point-in-y-shapped-linked-lists/README.md"
       ],
       "aiReview": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O(N + M)$ in the corrected version; currently, it can result in an infinite loop if lengths differ.\n*   **Space Complexity:** $O(1)$ as only two pointers are used.\n\n**2. Correctness**\nThe code is **incorrect**.\n*   **Logic Error:** When `temp1` reaches the end, it resets to `head1` instead of `head2`. To synchronize the distance traveled, a pointer must switch to the **opposite** list's head.\n*   **Edge Case:** If the lists have different lengths and an intersection exists, the current logic will never align the pointers, causing an infinite loop.\n*   **Termination:** It does not handle cases where no intersection exists (it should eventually return `None`).\n\n**3. Optimization**\nApply the **Two-Pointer Switching Technique**: When `temp1` reaches `None`, reassign it to `head2`. When `temp2` reaches `None`, reassign it to `head1`. They will meet at the intersection node or `None` in exactly $N+M$ steps.\n\n**4. Key Algorithmic Pattern**\nTwo Pointers (specifically the \"Length Synchronization\" variant).",
@@ -1074,15 +1065,15 @@
       "titleSlug": "merge-two-sorted-linked-lists",
       "difficulty": "Medium",
       "lang": {
-        "name": "Unknown",
-        "ext": "txt",
-        "slug": "unknown"
+        "name": "python3",
+        "ext": "py",
+        "slug": "python3"
       },
       "tags": [
         "Linked List"
       ],
       "topic": "Untagged",
-      "code": "",
+      "code": "'''\nclass Node:\n    def __init__(self, data): \n        self.data = data\n        self.next = None\n\n'''\nclass Solution:\n    def sortedMerge(self, head1, head2):\n        dummy = Node(0)\n        tail = dummy\n        \n        while head1 and head2:\n            if head1.data > head2.data:\n                tail.next = head2\n                head2 = head2.next\n            else:\n                tail.next = head1\n                head1 = head1.next\n            \n            tail = tail.next\n            \n        if head1:\n            tail.next = head1\n        if head2:\n            tail.next = head2\n        \n        return dummy.next\n                ",
       "files": [],
       "timestamp": 1782298700927,
       "runtime": null,
@@ -1104,15 +1095,15 @@
       "titleSlug": "minimum-element-in-a-sorted-and-rotated-array3611",
       "difficulty": "Easy",
       "lang": {
-        "name": "Unknown",
-        "ext": "txt",
-        "slug": "unknown"
+        "name": "python3",
+        "ext": "py",
+        "slug": "python3"
       },
       "tags": [
         "Searching"
       ],
       "topic": "Untagged",
-      "code": "",
+      "code": "class Solution:\n    def findMin(self, arr):\n        l, r = 0, len(arr)-1\n        \n        while l < r:\n            mid = (l + r) // 2\n            if arr[mid] > arr[r]:\n                l = mid + 1\n            else:\n                r = mid\n        \n        return arr[l]",
       "files": [],
       "timestamp": 1782298700927,
       "runtime": null,
@@ -1134,9 +1125,9 @@
       "titleSlug": "minimum-platforms-1587115620",
       "difficulty": "Medium",
       "lang": {
-        "name": "Unknown",
-        "ext": "txt",
-        "slug": "unknown"
+        "name": "python3",
+        "ext": "py",
+        "slug": "python3"
       },
       "tags": [
         "Array",
@@ -1145,7 +1136,7 @@
         "Binary Search"
       ],
       "topic": "Untagged",
-      "code": "",
+      "code": "import heapq\nclass Solution:    \n    def minPlatform(self, arr, dep):\n        sor_i = sorted(range(len(arr)), key=lambda i: arr[i])\n        dep[:] = [dep[i] for i in sor_i]\n        arr[:] = [arr[i] for i in sor_i]\n        \n        platforms = [dep[0]]\n        heapq.heapify(platforms)\n        \n        for i in range(1,len(arr)):\n            if arr[i] > platforms[0]:\n                heapq.heappop(platforms)\n            heapq.heappush(platforms, dep[i])\n        return len(platforms)    ",
       "files": [],
       "timestamp": 1782298700927,
       "runtime": null,
@@ -1167,15 +1158,15 @@
       "titleSlug": "mirror-tree",
       "difficulty": "Easy",
       "lang": {
-        "name": "Unknown",
-        "ext": "txt",
-        "slug": "unknown"
+        "name": "python3",
+        "ext": "py",
+        "slug": "python3"
       },
       "tags": [
         "Tree"
       ],
       "topic": "Untagged",
-      "code": "",
+      "code": "from collections import deque\n'''\nclass Node:\n    def _init_(self, val):\n        self.data = val\n        self.right = None\n        self.left = None\n'''\n\nclass Solution:\n    def mirror(self, root):\n        if root is None:\n            return\n\n        root.left, root.right = root.right, root.left\n        \n        self.mirror(root.left)\n        self.mirror(root.right)",
       "files": [],
       "timestamp": 1782298700927,
       "runtime": null,
@@ -1197,9 +1188,9 @@
       "titleSlug": "missing-number-in-array1416",
       "difficulty": "Easy",
       "lang": {
-        "name": "Unknown",
-        "ext": "txt",
-        "slug": "unknown"
+        "name": "python3",
+        "ext": "py",
+        "slug": "python3"
       },
       "tags": [
         "Array",
@@ -1207,7 +1198,7 @@
         "Bit Manipulation"
       ],
       "topic": "Untagged",
-      "code": "",
+      "code": "#User function Template for python3\nclass Solution:\n    \n    # Note that the size of the array is n-1\n    def missingNumber(self, n, arr):\n        \n        sum1 = sum(arr)\n        expected = (n)*(n+1)/2\n        \n        return int(expected - sum1)\n\n",
       "files": [],
       "timestamp": 1782298700927,
       "runtime": null,
@@ -1229,9 +1220,9 @@
       "titleSlug": "nearly-sorted-1587115620",
       "difficulty": "Medium",
       "lang": {
-        "name": "Unknown",
-        "ext": "txt",
-        "slug": "unknown"
+        "name": "python3",
+        "ext": "py",
+        "slug": "python3"
       },
       "tags": [
         "Sorting",
@@ -1239,7 +1230,7 @@
         "Heap (Priority Queue)"
       ],
       "topic": "Untagged",
-      "code": "",
+      "code": "from heapq import heapify, heappush, heappop\n\nclass Solution:\n    def nearlySorted(self, arr, k):  \n        heap = arr[:k]\n        heapify(heap)\n        index = 0\n        for i in range(k,len(arr)):\n            heappush(heap,arr[i])\n            arr[index] = heappop(heap)\n            index += 1\n        \n        for j in range(k):\n            arr[index] = heappop(heap)\n            index += 1\n            \n        return arr",
       "files": [],
       "timestamp": 1782298700927,
       "runtime": null,
@@ -1261,16 +1252,16 @@
       "titleSlug": "non-repeating-character-1587115620",
       "difficulty": "Easy",
       "lang": {
-        "name": "Unknown",
-        "ext": "txt",
-        "slug": "unknown"
+        "name": "python3",
+        "ext": "py",
+        "slug": "python3"
       },
       "tags": [
         "Hash Table",
         "String"
       ],
       "topic": "Untagged",
-      "code": "",
+      "code": "class Solution:\n    def nonRepeatingChar(self,s):\n        # dic = {char : 0 for char in 'abcdefghijklmnopqrstuvwxyz'}\n        \n        # for char in s:\n        #     dic[char] += 1\n            \n        # result = [k for k, v in dic.items() if v == 1]\n        # # print(result)\n        \n        # if len(result) == 0:\n        #     return '$'\n        \n        # if len(result) == 1: \n        #     return result[0]\n        \n        # for char in s:\n        #     if char in result:\n        #         return char\n        \n        dic = {}\n        for char in s:\n            dic[char] = dic.get(char, 0) + 1\n        \n        for char in s:\n            if dic[char] == 1:\n                return char\n        return '$'",
       "files": [],
       "timestamp": 1782298700927,
       "runtime": null,
@@ -1292,15 +1283,15 @@
       "titleSlug": "number-of-coins1824",
       "difficulty": "Medium",
       "lang": {
-        "name": "Unknown",
-        "ext": "txt",
-        "slug": "unknown"
+        "name": "python3",
+        "ext": "py",
+        "slug": "python3"
       },
       "tags": [
         "Dynamic Programming"
       ],
       "topic": "Untagged",
-      "code": "",
+      "code": "class Solution:\n    def minCoins(self, coins, sum):\n        coins.sort()\n        dp = [0] * (sum + 1)\n        \n        for i in range(1, sum+1):\n            dp[i] = float('inf')\n            \n            for coin in coins:\n                diff = i  - coin\n                if diff < 0:\n                    break\n                dp[i] = min(dp[i], dp[diff] + 1)\n        \n        if dp[sum] != float('inf'):\n            return dp[sum]\n        return -1",
       "files": [],
       "timestamp": 1782298700927,
       "runtime": null,
@@ -1322,15 +1313,15 @@
       "titleSlug": "number-of-paths0926",
       "difficulty": "Medium",
       "lang": {
-        "name": "Unknown",
-        "ext": "txt",
-        "slug": "unknown"
+        "name": "python3",
+        "ext": "py",
+        "slug": "python3"
       },
       "tags": [
         "Dynamic Programming"
       ],
       "topic": "Untagged",
-      "code": "",
+      "code": "class Solution:\n    def numberOfPaths(self, m, n):\n        dp = []\n        for _ in range(m):\n            dp.append([1]*n)\n        \n        for i in range(1, m):\n            for j in range(1, n):\n                dp[i][j] = dp[i-1][j] + dp[i][j-1]\n        return dp[m-1][n-1]",
       "files": [],
       "timestamp": 1782298700927,
       "runtime": null,
@@ -1344,62 +1335,6 @@
       "_committedPaths": [
         "problems/gfg-number-of-paths0926/README.md"
       ]
-    },
-    {
-      "id": "gfg-number-of-students-unable-to-eat-lunch102404",
-      "platform": "geeksforgeeks",
-      "title": "Number Of Students Unable To Eat Lunch",
-      "titleSlug": "number-of-students-unable-to-eat-lunch102404",
-      "difficulty": "Medium",
-      "lang": {
-        "name": "Unknown",
-        "ext": "txt",
-        "slug": "unknown"
-      },
-      "tags": [],
-      "topic": "Untagged",
-      "code": "",
-      "files": [],
-      "timestamp": 1782298700927,
-      "runtime": null,
-      "memory": null,
-      "problemStatement": null,
-      "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-number-of-students-unable-to-eat-lunch102404/README.md"
-      ],
-      "notes": "",
-      "methods": [],
-      "manuallyEdited": false
-    },
-    {
-      "id": "gfg-overlapping-intervals170633",
-      "platform": "geeksforgeeks",
-      "title": "Overlapping Intervals",
-      "titleSlug": "overlapping-intervals170633",
-      "difficulty": "Medium",
-      "lang": {
-        "name": "Unknown",
-        "ext": "txt",
-        "slug": "unknown"
-      },
-      "tags": [],
-      "topic": "Untagged",
-      "code": "",
-      "files": [],
-      "timestamp": 1782298700927,
-      "runtime": null,
-      "memory": null,
-      "problemStatement": null,
-      "_importedFromProfile": true,
-      "_needsCodeFetch": true,
-      "_committedPaths": [
-        "problems/gfg-overlapping-intervals170633/README.md"
-      ],
-      "notes": "",
-      "methods": [],
-      "manuallyEdited": false
     },
     {
       "id": "gfg-pacific-atlantic-water-flow",
@@ -1464,9 +1399,9 @@
       "titleSlug": "parenthesis-checker2744",
       "difficulty": "Easy",
       "lang": {
-        "name": "Unknown",
-        "ext": "txt",
-        "slug": "unknown"
+        "name": "python3",
+        "ext": "py",
+        "slug": "python3"
       },
       "tags": [
         "String",
@@ -1474,7 +1409,7 @@
         "Stl"
       ],
       "topic": "Untagged",
-      "code": "",
+      "code": "class Solution:\n    def isBalanced(self, s):\n        stack = []\n        dic = {']':'[', '}':'{', ')':'('}\n        ope = 0\n        clo = 0\n        for char in s:\n            if char in dic.values():\n                ope += 1\n                stack.append(char)\n            if char in dic.keys():\n                clo += 1\n                if stack and dic[char] == stack[-1]:\n                    stack.pop()\n        if ope != clo or stack:\n            return False\n        return True",
       "files": [],
       "timestamp": 1782298700927,
       "runtime": null,
@@ -1524,16 +1459,16 @@
       "titleSlug": "product-array-puzzle4525",
       "difficulty": "Easy",
       "lang": {
-        "name": "Unknown",
-        "ext": "txt",
-        "slug": "unknown"
+        "name": "python3",
+        "ext": "py",
+        "slug": "python3"
       },
       "tags": [
         "Array",
         "Prefix Sum"
       ],
       "topic": "Untagged",
-      "code": "",
+      "code": "class Solution:\n    def productExceptSelf(self, arr):\n        ans = []\n        prod = 1\n        zero = 0\n        for i in range(len(arr)):\n            if arr[i] != 0:\n                prod *= arr[i]\n            else:\n                zero += 1\n                \n        for i in range(len(arr)):\n            if zero > 1:\n                return [0]* len(arr)\n            elif arr[i] == 0 and zero == 1:\n                ans.append(prod)\n            elif arr[i] != 0 and zero == 1:\n                ans.append(0)\n            elif zero == 0:\n                ans.append(prod//arr[i])\n                \n        # print(ans)\n        return ans",
       "files": [],
       "timestamp": 1782298700927,
       "runtime": null,
@@ -8466,7 +8401,11 @@
       "pattern": "None",
       "methods": [],
       "manuallyEdited": false,
-      "_conflictResolvedAt": 1787069234246
+      "_conflictResolvedAt": 1787069234246,
+      "_committedPaths": [
+        "problems/lc-house-robber-v/lc-house-robber-v.py",
+        "problems/lc-house-robber-v/README.md"
+      ]
     },
     {
       "id": "lc-house-robber::1974558813",

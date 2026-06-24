@@ -505,6 +505,34 @@
       "Bit Manipulation"
     ]
   },
+  "geeksforgeeks::geeks-island--170646": {
+    "aiInsights": [
+      {
+        "summary": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(N \\times M)$, where $N$ and $M$ are matrix dimensions. Each cell is visited at most once per BFS traversal.\n*   **Space Complexity:** $O(N \\",
+        "ts": 1787069660053,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "difficulty": "Medium",
+    "lang": "python3",
+    "platform": "geeksforgeeks",
+    "slug": "geeks-island--170646",
+    "solves": [
+      {
+        "elapsedSeconds": 0,
+        "lang": "python3",
+        "ts": 1787069653509
+      }
+    ],
+    "tags": [
+      "Depth-First Search",
+      "Matrix"
+    ]
+  },
   "geeksforgeeks::height-of-binary-tree": {
     "difficulty": "Easy",
     "lang": {
