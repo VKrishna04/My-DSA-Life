@@ -21,7 +21,7 @@
   "gemini_enabled": true,
   "gitProvider": "github",
   "github_owner": "VKrishna04",
-  "github_pages_url": "http://vkrishna04.me/My-DSA-Life/",
+  "github_pages_url": "http://dsa.vkrishna04.me/",
   "github_repo": "My-DSA-Life",
   "github_username": "VKrishna04",
   "leetcode_submission_poll": true,
@@ -69,5 +69,5 @@
     "timeCustomEnd": "18:00",
     "timeCustomStart": "06:00"
   },
-  "__syncedAt": "2026-08-19T13:53:10.789Z"
+  "__syncedAt": "2026-08-19T13:58:10.813Z"
 }
