@@ -20,6 +20,21 @@
     "platform": "geeksforgeeks",
     "slug": "compare-two-fractions4438"
   },
+  "geeksforgeeks::kth-smallest-element5635": {
+    "aiInsights": [
+      {
+        "summary": "**1. Complexity**\n*   **Time Complexity:** $O(N \\log N)$ due to the built-in `sort()` function (Timsort).\n*   **Space Complexity:** $O(N)$ in Python, as Timsort requires auxiliary space for merging.\n\n",
+        "ts": 1782270755147,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      }
+    ],
+    "platform": "geeksforgeeks",
+    "slug": "kth-smallest-element5635"
+  },
   "geeksforgeeks::ladoo-problem2929": {
     "aiInsights": [
       {

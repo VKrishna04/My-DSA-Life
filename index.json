@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026-06-24T03:02:10.279Z",
+  "updatedAt": "2026-06-24T03:12:35.187Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 264,
+    "total": 265,
     "easy": 161,
-    "medium": 93,
+    "medium": 94,
     "hard": 10,
     "byPlatform": {
-      "geeksforgeeks": 4,
+      "geeksforgeeks": 5,
       "leetcode": 260
     },
     "byLang": {
-      "Python3": 198,
+      "Python3": 199,
       "MySQL": 15,
       "Java": 12,
       "Python": 16,
@@ -23,9 +23,9 @@
     },
     "byTopic": {
       "String Parsing": 1,
+      "Arrays": 2,
       "Hashing": 1,
       "Breadth-First Search": 1,
-      "Arrays": 1,
       "Array": 125,
       "Math": 25,
       "Linked List": 3,
@@ -98,6 +98,51 @@
       "aiReview": "### Analysis\n\n1. **Complexity**\n   * **Time Complexity:** $O(N)$, where $N$ is the length of the input string. Splitting the string and parsing integers both take linear time.\n   * **Space Complexity:** $O(N)$ to store the split substrings and integer values.\n\n2. **Correctness**\n   The solution uses **floating-point division**, which is risky. For very large numerators/denominators or fractions that are nearly identical (e.g., differing at the 16th decimal place), precision errors can lead to incorrect comparisons. \n\n3. **Optimization**\n   Use **cross-multiplication** to compare fractions using integers only, avoiding precision issues. \n   Instead of `f1_num / f1_den > f2_num / f2_den`, compare `f1_num * f2_den > f2_num * f1_den`. This is mathematically equivalent ($a/b > c/d \\iff ad > bc$) and 100% accurate for integers.\n\n4. **Key Algorithmic Pattern**\n   **String Parsing** and **Basic Arithmetic**. The problem focuses on extracting numerical data from a formatted string and applying comparative logic.",
       "_aiProvider": "gemini",
       "_aiModel": "gemini-3-flash-preview"
+    },
+    {
+      "id": "gfg-kth-smallest-element5635",
+      "forceCommit": false,
+      "title": "Kth Smallest",
+      "titleSlug": "kth-smallest-element5635",
+      "difficulty": "Medium",
+      "topic": "Sorting",
+      "tags": [
+        "Arrays",
+        "Searching",
+        "Sorting",
+        "Data Structures",
+        "Algorithms"
+      ],
+      "canonical": null,
+      "readmeContent": "# Kth Smallest\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Medium\n\n**Tags:** `Arrays`, `Searching`, `Sorting`, `Data Structures`, `Algorithms`\n\n## Problem\n\nGiven an integer array arr[] and an integer&nbsp;k, find and return the kth smallest element in the given array.Note: The kth smallest element is determined based on the sorted order of the array.\nExamples :\nInput: arr[] = [10, 5, 4, 3, 48, 6, 2, 33, 53, 10], k = 4Output: 5\nExplanation: 4th smallest element in the given array is 5.\nInput: arr[] = [7, 10, 4, 3, 20, 15], k = 3Output: 7\nExplanation: 3rd smallest element in the given array is 7.\nConstraints:1&nbsp;≤ arr.size() ≤ 1051 ≤&nbsp;arr[i]&nbsp;≤ 1051&nbsp;≤&nbsp;k&nbsp;≤&nbsp;&nbsp;arr.size()&nbsp;\n\n**Source:** https://www.geeksforgeeks.org/problems/kth-smallest-element5635/",
+      "code": "class Solution:\n    def kthSmallest(self, arr, k):\n        arr.sort()\n        return arr[k-1]\n",
+      "files": [
+        {
+          "path": "problems/gfg-kth-smallest-element5635/gfg-kth-smallest-element5635.py",
+          "content": "class Solution:\n    def kthSmallest(self, arr, k):\n        arr.sort()\n        return arr[k-1]\n"
+        },
+        {
+          "path": "problems/gfg-kth-smallest-element5635/README.md",
+          "content": "# Kth Smallest\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Medium\n\n**Tags:** `Arrays`, `Searching`, `Sorting`, `Data Structures`, `Algorithms`\n\n## Problem\n\nGiven an integer array arr[] and an integer&nbsp;k, find and return the kth smallest element in the given array.Note: The kth smallest element is determined based on the sorted order of the array.\nExamples :\nInput: arr[] = [10, 5, 4, 3, 48, 6, 2, 33, 53, 10], k = 4Output: 5\nExplanation: 4th smallest element in the given array is 5.\nInput: arr[] = [7, 10, 4, 3, 20, 15], k = 3Output: 7\nExplanation: 3rd smallest element in the given array is 7.\nConstraints:1&nbsp;≤ arr.size() ≤ 1051 ≤&nbsp;arr[i]&nbsp;≤ 1051&nbsp;≤&nbsp;k&nbsp;≤&nbsp;&nbsp;arr.size()&nbsp;\n\n**Source:** https://www.geeksforgeeks.org/problems/kth-smallest-element5635/"
+        }
+      ],
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "runtime": null,
+      "memory": null,
+      "timestamp": 1782270750546,
+      "elapsedSeconds": null,
+      "_requestAIReview": true,
+      "platform": "geeksforgeeks",
+      "aiReview": "**1. Complexity**\n*   **Time Complexity:** $O(N \\log N)$ due to the built-in `sort()` function (Timsort).\n*   **Space Complexity:** $O(N)$ in Python, as Timsort requires auxiliary space for merging.\n\n**2. Correctness**\nThe solution is correct for standard inputs. It handles duplicates naturally and correctly identifies the $k$-th element using 0-based indexing (`k-1`). \n*   **Edge Case:** It assumes $1 \\leq k \\leq \\text{len}(arr)$. If $k$ is out of bounds, it will raise an `IndexError`.\n\n**3. Optimization**\nUse **Quickselect** (Median of Medians) to achieve an average time complexity of **$O(N)$**. \nAlternatively, use a **Max-Heap** of size $k$ to solve it in **$O(N \\log k)$** time and $O(k)$ space, which is more efficient when $k \\ll N$.\n\n**4. Key Algorithmic Pattern**\n**Sorting**. (Specifically, the \"Sort and Index\" pattern for selection problems).",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview",
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
     },
     {
       "id": "gfg-ladoo-problem2929",
