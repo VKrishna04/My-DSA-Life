@@ -5054,6 +5054,31 @@
       "Dynamic Programming"
     ]
   },
+  "leetcode::house-robber-v": {
+    "difficulty": "Medium",
+    "lang": {
+      "ext": "py",
+      "name": "Python3",
+      "slug": "python3"
+    },
+    "platform": "leetcode",
+    "slug": "house-robber-v",
+    "solves": [
+      {
+        "elapsedSeconds": 0,
+        "lang": {
+          "ext": "py",
+          "name": "Python3",
+          "slug": "python3"
+        },
+        "ts": 1787048419000
+      }
+    ],
+    "tags": [
+      "Array",
+      "Dynamic Programming"
+    ]
+  },
   "leetcode::intersection-of-two-arrays": {
     "aiInsights": [
       {
