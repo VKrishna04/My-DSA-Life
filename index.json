@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026-06-24T02:23:07.929Z",
+  "updatedAt": "2026-06-24T02:33:28.754Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 263,
+    "total": 264,
     "easy": 161,
-    "medium": 92,
+    "medium": 93,
     "hard": 10,
     "byPlatform": {
-      "geeksforgeeks": 3,
+      "geeksforgeeks": 4,
       "leetcode": 260
     },
     "byLang": {
-      "Python3": 197,
+      "Python3": 198,
       "MySQL": 15,
       "Java": 12,
       "Python": 16,
@@ -23,6 +23,7 @@
     },
     "byTopic": {
       "Untagged": 5,
+      "Arrays": 1,
       "Array": 125,
       "Math": 25,
       "Linked List": 3,
@@ -162,6 +163,43 @@
         "problems/gfg-pacific-atlantic-water-flow/gfg-pacific-atlantic-water-flow.py",
         "problems/gfg-pacific-atlantic-water-flow/README.md"
       ]
+    },
+    {
+      "id": "gfg-sort-an-array-of-0s-1s-and-2s4231",
+      "forceCommit": false,
+      "title": "Sort 0s, 1s and 2s",
+      "titleSlug": "sort-an-array-of-0s-1s-and-2s4231",
+      "difficulty": "Medium",
+      "topic": "Sorting",
+      "tags": [
+        "Arrays",
+        "Sorting",
+        "Data Structures",
+        "Algorithms"
+      ],
+      "canonical": null,
+      "readmeContent": "# Sort 0s, 1s and 2s\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Medium\n\n**Tags:** `Arrays`, `Sorting`, `Data Structures`, `Algorithms`\n\n## Problem\n\nGiven an array arr[] containing only 0s, 1s, and 2s. Sort the array in ascending order.Note: You need to solve this problem without utilizing the built-in sort function.\nExamples:\nInput: arr[] = [0, 1, 2, 0, 1, 2]\nOutput: [0, 0, 1, 1, 2, 2]\nExplanation: 0s, 1s and 2s are segregated into ascending order.\nInput: arr[] = [0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1]\nOutput: [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2]\nExplanation: 0s, 1s and 2s are segregated into ascending order.\nFollow up: Could you come up with a one-pass algorithm using only constant extra space?\nConstraints: 1 ≤ arr.size() ≤ 1050 ≤ arr[i] ≤ 2\n\n**Source:** https://www.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s4231/",
+      "code": "class Solution:\n    def sort012(self, arr):\n        l, m, h = 0, 0, len(arr) - 1\n        while m <= h:\n            if arr[m] == 0:\n                arr[l], arr[m] = arr[m], arr[l]\n                l += 1\n                m += 1\n            elif arr[m] == 1:\n                m += 1\n            else:\n                arr[m], arr[h] = arr[h], arr[m]\n                h -= 1",
+      "files": [
+        {
+          "path": "problems/gfg-sort-an-array-of-0s-1s-and-2s4231/gfg-sort-an-array-of-0s-1s-and-2s4231.py",
+          "content": "class Solution:\n    def sort012(self, arr):\n        l, m, h = 0, 0, len(arr) - 1\n        while m <= h:\n            if arr[m] == 0:\n                arr[l], arr[m] = arr[m], arr[l]\n                l += 1\n                m += 1\n            elif arr[m] == 1:\n                m += 1\n            else:\n                arr[m], arr[h] = arr[h], arr[m]\n                h -= 1"
+        },
+        {
+          "path": "problems/gfg-sort-an-array-of-0s-1s-and-2s4231/README.md",
+          "content": "# Sort 0s, 1s and 2s\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Medium\n\n**Tags:** `Arrays`, `Sorting`, `Data Structures`, `Algorithms`\n\n## Problem\n\nGiven an array arr[] containing only 0s, 1s, and 2s. Sort the array in ascending order.Note: You need to solve this problem without utilizing the built-in sort function.\nExamples:\nInput: arr[] = [0, 1, 2, 0, 1, 2]\nOutput: [0, 0, 1, 1, 2, 2]\nExplanation: 0s, 1s and 2s are segregated into ascending order.\nInput: arr[] = [0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1]\nOutput: [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2]\nExplanation: 0s, 1s and 2s are segregated into ascending order.\nFollow up: Could you come up with a one-pass algorithm using only constant extra space?\nConstraints: 1 ≤ arr.size() ≤ 1050 ≤ arr[i] ≤ 2\n\n**Source:** https://www.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s4231/"
+        }
+      ],
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "runtime": null,
+      "memory": null,
+      "timestamp": 1782268408408,
+      "elapsedSeconds": null,
+      "platform": "geeksforgeeks"
     },
     {
       "id": "lc-01-matrix",
