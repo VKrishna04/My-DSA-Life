@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24T14:21:59.614Z",
+  "updatedAt": "2026-06-24T18:47:49.835Z",
   "layoutVersion": 3,
   "stats": {
     "total": 315,
@@ -27,7 +27,7 @@
       "Sorting": 4,
       "Binary Search": 2,
       "Arrays": 10,
-      "Untagged": 12,
+      "Untagged": 11,
       "Greedy": 1,
       "Mathematical": 2,
       "Strings": 3,
@@ -48,7 +48,7 @@
       "Math": 25,
       "Database": 15,
       "Bit Manipulation": 2,
-      "Data Manipulation": 14,
+      "Data Manipulation": 15,
       "Hash Table": 15,
       "String": 20,
       "Depth-First Search": 3,
@@ -5651,8 +5651,12 @@
       "title": "Display the First Three Rows",
       "titleSlug": "display-the-first-three-rows",
       "difficulty": "Easy",
-      "topic": "Untagged",
-      "tags": [],
+      "topic": "Data Manipulation",
+      "tags": [
+        "Data Manipulation",
+        "Pandas",
+        "Slicing"
+      ],
       "canonical": null,
       "readmeContent": "# [2879] Display the First Three Rows\n**Difficulty:** Easy  |  **Acceptance:** 93.0%  |  **Likes:** 123 / **Dislikes:** 26\n**Tags:** —\n## Problem\nDataFrame: employees\n+-------------+--------+\n| Column Name | Type   |\n+-------------+--------+\n| employee_id | int    |\n| name        | object |\n| department  | object |\n| salary      | int    |\n+-------------+--------+\n\nWrite a solution to display the first 3 rows of this DataFrame.\n\n&nbsp;\nExample 1:\n\nInput:\nDataFrame employees\n+-------------+-----------+-----------------------+--------+\n| employee_id | name      | department            | salary |\n+-------------+-----------+-----------------------+--------+\n| 3           | Bob       | Operations            | 48675  |\n| 90          | Alice     | Sales                 | 11096  |\n| 9           | Tatiana   | Engineering           | 33805  |\n| 60          | Annabelle | InformationTechnology | 37678  |\n| 49          | Jonathan  | HumanResources        | 23793  |\n| 43          | Khaled    | Administration        | 40454  |\n+-------------+-----------+-----------------------+--------+\nOutput:\n+-------------+---------+-------------+--------+\n| employee_id | name    | department  | salary |\n+-------------+---------+-------------+--------+\n| 3           | Bob     | Operations  | 48675  |\n| 90          | Alice   | Sales       | 11096  |\n| 9           | Tatiana | Engineering | 33805  |\n+-------------+---------+-------------+--------+\nExplanation: \nOnly the first 3 rows are displayed.\n## My Submission\n\n- Runtime: 436 ms (beats 5.0%)\n- Memory: 68.9 MB (beats 11.6%)\n- Solve time: 19s\n",
       "code": "import pandas as pd\n\ndef selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:\n    return employees.head(3)",
@@ -5694,7 +5698,7 @@
         "problems/lc-display-the-first-three-rows/README.md"
       ],
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": true
     },
     {
       "id": "lc-display-the-first-three-rows::1431823293",
