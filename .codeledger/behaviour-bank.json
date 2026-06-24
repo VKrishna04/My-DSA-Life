@@ -8361,6 +8361,16 @@
     ]
   },
   "leetcode::return-length-of-arguments-passed": {
+    "aiMetadataEdits": [
+      {
+        "fields": [
+          "tags",
+          "topic",
+          "pattern"
+        ],
+        "ts": 1787108089402
+      }
+    ],
     "difficulty": "Easy",
     "lang": {
       "ext": "js",
