@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24T10:49:09.163Z",
+  "updatedAt": "2026-06-24T10:51:36.909Z",
   "layoutVersion": 3,
   "stats": {
     "total": 265,
@@ -25,7 +25,7 @@
       "String Parsing": 1,
       "Arrays": 2,
       "Hashing": 1,
-      "Breadth-First Search": 1,
+      "Graph": 1,
       "Array": 125,
       "Math": 25,
       "Linked List": 3,
@@ -199,28 +199,28 @@
     },
     {
       "id": "gfg-pacific-atlantic-water-flow",
-      "forceCommit": false,
+      "forceCommit": true,
       "title": "Pacific Atlantic Water Flow",
       "titleSlug": "pacific-atlantic-water-flow",
       "difficulty": "Hard",
       "topic": "Breadth-First Search",
       "tags": [
-        "Breadth-First Search",
-        "Graph Traversal",
-        "Set",
-        "Grid"
+        "Graph",
+        "DFS",
+        "BFS",
+        "Algorithms"
       ],
       "canonical": null,
-      "readmeContent": "# Pacific Atlantic Water Flow\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Hard\n\n## Problem\n\nYou are given a matrix mat[][] of dimensions n x m, where mat[i][j] represents the height of a cell in a rectangular grid island. The Pacific Ocean touches the island's left and top borders, and the Atlantic Ocean touches the island's right and bottom borders. Rainwater can flow from a cell to its neighbouring cells in the directions North, South, East, and West, but only if the neighbouring cell has a height less than or equal to the current cell's height.\nThe task is to determine all coordinates (x, y) such that water can flow from the cell (x, y) to both the Pacific Ocean and the Atlantic Ocean. Water can flow from any adjacent cell directly into an ocean.\nExamples:\nInput: mat[][] = [[1, 2, 2, 3, 5],                [3, 2, 3, 4, 4],                [2, 4, 5, 3, 1],                [6, 7, 1, 4, 5],                [5, 1, 1, 2, 4]]\nOutput: 7\nExplanation: In the given matrix, there are 7 coordinates through which the water can flow to both the Oceans. They are  (0, 4), (1, 3), (1, 4), (2, 2), (3, 0), (3, 1), and (4, 0).\nInput: arr[][] = [[2, 2],                [2, 2]]\nOutput: 4\nExplanation: In the following example, all cells allow water to flow to both the Oceans.\nConstraints:1 ≤ number of rows,&nbsp;number of columns&nbsp;≤ 1031 ≤ arr[i][j] ≤ 103&nbsp;\n\n**Source:** https://www.geeksforgeeks.org/problems/pacific-atlantic-water-flow/",
-      "code": "from collections import deque\nclass Solution:\n    def countCoordinates(self, mat):\n        n, m = len(mat), len(mat[0])\n        p, a = set(), set()\n        pq, aq = deque(), deque()\n        for r in range(n):\n            pq.append((r, 0)); p.add((r, 0))\n            aq.append((r, m-1)); a.add((r, m-1))\n        for c in range(m):\n            pq.append((0, c)); p.add((0, c))\n            aq.append((n-1, c)); a.add((n-1, c))\n        while pq:\n            r, c = pq.popleft()\n            for nr, nc in [(r-1, c), (r+1, c), (r, c-1), (r, c+1)]:\n                if 0 <= nr < n and 0 <= nc < m and (nr, nc) not in p and mat[nr][nc] >= mat[r][c]:\n                    p.add((nr, nc)); pq.append((nr, nc))\n        while aq:\n            r, c = aq.popleft()\n            for nr, nc in [(r-1, c), (r+1, c), (r, c-1), (r, c+1)]:\n                if 0 <= nr < n and 0 <= nc < m and (nr, nc) not in a and mat[nr][nc] >= mat[r][c]:\n                    a.add((nr, nc)); aq.append((nr, nc))\n        return len(p & a)",
+      "readmeContent": "# Pacific Atlantic Water Flow\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Hard\n\n**Tags:** `Graph`, `DFS`, `BFS`, `Algorithms`\n\n## Problem\n\n\n\n**Source:** https://www.geeksforgeeks.org/problems/pacific-atlantic-water-flow/",
+      "code": "from collections import deque\nclass Solution:\n    def countCoordinates(self, mat):\n        # code here\n        ",
       "files": [
         {
           "path": "problems/gfg-pacific-atlantic-water-flow/gfg-pacific-atlantic-water-flow.py",
-          "content": "from collections import deque\nclass Solution:\n    def countCoordinates(self, mat):\n        n, m = len(mat), len(mat[0])\n        p, a = set(), set()\n        pq, aq = deque(), deque()\n        for r in range(n):\n            pq.append((r, 0)); p.add((r, 0))\n            aq.append((r, m-1)); a.add((r, m-1))\n        for c in range(m):\n            pq.append((0, c)); p.add((0, c))\n            aq.append((n-1, c)); a.add((n-1, c))\n        while pq:\n            r, c = pq.popleft()\n            for nr, nc in [(r-1, c), (r+1, c), (r, c-1), (r, c+1)]:\n                if 0 <= nr < n and 0 <= nc < m and (nr, nc) not in p and mat[nr][nc] >= mat[r][c]:\n                    p.add((nr, nc)); pq.append((nr, nc))\n        while aq:\n            r, c = aq.popleft()\n            for nr, nc in [(r-1, c), (r+1, c), (r, c-1), (r, c+1)]:\n                if 0 <= nr < n and 0 <= nc < m and (nr, nc) not in a and mat[nr][nc] >= mat[r][c]:\n                    a.add((nr, nc)); aq.append((nr, nc))\n        return len(p & a)"
+          "content": "from collections import deque\nclass Solution:\n    def countCoordinates(self, mat):\n        # code here\n        "
         },
         {
           "path": "problems/gfg-pacific-atlantic-water-flow/README.md",
-          "content": "# Pacific Atlantic Water Flow\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Hard\n\n## Problem\n\nYou are given a matrix mat[][] of dimensions n x m, where mat[i][j] represents the height of a cell in a rectangular grid island. The Pacific Ocean touches the island's left and top borders, and the Atlantic Ocean touches the island's right and bottom borders. Rainwater can flow from a cell to its neighbouring cells in the directions North, South, East, and West, but only if the neighbouring cell has a height less than or equal to the current cell's height.\nThe task is to determine all coordinates (x, y) such that water can flow from the cell (x, y) to both the Pacific Ocean and the Atlantic Ocean. Water can flow from any adjacent cell directly into an ocean.\nExamples:\nInput: mat[][] = [[1, 2, 2, 3, 5],                [3, 2, 3, 4, 4],                [2, 4, 5, 3, 1],                [6, 7, 1, 4, 5],                [5, 1, 1, 2, 4]]\nOutput: 7\nExplanation: In the given matrix, there are 7 coordinates through which the water can flow to both the Oceans. They are  (0, 4), (1, 3), (1, 4), (2, 2), (3, 0), (3, 1), and (4, 0).\nInput: arr[][] = [[2, 2],                [2, 2]]\nOutput: 4\nExplanation: In the following example, all cells allow water to flow to both the Oceans.\nConstraints:1 ≤ number of rows,&nbsp;number of columns&nbsp;≤ 1031 ≤ arr[i][j] ≤ 103&nbsp;\n\n**Source:** https://www.geeksforgeeks.org/problems/pacific-atlantic-water-flow/"
+          "content": "# Pacific Atlantic Water Flow\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Hard\n\n**Tags:** `Graph`, `DFS`, `BFS`, `Algorithms`\n\n## Problem\n\n\n\n**Source:** https://www.geeksforgeeks.org/problems/pacific-atlantic-water-flow/"
         }
       ],
       "lang": {
@@ -230,8 +230,8 @@
       },
       "runtime": null,
       "memory": null,
-      "timestamp": 1782267687887,
-      "elapsedSeconds": null,
+      "timestamp": 1782267680000,
+      "elapsedSeconds": 0,
       "platform": "geeksforgeeks",
       "_committedPaths": [
         "problems/gfg-pacific-atlantic-water-flow/gfg-pacific-atlantic-water-flow.py",
@@ -241,8 +241,18 @@
       "_aiProvider": "gemini",
       "_aiModel": "gemini-2.5-flash",
       "notes": "",
-      "methods": [],
-      "manuallyEdited": false
+      "methods": [
+        {
+          "title": "Approach 1 (python3)",
+          "language": "python3",
+          "code": "from collections import deque\nclass Solution:\n    def countCoordinates(self, mat):\n        n, m = len(mat), len(mat[0])\n        p, a = set(), set()\n        pq, aq = deque(), deque()\n        for r in range(n):\n            pq.append((r, 0)); p.add((r, 0))\n            aq.append((r, m-1)); a.add((r, m-1))\n        for c in range(m):\n            pq.append((0, c)); p.add((0, c))\n            aq.append((n-1, c)); a.add((n-1, c))\n        while pq:\n            r, c = pq.popleft()\n            for nr, nc in [(r-1, c), (r+1, c), (r, c-1), (r, c+1)]:\n                if 0 <= nr < n and 0 <= nc < m and (nr, nc) not in p and mat[nr][nc] >= mat[r][c]:\n                    p.add((nr, nc)); pq.append((nr, nc))\n        while aq:\n            r, c = aq.popleft()\n            for nr, nc in [(r-1, c), (r+1, c), (r, c-1), (r, c+1)]:\n                if 0 <= nr < n and 0 <= nc < m and (nr, nc) not in a and mat[nr][nc] >= mat[r][c]:\n                    a.add((nr, nc)); aq.append((nr, nc))\n        return len(p & a)",
+          "description": "Synced from submissions table — 2026-06-24 07:51:20",
+          "timestamp": 1782267680000
+        }
+      ],
+      "manuallyEdited": false,
+      "problemStatement": "<p><span style=\"font-size: 18px;\">You are given a matrix <strong>mat[][]</strong> of dimensions <strong>n x m</strong>, where mat[i][j] represents the <strong>height of a cell</strong> in a rectangular grid island. The <strong>Pacific Ocean</strong> touches the island's <strong>left and top</strong> borders, and the <strong>Atlantic Ocean</strong> touches the island's <strong>right and bottom</strong> borders. Rainwater can flow from a cell to its neighbouring cells in the directions North, South, East, and West, but only if the <strong>neighbouring cell has a height less than or equal to the current cell's height</strong>.</span></p>\n<p><span style=\"font-size: 18px;\">The task is to determine <strong>all coordinates (x, y)</strong> such that water can flow from the cell (x, y) to <strong>both</strong> the Pacific Ocean and the Atlantic Ocean. Water can flow from any adjacent cell directly into an ocean.</span></p>\n<p><span style=\"font-size: 18px;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>mat[][] = [[1, 2, 2, 3, 5],<br>                [3, 2, 3, 4, 4],<br>                [2, 4, 5, 3, 1],<br>                [6, 7, 1, 4, 5],<br>                [5, 1, 1, 2, 4]]\n<strong>Output:</strong> 7\n<strong>Explanation:</strong> </span><span style=\"font-size: 18px;\">In the given matrix, there are 7 coordinates through which the water can flow to both the Oceans</span>. They are  (0, 4), (1, 3), (1, 4), (2, 2), (3, 0), (3, 1), and (4, 0).</pre>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>arr[][] = [[2, 2], <br>               [2, 2]]\n<strong>Output:</strong> 4\n<strong>Explanation:</strong> </span><span style=\"font-size: 18px;\">In the following example, all cells allow water to flow to both the Oceans.</span></pre>\n<p><span style=\"font-size: 18px;\"><strong>Constraints:</strong><br>1 ≤ number of rows,&nbsp;</span><span style=\"font-size: 18px;\">number of columns</span><span style=\"font-size: 18px;\">&nbsp;≤ 10</span><sup>3<br></sup><span style=\"font-size: 18px;\">1 ≤ arr[i][j] ≤ 10<sup>3</sup>&nbsp;</span></p>",
+      "_requestAIReview": false
     },
     {
       "id": "gfg-sort-an-array-of-0s-1s-and-2s4231",
