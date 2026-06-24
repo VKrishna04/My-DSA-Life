@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="420" height="200" role="img" aria-label="VKrishna04&apos;s ledger: 0 day streak, 5235 points">
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="200" role="img" aria-label="VKrishna04&apos;s ledger: 1 day streak, 5235 points">
   <title>VKrishna04&apos;s ledger</title>
   <style>
     .bar,.n{transform-box:fill-box}
@@ -28,7 +28,7 @@
   <text x="396" y="36" fill="#64748b" font-size="12" text-anchor="end" font-family="Segoe UI,Helvetica,Arial,sans-serif">Lv 6 · Architect</text>
   <g font-family="Segoe UI,Helvetica,Arial,sans-serif">
 
-    <text class="n n1" x="80" y="86" fill="#f97316" font-size="34" font-weight="700" text-anchor="middle">0</text>
+    <text class="n n1" x="80" y="86" fill="#f97316" font-size="34" font-weight="700" text-anchor="middle">1</text>
     <text x="80" y="108" fill="#94a3b8" font-size="12" text-anchor="middle">day streak</text>
 
     <text class="n n2" x="210" y="86" fill="#8b5cf6" font-size="34" font-weight="700" text-anchor="middle">5.2k</text>

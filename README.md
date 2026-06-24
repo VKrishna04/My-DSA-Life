@@ -1,10 +1,10 @@
 <!-- codeledger:gamification:start -->
 <picture>
-  <source media="(prefers-color-scheme: light)" srcset="http://dsa.vkrishna04.me/badges/card-light.svg?v=5235-0-305-2026-08-23">
-  <img src="http://dsa.vkrishna04.me/badges/card.svg?v=5235-0-305-2026-08-23" alt="Streak card" width="420">
+  <source media="(prefers-color-scheme: light)" srcset="http://dsa.vkrishna04.me/badges/card-light.svg?v=5235-1-305-2026-08-23">
+  <img src="http://dsa.vkrishna04.me/badges/card.svg?v=5235-1-305-2026-08-23" alt="Streak card" width="420">
 </picture>
 
-![Streak](http://dsa.vkrishna04.me/badges/streak.svg?v=5235-0-305-2026-08-23) ![Points](http://dsa.vkrishna04.me/badges/points.svg?v=5235-0-305-2026-08-23) ![Level](http://dsa.vkrishna04.me/badges/level.svg?v=5235-0-305-2026-08-23) ![Solved](http://dsa.vkrishna04.me/badges/solved.svg?v=5235-0-305-2026-08-23) ![Solved by difficulty](http://dsa.vkrishna04.me/badges/difficulty.svg?v=5235-0-305-2026-08-23) ![Freezes](http://dsa.vkrishna04.me/badges/freezes.svg?v=5235-0-305-2026-08-23)
+![Streak](http://dsa.vkrishna04.me/badges/streak.svg?v=5235-1-305-2026-08-23) ![Points](http://dsa.vkrishna04.me/badges/points.svg?v=5235-1-305-2026-08-23) ![Level](http://dsa.vkrishna04.me/badges/level.svg?v=5235-1-305-2026-08-23) ![Solved](http://dsa.vkrishna04.me/badges/solved.svg?v=5235-1-305-2026-08-23) ![Solved by difficulty](http://dsa.vkrishna04.me/badges/difficulty.svg?v=5235-1-305-2026-08-23) ![Freezes](http://dsa.vkrishna04.me/badges/freezes.svg?v=5235-1-305-2026-08-23)
 
 🩸 First Blood · 🔟 Ten Down · 💯 Century · 🔥 Week On Fire · 🌋 Month On Fire · 🗣️ Polyglot · 🎯 Well Rounded · ⚡ Double Day · 🪃 Comeback · ⭐ Engineer · 🔍 Second Opinion · 📝 Peer Reviewed
 <!-- codeledger:gamification:end -->
@@ -48,7 +48,6 @@
 
 | Problem | Difficulty | Language | Platform | Date |
 |---------|-----------|----------|----------|------|
-| [House Robber V](https://leetcode.com/problems/house-robber-v/) | Medium | Python3 | leetcode | Aug 18 |
 | [Aggressive Cows](https://www.geeksforgeeks.org/problems/aggressive-cows/1) | Medium | Python3 | geeksforgeeks | Jun 24 |
 | [2 Sum Find A Pair With Given Sum](https://www.geeksforgeeks.org/problems/2-sum-find-a-pair-with-given-sum/1) | Easy | Python3 | geeksforgeeks | Jun 24 |
 | [Assign Cookies](https://www.geeksforgeeks.org/problems/assign-cookies/1) | Easy | Python3 | geeksforgeeks | Jun 24 |
@@ -58,6 +57,7 @@
 | [Camelcase Pattern Matching](https://www.geeksforgeeks.org/problems/camelcase-pattern-matching2259/1) | Medium | Python3 | geeksforgeeks | Jun 24 |
 | [Count Number Of Substrings](https://www.geeksforgeeks.org/problems/count-number-of-substrings4528/1) | Medium | Unknown | geeksforgeeks | Jun 24 |
 | [Count Ways To Reach The Nth Stair](https://www.geeksforgeeks.org/problems/count-ways-to-reach-the-nth-stair-1587115620/1) | Medium | Unknown | geeksforgeeks | Jun 24 |
+| [Compare two fractions](https://www.geeksforgeeks.org/problems/compare-two-fractions4438/1) | Easy | Python3 | geeksforgeeks | Jun 23 |
 
 ---
 
@@ -100,6 +100,7 @@ Built with [CodeLedger](https://codeledger.vkrishna04.me) · [⭐ Star the exten
 </div>
 
 <!-- CODELEDGER_AUTO_GENERATED_END -->
+
 
 
 
