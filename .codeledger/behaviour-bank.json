@@ -2,13 +2,6 @@
   "::_summary": {
     "aiInsights": [
       {
-        "summary": "This \"solution\" appears to be a natural language prompt designed to generate a narrative analysis of LeetCode-style statistics.\n\n## Complexity\n- **Time:** O(1) — The logic processes a fixed-size set o",
-        "ts": 1786463461901,
-        "weakAreas": [
-          "edge cases"
-        ]
-      },
-      {
         "hasTakeaway": true,
         "summary": "The prompt effectively describes a string processing and generation task, emphasizing careful extraction of structured data from an unstructured text block before applying business logic.",
         "ts": 1787081439702,
@@ -21,6 +14,15 @@
         "hasTakeaway": true,
         "summary": "The \"code\" is a prompt for text generation, requiring careful parsing of input statistics and synthesizing a narrative from structured data.",
         "ts": 1787372968050,
+        "weakAreas": [
+          "edge cases",
+          "null/empty input"
+        ]
+      },
+      {
+        "hasTakeaway": true,
+        "summary": "For tasks involving parsing data from structured text, careful handling of missing or malformed input is crucial to ensure robustness.",
+        "ts": 1787495904233,
         "weakAreas": [
           "edge cases",
           "null/empty input"
