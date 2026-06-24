@@ -1,4 +1,17 @@
 {
+  "::_summary": {
+    "aiInsights": [
+      {
+        "summary": "This \"solution\" appears to be a natural language prompt designed to generate a narrative analysis of LeetCode-style statistics.\n\n## Complexity\n- **Time:** O(1) — The logic processes a fixed-size set o",
+        "ts": 1786463461901,
+        "weakAreas": [
+          "edge cases"
+        ]
+      }
+    ],
+    "platform": "",
+    "slug": "_summary"
+  },
   "geeksforgeeks::2-sum-find-a-pair-with-given-sum": {
     "difficulty": "Easy",
     "lang": {
