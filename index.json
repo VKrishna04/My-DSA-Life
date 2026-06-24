@@ -1,17 +1,18 @@
 {
-  "updatedAt": "2026-06-24T10:51:36.909Z",
+  "updatedAt": "2026-06-24T11:07:57.393Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 265,
-    "easy": 161,
-    "medium": 94,
-    "hard": 10,
+    "total": 315,
+    "easy": 176,
+    "medium": 126,
+    "hard": 11,
     "byPlatform": {
-      "geeksforgeeks": 5,
+      "geeksforgeeks": 55,
       "leetcode": 260
     },
     "byLang": {
-      "Python3": 199,
+      "Unknown": 49,
+      "Python3": 200,
       "MySQL": 15,
       "Java": 12,
       "Python": 16,
@@ -22,17 +23,30 @@
       "Bash": 4
     },
     "byTopic": {
-      "String Parsing": 1,
-      "Arrays": 2,
-      "Hashing": 1,
+      "Sorting": 4,
+      "Binary Search": 2,
+      "Arrays": 10,
+      "Untagged": 12,
+      "Greedy": 1,
+      "Mathematical": 2,
+      "Strings": 3,
+      "number-theory": 1,
+      "sliding-window": 2,
+      "DFS": 1,
+      "Linked List": 7,
+      "Tree": 9,
+      "Bit Magic": 1,
+      "Hash": 2,
+      "Java": 1,
+      "Dynamic Programming": 7,
+      "Searching": 1,
+      "Algorithms": 1,
       "Graph": 1,
+      "two-pointer-algorithm": 1,
       "Array": 125,
       "Math": 25,
-      "Linked List": 3,
       "Database": 15,
       "Bit Manipulation": 2,
-      "Tree": 3,
-      "Dynamic Programming": 4,
       "Data Manipulation": 14,
       "Hash Table": 15,
       "String": 20,
@@ -41,11 +55,8 @@
       "Vectorization": 2,
       "Pandas": 3,
       "Higher-Order Functions": 1,
-      "Untagged": 2,
       "Data Cleaning": 1,
       "Two Pointers": 9,
-      "Binary Search": 1,
-      "Sorting": 1,
       "Divide and Conquer": 3,
       "Data Reshaping": 2,
       "Shell": 4
@@ -58,15 +69,265 @@
   },
   "problems": [
     {
+      "id": "gfg-2-sum-find-a-pair-with-given-sum",
+      "platform": "geeksforgeeks",
+      "title": "2 Sum Find A Pair With Given Sum",
+      "titleSlug": "2-sum-find-a-pair-with-given-sum",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Sorting",
+        "two-pointer-algorithm",
+        "Arrays",
+        "Hash"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 18px;\">Given an array arr[] and an integer target, return the pair of elements whose sum equals target.&nbsp;</span><span style=\"font-size: 18px;\">An element cannot be used twice unless it appears multiple times in the array.</span></p>\n<p><span style=\"font-size: 18px;\"><strong>Note:</strong>&nbsp; I</span><span style=\"font-size: 18px;\">f no pair exist, return an empty array.</span></p>\n<p><strong style=\"font-size: 18px;\">Examples:</strong></p>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong></span><span style=\"font-size: 18px;\">arr[] = [2, 9, 10, 4, 15], target = 12</span><span style=\"font-size: 18px;\">\n<strong>Output: </strong>[2, 10]<strong>\nExplanation: </strong></span><span style=\"font-size: 18px;\">Pair with sum equal to 12 is (2, 10).</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[] = [3, 2, 4], target = 8\n<strong>Output: </strong>[]<strong>\nExplanation: </strong></span><span style=\"font-size: 18.6667px;\">No pair exists with sum equal to 8.</span></pre>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>arr[] = [1, 4, 5, 6, 1],</span><span style=\"font-size: 18px;\"> target = 2</span><span style=\"font-size: 18px;\">\n<strong>Output: </strong>[1, 1]</span><span style=\"font-size: 14pt;\"><strong>\nExplanation: </strong></span><span style=\"font-size: 18.6667px;\">Pair with sum equal to 2 is (1, 1).</span></pre>\n<p><span style=\"font-size: 18px;\"><strong>Constraints:<br /></strong>1 &le; arr.size() &le; 10<sup>5</sup><strong><br /></strong></span><span style=\"font-size: 18px;\">0 &le; arr[i] </span><span style=\"font-size: 18px;\">&le; 10<sup>4</sup></span><span style=\"font-size: 18px;\"><br /></span><span style=\"font-size: 18px;\">1 &le; target &le; 10<sup>4</sup></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-aggressive-cows102404",
+      "platform": "geeksforgeeks",
+      "title": "Aggressive Cows",
+      "titleSlug": "aggressive-cows102404",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "tags": [
+        "Binary Search",
+        "Algorithms"
+      ],
+      "topic": "Binary Search",
+      "code": "class Solution:\n    def aggressiveCows(self, stalls, k):\n        # code here\n        ",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": null,
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-assign-cookies",
+      "platform": "geeksforgeeks",
+      "title": "Assign Cookies",
+      "titleSlug": "assign-cookies",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Arrays",
+        "Sorting",
+        "Data Structures",
+        "Algorithms"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p data-pm-slice=\"0 0 []\"><span style=\"font-size: 14pt;\">You are given an array <strong>greed[]</strong>, where <strong>greed[i]</strong> represents the minimum size of cookie required to satisfy the i-th child, and an array <strong>cookie[]</strong>,<strong> </strong>where <strong>cookie[j] </strong>represents the size of the j-th cookie. Each child can receive at most one cookie. A child i will be satisfied if they receive a cookie j such that <strong>cookie[j] &gt;= greed[i]</strong>. Your task is to determine the <strong>maximum</strong> number of children that can be satisfied.</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input :&nbsp;</strong>greed[] = [1, 10, 3], cookie = [1, 2, 3]<br /><strong>Output: </strong>2<br /><strong>Explanation:&nbsp;</strong>We can only assign cookie to the first and third child.</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input :&nbsp;</strong>greed[] = [10, 100], cookie = [1, 2]<br /><strong>Output: </strong>0<br /><strong>Explanation:&nbsp;</strong>We can not assign cookies to any child.</span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:</strong><br />1 &le; greed.size() &le;&nbsp; 10<sup>5</sup><br />1 &le; cookie.size() &le;&nbsp; 10<sup>5</sup><br />1 &le; greed[i] , cookie[i] &le; 10<sup>9</sup></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-attend-all-meetings",
+      "platform": "geeksforgeeks",
+      "title": "Attend All Meetings",
+      "titleSlug": "attend-all-meetings",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Sorting",
+        "Greedy",
+        "Arrays"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 14pt;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;\">Given a 2D array </span><strong style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;\">arr[][],</strong><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;\"> where </span><strong style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;\">arr[i][0]&nbsp;</strong><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;\">is the&nbsp;</span><strong style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;\">starting time&nbsp;</strong><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;\">of i<sup>th</sup> meeting and </span><strong style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;\">arr[i][1]&nbsp;</strong><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;\">is the&nbsp;</span><strong style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;\">ending time&nbsp;</strong><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;\">of i<sup>th</sup> meeting, the task is to check if it is possible for a person to attend all the meetings such that he can attend only one meeting at a particular time.</span></span></p>\n<p><span style=\"font-size: 14pt;\"><strong><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;\">Note:</span></strong><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;\"> A person can attend a meeting if its starting time is greater than or equal to the previous meeting's ending time.</span></span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[][] = [[1, 4], [10, 15], [7, 10]]<br /><strong>Output:</strong> true<br /><strong>Explanation: </strong>Since all the meetings are held at different times, it is possible to attend all the meetings.</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[][] = [[2, 4], [9, 12], [6, 10]]\n<strong>Output:</strong> false\n<strong>Explanation:</strong> Since the second and third meeting overlap, a person cannot attend all the meetings.<br /></span></pre>\n<p style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: medium; white-space: normal;\"><span style=\"font-size: 14pt;\"><strong>Constraints:</strong></span><br /><span style=\"font-size: 14pt;\">1 &le; arr.size() &le; 10<sup>5</sup></span><br /><span style=\"font-size: 14pt;\">0 &le; arr[i] &le; 2*10<sup>6</sup></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-bheem-wants-ladoos102404",
+      "platform": "geeksforgeeks",
+      "title": "Bheem Wants Ladoos",
+      "titleSlug": "bheem-wants-ladoos102404",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": null,
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true
+    },
+    {
+      "id": "gfg-burger-shop102404",
+      "platform": "geeksforgeeks",
+      "title": "Burger Shop",
+      "titleSlug": "burger-shop102404",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": null,
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true
+    },
+    {
+      "id": "gfg-buy-stock-2",
+      "platform": "geeksforgeeks",
+      "title": "Buy Stock",
+      "titleSlug": "buy-stock-2",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Greedy",
+        "Arrays"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 18.6667px;\">Given an array <strong>prices[]</strong> of non-negative integers, representing the prices of the stocks on different days. The task is to find the maximum profit possible by buying and selling the stocks on different days when <strong>at most one </strong>transaction is allowed. Here one transaction means 1 buy + 1 Sell. If it is not possible to make a profit then <strong>return 0</strong>.</span></p>\n<p><span style=\"font-size: 18.6667px;\">Note: Stock must be bought before being sold.</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong style=\"font-size: 14pt;\">Input: </strong><span style=\"font-size: 14pt;\">prices[] = [7, 10, 1, 3, 6, 9, 2]<br /></span><strong style=\"font-size: 14pt;\">Output:</strong><span style=\"font-size: 14pt;\"> 8<br /></span><strong style=\"font-size: 14pt;\">Explanation:</strong><span style=\"font-size: 14pt;\"> You can buy the stock on day 2 at price = 1 and sell it on day 5 at price = 9. Hence, the profit is 8.</span></span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong style=\"font-size: 14pt;\">Input: </strong><span style=\"font-size: 14pt;\">prices[] = [7, 6, 4, 3, 1]<br /></span><strong style=\"font-size: 14pt;\">Output:</strong><span style=\"font-size: 14pt;\"> 0 <br /></span><span style=\"font-size: 18.6667px;\"><strong>Explanation</strong></span><strong style=\"font-size: 14pt;\">:</strong><span style=\"font-size: 14pt;\"> Here the prices are in decreasing order, hence if we buy any day then we cannot sell it at a greater price. Hence, the answer is 0.<br /></span></span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>prices[] = [1, 3, 6, 9, 11]</span><br /><span style=\"font-size: 14pt;\"><strong>Output:</strong> 10 </span><br /><span style=\"font-size: 14pt;\"><span style=\"font-size: 18.6667px;\"><strong>Explanation</strong></span><strong style=\"font-size: 14pt;\">:</strong><span style=\"font-size: 14pt;\"> Since the array is sorted in increasing order, we can make maximum profit by buying at price[0] and selling at price[n-1].</span></span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraint:</strong><br />1&nbsp;</span><span style=\"background-color: #ffffff; color: #1e2229; font-family: Nunito; font-size: 17px;\">&le;</span><span style=\"background-color: #ffffff; color: #1e2229; font-family: Nunito; font-size: 17px;\"> </span><span style=\"font-size: 14pt;\">&nbsp;prices.size()&nbsp;</span><span style=\"background-color: #ffffff; color: #1e2229; font-family: Nunito; font-size: 17px;\">&le;</span><span style=\"background-color: #ffffff; color: #1e2229; font-family: Nunito; font-size: 17px;\"> </span><span style=\"font-size: 14pt;\">&nbsp;10</span><sup>5<br /></sup><span style=\"font-size: 14pt;\">0&nbsp;</span><span style=\"background-color: #ffffff; color: #1e2229; font-family: Nunito; font-size: 17px;\">&le;</span><span style=\"background-color: #ffffff; color: #1e2229; font-family: Nunito; font-size: 17px;\"> </span><span style=\"font-size: 14pt;\">&nbsp;prices[i] </span><span style=\"background-color: #ffffff; color: #1e2229; font-family: Nunito; font-size: 17px;\">&le;</span><span style=\"background-color: #ffffff; color: #1e2229; font-family: Nunito; font-size: 17px;\"> &nbsp;</span><span style=\"font-size: 14pt;\">10</span><sup>4</sup></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-c-matrix-rotation-by-180-degree0745",
+      "platform": "geeksforgeeks",
+      "title": "C Matrix Rotation By 180 Degree",
+      "titleSlug": "c-matrix-rotation-by-180-degree0745",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Mathematical",
+        "Matrix",
+        "Data Structures",
+        "Algorithms"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 18px;\">Given a 2D square matrix <strong>mat</strong>[][] of size <strong>n x n</strong>, rotate it by <strong>180</strong> <strong>degrees</strong> without using extra space.</span></p>\n<p><span style=\"font-size: 18px;\"><strong>Note:</strong>&nbsp;</span><span style=\"font-size: 18px;\">You must rotate the matrix<strong> in place </strong>and</span><span style=\"font-size: 18px;\">&nbsp;modify the input matrix directly.</span></p>\n<p><span style=\"font-size: 18px;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>mat[][] =<strong> </strong>[[1, 2],\n                [3, 4]]\n<strong>Output: </strong>[[4, 3], \n        [2, 1]]</span></pre>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong> mat[][] = [[1, 2, 3], \n                [4, 5, 6],\n                [7, 8, 9]]\n<strong>Output: </strong>[[9, 8, 7], \n        [6, 5, 4], \n        [3, 2, 1]]</span>\n</pre>\n<p><span style=\"font-size: 18px;\"><strong>Constraints:</strong><br />1 &le; n &le; 500<br />0 &le; mat[i][j] &le;&nbsp;10<sup>4</sup></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-camelcase-pattern-matching2259",
+      "platform": "geeksforgeeks",
+      "title": "Camelcase Pattern Matching",
+      "titleSlug": "camelcase-pattern-matching2259",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Strings",
+        "Trie",
+        "Data Structures",
+        "Advanced Data Structure"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p data-start=\"131\" data-end=\"355\"><span style=\"font-size: 14pt;\">Given a dictionary of words <code data-start=\"159\" data-end=\"166\">arr[]</code> where each word follows <strong data-start=\"191\" data-end=\"241\"><span class=\"hover:entity-accent entity-underline inline cursor-pointer align-baseline\"><span class=\"whitespace-normal\">PascalCase</span></span> notation</strong>, print all words in the dictionary that match with a given pattern <code data-start=\"309\" data-end=\"314\">pat</code> consisting of uppercase characters only. <strong data-start=\"357\" data-end=\"371\">PascalCase</strong> is the practice of writing compound words or phrases such that each word or abbreviation begins with a capital letter. <br /></span><span style=\"font-size: 14pt;\">i.e. </span><span style=\"font-size: 14pt;\">PowerPoint, Wikipedia, GeeksForGeeks, CodeBlocks, etc.</span></p>\n<p><span style=\"font-size: 14pt;\"> </span></p>\n<p data-start=\"579\" data-end=\"709\"><span style=\"font-size: 14pt;\">A word matches the pattern if the sequence of its uppercase letters, when concatenated, forms a string that has <code data-start=\"691\" data-end=\"696\">pat</code> as a prefix.</span></p>\n<p><span style=\"font-size: 18px;\">Note: The driver code will sort your answer before checking and return the answer in any order.</span></p>\n<p><strong><span style=\"font-size: 18px;\">Examples:</span></strong></p>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>arr[] = [\"WelcomeGeek\", \"WelcomeToGeeksForGeeks\", \"GeeksForGeeks\"], pat = \"WTG\"\n<strong>Output: </strong>[\"WelcomeToGeeksForGeeks\"]\n<strong>Explanation: </strong>Since only \"WelcomeToGeeksForGeeks\" matches the pattern, it is the only answer.</span></pre>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>arr[] = [\"Hi\", \"Hello\", \"HelloWorld\", \"HiTech\", \"HiGeek\", \"HiTechWorld\", \"HiTechCity\", \"HiTechLab\"], pat = \"HA\"\n<strong>Output: </strong>[]\n<strong>Explanation: </strong>None of the words matches the given pattern.</span></pre>\n<p><span style=\"font-size: 18px;\"><strong>Constraints:</strong><br />1 &le; arr.size() &le; 1000<br />1 &le; pat.size() &le; 100<br />1 &le; arr[i].size()&nbsp;&le;&nbsp;100</span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
       "id": "gfg-compare-two-fractions4438",
       "title": "Compare two fractions",
       "titleSlug": "compare-two-fractions4438",
       "difficulty": "Easy",
       "topic": "String Parsing",
       "tags": [
-        "String Parsing",
-        "Mathematics",
-        "Cross Multiplication"
+        "number-theory",
+        "Mathematical",
+        "Regular Expression",
+        "Algorithms"
       ],
       "canonical": null,
       "readmeContent": "# Compare two fractions\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Easy\n\n## Problem\n\nYou are given a string s containing two fractions a/b and c/d, compare them and return the greater fraction. If they are equal, then return string \"equal\".\nNote: The string s contains \"a/b, c/d\"(fractions are separated by comma(,) & space( )).&nbsp;\nExamples :\nInput: s = \"5/6, 11/45\"\nOutput:&nbsp;5/6\nExplanation: 5/6 = 0.8333 and 11/45 = 0.2444, So 5/6 is greater fraction.\nInput: s = \"8/1, 8/1\"\nOutput: equal\nExplanation: We can see that both the fractions are same, so we'll return a string \"equal\".\nInput: s = \"10/17, 9/10\"\nOutput: 9/10\nExplanation: 10/17 = 0.588 & 9/10 = 0.9, so the greater fraction is \"9/10\".\nConstraints:0 ≤ a,c ≤ 1031 ≤ b,d ≤ 103\n\n**Source:** https://www.geeksforgeeks.org/problems/compare-two-fractions4438/",
@@ -98,6 +359,374 @@
       "aiReview": "### Analysis\n\n1. **Complexity**\n   * **Time Complexity:** $O(N)$, where $N$ is the length of the input string. Splitting the string and parsing integers both take linear time.\n   * **Space Complexity:** $O(N)$ to store the split substrings and integer values.\n\n2. **Correctness**\n   The solution uses **floating-point division**, which is risky. For very large numerators/denominators or fractions that are nearly identical (e.g., differing at the 16th decimal place), precision errors can lead to incorrect comparisons. \n\n3. **Optimization**\n   Use **cross-multiplication** to compare fractions using integers only, avoiding precision issues. \n   Instead of `f1_num / f1_den > f2_num / f2_den`, compare `f1_num * f2_den > f2_num * f1_den`. This is mathematically equivalent ($a/b > c/d \\iff ad > bc$) and 100% accurate for integers.\n\n4. **Key Algorithmic Pattern**\n   **String Parsing** and **Basic Arithmetic**. The problem focuses on extracting numerical data from a formatted string and applying comparative logic.",
       "_aiProvider": "gemini",
       "_aiModel": "gemini-3-flash-preview",
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false,
+      "problemStatement": "<p><span style=\"font-size: 18px;\">You are given a string <strong>s</strong> containing two fractions a/b and c/d, compare them and return the <strong>greater fraction</strong>. </span><span style=\"font-size: 18px;\">If they are equal, then return string \"<strong>equal</strong>\".</span></p>\n<p><span style=\"font-size: 18px;\"><strong>Note</strong>: The string s contains \"<strong>a</strong></span><strong><span style=\"font-size: 18px;\">/b, c/d</span></strong><span style=\"font-size: 18px;\">\"(fractions are separated by comma(,) &amp; space( )).&nbsp;</span></p>\n<p><span style=\"font-size: 18px;\"><strong>Examples :</strong></span></p>\n<pre><span style=\"font-size: 18px;\"><strong>Input</strong>: s = \"5/6, 11/45\"\n<strong>Output:</strong>&nbsp;5/6\n<strong>Explanation</strong>: 5/6 = 0.8333 and 11/45 = 0.2444, So 5/6 is greater fraction.</span></pre>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>s = \"8/1, 8/1\"\n<strong>Output: </strong>equal\n<strong>Explanation: </strong>We can see that both the fractions are same, so we'll return a string \"equal\".<br /></span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>s = \"10/17, 9/10\"\n<strong>Output: </strong>9/10\n<strong>Explanation: </strong>10/17 = 0.588 &amp; 9/10 = 0.9, so the <span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 18px; white-space: normal;\">greater </span>fraction is \"9/10\".</span></pre>\n<p><span style=\"font-size: 18px;\"><strong>Constraints:</strong><br />0 &le; a,c &le; 10<sup>3</sup><br />1 &le; b,d &le; 10<sup>3</sup></span></p>"
+    },
+    {
+      "id": "gfg-count-number-of-substrings4528",
+      "platform": "geeksforgeeks",
+      "title": "Count Number Of Substrings",
+      "titleSlug": "count-number-of-substrings4528",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "sliding-window",
+        "two-pointer-algorithm",
+        "Strings",
+        "Dynamic Programming",
+        "Algorithms"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 14pt;\">You are given a string <strong>s</strong> consisting<strong>&nbsp;</strong>of lowercase characters and an integer <strong>k</strong>, You have to count all possible <strong>substrings </strong>that have <strong>exactly k distinct</strong> characters.</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples :</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>s = \"abc\", k = 2\n<strong>Output: </strong>2\n<strong>Explanation</strong>: Possible substrings are [\"ab\", \"bc\"]\n</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input</strong>: s = \"aba\", k = 2\n<strong>Output: </strong>3\n<strong>Explanation</strong>: Possible substrings are [\"ab\", \"ba\", \"aba\"]</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>s = \"aa\", k = 1\n<strong>Output: </strong>3<br /></span><strong><span style=\"font-size: 14pt; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">Explanation</span></strong><span style=\"font-size: 14pt; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\"><strong>:</strong> Possible substrings are [\"a\", \"a\", \"aa\"]</span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:</strong><br />1 &le; s.size() &le; 10<sup>6</sup><br />1 &le; k &le; 26</span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-count-ways-to-partition-a-string-such-that-both-parts-have-equal-distinct-characters102404",
+      "platform": "geeksforgeeks",
+      "title": "Count Ways To Partition A String Such That Both Parts Have Equal Distinct Characters",
+      "titleSlug": "count-ways-to-partition-a-string-such-that-both-parts-have-equal-distinct-characters102404",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": null,
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true
+    },
+    {
+      "id": "gfg-count-ways-to-reach-the-nth-stair-1587115620",
+      "platform": "geeksforgeeks",
+      "title": "Count Ways To Reach The Nth Stair",
+      "titleSlug": "count-ways-to-reach-the-nth-stair-1587115620",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "sliding-window",
+        "Dynamic Programming",
+        "Mathematical",
+        "Algorithms"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 18px;\">There are<strong> n</strong> stairs, a person standing at the bottom wants to reach the top. The person can climb either <strong>1 stair </strong>or<strong> 2 stairs </strong>at a time. Your task is to count the number of ways, the person can reach the top <strong>(order does matter).</strong></span></p>\n<p><span style=\"font-size: 18px;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>n = 1\n<strong>Output: </strong>1\n<strong>Explanation: </strong>There is only one way to climb 1 stair. </span></pre>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>n = 3\n<strong>Output: </strong>3<br /><strong>Explanation:</strong> The following are three ways to reach the n-th stair.<br /></span><span style=\"font-size: 18px;\"><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/927382/Web/Other/blobid1_1777118839.png\" width=\"294\" height=\"268\" /></span><span style=\"font-size: 18px;\"> </span></pre>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>n = 4\n<strong>Output: </strong>5<strong>\nExplanation: </strong></span><span style=\"font-size: 18px;\">There are five ways to reach 4th stair: {1, 1, 1, 1}, {1, 1, 2}, {2, 1, 1}, {1, 2, 1} and {2, 2}.</span>\n</pre>\n<p><span style=\"font-size: 18px;\"><strong>Constraints:</strong><br />1 &le; n &le; 40</span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-detect-cycle-in-an-undirected-graph",
+      "platform": "geeksforgeeks",
+      "title": "Detect Cycle In An Undirected Graph",
+      "titleSlug": "detect-cycle-in-an-undirected-graph",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "DFS",
+        "Graph",
+        "union-find",
+        "Data Structures",
+        "Algorithms"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 18.6667px;\">Given an <strong>undirected graph </strong>with <strong>V</strong> vertices and<strong> E </strong>edges, represented as a 2D vector <strong>edges[][]</strong>, where each entry <strong>edges[i] = [u, v]</strong> denotes an edge between vertices <strong>u</strong> and <strong>v</strong>, determine whether the graph contains a <strong>cycle </strong>or not. </span></p>\n<p><span style=\"font-size: 18.6667px;\"><strong>Note:</strong> The graph can have multiple component.</span><span style=\"font-size: 18px;\"><img style=\"font-size: 18px; font-weight: bold;\" src=\"C:\\Users\\Mukul kumar\\Desktop\\GFG_PIC.JPG\" alt=\"\" /></span></p>\n<p><span style=\"font-size: 18px;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>V = 4, E = 4, edges[][] = [[0, 1], [0, 2], [1, 2], [2, 3]]\n<strong>Output: </strong>true\n<strong>Explanation:</strong> \n</span><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/891735/Web/Other/blobid1_1743510240.jpg\" width=\"176\" height=\"158\" /> <br /><span style=\"font-size: 18px;\">1 -&gt; 2 -&gt; 0 -&gt; 1 is a cycle.</span>\n</pre>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>V = 4, E = 3, edges[][] = [[0, 1], [1, 2], [2, 3]]</span>\n<strong><span style=\"font-size: 18px;\">Output: </span></strong><span style=\"font-size: 18px;\">false</span><span style=\"font-size: 18px;\">\n<strong>Explanation: \n</strong></span><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/891735/Web/Other/blobid2_1743510254.jpg\" width=\"169\" height=\"153\" /> <br /><span style=\"font-size: 18px;\">No cycle in the graph.</span>\n</pre>\n<p><span style=\"font-size: 18px;\"><strong style=\"font-size: 18px;\">Constraints:<br /></strong><span style=\"font-size: 18px;\">1 &le; V, E &le; 10</span><sup style=\"font-size: 18px;\">5</sup><br /><span style=\"font-size: 18px;\">0 &le; edges[i][0], edges[i][1] &lt; V</span></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-detect-loop-in-linked-list",
+      "platform": "geeksforgeeks",
+      "title": "Detect Loop In Linked List",
+      "titleSlug": "detect-loop-in-linked-list",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Linked List",
+        "two-pointer-algorithm",
+        "Data Structures",
+        "Algorithms"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 18.6667px;\">You are given the <strong>head </strong>of a singly linked list. You have to determine whether the given linked list contains a <strong>loop </strong>or <strong>not</strong>.<strong>&nbsp;</strong>A loop exists in a linked list if the next pointer of the last node points to any other node in the list (including itself), rather than being null.<br /></span></p>\n<p><span style=\"font-size: 18.6667px;\"><strong>Note:&nbsp;</strong>Internally, pos(1 based index) is used to denote the position of the node that tail's next pointer is connected to. If pos = 0, it means the last node points to null. Note that pos is not passed as a parameter.</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>pos = 2,<br />   <img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/908280/Web/Other/blobid0_1756127210.webp\" width=\"348\" height=\"104\" /><br /><strong>Output: </strong>true<strong>\nExplanation: </strong>There exists a loop as last node is connected back to the second node.<br /></span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>pos = 0,<br /> &nbsp; <img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/908280/Web/Other/blobid1_1756127232.webp\" width=\"445\" height=\"66\" /><br /><strong>Output: </strong>false<strong>\nExplanation: </strong>There exists no loop in given linked list.<br /></span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>pos = 1,<br />   <img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/908280/Web/Other/blobid2_1756127467.webp\" width=\"389\" height=\"96\" /><br /><strong>Output: </strong>true<strong>\nExplanation: </strong>There exists a loop as last node is connected back to the first node.</span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:</strong></span><br /><span style=\"font-size: 14pt;\">1 &le; number of nodes &le; 10<sup>5</sup><br />1 &le; node-&gt;data &le; 10<sup>3&nbsp; &nbsp; &nbsp; &nbsp;</sup></span><span style=\"font-size: 18.6667px;\"><br /></span><span style=\"font-size: 14pt;\">0&nbsp;</span><span style=\"font-size: 18.6667px;\">&le;&nbsp;</span><span style=\"font-size: 14pt;\">pos&nbsp;</span><span style=\"font-size: 18.6667px;\">&le; number of nodes</span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-diameter-of-binary-tree",
+      "platform": "geeksforgeeks",
+      "title": "Diameter Of Binary Tree",
+      "titleSlug": "diameter-of-binary-tree",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Tree",
+        "Data Structures"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 14pt;\">Given the <strong>root</strong> of a binary tree, your task is to find the <strong>diameter</strong> of the binary tree.&nbsp;</span><span style=\"font-size: 14pt;\">The <strong data-start=\"279\" data-end=\"291\">diameter</strong>&nbsp;of a binary tree is defined as the number of edges on the <strong data-start=\"378\" data-end=\"421\">longest path between any two nodes</strong>. Note that this path may or may not pass through the root of the tree.</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>root = [1, 2, N, 3, 4]<br /><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/927804/Web/Other/blobid0_1777955703.png\" width=\"177\" height=\"213\" /><br /><strong>Output: </strong>2<br /><strong>Explanation: </strong>The longest path has 2 edges (node 3 -&gt; node 2 -&gt; node 4).<br /><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/927804/Web/Other/blobid1_1777955726.png\" width=\"173\" height=\"209\" /><br /></span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong><span class=\"hljs-string\">root</span> <span class=\"hljs-string\">=</span> [<span class=\"hljs-number\">5</span>, <span class=\"hljs-number\">8</span>, <span class=\"hljs-number\">6</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">7</span>, <span class=\"hljs-number\">9, N</span>]<br /><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/927804/Web/Other/blobid2_1777955758.png\" width=\"231\" height=\"204\" /><br /><strong>Output: </strong>4</span><br /><span style=\"font-size: 14pt;\"><strong style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">Explanation: </strong>The longest path has 4 edges (node 3 -&gt; node 8 -&gt; node 5 -&gt; node 6 -&gt; node 9).<br /><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/927804/Web/Other/blobid3_1777955783.png\" width=\"234\" height=\"207\" /><br /></span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:</strong><br />1 &le; number of nodes &le; 10<sup>3</sup><br />0 &le; node-&gt;data &le; 10<sup>5</sup></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-find-unique-number",
+      "platform": "geeksforgeeks",
+      "title": "Find Unique Number",
+      "titleSlug": "find-unique-number",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Bit Magic"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 18px;\">Given a&nbsp;<strong>unsorted&nbsp;</strong>array&nbsp;<strong>arr[]</strong>&nbsp;of positive integers having all the numbers occurring exactly <strong>twice</strong>, except&nbsp;for one number which will occur only <strong>once</strong>. Find the number occurring only once.</span></p>\n<p><span style=\"font-size: 18px;\"><strong>Examples :</strong></span></p>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>arr[] = [1, 2, 1, 5, 5]<strong>\nOutput: </strong>2\n<strong>Explanation: </strong>Since 2 occurs once, while other numbers occur twice, 2 is the answer.</span></pre>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>arr[] = [2, 30, 2, 15, 20, 30, 15]\n<strong>Output: </strong>20\n<strong>Explanation: </strong>Since 20 occurs once, while other numbers occur twice, 20 is the answer.</span></pre>\n<p><span style=\"font-size: 18px;\"><strong>Constraints</strong><br />1 &le;&nbsp; arr.size()&nbsp; &le; 10<sup>6</sup><br />0 &le; arr[i] &le; </span><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 18px;\">10<sup>9</sup></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-height-of-binary-tree",
+      "platform": "geeksforgeeks",
+      "title": "Height Of Binary Tree",
+      "titleSlug": "height-of-binary-tree",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Tree",
+        "Data Structures"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 14pt;\">Given the <strong>root </strong>of a binary tree, your task is to find the&nbsp;<strong>maximum depth&nbsp;</strong>of the tree.</span></p>\n<p><strong><span style=\"font-size: 14pt;\">Note:&nbsp;</span></strong><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 14pt;\">The maximum depth or height of the tree is the number of edges in the tree from the root to the deepest node.</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>root = [12, 8, 18, 5, 11]<br /><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/912526/Web/Other/blobid0_1758863116.webp\" width=\"264\" height=\"183\" /><br /><strong>Output:</strong> 2<br /><strong>Explanation: </strong>One of the longest path from the root(node 12) goes through node 8 to node 5, which has 2 edges.</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>root = [1, 2, 3, 4, N, 10, 5, N, N, N, N, 6, 7]<br /><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/912526/Web/Other/blobid1_1758863142.webp\" width=\"261\" height=\"219\" /><br /><strong>Output:</strong> 3<br /><strong>Explanation: </strong>The longest path from the root(node 1) to a leaf node 6 with 3 edges.</span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:</strong><br />1&nbsp;<span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">&le;</span><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">&nbsp;number of nodes&nbsp;</span><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">&le;</span><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\"> 3*10<sup>4</sup></span><sup style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\"><br /></sup>0&nbsp;<span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">&le; </span><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">node-&gt;data&nbsp;</span><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">&le; </span><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">10</span><sup style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">5</sup></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-implement-atoi",
+      "platform": "geeksforgeeks",
+      "title": "Implement Atoi",
+      "titleSlug": "implement-atoi",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Strings",
+        "Design-Pattern",
+        "Data Structures"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 18px;\">Given a string&nbsp;<strong>s</strong>, convert it into a 32-bit signed integer (similar to the atoi() function) without using any built-in conversion functions.<br /></span><span style=\"font-size: 18px;\">The conversion follows these rules:</span></p>\n<ol>\n<li><span style=\"font-size: 18px;\"><strong>Ignore Leading Whitespaces:</strong>&nbsp;</span><span style=\"font-size: 18px;\">Skip all leading whitespace characters.</span></li>\n<li><span style=\"font-size: 18px;\"><strong>Check Sign:</strong></span><span style=\"font-size: 18px;\">&nbsp;If the next character is either '+' or '-', take it as the sign of the number.&nbsp;</span><span style=\"font-size: 18px;\">If no sign is present, assume the number is positive.</span></li>\n<li><span style=\"font-size: 18px;\"><strong>Read Digits:&nbsp;</strong></span><span style=\"font-size: 18px;\">Read the digits and ignore any leading zeros. Stop reading when a non-digit character is encountered or the end of the string is reached.&nbsp;</span><span style=\"font-size: 18px;\">If no digits are found, return 0.</span></li>\n<li><span style=\"font-size: 18px;\"><strong>Handle Overflow:&nbsp;</strong></span><span style=\"font-size: 18px;\">If the number exceeds the range of a 32-bit signed integer:<br /></span><span style=\"font-size: 18px;\">Return 2&sup3;&sup1; &minus; 1 (i.e., 2147483647) if it is greater than the maximum value.<br /></span><span style=\"font-size: 18px;\">Return &minus;2&sup3;&sup1; (i.e., -2147483648) if it is smaller than the minimum value.</span></li>\n</ol>\n<p><span style=\"font-size: 18px;\">Return the final integer value.</span></p>\n<p><span style=\"font-size: 18px;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 18px;\"><strong style=\"font-size: 18px;\">Input: </strong><span style=\"font-size: 18px;\">s = \"-123\"\n</span><strong style=\"font-size: 18px;\">Output: -</strong><span style=\"font-size: 18px;\">123<br /></span><strong style=\"font-size: 18px;\">Explanation: </strong><span style=\"font-size: 18px;\">It is possible to convert -123 into an integer so we returned in the form of an integer<br /></span></span></pre>\n<pre><span style=\"font-size: 18px;\"><span style=\"font-size: 18px;\"><strong style=\"font-size: 18px;\">Input: </strong><span style=\"font-size: 18px;\">s = \" -\"\n</span><strong style=\"font-size: 18px;\">Output: </strong><span style=\"font-size: 18px;\">0<br /></span><strong style=\"font-size: 18px;\">Explanation: </strong><span style=\"font-size: 18px;\"><span style=\"font-size: 18px;\">No digits are present, therefore the returned answer is 0.<br /></span></span></span></span></pre>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>s = \" 1231231231311133\"\n<strong>Output: </strong>2147483647<br /><strong>Explanation: </strong>T</span><span style=\"font-size: 18px;\">he converted number will be greater than 2<sup>31</sup> &ndash; 1, therefore print 2<sup>31</sup> &ndash; 1 = 2147483647.\n</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>s = \"-999999999999\"\n<strong>Output: -</strong>2147483648<br /><strong>Explanation: </strong></span><span style=\"font-size: 14pt;\">The converted number is smaller than -2<sup>31</sup>, therefore print -2<sup>31</sup> = -2147483648.</span></pre>\n<pre><span style=\"font-size: 18px;\"><strong style=\"font-size: 18px;\">Input: </strong><span style=\"font-size: 18px;\">s = \"  -0012gfg4\"\n</span><strong style=\"font-size: 18px;\">Output: </strong><span style=\"font-size: 18px;\">-12</span><strong style=\"font-size: 18px;\">\nExplanation: </strong></span><span style=\"font-size: 18px;\">Nothing is read after -12 as a non-digit character &lsquo;g&rsquo; was encountered.</span></pre>\n<p><span style=\"font-size: 18px;\"><strong>Constraints:</strong><br />1 &le; |s| &le; 15</span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-intersection-point-in-y-shapped-linked-lists",
+      "platform": "geeksforgeeks",
+      "title": "Intersection Point In Y Shapped Linked Lists",
+      "titleSlug": "intersection-point-in-y-shapped-linked-lists",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Linked List",
+        "Data Structures"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 18px;\">You are given the heads of two non-empty singly linked lists, <strong>head1</strong> and <strong>head2</strong>, that intersect at a certain point. Return that <strong>Node </strong>where these two linked lists <strong>intersect</strong>.</span></p>\n<p><span style=\"font-size: 18px;\"><strong>Note:</strong>&nbsp;</span><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 18px;\">It is guaranteed that the intersected node always exists.</span></p>\n<h3><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 18px;\">In the custom input you have to give input for CommonList which pointed at the end of both head1 and head2 to form a Y-shaped linked list.</span></h3>\n<p><strong style=\"font-size: 18px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">Examples:</strong></p>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>head1: 10 -&gt; 15 -&gt; 30, head2: 3 -&gt; 6 -&gt; 9 -&gt; 15 -&gt; 30\n<strong>Output:</strong> 15\n<strong>Explanation: </strong>From the above image, it is clearly seen that the common part is 15 -&gt; 30, whose starting point is 15.<br />    <img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/906399/Web/Other/blobid2_1756127894.webp\" width=\"473\" height=\"137\" /><br /></span></pre>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>head1: 4 -&gt; 1 -&gt; 8 -&gt; 5, head2: 5 -&gt; 6 -&gt; 1 -&gt; 8 -&gt; 5<br /><strong>Output: </strong>1\n<strong>Explanation: </strong>From the above image, it is clearly seen that the common part is 1 -&gt; 8 -&gt; 5, whose starting point is 1.<br />    <img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/906399/Web/Other/blobid0_1756127732.webp\" width=\"514\" height=\"149\" /></span></pre>\n<p><strong style=\"font-size: 18px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">Constraints:<br /></strong><span style=\"font-size: 18px;\">2 &le; total number of nodes &le; 2*10<sup>5</sup><br />-10<sup>4</sup> &le; node-&gt;data &le; 10<sup>4</sup></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-is-array-sorted122153",
+      "platform": "geeksforgeeks",
+      "title": "Is Array Sorted",
+      "titleSlug": "is-array-sorted122153",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": null,
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true
+    },
+    {
+      "id": "gfg-k-largest-elements4206",
+      "platform": "geeksforgeeks",
+      "title": "K Largest Elements",
+      "titleSlug": "k-largest-elements4206",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Arrays",
+        "Sorting",
+        "Heap",
+        "Data Structures",
+        "Algorithms"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 18px;\">Given an array <strong>arr[]</strong> of positive integers and an integer <strong>k</strong>, Your task is to return <strong>k largest elements </strong>in decreasing order.&nbsp;</span></p>\n<p><span style=\"font-size: 18px;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>arr[] = [12, 5, 787, 1, 23], k = 2\n<strong>Output:</strong> [787, 23]\n<strong>Explanation:</strong> 1st largest element in the array is 787 and second largest is 23.\n</span></pre>\n<pre><span style=\"font-size: 18px;\"><strong>Input:</strong> arr[] = [1, 23, 12, 9, 30, 2, 50], k = 3 \n<strong>Output:</strong> [50, 30, 23]\n<strong>Explanation:</strong> Three Largest elements in the array are 50, 30 and 23.<br /></span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input:</strong> arr[] = [12, 23], k = 1\n<strong>Output:</strong> [23]\n<strong>Explanation:</strong> 1st Largest element in the array is 23.</span></pre>\n<p><span style=\"font-size: 18px;\"><strong>Constraints:</strong><br />1 &le; k &le; arr.size() &le; 10<sup>6</sup><br />1 &le; arr[i] &le; 10<sup>6</sup></span><br />&nbsp;</p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-kadanes-algorithm-1587115620",
+      "platform": "geeksforgeeks",
+      "title": "Kadanes Algorithm",
+      "titleSlug": "kadanes-algorithm-1587115620",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Arrays",
+        "Dynamic Programming",
+        "Data Structures",
+        "Algorithms"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 14pt;\">You are given an integer array <strong>arr[].</strong> You need to find the <strong>maximum</strong> sum of a subarray (containing at least one element) in the array <strong>arr[]</strong>.</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Note : </strong><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; color: #273239; font-family: Nunito, sans-serif; letter-spacing: 0.162px; background-color: #ffffff;\">A&nbsp;</span><strong style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; color: #273239; font-family: Nunito, sans-serif; letter-spacing: 0.162px; background-color: #ffffff;\"><strong style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;\">subarray</strong></strong><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; color: #273239; font-family: Nunito, sans-serif; letter-spacing: 0.162px; background-color: #ffffff;\"> is a continuous part of an array.</span></span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[] = [2, 3, -8, 7, -1, 2, 3]\n<strong>Output: </strong>11<strong>\nExplanation: </strong>The subarray [7, -1, 2, 3] has the largest sum 11.\n</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[] = [-2, -4]\n<strong>Output: </strong>-2<strong>\nExplanation: </strong>The subarray [-2] has the largest sum -2.</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[] = [5, 4, 1, 7, 8]\n<strong>Output: </strong>25<strong>\nExplanation: </strong>The subarray [5, 4, 1, 7, 8] has the largest sum 25.</span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:<br /></strong>1 &le; arr.size() &le; 10<sup>5</sup><strong><br /></strong>-</span><span style=\"font-size: 14pt;\">10</span><sup>4</sup> <span style=\"font-size: 14pt;\">&le;</span><span style=\"font-size: 14pt;\"> </span><span style=\"font-size: 14pt;\">arr[i] &le; 10</span><sup>4</sup></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
       "notes": "",
       "methods": [],
       "manuallyEdited": false
@@ -149,7 +778,8 @@
       "_committedPaths": [
         "problems/gfg-kth-smallest-element5635/gfg-kth-smallest-element5635.py",
         "problems/gfg-kth-smallest-element5635/README.md"
-      ]
+      ],
+      "problemStatement": "<p><span style=\"font-size: 14pt;\">Given an integer array <strong>arr[]</strong> and an integer&nbsp;<strong>k</strong>, find and return the <strong>k<sup>th</sup> smallest</strong> element in the given array.<br /></span><span style=\"font-size: 14pt;\"><strong data-start=\"482\" data-end=\"491\">Note:</strong> The kth smallest element is determined based on the sorted order of the array.</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples :</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[] = [10, 5, 4, 3, 48, 6, 2, 33, 53, 10], k = 4<br /><strong>Output:</strong> 5\n<strong>Explanation: </strong>4th smallest element in the given array is 5.</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[] = [7, 10, 4, 3, 20, 15], k = 3<span style=\"font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;\"><br /></span></span><span style=\"font-size: 14pt;\"><strong>Output:</strong> 7\n<strong>Explanation: </strong>3rd smallest element in the given array is 7.</span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:</strong><br />1&nbsp;<span style=\"color: #1e2229; font-family: Nunito; font-size: 17px; background-color: #ffffff;\">&le;</span> arr.size() <span style=\"color: #1e2229; font-family: Nunito; font-size: 17px; background-color: #ffffff;\">&le; </span>10<sup>5</sup><br />1 <span style=\"color: #1e2229; font-family: Nunito; font-size: 17px; background-color: #ffffff;\">&le;</span>&nbsp;arr[i]&nbsp;<span style=\"color: #1e2229; font-family: Nunito; font-size: 17px; background-color: #ffffff;\">&le;</span> 10<sup>5</sup><sup><br /></sup>1&nbsp;<span style=\"color: #1e2229; font-family: Nunito; font-size: 17px; background-color: #ffffff;\">&le;</span>&nbsp;k&nbsp;<span style=\"color: #1e2229; font-family: Nunito; font-size: 17px; background-color: #ffffff;\">&le;</span>&nbsp;&nbsp;</span><span style=\"font-size: 18.6667px;\">arr.size()&nbsp;</span></p>"
     },
     {
       "id": "gfg-ladoo-problem2929",
@@ -159,9 +789,8 @@
       "difficulty": "Easy",
       "topic": "Hashing",
       "tags": [
-        "Hashing",
-        "Data Structures",
-        "Set"
+        "Hash",
+        "Data Structures"
       ],
       "canonical": null,
       "readmeContent": "# Ladoo problem\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Easy\n\n## Problem\n\nBheem has N friends. And he has a ladoo for each day. Given an Array A[] denoting on which day ith friend wants a ladoo. If Bheem is unable to give a ladoo to a friend, he loses his friendship with them. Find out the maximum number of Friends he can have at the end.\n\n&nbsp;\n\nExample 1:\n\nInput:\nN = 5\nA[] = {3, 3, 1, 2, 4}\nOutput:\n4 \nExplanation:\nHe will lose either his 1st or 2nd\nfriend and therefore will be left\nwith 4 friends.\n\nExample 2:\n\nInput:\nN = 2\nA[] = {1, 2}\nOutput:\n2\nExplanation:\nHe can give a ladoo to each of his friends,\nand will have 2 friends by the end.\n\n&nbsp;\n\nYour Task:\nYou don't need to read input or print anything. Your task is to complete the function divideLadoo() which takes an Integer N and an Array A as input and returns the answer.\n\n&nbsp;\n\nExpected Time Complexity: O(N)\nExpected Auxiliary Space: O(N)\n\n&nbsp;\n\nConstraints:\n1 <= N <= 105\n1 <= A[i] <= 105\n\n**Source:** https://www.geeksforgeeks.org/problems/ladoo-problem2929/",
@@ -195,7 +824,454 @@
       "_aiModel": "gemini-3-flash-preview",
       "notes": "",
       "methods": [],
+      "manuallyEdited": false,
+      "problemStatement": "<p><span style=\"font-size:18px\">Bheem has <strong>N </strong>friends. And he has a ladoo for each day. Given an Array <strong>A</strong>[] denoting on which day ith friend wants a ladoo. If Bheem is unable to give a ladoo to a friend, he loses his friendship with them. Find out the maximum number of Friends he can have at the end.</span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-size:18px\"><strong>Example 1:</strong></span></p>\r\n\r\n<pre>\r\n<span style=\"font-size:18px\"><strong>Input:</strong></span>\r\n<span style=\"font-size:18px\"><strong>N = </strong>5</span>\r\n<span style=\"font-size:18px\"><strong>A[] =</strong> {3, 3, 1, 2, 4}</span>\r\n<span style=\"font-size:18px\"><strong>Output:</strong></span>\r\n<span style=\"font-size:18px\">4 </span>\r\n<span style=\"font-size:18px\"><strong>Explanation:\r\n</strong>He will lose either his 1st or 2nd\r\nfriend and therefore will be left\r\nwith 4 friends.</span></pre>\r\n\r\n<p><span style=\"font-size:18px\"><strong>Example 2:</strong></span></p>\r\n\r\n<pre>\r\n<span style=\"font-size:18px\"><strong>Input:</strong></span>\r\n<span style=\"font-size:18px\"><strong>N = </strong>2</span>\r\n<span style=\"font-size:18px\"><strong>A[] =</strong> {1, 2}</span>\r\n<span style=\"font-size:18px\"><strong>Output:</strong></span>\r\n<span style=\"font-size:18px\">2</span>\r\n<span style=\"font-size:18px\"><strong>Explanation:\r\n</strong>He can give a ladoo to each of his friends,\r\nand will have 2 friends by the end.</span></pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-size:18px\"><strong>Your Task:</strong><br />\r\nYou don&#39;t need to read input or print anything. Your task is to complete the function <strong>divideLadoo()</strong> which takes an Integer N and an Array A as input and returns the answer.</span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-size:18px\"><strong>Expected Time Complexity:</strong> O(N)<br />\r\n<strong>Expected Auxiliary Space:</strong> O(N)</span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-size:18px\"><strong>Constraints:</strong></span><br />\r\n<span style=\"font-size:18px\">1 &lt;= N &lt;= 10<sup>5</sup><br />\r\n1 &lt;= A[i] &lt;= 10<sup>5</sup></span></p>\r\n"
+    },
+    {
+      "id": "gfg-learn-to-comment-python",
+      "platform": "geeksforgeeks",
+      "title": "Learn To Comment Python",
+      "titleSlug": "learn-to-comment-python",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Java"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 18px;\">Given three lines that print the values of <strong>a</strong>, <strong>b</strong>, and <strong>c.</strong> <strong>Comment</strong> out the line that prints the value of b.</span></p>\n<p><span style=\"font-size: 18px;\">Comments are useful in any programming language to describe the purpose of functions or operations. They are ignored by the compiler, so they do not affect the execution of the code.</span><span style=\"font-size: 18px;\"><br /></span></p>\n<p><span style=\"font-size: 18px;\"><strong>Examples:</strong>&nbsp;</span></p>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong></span><span style=\"font-size: 18px;\">a = 5, b = 6, c = 15</span>\n<span style=\"font-size: 18px;\"><strong>Output:</strong>\n5\n15</span></pre>\n<pre><span style=\"font-size: 18px;\"><strong>Input:</strong></span><span style=\"font-size: 18px;\">a = 6, b = 8, c = 10</span>\n<span style=\"font-size: 18px;\"><strong>Output:</strong>\n6\n10</span></pre>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
       "manuallyEdited": false
+    },
+    {
+      "id": "gfg-level-order-traversal",
+      "platform": "geeksforgeeks",
+      "title": "Level Order Traversal",
+      "titleSlug": "level-order-traversal",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Tree",
+        "Data Structures"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 14pt;\"><span style=\"font-size: 18px;\">Given the <strong>root </strong>of a Binary Tree, your task is to return its&nbsp;</span><strong style=\"font-size: 18px;\">Level Order Traversal</strong><span style=\"font-size: 18px;\">.</span></span></p>\n<p><strong><span style=\"font-size: 18.6667px;\">Note:&nbsp;</span></strong><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 14pt;\">A <strong>level order traversal</strong> is a breadth-first search (BFS) of the tree. It visits nodes level by level, starting from the root, and processes all nodes from left to right within each level before moving to the next.</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input:</strong> root = [1, 2, N, N, 3, N, N]<br /><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/700511/Web/Other/blobid0_1758799933.webp\" width=\"345\" height=\"213\" />\n<strong>Output: </strong>[1, 2, 3]<br /><strong>Explanation: </strong></span><span style=\"font-size: 18.6667px;\">We start with the root node 1, so the first level of the traversal is [1]. Then we move to its children 2 and 3, which form the next level, giving the final output [1, 2, 3].</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input:</strong> root = [10, 20, 30, N, N, 40, 50, N, N, N, N]<br /><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/700511/Web/Other/blobid1_1758800199.webp\" width=\"312\" height=\"217\" />\n<strong>Output: </strong>[10, 20, 30, 40, 50]<br /><strong>Explanation: </strong></span><span style=\"font-size: 18.6667px;\">We begin with the root node 10, which forms the first level as [10]. Its children 20 and 30 make up the second level, and their children 40 and 50 form the third level, resulting in [10, 20, 30, 40, 50].</span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:<br /></strong></span><span style=\"font-size: 14pt;\">1 &le; number of nodes &le; 3*10<sup>4</sup><sup><br /></sup></span><span style=\"font-size: 14pt;\">0 &le; node-&gt;data &le; 10<sup>9</sup></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-longest-increasing-subsequence-1587115620",
+      "platform": "geeksforgeeks",
+      "title": "Longest Increasing Subsequence",
+      "titleSlug": "longest-increasing-subsequence-1587115620",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Dynamic Programming",
+        "Binary Search",
+        "Algorithms"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 14pt;\">Given an array <strong><code>arr[]</code></strong> of non-negative integers, the task is to find the <strong>length</strong> of the <strong>Longest Strictly Increasing Subsequence (LIS)</strong>.<br /></span><span style=\"font-size: 14pt;\">A subsequence is <strong>strictly increasing</strong> if each element in the subsequence is strictly less than the next element.</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr<span class=\"hljs-selector-attr\">[]</span> = <span class=\"hljs-selector-attr\">[5, 8, 3, 7, 9, 1]</span>\n<strong>Output: </strong>3<strong>\nExplanation: </strong>The longest strictly increasing subsequence could be <code>[5, 7, 9]</code><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">, which has a length of 3.</span></span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[] = [10, 6, 3, 11, 7, 15]\n<strong>Output: </strong>3<strong>\nExplanation: </strong>One of the possible longest strictly increasing subsequences is <code>[10, 11, 15]</code><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">, which has a length of 3.</span></span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[] = [3, 10, 2, 1, 20]\n<strong>Output: </strong>3<strong>\nExplanation: </strong>The longest strictly increasing subsequence could be <code>[3, 10, 20]</code><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">, which has a length of 3.</span></span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:</strong></span><br /><span style=\"font-size: 14pt;\">1 &le; arr.size() &le; 10<sup>3</sup><br />0 &le; arr[i] &le; 10<sup>6</sup></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-maximum-index-1587115620",
+      "platform": "geeksforgeeks",
+      "title": "Maximum Index",
+      "titleSlug": "maximum-index-1587115620",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Arrays",
+        "Data Structures",
+        "two-pointer-algorithm"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 14pt;\">Given an array <strong>arr[]</strong> of positive integers, return the maximum difference between two indices <strong>j</strong> and <strong>i </strong>(i.e., <strong>j - i</strong>)<strong> </strong>such that <strong>arr[i]&nbsp;<span style=\"font-size: 18.6667px;\">&le; </span>arr[j] </strong>and <strong>i&nbsp;</strong><span style=\"font-size: 18.6667px;\"><strong>&le;</strong> </span><strong>j</strong>.</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[] = [1, 10]\n<strong>Output: </strong>1<strong>\nExplanation: </strong>arr[0] <span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 18.6667px; white-space: normal;\">&le;</span> arr[1] so (j-i) is 1-0 = 1.<br /></span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[] = [5, 4, 3]\n<strong>Output: </strong>0<strong>\nExplanation:</strong> There is no pair that satisfies the given condition.</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[] = [34, 8, 10, 3, 2, 80, 30, 33, 1]\n<strong>Output: </strong>6<strong>\nExplanation: </strong>In the given array arr[1] &lt; arr[7] satisfying the required condition(arr[i] <span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 18.6667px; white-space: normal;\">&le;</span> arr[j]) thus giving the maximum difference of j - i which is 6(7-1).\n</span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:</strong><br />1 &le; arr.size &le; 10<sup>5</sup><br />0 &le; arr[i] &le; 10<sup>9</sup></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-maximum-path-sum-from-any-node",
+      "platform": "geeksforgeeks",
+      "title": "Maximum Path Sum From Any Node",
+      "titleSlug": "maximum-path-sum-from-any-node",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Tree",
+        "Data Structures"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 14pt;\">Given the <strong>root</strong> of a binary tree, your task is to find the <strong>maximum path sum</strong>. The path may start and end at any node in the tree.</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>root[] = [10, 2, 10, 20, 1, N, -25, N, N, N, N, 3, 4]\n<strong>Output: </strong>42<strong>\nExplanation: </strong>Max path sum is represented using green colour nodes in the above binary tree.<strong><br /></strong><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/700611/Web/Other/blobid3_1736948585.png\" alt=\"\" width=\"431\" height=\"275\" /><br /></span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>root[] = [-17, 11, 4, 20, -2, 10]\n<strong>Output: </strong>31<strong>\nExplanation: </strong>Max path sum is represented using green colour nodes in the above binary tree.<strong><br /></strong><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/700611/Web/Other/blobid1_1736947534.png\" alt=\"\" width=\"357\" height=\"311\" /><br /></span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:</strong><br />1 &le; number of nodes &le; 10<sup>3</sup><br />-10<sup>4</sup> &le; node-&gt;data &le; 10<sup>4</sup></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-merge-two-sorted-linked-lists",
+      "platform": "geeksforgeeks",
+      "title": "Merge Two Sorted Linked Lists",
+      "titleSlug": "merge-two-sorted-linked-lists",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Linked List",
+        "Data Structures"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 18px;\">Given the <strong>head</strong> of two&nbsp;<strong>sorted linked lists&nbsp;</strong>consisting of nodes respectively. <strong>Merge</strong>&nbsp;both lists and return the&nbsp;<strong>head&nbsp;</strong>of the&nbsp;<strong>sorted merged list</strong>.</span></p>\n<p><span style=\"font-size: 18px;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 18px;\"><strong>Input:<br /></strong>  <img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/700176/Web/Other/blobid0_1755952530.webp\" width=\"437\" height=\"108\" /><br /><strong>Output: </strong>2 -&gt; 3 -&gt; 5 -&gt; 10 -&gt; 15 -&gt; 20 -&gt; 40<strong>\nExplanation:<br /></strong></span>   <img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/700176/Web/Other/blobid1_1755952582.webp\" width=\"592\" height=\"60\" /></pre>\n<pre><span style=\"font-size: 18px;\"><strong>Input</strong>:<br />  <img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/700176/Web/Other/blobid2_1755952649.webp\" width=\"320\" height=\"114\" /><br /><strong>Output: </strong>1 -&gt; 1 -&gt; 2 -&gt; 4<strong>\nExplanation:<br />  <img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/700176/Web/Other/blobid3_1755952660.webp\" width=\"433\" height=\"67\" /><br /></strong></span></pre>\n<p><span style=\"font-size: 18px;\"><strong>Constraints:</strong><br />1&nbsp;</span><span style=\"background-color: #ffffff; color: #001d35; font-family: 'Google Sans', Arial, sans-serif; font-size: 18px;\">&le; </span><span style=\"font-size: 18px;\">list1.size, list2.size</span><span style=\"font-size: 18px;\">&nbsp;</span><span style=\"background-color: #ffffff; color: #001d35; font-family: 'Google Sans', Arial, sans-serif; font-size: 18px;\">&le;</span><span style=\"font-size: 18px;\">&nbsp;10</span><sup>3<br /></sup><span style=\"font-size: 18px;\">0&nbsp;</span><span style=\"background-color: #ffffff; color: #001d35; font-family: 'Google Sans', Arial, sans-serif; font-size: 18px;\">&le; </span><span style=\"font-size: 18px;\">node-&gt;data&nbsp;</span><span style=\"background-color: #ffffff; color: #001d35; font-family: 'Google Sans', Arial, sans-serif; font-size: 18px;\">&le;</span><span style=\"font-size: 18px;\">&nbsp;10</span><sup>5</sup></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-minimum-element-in-a-sorted-and-rotated-array3611",
+      "platform": "geeksforgeeks",
+      "title": "Minimum Element In A Sorted And Rotated Array",
+      "titleSlug": "minimum-element-in-a-sorted-and-rotated-array3611",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Searching",
+        "Algorithms"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 18.6667px;\">A sorted array<strong>&nbsp;</strong></span><span style=\"font-size: 18.6667px;\">of distinct elements </span><strong style=\"font-size: 18.6667px;\">arr[]</strong><span style=\"font-size: 18.6667px;\">&nbsp;is rotated at some unknown point, the task is to find the minimum element in it.&nbsp;</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[] = [5, 6, 1, 2, 3, 4]\n<strong>Output: </strong>1\n<strong>Explanation:</strong> 1 is the minimum element in the array.</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[] = [3, 1, 2]\n<strong>Output: </strong>1\n<strong>Explanation:</strong> Here 1 is the minimum element.<br /></span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[] = [4, 2, 3]\n<strong>Output: </strong>2\n<strong>Explanation:</strong> Here 2 is the minimum element.</span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints</strong>:<br />1 &le; arr.size() &le; 10<sup>6</sup><br />1 &le; arr[i] &le; 10<sup>9</sup></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-minimum-platforms-1587115620",
+      "platform": "geeksforgeeks",
+      "title": "Minimum Platforms",
+      "titleSlug": "minimum-platforms-1587115620",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Arrays",
+        "Greedy",
+        "Sorting",
+        "Binary Search",
+        "Data Structures",
+        "Algorithms"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p data-pm-slice=\"0 0 []\"><span style=\"font-size: 14pt;\">Given arrival <strong>arr[] </strong>and departure <strong>dep[] </strong>times of trains on the same day, find the minimum number of platforms needed so that no train waits. A platform cannot serve two trains at the same time; if a train arrives before another departs, an extra platform is needed.</span></p>\n<p data-pm-slice=\"0 0 []\"><span style=\"font-size: 14pt;\"><strong><span style=\"box-sizing: border-box; color: #1e2229; background-color: #ffffff; font-family: 'Source Sans 3' !important;\">Note:</span></strong><span style=\"color: #1e2229; font-family: Nunito; background-color: #ffffff;\"> Time intervals are in the 24-hour format <strong>(</strong></span><span style=\"box-sizing: border-box; font-weight: bolder; color: #1e2229; background-color: #ffffff; font-family: 'Source Sans 3' !important;\"><strong>HHMM)</strong> ,</span><span style=\"color: #1e2229; font-family: Nunito; background-color: #ffffff;\"> where the first two characters represent hour (between 00 to 23 ) and the last two characters represent minutes (this will be &lt;= 59 and &gt;= 0).&nbsp;</span>Leading zeros for hours less than 10 are optional (e.g., 0900 is the same as 900).</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input</strong>: arr[] = [900, 940, 950, 1100, 1500, 1800], dep[] = [910, 1200, 1120, 1130, 1900, 2000]\n<strong>Output</strong>: 3\n<strong>Explanation</strong>: There are three trains during the time 9:40 to 12:00. So we need a minimum of 3 platforms.</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input</strong>: arr[] = [900, 1235, 1100], dep[] = [1000, 1240, 1200]\n<strong>Output</strong>: 1\n<strong>Explanation</strong>: All train times are mutually exclusive. So we need only one platform.\n</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input</strong>: arr[] = [1000, 935, 1100], dep[] = [1200, 1240, 1130]\n<strong>Output</strong>: 3\n<strong>Explanation</strong>: All 3 trains have to be there from 11:00 to 11:30</span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:<br /></strong>1 &le; number of trains &le; 10<sup>5</sup><br />0000 &le; arr[i] &le; dep[i] &le; 2359<br /></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-mirror-tree",
+      "platform": "geeksforgeeks",
+      "title": "Mirror Tree",
+      "titleSlug": "mirror-tree",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Tree",
+        "Data Structures"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 18px;\">Given the <strong>root </strong>of a binary tree, convert the binary tree to its <strong>Mirror tree. </strong></span></p>\n<p><span style=\"font-size: 18px;\"><strong>Note:</strong> Mirror of a Binary Tree T is another Binary Tree M(T) with left and right children of all non-leaf nodes interchanged.</span></p>\n<p><span style=\"font-size: 18px;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 18px;\"><strong style=\"font-size: 18px;\">Input: </strong><span style=\"font-size: 18px;\">root = [1, 2, 3, N, N, 4]\n</span><strong style=\"font-size: 18px;\">Output: </strong><span style=\"font-size: 18px;\">[1, 3, 2, N, 4]</span><strong style=\"font-size: 18px;\">\nExplanation: </strong><span style=\"font-size: 18px;\"><br /><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/700155/Web/Other/blobid0_1736926809.png\" alt=\"\" width=\"523\" height=\"262\" /><br />In the inverted tree, every non-leaf node has its left and right child interchanged.</span></span></pre>\n<pre><span style=\"font-size: 18px;\"><strong style=\"font-size: 18px;\">Input: </strong><span style=\"font-size: 18px;\">root = [1, 2, 3, 4, 5]\n</span><strong style=\"font-size: 18px;\">Output: </strong><span style=\"font-size: 18px;\">[1, 3, 2, N, N, 5, 4]</span><strong style=\"font-size: 18px;\">\nExplanation:<br /></strong><span style=\"font-size: 18px;\"><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/700155/Web/Other/blobid1_1736926809.png\" alt=\"\" width=\"525\" height=\"263\" /><br />In the inverted tree, every non-leaf node has its left and right child interchanged.</span></span></pre>\n<p><span style=\"font-size: 18px;\"><strong>Constraints:</strong><br />1 &le; number of nodes &le; 10<sup>4</sup><br />1 &le; node-&gt;data &le; 10<sup>5</sup></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-missing-number-in-array1416",
+      "platform": "geeksforgeeks",
+      "title": "Missing Number In Array",
+      "titleSlug": "missing-number-in-array1416",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Arrays",
+        "Searching",
+        "Bit Magic",
+        "Data Structures",
+        "Algorithms"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 14pt;\">You are given an array <strong>arr[]</strong> of size <strong>n - 1</strong> that contains<strong> distinct integers </strong>in the range from 1 to n (inclusive). This array represents a permutation of the integers from 1 to n with <strong>one element missing</strong>. Your task is to identify and return the <strong>missing element</strong>.</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[] = [1, 2, 3, 5]\n<strong>Output: </strong>4\n<strong>Explanation: </strong>All the numbers from 1 to 5 are present except 4.<br /></span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[] = [8, 2, 4, 5, 3, 7, 1]\n<strong>Output:</strong> 6\n<strong>Explanation: </strong>All the numbers from 1 to 8 are present except 6.</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[] = [1]\n<strong>Output: </strong>2\n<strong>Explanation: </strong>Only 1 is present so the missing element is 2.<br /></span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:</strong><br />1 &le; arr.size() &le; 10<sup>6</sup><br />1 &le; arr[i] &le; arr.size() + 1</span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-nearly-sorted-1587115620",
+      "platform": "geeksforgeeks",
+      "title": "Nearly Sorted",
+      "titleSlug": "nearly-sorted-1587115620",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Sorting",
+        "Arrays",
+        "priority-queue"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 14pt;\">Given an array <strong>arr[]</strong>, where each element is at most <strong data-start=\"202\" data-end=\"222\">k positions away</strong> from its correct position in the sorted order.<br />Your task is to <strong data-start=\"275\" data-end=\"316\">restore </strong>the sorted order of arr[] by rearranging the elements <strong data-start=\"345\" data-end=\"357\">in place</strong>.</span></p>\n<p><span style=\"font-size: 18.6667px;\"><strong>Note:</strong> Don't use any sort() method.</span></p>\n<p><span style=\"font-size: 18px;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input:</strong> arr[] = [2, 3, 1, 4], k = 2\n<strong>Output: </strong>[1, 2, 3, 4]<strong>\nExplanation: </strong>All elements are at most k = 2 positions away from their correct positions.</span><br /><span style=\"font-size: 14pt;\">Element 1 moves from index 2 to 0</span><br /><span style=\"font-size: 14pt;\">Element 2 moves from index 0 to 1</span><br /><span style=\"font-size: 14pt;\">Element 3 moves from index 1 to 2</span><br /><span style=\"font-size: 14pt;\">Element 4 stays at index 3</span></pre>\n<pre><span style=\"font-size: 14pt; font-family: 'andale mono', monospace;\"><strong>Input:</strong><span style=\"color: #1d1c1d; font-variant-ligatures: common-ligatures; white-space: normal; background-color: #f8f8f8;\"> arr[]= [7, 9, 14], k = 1</span>\n<strong>Output: </strong>[7, 9, 14]<br /><strong>Explanation: </strong>All elements are already stored in the sorted order.</span></pre>\n<p><span style=\"font-size: 18px;\"><strong>Constraints:</strong><br />1 &le; arr.size() &le; 10<sup>6</sup><br />0 &le; k &lt; arr.size()<br />1 &le; arr[i]<sub>&nbsp;</sub>&le; 10<sup>6</sup></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-non-repeating-character-1587115620",
+      "platform": "geeksforgeeks",
+      "title": "Non Repeating Character",
+      "titleSlug": "non-repeating-character-1587115620",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Hash",
+        "Strings",
+        "Data Structures"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 14pt;\">Given a string <strong>s</strong> consisting of <strong>lowercase </strong>English<strong> </strong>Letters. return the first non-repeating character in <strong>s</strong>. </span><span style=\"font-size: 14pt;\">If there is no non-repeating character, return <strong>'$'</strong>.<br /></span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>s = \"geeksforgeeks\"\n<strong>Output: </strong>'f'<strong>\nExplanation: </strong>In the given string, 'f' is the first character in the string which does not repeat.</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong style=\"font-family: monospace; white-space: pre;\">Input: </strong>s = \"racecar\"<br /><strong>Output: </strong>'e'<br /><strong>Explanation: </strong>In the given string, 'e' is the only character in the string which does not repeat.</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong style=\"font-family: monospace; white-space: pre;\">Input: </strong>s = \"aabbccc\"<br /><strong>Output: '$'</strong><br /><strong>Explanation: </strong>All the characters in the given string are repeating.</span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:</strong><br />1 &le; s.size() &le; 10<sup>5</sup></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-number-of-coins1824",
+      "platform": "geeksforgeeks",
+      "title": "Number Of Coins",
+      "titleSlug": "number-of-coins1824",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Dynamic Programming",
+        "Algorithms"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 18.6667px;\">You are given an array <strong>coins[]</strong>, where each element represents a coin of a <strong>different</strong> denomination, and a target value <strong>sum</strong>. </span><span style=\"font-size: 18.6667px;\">You have an <strong>unlimited</strong> supply of each coin type.&nbsp;</span><span style=\"font-size: 18.6667px;\">Your task is to determine the <strong>minimum</strong> number of coins needed to obtain the target <strong>sum</strong>. If it is <strong>not</strong> possible to form the sum using the given coins, return <strong>-1</strong>.</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre dir=\"ltr\" style=\"color: #222222; font-family: Arial, Helvetica, sans-serif; font-size: small; white-space: normal; background-color: #ffffff;\"><span style=\"font-size: 14pt;\"><strong>Input:</strong>&nbsp;coins[] = [25, 10, 5], sum = 30</span><br /><span style=\"font-size: 14pt;\"><strong>Output:</strong>&nbsp;2</span><br /><span style=\"font-size: 14pt;\"><strong>Explanation:</strong>&nbsp;Minimum 2 coins needed, 25 and 5 &nbsp;</span></pre>\n<pre dir=\"ltr\" style=\"color: #222222; font-family: Arial, Helvetica, sans-serif; font-size: small; white-space: normal; background-color: #ffffff;\"><span style=\"font-size: 14pt;\"><strong>Input:</strong>&nbsp;coins[] = [9, 6, 5, 1], sum = 19</span><br /><span style=\"font-size: 14pt;\"><strong>Output:&nbsp;</strong>3</span><br /><span style=\"font-size: 14pt;\"><strong>Explanation:</strong>&nbsp;19 = 9 + 9 + 1</span></pre>\n<pre dir=\"ltr\" style=\"color: #222222; font-family: Arial, Helvetica, sans-serif; font-size: small; white-space: normal; background-color: #ffffff;\"><span style=\"font-size: 14pt;\"><strong>Input:</strong>&nbsp;coins[] = [5, 1], sum = 0</span><br /><span style=\"font-size: 14pt;\"><strong>Output:&nbsp;</strong>0</span><br /><span style=\"font-size: 14pt;\"><strong>Explanation:</strong>&nbsp;For 0 sum, we do not need a coin</span></pre>\n<pre dir=\"ltr\" style=\"color: #222222; font-family: Arial, Helvetica, sans-serif; font-size: small; white-space: normal; background-color: #ffffff;\"><span style=\"font-size: 14pt;\"><strong>Input:</strong>&nbsp;coins[] = [4, 6, 2], sum = 5</span><br /><span style=\"font-size: 14pt;\"><strong>Output:&nbsp;</strong>-1</span><br /><span style=\"font-size: 14pt;\"><strong>Explanation:</strong>&nbsp;Not possible to make the given sum.</span></pre>\n<div><strong style=\"font-size: 14pt;\">Constraints:</strong></div>\n<div><span style=\"font-size: 14pt;\">1 &le; sum * coins.size() &le; 10<sup>6</sup></span></div>\n<div><span style=\"font-size: 14pt;\">0 &le; sum &le; 10<sup>4</sup></span></div>\n<div><span style=\"font-size: 14pt;\">1 &le; coins[i] &le; 10<sup>4</sup></span></div>\n<div><span style=\"font-size: 14pt;\">1 &le; coins.size() &le; 10<sup>3</sup></span></div>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-number-of-paths0926",
+      "platform": "geeksforgeeks",
+      "title": "Number Of Paths",
+      "titleSlug": "number-of-paths0926",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Algorithms",
+        "Dynamic Programming"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 18.6667px;\">Given two integers <strong>m</strong> and <strong>n</strong> representing the number of rows and columns of a grid, respectively, find the number of distinct paths from the top-left cell (0, 0) to the bottom-right cell (m - 1, n - 1). From any cell, you can move only right or down.</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Note:</strong> The answer is guaranteed to fit within a 32-bit integer.</span></p>\n<p><span style=\"font-size: 18px;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 18px;\"><strong>Input</strong>: m = 2, n = 3\n<strong>Output</strong>: 3\n<strong>Explanation</strong>: There are three distinct paths from the top-left cell to the bottom-right cell.<br /><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/929560/Web/Other/blobid1_1781176087.png\" height=\"100\" /> </span></pre>\n<pre><span style=\"font-size: 18px;\"><strong>Input</strong>: m = 1, n = 4\n<strong>Output:</strong> 1\n<strong>Explanation</strong>: There is only one possible path from the top-left cell to the bottom-right cell.<br /><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/929560/Web/Other/blobid2_1781176100.png\" height=\"100\" /><br /></span></pre>\n<p><span style=\"font-size: 18px;\"><strong>Constraints:</strong></span><br /><span style=\"font-size: 18px;\">1 &le; m &le; 100<br />1 &le; n &le;&nbsp;100</span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-number-of-students-unable-to-eat-lunch102404",
+      "platform": "geeksforgeeks",
+      "title": "Number Of Students Unable To Eat Lunch",
+      "titleSlug": "number-of-students-unable-to-eat-lunch102404",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": null,
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true
+    },
+    {
+      "id": "gfg-overlapping-intervals170633",
+      "platform": "geeksforgeeks",
+      "title": "Overlapping Intervals",
+      "titleSlug": "overlapping-intervals170633",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": null,
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true
     },
     {
       "id": "gfg-pacific-atlantic-water-flow",
@@ -234,7 +1310,7 @@
       "elapsedSeconds": 0,
       "platform": "geeksforgeeks",
       "_committedPaths": [
-        "problems/gfg-pacific-atlantic-water-flow/gfg-pacific-atlantic-water-flow.py",
+        "problems/gfg-pacific-atlantic-water-flow/gfg-pacific-atlantic-water-flow-approach-1-python3.py",
         "problems/gfg-pacific-atlantic-water-flow/README.md"
       ],
       "aiReview": "1.  **Time complexity (Big-O) and space complexity**\n    Time complexity: O(N*M), where N is the number of rows and M is the number of columns. Two BFS traversals each visit every cell and edge at most once. Set intersection is also O(N*M).\n    Space complexity: O(N*M) for storing the `p` and `a` sets and the `pq`, `aq` deques, which can hold up to all grid coordinates.\n\n2.  **Correctness — any edge cases that could fail?**\n    The core approach of performing two reverse BFS traversals from the Pacific and Atlantic borders is correct for identifying cells that can reach each ocean. The flow condition `mat[nr][nc] >= mat[r][c]` for reverse traversal is also correct.\n    **However, the solution fails to meet the problem's output requirement.** It returns `len(p & a)` (an integer count) instead of `list(p & a)` (a list of coordinates `[r, c]`). This is a critical error.\n\n3.  **One concrete optimisation if applicable**\n    The primary \"optimization\" is correcting the return type from `len(p & a)` to `list(p & a)` to match the problem's expected output. The two-BFS approach is already optimal for this problem.\n\n4.  **Key algorithmic pattern used**\n    Breadth-First Search (BFS), Graph Traversal.",
@@ -253,6 +1329,194 @@
       "manuallyEdited": false,
       "problemStatement": "<p><span style=\"font-size: 18px;\">You are given a matrix <strong>mat[][]</strong> of dimensions <strong>n x m</strong>, where mat[i][j] represents the <strong>height of a cell</strong> in a rectangular grid island. The <strong>Pacific Ocean</strong> touches the island's <strong>left and top</strong> borders, and the <strong>Atlantic Ocean</strong> touches the island's <strong>right and bottom</strong> borders. Rainwater can flow from a cell to its neighbouring cells in the directions North, South, East, and West, but only if the <strong>neighbouring cell has a height less than or equal to the current cell's height</strong>.</span></p>\n<p><span style=\"font-size: 18px;\">The task is to determine <strong>all coordinates (x, y)</strong> such that water can flow from the cell (x, y) to <strong>both</strong> the Pacific Ocean and the Atlantic Ocean. Water can flow from any adjacent cell directly into an ocean.</span></p>\n<p><span style=\"font-size: 18px;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>mat[][] = [[1, 2, 2, 3, 5],<br>                [3, 2, 3, 4, 4],<br>                [2, 4, 5, 3, 1],<br>                [6, 7, 1, 4, 5],<br>                [5, 1, 1, 2, 4]]\n<strong>Output:</strong> 7\n<strong>Explanation:</strong> </span><span style=\"font-size: 18px;\">In the given matrix, there are 7 coordinates through which the water can flow to both the Oceans</span>. They are  (0, 4), (1, 3), (1, 4), (2, 2), (3, 0), (3, 1), and (4, 0).</pre>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>arr[][] = [[2, 2], <br>               [2, 2]]\n<strong>Output:</strong> 4\n<strong>Explanation:</strong> </span><span style=\"font-size: 18px;\">In the following example, all cells allow water to flow to both the Oceans.</span></pre>\n<p><span style=\"font-size: 18px;\"><strong>Constraints:</strong><br>1 ≤ number of rows,&nbsp;</span><span style=\"font-size: 18px;\">number of columns</span><span style=\"font-size: 18px;\">&nbsp;≤ 10</span><sup>3<br></sup><span style=\"font-size: 18px;\">1 ≤ arr[i][j] ≤ 10<sup>3</sup>&nbsp;</span></p>",
       "_requestAIReview": false
+    },
+    {
+      "id": "gfg-parenthesis-checker2744",
+      "platform": "geeksforgeeks",
+      "title": "Parenthesis Checker",
+      "titleSlug": "parenthesis-checker2744",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Strings",
+        "Stack",
+        "STL",
+        "Data Structures"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 14pt;\">Given a string <strong>s</strong>, composed of different combinations of '(' , ')', '{', '}', '[', ']'. Determine whether the Expression is <strong>balanced </strong>or not.<br />An expression is balanced if:</span></p>\n<ol>\n<li><span style=\"font-size: 14pt;\">Each opening bracket has a corresponding closing bracket of the same type.</span></li>\n<li><span style=\"font-size: 14pt;\">Opening brackets must be closed in the correct order.</span></li>\n</ol>\n<p><span style=\"font-size: 14pt;\"><strong>Examples :</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>s = \"[{()}]\"\n<strong>Output:</strong> true\n<strong>Explanation: </strong>All the brackets are well-formed.</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>s = \"[()()]{}\"\n<strong>Output:</strong> true\n<strong>Explanation: </strong>All the brackets are well-formed.<br /></span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input:</strong> s = \"([]\"<br /><strong>Output: </strong>false<br /><strong>Explanation: </strong>The expression is not balanced as there is a missing ')' at the end.<br /></span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input:</strong> s = \"([{]})\"<br /><strong>Output: </strong>false<br /><strong>Explanation: </strong>The expression is not balanced as there is a closing ']' before the closing '}'.<br /></span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:</strong><br />1 &le; s.size() &le; 10<sup>6<br /></sup>s[i] &isin; {'{', '}', '(', ')', '[', ']'}</span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-police-and-thieves102404",
+      "platform": "geeksforgeeks",
+      "title": "Police And Thieves",
+      "titleSlug": "police-and-thieves102404",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": null,
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true
+    },
+    {
+      "id": "gfg-product-array-puzzle4525",
+      "platform": "geeksforgeeks",
+      "title": "Product Array Puzzle",
+      "titleSlug": "product-array-puzzle4525",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Arrays",
+        "Data Structures",
+        "Algorithms",
+        "prefix-sum"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 14pt;\"><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">Given an array, <strong>arr[] </strong>c</span><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">onstruct a product array, </span><strong><code>res[]</code></strong><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\"> where each element in <strong>res[i] </strong></span><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">is the product of all elements in </span><strong style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\"><code>arr[]</code></strong><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\"> except </span><strong style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\"><code>arr[i]</code></strong><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">. Return this resultant array, </span><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\"><code>res[].<br /><strong>Note:</strong> Each element is res[] lies inside the 32-bit integer range.</code></span></span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[] = [10, 3, 5, 6, 2]\n<strong>Output: </strong>[180, 600, 360, 300, 900]<strong>\nExplanation: </strong>For i=0, res[i] = 3 * 5 * 6 * 2 is 180.\nFor i = 1, res[i] = 10 * 5 * 6 * 2 is 600.\nFor i = 2, res[i] = 10 * 3 * 6 * 2 is 360.\nFor i = 3, res[i] = 10 * 3 * 5 * 2 is 300.\nFor i = 4, res[i] = 10 * 3 * 5 * 6 is 900.\n</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[] = [12, 0]\n<strong>Output: </strong>[0, 12]<br /><strong style=\"font-size: 14pt; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">Explanation: </strong><span style=\"font-size: 14pt; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">For i = 0, res[i] is 0.<br /></span>For i = 1, res[i] is 12.</span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:</strong><br />2 &lt;= arr.size() &lt;= 10<sup>5</sup><br />-100 &lt;= arr[i] &lt;= 100</span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-rearrange-characters5322",
+      "platform": "geeksforgeeks",
+      "title": "Rearrange Characters",
+      "titleSlug": "rearrange-characters5322",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": null,
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true
+    },
+    {
+      "id": "gfg-repetitive-addition-of-digits2221",
+      "platform": "geeksforgeeks",
+      "title": "Repetitive Addition Of Digits",
+      "titleSlug": "repetitive-addition-of-digits2221",
+      "difficulty": "Unknown",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Mathematical",
+        "Algorithms"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 14pt;\">You are given a positive integer <strong>n</strong>,<strong> </strong>you need to&nbsp;add all the digits of <strong>n </strong>and create a new number. Perform this operation until the resultant number has only one digit in it. Return the final number obtained after performing the given operation.<br /></span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>n = 1234\n<strong>Output: </strong>1\n<strong>Explanation: </strong></span><span style=\"font-size: 18.6667px;\">Step 1: 1 + 2 + 3 + 4 = 10. Step 2: 1 + 0 = 1</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>n = 5674\n<strong>Output: </strong>4</span><span style=\"font-size: 14pt;\">\n<strong>Explanation: </strong></span><span style=\"font-size: 18.6667px;\">Step 1: 5 + 6 + 7 + 4 = 22. Step 2: 2 + 2 = 4</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>n = 9\n<strong>Output: </strong>9</span><span style=\"font-size: 14pt;\">\n<strong>Explanation: </strong>Since 9 is a single-digit number hence we return 9.</span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:</strong><br />1 &lt;= n &lt;= 10<sup>9</sup></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-rotate-a-linked-list",
+      "platform": "geeksforgeeks",
+      "title": "Rotate A Linked List",
+      "titleSlug": "rotate-a-linked-list",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Linked List",
+        "Data Structures"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 14pt;\">You are given the <strong>head</strong> of a singly linked list, you have to <strong>left rotate</strong> the linked list&nbsp;<strong>k</strong> times. Return the head of the modified linked list.</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>k = 4,<br />   <img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/908077/Web/Other/blobid0_1756298605.webp\" width=\"480\" height=\"63\" /><br /><strong>Output: </strong>50 -&gt; 10 -&gt; 20 -&gt; 30 -&gt; 40<strong>\nExplanation:<br /></strong>Rotate 1:<strong> </strong>20 -&gt; 30 -&gt; 40 -&gt; 50 -&gt; 10</span><br /><span style=\"font-size: 14pt;\">Rotate 2:<strong> </strong>30 -&gt; 40 -&gt; 50 -&gt; 10 -&gt; 20</span><br /><span style=\"font-size: 14pt;\">Rotate 3:<strong> </strong>40 -&gt; 50 -&gt; 10 -&gt; 20 -&gt; 30</span><br /><span style=\"font-size: 14pt;\">Rotate 4:<strong> </strong>50 -&gt; 10 -&gt; 20 -&gt; 30 -&gt; 40</span><br /><span style=\"font-size: 14pt;\">   <img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/908077/Web/Other/blobid1_1756298735.webp\" width=\"480\" height=\"63\" /></span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>k = 6,<br />   <img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/908077/Web/Other/blobid2_1756298816.webp\" width=\"455\" height=\"70\" /><br /><strong>Output: </strong>30 -&gt; 40 -&gt; 10 -&gt; 20 <br />   <img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/908077/Web/Other/blobid3_1756298833.webp\" width=\"456\" height=\"70\" /><br /></span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:<br /></strong></span><span style=\"font-size: 14pt;\">1 &le; number of nodes &le; 10<sup>5<br /></sup></span><span style=\"font-size: 14pt;\">0 &le; k &le; 10<sup>9<br /></sup></span><span style=\"font-size: 14pt;\">0 &le; node.data &le; 10<sup>9</sup></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-serialize-and-deserialize-a-binary-tree",
+      "platform": "geeksforgeeks",
+      "title": "Serialize And Deserialize A Binary Tree",
+      "titleSlug": "serialize-and-deserialize-a-binary-tree",
+      "difficulty": "Hard",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Tree",
+        "Data Structures"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 14pt;\">You are given the <strong>root</strong> of a binary tree. You have to perform <strong>Serialization</strong> and <strong>Deserialization</strong>. Serialization is to store a tree in an array so that it can be later restored and deserialization is reading tree back from the array. Complete the functions:</span></p>\n<ul>\n<li><span style=\"font-size: 14pt;\"><strong>serialize() :</strong> stores the tree into an array&nbsp;and returns the array.</span></li>\n<li><span style=\"font-size: 14pt;\"><strong>deSerialize() :</strong>&nbsp;deserializes the array to the tree and returns the root of the tree.</span></li>\n</ul>\n<p><span style=\"font-size: 14pt;\"><strong>Note:&nbsp;</strong>Multiple nodes can have the same data and the node values are<strong>&nbsp;</strong>always&nbsp;positive integers. Your code will be correct if the tree returned by&nbsp;<strong>deSerialize(serialize(input_tree))</strong> is same as the input tree. Driver code will print the level order traversal of the tree returned by deSerialize(serialize(input_tree)).</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples :</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>root = [1, 2, 3] &nbsp; &nbsp; &nbsp; </span><br /><span style=\"font-size: 14pt;\"><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/908076/Web/Other/blobid1_1754980863.webp\" width=\"245\" height=\"151\" />\n<strong>Output: </strong>[1, 2, 3]\n</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input:</strong> root = [10, 20, 30, 40, 60, N, N] <br /><img src=\"https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/908076/Web/Other/blobid0_1754980083.webp\" width=\"249\" height=\"198\" />\n<strong>Output: </strong>[10, 20, 30, 40, 60]</span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:</strong><br />1 &le; number of nodes &le; 10<sup>4</sup><br />1 &le; node-&gt;data &le; 10<sup>9</sup></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
     },
     {
       "id": "gfg-sort-an-array-of-0s-1s-and-2s4231",
@@ -299,7 +1563,141 @@
       "_aiModel": "gemini-3-flash-preview",
       "notes": "",
       "methods": [],
+      "manuallyEdited": false,
+      "problemStatement": "<p><span style=\"font-size: 18px;\">Given an array <strong>arr[]</strong> containing only <strong>0s, 1s, and 2s.</strong> Sort the array in ascending order.<br /></span><span style=\"font-size: 18px;\"><strong>Note:</strong> You need to solve this problem without utilizing the built-in sort function.</span></p>\n<p><span style=\"font-size: 18px;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>arr[] = [0, 1, 2, 0, 1, 2]\n<strong>Output: </strong>[0, 0, 1, 1, 2, 2]\n<strong>Explanation: </strong>0s, 1s and 2s are segregated into ascending order.</span></pre>\n<pre><span style=\"font-size: 18px;\"><strong style=\"font-size: 18px;\">Input: </strong><span style=\"font-size: 18px;\">arr[] = [0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1]\n</span><strong style=\"font-size: 18px;\">Output: </strong><span style=\"font-size: 18px;\">[0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2]\n</span><strong style=\"font-size: 18px;\">Explanation: </strong><span style=\"font-size: 18px;\">0s, 1s and 2s are segregated into ascending order.</span></span></pre>\n<p><span style=\"font-size: 18px;\"><strong>Follow up:</strong> Could you come up with a one-pass algorithm using only constant extra space?</span></p>\n<p><span style=\"font-size: 18px;\"><span style=\"font-size: 18px;\"><span style=\"font-size: 18px;\"><strong>Constraints:</strong> <br />1 &le; arr.size() &le; 10<sup>5</sup><br />0 &le; arr[i] &le; 2</span></span></span></p>"
+    },
+    {
+      "id": "gfg-start-coding-python093158",
+      "platform": "geeksforgeeks",
+      "title": "Start Coding Python",
+      "titleSlug": "start-coding-python093158",
+      "difficulty": "Unknown",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": null,
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true
+    },
+    {
+      "id": "gfg-stickler-theif-1587115621",
+      "platform": "geeksforgeeks",
+      "title": "Stickler Theif",
+      "titleSlug": "stickler-theif-1587115621",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Arrays",
+        "Dynamic Programming",
+        "Data Structures",
+        "Algorithms"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p data-start=\"182\" data-end=\"427\"><span style=\"font-size: 18.6667px;\">Stickler the thief wants to loot money from the houses arranged in a line. He cannot loot <strong>two consecutive</strong> houses and aims to <strong>maximize </strong>his total loot.<br /></span><span style=\"font-size: 18.6667px;\">Given an array, <strong>arr[]</strong> where arr[i] represents the amount of money in the i-th house. </span><span style=\"font-size: 18.6667px;\">Determine the <strong>maximum </strong>amount he can loot.</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[] = [6, 7, 1, 3, 8, 2, 4]\n<strong>Output: </strong>19\n<strong>Explanation: </strong>Maximum amount he can get by looting 1st, 3rd, 5th and 7th house, which is 6 + 1 + 8 + 4 = 19.</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>arr[] = [5, 3, 4, 11, 2]\n<strong>Output: </strong>16\n<strong>Explanation: </strong>Maximum amount he can get by looting 1st and 4th house, which is 5 + 11 = 16.<br /></span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:</strong><br />1 &le; arr.size() &le; 10<sup>5</sup><br />1 &le; arr[i] &le; 10<sup>4</sup></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
       "manuallyEdited": false
+    },
+    {
+      "id": "gfg-string-palindromic-ignoring-spaces4723",
+      "platform": "geeksforgeeks",
+      "title": "String Palindromic Ignoring Spaces",
+      "titleSlug": "string-palindromic-ignoring-spaces4723",
+      "difficulty": "Easy",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "two-pointer-algorithm",
+        "Strings",
+        "palindrome",
+        "Data Structures",
+        "Algorithms"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 14pt;\">Given a single string&nbsp;<strong>s</strong>, the task is to check if it is a <strong>palindrome sentence</strong> or not.<br />A palindrome sentence is a sequence of characters, such as word, phrase, or series of symbols that reads the <strong>same</strong> backward as forward after converting all <strong>uppercase </strong>letters to<strong> lowercase </strong>and <strong>removing</strong> all <strong>non-alphanumeric</strong> characters (including spaces and punctuation).</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>s = \"Too hot to hoot\"\n<strong>Output:</strong> true\n<strong>Explanation:</strong> </span><span style=\"font-size: 18.6667px;\">If we remove all non-alphanumeric characters and convert all uppercase letters to lowercase, string s will become <code>\"toohottohoot\"</code> which is a palindrome.</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>s = \"Abc 012..## 10cbA\"\n<strong>Output:</strong> true\n<strong>Explanation:</strong> </span><span style=\"font-size: 18.6667px;\">If we remove all non-alphanumeric characters and convert all uppercase letters to lowercase, string s will become <code>\"abc01210cba\"</code> which is a palindrome.</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>s = \"ABC $. def01ASDF\"<br /><strong>Output:</strong> false<br /><strong>Explanation:</strong> The processed string becomes <code>\"abcdef01asdf\"</code><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">, which is not a palindrome.</span></span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:</strong><br />1 &le; s.length() &le; 10<sup>6</sup></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-total-decoding-messages1235",
+      "platform": "geeksforgeeks",
+      "title": "Total Decoding Messages",
+      "titleSlug": "total-decoding-messages1235",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [
+        "Dynamic Programming",
+        "Algorithms"
+      ],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": "<p><span style=\"font-size: 14pt;\">A message containing letters<code>&nbsp;A-Z </code>is being encoded to numbers using the following mapping:</span></p>\n<div class=\"highlighter-rouge\">\n<blockquote>\n<p><span style=\"font-size: 14pt;\">'A' -&gt; 1 <br />'B' -&gt; 2 <br />... <br />'Z' -&gt; 26 </span></p>\n</blockquote>\n</div>\n<p><span style=\"font-size: 14pt;\">You are given a string <strong>digits</strong>. You have to determine the <strong>total number of ways</strong> that message can be decoded.</span></p>\n<p><span style=\"font-size: 14pt;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; white-space: normal;\">digits </span>= \"123\"\n<strong>Output: </strong>3\n<strong>Explanation: </strong>\"123\" can be decoded as \"ABC\"(1, 2, 3), \"LC\"(12, 3) and \"AW\"(1, 23).\n</span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">digits</span> = \"90\"</span><br /><span style=\"font-size: 14pt;\"><strong>Output: </strong>0\n<strong>Explanation: </strong>\"90\" cannot be decoded, as it's an invalid string and we cannot decode '0'.<sup><br /></sup></span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>digits = \"05\"\n<strong>Output: </strong>0\n<strong>Explanation: </strong>\"05\" cannot be mapped to \"E\" because of the leading zero (\"5\" is different from \"05\"), the string is not a valid encoding message.</span></pre>\n<p><span style=\"font-size: 14pt;\"><strong>Constraints:</strong><br />1 &le; digits.size() &le; 10<sup>3</sup></span></p>",
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true,
+      "notes": "",
+      "methods": [],
+      "manuallyEdited": false
+    },
+    {
+      "id": "gfg-water-flow102404",
+      "platform": "geeksforgeeks",
+      "title": "Water Flow",
+      "titleSlug": "water-flow102404",
+      "difficulty": "Medium",
+      "lang": {
+        "name": "Unknown",
+        "ext": "txt",
+        "slug": "unknown"
+      },
+      "tags": [],
+      "topic": "Untagged",
+      "code": "",
+      "files": [],
+      "timestamp": 1782298700927,
+      "runtime": null,
+      "memory": null,
+      "problemStatement": null,
+      "_importedFromProfile": true,
+      "_needsCodeFetch": true
     },
     {
       "id": "lc-01-matrix",

@@ -5,8 +5,30 @@
 | Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-compare-two-fractions4438` |
-| Topics | String Parsing, Mathematics, Cross Multiplication |
+| Topics | number-theory, Mathematical, Regular Expression, Algorithms |
 | Solved | 2026-06-23 |
+
+## Problem Statement
+
+You are given a string **s** containing two fractions a/b and c/d, compare them and return the **greater fraction**. If they are equal, then return string "**equal**".
+
+**Note**: The string s contains "**a****/b, c/d**"(fractions are separated by comma(,) & space( )). 
+
+**Examples :**
+
+**Input**: s = "5/6, 11/45"
+**Output:** 5/6
+**Explanation**: 5/6 = 0.8333 and 11/45 = 0.2444, So 5/6 is greater fraction.
+**Input: **s = "8/1, 8/1"
+**Output: **equal
+**Explanation: **We can see that both the fractions are same, so we'll return a string "equal".
+
+**Input: **s = "10/17, 9/10"
+**Output: **9/10
+**Explanation: **10/17 = 0.588 & 9/10 = 0.9, so the greater fraction is "9/10".
+**Constraints:**
+0 &le; a,c &le; 103
+1 &le; b,d &le; 103
 
 ## Solutions
 
