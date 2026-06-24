@@ -1,18 +1,18 @@
 {
-  "updatedAt": "2026-06-23T20:14:45.354Z",
+  "updatedAt": "2026-06-24T01:53:16.766Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 312,
-    "easy": 175,
+    "total": 313,
+    "easy": 176,
     "medium": 125,
     "hard": 10,
     "byPlatform": {
-      "geeksforgeeks": 52,
+      "geeksforgeeks": 53,
       "leetcode": 260
     },
     "byLang": {
       "Unknown": 51,
-      "Python3": 195,
+      "Python3": 196,
       "MySQL": 15,
       "Java": 12,
       "Python": 16,
@@ -23,7 +23,7 @@
       "Bash": 4
     },
     "byTopic": {
-      "Untagged": 54,
+      "Untagged": 55,
       "Array": 125,
       "Math": 25,
       "Linked List": 3,
@@ -638,6 +638,38 @@
       "_committedPaths": [
         "problems/gfg-kadanes-algorithm-1587115620/README.md"
       ]
+    },
+    {
+      "id": "gfg-ladoo-problem2929",
+      "forceCommit": false,
+      "title": "Ladoo problem",
+      "titleSlug": "ladoo-problem2929",
+      "difficulty": "Easy",
+      "topic": "Untagged",
+      "tags": [],
+      "canonical": null,
+      "readmeContent": "# Ladoo problem\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Easy\n\n## Problem\n\nBheem has N friends. And he has a ladoo for each day. Given an Array A[] denoting on which day ith friend wants a ladoo. If Bheem is unable to give a ladoo to a friend, he loses his friendship with them. Find out the maximum number of Friends he can have at the end.\n\n&nbsp;\n\nExample 1:\n\nInput:\nN = 5\nA[] = {3, 3, 1, 2, 4}\nOutput:\n4 \nExplanation:\nHe will lose either his 1st or 2nd\nfriend and therefore will be left\nwith 4 friends.\n\nExample 2:\n\nInput:\nN = 2\nA[] = {1, 2}\nOutput:\n2\nExplanation:\nHe can give a ladoo to each of his friends,\nand will have 2 friends by the end.\n\n&nbsp;\n\nYour Task:\nYou don't need to read input or print anything. Your task is to complete the function divideLadoo() which takes an Integer N and an Array A as input and returns the answer.\n\n&nbsp;\n\nExpected Time Complexity: O(N)\nExpected Auxiliary Space: O(N)\n\n&nbsp;\n\nConstraints:\n1 <= N <= 105\n1 <= A[i] <= 105\n\n**Source:** https://www.geeksforgeeks.org/problems/ladoo-problem2929/",
+      "code": "class Solution:\n    def divideLadoo(self, N, A):\n        return len(set(A))\n        ",
+      "files": [
+        {
+          "path": "problems/gfg-ladoo-problem2929/gfg-ladoo-problem2929.py",
+          "content": "class Solution:\n    def divideLadoo(self, N, A):\n        return len(set(A))\n        "
+        },
+        {
+          "path": "problems/gfg-ladoo-problem2929/README.md",
+          "content": "# Ladoo problem\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Easy\n\n## Problem\n\nBheem has N friends. And he has a ladoo for each day. Given an Array A[] denoting on which day ith friend wants a ladoo. If Bheem is unable to give a ladoo to a friend, he loses his friendship with them. Find out the maximum number of Friends he can have at the end.\n\n&nbsp;\n\nExample 1:\n\nInput:\nN = 5\nA[] = {3, 3, 1, 2, 4}\nOutput:\n4 \nExplanation:\nHe will lose either his 1st or 2nd\nfriend and therefore will be left\nwith 4 friends.\n\nExample 2:\n\nInput:\nN = 2\nA[] = {1, 2}\nOutput:\n2\nExplanation:\nHe can give a ladoo to each of his friends,\nand will have 2 friends by the end.\n\n&nbsp;\n\nYour Task:\nYou don't need to read input or print anything. Your task is to complete the function divideLadoo() which takes an Integer N and an Array A as input and returns the answer.\n\n&nbsp;\n\nExpected Time Complexity: O(N)\nExpected Auxiliary Space: O(N)\n\n&nbsp;\n\nConstraints:\n1 <= N <= 105\n1 <= A[i] <= 105\n\n**Source:** https://www.geeksforgeeks.org/problems/ladoo-problem2929/"
+        }
+      ],
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "runtime": null,
+      "memory": null,
+      "timestamp": 1782265995803,
+      "elapsedSeconds": null,
+      "platform": "geeksforgeeks"
     },
     {
       "id": "gfg-learn-to-comment-python",
