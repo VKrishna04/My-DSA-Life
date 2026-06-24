@@ -1,10 +1,10 @@
 <!-- codeledger:gamification:start -->
 <picture>
-  <source media="(prefers-color-scheme: light)" srcset="http://vkrishna04.me/My-DSA-Life/badges/card-light.svg?v=5305-1-309-2026-08-18">
-  <img src="http://vkrishna04.me/My-DSA-Life/badges/card.svg?v=5305-1-309-2026-08-18" alt="Streak card" width="420">
+  <source media="(prefers-color-scheme: light)" srcset="http://vkrishna04.me/My-DSA-Life/badges/card-light.svg?v=5305-1-309-2026-08-19">
+  <img src="http://vkrishna04.me/My-DSA-Life/badges/card.svg?v=5305-1-309-2026-08-19" alt="Streak card" width="420">
 </picture>
 
-![Streak](http://vkrishna04.me/My-DSA-Life/badges/streak.svg?v=5305-1-309-2026-08-18) ![Points](http://vkrishna04.me/My-DSA-Life/badges/points.svg?v=5305-1-309-2026-08-18) ![Level](http://vkrishna04.me/My-DSA-Life/badges/level.svg?v=5305-1-309-2026-08-18) ![Solved](http://vkrishna04.me/My-DSA-Life/badges/solved.svg?v=5305-1-309-2026-08-18) ![Solved by difficulty](http://vkrishna04.me/My-DSA-Life/badges/difficulty.svg?v=5305-1-309-2026-08-18) ![Freezes](http://vkrishna04.me/My-DSA-Life/badges/freezes.svg?v=5305-1-309-2026-08-18)
+![Streak](http://vkrishna04.me/My-DSA-Life/badges/streak.svg?v=5305-1-309-2026-08-19) ![Points](http://vkrishna04.me/My-DSA-Life/badges/points.svg?v=5305-1-309-2026-08-19) ![Level](http://vkrishna04.me/My-DSA-Life/badges/level.svg?v=5305-1-309-2026-08-19) ![Solved](http://vkrishna04.me/My-DSA-Life/badges/solved.svg?v=5305-1-309-2026-08-19) ![Solved by difficulty](http://vkrishna04.me/My-DSA-Life/badges/difficulty.svg?v=5305-1-309-2026-08-19) ![Freezes](http://vkrishna04.me/My-DSA-Life/badges/freezes.svg?v=5305-1-309-2026-08-19)
 
 🩸 First Blood · 🔟 Ten Down · 💯 Century · 🔥 Week On Fire · 🌋 Month On Fire · 🗣️ Polyglot · 🎯 Well Rounded · ⚡ Double Day · 🪃 Comeback · ⭐ Engineer · 🔍 Second Opinion · 📝 Peer Reviewed
 <!-- codeledger:gamification:end -->
@@ -22,7 +22,7 @@
 > Automatically tracked by [CodeLedger](https://codeledger.vkrishna04.me) — every problem solved, committed to Git.
 
 **[View Live Dashboard →](http://vkrishna04.me/My-DSA-Life/)**
-*Last updated: Aug 18, 2026*
+*Last updated: Aug 19, 2026*
 
 [![CodeLedger](https://raw.githubusercontent.com/Life-Experimentalist/Code-Ledger/refs/heads/main/src/assets/images/social%20preview.png)](http://vkrishna04.me/My-DSA-Life/)
 
@@ -40,7 +40,7 @@
 
 **Top Languages:** Python3 (199) · python3 (22) · Unknown (22) · Python (16) · MySQL (15) · Pandas (14) · Java (12) · Bash (4)
 
-**Top Topics:** Array (132) · Math (26) · String (25) · Database (15) · Data Manipulation (15) · Hash Table (14) · Dynamic Programming (12) · Tree (9) · Linked List (8) · Two Pointers (8)
+**Top Topics:** Array (132) · Math (26) · String (26) · Database (15) · Data Manipulation (15) · Hash Table (14) · Dynamic Programming (12) · Tree (9) · Linked List (8) · Two Pointers (8)
 
 ---
 
@@ -48,7 +48,6 @@
 
 | Problem | Difficulty | Language | Platform | Date |
 |---------|-----------|----------|----------|------|
-| [House Robber V](https://leetcode.com/problems/house-robber-v/) | Medium | Python3 | leetcode | Aug 18 |
 | [Aggressive Cows](https://www.geeksforgeeks.org/problems/aggressive-cows/1) | Medium | Python3 | geeksforgeeks | Jun 24 |
 | [2 Sum Find A Pair With Given Sum](https://www.geeksforgeeks.org/problems/2-sum-find-a-pair-with-given-sum/1) | Easy | Python3 | geeksforgeeks | Jun 24 |
 | [Assign Cookies](https://www.geeksforgeeks.org/problems/assign-cookies/1) | Easy | Python3 | geeksforgeeks | Jun 24 |
@@ -58,6 +57,7 @@
 | [Camelcase Pattern Matching](https://www.geeksforgeeks.org/problems/camelcase-pattern-matching2259/1) | Medium | Python3 | geeksforgeeks | Jun 24 |
 | [Count Number Of Substrings](https://www.geeksforgeeks.org/problems/count-number-of-substrings4528/1) | Medium | Unknown | geeksforgeeks | Jun 24 |
 | [Count Ways To Partition A String Such That Both Parts Have Equal Distinct Characters](https://www.geeksforgeeks.org/problems/count-ways-to-partition-a-string-such-that-both-parts-have-equal-distinct-characters102404/1) | Medium | Unknown | geeksforgeeks | Jun 24 |
+| [Compare two fractions](https://www.geeksforgeeks.org/problems/compare-two-fractions4438/1) | Easy | Python3 | geeksforgeeks | Jun 23 |
 
 ---
 
@@ -100,6 +100,7 @@ Built with [CodeLedger](https://codeledger.vkrishna04.me) · [⭐ Star the exten
 </div>
 
 <!-- CODELEDGER_AUTO_GENERATED_END -->
+
 
 
 

@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="151" height="20" role="img" aria-label="Current solving streak: 1 day as of Aug 18">
-  <title>Current solving streak: 1 day as of Aug 18</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="151" height="20" role="img" aria-label="Current solving streak: 1 day as of Aug 19">
+  <title>Current solving streak: 1 day as of Aug 19</title>
   <linearGradient id="s" x2="0" y2="100%">
     <stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
     <stop offset="1" stop-opacity=".1"/>
@@ -13,7 +13,7 @@
   <g fill="#fff" text-anchor="middle" font-family="Verdana,DejaVu Sans,Geneva,sans-serif" font-size="11">
     <text x="26" y="15" fill="#010101" fill-opacity=".3" textLength="32">streak</text>
     <text x="26" y="14" fill="#fff" textLength="32">streak</text>
-    <text x="101.5" y="15" fill="#010101" fill-opacity=".3" textLength="79">1 day · Aug 18</text>
-    <text x="101.5" y="14" fill="#fff" textLength="79">1 day · Aug 18</text>
+    <text x="101.5" y="15" fill="#010101" fill-opacity=".3" textLength="79">1 day · Aug 19</text>
+    <text x="101.5" y="14" fill="#fff" textLength="79">1 day · Aug 19</text>
   </g>
 </svg>
