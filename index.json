@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24T19:47:49.951Z",
+  "updatedAt": "2026-06-26T10:00:08.894Z",
   "layoutVersion": 3,
   "stats": {
     "total": 315,
@@ -24,32 +24,31 @@
       "Bash": 4
     },
     "byTopic": {
-      "Sorting": 4,
+      "Sorting": 5,
       "Binary Search": 2,
-      "Arrays": 10,
+      "Arrays": 8,
       "Untagged": 11,
       "Greedy": 1,
       "Mathematical": 2,
       "Strings": 3,
-      "number-theory": 1,
+      "Math": 26,
       "sliding-window": 2,
       "DFS": 1,
       "Linked List": 7,
       "Tree": 9,
       "Bit Magic": 1,
-      "Hash": 2,
+      "Searching": 2,
+      "Hash Table": 16,
       "Java": 1,
       "Dynamic Programming": 7,
-      "Searching": 1,
+      "Hash": 1,
       "Algorithms": 1,
       "Graph": 1,
       "two-pointer-algorithm": 1,
       "Array": 125,
-      "Math": 25,
       "Database": 15,
       "Bit Manipulation": 2,
       "Data Manipulation": 15,
-      "Hash Table": 15,
       "String": 20,
       "Depth-First Search": 3,
       "Data Structures": 2,
@@ -372,12 +371,12 @@
       "title": "Compare two fractions",
       "titleSlug": "compare-two-fractions4438",
       "difficulty": "Easy",
-      "topic": "String Parsing",
+      "topic": "Math",
       "tags": [
-        "number-theory",
-        "Mathematical",
+        "Math",
+        "Number Theory",
         "Regular Expression",
-        "Algorithms"
+        "String Parsing"
       ],
       "canonical": null,
       "readmeContent": "# Compare two fractions\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Easy\n\n## Problem\n\nYou are given a string s containing two fractions a/b and c/d, compare them and return the greater fraction. If they are equal, then return string \"equal\".\nNote: The string s contains \"a/b, c/d\"(fractions are separated by comma(,) & space( )).&nbsp;\nExamples :\nInput: s = \"5/6, 11/45\"\nOutput:&nbsp;5/6\nExplanation: 5/6 = 0.8333 and 11/45 = 0.2444, So 5/6 is greater fraction.\nInput: s = \"8/1, 8/1\"\nOutput: equal\nExplanation: We can see that both the fractions are same, so we'll return a string \"equal\".\nInput: s = \"10/17, 9/10\"\nOutput: 9/10\nExplanation: 10/17 = 0.588 & 9/10 = 0.9, so the greater fraction is \"9/10\".\nConstraints:0 ≤ a,c ≤ 1031 ≤ b,d ≤ 103\n\n**Source:** https://www.geeksforgeeks.org/problems/compare-two-fractions4438/",
@@ -411,7 +410,7 @@
       "_aiModel": "gemini-3-flash-preview",
       "notes": "",
       "methods": [],
-      "manuallyEdited": false,
+      "manuallyEdited": true,
       "problemStatement": "<p><span style=\"font-size: 18px;\">You are given a string <strong>s</strong> containing two fractions a/b and c/d, compare them and return the <strong>greater fraction</strong>. </span><span style=\"font-size: 18px;\">If they are equal, then return string \"<strong>equal</strong>\".</span></p>\n<p><span style=\"font-size: 18px;\"><strong>Note</strong>: The string s contains \"<strong>a</strong></span><strong><span style=\"font-size: 18px;\">/b, c/d</span></strong><span style=\"font-size: 18px;\">\"(fractions are separated by comma(,) &amp; space( )).&nbsp;</span></p>\n<p><span style=\"font-size: 18px;\"><strong>Examples :</strong></span></p>\n<pre><span style=\"font-size: 18px;\"><strong>Input</strong>: s = \"5/6, 11/45\"\n<strong>Output:</strong>&nbsp;5/6\n<strong>Explanation</strong>: 5/6 = 0.8333 and 11/45 = 0.2444, So 5/6 is greater fraction.</span></pre>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>s = \"8/1, 8/1\"\n<strong>Output: </strong>equal\n<strong>Explanation: </strong>We can see that both the fractions are same, so we'll return a string \"equal\".<br /></span></pre>\n<pre><span style=\"font-size: 14pt;\"><strong>Input: </strong>s = \"10/17, 9/10\"\n<strong>Output: </strong>9/10\n<strong>Explanation: </strong>10/17 = 0.588 &amp; 9/10 = 0.9, so the <span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 18px; white-space: normal;\">greater </span>fraction is \"9/10\".</span></pre>\n<p><span style=\"font-size: 18px;\"><strong>Constraints:</strong><br />0 &le; a,c &le; 10<sup>3</sup><br />1 &le; b,d &le; 10<sup>3</sup></span></p>"
     },
     {
@@ -832,13 +831,11 @@
       "title": "Kth Smallest",
       "titleSlug": "kth-smallest-element5635",
       "difficulty": "Medium",
-      "topic": "Sorting",
+      "topic": "Searching",
       "tags": [
-        "Arrays",
         "Searching",
         "Sorting",
-        "Data Structures",
-        "Algorithms"
+        "Array"
       ],
       "canonical": null,
       "readmeContent": "# Kth Smallest\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Medium\n\n**Tags:** `Arrays`, `Searching`, `Sorting`, `Data Structures`, `Algorithms`\n\n## Problem\n\nGiven an integer array arr[] and an integer&nbsp;k, find and return the kth smallest element in the given array.Note: The kth smallest element is determined based on the sorted order of the array.\nExamples :\nInput: arr[] = [10, 5, 4, 3, 48, 6, 2, 33, 53, 10], k = 4Output: 5\nExplanation: 4th smallest element in the given array is 5.\nInput: arr[] = [7, 10, 4, 3, 20, 15], k = 3Output: 7\nExplanation: 3rd smallest element in the given array is 7.\nConstraints:1&nbsp;≤ arr.size() ≤ 1051 ≤&nbsp;arr[i]&nbsp;≤ 1051&nbsp;≤&nbsp;k&nbsp;≤&nbsp;&nbsp;arr.size()&nbsp;\n\n**Source:** https://www.geeksforgeeks.org/problems/kth-smallest-element5635/",
@@ -869,7 +866,7 @@
       "_aiModel": "gemini-3-flash-preview",
       "notes": "",
       "methods": [],
-      "manuallyEdited": false,
+      "manuallyEdited": true,
       "_committedPaths": [
         "problems/gfg-kth-smallest-element5635/gfg-kth-smallest-element5635.py",
         "problems/gfg-kth-smallest-element5635/README.md"
@@ -882,10 +879,9 @@
       "title": "Ladoo problem",
       "titleSlug": "ladoo-problem2929",
       "difficulty": "Easy",
-      "topic": "Hash",
+      "topic": "Hash Table",
       "tags": [
-        "Hash",
-        "Data Structures"
+        "Hash Table"
       ],
       "canonical": null,
       "readmeContent": "# Ladoo problem\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Easy\n\n**Tags:** `Hash`, `Data Structures`\n\n## Problem\n\nMy SubmissionsRefresh Time (IST)StatusMarksLangTest CasesCode2026-06-24 07:23:11Correct1python3102 / 102View⏳...\n\n**Source:** https://www.geeksforgeeks.org/problems/ladoo-problem2929/",
@@ -919,7 +915,7 @@
       "_aiModel": "gemini-2.5-flash",
       "notes": "",
       "methods": [],
-      "manuallyEdited": false,
+      "manuallyEdited": true,
       "problemStatement": "<p><span style=\"font-size:18px\">Bheem has <strong>N </strong>friends. And he has a ladoo for each day. Given an Array <strong>A</strong>[] denoting on which day ith friend wants a ladoo. If Bheem is unable to give a ladoo to a friend, he loses his friendship with them. Find out the maximum number of Friends he can have at the end.</span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-size:18px\"><strong>Example 1:</strong></span></p>\r\n\r\n<pre>\r\n<span style=\"font-size:18px\"><strong>Input:</strong></span>\r\n<span style=\"font-size:18px\"><strong>N = </strong>5</span>\r\n<span style=\"font-size:18px\"><strong>A[] =</strong> {3, 3, 1, 2, 4}</span>\r\n<span style=\"font-size:18px\"><strong>Output:</strong></span>\r\n<span style=\"font-size:18px\">4 </span>\r\n<span style=\"font-size:18px\"><strong>Explanation:\r\n</strong>He will lose either his 1st or 2nd\r\nfriend and therefore will be left\r\nwith 4 friends.</span></pre>\r\n\r\n<p><span style=\"font-size:18px\"><strong>Example 2:</strong></span></p>\r\n\r\n<pre>\r\n<span style=\"font-size:18px\"><strong>Input:</strong></span>\r\n<span style=\"font-size:18px\"><strong>N = </strong>2</span>\r\n<span style=\"font-size:18px\"><strong>A[] =</strong> {1, 2}</span>\r\n<span style=\"font-size:18px\"><strong>Output:</strong></span>\r\n<span style=\"font-size:18px\">2</span>\r\n<span style=\"font-size:18px\"><strong>Explanation:\r\n</strong>He can give a ladoo to each of his friends,\r\nand will have 2 friends by the end.</span></pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-size:18px\"><strong>Your Task:</strong><br />\r\nYou don&#39;t need to read input or print anything. Your task is to complete the function <strong>divideLadoo()</strong> which takes an Integer N and an Array A as input and returns the answer.</span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-size:18px\"><strong>Expected Time Complexity:</strong> O(N)<br />\r\n<strong>Expected Auxiliary Space:</strong> O(N)</span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-size:18px\"><strong>Constraints:</strong></span><br />\r\n<span style=\"font-size:18px\">1 &lt;= N &lt;= 10<sup>5</sup><br />\r\n1 &lt;= A[i] &lt;= 10<sup>5</sup></span></p>\r\n",
       "_requestAIReview": true
     },
@@ -1429,12 +1425,11 @@
       "title": "Pacific Atlantic Water Flow",
       "titleSlug": "pacific-atlantic-water-flow",
       "difficulty": "Hard",
-      "topic": "Breadth-First Search",
+      "topic": "Graph",
       "tags": [
         "Graph",
-        "DFS",
-        "BFS",
-        "Algorithms"
+        "Breadth-First Search",
+        "Depth-First Search"
       ],
       "canonical": null,
       "readmeContent": "# Pacific Atlantic Water Flow\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Hard\n\n**Tags:** `Graph`, `DFS`, `BFS`, `Algorithms`\n\n## Problem\n\n\n\n**Source:** https://www.geeksforgeeks.org/problems/pacific-atlantic-water-flow/",
@@ -1476,7 +1471,7 @@
           "timestamp": 1782267680000
         }
       ],
-      "manuallyEdited": false,
+      "manuallyEdited": true,
       "problemStatement": "<p><span style=\"font-size: 18px;\">You are given a matrix <strong>mat[][]</strong> of dimensions <strong>n x m</strong>, where mat[i][j] represents the <strong>height of a cell</strong> in a rectangular grid island. The <strong>Pacific Ocean</strong> touches the island's <strong>left and top</strong> borders, and the <strong>Atlantic Ocean</strong> touches the island's <strong>right and bottom</strong> borders. Rainwater can flow from a cell to its neighbouring cells in the directions North, South, East, and West, but only if the <strong>neighbouring cell has a height less than or equal to the current cell's height</strong>.</span></p>\n<p><span style=\"font-size: 18px;\">The task is to determine <strong>all coordinates (x, y)</strong> such that water can flow from the cell (x, y) to <strong>both</strong> the Pacific Ocean and the Atlantic Ocean. Water can flow from any adjacent cell directly into an ocean.</span></p>\n<p><span style=\"font-size: 18px;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>mat[][] = [[1, 2, 2, 3, 5],<br>                [3, 2, 3, 4, 4],<br>                [2, 4, 5, 3, 1],<br>                [6, 7, 1, 4, 5],<br>                [5, 1, 1, 2, 4]]\n<strong>Output:</strong> 7\n<strong>Explanation:</strong> </span><span style=\"font-size: 18px;\">In the given matrix, there are 7 coordinates through which the water can flow to both the Oceans</span>. They are  (0, 4), (1, 3), (1, 4), (2, 2), (3, 0), (3, 1), and (4, 0).</pre>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>arr[][] = [[2, 2], <br>               [2, 2]]\n<strong>Output:</strong> 4\n<strong>Explanation:</strong> </span><span style=\"font-size: 18px;\">In the following example, all cells allow water to flow to both the Oceans.</span></pre>\n<p><span style=\"font-size: 18px;\"><strong>Constraints:</strong><br>1 ≤ number of rows,&nbsp;</span><span style=\"font-size: 18px;\">number of columns</span><span style=\"font-size: 18px;\">&nbsp;≤ 10</span><sup>3<br></sup><span style=\"font-size: 18px;\">1 ≤ arr[i][j] ≤ 10<sup>3</sup>&nbsp;</span></p>",
       "_requestAIReview": false
     },
@@ -1703,10 +1698,8 @@
       "difficulty": "Medium",
       "topic": "Sorting",
       "tags": [
-        "Arrays",
         "Sorting",
-        "Data Structures",
-        "Algorithms"
+        "Array"
       ],
       "canonical": null,
       "readmeContent": "# Sort 0s, 1s and 2s\n\n**Platform:** GeeksForGeeks  |  **Difficulty:** Medium\n\n**Tags:** `Arrays`, `Sorting`, `Data Structures`, `Algorithms`\n\n## Problem\n\nGiven an array arr[] containing only 0s, 1s, and 2s. Sort the array in ascending order.Note: You need to solve this problem without utilizing the built-in sort function.\nExamples:\nInput: arr[] = [0, 1, 2, 0, 1, 2]\nOutput: [0, 0, 1, 1, 2, 2]\nExplanation: 0s, 1s and 2s are segregated into ascending order.\nInput: arr[] = [0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1]\nOutput: [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2]\nExplanation: 0s, 1s and 2s are segregated into ascending order.\nFollow up: Could you come up with a one-pass algorithm using only constant extra space?\nConstraints: 1 ≤ arr.size() ≤ 1050 ≤ arr[i] ≤ 2\n\n**Source:** https://www.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s4231/",
@@ -1740,7 +1733,7 @@
       "_aiModel": "gemini-3-flash-preview",
       "notes": "",
       "methods": [],
-      "manuallyEdited": false,
+      "manuallyEdited": true,
       "problemStatement": "<p><span style=\"font-size: 18px;\">Given an array <strong>arr[]</strong> containing only <strong>0s, 1s, and 2s.</strong> Sort the array in ascending order.<br /></span><span style=\"font-size: 18px;\"><strong>Note:</strong> You need to solve this problem without utilizing the built-in sort function.</span></p>\n<p><span style=\"font-size: 18px;\"><strong>Examples:</strong></span></p>\n<pre><span style=\"font-size: 18px;\"><strong>Input: </strong>arr[] = [0, 1, 2, 0, 1, 2]\n<strong>Output: </strong>[0, 0, 1, 1, 2, 2]\n<strong>Explanation: </strong>0s, 1s and 2s are segregated into ascending order.</span></pre>\n<pre><span style=\"font-size: 18px;\"><strong style=\"font-size: 18px;\">Input: </strong><span style=\"font-size: 18px;\">arr[] = [0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1]\n</span><strong style=\"font-size: 18px;\">Output: </strong><span style=\"font-size: 18px;\">[0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2]\n</span><strong style=\"font-size: 18px;\">Explanation: </strong><span style=\"font-size: 18px;\">0s, 1s and 2s are segregated into ascending order.</span></span></pre>\n<p><span style=\"font-size: 18px;\"><strong>Follow up:</strong> Could you come up with a one-pass algorithm using only constant extra space?</span></p>\n<p><span style=\"font-size: 18px;\"><span style=\"font-size: 18px;\"><span style=\"font-size: 18px;\"><strong>Constraints:</strong> <br />1 &le; arr.size() &le; 10<sup>5</sup><br />0 &le; arr[i] &le; 2</span></span></span></p>"
     },
     {

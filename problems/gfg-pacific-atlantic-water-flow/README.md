@@ -5,7 +5,7 @@
 | Difficulty | Hard |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-pacific-atlantic-water-flow` |
-| Topics | Graph, DFS, BFS, Algorithms |
+| Topics | Graph, Breadth-First Search, Depth-First Search |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

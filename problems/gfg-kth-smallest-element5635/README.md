@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-kth-smallest-element5635` |
-| Topics | Arrays, Searching, Sorting, Data Structures, Algorithms |
+| Topics | Searching, Sorting, Array |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

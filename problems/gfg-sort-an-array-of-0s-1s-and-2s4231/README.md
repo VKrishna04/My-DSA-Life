@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-sort-an-array-of-0s-1s-and-2s4231` |
-| Topics | Arrays, Sorting, Data Structures, Algorithms |
+| Topics | Sorting, Array |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

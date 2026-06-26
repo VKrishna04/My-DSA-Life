@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-ladoo-problem2929` |
-| Topics | Hash, Data Structures |
+| Topics | Hash Table |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

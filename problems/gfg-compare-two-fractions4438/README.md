@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-compare-two-fractions4438` |
-| Topics | number-theory, Mathematical, Regular Expression, Algorithms |
+| Topics | Math, Number Theory, Regular Expression, String Parsing |
 | Solved | 2026-06-23 |
 
 ## Problem Statement
