@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27T01:55:52.692Z",
+  "updatedAt": "2026-07-12T12:16:09.667Z",
   "layoutVersion": 3,
   "stats": {
     "total": 315,
@@ -14227,7 +14227,7 @@
         "Dynamic Programming"
       ],
       "canonical": null,
-      "readmeContent": "# [1043] Partition Array for Maximum Sum\n**Difficulty:** Medium  |  **Acceptance:** 77.4%  |  **Likes:** 5098 / **Dislikes:** 438\n**Tags:** `Array`, `Dynamic Programming`\n## Problem\nGiven an integer array arr, partition the array into (contiguous) subarrays of length at most k. After partitioning, each subarray has their values changed to become the maximum value of that subarray.\n\nReturn the largest sum of the given array after partitioning. Test cases are generated so that the answer fits in a 32-bit integer.\n\n&nbsp;\nExample 1:\n\nInput: arr = [1,15,7,9,2,5,10], k = 3\nOutput: 84\nExplanation: arr becomes [15,15,15,9,10,10,10]\n\nExample 2:\n\nInput: arr = [1,4,1,5,7,3,6,1,9,9,3], k = 4\nOutput: 83\n\nExample 3:\n\nInput: arr = [1], k = 1\nOutput: 1\n\n&nbsp;\nConstraints:\n\n\t1 <= arr.length <= 500\n\t0 <= arr[i] <= 109\n\t1 <= k <= arr.length\n## My Submission\n\n- Runtime: 151 ms (beats 64.2%)\n- Memory: 19.1 MB (beats 97.5%)\n- Solve time: 1m 49s\n\n## Similar Problems\n\n- [Partition String Into Minimum Beautiful Substrings](https://leetcode.com/problems/partition-string-into-minimum-beautiful-substrings/) — Medium\n- [Minimum Substring Partition of Equal Character Frequency](https://leetcode.com/problems/minimum-substring-partition-of-equal-character-frequency/) — Medium\n",
+      "readmeContent": "# [1043] Partition Array for Maximum Sum\n**Difficulty:** Medium  |  **Acceptance:** 77.5%  |  **Likes:** 5105 / **Dislikes:** 438\n**Tags:** `Array`, `Dynamic Programming`\n## Problem\nGiven an integer array arr, partition the array into (contiguous) subarrays of length at most k. After partitioning, each subarray has their values changed to become the maximum value of that subarray.\n\nReturn the largest sum of the given array after partitioning. Test cases are generated so that the answer fits in a 32-bit integer.\n\n&nbsp;\nExample 1:\n\nInput: arr = [1,15,7,9,2,5,10], k = 3\nOutput: 84\nExplanation: arr becomes [15,15,15,9,10,10,10]\n\nExample 2:\n\nInput: arr = [1,4,1,5,7,3,6,1,9,9,3], k = 4\nOutput: 83\n\nExample 3:\n\nInput: arr = [1], k = 1\nOutput: 1\n\n&nbsp;\nConstraints:\n\n\t1 <= arr.length <= 500\n\t0 <= arr[i] <= 109\n\t1 <= k <= arr.length\n## My Submission\n\n- Runtime: 151 ms (beats 63.6%)\n- Memory: 19.1 MB (beats 97.6%)\n\n## Similar Problems\n\n- [Partition String Into Minimum Beautiful Substrings](https://leetcode.com/problems/partition-string-into-minimum-beautiful-substrings/) — Medium\n- [Minimum Substring Partition of Equal Character Frequency](https://leetcode.com/problems/minimum-substring-partition-of-equal-character-frequency/) — Medium\n",
       "code": "class Solution:\n    def maxSumAfterPartitioning(self, arr: List[int], k: int) -> int:\n        n = len(arr)\n        dp = [0] * (n + 1)\n\n        for i in range(1, n + 1):\n            cur_max = 0\n\n            for j in range(1, min(k, i) + 1):\n                cur_max = max(cur_max, arr[i - j])\n                \n                chunk_sum = cur_max * j\n                dp[i] = max(dp[i], dp[i - j] + chunk_sum)\n\n        return dp[n]",
       "files": [
         {
@@ -14236,7 +14236,7 @@
         },
         {
           "path": "problems/lc-partition-array-for-maximum-sum/README.md",
-          "content": "# [1043] Partition Array for Maximum Sum\n**Difficulty:** Medium  |  **Acceptance:** 77.4%  |  **Likes:** 5098 / **Dislikes:** 438\n**Tags:** `Array`, `Dynamic Programming`\n## Problem\nGiven an integer array arr, partition the array into (contiguous) subarrays of length at most k. After partitioning, each subarray has their values changed to become the maximum value of that subarray.\n\nReturn the largest sum of the given array after partitioning. Test cases are generated so that the answer fits in a 32-bit integer.\n\n&nbsp;\nExample 1:\n\nInput: arr = [1,15,7,9,2,5,10], k = 3\nOutput: 84\nExplanation: arr becomes [15,15,15,9,10,10,10]\n\nExample 2:\n\nInput: arr = [1,4,1,5,7,3,6,1,9,9,3], k = 4\nOutput: 83\n\nExample 3:\n\nInput: arr = [1], k = 1\nOutput: 1\n\n&nbsp;\nConstraints:\n\n\t1 <= arr.length <= 500\n\t0 <= arr[i] <= 109\n\t1 <= k <= arr.length\n## My Submission\n\n- Runtime: 151 ms (beats 64.2%)\n- Memory: 19.1 MB (beats 97.5%)\n- Solve time: 1m 49s\n\n## Similar Problems\n\n- [Partition String Into Minimum Beautiful Substrings](https://leetcode.com/problems/partition-string-into-minimum-beautiful-substrings/) — Medium\n- [Minimum Substring Partition of Equal Character Frequency](https://leetcode.com/problems/minimum-substring-partition-of-equal-character-frequency/) — Medium\n"
+          "content": "# [1043] Partition Array for Maximum Sum\n**Difficulty:** Medium  |  **Acceptance:** 77.5%  |  **Likes:** 5105 / **Dislikes:** 438\n**Tags:** `Array`, `Dynamic Programming`\n## Problem\nGiven an integer array arr, partition the array into (contiguous) subarrays of length at most k. After partitioning, each subarray has their values changed to become the maximum value of that subarray.\n\nReturn the largest sum of the given array after partitioning. Test cases are generated so that the answer fits in a 32-bit integer.\n\n&nbsp;\nExample 1:\n\nInput: arr = [1,15,7,9,2,5,10], k = 3\nOutput: 84\nExplanation: arr becomes [15,15,15,9,10,10,10]\n\nExample 2:\n\nInput: arr = [1,4,1,5,7,3,6,1,9,9,3], k = 4\nOutput: 83\n\nExample 3:\n\nInput: arr = [1], k = 1\nOutput: 1\n\n&nbsp;\nConstraints:\n\n\t1 <= arr.length <= 500\n\t0 <= arr[i] <= 109\n\t1 <= k <= arr.length\n## My Submission\n\n- Runtime: 151 ms (beats 63.6%)\n- Memory: 19.1 MB (beats 97.6%)\n\n## Similar Problems\n\n- [Partition String Into Minimum Beautiful Substrings](https://leetcode.com/problems/partition-string-into-minimum-beautiful-substrings/) — Medium\n- [Minimum Substring Partition of Equal Character Frequency](https://leetcode.com/problems/minimum-substring-partition-of-equal-character-frequency/) — Medium\n"
         }
       ],
       "lang": {
@@ -14246,11 +14246,11 @@
       },
       "runtime": "151 ms",
       "memory": "19.1 MB",
-      "runtimePct": 64.1557000000001,
-      "memoryPct": 97.4895,
+      "runtimePct": 63.60199999999996,
+      "memoryPct": 97.57349999999998,
       "timestamp": 1778098101000,
-      "acRate": 77.42473354187604,
-      "likes": 5098,
+      "acRate": 77.4634849085962,
+      "likes": 5105,
       "dislikes": 438,
       "similar": [
         {
@@ -14267,7 +14267,7 @@
         }
       ],
       "problemStatement": "<p>Given an integer array <code>arr</code>, partition the array into (contiguous) subarrays of length <strong>at most</strong> <code>k</code>. After partitioning, each subarray has their values changed to become the maximum value of that subarray.</p>\n\n<p>Return <em>the largest sum of the given array after partitioning. Test cases are generated so that the answer fits in a <strong>32-bit</strong> integer.</em></p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> arr = [1,15,7,9,2,5,10], k = 3\n<strong>Output:</strong> 84\n<strong>Explanation:</strong> arr becomes [15,15,15,9,10,10,10]\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> arr = [1,4,1,5,7,3,6,1,9,9,3], k = 4\n<strong>Output:</strong> 83\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> arr = [1], k = 1\n<strong>Output:</strong> 1\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= arr.length &lt;= 500</code></li>\n\t<li><code>0 &lt;= arr[i] &lt;= 10<sup>9</sup></code></li>\n\t<li><code>1 &lt;= k &lt;= arr.length</code></li>\n</ul>\n",
-      "elapsedSeconds": 109,
+      "elapsedSeconds": 0,
       "hasSimilar": true,
       "submissionsUrl": "https://leetcode.com/problems/partition-array-for-maximum-sum/submissions/",
       "notes": "",
@@ -14276,13 +14276,15 @@
       "duplicateOf": null,
       "_requestAIReview": true,
       "platform": "leetcode",
-      "aiReview": "1.  **Time Complexity:** O(N\\*K)\n    *   The outer loop runs `N` times.\n    *   The inner loop runs up to `K` times (or `i` times, whichever is smaller).\n    *   Operations inside the inner loop are O(1).\n    *   **Space Complexity:** O(N)\n    *   A DP array of size `N+1` is used.\n\n2.  **Correctness:** Correct.\n    *   The `dp[i]` state correctly stores the maximum sum for the prefix `arr[0...i-1]`.\n    *   The base case `dp[0]=0` is implicitly handled.\n    *   The transitions correctly iterate through all possible lengths `j` (from `1` to `k`) for the last partition ending at `i-1`, efficiently calculating its sum (`cur_max * j`) and combining it with the maximum sum of the preceding subarray (`dp[i-j]`).\n    *   Edge cases like `k=1`, `k>=n`, and small `n` are handled.\n\n3.  **One concrete optimisation:**\n    No significant asymptotic optimization (reducing O(N\\*K)) is apparent for this problem. The current approach efficiently maintains `cur_max` within the inner loop, which is already optimal for the current DP structure.\n\n4.  **Key algorithmic pattern used:** Dynamic Programming (bottom-up approach).",
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n \\cdot k)$, where $n$ is the length of the array. We iterate through the array once and, for each element, look back up to $k$ steps.\n*   **Space Complexity:** $O(n)$ to store the `dp` table.\n\n### 2. Correctness\nThe solution is **correct**. It properly uses dynamic programming to build the maximum sum by considering all possible valid partitions ending at index `i`.\n*   **Edge Cases:** It correctly handles $k=1$ (sum of array), $k=n$ (max value * $n$), and small arrays where $i < k$ using `min(k, i)`.\n\n### 3. Optimization\n**Space Optimization:** Since `dp[i]` only depends on the previous $k$ values (`dp[i-1]` to `dp[i-k]`), you can reduce the space complexity from **$O(n)$ to $O(k)$** by using a circular buffer (an array of size $k+1$) and the modulo operator `% (k+1)`.\n\n### 4. Key Algorithmic Pattern\n**Dynamic Programming (Linear):** Specifically, this is a \"look-back\" DP where the state at index `i` is determined by iterating over a window of preceding states of size at most $k$.",
       "_committedPaths": [
         "problems/lc-partition-array-for-maximum-sum/lc-partition-array-for-maximum-sum.py",
         "problems/lc-partition-array-for-maximum-sum/README.md"
       ],
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview"
     },
     {
       "id": "lc-partition-equal-subset-sum",
