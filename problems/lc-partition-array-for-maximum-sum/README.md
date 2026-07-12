@@ -7,9 +7,8 @@
 | Problem ID | `lc-partition-array-for-maximum-sum` |
 | Topics | Array, Dynamic Programming |
 | Solved | 2026-05-06 |
-| Solve Time | 1m 49s |
-| Runtime | 151 ms (beats 64.1557000000001%) |
-| Memory | 19.1 MB (beats 97.4895%) |
+| Runtime | 151 ms (beats 63.60199999999996%) |
+| Memory | 19.1 MB (beats 97.57349999999998%) |
 
 ## Problem Statement
 
@@ -67,20 +66,16 @@ class Solution:
 
 ## AI Review
 
-1.  **Time Complexity:** O(N\*K)
-    *   The outer loop runs `N` times.
-    *   The inner loop runs up to `K` times (or `i` times, whichever is smaller).
-    *   Operations inside the inner loop are O(1).
-    *   **Space Complexity:** O(N)
-    *   A DP array of size `N+1` is used.
+### 1. Complexity
+*   **Time Complexity:** $O(n \cdot k)$, where $n$ is the length of the array. We iterate through the array once and, for each element, look back up to $k$ steps.
+*   **Space Complexity:** $O(n)$ to store the `dp` table.
 
-2.  **Correctness:** Correct.
-    *   The `dp[i]` state correctly stores the maximum sum for the prefix `arr[0...i-1]`.
-    *   The base case `dp[0]=0` is implicitly handled.
-    *   The transitions correctly iterate through all possible lengths `j` (from `1` to `k`) for the last partition ending at `i-1`, efficiently calculating its sum (`cur_max * j`) and combining it with the maximum sum of the preceding subarray (`dp[i-j]`).
-    *   Edge cases like `k=1`, `k>=n`, and small `n` are handled.
+### 2. Correctness
+The solution is **correct**. It properly uses dynamic programming to build the maximum sum by considering all possible valid partitions ending at index `i`.
+*   **Edge Cases:** It correctly handles $k=1$ (sum of array), $k=n$ (max value * $n$), and small arrays where $i < k$ using `min(k, i)`.
 
-3.  **One concrete optimisation:**
-    No significant asymptotic optimization (reducing O(N\*K)) is apparent for this problem. The current approach efficiently maintains `cur_max` within the inner loop, which is already optimal for the current DP structure.
+### 3. Optimization
+**Space Optimization:** Since `dp[i]` only depends on the previous $k$ values (`dp[i-1]` to `dp[i-k]`), you can reduce the space complexity from **$O(n)$ to $O(k)$** by using a circular buffer (an array of size $k+1$) and the modulo operator `% (k+1)`.
 
-4.  **Key algorithmic pattern used:** Dynamic Programming (bottom-up approach).
+### 4. Key Algorithmic Pattern
+**Dynamic Programming (Linear):** Specifically, this is a "look-back" DP where the state at index `i` is determined by iterating over a window of preceding states of size at most $k$.
