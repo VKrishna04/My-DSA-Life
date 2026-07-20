@@ -2140,10 +2140,27 @@
   "leetcode::median-of-two-sorted-arrays": {
     "aiInsights": [
       {
-        "summary": "### Review\n\n**1. Complexity**\n*   **Time:** $O((m+n) \\log (m+n))$ due to the `sorted()` call on the combined list of length $m+n$.\n*   **Space:** $O(m+n)$ to store the concatenated `res` list.\n\n**2. C",
-        "ts": 1780136227353,
+        "summary": "### 1. Complexity\n*   **Time:** $O((n + m) \\log(n + m))$ due to the `sorted()` call on the combined list.\n*   **Space:** $O(n + m)$ to store the concatenated `res` list.\n\n### 2. Correctness\nThe logic ",
+        "ts": 1784383214403,
+        "weakAreas": [
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O((m+n) \\log(m+n))$ due to the `sorted()` function on the combined list of size $m+n$.\n*   **Space Complexity:** $O(m+n)$ to store the concatena",
+        "ts": 1784383261362,
         "weakAreas": [
           "edge cases",
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O((M+N) \\log(M+N))$ due to the `sorted()` function on the combined list of size $M+N$.\n*   **Space Complexity:** $O(M+N)$ to store the concatenated `res` li",
+        "ts": 1784389136606,
+        "weakAreas": [
+          "edge cases",
+          "space complexity",
           "time complexity"
         ]
       }
