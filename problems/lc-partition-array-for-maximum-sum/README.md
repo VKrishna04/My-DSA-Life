@@ -7,8 +7,8 @@
 | Problem ID | `lc-partition-array-for-maximum-sum` |
 | Topics | Array, Dynamic Programming |
 | Solved | 2026-05-06 |
-| Runtime | 151 ms (beats 63.60199999999996%) |
-| Memory | 19.1 MB (beats 97.57349999999998%) |
+| Runtime | 151 ms (beats 62.974600000000024%) |
+| Memory | 19.1 MB (beats 97.71979999999999%) |
 
 ## Problem Statement
 
@@ -67,15 +67,16 @@ class Solution:
 ## AI Review
 
 ### 1. Complexity
-*   **Time Complexity:** $O(n \cdot k)$, where $n$ is the length of the array. We iterate through the array once and, for each element, look back up to $k$ steps.
-*   **Space Complexity:** $O(n)$ to store the `dp` table.
+*   **Time**: $O(N \cdot K)$, where $N$ is the length of `arr`. We iterate through $N$ states, and for each, we look back up to $K$ elements.
+*   **Space**: $O(N)$ to store the `dp` table.
 
 ### 2. Correctness
-The solution is **correct**. It properly uses dynamic programming to build the maximum sum by considering all possible valid partitions ending at index `i`.
-*   **Edge Cases:** It correctly handles $k=1$ (sum of array), $k=n$ (max value * $n$), and small arrays where $i < k$ using `min(k, i)`.
+The logic is sound. It correctly tracks the maximum element within the current window (`cur_max`) to calculate the potential sum. It handles the window constraint using `min(k, i)`. 
+*   **Edge Cases**: $k=1$ (sum of all elements), $k=n$ (one large partition), and $n=1$ are all handled correctly by the loop boundaries.
 
 ### 3. Optimization
-**Space Optimization:** Since `dp[i]` only depends on the previous $k$ values (`dp[i-1]` to `dp[i-k]`), you can reduce the space complexity from **$O(n)$ to $O(k)$** by using a circular buffer (an array of size $k+1$) and the modulo operator `% (k+1)`.
+**Space Complexity**: You can optimize the space from **$O(N)$ to $O(K)$**. 
+Since the calculation for `dp[i]` only relies on the previous $K$ values (`dp[i-1]` through `dp[i-k]`), you can use a circular buffer (array of size $K+1$ with modulo indexing) to store only the necessary state history.
 
 ### 4. Key Algorithmic Pattern
-**Dynamic Programming (Linear):** Specifically, this is a "look-back" DP where the state at index `i` is determined by iterating over a window of preceding states of size at most $k$.
+**Partition Dynamic Programming**: This involves breaking a sequence into contiguous subarrays and using the results of previous partitions to build the global maximum. It is characterized by a state transition like `dp[i] = max(dp[i-j] + cost(i-j, i))` for $1 \le j \le K$.

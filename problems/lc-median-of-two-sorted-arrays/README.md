@@ -7,8 +7,9 @@
 | Problem ID | `lc-median-of-two-sorted-arrays` |
 | Topics | Array, Binary Search, Divide and Conquer |
 | Solved | 2026-05-15 |
-| Runtime | 4 ms (beats 30.1667%) |
-| Memory | 19.5 MB (beats 42.92340000000001%) |
+| Solve Time | 16s |
+| Runtime | 4 ms (beats 29.0733%) |
+| Memory | 19.5 MB (beats 41.6867%) |
 
 ## Problem Statement
 
@@ -48,26 +49,33 @@ The overall run time complexity should be `O(log (m+n))`.
 
 ## Solutions
 
+### Alt approach (Python3)
+
+Duplicate resolved — 11 Aug 2024
+
 ```Python3
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
-        res = sorted(nums1 + nums2)
-        n = len(res)
-        return (res[n//2] + res[(n-1)//2]) / 2
+        return median(sorted(nums1 + nums2))
+        # p1 = nums1
+        # if num1 is not None or nums2 us not None:
+
 ```
 
 ## AI Review
 
-**1. Complexity**
-*   **Time Complexity:** $O((m+n) \log(m+n))$ due to the `sorted()` function on the concatenated list.
-*   **Space Complexity:** $O(m+n)$ to store the merged list `res`.
+### 1. Complexity
+*   **Time Complexity:** $O((M+N) \log(M+N))$ due to the `sorted()` function on the combined list of size $M+N$.
+*   **Space Complexity:** $O(M+N)$ to store the concatenated `res` list.
 
-**2. Correctness**
-The logic is functionally correct and handles all edge cases (empty arrays, single elements, even/odd total lengths) because it relies on Python’s robust built-in sorting. However, it fails the problem's specific constraint of **$O(\log(m+n))$** time complexity.
+### 2. Correctness
+*   **Logic:** The math for the median calculation `(res[n//2] + res[(n-1)//2]) / 2` is correct and handles both even and odd total lengths.
+*   **Edge Cases:** Handles empty arrays or single-element arrays correctly.
+*   **Requirement Gap:** While functionally correct, it fails the problem's explicit constraint of $O(\log(M+N))$ time complexity.
 
-**3. Concrete Optimization**
-Replace sorting with a **Binary Search** approach on the partition index of the smaller array. Instead of merging, find a partition such that all elements on the left side are less than or equal to all elements on the right side. This reduces time complexity to **$O(\log(\min(m, n)))$** and space to **$O(1)$**.
+### 3. Concrete Optimization
+Use **Binary Search** on the partition index of the smaller array. Instead of merging and sorting, find a partition point $i$ in `nums1` and $j$ in `nums2` such that all elements on the left are $\leq$ all elements on the right. This reduces time to $O(\log(\min(M, N)))$ and space to $O(1)$.
 
-**4. Key Algorithmic Pattern**
-*   **Current:** Sort and Index (Brute Force).
-*   **Optimal:** Binary Search / Dual Pointer Partitioning.
+### 4. Key Algorithmic Pattern
+*   **Current:** Brute Force / Sorting.
+*   **Optimal:** Binary Search (Divide and Conquer).
