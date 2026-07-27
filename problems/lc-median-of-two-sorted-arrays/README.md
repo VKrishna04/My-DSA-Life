@@ -7,8 +7,9 @@
 | Problem ID | `lc-median-of-two-sorted-arrays` |
 | Topics | Array, Binary Search, Divide and Conquer |
 | Solved | 2026-05-15 |
-| Runtime | 4 ms (beats 30.1667%) |
-| Memory | 19.5 MB (beats 42.92340000000001%) |
+| Solve Time | 15m 59s |
+| Runtime | 4 ms (beats 28.809699999999992%) |
+| Memory | 19.5 MB (beats 41.407999999999994%) |
 
 ## Problem Statement
 
@@ -48,26 +49,32 @@ The overall run time complexity should be `O(log (m+n))`.
 
 ## Solutions
 
+### Alt approach (Python3)
+
+Duplicate resolved — 11 Aug 2024
+
 ```Python3
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
-        res = sorted(nums1 + nums2)
-        n = len(res)
-        return (res[n//2] + res[(n-1)//2]) / 2
+        return median(sorted(nums1 + nums2))
+        # p1 = nums1
+        # if num1 is not None or nums2 us not None:
+
 ```
 
 ## AI Review
 
+### Review
+
 **1. Complexity**
-*   **Time Complexity:** $O((m+n) \log(m+n))$ due to the `sorted()` function on the concatenated list.
-*   **Space Complexity:** $O(m+n)$ to store the merged list `res`.
+*   **Time Complexity:** $O((m+n) \log(m+n))$ due to the `sorted()` call on the combined list.
+*   **Space Complexity:** $O(m+n)$ to store the concatenated `res` list.
 
 **2. Correctness**
-The logic is functionally correct and handles all edge cases (empty arrays, single elements, even/odd total lengths) because it relies on Python’s robust built-in sorting. However, it fails the problem's specific constraint of **$O(\log(m+n))$** time complexity.
+The logic is **correct** for finding the median; it handles both even and odd total lengths correctly. It is robust against empty arrays (if at least one contains elements). However, it fails the problem's specific constraint of $O(\log(m+n))$ time complexity.
 
 **3. Concrete Optimization**
-Replace sorting with a **Binary Search** approach on the partition index of the smaller array. Instead of merging, find a partition such that all elements on the left side are less than or equal to all elements on the right side. This reduces time complexity to **$O(\log(\min(m, n)))$** and space to **$O(1)$**.
+Instead of re-sorting the combined list, use **Binary Search** on the partition of the smaller array. Since the input arrays are already sorted, you can find a partition point such that all elements on the left are smaller than those on the right. This reduces time complexity to **$O(\log(\min(m, n)))$** and space to **$O(1)$**.
 
 **4. Key Algorithmic Pattern**
-*   **Current:** Sort and Index (Brute Force).
-*   **Optimal:** Binary Search / Dual Pointer Partitioning.
+The current code uses **Brute Force (Concatenate & Sort)**. The optimal pattern required for this problem is **Binary Search** (specifically, binary search on the partition index).
