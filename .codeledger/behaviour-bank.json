@@ -2760,6 +2760,14 @@
           "space complexity",
           "time complexity"
         ]
+      },
+      {
+        "summary": "### Analysis\n\n1.  **Complexity**\n    *   **Time:** $O(n \\cdot k)$, where $n$ is the length of the array. We iterate through $n$ elements, and for each, we look back up to $k$ steps.\n    *   **Space:**",
+        "ts": 1784989910341,
+        "weakAreas": [
+          "edge cases",
+          "space complexity"
+        ]
       }
     ],
     "platform": "leetcode",

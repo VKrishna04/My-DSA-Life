@@ -7,8 +7,9 @@
 | Problem ID | `lc-partition-array-for-maximum-sum` |
 | Topics | Array, Dynamic Programming |
 | Solved | 2026-05-06 |
-| Runtime | 151 ms (beats 62.974600000000024%) |
-| Memory | 19.1 MB (beats 97.71979999999999%) |
+| Solve Time | 15m 30s |
+| Runtime | 151 ms (beats 62.415000000000006%) |
+| Memory | 19.1 MB (beats 97.6448%) |
 
 ## Problem Statement
 
@@ -66,17 +67,21 @@ class Solution:
 
 ## AI Review
 
-### 1. Complexity
-*   **Time**: $O(N \cdot K)$, where $N$ is the length of `arr`. We iterate through $N$ states, and for each, we look back up to $K$ elements.
-*   **Space**: $O(N)$ to store the `dp` table.
+### Analysis
 
-### 2. Correctness
-The logic is sound. It correctly tracks the maximum element within the current window (`cur_max`) to calculate the potential sum. It handles the window constraint using `min(k, i)`. 
-*   **Edge Cases**: $k=1$ (sum of all elements), $k=n$ (one large partition), and $n=1$ are all handled correctly by the loop boundaries.
+1.  **Complexity**
+    *   **Time:** $O(n \cdot k)$, where $n$ is the length of the array. We iterate through $n$ elements, and for each, we look back up to $k$ steps.
+    *   **Space:** $O(n)$ to store the `dp` array.
 
-### 3. Optimization
-**Space Complexity**: You can optimize the space from **$O(N)$ to $O(K)$**. 
-Since the calculation for `dp[i]` only relies on the previous $K$ values (`dp[i-1]` through `dp[i-k]`), you can use a circular buffer (array of size $K+1$ with modulo indexing) to store only the necessary state history.
+2.  **Correctness**
+    *   The solution is **correct**. It properly explores all possible partitions ending at index $i$ with length $j \in [1, k]$.
+    *   **Edge Cases:**
+        *   $k=1$: Correctly reduces to the sum of the array.
+        *   $k \ge n$: Correctly identifies the maximum element and multiplies it by $n$.
+        *   Single element array: Handled correctly by the loops.
 
-### 4. Key Algorithmic Pattern
-**Partition Dynamic Programming**: This involves breaking a sequence into contiguous subarrays and using the results of previous partitions to build the global maximum. It is characterized by a state transition like `dp[i] = max(dp[i-j] + cost(i-j, i))` for $1 \le j \le K$.
+3.  **Concrete Optimization**
+    *   **Space Optimization:** Since `dp[i]` only depends on the previous $k$ values (`dp[i-1]` to `dp[i-k]`), you can reduce space complexity to **$O(k)$** by using a circular buffer (array of size $k+1$) and the modulo operator `dp[i % (k + 1)]`.
+
+4.  **Key Algorithmic Pattern**
+    *   **Linear Dynamic Programming (Partitioning):** This pattern involves breaking a sequence into non-overlapping subarrays and using the optimal results of previous subproblems to build the current one.
