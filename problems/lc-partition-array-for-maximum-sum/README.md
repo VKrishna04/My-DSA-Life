@@ -7,9 +7,9 @@
 | Problem ID | `lc-partition-array-for-maximum-sum` |
 | Topics | Array, Dynamic Programming |
 | Solved | 2026-05-06 |
-| Solve Time | 15m 30s |
-| Runtime | 151 ms (beats 62.415000000000006%) |
-| Memory | 19.1 MB (beats 97.6448%) |
+| Solve Time | 36m 5s |
+| Runtime | 151 ms (beats 61.41260000000008%) |
+| Memory | 19.1 MB (beats 97.5823%) |
 
 ## Problem Statement
 
@@ -67,21 +67,18 @@ class Solution:
 
 ## AI Review
 
-### Analysis
+### 1. Complexity
+*   **Time Complexity:** $O(n \cdot k)$, where $n$ is the length of the array and $k$ is the maximum partition size. Each element is visited once in the outer loop, and the inner loop runs up to $k$ times.
+*   **Space Complexity:** $O(n)$ to store the `dp` array.
 
-1.  **Complexity**
-    *   **Time:** $O(n \cdot k)$, where $n$ is the length of the array. We iterate through $n$ elements, and for each, we look back up to $k$ steps.
-    *   **Space:** $O(n)$ to store the `dp` array.
+### 2. Correctness
+The solution is **correct**. It properly handles:
+*   **Small Arrays:** `min(k, i)` ensures it doesn't look back further than the start of the array.
+*   **Large $k$:** Correctly calculates the maximum sum if the entire array is one partition.
+*   **$k=1$:** Correctly reduces to the sum of the array.
 
-2.  **Correctness**
-    *   The solution is **correct**. It properly explores all possible partitions ending at index $i$ with length $j \in [1, k]$.
-    *   **Edge Cases:**
-        *   $k=1$: Correctly reduces to the sum of the array.
-        *   $k \ge n$: Correctly identifies the maximum element and multiplies it by $n$.
-        *   Single element array: Handled correctly by the loops.
+### 3. Optimization
+**Space Optimization:** Since `dp[i]` only depends on the previous $k$ values (`dp[i-1]` through `dp[i-k]`), you can reduce the space complexity to **$O(k)$** by using a circular buffer (array of size $k+1$ with modulo indexing) to store only the necessary state.
 
-3.  **Concrete Optimization**
-    *   **Space Optimization:** Since `dp[i]` only depends on the previous $k$ values (`dp[i-1]` to `dp[i-k]`), you can reduce space complexity to **$O(k)$** by using a circular buffer (array of size $k+1$) and the modulo operator `dp[i % (k + 1)]`.
-
-4.  **Key Algorithmic Pattern**
-    *   **Linear Dynamic Programming (Partitioning):** This pattern involves breaking a sequence into non-overlapping subarrays and using the optimal results of previous subproblems to build the current one.
+### 4. Key Algorithmic Pattern
+**Linear Dynamic Programming** (specifically the "Partitioning DP" variant), where the optimal solution for a prefix depends on the optimal solutions of preceding subproblems within a window of size $k$.
