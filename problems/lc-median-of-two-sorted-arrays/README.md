@@ -7,9 +7,8 @@
 | Problem ID | `lc-median-of-two-sorted-arrays` |
 | Topics | Array, Binary Search, Divide and Conquer |
 | Solved | 2026-05-15 |
-| Solve Time | 36m 18s |
-| Runtime | 4 ms (beats 28.7436%) |
-| Memory | 19.5 MB (beats 41.48049999999999%) |
+| Runtime | 4 ms (beats 30.1667%) |
+| Memory | 19.5 MB (beats 42.92340000000001%) |
 
 ## Problem Statement
 
@@ -49,32 +48,26 @@ The overall run time complexity should be `O(log (m+n))`.
 
 ## Solutions
 
-### Alt approach (Python3)
-
-Duplicate resolved — 11 Aug 2024
-
 ```Python3
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
-        return median(sorted(nums1 + nums2))
-        # p1 = nums1
-        # if num1 is not None or nums2 us not None:
-
+        res = sorted(nums1 + nums2)
+        n = len(res)
+        return (res[n//2] + res[(n-1)//2]) / 2
 ```
 
 ## AI Review
 
-### Review
-
 **1. Complexity**
-*   **Time:** $O((m+n) \log(m+n))$ due to the `sorted()` function on the combined list of length $m+n$.
-*   **Space:** $O(m+n)$ to store the intermediate concatenated list `res`.
+*   **Time Complexity:** $O((m+n) \log(m+n))$ due to the `sorted()` function on the concatenated list.
+*   **Space Complexity:** $O(m+n)$ to store the merged list `res`.
 
 **2. Correctness**
-The logic is mathematically sound and handles edge cases (like empty arrays or single-element arrays) correctly. However, it **fails the problem's specific constraint** requiring $O(\log(m+n))$ time complexity. For very large inputs, this approach will be significantly slower than the optimal solution.
+The logic is functionally correct and handles all edge cases (empty arrays, single elements, even/odd total lengths) because it relies on Python’s robust built-in sorting. However, it fails the problem's specific constraint of **$O(\log(m+n))$** time complexity.
 
 **3. Concrete Optimization**
-Instead of sorting the combined arrays, use a **Binary Search** approach to find the correct partition point between `nums1` and `nums2`. By ensuring the left half of the partition contains the same number of elements as the right half and that all elements on the left are less than or equal to those on the right, you can find the median in $O(\log(\min(m, n)))$ time without merging the arrays.
+Replace sorting with a **Binary Search** approach on the partition index of the smaller array. Instead of merging, find a partition such that all elements on the left side are less than or equal to all elements on the right side. This reduces time complexity to **$O(\log(\min(m, n)))$** and space to **$O(1)$**.
 
 **4. Key Algorithmic Pattern**
-Binary Search (specifically, searching on the partition index of the smaller array).
+*   **Current:** Sort and Index (Brute Force).
+*   **Optimal:** Binary Search / Dual Pointer Partitioning.

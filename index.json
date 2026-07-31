@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-27T17:31:05.097Z",
+  "updatedAt": "2026-07-31T08:08:43.819Z",
   "layoutVersion": 3,
   "stats": {
     "total": 315,
@@ -11426,7 +11426,7 @@
         "Divide and Conquer"
       ],
       "canonical": null,
-      "readmeContent": "# [4] Median of Two Sorted Arrays\n**Difficulty:** Hard  |  **Acceptance:** 47.1%  |  **Likes:** 32496 / **Dislikes:** 3595\n**Tags:** `Array`, `Binary Search`, `Divide and Conquer`\n## Problem\nGiven two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.\n\nThe overall run time complexity should be O(log (m+n)).\n\n&nbsp;\nExample 1:\n\nInput: nums1 = [1,3], nums2 = [2]\nOutput: 2.00000\nExplanation: merged array = [1,2,3] and median is 2.\n\nExample 2:\n\nInput: nums1 = [1,2], nums2 = [3,4]\nOutput: 2.50000\nExplanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.\n\n&nbsp;\nConstraints:\n\n\tnums1.length == m\n\tnums2.length == n\n\t0 <= m <= 1000\n\t0 <= n <= 1000\n\t1 <= m + n <= 2000\n\t-106 <= nums1[i], nums2[i] <= 106\n## My Submission\n\n- Runtime: 4 ms (beats 28.8%)\n- Memory: 19.5 MB (beats 41.4%)\n- Solve time: 15m 59s\n",
+      "readmeContent": "# [4] Median of Two Sorted Arrays\n**Difficulty:** Hard  |  **Acceptance:** 47.2%  |  **Likes:** 32515 / **Dislikes:** 3595\n**Tags:** `Array`, `Binary Search`, `Divide and Conquer`\n## Problem\nGiven two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.\n\nThe overall run time complexity should be O(log (m+n)).\n\n&nbsp;\nExample 1:\n\nInput: nums1 = [1,3], nums2 = [2]\nOutput: 2.00000\nExplanation: merged array = [1,2,3] and median is 2.\n\nExample 2:\n\nInput: nums1 = [1,2], nums2 = [3,4]\nOutput: 2.50000\nExplanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.\n\n&nbsp;\nConstraints:\n\n\tnums1.length == m\n\tnums2.length == n\n\t0 <= m <= 1000\n\t0 <= n <= 1000\n\t1 <= m + n <= 2000\n\t-106 <= nums1[i], nums2[i] <= 106\n## My Submission\n\n- Runtime: 4 ms (beats 28.7%)\n- Memory: 19.5 MB (beats 41.5%)\n- Solve time: 36m 18s\n",
       "code": "class Solution:\n    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:\n        res = sorted(nums1 + nums2)\n        n = len(res)\n        return (res[n//2] + res[(n-1)//2]) / 2",
       "files": [
         {
@@ -11435,7 +11435,7 @@
         },
         {
           "path": "problems/lc-median-of-two-sorted-arrays/README.md",
-          "content": "# [4] Median of Two Sorted Arrays\n**Difficulty:** Hard  |  **Acceptance:** 47.1%  |  **Likes:** 32496 / **Dislikes:** 3595\n**Tags:** `Array`, `Binary Search`, `Divide and Conquer`\n## Problem\nGiven two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.\n\nThe overall run time complexity should be O(log (m+n)).\n\n&nbsp;\nExample 1:\n\nInput: nums1 = [1,3], nums2 = [2]\nOutput: 2.00000\nExplanation: merged array = [1,2,3] and median is 2.\n\nExample 2:\n\nInput: nums1 = [1,2], nums2 = [3,4]\nOutput: 2.50000\nExplanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.\n\n&nbsp;\nConstraints:\n\n\tnums1.length == m\n\tnums2.length == n\n\t0 <= m <= 1000\n\t0 <= n <= 1000\n\t1 <= m + n <= 2000\n\t-106 <= nums1[i], nums2[i] <= 106\n## My Submission\n\n- Runtime: 4 ms (beats 28.8%)\n- Memory: 19.5 MB (beats 41.4%)\n- Solve time: 15m 59s\n"
+          "content": "# [4] Median of Two Sorted Arrays\n**Difficulty:** Hard  |  **Acceptance:** 47.2%  |  **Likes:** 32515 / **Dislikes:** 3595\n**Tags:** `Array`, `Binary Search`, `Divide and Conquer`\n## Problem\nGiven two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.\n\nThe overall run time complexity should be O(log (m+n)).\n\n&nbsp;\nExample 1:\n\nInput: nums1 = [1,3], nums2 = [2]\nOutput: 2.00000\nExplanation: merged array = [1,2,3] and median is 2.\n\nExample 2:\n\nInput: nums1 = [1,2], nums2 = [3,4]\nOutput: 2.50000\nExplanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.\n\n&nbsp;\nConstraints:\n\n\tnums1.length == m\n\tnums2.length == n\n\t0 <= m <= 1000\n\t0 <= n <= 1000\n\t1 <= m + n <= 2000\n\t-106 <= nums1[i], nums2[i] <= 106\n## My Submission\n\n- Runtime: 4 ms (beats 28.7%)\n- Memory: 19.5 MB (beats 41.5%)\n- Solve time: 36m 18s\n"
         }
       ],
       "lang": {
@@ -11445,15 +11445,15 @@
       },
       "runtime": "4 ms",
       "memory": "19.5 MB",
-      "runtimePct": 28.809699999999992,
-      "memoryPct": 41.407999999999994,
+      "runtimePct": 28.7436,
+      "memoryPct": 41.48049999999999,
       "timestamp": 1778869326000,
-      "acRate": 47.14513368465219,
-      "likes": 32496,
+      "acRate": 47.19947283498476,
+      "likes": 32515,
       "dislikes": 3595,
       "similar": [],
       "problemStatement": "<p>Given two sorted arrays <code>nums1</code> and <code>nums2</code> of size <code>m</code> and <code>n</code> respectively, return <strong>the median</strong> of the two sorted arrays.</p>\n\n<p>The overall run time complexity should be <code>O(log (m+n))</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums1 = [1,3], nums2 = [2]\n<strong>Output:</strong> 2.00000\n<strong>Explanation:</strong> merged array = [1,2,3] and median is 2.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums1 = [1,2], nums2 = [3,4]\n<strong>Output:</strong> 2.50000\n<strong>Explanation:</strong> merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>nums1.length == m</code></li>\n\t<li><code>nums2.length == n</code></li>\n\t<li><code>0 &lt;= m &lt;= 1000</code></li>\n\t<li><code>0 &lt;= n &lt;= 1000</code></li>\n\t<li><code>1 &lt;= m + n &lt;= 2000</code></li>\n\t<li><code>-10<sup>6</sup> &lt;= nums1[i], nums2[i] &lt;= 10<sup>6</sup></code></li>\n</ul>\n",
-      "elapsedSeconds": 959,
+      "elapsedSeconds": 2178,
       "hasSimilar": true,
       "submissionsUrl": "https://leetcode.com/problems/median-of-two-sorted-arrays/submissions/",
       "notes": "",
@@ -11462,7 +11462,7 @@
       "duplicateOf": null,
       "_requestAIReview": true,
       "platform": "leetcode",
-      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O((m+n) \\log(m+n))$ due to the `sorted()` call on the combined list.\n*   **Space Complexity:** $O(m+n)$ to store the concatenated `res` list.\n\n**2. Correctness**\nThe logic is **correct** for finding the median; it handles both even and odd total lengths correctly. It is robust against empty arrays (if at least one contains elements). However, it fails the problem's specific constraint of $O(\\log(m+n))$ time complexity.\n\n**3. Concrete Optimization**\nInstead of re-sorting the combined list, use **Binary Search** on the partition of the smaller array. Since the input arrays are already sorted, you can find a partition point such that all elements on the left are smaller than those on the right. This reduces time complexity to **$O(\\log(\\min(m, n)))$** and space to **$O(1)$**.\n\n**4. Key Algorithmic Pattern**\nThe current code uses **Brute Force (Concatenate & Sort)**. The optimal pattern required for this problem is **Binary Search** (specifically, binary search on the partition index).",
+      "aiReview": "### Review\n\n**1. Complexity**\n*   **Time:** $O((m+n) \\log(m+n))$ due to the `sorted()` function on the combined list of length $m+n$.\n*   **Space:** $O(m+n)$ to store the intermediate concatenated list `res`.\n\n**2. Correctness**\nThe logic is mathematically sound and handles edge cases (like empty arrays or single-element arrays) correctly. However, it **fails the problem's specific constraint** requiring $O(\\log(m+n))$ time complexity. For very large inputs, this approach will be significantly slower than the optimal solution.\n\n**3. Concrete Optimization**\nInstead of sorting the combined arrays, use a **Binary Search** approach to find the correct partition point between `nums1` and `nums2`. By ensuring the left half of the partition contains the same number of elements as the right half and that all elements on the left are less than or equal to those on the right, you can find the median in $O(\\log(\\min(m, n)))$ time without merging the arrays.\n\n**4. Key Algorithmic Pattern**\nBinary Search (specifically, searching on the partition index of the smaller array).",
       "linkedSolutions": [
         "lc-median-of-two-sorted-arrays-alt-1780412246910-3"
       ],
@@ -14229,7 +14229,7 @@
         "Dynamic Programming"
       ],
       "canonical": null,
-      "readmeContent": "# [1043] Partition Array for Maximum Sum\n**Difficulty:** Medium  |  **Acceptance:** 77.5%  |  **Likes:** 5125 / **Dislikes:** 438\n**Tags:** `Array`, `Dynamic Programming`\n## Problem\nGiven an integer array arr, partition the array into (contiguous) subarrays of length at most k. After partitioning, each subarray has their values changed to become the maximum value of that subarray.\n\nReturn the largest sum of the given array after partitioning. Test cases are generated so that the answer fits in a 32-bit integer.\n\n&nbsp;\nExample 1:\n\nInput: arr = [1,15,7,9,2,5,10], k = 3\nOutput: 84\nExplanation: arr becomes [15,15,15,9,10,10,10]\n\nExample 2:\n\nInput: arr = [1,4,1,5,7,3,6,1,9,9,3], k = 4\nOutput: 83\n\nExample 3:\n\nInput: arr = [1], k = 1\nOutput: 1\n\n&nbsp;\nConstraints:\n\n\t1 <= arr.length <= 500\n\t0 <= arr[i] <= 109\n\t1 <= k <= arr.length\n## My Submission\n\n- Runtime: 151 ms (beats 62.4%)\n- Memory: 19.1 MB (beats 97.6%)\n- Solve time: 15m 30s\n\n## Similar Problems\n\n- [Partition String Into Minimum Beautiful Substrings](https://leetcode.com/problems/partition-string-into-minimum-beautiful-substrings/) — Medium\n- [Minimum Substring Partition of Equal Character Frequency](https://leetcode.com/problems/minimum-substring-partition-of-equal-character-frequency/) — Medium\n",
+      "readmeContent": "# [1043] Partition Array for Maximum Sum\n**Difficulty:** Medium  |  **Acceptance:** 77.5%  |  **Likes:** 5131 / **Dislikes:** 438\n**Tags:** `Array`, `Dynamic Programming`\n## Problem\nGiven an integer array arr, partition the array into (contiguous) subarrays of length at most k. After partitioning, each subarray has their values changed to become the maximum value of that subarray.\n\nReturn the largest sum of the given array after partitioning. Test cases are generated so that the answer fits in a 32-bit integer.\n\n&nbsp;\nExample 1:\n\nInput: arr = [1,15,7,9,2,5,10], k = 3\nOutput: 84\nExplanation: arr becomes [15,15,15,9,10,10,10]\n\nExample 2:\n\nInput: arr = [1,4,1,5,7,3,6,1,9,9,3], k = 4\nOutput: 83\n\nExample 3:\n\nInput: arr = [1], k = 1\nOutput: 1\n\n&nbsp;\nConstraints:\n\n\t1 <= arr.length <= 500\n\t0 <= arr[i] <= 109\n\t1 <= k <= arr.length\n## My Submission\n\n- Runtime: 151 ms (beats 61.4%)\n- Memory: 19.1 MB (beats 97.6%)\n- Solve time: 36m 5s\n\n## Similar Problems\n\n- [Partition String Into Minimum Beautiful Substrings](https://leetcode.com/problems/partition-string-into-minimum-beautiful-substrings/) — Medium\n- [Minimum Substring Partition of Equal Character Frequency](https://leetcode.com/problems/minimum-substring-partition-of-equal-character-frequency/) — Medium\n",
       "code": "class Solution:\n    def maxSumAfterPartitioning(self, arr: List[int], k: int) -> int:\n        n = len(arr)\n        dp = [0] * (n + 1)\n\n        for i in range(1, n + 1):\n            cur_max = 0\n\n            for j in range(1, min(k, i) + 1):\n                cur_max = max(cur_max, arr[i - j])\n                \n                chunk_sum = cur_max * j\n                dp[i] = max(dp[i], dp[i - j] + chunk_sum)\n\n        return dp[n]",
       "files": [
         {
@@ -14238,7 +14238,7 @@
         },
         {
           "path": "problems/lc-partition-array-for-maximum-sum/README.md",
-          "content": "# [1043] Partition Array for Maximum Sum\n**Difficulty:** Medium  |  **Acceptance:** 77.5%  |  **Likes:** 5125 / **Dislikes:** 438\n**Tags:** `Array`, `Dynamic Programming`\n## Problem\nGiven an integer array arr, partition the array into (contiguous) subarrays of length at most k. After partitioning, each subarray has their values changed to become the maximum value of that subarray.\n\nReturn the largest sum of the given array after partitioning. Test cases are generated so that the answer fits in a 32-bit integer.\n\n&nbsp;\nExample 1:\n\nInput: arr = [1,15,7,9,2,5,10], k = 3\nOutput: 84\nExplanation: arr becomes [15,15,15,9,10,10,10]\n\nExample 2:\n\nInput: arr = [1,4,1,5,7,3,6,1,9,9,3], k = 4\nOutput: 83\n\nExample 3:\n\nInput: arr = [1], k = 1\nOutput: 1\n\n&nbsp;\nConstraints:\n\n\t1 <= arr.length <= 500\n\t0 <= arr[i] <= 109\n\t1 <= k <= arr.length\n## My Submission\n\n- Runtime: 151 ms (beats 62.4%)\n- Memory: 19.1 MB (beats 97.6%)\n- Solve time: 15m 30s\n\n## Similar Problems\n\n- [Partition String Into Minimum Beautiful Substrings](https://leetcode.com/problems/partition-string-into-minimum-beautiful-substrings/) — Medium\n- [Minimum Substring Partition of Equal Character Frequency](https://leetcode.com/problems/minimum-substring-partition-of-equal-character-frequency/) — Medium\n"
+          "content": "# [1043] Partition Array for Maximum Sum\n**Difficulty:** Medium  |  **Acceptance:** 77.5%  |  **Likes:** 5131 / **Dislikes:** 438\n**Tags:** `Array`, `Dynamic Programming`\n## Problem\nGiven an integer array arr, partition the array into (contiguous) subarrays of length at most k. After partitioning, each subarray has their values changed to become the maximum value of that subarray.\n\nReturn the largest sum of the given array after partitioning. Test cases are generated so that the answer fits in a 32-bit integer.\n\n&nbsp;\nExample 1:\n\nInput: arr = [1,15,7,9,2,5,10], k = 3\nOutput: 84\nExplanation: arr becomes [15,15,15,9,10,10,10]\n\nExample 2:\n\nInput: arr = [1,4,1,5,7,3,6,1,9,9,3], k = 4\nOutput: 83\n\nExample 3:\n\nInput: arr = [1], k = 1\nOutput: 1\n\n&nbsp;\nConstraints:\n\n\t1 <= arr.length <= 500\n\t0 <= arr[i] <= 109\n\t1 <= k <= arr.length\n## My Submission\n\n- Runtime: 151 ms (beats 61.4%)\n- Memory: 19.1 MB (beats 97.6%)\n- Solve time: 36m 5s\n\n## Similar Problems\n\n- [Partition String Into Minimum Beautiful Substrings](https://leetcode.com/problems/partition-string-into-minimum-beautiful-substrings/) — Medium\n- [Minimum Substring Partition of Equal Character Frequency](https://leetcode.com/problems/minimum-substring-partition-of-equal-character-frequency/) — Medium\n"
         }
       ],
       "lang": {
@@ -14248,11 +14248,11 @@
       },
       "runtime": "151 ms",
       "memory": "19.1 MB",
-      "runtimePct": 62.415000000000006,
-      "memoryPct": 97.6448,
+      "runtimePct": 61.41260000000008,
+      "memoryPct": 97.5823,
       "timestamp": 1778098101000,
-      "acRate": 77.5050192900915,
-      "likes": 5125,
+      "acRate": 77.51467069083739,
+      "likes": 5131,
       "dislikes": 438,
       "similar": [
         {
@@ -14269,7 +14269,7 @@
         }
       ],
       "problemStatement": "<p>Given an integer array <code>arr</code>, partition the array into (contiguous) subarrays of length <strong>at most</strong> <code>k</code>. After partitioning, each subarray has their values changed to become the maximum value of that subarray.</p>\n\n<p>Return <em>the largest sum of the given array after partitioning. Test cases are generated so that the answer fits in a <strong>32-bit</strong> integer.</em></p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> arr = [1,15,7,9,2,5,10], k = 3\n<strong>Output:</strong> 84\n<strong>Explanation:</strong> arr becomes [15,15,15,9,10,10,10]\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> arr = [1,4,1,5,7,3,6,1,9,9,3], k = 4\n<strong>Output:</strong> 83\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> arr = [1], k = 1\n<strong>Output:</strong> 1\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= arr.length &lt;= 500</code></li>\n\t<li><code>0 &lt;= arr[i] &lt;= 10<sup>9</sup></code></li>\n\t<li><code>1 &lt;= k &lt;= arr.length</code></li>\n</ul>\n",
-      "elapsedSeconds": 930,
+      "elapsedSeconds": 2165,
       "hasSimilar": true,
       "submissionsUrl": "https://leetcode.com/problems/partition-array-for-maximum-sum/submissions/",
       "notes": "",
@@ -14278,7 +14278,7 @@
       "duplicateOf": null,
       "_requestAIReview": true,
       "platform": "leetcode",
-      "aiReview": "### Analysis\n\n1.  **Complexity**\n    *   **Time:** $O(n \\cdot k)$, where $n$ is the length of the array. We iterate through $n$ elements, and for each, we look back up to $k$ steps.\n    *   **Space:** $O(n)$ to store the `dp` array.\n\n2.  **Correctness**\n    *   The solution is **correct**. It properly explores all possible partitions ending at index $i$ with length $j \\in [1, k]$.\n    *   **Edge Cases:**\n        *   $k=1$: Correctly reduces to the sum of the array.\n        *   $k \\ge n$: Correctly identifies the maximum element and multiplies it by $n$.\n        *   Single element array: Handled correctly by the loops.\n\n3.  **Concrete Optimization**\n    *   **Space Optimization:** Since `dp[i]` only depends on the previous $k$ values (`dp[i-1]` to `dp[i-k]`), you can reduce space complexity to **$O(k)$** by using a circular buffer (array of size $k+1$) and the modulo operator `dp[i % (k + 1)]`.\n\n4.  **Key Algorithmic Pattern**\n    *   **Linear Dynamic Programming (Partitioning):** This pattern involves breaking a sequence into non-overlapping subarrays and using the optimal results of previous subproblems to build the current one.",
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(n \\cdot k)$, where $n$ is the length of the array and $k$ is the maximum partition size. Each element is visited once in the outer loop, and the inner loop runs up to $k$ times.\n*   **Space Complexity:** $O(n)$ to store the `dp` array.\n\n### 2. Correctness\nThe solution is **correct**. It properly handles:\n*   **Small Arrays:** `min(k, i)` ensures it doesn't look back further than the start of the array.\n*   **Large $k$:** Correctly calculates the maximum sum if the entire array is one partition.\n*   **$k=1$:** Correctly reduces to the sum of the array.\n\n### 3. Optimization\n**Space Optimization:** Since `dp[i]` only depends on the previous $k$ values (`dp[i-1]` through `dp[i-k]`), you can reduce the space complexity to **$O(k)$** by using a circular buffer (array of size $k+1$ with modulo indexing) to store only the necessary state.\n\n### 4. Key Algorithmic Pattern\n**Linear Dynamic Programming** (specifically the \"Partitioning DP\" variant), where the optimal solution for a prefix depends on the optimal solutions of preceding subproblems within a window of size $k$.",
       "_committedPaths": [
         "problems/lc-partition-array-for-maximum-sum/lc-partition-array-for-maximum-sum.py",
         "problems/lc-partition-array-for-maximum-sum/README.md"

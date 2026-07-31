@@ -2140,27 +2140,26 @@
   "leetcode::median-of-two-sorted-arrays": {
     "aiInsights": [
       {
-        "summary": "### 1. Complexity\n*   **Time:** $O((n + m) \\log(n + m))$ due to the `sorted()` call on the combined list.\n*   **Space:** $O(n + m)$ to store the concatenated `res` list.\n\n### 2. Correctness\nThe logic ",
-        "ts": 1784383214403,
-        "weakAreas": [
-          "time complexity"
-        ]
-      },
-      {
-        "summary": "### Review\n\n**1. Complexity**\n*   **Time Complexity:** $O((m+n) \\log(m+n))$ due to the `sorted()` function on the combined list of size $m+n$.\n*   **Space Complexity:** $O(m+n)$ to store the concatena",
-        "ts": 1784383261362,
-        "weakAreas": [
-          "edge cases",
-          "space complexity",
-          "time complexity"
-        ]
-      },
-      {
         "summary": "### 1. Complexity\n*   **Time Complexity:** $O((M+N) \\log(M+N))$ due to the `sorted()` function on the combined list of size $M+N$.\n*   **Space Complexity:** $O(M+N)$ to store the concatenated `res` li",
         "ts": 1784389136606,
         "weakAreas": [
           "edge cases",
           "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### Review\n\n**1. Complexity**\n*   **Time:** $O((m+n) \\log(m+n))$ due to the `sorted()` call on the combined list.\n*   **Space:** $O(m+n)$ to store the concatenated `res` list.\n\n**2. Correctness**\nThe ",
+        "ts": 1785343682682,
+        "weakAreas": [
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### Review\n\n**1. Complexity**\n*   **Time:** $O((m+n) \\log(m+n))$ due to the `sorted()` function on the combined list of length $m+n$.\n*   **Space:** $O(m+n)$ to store the intermediate concatenated lis",
+        "ts": 1785350718641,
+        "weakAreas": [
+          "edge cases",
           "time complexity"
         ]
       }
@@ -2744,29 +2743,27 @@
   "leetcode::partition-array-for-maximum-sum": {
     "aiInsights": [
       {
-        "summary": "1.  **Time Complexity:** O(N\\*K)\n    *   The outer loop runs `N` times.\n    *   The inner loop runs up to `K` times (or `i` times, whichever is smaller).\n    *   Operations inside the inner loop are O",
-        "ts": 1781883215131,
-        "weakAreas": [
-          "edge cases",
-          "space complexity",
-          "time complexity"
-        ]
-      },
-      {
-        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n \\cdot k)$, where $n$ is the length of the array. We iterate through the array once and, for each element, look back up to $k$ steps.\n*   **Space Complex",
-        "ts": 1782650376927,
-        "weakAreas": [
-          "edge cases",
-          "space complexity",
-          "time complexity"
-        ]
-      },
-      {
         "summary": "### Analysis\n\n1.  **Complexity**\n    *   **Time:** $O(n \\cdot k)$, where $n$ is the length of the array. We iterate through $n$ elements, and for each, we look back up to $k$ steps.\n    *   **Space:**",
         "ts": 1784989910341,
         "weakAreas": [
           "edge cases",
           "space complexity"
+        ]
+      },
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n \\cdot k)$, where $n$ is the length of the array. For each element, we look back up to $k$ elements.\n*   **Space Complexity:** $O(n)$ to store the `dp` a",
+        "ts": 1785343683962,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
+        ]
+      },
+      {
+        "summary": "### 1. Complexity\n*   **Time Complexity:** $O(n \\cdot k)$, where $n$ is the length of the array and $k$ is the maximum partition size. Each element is visited once in the outer loop, and the inner loo",
+        "ts": 1785350701607,
+        "weakAreas": [
+          "space complexity",
+          "time complexity"
         ]
       }
     ],
