@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-number-of-paths0926` |
-| Topics | Algorithms, Dynamic Programming |
+| Topics | Dynamic Programming |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

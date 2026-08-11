@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-drop-duplicate-rows` |
-| Topics | Data Manipulation, Hashing |
+| Topics | Data Manipulation, Hash Table |
 | Solved | 2024-10-24 |
 | Runtime | 547 ms (beats 5.2954999999999695%) |
 | Memory | 69.5 MB (beats 10.938799999999988%) |

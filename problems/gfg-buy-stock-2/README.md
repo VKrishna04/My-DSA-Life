@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-buy-stock-2` |
-| Topics | Greedy, Arrays |
+| Topics | Greedy, Array |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-maximum-path-sum-from-any-node` |
-| Topics | Tree, Data Structures |
+| Topics | Tree |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

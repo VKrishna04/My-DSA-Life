@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-rotate-a-linked-list` |
-| Topics | Linked List, Data Structures |
+| Topics | Linked List |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

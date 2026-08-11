@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-k-largest-elements4206` |
-| Topics | Arrays, Sorting, Heap, Data Structures, Algorithms |
+| Topics | Array, Sorting, Heap (Priority Queue) |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

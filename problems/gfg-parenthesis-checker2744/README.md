@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-parenthesis-checker2744` |
-| Topics | Strings, Stack, STL, Data Structures |
+| Topics | String, Stack, Stl |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

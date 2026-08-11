@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Leetcode |
 | Problem ID | `lc-longest-palindromic-substring` |
-| Topics | Two Pointers, String, Dynamic Programming |
+| Topics | String, Two Pointers, String, Dynamic Programming |
 | Solved | 2024-10-23 |
 | Runtime | 2275 ms (beats 19.36370000000023%) |
 | Memory | 25.1 MB (beats 13.843799999999993%) |

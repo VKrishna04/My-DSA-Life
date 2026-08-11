@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-maximum-index-1587115620` |
-| Topics | Arrays, Data Structures, two-pointer-algorithm |
+| Topics | Array, Two Pointers |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

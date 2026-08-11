@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-next-greater-element-i` |
-| Topics | Array, Hash Table, Stack, Monotonic Stack |
+| Topics | Array, Hash Table, Stack, Stack |
 | Solved | 2025-06-01 |
 | Runtime | 0 ms (beats 100%) |
 | Memory | 18.1 MB (beats 100%) |

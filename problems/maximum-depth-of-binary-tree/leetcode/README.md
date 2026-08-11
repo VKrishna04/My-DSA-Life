@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-maximum-depth-of-binary-tree` |
-| Topics | Tree, Depth-First Search, Breadth-First Search, Binary Tree |
+| Topics | Tree, Tree, Depth-First Search, Breadth-First Search, Binary Tree |
 | Solved | 2025-07-22 |
 | Runtime | 3 ms (beats 22.307900000000004%) |
 | Memory | 18.9 MB (beats 100%) |

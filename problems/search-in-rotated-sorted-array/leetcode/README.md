@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Leetcode |
 | Problem ID | `lc-search-in-rotated-sorted-array` |
-| Topics | Array, Binary Search |
+| Topics | Array, Array, Binary Search |
 | Solved | 2025-12-31 |
 | Runtime | 0 ms (beats 100%) |
 | Memory | 17.3 MB (beats 100%) |

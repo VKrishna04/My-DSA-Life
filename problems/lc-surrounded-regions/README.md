@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Leetcode |
 | Problem ID | `lc-surrounded-regions` |
-| Topics | Array, Breadth-First Search, Depth-First Search, Matrix, Union-Find |
+| Topics | Array, Breadth-First Search, Depth-First Search, Matrix, Union Find |
 | Solved | 2026-05-14 |
 | Runtime | 3 ms (beats 84.6562%) |
 | Memory | 22.5 MB (beats 40.83939999999998%) |

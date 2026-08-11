@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-camelcase-pattern-matching2259` |
-| Topics | Strings, Trie, Data Structures, Advanced Data Structure |
+| Topics | String, Trie, Advanced Data Structure |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

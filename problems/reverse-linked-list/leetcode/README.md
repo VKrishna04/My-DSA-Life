@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-reverse-linked-list` |
-| Topics | Linked List, Recursion |
+| Topics | Linked List, Linked List, Recursion |
 | Solved | 2026-04-12 |
 | Runtime | 3 ms (beats 7.476800000000001%) |
 | Memory | 20.4 MB (beats 91.822%) |

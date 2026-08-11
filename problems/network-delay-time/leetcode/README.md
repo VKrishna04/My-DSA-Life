@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Leetcode |
 | Problem ID | `lc-network-delay-time` |
-| Topics | Depth-First Search, Breadth-First Search, Graph Theory, Heap (Priority Queue), Shortest Path |
+| Topics | Graph, Depth-First Search, Breadth-First Search, Graph Theory, Heap (Priority Queue), Shortest Path |
 | Solved | 2026-05-22 |
 | Runtime | 329 ms (beats 87.1329%) |
 | Memory | 21.3 MB (beats 53.87319999999997%) |

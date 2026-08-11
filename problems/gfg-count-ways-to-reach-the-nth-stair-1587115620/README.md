@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-count-ways-to-reach-the-nth-stair-1587115620` |
-| Topics | sliding-window, Dynamic Programming, Mathematical, Algorithms |
+| Topics | Sliding Window, Dynamic Programming, Math |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

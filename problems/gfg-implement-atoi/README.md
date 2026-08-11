@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-implement-atoi` |
-| Topics | Strings, Design-Pattern, Data Structures |
+| Topics | String, Design Pattern |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

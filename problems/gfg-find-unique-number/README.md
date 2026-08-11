@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-find-unique-number` |
-| Topics | Bit Magic |
+| Topics | Bit Manipulation |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

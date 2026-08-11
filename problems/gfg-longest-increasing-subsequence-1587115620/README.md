@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-longest-increasing-subsequence-1587115620` |
-| Topics | Dynamic Programming, Binary Search, Algorithms |
+| Topics | Dynamic Programming, Binary Search |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

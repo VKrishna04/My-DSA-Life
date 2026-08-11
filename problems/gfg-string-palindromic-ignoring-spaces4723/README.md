@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-string-palindromic-ignoring-spaces4723` |
-| Topics | two-pointer-algorithm, Strings, palindrome, Data Structures, Algorithms |
+| Topics | Two Pointers, String, Palindrome |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

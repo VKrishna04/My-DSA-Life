@@ -5,7 +5,7 @@
 | Difficulty | Unknown |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-repetitive-addition-of-digits2221` |
-| Topics | Mathematical, Algorithms |
+| Topics | Math |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

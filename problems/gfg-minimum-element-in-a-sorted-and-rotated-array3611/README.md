@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-minimum-element-in-a-sorted-and-rotated-array3611` |
-| Topics | Searching, Algorithms |
+| Topics | Searching |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

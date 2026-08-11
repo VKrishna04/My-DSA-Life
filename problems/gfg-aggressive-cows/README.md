@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-aggressive-cows` |
-| Topics | Binary Search, Algorithms |
+| Topics | Binary Search |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

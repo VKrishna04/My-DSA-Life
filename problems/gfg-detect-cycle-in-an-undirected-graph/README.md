@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-detect-cycle-in-an-undirected-graph` |
-| Topics | DFS, Graph, union-find, Data Structures, Algorithms |
+| Topics | Depth-First Search, Graph, Union Find |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

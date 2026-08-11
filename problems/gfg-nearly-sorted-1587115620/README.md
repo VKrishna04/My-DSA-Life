@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-nearly-sorted-1587115620` |
-| Topics | Sorting, Arrays, priority-queue |
+| Topics | Sorting, Array, Heap (Priority Queue) |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

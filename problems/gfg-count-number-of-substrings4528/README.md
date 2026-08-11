@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-count-number-of-substrings4528` |
-| Topics | sliding-window, two-pointer-algorithm, Strings, Dynamic Programming, Algorithms |
+| Topics | Sliding Window, Two Pointers, String, Dynamic Programming |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

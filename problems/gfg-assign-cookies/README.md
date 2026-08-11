@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-assign-cookies` |
-| Topics | Arrays, Sorting, Data Structures, Algorithms |
+| Topics | Array, Sorting |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

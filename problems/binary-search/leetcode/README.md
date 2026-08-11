@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-binary-search` |
-| Topics | Array, Binary Search |
+| Topics | Array, Array, Binary Search |
 | Solved | 2026-01-05 |
 | Runtime | 0 ms (beats 100%) |
 | Memory | 13.3 MB (beats 37.21339999999999%) |

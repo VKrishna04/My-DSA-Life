@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-intersection-point-in-y-shapped-linked-lists` |
-| Topics | Linked List, Data Structures |
+| Topics | Linked List |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

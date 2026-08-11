@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-height-of-binary-tree` |
-| Topics | Tree, Data Structures |
+| Topics | Tree |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

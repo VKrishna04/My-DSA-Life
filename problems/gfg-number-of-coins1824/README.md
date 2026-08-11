@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-number-of-coins1824` |
-| Topics | Dynamic Programming, Algorithms |
+| Topics | Dynamic Programming |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

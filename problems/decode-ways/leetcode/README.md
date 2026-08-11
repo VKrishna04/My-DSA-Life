@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Leetcode |
 | Problem ID | `lc-decode-ways` |
-| Topics | String, Dynamic Programming |
+| Topics | Dynamic Programming, String, Dynamic Programming |
 | Solved | 2026-04-11 |
 | Runtime | 0 ms (beats 100%) |
 | Memory | 19.4 MB (beats 41.223299999999995%) |

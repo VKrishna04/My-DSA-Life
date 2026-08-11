@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-valid-parentheses` |
-| Topics | String, Stack |
+| Topics | String, String, Stack |
 | Solved | 2024-10-20 |
 | Runtime | 4 ms (beats 12%) |
 | Memory | 16.6 MB (beats 100%) |

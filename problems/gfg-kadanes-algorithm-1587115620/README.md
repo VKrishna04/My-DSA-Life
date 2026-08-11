@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-kadanes-algorithm-1587115620` |
-| Topics | Arrays, Dynamic Programming, Data Structures, Algorithms |
+| Topics | Array, Dynamic Programming |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-minimum-platforms-1587115620` |
-| Topics | Arrays, Greedy, Sorting, Binary Search, Data Structures, Algorithms |
+| Topics | Array, Greedy, Sorting, Binary Search |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

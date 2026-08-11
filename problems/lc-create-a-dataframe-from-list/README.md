@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-create-a-dataframe-from-list` |
-| Topics | Data Structures, Array, Matrix |
+| Topics | Array, Matrix |
 | Solved | 2024-10-23 |
 | Runtime | 390 ms (beats 5%) |
 | Memory | 68.5 MB (beats 6%) |

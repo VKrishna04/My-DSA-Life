@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-non-repeating-character-1587115620` |
-| Topics | Hash, Strings, Data Structures |
+| Topics | Hash Table, String |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-missing-number-in-array1416` |
-| Topics | Arrays, Searching, Bit Magic, Data Structures, Algorithms |
+| Topics | Array, Searching, Bit Manipulation |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

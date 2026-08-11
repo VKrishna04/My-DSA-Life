@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-create-hello-world-function` |
-| Topics | Higher-Order Functions, Closures, Functional Programming |
+| Topics | Higher Order Functions, Closures, Functional Programming |
 | Solved | 2024-10-23 |
 | Runtime | 55 ms (beats 5%) |
 | Memory | 49 MB (beats 100%) |

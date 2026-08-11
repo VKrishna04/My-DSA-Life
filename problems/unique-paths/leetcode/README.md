@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Leetcode |
 | Problem ID | `lc-unique-paths` |
-| Topics | Math, Dynamic Programming, Combinatorics |
+| Topics | Dynamic Programming, Math, Dynamic Programming, Combinatorics |
 | Solved | 2026-04-10 |
 | Runtime | 0 ms (beats 100%) |
 | Memory | 19.4 MB (beats 22%) |

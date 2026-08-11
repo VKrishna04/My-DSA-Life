@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-total-decoding-messages1235` |
-| Topics | Dynamic Programming, Algorithms |
+| Topics | Dynamic Programming |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

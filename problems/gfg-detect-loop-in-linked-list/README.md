@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-detect-loop-in-linked-list` |
-| Topics | Linked List, two-pointer-algorithm, Data Structures, Algorithms |
+| Topics | Linked List, Two Pointers |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

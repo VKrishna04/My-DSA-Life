@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-product-array-puzzle4525` |
-| Topics | Arrays, Data Structures, Algorithms, prefix-sum |
+| Topics | Array, Prefix Sum |
 | Solved | 2026-06-24 |
 
 ## Problem Statement

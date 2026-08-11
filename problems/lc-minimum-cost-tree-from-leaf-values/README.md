@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Leetcode |
 | Problem ID | `lc-minimum-cost-tree-from-leaf-values` |
-| Topics | Array, Dynamic Programming, Stack, Greedy, Monotonic Stack |
+| Topics | Array, Dynamic Programming, Stack, Greedy, Stack |
 | Solved | 2026-04-28 |
 | Runtime | 119 ms (beats 14.4144%) |
 | Memory | 19.5 MB (beats 31.831899999999997%) |
