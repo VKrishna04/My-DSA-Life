@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-linked-list-cycle` |
-| Topics | Linked List, Hash Table, Linked List, Two Pointers |
+| Topics | Linked List, Linked List, Hash Table, Two Pointers |
 | Solved | 2024-10-20 |
 | Runtime | 50 ms (beats 78%) |
 | Memory | 19.1 MB (beats 100%) |

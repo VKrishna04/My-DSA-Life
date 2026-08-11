@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Leetcode |
 | Problem ID | `lc-house-robber` |
-| Topics | Dynamic Programming, Array, Dynamic Programming |
+| Topics | Dynamic Programming, Dynamic Programming, Array |
 | Solved | 2026-04-10 |
 | Runtime | 0 ms (beats 100%) |
 | Memory | 19.3 MB (beats 61%) |

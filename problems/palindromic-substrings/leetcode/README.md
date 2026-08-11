@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Leetcode |
 | Problem ID | `lc-palindromic-substrings` |
-| Topics | String, Two Pointers, String, Dynamic Programming |
+| Topics | String, String, Two Pointers, Dynamic Programming |
 | Solved | 2026-04-27 |
 | Runtime | 207 ms (beats 26.074999999999942%) |
 | Memory | 27.3 MB (beats 14.048199999999998%) |

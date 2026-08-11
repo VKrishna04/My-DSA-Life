@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Leetcode |
 | Problem ID | `lc-longest-substring-without-repeating-characters` |
-| Topics | String, Hash Table, Hash Table, String, Sliding Window |
+| Topics | String, Hash Table, String, Hash Table, Sliding Window |
 | Solved | 2024-08-11 |
 | Runtime | 51 ms (beats 11.762000000000004%) |
 | Memory | 16.5 MB (beats 100%) |

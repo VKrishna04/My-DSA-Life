@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Leetcode |
 | Problem ID | `lc-number-of-islands` |
-| Topics | Graph, Array, Depth-First Search, Breadth-First Search, Union Find, Matrix |
+| Topics | Graph, Graph, Array, Depth-First Search, Breadth-First Search, Union Find, Matrix |
 | Solved | 2026-05-09 |
 | Runtime | 228 ms (beats 93.70900000000003%) |
 | Memory | 21.6 MB (beats 72.3493%) |
