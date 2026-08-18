@@ -29,3 +29,26 @@ In the inverted tree, every non-leaf node has its left and right child interchan
 **Constraints:**
 1 &le; number of nodes &le; 104
 1 &le; node->data &le; 105
+
+## Solutions
+
+```python3
+from collections import deque
+'''
+class Node:
+    def _init_(self, val):
+        self.data = val
+        self.right = None
+        self.left = None
+'''
+
+class Solution:
+    def mirror(self, root):
+        if root is None:
+            return
+
+        root.left, root.right = root.right, root.left
+        
+        self.mirror(root.left)
+        self.mirror(root.right)
+```

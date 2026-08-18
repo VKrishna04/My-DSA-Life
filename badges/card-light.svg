@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="200" role="img" aria-label="VKrishna04&apos;s ledger: 1 day streak, 5355 points">
+  <title>VKrishna04&apos;s ledger</title>
+  <style>
+    .bar,.n{transform-box:fill-box}
+    .bar{transform-origin:left center}
+    @media (prefers-reduced-motion: no-preference){
+      .bar{animation:cl-grow .9s cubic-bezier(.22,1,.36,1) both}
+      .n{animation:cl-rise .5s ease-out both}
+      .n2{animation-delay:.08s}
+      .n3{animation-delay:.16s}
+    }
+    @keyframes cl-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    @keyframes cl-rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  </style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c2410c"/>
+      <stop offset="1" stop-color="#6d28d9"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="200" rx="12" fill="url(#bg)"/>
+  <rect x="0.5" y="0.5" width="419" height="199" rx="12" fill="none" stroke="#cbd5e1"/>
+  <text x="24" y="36" fill="#0f172a" font-size="15" font-weight="600" font-family="Segoe UI,Helvetica,Arial,sans-serif">VKrishna04&apos;s ledger</text>
+  <text x="396" y="36" fill="#64748b" font-size="12" text-anchor="end" font-family="Segoe UI,Helvetica,Arial,sans-serif">Lv 6 · Architect</text>
+  <g font-family="Segoe UI,Helvetica,Arial,sans-serif">
+
+    <text class="n n1" x="80" y="86" fill="#c2410c" font-size="34" font-weight="700" text-anchor="middle">1</text>
+    <text x="80" y="108" fill="#475569" font-size="12" text-anchor="middle">day streak</text>
+
+    <text class="n n2" x="210" y="86" fill="#6d28d9" font-size="34" font-weight="700" text-anchor="middle">5.4k</text>
+    <text x="210" y="108" fill="#475569" font-size="12" text-anchor="middle">points</text>
+
+    <text class="n n3" x="340" y="86" fill="#15803d" font-size="34" font-weight="700" text-anchor="middle">311</text>
+    <text x="340" y="108" fill="#475569" font-size="12" text-anchor="middle">solved</text>
+  </g>
+  <rect x="30" y="140" width="360" height="8" rx="4" fill="#e2e8f0"/>
+  <rect class="bar" x="30" y="140" width="283" height="8" rx="4" fill="url(#bar)"/>
+  <text x="30" y="172" fill="#475569" font-size="11" font-family="Segoe UI,Helvetica,Arial,sans-serif">2355 / 3000 to Strategist</text>
+  <text x="390" y="172" fill="#475569" font-size="11" text-anchor="end" font-family="Segoe UI,Helvetica,Arial,sans-serif">0 ❄ · best 36d</text>
+  <text x="210" y="190" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="Segoe UI,Helvetica,Arial,sans-serif">as of Aug 18</text>
+</svg>

@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "config": {
+    "utcOffsetMinutes": 330
+  },
+  "vacations": [],
+  "installDay": "",
+  "username": "VKrishna04",
+  "pagesUrl": "http://vkrishna04.me/My-DSA-Life/",
+  "readme": true,
+  "badgeStyle": "svg",
+  "shieldsStyle": "flat",
+  "rawBase": "https://raw.githubusercontent.com/VKrishna04/My-DSA-Life/main",
+  "picks": [
+    "streak",
+    "points",
+    "level",
+    "solved",
+    "difficulty",
+    "freezes"
+  ]
+}

@@ -31,3 +31,25 @@ Element 4 stays at index 3
 1 &le; arr.size() &le; 106
 0 &le; k < arr.size()
 1 &le; arr[i] &le; 106
+
+## Solutions
+
+```python3
+from heapq import heapify, heappush, heappop
+
+class Solution:
+    def nearlySorted(self, arr, k):  
+        heap = arr[:k]
+        heapify(heap)
+        index = 0
+        for i in range(k,len(arr)):
+            heappush(heap,arr[i])
+            arr[index] = heappop(heap)
+            index += 1
+        
+        for j in range(k):
+            arr[index] = heappop(heap)
+            index += 1
+            
+        return arr
+```

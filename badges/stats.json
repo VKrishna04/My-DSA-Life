@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "asOf": "2026-08-18",
+  "currentStreak": 1,
+  "longestStreak": 36,
+  "freezes": 0,
+  "totalPoints": 5355,
+  "totalSolves": 311,
+  "totalRecalls": 0,
+  "byDifficulty": {
+    "Easy": 176,
+    "Medium": 123,
+    "Hard": 10,
+    "Unknown": 2
+  },
+  "level": 6,
+  "levelName": "Architect",
+  "activeDays": 89,
+  "dailyTargetPoints": 25,
+  "achievements": [
+    "first-blood",
+    "ten-down",
+    "century",
+    "week-streak",
+    "month-streak",
+    "polyglot",
+    "well-rounded",
+    "double-day",
+    "comeback",
+    "level-five",
+    "second-opinion",
+    "peer-reviewed"
+  ]
+}

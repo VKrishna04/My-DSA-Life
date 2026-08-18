@@ -1,0 +1,40 @@
+# Managed by CodeLedger. Edits are overwritten on the next sync.
+#
+# Badges are pictures written at commit time, so they cannot notice a streak
+# ending on a day with no commits. This run recomputes them from index.json and
+# commits only when a number actually changed.
+name: Refresh CodeLedger badges
+
+on:
+  schedule:
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: codeledger-badges
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Recompute badges
+        run: node .github/scripts/refresh-badges.mjs
+      - name: Commit if changed
+        run: |
+          if [ -z "$(git status --porcelain badges)" ]; then
+            echo "badges unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add badges README.md
+          git commit -m "chore(badges): refresh streak [skip ci]"
+          git push

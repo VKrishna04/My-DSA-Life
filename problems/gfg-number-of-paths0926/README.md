@@ -27,3 +27,18 @@ Given two integers **m** and **n** representing the number of rows and columns o
 **Constraints:**
 1 &le; m &le; 100
 1 &le; n &le; 100
+
+## Solutions
+
+```python3
+class Solution:
+    def numberOfPaths(self, m, n):
+        dp = []
+        for _ in range(m):
+            dp.append([1]*n)
+        
+        for i in range(1, m):
+            for j in range(1, n):
+                dp[i][j] = dp[i-1][j] + dp[i][j-1]
+        return dp[m-1][n-1]
+```

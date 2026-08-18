@@ -25,3 +25,36 @@ Explanation: **In the given string, 'f' is the first character in the string whi
 **Explanation: **All the characters in the given string are repeating.
 **Constraints:**
 1 &le; s.size() &le; 105
+
+## Solutions
+
+```python3
+class Solution:
+    def nonRepeatingChar(self,s):
+        # dic = {char : 0 for char in 'abcdefghijklmnopqrstuvwxyz'}
+        
+        # for char in s:
+        #     dic[char] += 1
+            
+        # result = [k for k, v in dic.items() if v == 1]
+        # # print(result)
+        
+        # if len(result) == 0:
+        #     return '$'
+        
+        # if len(result) == 1: 
+        #     return result[0]
+        
+        # for char in s:
+        #     if char in result:
+        #         return char
+        
+        dic = {}
+        for char in s:
+            dic[char] = dic.get(char, 0) + 1
+        
+        for char in s:
+            if dic[char] == 1:
+                return char
+        return '$'
+```
