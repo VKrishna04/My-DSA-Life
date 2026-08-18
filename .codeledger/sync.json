@@ -1,14 +1,42 @@
 {
-  "autoReview": false,
+  "aiPrimaryModel": "gemini-3-flash-preview",
+  "aiSecondary": "gemini",
+  "aiSecondaryModel": "gemini-2.5-flash",
+  "autoReview": true,
   "claude_enabled": false,
   "deepseek_enabled": false,
+  "gamificationBadgePicks": [
+    "streak",
+    "points",
+    "level",
+    "solved",
+    "difficulty",
+    "freezes"
+  ],
   "gamificationEnabled": true,
-  "gemini_enabled": false,
+  "gemini_enabled": true,
   "gitProvider": "github",
   "github_owner": "",
   "github_repo": "My-DSA-Life",
   "ollama_enabled": false,
   "openai_enabled": false,
   "openrouter_enabled": false,
-  "__syncedAt": "2026-08-18T07:17:14.195Z"
+  "remember_modal_tab": true,
+  "telemetryOptIn": true,
+  "__theme": {
+    "accentPrimary": "",
+    "accentSecondary": "",
+    "autoBehavior": "system",
+    "basePreset": "",
+    "bgColor": "",
+    "bgSecondary": "",
+    "bgTertiary": "",
+    "customPresets": {},
+    "mode": "dark",
+    "preset": "github-light",
+    "textColor": "",
+    "timeCustomEnd": "18:00",
+    "timeCustomStart": "06:00"
+  },
+  "__syncedAt": "2026-08-18T10:20:34.030Z"
 }

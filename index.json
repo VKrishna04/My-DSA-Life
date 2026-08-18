@@ -1,18 +1,18 @@
 {
-  "updatedAt": "2026-08-18T07:17:14.161Z",
+  "updatedAt": "2026-08-18T10:20:34.020Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 315,
+    "total": 316,
     "easy": 176,
-    "medium": 126,
+    "medium": 127,
     "hard": 11,
     "byPlatform": {
       "geeksforgeeks": 55,
-      "leetcode": 260
+      "leetcode": 261
     },
     "byLang": {
       "python3": 5,
-      "Python3": 199,
+      "Python3": 200,
       "Unknown": 45,
       "MySQL": 15,
       "Java": 12,
@@ -35,7 +35,7 @@
       "Depth-First Search": 1,
       "Linked List": 8,
       "Bit Manipulation": 3,
-      "Array": 131,
+      "Array": 132,
       "Searching": 2,
       "Hash Table": 14,
       "Java": 1,
@@ -174,6 +174,7 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
+        "problems/gfg-assign-cookies/gfg-assign-cookies.py",
         "problems/gfg-assign-cookies/README.md"
       ],
       "aiReview": "### Analysis\n\n1.  **Complexity:**\n    *   **Time Complexity:** $O(G \\log G + C \\log C)$, where $G$ is the length of the `greed` array and $C$ is the length of the `cookie` array. This is dominated by the sorting step. The two-pointer traversal is $O(G + C)$.\n    *   **Space Complexity:** $O(1)$ or $O(G + C)$ depending on the implementation of the sorting algorithm (Python's Timsort uses $O(N)$ auxiliary space).\n\n2.  **Correctness:**\n    The solution is correct. It successfully handles edge cases such as empty input arrays, more cookies than children, and scenarios where no cookie is large enough to satisfy any child.\n\n3.  **Optimization:**\n    While the algorithmic complexity is optimal, you can slightly improve readability and performance in Python by iterating directly over the `cookie` array using a `for` loop. This avoids manual index management for the cookie pointer.\n\n4.  **Key Algorithmic Pattern:**\n    **Greedy Algorithm** combined with **Two Pointers**. By sorting, we ensure that we satisfy the least greedy children with the smallest possible effective cookies, maximizing the total count.",
@@ -721,6 +722,7 @@
       "methods": [],
       "manuallyEdited": false,
       "_committedPaths": [
+        "problems/gfg-intersection-point-in-y-shapped-linked-lists/gfg-intersection-point-in-y-shapped-linked-lists.py",
         "problems/gfg-intersection-point-in-y-shapped-linked-lists/README.md"
       ]
     },
@@ -8481,6 +8483,69 @@
       "linkedSolutions": [
         "lc-height-checker"
       ]
+    },
+    {
+      "id": "lc-house-robber-v",
+      "forceCommit": false,
+      "submissionId": null,
+      "title": "House Robber V",
+      "titleSlug": "house-robber-v",
+      "difficulty": "Medium",
+      "topic": "Dynamic Programming",
+      "tags": [
+        "Array",
+        "Dynamic Programming"
+      ],
+      "canonical": null,
+      "readmeContent": "# [3840] House Robber V\n**Difficulty:** Medium  |  **Acceptance:** 54.0%  |  **Likes:** 92 / **Dislikes:** 2\n**Tags:** `Array`, `Dynamic Programming`\n## Problem\nYou are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed and is protected by a security system with a color code.\n\nYou are given two integer arrays nums and colors, both of length n, where nums[i] is the amount of money in the ith house and colors[i] is the color code of that house.\n\nYou cannot rob two adjacent houses if they share the same color code.\n\nReturn the maximum amount of money you can rob.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,4,3,5], colors = [1,1,2,2]\n\nOutput: 9\n\nExplanation:\n\n\tChoose houses i = 1 with nums[1] = 4 and i = 3 with nums[3] = 5 because they are non-adjacent.\n\tThus, the total amount robbed is 4 + 5 = 9.\n\nExample 2:\n\nInput: nums = [3,1,2,4], colors = [2,3,2,2]\n\nOutput: 8\n\nExplanation:\n\n\tChoose houses i = 0 with nums[0] = 3, i = 1 with nums[1] = 1, and i = 3 with nums[3] = 4.\n\tThis selection is valid because houses i = 0 and i = 1 have different colors, and house i = 3 is non-adjacent to i = 1.\n\tThus, the total amount robbed is 3 + 1 + 4 = 8.\n\nExample 3:\n\nInput: nums = [10,1,3,9], colors = [1,1,1,2]\n\nOutput: 22\n\nExplanation:\n\n\tChoose houses i = 0 with nums[0] = 10, i = 2 with nums[2] = 3, and i = 3 with nums[3] = 9.\n\tThis selection is valid because houses i = 0 and i = 2 are non-adjacent, and houses i = 2 and i = 3 have different colors.\n\tThus, the total amount robbed is 10 + 3 + 9 = 22.\n\n&nbsp;\nConstraints:\n\n\t1 <= n == nums.length == colors.length <= 105\n\t1 <= nums[i], colors[i] <= 105\n## My Submission\n\n- Runtime: N/A\n- Memory: N/A\n\n## Similar Problems\n\n- [House Robber](https://leetcode.com/problems/house-robber/) — Medium\n",
+      "code": "class Solution:\n    def rob(self, nums: List[int], colors: List[int]) -> int:\n        n = len(nums)\n        dp0 = 0\n        dp1 = nums[0]\n        for i in range(1, n):\n            if colors[i] == colors[i-1]:\n                new1 = dp0 + nums[i]\n                new0 = max(dp0, dp1)\n            else:\n                new0 = max(dp1, dp0)\n                new1 = max(dp0, dp1) + nums[i]\n            dp0 = new0\n            dp1 = new1\n        return max(dp0, dp1)",
+      "files": [
+        {
+          "path": "problems/lc-house-robber-v/lc-house-robber-v.py",
+          "content": "class Solution:\n    def rob(self, nums: List[int], colors: List[int]) -> int:\n        n = len(nums)\n        dp0 = 0\n        dp1 = nums[0]\n        for i in range(1, n):\n            if colors[i] == colors[i-1]:\n                new1 = dp0 + nums[i]\n                new0 = max(dp0, dp1)\n            else:\n                new0 = max(dp1, dp0)\n                new1 = max(dp0, dp1) + nums[i]\n            dp0 = new0\n            dp1 = new1\n        return max(dp0, dp1)"
+        },
+        {
+          "path": "problems/lc-house-robber-v/README.md",
+          "content": "# [3840] House Robber V\n**Difficulty:** Medium  |  **Acceptance:** 54.0%  |  **Likes:** 92 / **Dislikes:** 2\n**Tags:** `Array`, `Dynamic Programming`\n## Problem\nYou are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed and is protected by a security system with a color code.\n\nYou are given two integer arrays nums and colors, both of length n, where nums[i] is the amount of money in the ith house and colors[i] is the color code of that house.\n\nYou cannot rob two adjacent houses if they share the same color code.\n\nReturn the maximum amount of money you can rob.\n\n&nbsp;\nExample 1:\n\nInput: nums = [1,4,3,5], colors = [1,1,2,2]\n\nOutput: 9\n\nExplanation:\n\n\tChoose houses i = 1 with nums[1] = 4 and i = 3 with nums[3] = 5 because they are non-adjacent.\n\tThus, the total amount robbed is 4 + 5 = 9.\n\nExample 2:\n\nInput: nums = [3,1,2,4], colors = [2,3,2,2]\n\nOutput: 8\n\nExplanation:\n\n\tChoose houses i = 0 with nums[0] = 3, i = 1 with nums[1] = 1, and i = 3 with nums[3] = 4.\n\tThis selection is valid because houses i = 0 and i = 1 have different colors, and house i = 3 is non-adjacent to i = 1.\n\tThus, the total amount robbed is 3 + 1 + 4 = 8.\n\nExample 3:\n\nInput: nums = [10,1,3,9], colors = [1,1,1,2]\n\nOutput: 22\n\nExplanation:\n\n\tChoose houses i = 0 with nums[0] = 10, i = 2 with nums[2] = 3, and i = 3 with nums[3] = 9.\n\tThis selection is valid because houses i = 0 and i = 2 are non-adjacent, and houses i = 2 and i = 3 have different colors.\n\tThus, the total amount robbed is 10 + 3 + 9 = 22.\n\n&nbsp;\nConstraints:\n\n\t1 <= n == nums.length == colors.length <= 105\n\t1 <= nums[i], colors[i] <= 105\n## My Submission\n\n- Runtime: N/A\n- Memory: N/A\n\n## Similar Problems\n\n- [House Robber](https://leetcode.com/problems/house-robber/) — Medium\n"
+        }
+      ],
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "runtime": "N/A",
+      "memory": "N/A",
+      "runtimePct": null,
+      "memoryPct": null,
+      "timestamp": 1787048419000,
+      "acRate": 53.96394959323656,
+      "likes": 92,
+      "dislikes": 2,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "house-robber",
+          "title": "House Robber",
+          "isPaidOnly": false
+        }
+      ],
+      "problemStatement": "<p>You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed and is protected by a security system with a color code.</p>\n\n<p>You are given two integer arrays <code>nums</code> and <code>colors</code>, both of length <code>n</code>, where <code>nums[i]</code> is the amount of money in the <code>i<sup>th</sup></code> house and <code>colors[i]</code> is the color code of that house.</p>\n\n<p>You <strong>cannot rob two adjacent</strong> houses if they share the <strong>same color</strong> code.</p>\n\n<p>Return the <strong>maximum</strong> amount of money you can rob.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [1,4,3,5], colors = [1,1,2,2]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">9</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<ul>\n\t<li>Choose houses <code>i = 1</code> with <code>nums[1] = 4</code> and <code>i = 3</code> with <code>nums[3] = 5</code> because they are non-adjacent.</li>\n\t<li>Thus, the total amount robbed is <code>4 + 5 = 9</code>.</li>\n</ul>\n</div>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [3,1,2,4], colors = [2,3,2,2]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">8</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<ul>\n\t<li>Choose houses <code>i = 0</code> with <code>nums[0] = 3</code>, <code>i = 1</code> with <code>nums[1] = 1</code>, and <code>i = 3</code> with <code>nums[3] = 4</code>.</li>\n\t<li>This selection is valid because houses <code>i = 0</code> and <code>i = 1</code> have different colors, and house <code>i = 3</code> is non-adjacent to <code>i = 1</code>.</li>\n\t<li>Thus, the total amount robbed is <code>3 + 1 + 4 = 8</code>.</li>\n</ul>\n</div>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<div class=\"example-block\">\n<p><strong>Input:</strong> <span class=\"example-io\">nums = [10,1,3,9], colors = [1,1,1,2]</span></p>\n\n<p><strong>Output:</strong> <span class=\"example-io\">22</span></p>\n\n<p><strong>Explanation:</strong></p>\n\n<ul>\n\t<li>Choose houses <code>i = 0</code> with <code>nums[0] = 10</code>, <code>i = 2</code> with <code>nums[2] = 3</code>, and <code>i = 3</code> with <code>nums[3] = 9</code>.</li>\n\t<li>This selection is valid because houses <code>i = 0</code> and <code>i = 2</code> are non-adjacent, and houses <code>i = 2</code> and <code>i = 3</code> have different colors.</li>\n\t<li>Thus, the total amount robbed is <code>10 + 3 + 9 = 22</code>.</li>\n</ul>\n</div>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= n == nums.length == colors.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>1 &lt;= nums[i], colors[i] &lt;= 10<sup>5</sup></code></li>\n</ul>\n",
+      "elapsedSeconds": 0,
+      "hasSimilar": true,
+      "submissionsUrl": "https://leetcode.com/problems/house-robber-v/submissions/",
+      "notes": "",
+      "methodTitle": "",
+      "isDuplicate": false,
+      "duplicateOf": null,
+      "_requestAIReview": true,
+      "platform": "leetcode",
+      "aiReview": "### Analysis\n\n1.  **Complexity:**\n    *   **Time Complexity:** $O(n)$, where $n$ is the number of houses. The solution performs a single linear pass through the arrays.\n    *   **Space Complexity:** $O(1)$. It only maintains two variables (`dp0`, `dp1`) to track the previous state, regardless of input size.\n\n2.  **Correctness:**\n    *   **Edge Case:** The code will raise an `IndexError` if `nums` is empty (`nums[0]`). An explicit check `if not nums: return 0` is required.\n    *   **Logic:** The code correctly implements a variation of the House Robber problem where adjacent houses can only be robbed if they have different colors. If colors match, it enforces the \"no-adjacent\" rule (`new1 = dp0 + nums[i]`).\n\n3.  **Concrete Optimization:**\n    The state update for `new0` is identical in both branches. You can simplify the loop using tuple unpacking to eliminate redundant assignments:\n    ```python\n    for i in range(1, n):\n        prev_max = max(dp0, dp1)\n        dp1 = (dp0 if colors[i] == colors[i-1] else prev_max) + nums[i]\n        dp0 = prev_max\n    ```\n\n4.  **Key Algorithmic Pattern:**\n    **Dynamic Programming (State Compression)** — The solution builds a global optimum using previous sub-problems while only storing the most recent states.",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview",
+      "pattern": "None",
+      "methods": [],
+      "manuallyEdited": false
     },
     {
       "id": "lc-house-robber::1974558813",
