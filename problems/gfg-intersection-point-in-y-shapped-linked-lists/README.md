@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-intersection-point-in-y-shapped-linked-lists` |
-| Topics | Linked List |
+| Topics | Linked List, Two Pointers |
 | Solved | 2026-06-24 |
 
 ## Problem Statement
@@ -58,3 +58,23 @@ class Solution:
             
         return temp1
 ```
+
+## AI Review
+
+### Review
+
+**1. Complexity**
+*   **Time Complexity:** $O(N + M)$ in the corrected version; currently, it can result in an infinite loop if lengths differ.
+*   **Space Complexity:** $O(1)$ as only two pointers are used.
+
+**2. Correctness**
+The code is **incorrect**.
+*   **Logic Error:** When `temp1` reaches the end, it resets to `head1` instead of `head2`. To synchronize the distance traveled, a pointer must switch to the **opposite** list's head.
+*   **Edge Case:** If the lists have different lengths and an intersection exists, the current logic will never align the pointers, causing an infinite loop.
+*   **Termination:** It does not handle cases where no intersection exists (it should eventually return `None`).
+
+**3. Optimization**
+Apply the **Two-Pointer Switching Technique**: When `temp1` reaches `None`, reassign it to `head2`. When `temp2` reaches `None`, reassign it to `head1`. They will meet at the intersection node or `None` in exactly $N+M$ steps.
+
+**4. Key Algorithmic Pattern**
+Two Pointers (specifically the "Length Synchronization" variant).
