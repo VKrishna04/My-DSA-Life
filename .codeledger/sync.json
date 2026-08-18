@@ -1,10 +1,14 @@
 {
+  "aiCopyable": true,
   "aiPrimaryModel": "gemini-3-flash-preview",
+  "aiProvider": "gemini",
   "aiSecondary": "gemini",
   "aiSecondaryModel": "gemini-2.5-flash",
   "autoReview": true,
   "claude_enabled": false,
+  "debugMode": true,
   "deepseek_enabled": false,
+  "gamificationActionsHour": 5,
   "gamificationBadgePicks": [
     "streak",
     "points",
@@ -16,15 +20,37 @@
   "gamificationEnabled": true,
   "gemini_enabled": true,
   "gitProvider": "github",
-  "github_owner": "",
+  "github_owner": "VKrishna04",
+  "github_pages_url": "http://vkrishna04.me/My-DSA-Life/",
   "github_repo": "My-DSA-Life",
+  "github_username": "VKrishna04",
+  "leetcode_submission_poll": true,
+  "mcp.config": {
+    "autoInvokeThreshold": {
+      "queryProblems": 2,
+      "suggestions": 1
+    },
+    "cacheResults": true,
+    "enabled": {
+      "analyze-code-quality": true,
+      "find-similar-problems": true,
+      "get-next-suggestion": true,
+      "get-problem-stats": true,
+      "get-trend-analysis": true,
+      "get-user-profile": true,
+      "query-problems": true
+    },
+    "maxToolCallsPerRequest": 4,
+    "useInChat": true,
+    "useInReview": true
+  },
   "ollama_enabled": false,
   "openai_enabled": false,
   "openrouter_enabled": false,
   "remember_modal_tab": true,
   "telemetryOptIn": true,
   "__theme": {
-    "accentPrimary": "",
+    "accentPrimary": "#602e9e",
     "accentSecondary": "",
     "autoBehavior": "system",
     "basePreset": "",
@@ -32,11 +58,11 @@
     "bgSecondary": "",
     "bgTertiary": "",
     "customPresets": {},
-    "mode": "dark",
+    "mode": "auto",
     "preset": "github-light",
     "textColor": "",
     "timeCustomEnd": "18:00",
     "timeCustomStart": "06:00"
   },
-  "__syncedAt": "2026-08-18T10:20:34.030Z"
+  "__syncedAt": "2026-08-18T16:07:15.738Z"
 }
