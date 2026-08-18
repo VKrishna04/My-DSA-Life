@@ -30,3 +30,17 @@ Given a 2D square matrix **mat**[][] of size **n x n**, rotate it by **180** **d
 **Constraints:**
 1 &le; n &le; 500
 0 &le; mat[i][j] &le; 104
+
+## Solutions
+
+```python3
+class Solution:
+    def rotateMatrix(self, mat):
+        mat[:] = mat[::-1]
+
+        for row in mat:
+            row[:] = row[::-1]
+
+        return mat
+        
+```
