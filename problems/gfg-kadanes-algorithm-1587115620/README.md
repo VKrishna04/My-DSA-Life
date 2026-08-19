@@ -29,3 +29,19 @@ Explanation: **The subarray [5, 4, 1, 7, 8] has the largest sum 25.
 **Constraints:
 **1 &le; arr.size() &le; 105**
 **-104 &le; arr[i] &le; 104
+
+## Solutions
+
+```python3
+class Solution:
+    def maxSubarraySum(self, arr):
+        max_sum = float('-inf')
+        curr = 0
+        
+        for num in arr:
+            curr += num
+            max_sum = max(max_sum, curr)
+            
+            if curr < 0: curr =  0
+        return max_sum
+```
