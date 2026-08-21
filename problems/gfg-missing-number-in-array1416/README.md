@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-missing-number-in-array1416` |
-| Topics | Array, Searching, Bit Manipulation |
+| Topics | Array, Searching, Bit Manipulation, Math |
 | Solved | 2026-06-24 |
 
 ## Problem Statement
@@ -45,3 +45,24 @@ class Solution:
 
 
 ```
+
+## AI Review
+
+This solution is highly efficient and addresses your recurring flags regarding complexity and space management.
+
+### 1. Complexities
+*   **Time Complexity:** **$O(n)$**. The `sum(arr)` function iterates through the $n-1$ elements exactly once.
+*   **Space Complexity:** **$O(1)$**. You only store two scalar variables (`sum1`, `expected`), regardless of input size.
+
+### 2. Correctness
+The logic is sound. Python’s arbitrary-precision integers prevent overflow errors during `(n)*(n+1)`, which is a common pitfall in languages like C++ or Java. It correctly handles the smallest possible case ($n=2$, array size 1).
+
+### 3. Optimization
+Use **integer division** (`//`) instead of float division (`/`). 
+```python
+expected = n * (n + 1) // 2
+```
+In Python, `/` creates a float. While `int()` converts it back, using `//` keeps the calculation entirely in the integer domain. This is faster and avoids potential precision issues with extremely large numbers where a float might lose the least significant digit.
+
+### 4. Key Algorithmic Pattern
+**Mathematical (Arithmetic Series):** Utilizing the formula for the sum of the first $n$ natural numbers to find a discrepancy.

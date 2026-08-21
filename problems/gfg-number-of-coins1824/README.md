@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-number-of-coins1824` |
-| Topics | Dynamic Programming |
+| Topics | Dynamic Programming, Array, Sorting |
 | Solved | 2026-06-24 |
 
 ## Problem Statement
@@ -53,3 +53,18 @@ class Solution:
             return dp[sum]
         return -1
 ```
+
+## AI Review
+
+1. **Complexity**:
+*   **Time**: $O(S \cdot N + N \log N)$, where $S$ is the target sum and $N$ is the number of coin denominations.
+*   **Space**: $O(S)$ for the DP array. This is the optimal space for this problem.
+
+2. **Correctness**:
+The logic is robust. It correctly handles the edge case of `sum = 0` (returns 0) and unreachable sums (returns -1). One minor vulnerability: if the `coins` list contains duplicates (e.g., `[1, 1, 2]`), the inner loop performs redundant calculations.
+
+3. **Optimization**:
+To improve performance, convert `coins` to a set before sorting: `coins = sorted(set(coins))`. This prevents the inner loop from re-processing the same denomination, which is a common bottleneck when the input array is messy.
+
+4. **Key Pattern**:
+**Bottom-up Dynamic Programming** (specifically the **Unbounded Knapsack** variation). You solve every sub-sum from 1 to `sum` and use those results to build the final answer.
