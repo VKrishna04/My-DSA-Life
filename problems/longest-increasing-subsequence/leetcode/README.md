@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Leetcode |
 | Problem ID | `lc-longest-increasing-subsequence` |
-| Topics | Array, Array, Binary Search, Dynamic Programming |
+| Topics | Array, Binary Search, Dynamic Programming |
 | Solved | 2026-05-05 |
 | Runtime | 7 ms (beats 82.46050000000001%) |
 | Memory | 19.5 MB (beats 59.8399%) |

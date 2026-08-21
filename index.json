@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-19T14:59:14.290Z",
+  "updatedAt": "2026-08-21T12:47:26.420Z",
   "layoutVersion": 3,
   "stats": {
     "total": 305,
@@ -57,7 +57,7 @@
   "meta": {
     "summary": "This solution is a prompt describing a text generation task, rather than executable code for a competitive programming problem. Therefore, the review interprets the prompt as a specification for an algorithm that would parse the provided statistics and generate a narrative.\n\n## Complexity\n- **Time:** O(L_input + L_output) — for parsing the input statistics and constructing the output summary string.\n- **Space:** O(L_input + L_output) — to store the input statistics string and the generated output summary string.\n\n## Correctness\nYour solution template outlines a task that involves parsing specific data from a string. This kind of problem often exposes issues with handling **edge cases** and **null/empty input**, which has been a recurring flag in your previous reviews.\n1.  **Missing `Stats:` or `Last commit:` field:**\n    *   **Input:** `You are an insightful DSA coach... Stats: ... Top topics: Array(132)...` (missing `Last commit:`)\n    *   **Expected:** The generated summary should adapt by omitting mentions of recent activity, or clearly state that recent activity could not be determined.\n    *   **Actual:** The solution's logic (as described in the prompt) doesn't explicitly define behavior for missing data, which could lead to an incomplete or incorrect summary, or even an error during parsing.\n2.  **Zero problems solved / Empty topic list:**\n    *   **Input:** `Stats: 0 total problems — Easy: 0, Medium: 0, Hard: 0. Top topics: . Last commit: 19/8/2026.`\n    *   **Expected:** A narrative acknowledging no problems solved yet, perhaps focusing on future potential, and stating no strong topics.\n    *   **Actual:** The prompt doesn't guide the narrative generation for extreme lows, potentially leading to an unhelpful or generic summary instead of a specifically tailored one.\n\n## Optimization\nCurrent approach is optimal. The prompt concisely describes the desired output and criteria, which is effective for a text generation task.\n\n## Code Quality\nTo improve clarity for implementers, explicitly state the expected output format (e.g., maximum sentence length, tone guidelines).",
     "summaryUpdatedAt": "2026-08-18T19:30:39.650Z",
-    "commitsSinceLastSummary": 8
+    "commitsSinceLastSummary": 9
   },
   "problems": [
     {
@@ -980,9 +980,11 @@
         "slug": "python3"
       },
       "tags": [
-        "Linked List"
+        "Linked List",
+        "Two Pointers",
+        "Sorting"
       ],
-      "topic": "Untagged",
+      "topic": "Linked List",
       "code": "'''\nclass Node:\n    def __init__(self, data): \n        self.data = data\n        self.next = None\n\n'''\nclass Solution:\n    def sortedMerge(self, head1, head2):\n        dummy = Node(0)\n        tail = dummy\n        \n        while head1 and head2:\n            if head1.data > head2.data:\n                tail.next = head2\n                head2 = head2.next\n            else:\n                tail.next = head1\n                head1 = head1.next\n            \n            tail = tail.next\n            \n        if head1:\n            tail.next = head1\n        if head2:\n            tail.next = head2\n        \n        return dummy.next\n                ",
       "files": [],
       "timestamp": 1782298700927,
@@ -997,7 +999,11 @@
       "_committedPaths": [
         "problems/gfg-merge-two-sorted-linked-lists/gfg-merge-two-sorted-linked-lists.py",
         "problems/gfg-merge-two-sorted-linked-lists/README.md"
-      ]
+      ],
+      "aiReview": "1. **Complexity**: Time **$O(N + M)$**, Space **$O(1)$**. You successfully avoided creating a new list, instead modifying existing pointers in-place. This addresses your recurring profile flag regarding unnecessary space complexity.\n2. **Correctness**: The logic is sound and handles null/empty inputs effectively—another area where you have previously faced challenges. The loop terminates correctly when one list is exhausted, and the remaining nodes are appended safely.\n3. **Optimization**: The implementation is already optimal. A minor Pythonic improvement to the final cleanup is: `tail.next = head1 or head2`. This utilizes the short-circuiting nature of `or` to attach whichever list remains without using multiple `if` statements.\n4. **Key Pattern**: **Dummy Node**. By initializing with a sentinel `Node(0)`, you avoid writing special logic to handle the initial assignment of the result head, ensuring the `tail` pointer logic remains consistent throughout the merge.",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview",
+      "pattern": "Dummy Node"
     },
     {
       "id": "gfg-minimum-element-in-a-sorted-and-rotated-array3611",
@@ -1052,9 +1058,10 @@
         "Array",
         "Greedy",
         "Sorting",
-        "Binary Search"
+        "Binary Search",
+        "Heap (Priority Queue)"
       ],
-      "topic": "Untagged",
+      "topic": "Interval Scheduling",
       "code": "import heapq\nclass Solution:    \n    def minPlatform(self, arr, dep):\n        sor_i = sorted(range(len(arr)), key=lambda i: arr[i])\n        dep[:] = [dep[i] for i in sor_i]\n        arr[:] = [arr[i] for i in sor_i]\n        \n        platforms = [dep[0]]\n        heapq.heapify(platforms)\n        \n        for i in range(1,len(arr)):\n            if arr[i] > platforms[0]:\n                heapq.heappop(platforms)\n            heapq.heappush(platforms, dep[i])\n        return len(platforms)    ",
       "files": [],
       "timestamp": 1782298700927,
@@ -1069,7 +1076,11 @@
       "_committedPaths": [
         "problems/gfg-minimum-platforms-1587115620/gfg-minimum-platforms-1587115620.py",
         "problems/gfg-minimum-platforms-1587115620/README.md"
-      ]
+      ],
+      "aiReview": "### 1. Complexity\n*   **Time Complexity:** $O(N \\log N)$ due to sorting the indices and the heap operations (each of $N$ elements is pushed/popped in $O(\\log N)$).\n*   **Space Complexity:** $O(N)$. You are storing a sorted index array and a heap that can grow to size $N$ in the worst case (all overlapping intervals).\n\n### 2. Correctness & Edge Cases\n*   **Empty Input:** The code will raise an `IndexError` at `dep[0]` if `arr` or `dep` are empty. You should handle $N=0$ as a guard clause.\n*   **Same Time Arrival/Departure:** The condition `arr[i] > platforms[0]` correctly handles the GeeksForGeeks requirement that if a train arrives at the same time another leaves, they cannot share a platform (it only pops if arrival is strictly later).\n\n### 3. Optimization: Two-Pointer Approach\nInstead of maintaining a heap and keeping departures tied to specific arrivals, **sort `arr` and `dep` independently**.\nWhen you sort them separately, you simply track how many trains have arrived vs. how many have departed at any point in time. This removes the need for $O(N)$ auxiliary space for the heap and index mapping, allowing for an $O(1)$ extra space solution (excluding the space for sorting).\n\n### 4. Key Algorithmic Pattern\n**Greedy with a Min-Heap** (Processing intervals by start time and using a heap to track the earliest end time).",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview",
+      "pattern": "Greedy"
     },
     {
       "id": "gfg-mirror-tree",
@@ -1083,9 +1094,11 @@
         "slug": "python3"
       },
       "tags": [
-        "Tree"
+        "Tree",
+        "Recursion",
+        "Depth-First Search"
       ],
-      "topic": "Untagged",
+      "topic": "Tree",
       "code": "from collections import deque\n'''\nclass Node:\n    def _init_(self, val):\n        self.data = val\n        self.right = None\n        self.left = None\n'''\n\nclass Solution:\n    def mirror(self, root):\n        if root is None:\n            return\n\n        root.left, root.right = root.right, root.left\n        \n        self.mirror(root.left)\n        self.mirror(root.right)",
       "files": [],
       "timestamp": 1782298700927,
@@ -1100,7 +1113,11 @@
       "_committedPaths": [
         "problems/gfg-mirror-tree/gfg-mirror-tree.py",
         "problems/gfg-mirror-tree/README.md"
-      ]
+      ],
+      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time:** $O(N)$, where $N$ is the number of nodes, as every node is visited exactly once.\n*   **Space:** $O(H)$, where $H$ is the height of the tree, due to the recursion stack. In the worst case (a skewed tree), this is $O(N)$. Note that while no auxiliary data structures are used, the hidden stack cost is a frequent oversight in your previous submissions.\n\n**2. Correctness**\nThe logic is sound. It correctly handles the \"empty tree\" edge case (`root is None`) and leaf nodes (swapping two `None` children does no harm).\n\n**3. Optimization**\nTo protect against stack overflow on extremely deep trees, convert this to an **iterative BFS** using a queue (`collections.deque`). This replaces the implicit recursion stack with explicit heap memory.\n\n**4. Key Algorithmic Pattern**\n**Recursion (Depth-First Search)**: Specifically, a pre-order traversal where the swap operation is performed before recursing into children.",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview",
+      "pattern": "Depth-First Search"
     },
     {
       "id": "gfg-missing-number-in-array1416",
@@ -1116,9 +1133,10 @@
       "tags": [
         "Array",
         "Searching",
-        "Bit Manipulation"
+        "Bit Manipulation",
+        "Math"
       ],
-      "topic": "Untagged",
+      "topic": "Array",
       "code": "#User function Template for python3\nclass Solution:\n    \n    # Note that the size of the array is n-1\n    def missingNumber(self, n, arr):\n        \n        sum1 = sum(arr)\n        expected = (n)*(n+1)/2\n        \n        return int(expected - sum1)\n\n",
       "files": [],
       "timestamp": 1782298700927,
@@ -1133,7 +1151,11 @@
       "_committedPaths": [
         "problems/gfg-missing-number-in-array1416/gfg-missing-number-in-array1416.py",
         "problems/gfg-missing-number-in-array1416/README.md"
-      ]
+      ],
+      "aiReview": "This solution is highly efficient and addresses your recurring flags regarding complexity and space management.\n\n### 1. Complexities\n*   **Time Complexity:** **$O(n)$**. The `sum(arr)` function iterates through the $n-1$ elements exactly once.\n*   **Space Complexity:** **$O(1)$**. You only store two scalar variables (`sum1`, `expected`), regardless of input size.\n\n### 2. Correctness\nThe logic is sound. Python’s arbitrary-precision integers prevent overflow errors during `(n)*(n+1)`, which is a common pitfall in languages like C++ or Java. It correctly handles the smallest possible case ($n=2$, array size 1).\n\n### 3. Optimization\nUse **integer division** (`//`) instead of float division (`/`). \n```python\nexpected = n * (n + 1) // 2\n```\nIn Python, `/` creates a float. While `int()` converts it back, using `//` keeps the calculation entirely in the integer domain. This is faster and avoids potential precision issues with extremely large numbers where a float might lose the least significant digit.\n\n### 4. Key Algorithmic Pattern\n**Mathematical (Arithmetic Series):** Utilizing the formula for the sum of the first $n$ natural numbers to find a discrepancy.",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview",
+      "pattern": "Arithmetic Series"
     },
     {
       "id": "gfg-nearly-sorted-1587115620",
@@ -1151,7 +1173,7 @@
         "Array",
         "Heap (Priority Queue)"
       ],
-      "topic": "Untagged",
+      "topic": "Heap (Priority Queue)",
       "code": "from heapq import heapify, heappush, heappop\n\nclass Solution:\n    def nearlySorted(self, arr, k):  \n        heap = arr[:k]\n        heapify(heap)\n        index = 0\n        for i in range(k,len(arr)):\n            heappush(heap,arr[i])\n            arr[index] = heappop(heap)\n            index += 1\n        \n        for j in range(k):\n            arr[index] = heappop(heap)\n            index += 1\n            \n        return arr",
       "files": [],
       "timestamp": 1782298700927,
@@ -1166,7 +1188,11 @@
       "_committedPaths": [
         "problems/gfg-nearly-sorted-1587115620/gfg-nearly-sorted-1587115620.py",
         "problems/gfg-nearly-sorted-1587115620/README.md"
-      ]
+      ],
+      "aiReview": "### Analysis\n**1. Complexity**\n*   **Time:** $O(N \\log K)$, where $N$ is the array length. Each of the $N$ elements is inserted into and removed from a heap of size $K+1$.\n*   **Space:** $O(K)$ to maintain the priority queue. This is efficient given your history of space complexity flags.\n\n**2. Correctness**\nThe logic is sound. For an element at index $i$ to be at most $k$ positions away, its correct value must be within the range $[i-k, i+k]$. By maintaining a heap of size $k+1$, you ensure the smallest available element for the current index is always present. \n*   **Edge Cases:** Works for $k=0$ (already sorted) and $k \\geq \\text{len}(arr)$ (equivalent to heap sort).\n\n**3. Optimization**\nUse `heapq.heapreplace(heap, arr[i])` inside the loop instead of `heappush` followed by `heappop`. `heapreplace` is more efficient as it performs both operations in a single $O(\\log K)$ down-heap pass.\n\n**4. Key Algorithmic Pattern**\n**Sliding Window with a Priority Queue**: Using a heap to maintain a \"moving window\" of candidates to find the minimum for the current position.",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview",
+      "pattern": "Sliding Window"
     },
     {
       "id": "gfg-non-repeating-character-1587115620",
@@ -1183,7 +1209,7 @@
         "Hash Table",
         "String"
       ],
-      "topic": "Untagged",
+      "topic": "Hash Table",
       "code": "class Solution:\n    def nonRepeatingChar(self,s):\n        # dic = {char : 0 for char in 'abcdefghijklmnopqrstuvwxyz'}\n        \n        # for char in s:\n        #     dic[char] += 1\n            \n        # result = [k for k, v in dic.items() if v == 1]\n        # # print(result)\n        \n        # if len(result) == 0:\n        #     return '$'\n        \n        # if len(result) == 1: \n        #     return result[0]\n        \n        # for char in s:\n        #     if char in result:\n        #         return char\n        \n        dic = {}\n        for char in s:\n            dic[char] = dic.get(char, 0) + 1\n        \n        for char in s:\n            if dic[char] == 1:\n                return char\n        return '$'",
       "files": [],
       "timestamp": 1782298700927,
@@ -1198,7 +1224,11 @@
       "_committedPaths": [
         "problems/gfg-non-repeating-character-1587115620/gfg-non-repeating-character-1587115620.py",
         "problems/gfg-non-repeating-character-1587115620/README.md"
-      ]
+      ],
+      "aiReview": "Your solution is clean and achieves the optimal time complexity.\n\n### 1. Complexity\n*   **Time:** **O(N)**, where $N$ is the string length. You perform two linear passes: one to count and one to find the first character with a count of 1.\n*   **Space:** **O(1)** (technically $O(K)$ where $K$ is the alphabet size). Since the input is limited to lowercase English letters, the hash map size is capped at 26, regardless of how large $N$ becomes.\n\n### 2. Correctness\nThe logic is sound. By iterating through the original string `s` in the second loop (rather than the dictionary keys), you correctly identify the **first** non-repeating character. It handles cases with no unique characters (returning `$`) and single-character strings correctly.\n\n### 3. Concrete Optimization\nUse `collections.Counter`. In Python, `Counter` is implemented in C and is generally faster than manual `.get()` or `if/else` logic for frequency counting.\n\n```python\nfrom collections import Counter\ncounts = Counter(s)\nfor char in s:\n    if counts[char] == 1:\n        return char\n```\n\n### 4. Key Algorithmic Pattern\n**Frequency Hashing (Two-Pass):** Using a hash map to store global state (counts) and re-scanning the original sequence to maintain order.",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview",
+      "pattern": "Frequency Map"
     },
     {
       "id": "gfg-number-of-coins1824",
@@ -1212,9 +1242,11 @@
         "slug": "python3"
       },
       "tags": [
-        "Dynamic Programming"
+        "Dynamic Programming",
+        "Array",
+        "Sorting"
       ],
-      "topic": "Untagged",
+      "topic": "Dynamic Programming",
       "code": "class Solution:\n    def minCoins(self, coins, sum):\n        coins.sort()\n        dp = [0] * (sum + 1)\n        \n        for i in range(1, sum+1):\n            dp[i] = float('inf')\n            \n            for coin in coins:\n                diff = i  - coin\n                if diff < 0:\n                    break\n                dp[i] = min(dp[i], dp[diff] + 1)\n        \n        if dp[sum] != float('inf'):\n            return dp[sum]\n        return -1",
       "files": [],
       "timestamp": 1782298700927,
@@ -1229,7 +1261,11 @@
       "_committedPaths": [
         "problems/gfg-number-of-coins1824/gfg-number-of-coins1824.py",
         "problems/gfg-number-of-coins1824/README.md"
-      ]
+      ],
+      "aiReview": "1. **Complexity**:\n*   **Time**: $O(S \\cdot N + N \\log N)$, where $S$ is the target sum and $N$ is the number of coin denominations.\n*   **Space**: $O(S)$ for the DP array. This is the optimal space for this problem.\n\n2. **Correctness**:\nThe logic is robust. It correctly handles the edge case of `sum = 0` (returns 0) and unreachable sums (returns -1). One minor vulnerability: if the `coins` list contains duplicates (e.g., `[1, 1, 2]`), the inner loop performs redundant calculations.\n\n3. **Optimization**:\nTo improve performance, convert `coins` to a set before sorting: `coins = sorted(set(coins))`. This prevents the inner loop from re-processing the same denomination, which is a common bottleneck when the input array is messy.\n\n4. **Key Pattern**:\n**Bottom-up Dynamic Programming** (specifically the **Unbounded Knapsack** variation). You solve every sub-sum from 1 to `sum` and use those results to build the final answer.",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview",
+      "pattern": "Bottom-up DP"
     },
     {
       "id": "gfg-number-of-paths0926",
@@ -1243,9 +1279,11 @@
         "slug": "python3"
       },
       "tags": [
-        "Dynamic Programming"
+        "Dynamic Programming",
+        "Math",
+        "Array"
       ],
-      "topic": "Untagged",
+      "topic": "Dynamic Programming",
       "code": "class Solution:\n    def numberOfPaths(self, m, n):\n        dp = []\n        for _ in range(m):\n            dp.append([1]*n)\n        \n        for i in range(1, m):\n            for j in range(1, n):\n                dp[i][j] = dp[i-1][j] + dp[i][j-1]\n        return dp[m-1][n-1]",
       "files": [],
       "timestamp": 1782298700927,
@@ -1260,7 +1298,11 @@
       "_committedPaths": [
         "problems/gfg-number-of-paths0926/gfg-number-of-paths0926.py",
         "problems/gfg-number-of-paths0926/README.md"
-      ]
+      ],
+      "aiReview": "### Analysis\n1. **Complexity**: \n   - **Time**: $O(m \\times n)$ as every cell in the grid is visited once.\n   - **Space**: $O(m \\times n)$ to store the 2D `dp` table.\n\n2. **Correctness**: The solution is logically sound. It correctly handles the base cases (where $m=1$ or $n=1$) because the nested loops will not execute, returning the initialized value of `1`.\n\n3. **Optimization**: Addressing your recurring flag for **space complexity**, this can be optimized to **$O(n)$**. You only need the current row and the previous row to calculate the next values. Even better, you can use a single 1D array of size $n$ and update it in place: `dp[j] += dp[j-1]`.\n\n4. **Pattern**: Dynamic Programming (Tabulation).\n\n### Summary\nWhile the DP approach is standard, the $O(m \\times n)$ space is a common bottleneck in your history. For this specific problem, a mathematical approach using Combinatorics—calculating $\\binom{m+n-2}{m-1}$—would achieve $O(\\min(m, n))$ time and $O(1)$ space.",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview",
+      "pattern": "Tabulation"
     },
     {
       "id": "gfg-parenthesis-checker2744",
@@ -1276,9 +1318,10 @@
       "tags": [
         "String",
         "Stack",
-        "Stl"
+        "Stl",
+        "Hash Table"
       ],
-      "topic": "Untagged",
+      "topic": "Stack Logic",
       "code": "class Solution:\n    def isBalanced(self, s):\n        stack = []\n        dic = {']':'[', '}':'{', ')':'('}\n        ope = 0\n        clo = 0\n        for char in s:\n            if char in dic.values():\n                ope += 1\n                stack.append(char)\n            if char in dic.keys():\n                clo += 1\n                if stack and dic[char] == stack[-1]:\n                    stack.pop()\n        if ope != clo or stack:\n            return False\n        return True",
       "files": [],
       "timestamp": 1782298700927,
@@ -1293,7 +1336,11 @@
       "_committedPaths": [
         "problems/gfg-parenthesis-checker2744/gfg-parenthesis-checker2744.py",
         "problems/gfg-parenthesis-checker2744/README.md"
-      ]
+      ],
+      "aiReview": "### Review\n1. **Complexity**:\n- **Time**: $O(n)$ where $n$ is the length of the string. You traverse the string once.\n- **Space**: $O(n)$ in the worst case (e.g., all opening brackets `((((`), which matches your recurring flag for high space usage.\n\n2. **Correctness**:\nThe logic is sound. It handles empty strings, unmatched closing brackets, and mismatched pairs correctly. However, it lacks an **early exit**. For a string like `)]...[1000 more chars]`, your code processes the entire string instead of returning `False` immediately.\n\n3. **Optimisation**:\nRemove the `ope` and `clo` counters. They are redundant because `if stack` and the final `if stack:` check already capture whether brackets are balanced. Additionally, use an **early return** inside the loop: if a closing bracket doesn't match the stack top or the stack is empty, return `False` immediately. This improves average-case performance.\n\n4. **Pattern**:\n**Stack** (Last-In-First-Out). Brackets must be closed in the exact reverse order they were opened.\n\n###",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview",
+      "pattern": "Stack"
     },
     {
       "id": "gfg-product-array-puzzle4525",
@@ -1308,9 +1355,10 @@
       },
       "tags": [
         "Array",
-        "Prefix Sum"
+        "Prefix Sum",
+        "Math"
       ],
-      "topic": "Untagged",
+      "topic": "Array",
       "code": "class Solution:\n    def productExceptSelf(self, arr):\n        ans = []\n        prod = 1\n        zero = 0\n        for i in range(len(arr)):\n            if arr[i] != 0:\n                prod *= arr[i]\n            else:\n                zero += 1\n                \n        for i in range(len(arr)):\n            if zero > 1:\n                return [0]* len(arr)\n            elif arr[i] == 0 and zero == 1:\n                ans.append(prod)\n            elif arr[i] != 0 and zero == 1:\n                ans.append(0)\n            elif zero == 0:\n                ans.append(prod//arr[i])\n                \n        # print(ans)\n        return ans",
       "files": [],
       "timestamp": 1782298700927,
@@ -1325,7 +1373,11 @@
       "_committedPaths": [
         "problems/gfg-product-array-puzzle4525/gfg-product-array-puzzle4525.py",
         "problems/gfg-product-array-puzzle4525/README.md"
-      ]
+      ],
+      "aiReview": "### Review\n**1. Complexity:**\n*   **Time:** $O(n)$. You perform two linear passes.\n*   **Space:** $O(1)$ auxiliary space, as you only use a few variables regardless of input size. The $O(n)$ space for the result array is typically expected for this problem.\n\n**2. Correctness:**\nThe logic correctly handles the three critical states: multiple zeros (all products are 0), one zero (only the zero index has a product), and no zeros (standard division). One minor logic flaw: checking `if zero > 1` inside the loop is redundant; checking it once before the second loop is more efficient.\n\n**3. Optimization:**\nTo handle the common constraint where **division is forbidden**, use the **Prefix and Suffix Product** pattern. Create the result by multiplying the product of all elements to the left by the product of all elements to the right. This removes the need for `if/else` logic for zeros and division entirely.\n\n**4. Key Pattern:**\n**Prefix/Suffix Decomposition.** This solution currently uses a \"Total Product with Zero Counting\" strategy, but the problem is a classic introduction to precomputing cumulative data from both ends of an array.",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview",
+      "pattern": "Prefix/Suffix Product"
     },
     {
       "id": "gfg-rearrange-characters5322",

@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-two-sum` |
-| Topics | Array, Hash Table, Array, Hash Table |
+| Topics | Array, Hash Table |
 | Solved | 2024-10-22 |
 | Runtime | 0 ms (beats 100%) |
 | Memory | 17.9 MB (beats 100%) |

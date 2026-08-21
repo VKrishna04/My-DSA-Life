@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-contains-duplicate` |
-| Topics | Array, Hash Table, Array, Hash Table, Sorting |
+| Topics | Array, Hash Table, Sorting |
 | Solved | 2025-06-02 |
 | Runtime | 9 ms (beats 73.13409999999999%) |
 | Memory | 31.5 MB (beats 53.13849999999995%) |

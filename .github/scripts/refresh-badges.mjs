@@ -150,8 +150,8 @@ function isVacationDay(key, vacations) {
 function computeStreak(days, config, vacations, todayKey, floorDay) {
   const cfg = { ...DEFAULT_CONFIG, ...config };
   const target = Math.max(1, Math.round(cfg.dailyTargetPoints));
-  const freezeAt = target * cfg.freezeEarnMultiplier;
-  const penaltyCost = Math.ceil(cfg.penaltyMultiplier * target);
+  const freezeAt = target * Math.max(1, cfg.freezeEarnMultiplier);
+  const penaltyCost = Math.ceil(Math.max(1, cfg.penaltyMultiplier) * target);
   const keys = [...days.keys()].sort();
   if (!keys.length) {
     return {
@@ -791,7 +791,10 @@ function badgeMarkdown(snapshot, opts = {}) {
   if (picks.length) {
     lines.push(picks.map((n) => `![${BADGE_ALT[n]}](${url(n)})`).join(" "));
   }
-  const earned = (snapshot.achievements || []).filter((a) => a.earned);
+  const showcase = Array.isArray(opts.achievementPicks) ? new Set(opts.achievementPicks) : null;
+  const earned = (snapshot.achievements || []).filter(
+    (a) => a.earned && (!showcase || showcase.has(a.id))
+  );
   if (earned.length) {
     lines.push("", earned.map((a) => `${a.emoji} ${a.name}`).join(" \xB7 "));
   }
@@ -907,6 +910,7 @@ function main() {
       pagesUrl: cfg.pagesUrl,
       username: cfg.username,
       picks: Array.isArray(cfg.picks) ? cfg.picks : void 0,
+      achievementPicks: Array.isArray(cfg.achievementPicks) ? cfg.achievementPicks : void 0,
       urlFor: useShields ? (name) => shieldsUrl(cfg.rawBase, name, snapshot, { style: cfg.shieldsStyle }) : void 0
     });
     if (write("README.md", next)) changed++;

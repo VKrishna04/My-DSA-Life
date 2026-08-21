@@ -1090,6 +1090,23 @@
     ]
   },
   "geeksforgeeks::merge-two-sorted-linked-lists": {
+    "aiMetadataEdits": [
+      {
+        "fields": [
+          "tags",
+          "topic",
+          "pattern"
+        ],
+        "ts": 1787197707237
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 979,
+        "providerId": "gemini",
+        "ts": 1787197707386
+      }
+    ],
     "difficulty": "Medium",
     "lang": {
       "ext": "txt",
@@ -1156,6 +1173,23 @@
     ]
   },
   "geeksforgeeks::minimum-platforms-1587115620": {
+    "aiMetadataEdits": [
+      {
+        "fields": [
+          "tags",
+          "topic",
+          "pattern"
+        ],
+        "ts": 1787197772060
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1340,
+        "providerId": "gemini",
+        "ts": 1787197772236
+      }
+    ],
     "difficulty": "Medium",
     "lang": {
       "ext": "txt",
@@ -1183,6 +1217,23 @@
     ]
   },
   "geeksforgeeks::mirror-tree": {
+    "aiMetadataEdits": [
+      {
+        "fields": [
+          "tags",
+          "topic",
+          "pattern"
+        ],
+        "ts": 1787197824536
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 959,
+        "providerId": "gemini",
+        "ts": 1787197824704
+      }
+    ],
     "difficulty": "Easy",
     "lang": {
       "ext": "txt",
@@ -1207,6 +1258,23 @@
     ]
   },
   "geeksforgeeks::missing-number-in-array1416": {
+    "aiMetadataEdits": [
+      {
+        "fields": [
+          "tags",
+          "topic",
+          "pattern"
+        ],
+        "ts": 1787197833156
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1169,
+        "providerId": "gemini",
+        "ts": 1787197833318
+      }
+    ],
     "difficulty": "Easy",
     "lang": {
       "ext": "txt",
@@ -1233,6 +1301,22 @@
     ]
   },
   "geeksforgeeks::nearly-sorted-1587115620": {
+    "aiMetadataEdits": [
+      {
+        "fields": [
+          "topic",
+          "pattern"
+        ],
+        "ts": 1787197885277
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1078,
+        "providerId": "gemini",
+        "ts": 1787197885488
+      }
+    ],
     "difficulty": "Medium",
     "lang": {
       "ext": "txt",
@@ -1259,6 +1343,22 @@
     ]
   },
   "geeksforgeeks::non-repeating-character-1587115620": {
+    "aiMetadataEdits": [
+      {
+        "fields": [
+          "topic",
+          "pattern"
+        ],
+        "ts": 1787197896644
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1229,
+        "providerId": "gemini",
+        "ts": 1787197896790
+      }
+    ],
     "difficulty": "Easy",
     "lang": {
       "ext": "txt",
@@ -1284,6 +1384,23 @@
     ]
   },
   "geeksforgeeks::number-of-coins1824": {
+    "aiMetadataEdits": [
+      {
+        "fields": [
+          "tags",
+          "topic",
+          "pattern"
+        ],
+        "ts": 1787197946037
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 932,
+        "providerId": "gemini",
+        "ts": 1787197946193
+      }
+    ],
     "difficulty": "Medium",
     "lang": {
       "ext": "txt",
@@ -1308,6 +1425,23 @@
     ]
   },
   "geeksforgeeks::number-of-paths0926": {
+    "aiMetadataEdits": [
+      {
+        "fields": [
+          "tags",
+          "topic",
+          "pattern"
+        ],
+        "ts": 1787197953965
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 980,
+        "providerId": "gemini",
+        "ts": 1787197954105
+      }
+    ],
     "difficulty": "Medium",
     "lang": {
       "ext": "txt",
@@ -1420,6 +1554,23 @@
     ]
   },
   "geeksforgeeks::parenthesis-checker2744": {
+    "aiMetadataEdits": [
+      {
+        "fields": [
+          "tags",
+          "topic",
+          "pattern"
+        ],
+        "ts": 1787198005887
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1029,
+        "providerId": "gemini",
+        "ts": 1787198006070
+      }
+    ],
     "difficulty": "Easy",
     "lang": {
       "ext": "txt",
@@ -1468,6 +1619,23 @@
     "tags": []
   },
   "geeksforgeeks::product-array-puzzle4525": {
+    "aiMetadataEdits": [
+      {
+        "fields": [
+          "tags",
+          "topic",
+          "pattern"
+        ],
+        "ts": 1787198015540
+      }
+    ],
+    "aiReviews": [
+      {
+        "length": 1143,
+        "providerId": "gemini",
+        "ts": 1787198015698
+      }
+    ],
     "difficulty": "Easy",
     "lang": {
       "ext": "txt",

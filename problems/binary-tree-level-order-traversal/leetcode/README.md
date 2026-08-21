@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Leetcode |
 | Problem ID | `lc-binary-tree-level-order-traversal` |
-| Topics | Tree, Tree, Breadth-First Search, Binary Tree |
+| Topics | Tree, Breadth-First Search, Binary Tree |
 | Solved | 2025-07-22 |
 | Runtime | 558 ms (beats 1.324300000000001%) |
 | Memory | 19.9 MB (beats 60.85600000000002%) |

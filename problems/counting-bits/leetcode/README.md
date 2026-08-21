@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-counting-bits` |
-| Topics | Bit, Bit, Dynamic Programming, Bit Manipulation |
+| Topics | Bit, Dynamic Programming, Bit Manipulation |
 | Solved | 2025-06-01 |
 | Runtime | 11 ms (beats 29.637399999999992%) |
 | Memory | 18.5 MB (beats 100%) |
