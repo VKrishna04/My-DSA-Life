@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Leetcode |
 | Problem ID | `lc-course-schedule-ii` |
-| Topics | Graph, Depth-First Search, Breadth-First Search, Graph Theory, Topological Sort |
+| Topics | Graph, Graph, Depth-First Search, Breadth-First Search, Graph Theory, Topological Sort |
 | Solved | 2026-05-19 |
 | Runtime | 0 ms (beats 100%) |
 | Memory | 21 MB (beats 30.63790000000003%) |

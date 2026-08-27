@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-product-array-puzzle4525` |
-| Topics | Array, Prefix Sum, Math |
+| Topics | Array, Prefix Sum |
 | Solved | 2026-06-24 |
 
 ## Problem Statement
@@ -30,47 +30,3 @@ For i = 1, res[i] is 12.
 **Constraints:**
 2 <= arr.size() <= 105
 -100 <= arr[i] <= 100
-
-## Solutions
-
-```python3
-class Solution:
-    def productExceptSelf(self, arr):
-        ans = []
-        prod = 1
-        zero = 0
-        for i in range(len(arr)):
-            if arr[i] != 0:
-                prod *= arr[i]
-            else:
-                zero += 1
-                
-        for i in range(len(arr)):
-            if zero > 1:
-                return [0]* len(arr)
-            elif arr[i] == 0 and zero == 1:
-                ans.append(prod)
-            elif arr[i] != 0 and zero == 1:
-                ans.append(0)
-            elif zero == 0:
-                ans.append(prod//arr[i])
-                
-        # print(ans)
-        return ans
-```
-
-## AI Review
-
-### Review
-**1. Complexity:**
-*   **Time:** $O(n)$. You perform two linear passes.
-*   **Space:** $O(1)$ auxiliary space, as you only use a few variables regardless of input size. The $O(n)$ space for the result array is typically expected for this problem.
-
-**2. Correctness:**
-The logic correctly handles the three critical states: multiple zeros (all products are 0), one zero (only the zero index has a product), and no zeros (standard division). One minor logic flaw: checking `if zero > 1` inside the loop is redundant; checking it once before the second loop is more efficient.
-
-**3. Optimization:**
-To handle the common constraint where **division is forbidden**, use the **Prefix and Suffix Product** pattern. Create the result by multiplying the product of all elements to the left by the product of all elements to the right. This removes the need for `if/else` logic for zeros and division entirely.
-
-**4. Key Pattern:**
-**Prefix/Suffix Decomposition.** This solution currently uses a "Total Product with Zero Counting" strategy, but the problem is a classic introduction to precomputing cumulative data from both ends of an array.

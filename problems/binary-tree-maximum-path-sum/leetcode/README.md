@@ -5,7 +5,7 @@
 | Difficulty | Hard |
 | Platform | Leetcode |
 | Problem ID | `lc-binary-tree-maximum-path-sum` |
-| Topics | Tree, Dynamic Programming, Depth-First Search, Binary Tree |
+| Topics | Tree, Tree, Dynamic Programming, Depth-First Search, Binary Tree |
 | Solved | 2026-05-09 |
 | Runtime | 7 ms (beats 78.2943%) |
 | Memory | 23.9 MB (beats 61.6619%) |

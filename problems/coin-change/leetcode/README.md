@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Leetcode |
 | Problem ID | `lc-coin-change` |
-| Topics | Dynamic Programming, Array, Breadth-First Search |
+| Topics | Dynamic Programming, Dynamic Programming, Array, Breadth-First Search |
 | Solved | 2025-09-21 |
 | Runtime | 1245 ms (beats 7.211500000000692%) |
 | Memory | 18.1 MB (beats 100%) |

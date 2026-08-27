@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-minimum-platforms-1587115620` |
-| Topics | Array, Greedy, Sorting, Binary Search, Heap (Priority Queue) |
+| Topics | Array, Greedy, Sorting, Binary Search |
 | Solved | 2026-06-24 |
 
 ## Problem Statement
@@ -29,40 +29,3 @@ Given arrival **arr[] **and departure **dep[] **times of trains on the same day,
 **Constraints:
 **1 &le; number of trains &le; 105
 0000 &le; arr[i] &le; dep[i] &le; 2359
-
-## Solutions
-
-```python3
-import heapq
-class Solution:    
-    def minPlatform(self, arr, dep):
-        sor_i = sorted(range(len(arr)), key=lambda i: arr[i])
-        dep[:] = [dep[i] for i in sor_i]
-        arr[:] = [arr[i] for i in sor_i]
-        
-        platforms = [dep[0]]
-        heapq.heapify(platforms)
-        
-        for i in range(1,len(arr)):
-            if arr[i] > platforms[0]:
-                heapq.heappop(platforms)
-            heapq.heappush(platforms, dep[i])
-        return len(platforms)    
-```
-
-## AI Review
-
-### 1. Complexity
-*   **Time Complexity:** $O(N \log N)$ due to sorting the indices and the heap operations (each of $N$ elements is pushed/popped in $O(\log N)$).
-*   **Space Complexity:** $O(N)$. You are storing a sorted index array and a heap that can grow to size $N$ in the worst case (all overlapping intervals).
-
-### 2. Correctness & Edge Cases
-*   **Empty Input:** The code will raise an `IndexError` at `dep[0]` if `arr` or `dep` are empty. You should handle $N=0$ as a guard clause.
-*   **Same Time Arrival/Departure:** The condition `arr[i] > platforms[0]` correctly handles the GeeksForGeeks requirement that if a train arrives at the same time another leaves, they cannot share a platform (it only pops if arrival is strictly later).
-
-### 3. Optimization: Two-Pointer Approach
-Instead of maintaining a heap and keeping departures tied to specific arrivals, **sort `arr` and `dep` independently**.
-When you sort them separately, you simply track how many trains have arrived vs. how many have departed at any point in time. This removes the need for $O(N)$ auxiliary space for the heap and index mapping, allowing for an $O(1)$ extra space solution (excluding the space for sorting).
-
-### 4. Key Algorithmic Pattern
-**Greedy with a Min-Heap** (Processing intervals by start time and using a heap to track the earliest end time).

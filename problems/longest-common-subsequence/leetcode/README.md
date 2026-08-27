@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Leetcode |
 | Problem ID | `lc-longest-common-subsequence` |
-| Topics | Dynamic Programming, String |
+| Topics | Dynamic Programming, Dynamic Programming, String |
 | Solved | 2026-04-22 |
 | Runtime | 353 ms (beats 63.31260000000027%) |
 | Memory | 44.3 MB (beats 57.71480000000023%) |

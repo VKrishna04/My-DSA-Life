@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Geeksforgeeks |
 | Problem ID | `gfg-kadanes-algorithm-1587115620` |
-| Topics | Array, Dynamic Programming, Greedy |
+| Topics | Array, Dynamic Programming |
 | Solved | 2026-06-24 |
 
 ## Problem Statement
@@ -29,28 +29,3 @@ Explanation: **The subarray [5, 4, 1, 7, 8] has the largest sum 25.
 **Constraints:
 **1 &le; arr.size() &le; 105**
 **-104 &le; arr[i] &le; 104
-
-## Solutions
-
-```python3
-class Solution:
-    def maxSubarraySum(self, arr):
-        max_sum = float('-inf')
-        curr = 0
-        
-        for num in arr:
-            curr += num
-            max_sum = max(max_sum, curr)
-            
-            if curr < 0: curr =  0
-        return max_sum
-```
-
-## AI Review
-
-This implementation successfully avoids your recurring flags regarding **space complexity** ($O(1)$) and **time complexity** ($O(n)$).
-
-1.  **Complexity**: Time **$O(n)$** for a single pass through the array. Space **$O(1)$** as only two scalar variables are maintained.
-2.  **Correctness**: The logic handles "all-negative" arrays (e.g., `[-5, -2, -10]`) correctly because `max_sum` is updated *before* the negative prefix is reset. However, if the input `arr` is empty, the function returns `float('-inf')`; adding a guard clause for **null/empty input** would improve robustness.
-3.  **One Concrete Optimisation**: Replace the manual `if` reset and `max` call with the standard Kadane’s transition: `curr = max(num, curr + num)`. In Python, using an `if` statement to update `max_sum` is also slightly faster than the `max()` function as it avoids the overhead of a function call in a tight loop.
-4.  **Key Algorithmic Pattern**: Greedy / Dynamic Programming (Kadane's Algorithm).

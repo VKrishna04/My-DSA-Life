@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-number-of-1-bits` |
-| Topics | Bit, Divide and Conquer, Bit Manipulation |
+| Topics | Bit, Bit, Divide and Conquer, Bit Manipulation |
 | Solved | 2025-06-02 |
 | Runtime | 0 ms (beats 100%) |
 | Memory | 17.8 MB (beats 100%) |

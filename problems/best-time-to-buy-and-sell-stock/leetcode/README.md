@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-best-time-to-buy-and-sell-stock` |
-| Topics | Array, Dynamic Programming |
+| Topics | Array, Array, Dynamic Programming |
 | Solved | 2024-10-19 |
 | Runtime | 1 ms (beats 99.9206%) |
 | Memory | 61.6 MB (beats 99.90949999999998%) |

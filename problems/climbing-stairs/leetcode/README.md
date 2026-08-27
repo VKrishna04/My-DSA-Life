@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-climbing-stairs` |
-| Topics | Dynamic Programming, Math, Memoization |
+| Topics | Dynamic Programming, Dynamic Programming, Math, Memoization |
 | Solved | 2024-10-17 |
 | Runtime | 0 ms (beats 100%) |
 | Memory | 16.8 MB (beats 100%) |

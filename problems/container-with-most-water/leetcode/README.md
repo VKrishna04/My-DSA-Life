@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Leetcode |
 | Problem ID | `lc-container-with-most-water` |
-| Topics | Array, Two Pointers, Greedy |
+| Topics | Array, Array, Two Pointers, Greedy |
 | Solved | 2026-04-18 |
 | Runtime | 66 ms (beats 12.777899999999992%) |
 | Memory | 29.4 MB (beats 97.89119999999997%) |

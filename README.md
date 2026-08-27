@@ -6,7 +6,7 @@
 
 ![Streak](http://dsa.vkrishna04.me/badges/streak.svg?v=5235-0-305-2026-08-26) ![Points](http://dsa.vkrishna04.me/badges/points.svg?v=5235-0-305-2026-08-26) ![Level](http://dsa.vkrishna04.me/badges/level.svg?v=5235-0-305-2026-08-26) ![Solved](http://dsa.vkrishna04.me/badges/solved.svg?v=5235-0-305-2026-08-26) ![Solved by difficulty](http://dsa.vkrishna04.me/badges/difficulty.svg?v=5235-0-305-2026-08-26) ![Freezes](http://dsa.vkrishna04.me/badges/freezes.svg?v=5235-0-305-2026-08-26)
 
-🩸 First Blood · 🔟 Ten Down · 💯 Century · 🔥 Week On Fire · 🌋 Month On Fire · 🗣️ Polyglot · 🎯 Well Rounded · ⚡ Double Day · 🪃 Comeback · ⭐ Engineer · 🔍 Second Opinion · 📝 Peer Reviewed
+ð©¸ First Blood Â· ð Ten Down Â· ð¯ Century Â· ð¥ Week On Fire Â· ð Month On Fire Â· ð£ï¸ Polyglot Â· ð¯ Well Rounded Â· â¡ Double Day Â· ðª Comeback Â· â­ Engineer Â· ð Second Opinion Â· ð Peer Reviewed
 <!-- codeledger:gamification:end -->
 
 <!-- CODELEDGER_AUTO_GENERATED_START -->
@@ -17,14 +17,14 @@
 
 # VKrishna04's DSA Solutions
 
-[![Solutions](https://img.shields.io/badge/Solutions-305-06b6d4?style=flat-square&logo=github)](http://dsa.vkrishna04.me/)  [![Easy](https://img.shields.io/badge/Easy-175-22c55e?style=flat-square)](http://dsa.vkrishna04.me/)  [![Medium](https://img.shields.io/badge/Medium-119-f59e0b?style=flat-square)](http://dsa.vkrishna04.me/)  [![Hard](https://img.shields.io/badge/Hard-10-ef4444?style=flat-square)](http://dsa.vkrishna04.me/)  [![Languages](https://img.shields.io/badge/Languages-11-8b5cf6?style=flat-square)](http://dsa.vkrishna04.me/)  [![Platforms](https://img.shields.io/badge/Platforms-2-64748b?style=flat-square)](http://dsa.vkrishna04.me/)
+[![Solutions](https://img.shields.io/badge/Solutions-316-06b6d4?style=flat-square&logo=github)](https://VKrishna04.github.io/My-DSA-Life/)  [![Easy](https://img.shields.io/badge/Easy-176-22c55e?style=flat-square)](https://VKrishna04.github.io/My-DSA-Life/)  [![Medium](https://img.shields.io/badge/Medium-127-f59e0b?style=flat-square)](https://VKrishna04.github.io/My-DSA-Life/)  [![Hard](https://img.shields.io/badge/Hard-11-ef4444?style=flat-square)](https://VKrishna04.github.io/My-DSA-Life/)
 
 > Automatically tracked by [CodeLedger](https://codeledger.vkrishna04.me) — every problem solved, committed to Git.
 
-**[View Live Dashboard →](http://dsa.vkrishna04.me/)**
-*Last updated: Aug 25, 2026*
+**[View Live Dashboard →](https://VKrishna04.github.io/My-DSA-Life/)**
+*Last updated: Aug 27, 2026*
 
-[![CodeLedger](https://raw.githubusercontent.com/Life-Experimentalist/Code-Ledger/refs/heads/main/src/assets/images/social%20preview.png)](http://dsa.vkrishna04.me/)
+[![CodeLedger](https://raw.githubusercontent.com/Life-Experimentalist/Code-Ledger/refs/heads/main/src/assets/images/social%20preview.png)](https://VKrishna04.github.io/My-DSA-Life/)
 
 </div>
 
@@ -34,13 +34,13 @@
 
 | Total | Easy | Medium | Hard |
 |:-----:|:----:|:------:|:----:|
-| **305** | 175 | 119 | 10 |
+| **316** | 176 | 127 | 11 |
 
-**By Platform:** leetcode (261) · geeksforgeeks (44)
+**By Platform:** leetcode (261) · geeksforgeeks (55)
 
-**Top Languages:** Python3 (199) · python3 (23) · Unknown (17) · Python (16) · MySQL (15) · Pandas (14) · Java (12) · Bash (4)
+**Top Languages:** Python3 (200) · Unknown (45) · Python (16) · MySQL (15) · Pandas (14) · Java (12) · python3 (5) · Bash (4)
 
-**Top Topics:** Array (133) · Math (26) · String (26) · Database (15) · Data Manipulation (15) · Hash Table (14) · Dynamic Programming (12) · Tree (9) · Linked List (8) · Two Pointers (8)
+**Top Topics:** Array (132) · Math (26) · String (25) · Database (15) · Data Manipulation (15) · Hash Table (14) · Dynamic Programming (12) · Tree (11) · Untagged (10) · Linked List (8)
 
 ---
 
@@ -48,16 +48,16 @@
 
 | Problem | Difficulty | Language | Platform | Date |
 |---------|-----------|----------|----------|------|
+| [House Robber V](https://leetcode.com/problems/house-robber-v/) | Medium | Python3 | leetcode | Aug 18 |
 | [Aggressive Cows](https://www.geeksforgeeks.org/problems/aggressive-cows/1) | Medium | Python3 | geeksforgeeks | Jun 24 |
 | [2 Sum Find A Pair With Given Sum](https://www.geeksforgeeks.org/problems/2-sum-find-a-pair-with-given-sum/1) | Easy | Python3 | geeksforgeeks | Jun 24 |
 | [Assign Cookies](https://www.geeksforgeeks.org/problems/assign-cookies/1) | Easy | Python3 | geeksforgeeks | Jun 24 |
 | [Attend All Meetings](https://www.geeksforgeeks.org/problems/attend-all-meetings/1) | Easy | Python3 | geeksforgeeks | Jun 24 |
-| [Buy Stock](https://www.geeksforgeeks.org/problems/buy-stock-2/1) | Easy | Python3 | geeksforgeeks | Jun 24 |
-| [C Matrix Rotation By 180 Degree](https://www.geeksforgeeks.org/problems/c-matrix-rotation-by-180-degree0745/1) | Medium | Python3 | geeksforgeeks | Jun 24 |
-| [Camelcase Pattern Matching](https://www.geeksforgeeks.org/problems/camelcase-pattern-matching2259/1) | Medium | Python3 | geeksforgeeks | Jun 24 |
-| [Count Number Of Substrings](https://www.geeksforgeeks.org/problems/count-number-of-substrings4528/1) | Medium | Unknown | geeksforgeeks | Jun 24 |
-| [Count Ways To Reach The Nth Stair](https://www.geeksforgeeks.org/problems/count-ways-to-reach-the-nth-stair-1587115620/1) | Medium | Unknown | geeksforgeeks | Jun 24 |
-| [Compare two fractions](https://www.geeksforgeeks.org/problems/compare-two-fractions4438/1) | Easy | Python3 | geeksforgeeks | Jun 23 |
+| [Bheem Wants Ladoos](https://www.geeksforgeeks.org/problems/bheem-wants-ladoos102404/1) | Medium | Unknown | geeksforgeeks | Jun 24 |
+| [Burger Shop](https://www.geeksforgeeks.org/problems/burger-shop102404/1) | Medium | Unknown | geeksforgeeks | Jun 24 |
+| [Buy Stock](https://www.geeksforgeeks.org/problems/buy-stock-2/1) | Easy | Unknown | geeksforgeeks | Jun 24 |
+| [C Matrix Rotation By 180 Degree](https://www.geeksforgeeks.org/problems/c-matrix-rotation-by-180-degree0745/1) | Medium | Unknown | geeksforgeeks | Jun 24 |
+| [Camelcase Pattern Matching](https://www.geeksforgeeks.org/problems/camelcase-pattern-matching2259/1) | Medium | Unknown | geeksforgeeks | Jun 24 |
 
 ---
 
@@ -85,7 +85,7 @@ This repository is managed by [CodeLedger](https://codeledger.vkrishna04.me), a 
 
 - Solutions committed automatically the instant they are accepted
 - AI code reviews (complexity analysis, hints, optimizations) committed alongside code
-- Live stats dashboard: http://dsa.vkrishna04.me/
+- Live stats dashboard: https://VKrishna04.github.io/My-DSA-Life/
 - Cross-device sync — your history is always up to date on any machine
 - Fully owned by you — plain files, no lock-in, no third-party servers
 
@@ -100,6 +100,7 @@ Built with [CodeLedger](https://codeledger.vkrishna04.me) · [⭐ Star the exten
 </div>
 
 <!-- CODELEDGER_AUTO_GENERATED_END -->
+
 
 
 

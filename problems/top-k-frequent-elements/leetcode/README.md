@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Leetcode |
 | Problem ID | `lc-top-k-frequent-elements` |
-| Topics | Array, Heap (Priority Queue), Hash Table, Divide and Conquer, Sorting, Bucket Sort, Counting, Quickselect |
+| Topics | Array, Heap (Priority Queue), Array, Heap (Priority Queue), Hash Table, Divide and Conquer, Sorting, Bucket Sort, Counting, Quickselect |
 | Solved | 2024-11-20 |
 | Runtime | 3 ms (beats 89.17739999999999%) |
 | Memory | 20.3 MB (beats 100%) |
