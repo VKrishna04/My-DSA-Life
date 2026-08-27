@@ -1,12 +1,12 @@
 <!-- codeledger:gamification:start -->
 <picture>
-  <source media="(prefers-color-scheme: light)" srcset="http://dsa.vkrishna04.me/badges/card-light.svg?v=5235-0-305-2026-08-26">
-  <img src="http://dsa.vkrishna04.me/badges/card.svg?v=5235-0-305-2026-08-26" alt="Streak card" width="420">
+  <source media="(prefers-color-scheme: light)" srcset="http://dsa.vkrishna04.me/badges/card-light.svg?v=5505-0-316-2026-08-27">
+  <img src="http://dsa.vkrishna04.me/badges/card.svg?v=5505-0-316-2026-08-27" alt="Streak card" width="420">
 </picture>
 
-![Streak](http://dsa.vkrishna04.me/badges/streak.svg?v=5235-0-305-2026-08-26) ![Points](http://dsa.vkrishna04.me/badges/points.svg?v=5235-0-305-2026-08-26) ![Level](http://dsa.vkrishna04.me/badges/level.svg?v=5235-0-305-2026-08-26) ![Solved](http://dsa.vkrishna04.me/badges/solved.svg?v=5235-0-305-2026-08-26) ![Solved by difficulty](http://dsa.vkrishna04.me/badges/difficulty.svg?v=5235-0-305-2026-08-26) ![Freezes](http://dsa.vkrishna04.me/badges/freezes.svg?v=5235-0-305-2026-08-26)
+![Streak](http://dsa.vkrishna04.me/badges/streak.svg?v=5505-0-316-2026-08-27) ![Points](http://dsa.vkrishna04.me/badges/points.svg?v=5505-0-316-2026-08-27) ![Level](http://dsa.vkrishna04.me/badges/level.svg?v=5505-0-316-2026-08-27) ![Solved](http://dsa.vkrishna04.me/badges/solved.svg?v=5505-0-316-2026-08-27) ![Solved by difficulty](http://dsa.vkrishna04.me/badges/difficulty.svg?v=5505-0-316-2026-08-27) ![Freezes](http://dsa.vkrishna04.me/badges/freezes.svg?v=5505-0-316-2026-08-27)
 
-ð©¸ First Blood Â· ð Ten Down Â· ð¯ Century Â· ð¥ Week On Fire Â· ð Month On Fire Â· ð£ï¸ Polyglot Â· ð¯ Well Rounded Â· â¡ Double Day Â· ðª Comeback Â· â­ Engineer Â· ð Second Opinion Â· ð Peer Reviewed
+🩸 First Blood · 🔟 Ten Down · 💯 Century · 🔥 Week On Fire · 🌋 Month On Fire · 🗣️ Polyglot · 🎯 Well Rounded · ⚡ Double Day · 🪃 Comeback · ⭐ Engineer · 🔍 Second Opinion · 📝 Peer Reviewed
 <!-- codeledger:gamification:end -->
 
 <!-- CODELEDGER_AUTO_GENERATED_START -->

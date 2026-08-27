@@ -1,17 +1,17 @@
 {
   "schema": 1,
-  "asOf": "2026-08-26",
+  "asOf": "2026-08-27",
   "currentStreak": 0,
   "longestStreak": 36,
   "freezes": 0,
-  "totalPoints": 5235,
-  "totalSolves": 305,
+  "totalPoints": 5505,
+  "totalSolves": 316,
   "totalRecalls": 0,
   "byDifficulty": {
-    "Easy": 175,
-    "Medium": 119,
-    "Hard": 10,
-    "Unknown": 1
+    "Easy": 176,
+    "Medium": 127,
+    "Hard": 11,
+    "Unknown": 2
   },
   "level": 6,
   "levelName": "Architect",
