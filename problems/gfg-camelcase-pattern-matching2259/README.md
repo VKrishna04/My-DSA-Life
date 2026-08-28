@@ -31,3 +31,13 @@ Note: The driver code will sort your answer before checking and return the answe
 1 &le; arr.size() &le; 1000
 1 &le; pat.size() &le; 100
 1 &le; arr[i].size() &le; 100
+
+## AI Review
+
+1. **Complexity**: Time complexity is $O(N \times L)$, where $N$ is the number of words and $L$ is the maximum length of a word. Space complexity is $O(N \times L)$ to store the output list, with $O(L)$ auxiliary space for the temporary string `curr`.
+
+2. **Correctness**: The solution is logically correct but inefficient. Using `pat in curr[:len(pat)]` is an indirect way of checking `curr.startswith(pat)`. It correctly handles the "pascalCase" logic by filtering for uppercase characters first.
+
+3. **Optimisation**: **Early Exit**. Instead of extracting every uppercase character into a new string (which hits your recurring space complexity flag), compare the word's uppercase letters against `pat` character-by-character. If an uppercase letter doesn't match the current index of `pat`, or if you finish the word before matching `pat`, you can immediately skip to the next word. This reduces auxiliary space to $O(1)$.
+
+4. **Pattern**: String Filtering / Prefix Matching. While a **Trie** is the optimal structure for multiple pattern queries, a linear scan with early exit is sufficient for a single pattern.

@@ -47,3 +47,22 @@ Return the final integer value.
 Explanation: **Nothing is read after -12 as a non-digit character &lsquo;g&rsquo; was encountered.
 **Constraints:**
 1 &le; |s| &le; 15
+
+## AI Review
+
+### Analysis
+
+1.  **Complexity**:
+    *   **Time**: $O(N)$, where $N$ is the length of the string. We traverse the string once.
+    *   **Space**: $O(N)$. Note your recurring **space complexity** flag: `s.strip()` creates a new string copy in Python. For a truly $O(1)$ extra space solution, you should manually skip whitespace using a pointer.
+
+2.  **Correctness**: The logic is robust. It correctly handles leading whitespace, signs, non-digit characters, and 32-bit signed integer overflow. Python handles arbitrarily large integers, but your check `num > (INT_MAX - digit) // 10` correctly simulates the constraints of fixed-width integer environments.
+
+3.  **Optimization**: Replace `s = s.strip()` with a pointer-based approach:
+    ```python
+    while i < len(s) and s[i] == ' ':
+        i += 1
+    ```
+    This avoids the $O(N)$ memory allocation of a new string, bringing auxiliary space to $O(1)$.
+
+4.  **Key Pattern**: **String Parsing/Simulation**. The problem requires careful handling of state transitions (whitespace → sign → digits → termination).

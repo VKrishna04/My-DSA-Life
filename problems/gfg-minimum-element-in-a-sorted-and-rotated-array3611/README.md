@@ -27,3 +27,32 @@ A sorted array** **of distinct elements **arr[]** is rotated at some unknown poi
 **Constraints**:
 1 &le; arr.size() &le; 106
 1 &le; arr[i] &le; 109
+
+## AI Review
+
+### Review
+**1. Complexity**
+*   **Time Complexity:** $O(\log N)$, where $N$ is the number of elements. The search space is halved in each iteration.
+*   **Space Complexity:** $O(1)$, as it uses a constant amount of extra space.
+
+**2. Correctness**
+The solution is correct for arrays with **unique elements**. It successfully handles:
+*   **Standard rotation:** (e.g., `[4, 5, 1, 2, 3]`).
+*   **No rotation:** (e.g., `[1, 2, 3, 4]`) where it correctly returns the first element.
+*   **Single element arrays.**
+
+**Edge Case:** If the array contains **duplicate elements** (e.g., `[10, 1, 10, 10, 10]`), the logic `arr[mid] > arr[r]` fails to distinguish which half to discard.
+
+**3. Optimization**
+To make the algorithm robust against duplicates, add a check for equality:
+```python
+if arr[mid] > arr[r]:
+    l = mid + 1
+elif arr[mid] < arr[r]:
+    r = mid
+else:
+    r -= 1 # Shrink search space linearly when values are equal
+```
+
+**4. Key Algorithmic Pattern**
+**Binary Search**: Specifically, modified binary search to find the "inflection point" or pivot in a rotated sorted array.

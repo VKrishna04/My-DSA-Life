@@ -5,6 +5,7 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-return-length-of-arguments-passed` |
+| Topics | Array, Math |
 | Solved | 2024-08-11 |
 | Runtime | 52 ms (beats 10.593999999999944%) |
 | Memory | 48.7 MB (beats 100%) |
@@ -58,24 +59,15 @@ var argumentsLength = function(...args) {
 
 ## AI Review
 
-### 1. Complexity
-*   **Time Complexity:** $O(1)$. Accessing the `length` property of an array is a constant time operation.
-*   **Space Complexity:** $O(n)$. The rest parameter syntax (`...args`) spreads the arguments into a new array, requiring space proportional to the number of arguments passed.
+1. **Complexity**: 
+   - **Time**: $O(N)$, where $N$ is the number of arguments. While accessing `.length` is $O(1)$, the `...args` syntax must iterate through and "gather" all passed values into a new array.
+   - **Space**: $O(N)$. This syntax allocates a new array to store all arguments. Given your history with space complexity flags, note that this allocation grows linearly with input size.
 
-### 2. Correctness
-The code is **fully correct**. It adheres to ES6 standards and correctly handles:
-*   **Zero arguments:** Returns `0`.
-*   **Mixed types:** Correctly counts `null`, `undefined`, objects, and primitives.
-*   **Large argument counts:** Limited only by the JavaScript engine's stack/memory limits.
+2. **Correctness**: 
+   The solution is robust. It correctly handles zero arguments (returning 0) and accommodates any data type (null, objects, or nested arrays) because the rest parameter captures everything passed to the function.
 
-### 3. Optimization
-To optimize **space complexity** from $O(n)$ to $O(1)$, use the legacy `arguments` object. This avoids the allocation of a new array:
-```javascript
-var argumentsLength = function() {
-    return arguments.length;
-};
-```
-*Note: In modern engines, the performance difference is negligible for small inputs, but the `arguments` object exists by default without extra allocation.*
+3. **Optimization**: 
+   In standard functions (non-arrow), you can use the built-in `arguments` object: `return arguments.length;`. This avoids the overhead of creating a new array via the spread operator, making it more memory-efficient.
 
-### 4. Key Algorithmic Pattern
-**Rest Parameters (Variadic Function):** The pattern of using `...args` to capture an indefinite number of arguments into a single array structure.
+4. **Pattern**: 
+   **Variadic Functions** (Rest Parameters).

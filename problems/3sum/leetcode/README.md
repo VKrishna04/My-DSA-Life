@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Leetcode |
 | Problem ID | `lc-3sum` |
-| Topics | Array, Array, Two Pointers, Sorting |
+| Topics | Array, Two Pointers, Sorting |
 | Solved | 2025-08-10 |
 | Runtime | 539 ms (beats 81.44000000000004%) |
 | Memory | 20.7 MB (beats 99.967%) |

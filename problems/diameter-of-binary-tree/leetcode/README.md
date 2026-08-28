@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-diameter-of-binary-tree` |
-| Topics | Tree, Tree, Depth-First Search, Binary Tree |
+| Topics | Tree, Depth-First Search, Binary Tree |
 | Solved | 2026-05-08 |
 | Runtime | 2 ms (beats 80.8924%) |
 | Memory | 22.1 MB (beats 88.89989999999999%) |

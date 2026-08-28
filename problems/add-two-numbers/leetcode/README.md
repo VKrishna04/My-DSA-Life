@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Leetcode |
 | Problem ID | `lc-add-two-numbers` |
-| Topics | Linked List, Linked List, Math, Recursion |
+| Topics | Linked List, Math, Recursion |
 | Solved | 2024-08-11 |
 | Runtime | 50 ms (beats 6.975000000000002%) |
 | Memory | 16.5 MB (beats 100%) |

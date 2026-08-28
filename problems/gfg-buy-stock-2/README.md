@@ -29,3 +29,19 @@ Note: Stock must be bought before being sold.
 **Constraint:**
 1 &le;  prices.size() &le;  105
 0 &le;  prices[i] &le;  104
+
+## AI Review
+
+### Analysis
+
+*   **Time Complexity**: **$O(n)$**, where $n$ is the length of the `prices` array. We iterate through the list exactly once.
+*   **Space Complexity**: **$O(1)$**. We only maintain two scalar variables (`minp` and `ans`) regardless of input size. 
+*   **Correctness**: This code will **crash** on an empty list input (`prices = []`) with an `IndexError` at `prices[0]`. This is a recurring flag for you; always validate if the input exists before accessing indices. It correctly handles cases with no profit (returns 0).
+*   **Concrete Optimization**: Add a guard clause for empty inputs and start the loop from the second element to skip the redundant first comparison:
+    ```python3
+    if not prices: return 0
+    minp = prices[0]
+    for i in range(1, len(prices)): # Start at index 1
+        # ... logic ...
+    ```
+*   **Key Algorithmic Pattern**: **Greedy**. At each step, you make the locally optimal choice (updating the lowest buy price seen so far) to calculate the potential maximum global profit.

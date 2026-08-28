@@ -1,10 +1,10 @@
 <!-- codeledger:gamification:start -->
 <picture>
-  <source media="(prefers-color-scheme: light)" srcset="http://dsa.vkrishna04.me/badges/card-light.svg?v=5505-0-316-2026-08-28">
-  <img src="http://dsa.vkrishna04.me/badges/card.svg?v=5505-0-316-2026-08-28" alt="Streak card" width="420">
+  <source media="(prefers-color-scheme: light)" srcset="http://dsa.vkrishna04.me/badges/card-light.svg?v=5505-0-316-2026-08-29">
+  <img src="http://dsa.vkrishna04.me/badges/card.svg?v=5505-0-316-2026-08-29" alt="Streak card" width="420">
 </picture>
 
-![Streak](http://dsa.vkrishna04.me/badges/streak.svg?v=5505-0-316-2026-08-28) ![Points](http://dsa.vkrishna04.me/badges/points.svg?v=5505-0-316-2026-08-28) ![Level](http://dsa.vkrishna04.me/badges/level.svg?v=5505-0-316-2026-08-28) ![Solved](http://dsa.vkrishna04.me/badges/solved.svg?v=5505-0-316-2026-08-28) ![Solved by difficulty](http://dsa.vkrishna04.me/badges/difficulty.svg?v=5505-0-316-2026-08-28) ![Freezes](http://dsa.vkrishna04.me/badges/freezes.svg?v=5505-0-316-2026-08-28)
+![Streak](http://dsa.vkrishna04.me/badges/streak.svg?v=5505-0-316-2026-08-29) ![Points](http://dsa.vkrishna04.me/badges/points.svg?v=5505-0-316-2026-08-29) ![Level](http://dsa.vkrishna04.me/badges/level.svg?v=5505-0-316-2026-08-29) ![Solved](http://dsa.vkrishna04.me/badges/solved.svg?v=5505-0-316-2026-08-29) ![Solved by difficulty](http://dsa.vkrishna04.me/badges/difficulty.svg?v=5505-0-316-2026-08-29) ![Freezes](http://dsa.vkrishna04.me/badges/freezes.svg?v=5505-0-316-2026-08-29)
 
 🩸 First Blood · 🔟 Ten Down · 💯 Century · 🔥 Week On Fire · 🌋 Month On Fire · 🗣️ Polyglot · 🎯 Well Rounded · ⚡ Double Day · 🪃 Comeback · ⭐ Engineer · 🔍 Second Opinion · 📝 Peer Reviewed
 <!-- codeledger:gamification:end -->
@@ -17,14 +17,14 @@
 
 # VKrishna04's DSA Solutions
 
-[![Solutions](https://img.shields.io/badge/Solutions-316-06b6d4?style=flat-square&logo=github)](https://VKrishna04.github.io/My-DSA-Life/)  [![Easy](https://img.shields.io/badge/Easy-176-22c55e?style=flat-square)](https://VKrishna04.github.io/My-DSA-Life/)  [![Medium](https://img.shields.io/badge/Medium-127-f59e0b?style=flat-square)](https://VKrishna04.github.io/My-DSA-Life/)  [![Hard](https://img.shields.io/badge/Hard-11-ef4444?style=flat-square)](https://VKrishna04.github.io/My-DSA-Life/)
+[![Solutions](https://img.shields.io/badge/Solutions-316-06b6d4?style=flat-square&logo=github)](http://dsa.vkrishna04.me/)  [![Easy](https://img.shields.io/badge/Easy-176-22c55e?style=flat-square)](http://dsa.vkrishna04.me/)  [![Medium](https://img.shields.io/badge/Medium-127-f59e0b?style=flat-square)](http://dsa.vkrishna04.me/)  [![Hard](https://img.shields.io/badge/Hard-11-ef4444?style=flat-square)](http://dsa.vkrishna04.me/)  [![Languages](https://img.shields.io/badge/Languages-11-8b5cf6?style=flat-square)](http://dsa.vkrishna04.me/)  [![Platforms](https://img.shields.io/badge/Platforms-2-64748b?style=flat-square)](http://dsa.vkrishna04.me/)
 
 > Automatically tracked by [CodeLedger](https://codeledger.vkrishna04.me) — every problem solved, committed to Git.
 
-**[View Live Dashboard →](https://VKrishna04.github.io/My-DSA-Life/)**
-*Last updated: Aug 27, 2026*
+**[View Live Dashboard →](http://dsa.vkrishna04.me/)**
+*Last updated: Aug 29, 2026*
 
-[![CodeLedger](https://raw.githubusercontent.com/Life-Experimentalist/Code-Ledger/refs/heads/main/src/assets/images/social%20preview.png)](https://VKrishna04.github.io/My-DSA-Life/)
+[![CodeLedger](https://raw.githubusercontent.com/Life-Experimentalist/Code-Ledger/refs/heads/main/src/assets/images/social%20preview.png)](http://dsa.vkrishna04.me/)
 
 </div>
 
@@ -40,7 +40,7 @@
 
 **Top Languages:** Python3 (200) · Unknown (45) · Python (16) · MySQL (15) · Pandas (14) · Java (12) · python3 (5) · Bash (4)
 
-**Top Topics:** Array (132) · Math (26) · String (25) · Database (15) · Data Manipulation (15) · Hash Table (14) · Dynamic Programming (12) · Tree (11) · Untagged (10) · Linked List (8)
+**Top Topics:** Array (134) · Math (26) · String (26) · Database (15) · Data Manipulation (15) · Hash Table (14) · Dynamic Programming (12) · Tree (11) · Linked List (8) · Two Pointers (8)
 
 ---
 
@@ -85,7 +85,7 @@ This repository is managed by [CodeLedger](https://codeledger.vkrishna04.me), a 
 
 - Solutions committed automatically the instant they are accepted
 - AI code reviews (complexity analysis, hints, optimizations) committed alongside code
-- Live stats dashboard: https://VKrishna04.github.io/My-DSA-Life/
+- Live stats dashboard: http://dsa.vkrishna04.me/
 - Cross-device sync — your history is always up to date on any machine
 - Fully owned by you — plain files, no lock-in, no third-party servers
 
@@ -100,6 +100,7 @@ Built with [CodeLedger](https://codeledger.vkrishna04.me) · [⭐ Star the exten
 </div>
 
 <!-- CODELEDGER_AUTO_GENERATED_END -->
+
 
 
 

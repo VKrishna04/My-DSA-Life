@@ -64,22 +64,17 @@ class Solution:
 ### Review
 
 **1. Complexity**
-*   **Time Complexity:** $O(N + M)$, where $N$ and $M$ are the lengths of the two linked lists.
-*   **Space Complexity:** $O(1)$, as it uses only two pointers.
+*   **Time Complexity:** $O(N + M)$ in the corrected version; currently, it can result in an infinite loop if lengths differ.
+*   **Space Complexity:** $O(1)$ as only two pointers are used.
 
-**2. Correctness & Edge Cases**
-*   **Failure Case:** The code will enter an **infinite loop** if the lists do **not** intersect. This is because `temp1` resets to `head1` instead of `head2`, meaning the relative offset between pointers never changes.
-*   **Attribute Error:** If either `head1` or `head2` is `None`, `temp1.next` will raise an exception.
-*   **No Intersection:** The current logic cannot return `None` (or -1) for non-intersecting lists.
+**2. Correctness**
+The code is **incorrect**.
+*   **Logic Error:** When `temp1` reaches the end, it resets to `head1` instead of `head2`. To synchronize the distance traveled, a pointer must switch to the **opposite** list's head.
+*   **Edge Case:** If the lists have different lengths and an intersection exists, the current logic will never align the pointers, causing an infinite loop.
+*   **Termination:** It does not handle cases where no intersection exists (it should eventually return `None`).
 
 **3. Optimization**
-To handle non-intersecting cases and different lengths correctly, switch pointers to the **opposite** head upon reaching the end:
-```python
-while temp1 != temp2:
-    temp1 = temp1.next if temp1 else head2
-    temp2 = temp2.next if temp2 else head1
-```
-This ensures both pointers travel exactly $N + M$ steps, meeting at either the intersection or `None`.
+Apply the **Two-Pointer Switching Technique**: When `temp1` reaches `None`, reassign it to `head2`. When `temp2` reaches `None`, reassign it to `head1`. They will meet at the intersection node or `None` in exactly $N+M$ steps.
 
 **4. Key Algorithmic Pattern**
-Two Pointers (specifically the "Difference in Length" or "Synchronized Traversal" strategy).
+Two Pointers (specifically the "Length Synchronization" variant).

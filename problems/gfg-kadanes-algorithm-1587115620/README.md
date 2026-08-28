@@ -29,3 +29,12 @@ Explanation: **The subarray [5, 4, 1, 7, 8] has the largest sum 25.
 **Constraints:
 **1 &le; arr.size() &le; 105**
 **-104 &le; arr[i] &le; 104
+
+## AI Review
+
+This implementation successfully avoids your recurring flags regarding **space complexity** ($O(1)$) and **time complexity** ($O(n)$).
+
+1.  **Complexity**: Time **$O(n)$** for a single pass through the array. Space **$O(1)$** as only two scalar variables are maintained.
+2.  **Correctness**: The logic handles "all-negative" arrays (e.g., `[-5, -2, -10]`) correctly because `max_sum` is updated *before* the negative prefix is reset. However, if the input `arr` is empty, the function returns `float('-inf')`; adding a guard clause for **null/empty input** would improve robustness.
+3.  **One Concrete Optimisation**: Replace the manual `if` reset and `max` call with the standard Kadane’s transition: `curr = max(num, curr + num)`. In Python, using an `if` statement to update `max_sum` is also slightly faster than the `max()` function as it avoids the overhead of a function call in a tight loop.
+4.  **Key Algorithmic Pattern**: Greedy / Dynamic Programming (Kadane's Algorithm).

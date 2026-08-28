@@ -5,7 +5,7 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-merge-two-sorted-lists` |
-| Topics | Linked List, Linked List, Recursion |
+| Topics | Linked List, Recursion |
 | Solved | 2025-07-30 |
 | Runtime | 1 ms (beats 18.977900000000005%) |
 | Memory | 17.6 MB (beats 100%) |

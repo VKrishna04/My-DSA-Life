@@ -5,7 +5,7 @@
 | Difficulty | Medium |
 | Platform | Leetcode |
 | Problem ID | `lc-find-minimum-in-rotated-sorted-array` |
-| Topics | Array, Array, Binary Search |
+| Topics | Array, Binary Search |
 | Solved | 2025-12-31 |
 | Runtime | 2 ms (beats 3.5203999999999938%) |
 | Memory | 17.4 MB (beats 100%) |
