@@ -3,26 +3,14 @@
   "config": {
     "utcOffsetMinutes": 330
   },
-  "vacations": [
-    {
-      "start": "2026-08-19",
-      "end": "2026-08-22"
-    }
-  ],
-  "installDay": "",
+  "vacations": [],
+  "installDay": "2026-08-31",
   "username": "VKrishna04",
   "pagesUrl": "http://dsa.vkrishna04.me/",
   "readme": true,
   "badgeStyle": "svg",
   "shieldsStyle": "flat",
   "rawBase": "https://raw.githubusercontent.com/VKrishna04/My-DSA-Life/main",
-  "picks": [
-    "streak",
-    "points",
-    "level",
-    "solved",
-    "difficulty",
-    "freezes"
-  ],
+  "picks": null,
   "achievementPicks": null
 }
