@@ -1,10 +1,13 @@
 {
   "__chat_stats__": {
-    "byCommand": {},
-    "byMode": {
-      "direct": 2
+    "byCommand": {
+      "mycode": 5
     },
-    "total": 2
+    "byMode": {
+      "direct": 2,
+      "guided": 11
+    },
+    "total": 13
   },
   "leetcode::binary-search": {
     "difficulty": "Easy",
@@ -21,10 +24,33 @@
         "elapsedSeconds": 0,
         "lang": "Python3",
         "ts": 1789453610134
+      },
+      {
+        "elapsedSeconds": 0,
+        "lang": "Python3",
+        "ts": 1789461634395
       }
     ],
     "tags": [
       "Array",
+      "Binary Search"
+    ]
+  },
+  "leetcode::two-sum-ii-input-array-is-sorted": {
+    "difficulty": "Medium",
+    "lang": "Python3",
+    "platform": "leetcode",
+    "slug": "two-sum-ii-input-array-is-sorted",
+    "solves": [
+      {
+        "elapsedSeconds": 0,
+        "lang": "Python3",
+        "ts": 1789465970901
+      }
+    ],
+    "tags": [
+      "Array",
+      "Two Pointers",
       "Binary Search"
     ]
   }

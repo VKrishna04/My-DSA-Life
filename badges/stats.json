@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "asOf": "2026-09-15",
-  "currentStreak": 0,
-  "longestStreak": 0,
+  "currentStreak": 1,
+  "longestStreak": 1,
   "freezes": 0,
-  "totalPoints": 5515,
-  "totalSolves": 317,
+  "totalPoints": 5540,
+  "totalSolves": 318,
   "totalRecalls": 0,
   "byDifficulty": {
     "Easy": 177,
-    "Medium": 127,
+    "Medium": 128,
     "Hard": 11,
     "Unknown": 2
   },
