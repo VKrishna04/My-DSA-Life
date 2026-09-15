@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-15T06:20:50.975Z",
+  "updatedAt": "2026-09-15T06:26:50.286Z",
   "layoutVersion": 3,
   "stats": {
     "total": 317,
@@ -13,11 +13,11 @@
     },
     "byLang": {
       "python3": 5,
-      "Python3": 200,
+      "Python3": 201,
       "Unknown": 45,
       "MySQL": 15,
       "Java": 12,
-      "Python": 17,
+      "Python": 16,
       "Pandas": 14,
       "JavaScript": 3,
       "C++": 1,
@@ -3049,29 +3049,29 @@
         "topic": "binary-search",
         "voteCount": 90
       },
-      "readmeContent": "# [704] Binary Search\n**Difficulty:** Easy  |  **Acceptance:** 61.4%  |  **Likes:** 13776 / **Dislikes:** 309\n**Tags:** `Array`, `Binary Search`\n## Problem\nGiven an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.\n\nYou must write an algorithm with O(log n) runtime complexity.\n\n&nbsp;\nExample 1:\n\nInput: nums = [-1,0,3,5,9,12], target = 9\nOutput: 4\nExplanation: 9 exists in nums and its index is 4\n\nExample 2:\n\nInput: nums = [-1,0,3,5,9,12], target = 2\nOutput: -1\nExplanation: 2 does not exist in nums so return -1\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 104\n\t-104 < nums[i], target < 104\n\tAll the integers in nums are unique.\n\tnums is sorted in ascending order.\n## My Submission\n\n- Runtime: 0 ms (beats 100.0%)\n- Memory: 13.3 MB (beats 37.7%)\n\n## Similar Problems\n\n- [Maximum Count of Positive Integer and Negative Integer](https://leetcode.com/problems/maximum-count-of-positive-integer-and-negative-integer/) — Easy\n",
-      "code": "class Solution(object):\n    def search(self, nums, target):\n        \"\"\"\n        :type nums: List[int]\n        :type target: int\n        :rtype: int\n        \"\"\"\n        left , right = 0, len(nums)-1\n        while left <= right:\n            mid = left + (right - left) // 2\n\n            if nums[mid] > target:\n                right = mid -1\n            elif nums[mid] < target:\n                left = mid + 1\n            else:\n                return mid\n        return -1",
+      "readmeContent": "# [704] Binary Search\n**Difficulty:** Easy  |  **Acceptance:** 61.4%  |  **Likes:** 13776 / **Dislikes:** 309\n**Tags:** `Array`, `Binary Search`\n## Problem\nGiven an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.\n\nYou must write an algorithm with O(log n) runtime complexity.\n\n&nbsp;\nExample 1:\n\nInput: nums = [-1,0,3,5,9,12], target = 9\nOutput: 4\nExplanation: 9 exists in nums and its index is 4\n\nExample 2:\n\nInput: nums = [-1,0,3,5,9,12], target = 2\nOutput: -1\nExplanation: 2 does not exist in nums so return -1\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 104\n\t-104 < nums[i], target < 104\n\tAll the integers in nums are unique.\n\tnums is sorted in ascending order.\n## My Submission\n\n- Runtime: 0 ms (beats 100.0%)\n- Memory: 20.4 MB (beats 95.7%)\n\n## Similar Problems\n\n- [Maximum Count of Positive Integer and Negative Integer](https://leetcode.com/problems/maximum-count-of-positive-integer-and-negative-integer/) — Easy\n",
+      "code": "class Solution:\n    def search(self, nums: List[int], target: int) -> int:\n        left , right = 0, len(nums)-1\n        while left <= right:\n            mid = left + (right - left) // 2\n\n            if nums[mid] > target:\n                right = mid -1\n            elif nums[mid] < target:\n                left = mid + 1\n            else:\n                return mid\n        return -1",
       "files": [
         {
           "path": "problems/binary-search/leetcode/lc-binary-search.py",
-          "content": "class Solution(object):\n    def search(self, nums, target):\n        \"\"\"\n        :type nums: List[int]\n        :type target: int\n        :rtype: int\n        \"\"\"\n        left , right = 0, len(nums)-1\n        while left <= right:\n            mid = left + (right - left) // 2\n\n            if nums[mid] > target:\n                right = mid -1\n            elif nums[mid] < target:\n                left = mid + 1\n            else:\n                return mid\n        return -1"
+          "content": "class Solution:\n    def search(self, nums: List[int], target: int) -> int:\n        left , right = 0, len(nums)-1\n        while left <= right:\n            mid = left + (right - left) // 2\n\n            if nums[mid] > target:\n                right = mid -1\n            elif nums[mid] < target:\n                left = mid + 1\n            else:\n                return mid\n        return -1"
         },
         {
           "path": "problems/binary-search/README.md",
-          "content": "# [704] Binary Search\n**Difficulty:** Easy  |  **Acceptance:** 61.4%  |  **Likes:** 13776 / **Dislikes:** 309\n**Tags:** `Array`, `Binary Search`\n## Problem\nGiven an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.\n\nYou must write an algorithm with O(log n) runtime complexity.\n\n&nbsp;\nExample 1:\n\nInput: nums = [-1,0,3,5,9,12], target = 9\nOutput: 4\nExplanation: 9 exists in nums and its index is 4\n\nExample 2:\n\nInput: nums = [-1,0,3,5,9,12], target = 2\nOutput: -1\nExplanation: 2 does not exist in nums so return -1\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 104\n\t-104 < nums[i], target < 104\n\tAll the integers in nums are unique.\n\tnums is sorted in ascending order.\n## My Submission\n\n- Runtime: 0 ms (beats 100.0%)\n- Memory: 13.3 MB (beats 37.7%)\n\n## Similar Problems\n\n- [Maximum Count of Positive Integer and Negative Integer](https://leetcode.com/problems/maximum-count-of-positive-integer-and-negative-integer/) — Easy\n"
+          "content": "# [704] Binary Search\n**Difficulty:** Easy  |  **Acceptance:** 61.4%  |  **Likes:** 13776 / **Dislikes:** 309\n**Tags:** `Array`, `Binary Search`\n## Problem\nGiven an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.\n\nYou must write an algorithm with O(log n) runtime complexity.\n\n&nbsp;\nExample 1:\n\nInput: nums = [-1,0,3,5,9,12], target = 9\nOutput: 4\nExplanation: 9 exists in nums and its index is 4\n\nExample 2:\n\nInput: nums = [-1,0,3,5,9,12], target = 2\nOutput: -1\nExplanation: 2 does not exist in nums so return -1\n\n&nbsp;\nConstraints:\n\n\t1 <= nums.length <= 104\n\t-104 < nums[i], target < 104\n\tAll the integers in nums are unique.\n\tnums is sorted in ascending order.\n## My Submission\n\n- Runtime: 0 ms (beats 100.0%)\n- Memory: 20.4 MB (beats 95.7%)\n\n## Similar Problems\n\n- [Maximum Count of Positive Integer and Negative Integer](https://leetcode.com/problems/maximum-count-of-positive-integer-and-negative-integer/) — Easy\n"
         }
       ],
       "lang": {
-        "name": "Python",
+        "name": "Python3",
         "ext": "py",
-        "slug": "python"
+        "slug": "python3"
       },
       "runtime": "0 ms",
-      "memory": "13.3 MB",
+      "memory": "20.4 MB",
       "runtimePct": 100,
-      "memoryPct": 37.7005,
-      "timestamp": 1767650812000,
-      "acRate": 61.3733033734116,
+      "memoryPct": 95.71430000000001,
+      "timestamp": 1789453600000,
+      "acRate": 61.37326005821029,
       "likes": 13776,
       "dislikes": 309,
       "similar": [
@@ -3088,12 +3088,16 @@
       "submissionsUrl": "https://leetcode.com/problems/binary-search/submissions/",
       "notes": "",
       "methodTitle": "",
-      "isDuplicate": true,
-      "duplicateOf": "lc-binary-search::1875796252",
+      "isDuplicate": false,
+      "duplicateOf": null,
       "_requestAIReview": true,
       "platform": "leetcode",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/binary-search/leetcode/lc-binary-search.py",
+        "problems/binary-search/leetcode/README.md"
+      ]
     },
     {
       "id": "lc-binary-search::1875796252",

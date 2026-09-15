@@ -1,4 +1,11 @@
 {
+  "__chat_stats__": {
+    "byCommand": {},
+    "byMode": {
+      "direct": 2
+    },
+    "total": 2
+  },
   "leetcode::binary-search": {
     "difficulty": "Easy",
     "lang": "Python",
@@ -9,6 +16,11 @@
         "elapsedSeconds": 0,
         "lang": "Python",
         "ts": 1789453250817
+      },
+      {
+        "elapsedSeconds": 0,
+        "lang": "Python3",
+        "ts": 1789453610134
       }
     ],
     "tags": [

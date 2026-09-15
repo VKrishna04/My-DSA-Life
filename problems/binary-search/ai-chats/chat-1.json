@@ -1,0 +1,51 @@
+{
+  "problemSlug": "binary-search",
+  "problemURL": "https://leetcode.com/problems/binary-search/",
+  "platform": "leetcode",
+  "messages": [
+    {
+      "role": "user",
+      "content": "i have completed this problem next which one should i solve im just starting after a long break so help me"
+    },
+    {
+      "role": "assistant",
+      "content": "Great job on completing the binary search implementation! It's a classic algorithm and a great way to ease back into coding.\n\nSince you are getting back into things after a long break, it can be incredibly helpful to have a structured path forward rather than choosing random problems. \n\nI can help you build a personalized learning plan. Let's use `set-roadmap` to define your goals—whether you want to focus on interview preparation, master specific data structures (like Arrays, Linked Lists, or Trees), or practice particular algorithm paradigms. \n\nWould you like to set up a roadmap to guide your next steps?",
+      "providerId": "gemini",
+      "modelId": "gemini-3.5-flash",
+      "isFallback": false
+    },
+    {
+      "role": "user",
+      "content": "okay i need to be maang or mango interview ready as quickly as possible like in a month and can spend a total of 3 hours per day and this is after a long break so i need to refamiliarize myself as well"
+    },
+    {
+      "role": "assistant",
+      "content": "Let's set up a highly targeted, high-yield 30-day roadmap. With 3 hours a day, you have about 90 hours total. To get MAANG-ready in this time, you cannot afford to solve random problems; you must focus purely on **essential patterns** (often called the Blind 75 / Grind 75).\n\nHere is your accelerated roadmap:\n\n### **Roadmap: 30-Day MAANG Express (90 Hours)**\n\n*   **Week 1 (Days 1–7): Linear Structures & Search (21 hours)**\n    *   *Focus*: Arrays, Two Pointers, Sliding Window, Binary Search.\n    *   *Goal*: Master O(N) space/time optimizations and logarithmic search.\n*   **Week 2 (Days 8–14): Linked Lists, Stacks, Queues & Trees (21 hours)**\n    *   *Focus*: Level-order traversal, DFS/BFS on Trees, recursion.\n    *   *Goal*: Understand pointer manipulation and tree traversal patterns (highly common in initial screens).\n*   **Week 3 (Days 15–21): Graphs, Heaps & Backtracking (21 hours)**\n    *   *Focus*: BFS/DFS on matrices, Top-K elements, generating combinations/permutations.\n    *   *Goal*: Master decision-tree search and priority queues.\n*   **Week 4 (Days 22–30): Dynamic Programming, Greedy & Mock Prep (27 hours)**\n    *   *Focus*: 1D/2D DP (basic/medium only), interval problems, and mock interviews under a 35-minute timer.\n\n---\n\n### **Your Next Step (Milestone 1: Binary Search & Two Pointers)**\n\nSince you just completed the standard Binary Search, let’s immediately level up. MAANG interviewers rarely ask the basic binary search; instead, they ask variants where the search space is modified.\n\nYour next problem should be: **[Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) (Medium)**.\n\n#### **Why this next?**\nIt directly builds on the code you just wrote, but adds a crucial conceptual twist: handling a boundary shift.\n\n**Quick hint to get you started on it:**\n1. You still use `left` and `right` pointers.\n2. At any `mid`, one half of the array (either left of `mid` or right of `mid`) is guaranteed to be normally sorted. \n3. Figure out which side is sorted first, then check if your `target` lies within its boundaries.\n\nGo try **Search in Rotated Sorted Array** now, and paste your code here when you are ready to review it!",
+      "providerId": "gemini",
+      "modelId": "gemini-3.5-flash",
+      "isFallback": false
+    }
+  ],
+  "problemTitle": "After streak of hard questions, leetcode lets you relax. Saying happy new month.",
+  "problemTags": [],
+  "attachedProblemSlugs": [
+    "binary-search"
+  ],
+  "attachedProblems": [
+    {
+      "slug": "binary-search",
+      "title": "After streak of hard questions, leetcode lets you relax. Saying happy new month.",
+      "platform": "leetcode",
+      "url": "https://leetcode.com/problems/binary-search/"
+    }
+  ],
+  "surface": "floating-panel",
+  "requestType": "",
+  "usedCommands": [],
+  "requestTemplate": "okay i need to be maang or mango interview ready as quickly as possible like in a month and can spend a total of 3 hours per day and this is after a long break so i need to refamiliarize myself as well",
+  "summary": "okay i need to be maang or mango interview ready as quickly as possible like in a month and can spend a total of 3 hours",
+  "createdAt": 1789453333512,
+  "updatedAt": 1789453430345,
+  "_pendingSync": true,
+  "id": 1
+}

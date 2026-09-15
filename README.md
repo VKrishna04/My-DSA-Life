@@ -38,7 +38,7 @@
 
 **By Platform:** leetcode (262) · geeksforgeeks (55)
 
-**Top Languages:** Python3 (200) · Unknown (45) · Python (17) · MySQL (15) · Pandas (14) · Java (12) · python3 (5) · Bash (4)
+**Top Languages:** Python3 (201) · Unknown (45) · Python (16) · MySQL (15) · Pandas (14) · Java (12) · python3 (5) · Bash (4)
 
 **Top Topics:** Array (135) · Math (26) · String (26) · Database (15) · Data Manipulation (15) · Hash Table (14) · Dynamic Programming (12) · Tree (11) · Linked List (8) · Two Pointers (8)
 
@@ -100,6 +100,7 @@ Built with [CodeLedger](https://codeledger.vkrishna04.me) · [⭐ Star the exten
 </div>
 
 <!-- CODELEDGER_AUTO_GENERATED_END -->
+
 
 
 
