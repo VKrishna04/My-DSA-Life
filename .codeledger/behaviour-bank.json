@@ -1,13 +1,13 @@
 {
   "__chat_stats__": {
     "byCommand": {
-      "mycode": 7
+      "mycode": 11
     },
     "byMode": {
-      "direct": 2,
-      "guided": 16
+      "direct": 3,
+      "guided": 29
     },
-    "total": 18
+    "total": 32
   },
   "leetcode::3sum": {
     "difficulty": "Medium",
@@ -19,6 +19,24 @@
         "elapsedSeconds": 0,
         "lang": "Python3",
         "ts": 1789467813613
+      }
+    ],
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting"
+    ]
+  },
+  "leetcode::3sum-closest": {
+    "difficulty": "Medium",
+    "lang": "Python3",
+    "platform": "leetcode",
+    "slug": "3sum-closest",
+    "solves": [
+      {
+        "elapsedSeconds": 0,
+        "lang": "Python3",
+        "ts": 1789548509428
       }
     ],
     "tags": [

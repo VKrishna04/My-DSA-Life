@@ -1,19 +1,19 @@
 {
-  "updatedAt": "2026-09-16T05:49:08.170Z",
+  "updatedAt": "2026-09-16T08:48:29.640Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 319,
+    "total": 320,
     "easy": 177,
-    "medium": 129,
+    "medium": 130,
     "hard": 11,
     "unknownDifficulty": 2,
     "byPlatform": {
       "geeksforgeeks": 55,
-      "leetcode": 264
+      "leetcode": 265
     },
     "byLang": {
       "python3": 5,
-      "Python3": 203,
+      "Python3": 204,
       "Unknown": 45,
       "MySQL": 15,
       "Java": 12,
@@ -36,7 +36,7 @@
       "Depth-First Search": 1,
       "Linked List": 8,
       "Bit Manipulation": 3,
-      "Array": 137,
+      "Array": 138,
       "Searching": 2,
       "Hash Table": 14,
       "Java": 1,
@@ -2123,6 +2123,64 @@
         "problems/3sum/leetcode/lc-3sum.py",
         "problems/3sum/leetcode/README.md"
       ]
+    },
+    {
+      "id": "lc-3sum-closest",
+      "forceCommit": false,
+      "submissionId": null,
+      "title": "3Sum Closest",
+      "titleSlug": "3sum-closest",
+      "difficulty": "Medium",
+      "topic": "Two Pointers",
+      "tags": [
+        "Array",
+        "Two Pointers",
+        "Sorting"
+      ],
+      "canonical": null,
+      "readmeContent": "# [16] 3Sum Closest\n**Difficulty:** Medium  |  **Acceptance:** 49.4%  |  **Likes:** 11885 / **Dislikes:** 639\n**Tags:** `Array`, `Two Pointers`, `Sorting`\n## Problem\nYou are given an integer array nums of length n and an integer target.\n\nFind three integers at distinct indices in nums such that the sum is closest to target.\n\nReturn the sum of the three integers.\n\nYou may assume that each input would have exactly one solution.\n\n&nbsp;\nExample 1:\n\nInput: nums = [-1,2,1,-4], target = 1\nOutput: 2\nExplanation: The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).\n\nExample 2:\n\nInput: nums = [0,0,0], target = 1\nOutput: 0\nExplanation: The sum that is closest to the target is 0. (0 + 0 + 0 = 0).\n\n&nbsp;\nConstraints:\n\n\t3 <= nums.length <= 500\n\t-1000 <= nums[i] <= 1000\n\t-104 <= target <= 104\n## My Submission\n\n- Runtime: 407 ms (beats 19.2%)\n- Memory: 19.4 MB (beats 46.6%)\n\n## Similar Problems\n\n- [3Sum](https://leetcode.com/problems/3sum/) — Medium\n",
+      "code": "class Solution:\n    def threeSumClosest(self, nums: List[int], target: int) -> int:\n        nums.sort()\n        closest_sum = float('inf') \n        \n        for k in range(len(nums) - 2):\n            if k > 0 and nums[k] == nums[k - 1]:\n                continue\n            \n            i = k + 1\n            j = len(nums) - 1\n            \n            while i < j:\n                temp = nums[k] + nums[i] + nums[j]\n                \n                if temp == target:\n                    return temp\n                \n                if abs(target - temp) < abs(target - closest_sum):\n                    closest_sum = temp\n                \n                if temp < target:\n                    i += 1\n                else:\n                    j -= 1\n                    \n        return closest_sum",
+      "files": [
+        {
+          "path": "problems/lc-3sum-closest/lc-3sum-closest.py",
+          "content": "class Solution:\n    def threeSumClosest(self, nums: List[int], target: int) -> int:\n        nums.sort()\n        closest_sum = float('inf') \n        \n        for k in range(len(nums) - 2):\n            if k > 0 and nums[k] == nums[k - 1]:\n                continue\n            \n            i = k + 1\n            j = len(nums) - 1\n            \n            while i < j:\n                temp = nums[k] + nums[i] + nums[j]\n                \n                if temp == target:\n                    return temp\n                \n                if abs(target - temp) < abs(target - closest_sum):\n                    closest_sum = temp\n                \n                if temp < target:\n                    i += 1\n                else:\n                    j -= 1\n                    \n        return closest_sum"
+        },
+        {
+          "path": "problems/lc-3sum-closest/README.md",
+          "content": "# [16] 3Sum Closest\n**Difficulty:** Medium  |  **Acceptance:** 49.4%  |  **Likes:** 11885 / **Dislikes:** 639\n**Tags:** `Array`, `Two Pointers`, `Sorting`\n## Problem\nYou are given an integer array nums of length n and an integer target.\n\nFind three integers at distinct indices in nums such that the sum is closest to target.\n\nReturn the sum of the three integers.\n\nYou may assume that each input would have exactly one solution.\n\n&nbsp;\nExample 1:\n\nInput: nums = [-1,2,1,-4], target = 1\nOutput: 2\nExplanation: The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).\n\nExample 2:\n\nInput: nums = [0,0,0], target = 1\nOutput: 0\nExplanation: The sum that is closest to the target is 0. (0 + 0 + 0 = 0).\n\n&nbsp;\nConstraints:\n\n\t3 <= nums.length <= 500\n\t-1000 <= nums[i] <= 1000\n\t-104 <= target <= 104\n## My Submission\n\n- Runtime: 407 ms (beats 19.2%)\n- Memory: 19.4 MB (beats 46.6%)\n\n## Similar Problems\n\n- [3Sum](https://leetcode.com/problems/3sum/) — Medium\n"
+        }
+      ],
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "runtime": "407 ms",
+      "memory": "19.4 MB",
+      "runtimePct": 19.207800000000482,
+      "memoryPct": 46.5696,
+      "timestamp": 1789548498000,
+      "acRate": 49.397784448839715,
+      "likes": 11885,
+      "dislikes": 639,
+      "similar": [
+        {
+          "difficulty": "Medium",
+          "titleSlug": "3sum",
+          "title": "3Sum",
+          "isPaidOnly": false
+        }
+      ],
+      "problemStatement": "<p>You are given an integer array <code>nums</code> of length <code>n</code> and an integer <code>target</code>.</p>\n\n<p>Find three integers at <strong>distinct indices</strong> in <code>nums</code> such that the sum is <strong>closest</strong> to <code>target</code>.</p>\n\n<p>Return the sum of the three integers.</p>\n\n<p>You may assume that each input would have <strong>exactly</strong> one solution.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [-1,2,1,-4], target = 1\n<strong>Output:</strong> 2\n<strong>Explanation:</strong> The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [0,0,0], target = 1\n<strong>Output:</strong> 0\n<strong>Explanation:</strong> The sum that is closest to the target is 0. (0 + 0 + 0 = 0).\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>3 &lt;= nums.length &lt;= 500</code></li>\n\t<li><code>-1000 &lt;= nums[i] &lt;= 1000</code></li>\n\t<li><code>-10<sup>4</sup> &lt;= target &lt;= 10<sup>4</sup></code></li>\n</ul>\n",
+      "elapsedSeconds": 0,
+      "hasSimilar": true,
+      "submissionsUrl": "https://leetcode.com/problems/3sum-closest/submissions/",
+      "notes": "",
+      "methodTitle": "",
+      "isDuplicate": false,
+      "duplicateOf": null,
+      "_requestAIReview": true,
+      "platform": "leetcode"
     },
     {
       "id": "lc-3sum::1730412472",
