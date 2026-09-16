@@ -70,3 +70,20 @@ class Solution:
                 break
         return [l+1, r+1]
 ```
+
+## AI Review
+
+### Review
+
+1. **Complexity**: 
+   - **Time Complexity:** $O(n)$ where $n$ is the length of `numbers`, as we traverse the array at most once.
+   - **Space Complexity:** $O(1)$ auxiliary space as we only use two pointer variables.
+
+2. **Correctness**: 
+   The code is fully correct. Since the problem guarantees exactly one solution and the input array is sorted, the two-pointer approach will always find the correct 1-indexed pair without running out of bounds.
+
+3. **Concrete Optimisation**: 
+   Instead of using `break` and returning outside the loop, return the 1-indexed list `[l + 1, r + 1]` directly inside the `else` branch. This eliminates the post-loop execution overhead.
+
+4. **Key Algorithmic Pattern**: 
+   Two Pointers (converging pointers from opposite ends).
