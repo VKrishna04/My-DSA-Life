@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-15T10:23:33.813Z",
+  "updatedAt": "2026-09-16T05:49:08.170Z",
   "layoutVersion": 3,
   "stats": {
     "total": 319,
@@ -2118,7 +2118,11 @@
       "_requestAIReview": true,
       "platform": "leetcode",
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "_committedPaths": [
+        "problems/3sum/leetcode/lc-3sum.py",
+        "problems/3sum/leetcode/README.md"
+      ]
     },
     {
       "id": "lc-3sum::1730412472",
@@ -3136,7 +3140,8 @@
       "topic": "Binary Search",
       "tags": [
         "Array",
-        "Binary Search"
+        "Binary Search",
+        "Two Pointers"
       ],
       "canonical": {
         "addedAt": "2025-04-24",
@@ -3206,7 +3211,11 @@
       "_committedPaths": [
         "problems/binary-search/leetcode/lc-binary-search.py",
         "problems/binary-search/leetcode/README.md"
-      ]
+      ],
+      "aiReview": "### Review\n\n1. **Complexity:**\n   * **Time Complexity:** $O(\\log n)$ because the search space is halved in each step.\n   * **Space Complexity:** $O(1)$ auxiliary space as it only uses a few variables.\n\n2. **Correctness:** \n   The solution is fully correct. It handles all edge cases perfectly, including single-element arrays, empty arrays (if permitted by constraints), targets at the extreme boundaries, and missing elements. The search interval shrinks correctly without infinite loops.\n\n3. **Optimization:**\n   The code is already highly optimal. A minor Python-specific micro-optimization is to use `mid = (left + right) // 2`. Since Python dynamically manages arbitrarily large integers, integer overflow is not a concern, and this avoids one subtraction operation per iteration.\n\n4. **Pattern:**\n   Binary Search (Two Pointers).",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3.5-flash",
+      "pattern": "Binary Search"
     },
     {
       "id": "lc-binary-search::1875796252",
@@ -19934,7 +19943,11 @@
         "problems/two-sum-ii-input-array-is-sorted/leetcode/README.md"
       ],
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "aiReview": "### Review\n\n1. **Complexity**: \n   - **Time Complexity:** $O(n)$ where $n$ is the length of `numbers`, as we traverse the array at most once.\n   - **Space Complexity:** $O(1)$ auxiliary space as we only use two pointer variables.\n\n2. **Correctness**: \n   The code is fully correct. Since the problem guarantees exactly one solution and the input array is sorted, the two-pointer approach will always find the correct 1-indexed pair without running out of bounds.\n\n3. **Concrete Optimisation**: \n   Instead of using `break` and returning outside the loop, return the 1-indexed list `[l + 1, r + 1]` directly inside the `else` branch. This eliminates the post-loop execution overhead.\n\n4. **Key Algorithmic Pattern**: \n   Two Pointers (converging pointers from opposite ends).",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3.5-flash",
+      "pattern": "Two Pointers"
     },
     {
       "id": "lc-two-sum::1430566383",

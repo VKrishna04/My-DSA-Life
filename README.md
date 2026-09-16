@@ -1,10 +1,10 @@
 <!-- codeledger:gamification:start -->
 <picture>
-  <source media="(prefers-color-scheme: light)" srcset="http://dsa.vkrishna04.me/badges/card-light.svg?v=5565-1-319-2026-09-15">
-  <img src="http://dsa.vkrishna04.me/badges/card.svg?v=5565-1-319-2026-09-15" alt="Streak card" width="420">
+  <source media="(prefers-color-scheme: light)" srcset="http://dsa.vkrishna04.me/badges/card-light.svg?v=5565-1-319-2026-09-16">
+  <img src="http://dsa.vkrishna04.me/badges/card.svg?v=5565-1-319-2026-09-16" alt="Streak card" width="420">
 </picture>
 
-![Streak](http://dsa.vkrishna04.me/badges/streak.svg?v=5565-1-319-2026-09-15) ![Points](http://dsa.vkrishna04.me/badges/points.svg?v=5565-1-319-2026-09-15) ![Level](http://dsa.vkrishna04.me/badges/level.svg?v=5565-1-319-2026-09-15) ![Solved by difficulty](http://dsa.vkrishna04.me/badges/difficulty.svg?v=5565-1-319-2026-09-15) ![Freezes](http://dsa.vkrishna04.me/badges/freezes.svg?v=5565-1-319-2026-09-15)
+![Streak](http://dsa.vkrishna04.me/badges/streak.svg?v=5565-1-319-2026-09-16) ![Points](http://dsa.vkrishna04.me/badges/points.svg?v=5565-1-319-2026-09-16) ![Level](http://dsa.vkrishna04.me/badges/level.svg?v=5565-1-319-2026-09-16) ![Solved by difficulty](http://dsa.vkrishna04.me/badges/difficulty.svg?v=5565-1-319-2026-09-16) ![Freezes](http://dsa.vkrishna04.me/badges/freezes.svg?v=5565-1-319-2026-09-16)
 
 🩸 First Blood · 🔟 Ten Down · 💯 Century · 🗣️ Polyglot · 🎯 Well Rounded · ⚡ Double Day · ⭐ Engineer · 🔍 Second Opinion · 📝 Peer Reviewed
 <!-- codeledger:gamification:end -->
@@ -22,7 +22,7 @@
 > Automatically tracked by [CodeLedger](https://codeledger.vkrishna04.me) — every problem solved, committed to Git.
 
 **[View Live Dashboard →](http://dsa.vkrishna04.me/)**
-*Last updated: Sep 15, 2026*
+*Last updated: Sep 16, 2026*
 
 [![CodeLedger](https://raw.githubusercontent.com/Life-Experimentalist/Code-Ledger/refs/heads/main/src/assets/images/social%20preview.png)](http://dsa.vkrishna04.me/)
 
@@ -48,6 +48,9 @@
 
 | Problem | Difficulty | Language | Platform | Date |
 |---------|-----------|----------|----------|------|
+| [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/) | Medium | Python3 | leetcode | Sep 15 |
+| [Binary Search](https://leetcode.com/problems/binary-search/) | Easy | Python3 | leetcode | Sep 15 |
+| [House Robber V](https://leetcode.com/problems/house-robber-v/) | Medium | Python3 | leetcode | Aug 18 |
 | [Aggressive Cows](https://www.geeksforgeeks.org/problems/aggressive-cows/1) | Medium | Python3 | geeksforgeeks | Jun 24 |
 | [2 Sum Find A Pair With Given Sum](https://www.geeksforgeeks.org/problems/2-sum-find-a-pair-with-given-sum/1) | Easy | Python3 | geeksforgeeks | Jun 24 |
 | [Assign Cookies](https://www.geeksforgeeks.org/problems/assign-cookies/1) | Easy | Python3 | geeksforgeeks | Jun 24 |
@@ -55,9 +58,6 @@
 | [Bheem Wants Ladoos](https://www.geeksforgeeks.org/problems/bheem-wants-ladoos102404/1) | Medium | Unknown | geeksforgeeks | Jun 24 |
 | [Burger Shop](https://www.geeksforgeeks.org/problems/burger-shop102404/1) | Medium | Unknown | geeksforgeeks | Jun 24 |
 | [Buy Stock](https://www.geeksforgeeks.org/problems/buy-stock-2/1) | Easy | Unknown | geeksforgeeks | Jun 24 |
-| [C Matrix Rotation By 180 Degree](https://www.geeksforgeeks.org/problems/c-matrix-rotation-by-180-degree0745/1) | Medium | Unknown | geeksforgeeks | Jun 24 |
-| [Camelcase Pattern Matching](https://www.geeksforgeeks.org/problems/camelcase-pattern-matching2259/1) | Medium | Unknown | geeksforgeeks | Jun 24 |
-| [Compare two fractions](https://www.geeksforgeeks.org/problems/compare-two-fractions4438/1) | Easy | Python3 | geeksforgeeks | Jun 23 |
 
 ---
 
@@ -100,6 +100,7 @@ Built with [CodeLedger](https://codeledger.vkrishna04.me) · [⭐ Star the exten
 </div>
 
 <!-- CODELEDGER_AUTO_GENERATED_END -->
+
 
 
 

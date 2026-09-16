@@ -5,10 +5,10 @@
 | Difficulty | Easy |
 | Platform | Leetcode |
 | Problem ID | `lc-binary-search` |
-| Topics | Array, Binary Search, Two Pointers |
-| Solved | 2026-09-15 |
+| Topics | Array, Binary Search |
+| Solved | 2026-01-05 |
 | Runtime | 0 ms (beats 100%) |
-| Memory | 20.4 MB (beats 95.71430000000001%) |
+| Memory | 13.3 MB (beats 37.21339999999999%) |
 
 ## Problem Statement
 
@@ -44,9 +44,14 @@ You must write an algorithm with `O(log n)` runtime complexity.
 
 ## Solutions
 
-```Python3
-class Solution:
-    def search(self, nums: List[int], target: int) -> int:
+```Python
+class Solution(object):
+    def search(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
         left , right = 0, len(nums)-1
         while left <= right:
             mid = left + (right - left) // 2
@@ -62,17 +67,18 @@ class Solution:
 
 ## AI Review
 
-### Review
+### 1. Complexity
+*   **Time Complexity:** $O(\log n)$. The search space is halved in each iteration.
+*   **Space Complexity:** $O(1)$. It uses a constant amount of extra memory regardless of input size.
 
-1. **Complexity:**
-   * **Time Complexity:** $O(\log n)$ because the search space is halved in each step.
-   * **Space Complexity:** $O(1)$ auxiliary space as it only uses a few variables.
+### 2. Correctness
+The implementation is correct and robust. 
+*   **Empty list:** If `nums` is empty, `right` becomes `-1`, the `while` condition fails immediately, and it correctly returns `-1`.
+*   **Single element:** If `nums` has one element, `left` and `right` both equal `0`, the loop runs once, and it correctly identifies or misses the target.
+*   **Boundary targets:** It correctly finds the target if it is at the very first or very last index due to the `left <= right` condition.
 
-2. **Correctness:** 
-   The solution is fully correct. It handles all edge cases perfectly, including single-element arrays, empty arrays (if permitted by constraints), targets at the extreme boundaries, and missing elements. The search interval shrinks correctly without infinite loops.
+### 3. Optimization
+While this iterative approach is already optimal, you could use Python’s built-in **`bisect` module** (`bisect.bisect_left`) for a more concise and potentially faster solution (as it is implemented in C). 
 
-3. **Optimization:**
-   The code is already highly optimal. A minor Python-specific micro-optimization is to use `mid = (left + right) // 2`. Since Python dynamically manages arbitrarily large integers, integer overflow is not a concern, and this avoids one subtraction operation per iteration.
-
-4. **Pattern:**
-   Binary Search (Two Pointers).
+### 4. Key Algorithmic Pattern
+**Binary Search** (a specific type of **Decrease and Conquer**). It relies on the input being sorted to eliminate half of the remaining elements at each step.
