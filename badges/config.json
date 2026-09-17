@@ -1,6 +1,11 @@
 {
   "schema": 1,
   "config": {
+    "dailyTargetPoints": 25,
+    "freezeEarnMultiplier": 1,
+    "maxFreezes": 70,
+    "penaltyMultiplier": 1.5,
+    "iceBreakerDays": 7,
     "utcOffsetMinutes": 330
   },
   "vacations": [

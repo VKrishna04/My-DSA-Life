@@ -1,13 +1,14 @@
 {
   "__chat_stats__": {
     "byCommand": {
-      "mycode": 11
+      "mycode": 14,
+      "test": 1
     },
     "byMode": {
       "direct": 3,
-      "guided": 29
+      "guided": 40
     },
-    "total": 32
+    "total": 43
   },
   "leetcode::3sum": {
     "difficulty": "Medium",
@@ -85,6 +86,23 @@
     "tags": [
       "Array",
       "Binary Search"
+    ]
+  },
+  "leetcode::first-day-where-you-have-been-in-all-the-rooms": {
+    "difficulty": "Medium",
+    "lang": "Python3",
+    "platform": "leetcode",
+    "slug": "first-day-where-you-have-been-in-all-the-rooms",
+    "solves": [
+      {
+        "elapsedSeconds": 0,
+        "lang": "Python3",
+        "ts": 1789643623332
+      }
+    ],
+    "tags": [
+      "Array",
+      "Dynamic Programming"
     ]
   },
   "leetcode::two-sum-ii-input-array-is-sorted": {

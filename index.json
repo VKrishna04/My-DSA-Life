@@ -1,19 +1,19 @@
 {
-  "updatedAt": "2026-09-16T08:48:29.640Z",
+  "updatedAt": "2026-09-17T11:13:43.528Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 320,
+    "total": 321,
     "easy": 177,
-    "medium": 130,
+    "medium": 131,
     "hard": 11,
     "unknownDifficulty": 2,
     "byPlatform": {
       "geeksforgeeks": 55,
-      "leetcode": 265
+      "leetcode": 266
     },
     "byLang": {
       "python3": 5,
-      "Python3": 204,
+      "Python3": 205,
       "Unknown": 45,
       "MySQL": 15,
       "Java": 12,
@@ -36,7 +36,7 @@
       "Depth-First Search": 1,
       "Linked List": 8,
       "Bit Manipulation": 3,
-      "Array": 138,
+      "Array": 139,
       "Searching": 2,
       "Hash Table": 14,
       "Java": 1,
@@ -2180,7 +2180,13 @@
       "isDuplicate": false,
       "duplicateOf": null,
       "_requestAIReview": true,
-      "platform": "leetcode"
+      "platform": "leetcode",
+      "_committedPaths": [
+        "problems/lc-3sum-closest/lc-3sum-closest.py",
+        "problems/lc-3sum-closest/README.md"
+      ],
+      "methods": [],
+      "manuallyEdited": false
     },
     {
       "id": "lc-3sum::1730412472",
@@ -8259,6 +8265,56 @@
       "notes": "",
       "methods": [],
       "manuallyEdited": false
+    },
+    {
+      "id": "lc-first-day-where-you-have-been-in-all-the-rooms",
+      "forceCommit": false,
+      "submissionId": null,
+      "title": "First Day Where You Have Been in All the Rooms",
+      "titleSlug": "first-day-where-you-have-been-in-all-the-rooms",
+      "difficulty": "Medium",
+      "topic": "Dynamic Programming",
+      "tags": [
+        "Array",
+        "Dynamic Programming"
+      ],
+      "canonical": null,
+      "readmeContent": "# [1997] First Day Where You Have Been in All the Rooms\n**Difficulty:** Medium  |  **Acceptance:** 40.5%  |  **Likes:** 517 / **Dislikes:** 105\n**Tags:** `Array`, `Dynamic Programming`\n## Problem\nThere are n rooms you need to visit, labeled from 0 to n - 1. Each day is labeled, starting from 0. You will go in and visit one room a day.\n\nInitially on day 0, you visit room 0. The order you visit the rooms for the coming days is determined by the following rules and a given 0-indexed array nextVisit of length n:\n\n\tAssuming that on a day, you visit room i,\n\tif you have been in room i an odd number of times (including the current visit), on the next day you will visit a room with a lower or equal room number specified by nextVisit[i] where 0 <= nextVisit[i] <= i;\n\tif you have been in room i an even number of times (including the current visit), on the next day you will visit room (i + 1) mod n.\n\nReturn the label of the first day where you have been in all the rooms. It can be shown that such a day exists. Since the answer may be very large, return it modulo 109 + 7.\n\n&nbsp;\nExample 1:\n\nInput: nextVisit = [0,0]\nOutput: 2\nExplanation:\n- On day 0, you visit room 0. The total times you have been in room 0 is 1, which is odd.\n&nbsp; On the next day you will visit room nextVisit[0] = 0\n- On day 1, you visit room 0, The total times you have been in room 0 is 2, which is even.\n&nbsp; On the next day you will visit room (0 + 1) mod 2 = 1\n- On day 2, you visit room 1. This is the first day where you have been in all the rooms.\n\nExample 2:\n\nInput: nextVisit = [0,0,2]\nOutput: 6\nExplanation:\nYour room visiting order for each day is: [0,0,1,0,0,1,2,...].\nDay 6 is the first day where you have been in all the rooms.\n\nExample 3:\n\nInput: nextVisit = [0,1,2,0]\nOutput: 6\nExplanation:\nYour room visiting order for each day is: [0,0,1,1,2,2,3,...].\nDay 6 is the first day where you have been in all the rooms.\n\n&nbsp;\nConstraints:\n\n\tn == nextVisit.length\n\t2 <= n <= 105\n\t0 <= nextVisit[i] <= i\n## My Submission\n\n- Runtime: 3516 ms (beats 5.9%)\n- Memory: 687.7 MB (beats 5.9%)\n",
+      "code": "class Solution:\n    def firstDayBeenInAllRooms(self, nextVisit: List[int]) -> int:\n        n = len(nextVisit)\n        dp = [0]*n\n        for i in range(1, n):\n            dp[i] = 2*dp[i-1] - dp[nextVisit[i-1]] + 2\n        return dp[-1] % (10 ** 9 + 7)",
+      "files": [
+        {
+          "path": "problems/lc-first-day-where-you-have-been-in-all-the-rooms/lc-first-day-where-you-have-been-in-all-the-rooms.py",
+          "content": "class Solution:\n    def firstDayBeenInAllRooms(self, nextVisit: List[int]) -> int:\n        n = len(nextVisit)\n        dp = [0]*n\n        for i in range(1, n):\n            dp[i] = 2*dp[i-1] - dp[nextVisit[i-1]] + 2\n        return dp[-1] % (10 ** 9 + 7)"
+        },
+        {
+          "path": "problems/lc-first-day-where-you-have-been-in-all-the-rooms/README.md",
+          "content": "# [1997] First Day Where You Have Been in All the Rooms\n**Difficulty:** Medium  |  **Acceptance:** 40.5%  |  **Likes:** 517 / **Dislikes:** 105\n**Tags:** `Array`, `Dynamic Programming`\n## Problem\nThere are n rooms you need to visit, labeled from 0 to n - 1. Each day is labeled, starting from 0. You will go in and visit one room a day.\n\nInitially on day 0, you visit room 0. The order you visit the rooms for the coming days is determined by the following rules and a given 0-indexed array nextVisit of length n:\n\n\tAssuming that on a day, you visit room i,\n\tif you have been in room i an odd number of times (including the current visit), on the next day you will visit a room with a lower or equal room number specified by nextVisit[i] where 0 <= nextVisit[i] <= i;\n\tif you have been in room i an even number of times (including the current visit), on the next day you will visit room (i + 1) mod n.\n\nReturn the label of the first day where you have been in all the rooms. It can be shown that such a day exists. Since the answer may be very large, return it modulo 109 + 7.\n\n&nbsp;\nExample 1:\n\nInput: nextVisit = [0,0]\nOutput: 2\nExplanation:\n- On day 0, you visit room 0. The total times you have been in room 0 is 1, which is odd.\n&nbsp; On the next day you will visit room nextVisit[0] = 0\n- On day 1, you visit room 0, The total times you have been in room 0 is 2, which is even.\n&nbsp; On the next day you will visit room (0 + 1) mod 2 = 1\n- On day 2, you visit room 1. This is the first day where you have been in all the rooms.\n\nExample 2:\n\nInput: nextVisit = [0,0,2]\nOutput: 6\nExplanation:\nYour room visiting order for each day is: [0,0,1,0,0,1,2,...].\nDay 6 is the first day where you have been in all the rooms.\n\nExample 3:\n\nInput: nextVisit = [0,1,2,0]\nOutput: 6\nExplanation:\nYour room visiting order for each day is: [0,0,1,1,2,2,3,...].\nDay 6 is the first day where you have been in all the rooms.\n\n&nbsp;\nConstraints:\n\n\tn == nextVisit.length\n\t2 <= n <= 105\n\t0 <= nextVisit[i] <= i\n## My Submission\n\n- Runtime: 3516 ms (beats 5.9%)\n- Memory: 687.7 MB (beats 5.9%)\n"
+        }
+      ],
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "runtime": "3516 ms",
+      "memory": "687.7 MB",
+      "runtimePct": 5.94050000000008,
+      "memoryPct": 5.940500000000037,
+      "timestamp": 1789643616000,
+      "acRate": 40.549937562743324,
+      "likes": 517,
+      "dislikes": 105,
+      "similar": [],
+      "problemStatement": "<p>There are <code>n</code> rooms you need to visit, labeled from <code>0</code> to <code>n - 1</code>. Each day is labeled, starting from <code>0</code>. You will go in and visit one room a day.</p>\n\n<p>Initially on day <code>0</code>, you visit room <code>0</code>. The <strong>order</strong> you visit the rooms for the coming days is determined by the following <strong>rules</strong> and a given <strong>0-indexed</strong> array <code>nextVisit</code> of length <code>n</code>:</p>\n\n<ul>\n\t<li>Assuming that on a day, you visit room <code>i</code>,</li>\n\t<li>if you have been in room <code>i</code> an <strong>odd</strong> number of times (<strong>including</strong> the current visit), on the <strong>next</strong> day you will visit a room with a <strong>lower or equal room number</strong> specified by <code>nextVisit[i]</code> where <code>0 &lt;= nextVisit[i] &lt;= i</code>;</li>\n\t<li>if you have been in room <code>i</code> an <strong>even</strong> number of times (<strong>including</strong> the current visit), on the <strong>next</strong> day you will visit room <code>(i + 1) mod n</code>.</li>\n</ul>\n\n<p>Return <em>the label of the <strong>first</strong> day where you have been in <strong>all</strong> the rooms</em>. It can be shown that such a day exists. Since the answer may be very large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nextVisit = [0,0]\n<strong>Output:</strong> 2\n<strong>Explanation:</strong>\n- On day 0, you visit room 0. The total times you have been in room 0 is 1, which is odd.\n&nbsp; On the next day you will visit room nextVisit[0] = 0\n- On day 1, you visit room 0, The total times you have been in room 0 is 2, which is even.\n&nbsp; On the next day you will visit room (0 + 1) mod 2 = 1\n- On day 2, you visit room 1. This is the first day where you have been in all the rooms.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nextVisit = [0,0,2]\n<strong>Output:</strong> 6\n<strong>Explanation:</strong>\nYour room visiting order for each day is: [0,0,1,0,0,1,2,...].\nDay 6 is the first day where you have been in all the rooms.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nextVisit = [0,1,2,0]\n<strong>Output:</strong> 6\n<strong>Explanation:</strong>\nYour room visiting order for each day is: [0,0,1,1,2,2,3,...].\nDay 6 is the first day where you have been in all the rooms.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>n == nextVisit.length</code></li>\n\t<li><code>2 &lt;= n &lt;= 10<sup>5</sup></code></li>\n\t<li><code>0 &lt;= nextVisit[i] &lt;= i</code></li>\n</ul>\n",
+      "elapsedSeconds": 0,
+      "hasSimilar": false,
+      "submissionsUrl": "https://leetcode.com/problems/first-day-where-you-have-been-in-all-the-rooms/submissions/",
+      "notes": "",
+      "methodTitle": "",
+      "isDuplicate": false,
+      "duplicateOf": null,
+      "_requestAIReview": true,
+      "platform": "leetcode"
     },
     {
       "id": "lc-frog-jump",

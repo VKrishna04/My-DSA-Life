@@ -4,16 +4,21 @@
   "aiSecondaryModel": "gemini-3-flash-preview",
   "autoReview": false,
   "claude_enabled": false,
+  "dailyTargetPoints": 25,
   "deepseek_enabled": false,
+  "freezeEarnMultiplier": 1,
   "gamificationEnabled": true,
   "gemini_enabled": true,
   "gitProvider": "github",
   "github_owner": "",
   "github_pages_url": "http://dsa.vkrishna04.me/",
   "github_repo": "My-DSA-Life",
+  "iceBreakerDays": 7,
+  "maxFreezes": 70,
   "ollama_enabled": false,
   "openai_enabled": false,
   "openrouter_enabled": false,
+  "penaltyMultiplier": 1.5,
   "remember_modal_tab": true,
   "telemetryOptIn": true,
   "__theme": {
@@ -31,5 +36,5 @@
     "timeCustomEnd": "18:00",
     "timeCustomStart": "06:00"
   },
-  "__syncedAt": "2026-09-16T08:48:29.672Z"
+  "__syncedAt": "2026-09-17T11:13:43.562Z"
 }
