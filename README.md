@@ -1,10 +1,10 @@
 <!-- codeledger:gamification:start -->
 <picture>
-  <source media="(prefers-color-scheme: light)" srcset="http://dsa.vkrishna04.me/badges/card-light.svg?v=5590-2-320-2026-09-16">
-  <img src="http://dsa.vkrishna04.me/badges/card.svg?v=5590-2-320-2026-09-16" alt="Streak card" width="420">
+  <source media="(prefers-color-scheme: light)" srcset="http://dsa.vkrishna04.me/badges/card-light.svg?v=5590-2-320-2026-09-17">
+  <img src="http://dsa.vkrishna04.me/badges/card.svg?v=5590-2-320-2026-09-17" alt="Streak card" width="420">
 </picture>
 
-![Streak](http://dsa.vkrishna04.me/badges/streak.svg?v=5590-2-320-2026-09-16) ![Points](http://dsa.vkrishna04.me/badges/points.svg?v=5590-2-320-2026-09-16) ![Level](http://dsa.vkrishna04.me/badges/level.svg?v=5590-2-320-2026-09-16) ![Solved by difficulty](http://dsa.vkrishna04.me/badges/difficulty.svg?v=5590-2-320-2026-09-16) ![Freezes](http://dsa.vkrishna04.me/badges/freezes.svg?v=5590-2-320-2026-09-16)
+![Streak](http://dsa.vkrishna04.me/badges/streak.svg?v=5590-2-320-2026-09-17) ![Points](http://dsa.vkrishna04.me/badges/points.svg?v=5590-2-320-2026-09-17) ![Level](http://dsa.vkrishna04.me/badges/level.svg?v=5590-2-320-2026-09-17) ![Solved by difficulty](http://dsa.vkrishna04.me/badges/difficulty.svg?v=5590-2-320-2026-09-17) ![Freezes](http://dsa.vkrishna04.me/badges/freezes.svg?v=5590-2-320-2026-09-17)
 
 🩸 First Blood · 🔟 Ten Down · 💯 Century · 🗣️ Polyglot · 🎯 Well Rounded · ⚡ Double Day · ⭐ Engineer · 🔍 Second Opinion · 📝 Peer Reviewed
 <!-- codeledger:gamification:end -->
