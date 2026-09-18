@@ -1,7 +1,7 @@
 {
   "aiPrimaryModel": "gemini-3.5-flash",
   "aiSecondary": "gemini",
-  "aiSecondaryModel": "gemini-3-flash-preview",
+  "aiSecondaryModel": "gemini-3.5-flash-lite",
   "autoReview": false,
   "claude_enabled": false,
   "dailyTargetPoints": 25,
@@ -36,5 +36,5 @@
     "timeCustomEnd": "18:00",
     "timeCustomStart": "06:00"
   },
-  "__syncedAt": "2026-09-18T10:24:31.170Z"
+  "__syncedAt": "2026-09-18T18:31:52.043Z"
 }

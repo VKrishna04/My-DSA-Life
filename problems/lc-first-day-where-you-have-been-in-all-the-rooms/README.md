@@ -7,8 +7,8 @@
 | Problem ID | `lc-first-day-where-you-have-been-in-all-the-rooms` |
 | Topics | Array, Dynamic Programming |
 | Solved | 2026-09-17 |
-| Runtime | 3516 ms (beats 5.94050000000008%) |
-| Memory | 687.7 MB (beats 5.940500000000037%) |
+| Runtime | 3516 ms (beats 5.6600000000000605%) |
+| Memory | 687.7 MB (beats 5.660100000000032%) |
 
 ## Problem Statement
 
@@ -74,3 +74,24 @@ class Solution:
             dp[i] = 2*dp[i-1] - dp[nextVisit[i-1]] + 2
         return dp[-1] % (10 ** 9 + 7)
 ```
+
+## AI Review
+
+### Analysis
+
+**1. Complexity**
+*   **Time Complexity:** $O(n)$ — The solution iterates through the rooms once. (Note: Without modular arithmetic inside the loop, Python handles growing integers, but arithmetic becomes $O(n)$ per operation, potentially making it $O(n^2)$).
+*   **Space Complexity:** $O(n)$ — Uses a DP array of size $n$.
+
+**2. Correctness**
+The mathematical logic is correct. However, applying the modulo only at the end is dangerous. In Python, integers have arbitrary precision, but as `dp[i]` grows exponentially ($2^n$), the memory and time required for arithmetic will spike. Always apply modulo **inside** the loop to maintain $O(1)$ arithmetic and prevent TLE.
+
+**3. Optimization**
+Apply the modulo within the loop:
+```python
+dp[i] = (2 * dp[i-1] - dp[nextVisit[i-1]] + 2) % 1_000_000_007
+```
+Given your history with **Array** resubmits, remember that modular arithmetic in transitions prevents "hidden" complexity issues and potential logic errors with negative results in other languages.
+
+**4. Key Algorithmic Pattern**
+**Dynamic Programming**: The state `dp[i]` represents the first day you arrive at room `i`. Each transition calculates the "round trip" time from `i-1` back to `nextVisit[i-1]` and back to `i-1` again.

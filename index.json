@@ -1,19 +1,19 @@
 {
-  "updatedAt": "2026-09-18T10:24:31.080Z",
+  "updatedAt": "2026-09-18T18:31:52.019Z",
   "layoutVersion": 3,
   "stats": {
-    "total": 321,
+    "total": 322,
     "easy": 177,
-    "medium": 131,
+    "medium": 132,
     "hard": 11,
     "unknownDifficulty": 2,
     "byPlatform": {
       "geeksforgeeks": 55,
-      "leetcode": 266
+      "leetcode": 267
     },
     "byLang": {
       "python3": 5,
-      "Python3": 205,
+      "Python3": 206,
       "Unknown": 45,
       "MySQL": 15,
       "Java": 12,
@@ -36,7 +36,7 @@
       "Depth-First Search": 1,
       "Linked List": 8,
       "Bit Manipulation": 3,
-      "Array": 139,
+      "Array": 140,
       "Searching": 2,
       "Hash Table": 14,
       "Java": 1,
@@ -2186,7 +2186,11 @@
         "problems/lc-3sum-closest/README.md"
       ],
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "aiReview": "1. **Complexity:** $O(n^2)$ time complexity due to the nested traversal and two-pointer scan after sorting. $O(1)$ or $O(n)$ space complexity depending on the sorting algorithm's implementation.\n\n2. **Correctness:** The solution is correct. It successfully handles duplicates to skip redundant work and properly bounds the closest sum update. No edge cases fail (handles negative numbers and arrays of length 3 correctly).\n\n3. **Optimisation:** You can add an early exit: if the smallest possible sum with `nums[k]` exceeds `target` (e.g., `nums[k] + nums[k+1] + nums[k+2] > target`), you can break out of the outer loop because subsequent sums will only be larger. Conversely, if the largest possible sum with `nums[k]` is less than `target` (e.g., `nums[k] + nums[-2] + nums[-1] < target`), you can safely `continue` to the next `k`.\n\n4. **Pattern:** Two Pointers combined with Sorting.",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3.5-flash-lite",
+      "pattern": "Two Pointers"
     },
     {
       "id": "lc-3sum::1730412472",
@@ -8279,7 +8283,7 @@
         "Dynamic Programming"
       ],
       "canonical": null,
-      "readmeContent": "# [1997] First Day Where You Have Been in All the Rooms\n**Difficulty:** Medium  |  **Acceptance:** 40.5%  |  **Likes:** 517 / **Dislikes:** 105\n**Tags:** `Array`, `Dynamic Programming`\n## Problem\nThere are n rooms you need to visit, labeled from 0 to n - 1. Each day is labeled, starting from 0. You will go in and visit one room a day.\n\nInitially on day 0, you visit room 0. The order you visit the rooms for the coming days is determined by the following rules and a given 0-indexed array nextVisit of length n:\n\n\tAssuming that on a day, you visit room i,\n\tif you have been in room i an odd number of times (including the current visit), on the next day you will visit a room with a lower or equal room number specified by nextVisit[i] where 0 <= nextVisit[i] <= i;\n\tif you have been in room i an even number of times (including the current visit), on the next day you will visit room (i + 1) mod n.\n\nReturn the label of the first day where you have been in all the rooms. It can be shown that such a day exists. Since the answer may be very large, return it modulo 109 + 7.\n\n&nbsp;\nExample 1:\n\nInput: nextVisit = [0,0]\nOutput: 2\nExplanation:\n- On day 0, you visit room 0. The total times you have been in room 0 is 1, which is odd.\n&nbsp; On the next day you will visit room nextVisit[0] = 0\n- On day 1, you visit room 0, The total times you have been in room 0 is 2, which is even.\n&nbsp; On the next day you will visit room (0 + 1) mod 2 = 1\n- On day 2, you visit room 1. This is the first day where you have been in all the rooms.\n\nExample 2:\n\nInput: nextVisit = [0,0,2]\nOutput: 6\nExplanation:\nYour room visiting order for each day is: [0,0,1,0,0,1,2,...].\nDay 6 is the first day where you have been in all the rooms.\n\nExample 3:\n\nInput: nextVisit = [0,1,2,0]\nOutput: 6\nExplanation:\nYour room visiting order for each day is: [0,0,1,1,2,2,3,...].\nDay 6 is the first day where you have been in all the rooms.\n\n&nbsp;\nConstraints:\n\n\tn == nextVisit.length\n\t2 <= n <= 105\n\t0 <= nextVisit[i] <= i\n## My Submission\n\n- Runtime: 3516 ms (beats 5.9%)\n- Memory: 687.7 MB (beats 5.9%)\n",
+      "readmeContent": "# [1997] First Day Where You Have Been in All the Rooms\n**Difficulty:** Medium  |  **Acceptance:** 40.6%  |  **Likes:** 517 / **Dislikes:** 105\n**Tags:** `Array`, `Dynamic Programming`\n## Problem\nThere are n rooms you need to visit, labeled from 0 to n - 1. Each day is labeled, starting from 0. You will go in and visit one room a day.\n\nInitially on day 0, you visit room 0. The order you visit the rooms for the coming days is determined by the following rules and a given 0-indexed array nextVisit of length n:\n\n\tAssuming that on a day, you visit room i,\n\tif you have been in room i an odd number of times (including the current visit), on the next day you will visit a room with a lower or equal room number specified by nextVisit[i] where 0 <= nextVisit[i] <= i;\n\tif you have been in room i an even number of times (including the current visit), on the next day you will visit room (i + 1) mod n.\n\nReturn the label of the first day where you have been in all the rooms. It can be shown that such a day exists. Since the answer may be very large, return it modulo 109 + 7.\n\n&nbsp;\nExample 1:\n\nInput: nextVisit = [0,0]\nOutput: 2\nExplanation:\n- On day 0, you visit room 0. The total times you have been in room 0 is 1, which is odd.\n&nbsp; On the next day you will visit room nextVisit[0] = 0\n- On day 1, you visit room 0, The total times you have been in room 0 is 2, which is even.\n&nbsp; On the next day you will visit room (0 + 1) mod 2 = 1\n- On day 2, you visit room 1. This is the first day where you have been in all the rooms.\n\nExample 2:\n\nInput: nextVisit = [0,0,2]\nOutput: 6\nExplanation:\nYour room visiting order for each day is: [0,0,1,0,0,1,2,...].\nDay 6 is the first day where you have been in all the rooms.\n\nExample 3:\n\nInput: nextVisit = [0,1,2,0]\nOutput: 6\nExplanation:\nYour room visiting order for each day is: [0,0,1,1,2,2,3,...].\nDay 6 is the first day where you have been in all the rooms.\n\n&nbsp;\nConstraints:\n\n\tn == nextVisit.length\n\t2 <= n <= 105\n\t0 <= nextVisit[i] <= i\n## My Submission\n\n- Runtime: 3516 ms (beats 5.7%)\n- Memory: 687.7 MB (beats 5.7%)\n",
       "code": "class Solution:\n    def firstDayBeenInAllRooms(self, nextVisit: List[int]) -> int:\n        n = len(nextVisit)\n        dp = [0]*n\n        for i in range(1, n):\n            dp[i] = 2*dp[i-1] - dp[nextVisit[i-1]] + 2\n        return dp[-1] % (10 ** 9 + 7)",
       "files": [
         {
@@ -8288,7 +8292,7 @@
         },
         {
           "path": "problems/lc-first-day-where-you-have-been-in-all-the-rooms/README.md",
-          "content": "# [1997] First Day Where You Have Been in All the Rooms\n**Difficulty:** Medium  |  **Acceptance:** 40.5%  |  **Likes:** 517 / **Dislikes:** 105\n**Tags:** `Array`, `Dynamic Programming`\n## Problem\nThere are n rooms you need to visit, labeled from 0 to n - 1. Each day is labeled, starting from 0. You will go in and visit one room a day.\n\nInitially on day 0, you visit room 0. The order you visit the rooms for the coming days is determined by the following rules and a given 0-indexed array nextVisit of length n:\n\n\tAssuming that on a day, you visit room i,\n\tif you have been in room i an odd number of times (including the current visit), on the next day you will visit a room with a lower or equal room number specified by nextVisit[i] where 0 <= nextVisit[i] <= i;\n\tif you have been in room i an even number of times (including the current visit), on the next day you will visit room (i + 1) mod n.\n\nReturn the label of the first day where you have been in all the rooms. It can be shown that such a day exists. Since the answer may be very large, return it modulo 109 + 7.\n\n&nbsp;\nExample 1:\n\nInput: nextVisit = [0,0]\nOutput: 2\nExplanation:\n- On day 0, you visit room 0. The total times you have been in room 0 is 1, which is odd.\n&nbsp; On the next day you will visit room nextVisit[0] = 0\n- On day 1, you visit room 0, The total times you have been in room 0 is 2, which is even.\n&nbsp; On the next day you will visit room (0 + 1) mod 2 = 1\n- On day 2, you visit room 1. This is the first day where you have been in all the rooms.\n\nExample 2:\n\nInput: nextVisit = [0,0,2]\nOutput: 6\nExplanation:\nYour room visiting order for each day is: [0,0,1,0,0,1,2,...].\nDay 6 is the first day where you have been in all the rooms.\n\nExample 3:\n\nInput: nextVisit = [0,1,2,0]\nOutput: 6\nExplanation:\nYour room visiting order for each day is: [0,0,1,1,2,2,3,...].\nDay 6 is the first day where you have been in all the rooms.\n\n&nbsp;\nConstraints:\n\n\tn == nextVisit.length\n\t2 <= n <= 105\n\t0 <= nextVisit[i] <= i\n## My Submission\n\n- Runtime: 3516 ms (beats 5.9%)\n- Memory: 687.7 MB (beats 5.9%)\n"
+          "content": "# [1997] First Day Where You Have Been in All the Rooms\n**Difficulty:** Medium  |  **Acceptance:** 40.6%  |  **Likes:** 517 / **Dislikes:** 105\n**Tags:** `Array`, `Dynamic Programming`\n## Problem\nThere are n rooms you need to visit, labeled from 0 to n - 1. Each day is labeled, starting from 0. You will go in and visit one room a day.\n\nInitially on day 0, you visit room 0. The order you visit the rooms for the coming days is determined by the following rules and a given 0-indexed array nextVisit of length n:\n\n\tAssuming that on a day, you visit room i,\n\tif you have been in room i an odd number of times (including the current visit), on the next day you will visit a room with a lower or equal room number specified by nextVisit[i] where 0 <= nextVisit[i] <= i;\n\tif you have been in room i an even number of times (including the current visit), on the next day you will visit room (i + 1) mod n.\n\nReturn the label of the first day where you have been in all the rooms. It can be shown that such a day exists. Since the answer may be very large, return it modulo 109 + 7.\n\n&nbsp;\nExample 1:\n\nInput: nextVisit = [0,0]\nOutput: 2\nExplanation:\n- On day 0, you visit room 0. The total times you have been in room 0 is 1, which is odd.\n&nbsp; On the next day you will visit room nextVisit[0] = 0\n- On day 1, you visit room 0, The total times you have been in room 0 is 2, which is even.\n&nbsp; On the next day you will visit room (0 + 1) mod 2 = 1\n- On day 2, you visit room 1. This is the first day where you have been in all the rooms.\n\nExample 2:\n\nInput: nextVisit = [0,0,2]\nOutput: 6\nExplanation:\nYour room visiting order for each day is: [0,0,1,0,0,1,2,...].\nDay 6 is the first day where you have been in all the rooms.\n\nExample 3:\n\nInput: nextVisit = [0,1,2,0]\nOutput: 6\nExplanation:\nYour room visiting order for each day is: [0,0,1,1,2,2,3,...].\nDay 6 is the first day where you have been in all the rooms.\n\n&nbsp;\nConstraints:\n\n\tn == nextVisit.length\n\t2 <= n <= 105\n\t0 <= nextVisit[i] <= i\n## My Submission\n\n- Runtime: 3516 ms (beats 5.7%)\n- Memory: 687.7 MB (beats 5.7%)\n"
         }
       ],
       "lang": {
@@ -8298,10 +8302,10 @@
       },
       "runtime": "3516 ms",
       "memory": "687.7 MB",
-      "runtimePct": 5.94050000000008,
-      "memoryPct": 5.940500000000037,
+      "runtimePct": 5.6600000000000605,
+      "memoryPct": 5.660100000000032,
       "timestamp": 1789643616000,
-      "acRate": 40.549937562743324,
+      "acRate": 40.55026558637065,
       "likes": 517,
       "dislikes": 105,
       "similar": [],
@@ -8320,7 +8324,11 @@
         "problems/lc-first-day-where-you-have-been-in-all-the-rooms/README.md"
       ],
       "methods": [],
-      "manuallyEdited": false
+      "manuallyEdited": false,
+      "aiReview": "### Analysis\n\n**1. Complexity**\n*   **Time Complexity:** $O(n)$ — The solution iterates through the rooms once. (Note: Without modular arithmetic inside the loop, Python handles growing integers, but arithmetic becomes $O(n)$ per operation, potentially making it $O(n^2)$).\n*   **Space Complexity:** $O(n)$ — Uses a DP array of size $n$.\n\n**2. Correctness**\nThe mathematical logic is correct. However, applying the modulo only at the end is dangerous. In Python, integers have arbitrary precision, but as `dp[i]` grows exponentially ($2^n$), the memory and time required for arithmetic will spike. Always apply modulo **inside** the loop to maintain $O(1)$ arithmetic and prevent TLE.\n\n**3. Optimization**\nApply the modulo within the loop:\n```python\ndp[i] = (2 * dp[i-1] - dp[nextVisit[i-1]] + 2) % 1_000_000_007\n```\nGiven your history with **Array** resubmits, remember that modular arithmetic in transitions prevents \"hidden\" complexity issues and potential logic errors with negative results in other languages.\n\n**4. Key Algorithmic Pattern**\n**Dynamic Programming**: The state `dp[i]` represents the first day you arrive at room `i`. Each transition calculates the \"round trip\" time from `i-1` back to `nextVisit[i-1]` and back to `i-1` again.",
+      "_aiProvider": "gemini",
+      "_aiModel": "gemini-3-flash-preview",
+      "pattern": "None"
     },
     {
       "id": "lc-frog-jump",
@@ -11884,6 +11892,78 @@
       "notes": "",
       "methods": [],
       "manuallyEdited": false
+    },
+    {
+      "id": "lc-maximum-earnings-from-taxi",
+      "forceCommit": false,
+      "submissionId": null,
+      "title": "Maximum Earnings From Taxi",
+      "titleSlug": "maximum-earnings-from-taxi",
+      "difficulty": "Medium",
+      "topic": "Dynamic Programming",
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Binary Search",
+        "Dynamic Programming",
+        "Sorting"
+      ],
+      "canonical": null,
+      "readmeContent": "# [2008] Maximum Earnings From Taxi\n**Difficulty:** Medium  |  **Acceptance:** 46.9%  |  **Likes:** 1444 / **Dislikes:** 26\n**Tags:** `Array`, `Hash Table`, `Binary Search`, `Dynamic Programming`, `Sorting`\n## Problem\nThere are n points on a road you are driving your taxi on. The n points on the road are labeled from 1 to n in the direction you are going, and you want to drive from point 1 to point n to make money by picking up passengers. You cannot change the direction of the taxi.\n\nThe passengers are represented by a 0-indexed 2D integer array rides, where rides[i] = [starti, endi, tipi] denotes the ith passenger requesting a ride from point starti to point endi who is willing to give a tipi dollar tip.\n\nFor each passenger i you pick up, you earn endi - starti + tipi dollars. You may only drive at most one passenger at a time.\n\nGiven n and rides, return the maximum number of dollars you can earn by picking up the passengers optimally.\n\nNote: You may drop off a passenger and pick up a different passenger at the same point.\n\n&nbsp;\nExample 1:\n\nInput: n = 5, rides = [[2,5,4],[1,5,1]]\nOutput: 7\nExplanation: We can pick up passenger 0 to earn 5 - 2 + 4 = 7 dollars.\n\nExample 2:\n\nInput: n = 20, rides = [[1,6,1],[3,10,2],[10,12,3],[11,12,2],[12,15,2],[13,18,1]]\nOutput: 20\nExplanation: We will pick up the following passengers:\n- Drive passenger 1 from point 3 to point 10 for a profit of 10 - 3 + 2 = 9 dollars.\n- Drive passenger 2 from point 10 to point 12 for a profit of 12 - 10 + 3 = 5 dollars.\n- Drive passenger 5 from point 13 to point 18 for a profit of 18 - 13 + 1 = 6 dollars.\nWe earn 9 + 5 + 6 = 20 dollars in total.\n\n&nbsp;\nConstraints:\n\n\t1 <= n <= 105\n\t1 <= rides.length <= 3 * 104\n\trides[i].length == 3\n\t1 <= starti < endi <= n\n\t1 <= tipi <= 105\n## My Submission\n\n- Runtime: 269 ms (beats 67.0%)\n- Memory: 41 MB (beats 52.8%)\n\n## Similar Problems\n\n- [Maximum Profit in Job Scheduling](https://leetcode.com/problems/maximum-profit-in-job-scheduling/) — Hard\n- [Maximum Number of Events That Can Be Attended](https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/) — Medium\n- [Maximum Number of Events That Can Be Attended II](https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended-ii/) — Hard\n",
+      "code": "class Solution:\n    def maxTaxiEarnings(self, n: int, rides: list[list[int]]) -> int:\n        rides_by_end = [[] for _ in range(n + 1)]\n        for start, end, tip in rides:\n            rides_by_end[end].append((start, tip))\n\n        dp = [0] * (n + 1)\n        \n        for i in range(1, n + 1):\n            dp[i] = dp[i - 1]\n            \n            for start, tip in rides_by_end[i]:\n                earnings = dp[start] + (i - start + tip)\n                dp[i] = max(dp[i], earnings)\n                \n        return dp[n]",
+      "files": [
+        {
+          "path": "problems/lc-maximum-earnings-from-taxi/lc-maximum-earnings-from-taxi.py",
+          "content": "class Solution:\n    def maxTaxiEarnings(self, n: int, rides: list[list[int]]) -> int:\n        rides_by_end = [[] for _ in range(n + 1)]\n        for start, end, tip in rides:\n            rides_by_end[end].append((start, tip))\n\n        dp = [0] * (n + 1)\n        \n        for i in range(1, n + 1):\n            dp[i] = dp[i - 1]\n            \n            for start, tip in rides_by_end[i]:\n                earnings = dp[start] + (i - start + tip)\n                dp[i] = max(dp[i], earnings)\n                \n        return dp[n]"
+        },
+        {
+          "path": "problems/lc-maximum-earnings-from-taxi/README.md",
+          "content": "# [2008] Maximum Earnings From Taxi\n**Difficulty:** Medium  |  **Acceptance:** 46.9%  |  **Likes:** 1444 / **Dislikes:** 26\n**Tags:** `Array`, `Hash Table`, `Binary Search`, `Dynamic Programming`, `Sorting`\n## Problem\nThere are n points on a road you are driving your taxi on. The n points on the road are labeled from 1 to n in the direction you are going, and you want to drive from point 1 to point n to make money by picking up passengers. You cannot change the direction of the taxi.\n\nThe passengers are represented by a 0-indexed 2D integer array rides, where rides[i] = [starti, endi, tipi] denotes the ith passenger requesting a ride from point starti to point endi who is willing to give a tipi dollar tip.\n\nFor each passenger i you pick up, you earn endi - starti + tipi dollars. You may only drive at most one passenger at a time.\n\nGiven n and rides, return the maximum number of dollars you can earn by picking up the passengers optimally.\n\nNote: You may drop off a passenger and pick up a different passenger at the same point.\n\n&nbsp;\nExample 1:\n\nInput: n = 5, rides = [[2,5,4],[1,5,1]]\nOutput: 7\nExplanation: We can pick up passenger 0 to earn 5 - 2 + 4 = 7 dollars.\n\nExample 2:\n\nInput: n = 20, rides = [[1,6,1],[3,10,2],[10,12,3],[11,12,2],[12,15,2],[13,18,1]]\nOutput: 20\nExplanation: We will pick up the following passengers:\n- Drive passenger 1 from point 3 to point 10 for a profit of 10 - 3 + 2 = 9 dollars.\n- Drive passenger 2 from point 10 to point 12 for a profit of 12 - 10 + 3 = 5 dollars.\n- Drive passenger 5 from point 13 to point 18 for a profit of 18 - 13 + 1 = 6 dollars.\nWe earn 9 + 5 + 6 = 20 dollars in total.\n\n&nbsp;\nConstraints:\n\n\t1 <= n <= 105\n\t1 <= rides.length <= 3 * 104\n\trides[i].length == 3\n\t1 <= starti < endi <= n\n\t1 <= tipi <= 105\n## My Submission\n\n- Runtime: 269 ms (beats 67.0%)\n- Memory: 41 MB (beats 52.8%)\n\n## Similar Problems\n\n- [Maximum Profit in Job Scheduling](https://leetcode.com/problems/maximum-profit-in-job-scheduling/) — Hard\n- [Maximum Number of Events That Can Be Attended](https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/) — Medium\n- [Maximum Number of Events That Can Be Attended II](https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended-ii/) — Hard\n"
+        }
+      ],
+      "lang": {
+        "name": "Python3",
+        "ext": "py",
+        "slug": "python3"
+      },
+      "runtime": "269 ms",
+      "memory": "41 MB",
+      "runtimePct": 66.97519999999965,
+      "memoryPct": 52.7908,
+      "timestamp": 1789756308000,
+      "acRate": 46.87359503512963,
+      "likes": 1444,
+      "dislikes": 26,
+      "similar": [
+        {
+          "difficulty": "Hard",
+          "titleSlug": "maximum-profit-in-job-scheduling",
+          "title": "Maximum Profit in Job Scheduling",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Medium",
+          "titleSlug": "maximum-number-of-events-that-can-be-attended",
+          "title": "Maximum Number of Events That Can Be Attended",
+          "isPaidOnly": false
+        },
+        {
+          "difficulty": "Hard",
+          "titleSlug": "maximum-number-of-events-that-can-be-attended-ii",
+          "title": "Maximum Number of Events That Can Be Attended II",
+          "isPaidOnly": false
+        }
+      ],
+      "problemStatement": "<p>There are <code>n</code> points on a road you are driving your taxi on. The <code>n</code> points on the road are labeled from <code>1</code> to <code>n</code> in the direction you are going, and you want to drive from point <code>1</code> to point <code>n</code> to make money by picking up passengers. You cannot change the direction of the taxi.</p>\n\n<p>The passengers are represented by a <strong>0-indexed</strong> 2D integer array <code>rides</code>, where <code>rides[i] = [start<sub>i</sub>, end<sub>i</sub>, tip<sub>i</sub>]</code> denotes the <code>i<sup>th</sup></code> passenger requesting a ride from point <code>start<sub>i</sub></code> to point <code>end<sub>i</sub></code> who is willing to give a <code>tip<sub>i</sub></code> dollar tip.</p>\n\n<p>For<strong> each </strong>passenger <code>i</code> you pick up, you <strong>earn</strong> <code>end<sub>i</sub> - start<sub>i</sub> + tip<sub>i</sub></code> dollars. You may only drive <b>at most one </b>passenger at a time.</p>\n\n<p>Given <code>n</code> and <code>rides</code>, return <em>the <strong>maximum</strong> number of dollars you can earn by picking up the passengers optimally.</em></p>\n\n<p><strong>Note:</strong> You may drop off a passenger and pick up a different passenger at the same point.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 5, rides = [<u>[2,5,4]</u>,[1,5,1]]\n<strong>Output:</strong> 7\n<strong>Explanation:</strong> We can pick up passenger 0 to earn 5 - 2 + 4 = 7 dollars.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> n = 20, rides = [[1,6,1],<u>[3,10,2]</u>,<u>[10,12,3]</u>,[11,12,2],[12,15,2],<u>[13,18,1]</u>]\n<strong>Output:</strong> 20\n<strong>Explanation:</strong> We will pick up the following passengers:\n- Drive passenger 1 from point 3 to point 10 for a profit of 10 - 3 + 2 = 9 dollars.\n- Drive passenger 2 from point 10 to point 12 for a profit of 12 - 10 + 3 = 5 dollars.\n- Drive passenger 5 from point 13 to point 18 for a profit of 18 - 13 + 1 = 6 dollars.\nWe earn 9 + 5 + 6 = 20 dollars in total.</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>\n\t<li><code>1 &lt;= rides.length &lt;= 3 * 10<sup>4</sup></code></li>\n\t<li><code>rides[i].length == 3</code></li>\n\t<li><code>1 &lt;= start<sub>i</sub> &lt; end<sub>i</sub> &lt;= n</code></li>\n\t<li><code>1 &lt;= tip<sub>i</sub> &lt;= 10<sup>5</sup></code></li>\n</ul>\n",
+      "elapsedSeconds": 0,
+      "hasSimilar": true,
+      "submissionsUrl": "https://leetcode.com/problems/maximum-earnings-from-taxi/submissions/",
+      "notes": "",
+      "methodTitle": "",
+      "isDuplicate": false,
+      "duplicateOf": null,
+      "_requestAIReview": true,
+      "platform": "leetcode"
     },
     {
       "id": "lc-maximum-number-of-operations-with-the-same-score-i::1730434235",

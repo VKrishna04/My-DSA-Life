@@ -75,3 +75,13 @@ class Solution:
                     
         return closest_sum
 ```
+
+## AI Review
+
+1. **Complexity:** $O(n^2)$ time complexity due to the nested traversal and two-pointer scan after sorting. $O(1)$ or $O(n)$ space complexity depending on the sorting algorithm's implementation.
+
+2. **Correctness:** The solution is correct. It successfully handles duplicates to skip redundant work and properly bounds the closest sum update. No edge cases fail (handles negative numbers and arrays of length 3 correctly).
+
+3. **Optimisation:** You can add an early exit: if the smallest possible sum with `nums[k]` exceeds `target` (e.g., `nums[k] + nums[k+1] + nums[k+2] > target`), you can break out of the outer loop because subsequent sums will only be larger. Conversely, if the largest possible sum with `nums[k]` is less than `target` (e.g., `nums[k] + nums[-2] + nums[-1] < target`), you can safely `continue` to the next `k`.
+
+4. **Pattern:** Two Pointers combined with Sorting.
