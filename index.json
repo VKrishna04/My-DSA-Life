@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-17T11:13:43.528Z",
+  "updatedAt": "2026-09-18T10:24:31.080Z",
   "layoutVersion": 3,
   "stats": {
     "total": 321,
@@ -2044,7 +2044,7 @@
         "topic": "two-pointers",
         "voteCount": 98
       },
-      "readmeContent": "# [15] 3Sum\n**Difficulty:** Medium  |  **Acceptance:** 39.9%  |  **Likes:** 36343 / **Dislikes:** 3321\n**Tags:** `Array`, `Two Pointers`, `Sorting`\n## Problem\nGiven an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.\n\nNotice that the solution set must not contain duplicate triplets.\n\n&nbsp;\nExample 1:\n\nInput: nums = [-1,0,1,2,-1,-4]\nOutput: [[-1,-1,2],[-1,0,1]]\nExplanation: \nnums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.\nnums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.\nnums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.\nThe distinct triplets are [-1,0,1] and [-1,-1,2].\nNotice that the order of the output and the order of the triplets does not matter.\n\nExample 2:\n\nInput: nums = [0,1,1]\nOutput: []\nExplanation: The only possible triplet does not sum up to 0.\n\nExample 3:\n\nInput: nums = [0,0,0]\nOutput: [[0,0,0]]\nExplanation: The only possible triplet sums up to 0.\n\n&nbsp;\nConstraints:\n\n\t3 <= nums.length <= 3000\n\t-105 <= nums[i] <= 105\n## My Submission\n\n- Runtime: 539 ms (beats 79.7%)\n- Memory: 20.7 MB (beats 100.0%)\n\n## Similar Problems\n\n- [Two Sum](https://leetcode.com/problems/two-sum/) — Easy\n- [3Sum Closest](https://leetcode.com/problems/3sum-closest/) — Medium\n- [4Sum](https://leetcode.com/problems/4sum/) — Medium\n- [Number of Arithmetic Triplets](https://leetcode.com/problems/number-of-arithmetic-triplets/) — Easy\n- [Minimum Sum of Mountain Triplets I](https://leetcode.com/problems/minimum-sum-of-mountain-triplets-i/) — Easy\n",
+      "readmeContent": "# [15] 3Sum\n**Difficulty:** Medium  |  **Acceptance:** 39.9%  |  **Likes:** 36366 / **Dislikes:** 3322\n**Tags:** `Array`, `Two Pointers`, `Sorting`\n## Problem\nGiven an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.\n\nNotice that the solution set must not contain duplicate triplets.\n\n&nbsp;\nExample 1:\n\nInput: nums = [-1,0,1,2,-1,-4]\nOutput: [[-1,-1,2],[-1,0,1]]\nExplanation: \nnums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.\nnums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.\nnums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.\nThe distinct triplets are [-1,0,1] and [-1,-1,2].\nNotice that the order of the output and the order of the triplets does not matter.\n\nExample 2:\n\nInput: nums = [0,1,1]\nOutput: []\nExplanation: The only possible triplet does not sum up to 0.\n\nExample 3:\n\nInput: nums = [0,0,0]\nOutput: [[0,0,0]]\nExplanation: The only possible triplet sums up to 0.\n\n&nbsp;\nConstraints:\n\n\t3 <= nums.length <= 3000\n\t-105 <= nums[i] <= 105\n## My Submission\n\n- Runtime: 539 ms (beats 79.6%)\n- Memory: 20.7 MB (beats 100.0%)\n\n## Similar Problems\n\n- [Two Sum](https://leetcode.com/problems/two-sum/) — Easy\n- [3Sum Closest](https://leetcode.com/problems/3sum-closest/) — Medium\n- [4Sum](https://leetcode.com/problems/4sum/) — Medium\n- [Number of Arithmetic Triplets](https://leetcode.com/problems/number-of-arithmetic-triplets/) — Easy\n- [Minimum Sum of Mountain Triplets I](https://leetcode.com/problems/minimum-sum-of-mountain-triplets-i/) — Easy\n",
       "code": "class Solution:\n    def threeSum(self, nums: List[int]) -> List[List[int]]:\n        nums.sort()\n        ans = []\n\n        for k in range(len(nums)-2):\n            if k > 0 and nums[k] == nums[k-1]:\n                continue\n            target = -nums[k]\n\n            i = k+1\n            j = len(nums) - 1\n\n            while i < j:\n                if nums[i] + nums[j] < target:\n                    i += 1\n                \n                elif nums[i] + nums[j] > target:\n                    j -= 1\n                \n                else:\n                    ans.append([nums[k], nums[i], nums[j]])\n\n                    while i < j and nums[i] == nums[i+1]:\n                        i += 1\n                    while i < j and nums[j] == nums[j-1]:\n                        j -= 1\n                    i += 1\n                    j -= 1\n        return ans",
       "files": [
         {
@@ -2053,7 +2053,7 @@
         },
         {
           "path": "problems/3sum/README.md",
-          "content": "# [15] 3Sum\n**Difficulty:** Medium  |  **Acceptance:** 39.9%  |  **Likes:** 36343 / **Dislikes:** 3321\n**Tags:** `Array`, `Two Pointers`, `Sorting`\n## Problem\nGiven an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.\n\nNotice that the solution set must not contain duplicate triplets.\n\n&nbsp;\nExample 1:\n\nInput: nums = [-1,0,1,2,-1,-4]\nOutput: [[-1,-1,2],[-1,0,1]]\nExplanation: \nnums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.\nnums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.\nnums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.\nThe distinct triplets are [-1,0,1] and [-1,-1,2].\nNotice that the order of the output and the order of the triplets does not matter.\n\nExample 2:\n\nInput: nums = [0,1,1]\nOutput: []\nExplanation: The only possible triplet does not sum up to 0.\n\nExample 3:\n\nInput: nums = [0,0,0]\nOutput: [[0,0,0]]\nExplanation: The only possible triplet sums up to 0.\n\n&nbsp;\nConstraints:\n\n\t3 <= nums.length <= 3000\n\t-105 <= nums[i] <= 105\n## My Submission\n\n- Runtime: 539 ms (beats 79.7%)\n- Memory: 20.7 MB (beats 100.0%)\n\n## Similar Problems\n\n- [Two Sum](https://leetcode.com/problems/two-sum/) — Easy\n- [3Sum Closest](https://leetcode.com/problems/3sum-closest/) — Medium\n- [4Sum](https://leetcode.com/problems/4sum/) — Medium\n- [Number of Arithmetic Triplets](https://leetcode.com/problems/number-of-arithmetic-triplets/) — Easy\n- [Minimum Sum of Mountain Triplets I](https://leetcode.com/problems/minimum-sum-of-mountain-triplets-i/) — Easy\n"
+          "content": "# [15] 3Sum\n**Difficulty:** Medium  |  **Acceptance:** 39.9%  |  **Likes:** 36366 / **Dislikes:** 3322\n**Tags:** `Array`, `Two Pointers`, `Sorting`\n## Problem\nGiven an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.\n\nNotice that the solution set must not contain duplicate triplets.\n\n&nbsp;\nExample 1:\n\nInput: nums = [-1,0,1,2,-1,-4]\nOutput: [[-1,-1,2],[-1,0,1]]\nExplanation: \nnums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.\nnums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.\nnums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.\nThe distinct triplets are [-1,0,1] and [-1,-1,2].\nNotice that the order of the output and the order of the triplets does not matter.\n\nExample 2:\n\nInput: nums = [0,1,1]\nOutput: []\nExplanation: The only possible triplet does not sum up to 0.\n\nExample 3:\n\nInput: nums = [0,0,0]\nOutput: [[0,0,0]]\nExplanation: The only possible triplet sums up to 0.\n\n&nbsp;\nConstraints:\n\n\t3 <= nums.length <= 3000\n\t-105 <= nums[i] <= 105\n## My Submission\n\n- Runtime: 539 ms (beats 79.6%)\n- Memory: 20.7 MB (beats 100.0%)\n\n## Similar Problems\n\n- [Two Sum](https://leetcode.com/problems/two-sum/) — Easy\n- [3Sum Closest](https://leetcode.com/problems/3sum-closest/) — Medium\n- [4Sum](https://leetcode.com/problems/4sum/) — Medium\n- [Number of Arithmetic Triplets](https://leetcode.com/problems/number-of-arithmetic-triplets/) — Easy\n- [Minimum Sum of Mountain Triplets I](https://leetcode.com/problems/minimum-sum-of-mountain-triplets-i/) — Easy\n"
         }
       ],
       "lang": {
@@ -2063,12 +2063,12 @@
       },
       "runtime": "539 ms",
       "memory": "20.7 MB",
-      "runtimePct": 79.74919999999989,
-      "memoryPct": 99.9661,
+      "runtimePct": 79.60399999999966,
+      "memoryPct": 99.9673,
       "timestamp": 1754848048000,
-      "acRate": 39.86969769218645,
-      "likes": 36343,
-      "dislikes": 3321,
+      "acRate": 39.88668676480615,
+      "likes": 36366,
+      "dislikes": 3322,
       "similar": [
         {
           "difficulty": "Easy",
@@ -8314,7 +8314,13 @@
       "isDuplicate": false,
       "duplicateOf": null,
       "_requestAIReview": true,
-      "platform": "leetcode"
+      "platform": "leetcode",
+      "_committedPaths": [
+        "problems/lc-first-day-where-you-have-been-in-all-the-rooms/lc-first-day-where-you-have-been-in-all-the-rooms.py",
+        "problems/lc-first-day-where-you-have-been-in-all-the-rooms/README.md"
+      ],
+      "methods": [],
+      "manuallyEdited": false
     },
     {
       "id": "lc-frog-jump",
