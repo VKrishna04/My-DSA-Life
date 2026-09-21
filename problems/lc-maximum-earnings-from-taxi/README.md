@@ -7,8 +7,8 @@
 | Problem ID | `lc-maximum-earnings-from-taxi` |
 | Topics | Array, Hash Table, Binary Search, Dynamic Programming, Sorting |
 | Solved | 2026-09-18 |
-| Runtime | 269 ms (beats 66.97519999999965%) |
-| Memory | 41 MB (beats 52.7908%) |
+| Runtime | 269 ms (beats 67.51840000000004%) |
+| Memory | 41 MB (beats 53.828700000000026%) |
 
 ## Problem Statement
 
