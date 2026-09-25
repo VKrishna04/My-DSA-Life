@@ -7,14 +7,16 @@
 | Problem ID | `lc-two-sum-ii-input-array-is-sorted` |
 | Topics | Array, Two Pointers, Binary Search |
 | Solved | 2026-09-15 |
-| Runtime | 6 ms (beats 33.56719999999999%) |
-| Memory | 22.6 MB (beats 5.100300000000012%) |
+| Runtime | 6 ms (beats 39.4056%) |
+| Memory | 22.6 MB (beats 7.203599999999999%) |
 
 ## Problem Statement
 
-Given a **1-indexed** array of integers `numbers` that is already **_sorted in non-decreasing order_**, find two numbers such that they add up to a specific `target` number. Let these two numbers be `numbers[index1]` and `numbers[index2]` where `1 <= index1 < index2 <= numbers.length`.
+You are given a **1-indexed** array of integers `numbers` that is already **sorted in non-decreasing order**.
 
-Return_ the indices of the two numbers _`index1`_ and _`index2`_, **each incremented by one,** as an integer array _`[index1, index2]`_ of length 2._
+Find **two** numbers such that they add up to a specific `target` number. Let these two numbers be `numbers[index1]` and `numbers[index2]` where `1 <= index1 < index2 <= numbers.length`.
+
+Return the indices of the two numbers `index1` and `index2` as an integer array `[index1, index2]` of length 2.
 
 The tests are generated such that there is **exactly one solution**. You **may not** use the same element twice.
 
