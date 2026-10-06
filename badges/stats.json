@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "asOf": "2026-10-05",
+  "asOf": "2026-10-06",
   "currentStreak": 0,
-  "longestStreak": 53,
+  "longestStreak": 8,
   "freezes": 0,
   "totalPoints": 5640,
   "totalSolves": 322,
@@ -22,11 +22,9 @@
     "ten-down",
     "century",
     "week-streak",
-    "month-streak",
     "polyglot",
     "well-rounded",
     "double-day",
-    "comeback",
     "level-five",
     "second-opinion",
     "peer-reviewed"
