@@ -7,8 +7,8 @@
 | Problem ID | `lc-3sum-closest` |
 | Topics | Array, Two Pointers, Sorting |
 | Solved | 2026-09-16 |
-| Runtime | 407 ms (beats 19.985799999999927%) |
-| Memory | 19.4 MB (beats 47.769499999999994%) |
+| Runtime | 407 ms (beats 20.336399999999873%) |
+| Memory | 19.4 MB (beats 48.11149999999999%) |
 
 ## Problem Statement
 

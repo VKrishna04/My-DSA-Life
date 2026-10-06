@@ -7,8 +7,8 @@
 | Problem ID | `lc-two-sum-ii-input-array-is-sorted` |
 | Topics | Array, Two Pointers, Binary Search |
 | Solved | 2026-09-15 |
-| Runtime | 6 ms (beats 39.4056%) |
-| Memory | 22.6 MB (beats 7.203599999999999%) |
+| Runtime | 6 ms (beats 42.3118%) |
+| Memory | 22.6 MB (beats 9.67610000000002%) |
 
 ## Problem Statement
 
