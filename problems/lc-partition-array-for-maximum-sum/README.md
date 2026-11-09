@@ -7,9 +7,8 @@
 | Problem ID | `lc-partition-array-for-maximum-sum` |
 | Topics | Array, Dynamic Programming |
 | Solved | 2026-05-06 |
-| Solve Time | 36m 5s |
-| Runtime | 151 ms (beats 61.41260000000008%) |
-| Memory | 19.1 MB (beats 97.5823%) |
+| Runtime | 151 ms (beats 61.25990000000019%) |
+| Memory | 19.1 MB (beats 91.56620000000001%) |
 
 ## Problem Statement
 
