@@ -7,16 +7,14 @@
 | Problem ID | `lc-two-sum-ii-input-array-is-sorted` |
 | Topics | Array, Two Pointers, Binary Search |
 | Solved | 2026-09-15 |
-| Runtime | 6 ms (beats 42.3118%) |
-| Memory | 22.6 MB (beats 9.67610000000002%) |
+| Runtime | 6 ms (beats 33.56719999999999%) |
+| Memory | 22.6 MB (beats 5.100300000000012%) |
 
 ## Problem Statement
 
-You are given a **1-indexed** array of integers `numbers` that is already **sorted in non-decreasing order**.
+Given a **1-indexed** array of integers `numbers` that is already **_sorted in non-decreasing order_**, find two numbers such that they add up to a specific `target` number. Let these two numbers be `numbers[index1]` and `numbers[index2]` where `1 <= index1 < index2 <= numbers.length`.
 
-Find **two** numbers such that they add up to a specific `target` number. Let these two numbers be `numbers[index1]` and `numbers[index2]` where `1 <= index1 < index2 <= numbers.length`.
-
-Return the indices of the two numbers `index1` and `index2` as an integer array `[index1, index2]` of length 2.
+Return_ the indices of the two numbers _`index1`_ and _`index2`_, **each incremented by one,** as an integer array _`[index1, index2]`_ of length 2._
 
 The tests are generated such that there is **exactly one solution**. You **may not** use the same element twice.
 
@@ -72,20 +70,3 @@ class Solution:
                 break
         return [l+1, r+1]
 ```
-
-## AI Review
-
-### Review
-
-1. **Complexity**: 
-   - **Time Complexity:** $O(n)$ where $n$ is the length of `numbers`, as we traverse the array at most once.
-   - **Space Complexity:** $O(1)$ auxiliary space as we only use two pointer variables.
-
-2. **Correctness**: 
-   The code is fully correct. Since the problem guarantees exactly one solution and the input array is sorted, the two-pointer approach will always find the correct 1-indexed pair without running out of bounds.
-
-3. **Concrete Optimisation**: 
-   Instead of using `break` and returning outside the loop, return the 1-indexed list `[l + 1, r + 1]` directly inside the `else` branch. This eliminates the post-loop execution overhead.
-
-4. **Key Algorithmic Pattern**: 
-   Two Pointers (converging pointers from opposite ends).
